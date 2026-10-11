@@ -63,7 +63,7 @@ class Runner:
             self.steps.append({"name": name, "status": "ok", "seconds": round(time.time() - t0, 1),
                                "summary": summarize(out)})
             return out
-        except Exception as e:
+        except (Exception, SystemExit) as e:   # 有些模組缺套件時呼叫 sys.exit()，也只算這一步失敗
             traceback.print_exc()
             self.steps.append({"name": name, "status": "error", "seconds": round(time.time() - t0, 1),
                                "error": f"{type(e).__name__}: {e}"[:500]})

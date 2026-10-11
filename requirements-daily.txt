@@ -1,4 +1,5 @@
-# 每日自動更新（pipeline/daily）需要的套件，比 requirements.txt 精簡，GitHub Actions 用這份。
+# Packages for the daily auto-update (pipeline/daily). Leaner than requirements.txt; used by GitHub Actions.
+# Keep this file ASCII-only: pip on Windows reads it with the locale codepage (cp950).
 numpy>=1.26
 scipy>=1.11
 shapely>=2.0
@@ -6,3 +7,4 @@ rasterio>=1.3
 pyproj>=3.6
 earthengine-api>=1.0
 openpyxl>=3.1
+pyyaml>=6.0       # narrative templates (pipeline/attribution/compose.py)

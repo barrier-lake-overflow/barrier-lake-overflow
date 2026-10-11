@@ -105,3 +105,7 @@ data/live/logs/
 
 # Netlify 建置時複製進發布目錄的證據圖（來源在 docs/evidence/）
 code/dashboard/docs/
+
+# GCP 服務帳號金鑰（等同密碼，絕不進版控；設定成 GitHub Secret 後就刪掉本機檔案）
+/ossint2026-*.json
+*service-account*.json
