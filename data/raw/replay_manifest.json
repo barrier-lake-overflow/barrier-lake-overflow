@@ -1,0 +1,903 @@
+{
+ "rules": "見 code/pipeline/events/replay.py",
+ "lakes": {
+  "bl051": {
+   "lakeId": "bl051",
+   "scenarioId": "inv_bl051",
+   "name": "烏來堰塞湖",
+   "imagesInWindow": 15,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20150818",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20150830",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20150911",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20151005",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2015-08-18T10:00:55.350000+00:00"
+  },
+  "bl052": {
+   "lakeId": "bl052",
+   "scenarioId": "inv_bl052",
+   "name": "塔次基里溪",
+   "imagesInWindow": 15,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 4,
+   "scenes": [
+    {
+     "day": "20150806",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20150818",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20150830",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20150911",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20151005",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2015-08-18T10:00:55.350000+00:00"
+  },
+  "bl053": {
+   "lakeId": "bl053",
+   "scenarioId": "inv_bl053",
+   "name": "立霧溪錐麓",
+   "imagesInWindow": 18,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20160202",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160214",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160226",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160309",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160321",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2016-02-02T10:00:48.720000+00:00"
+  },
+  "bl054": {
+   "lakeId": "bl054",
+   "scenarioId": "inv_bl054",
+   "name": "桃園霞雲溪",
+   "imagesInWindow": 11,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 1,
+   "scenes": [
+    {
+     "day": "20160812",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160905",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160917",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20160929",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20161011",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2016-09-05T10:00:57+00:00"
+  },
+  "bl056": {
+   "lakeId": "bl056",
+   "scenarioId": "inv_bl056",
+   "name": "泰源南溪",
+   "imagesInWindow": 15,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 4,
+   "scenes": [
+    {
+     "day": "20160707",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160719",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160731",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160812",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160824",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160905",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2016-07-19T10:00:25.820000+00:00"
+  },
+  "bl057": {
+   "lakeId": "bl057",
+   "scenarioId": "inv_bl057",
+   "name": "萬里溪",
+   "imagesInWindow": 14,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20160309",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160321",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20160414",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2016-03-09T10:00:48+00:00"
+  },
+  "bl058": {
+   "lakeId": "bl058",
+   "scenarioId": "inv_bl058",
+   "name": "東埔蚋溪小半天",
+   "imagesInWindow": 30,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20170527",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20170608",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20170702",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20170714",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20170726",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2017-06-08T10:00:55+00:00"
+  },
+  "bl060": {
+   "lakeId": "bl060",
+   "scenarioId": "inv_bl060",
+   "name": "烏牛欄溪",
+   "imagesInWindow": 39,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 10,
+   "scenes": [
+    {
+     "day": "20190815",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20190821",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20190827",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20190902",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20190908",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20190920",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20190926",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20191002",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20191008",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20191014",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2019-08-21T10:01:12+00:00"
+  },
+  "bl061": {
+   "lakeId": "bl061",
+   "scenarioId": "inv_bl061",
+   "name": "臺東大南溪",
+   "imagesInWindow": 22,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20210130",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20210211",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20210223",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20210307",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20210319",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20210331",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2021-02-11T10:00:47+00:00"
+  },
+  "bl062": {
+   "lakeId": "bl062",
+   "scenarioId": "inv_bl062",
+   "name": "桃園大曼溪",
+   "imagesInWindow": 35,
+   "status": "ok",
+   "pass": "DESCENDING",
+   "orbit": 105,
+   "preCount": 10,
+   "scenes": [
+    {
+     "day": "20210613",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20210619",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20210625",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20210701",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20210707",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20210713",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20210719",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20210725",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20210731",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20210806",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20210812",
+     "timeUTC": "21:52"
+    }
+   ],
+   "firstAfterFormed": "2021-06-19T21:51:37+00:00"
+  },
+  "bl063": {
+   "lakeId": "bl063",
+   "scenarioId": "inv_bl063",
+   "name": "花蓮豐坪溪上游",
+   "imagesInWindow": 38,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 9,
+   "scenes": [
+    {
+     "day": "20211102",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20211108",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20211114",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20211120",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20211126",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20211202",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20211208",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20211214",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20211220",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20220101",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2021-11-08T10:00:37+00:00"
+  },
+  "bl064": {
+   "lakeId": "bl064",
+   "scenarioId": "inv_bl064",
+   "name": "臺東新武呂溪",
+   "imagesInWindow": 19,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 4,
+   "scenes": [
+    {
+     "day": "20221121",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20221203",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20221215",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20221227",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20230108",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2022-11-21T10:01:03+00:00"
+  },
+  "bl065": {
+   "lakeId": "bl065",
+   "scenarioId": "inv_bl065",
+   "name": "花蓮萬里溪",
+   "imagesInWindow": 20,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20240315",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240327",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240408",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240420",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240502",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2024-03-15T10:01:33+00:00"
+  },
+  "bl066": {
+   "lakeId": "bl066",
+   "scenarioId": "inv_bl066",
+   "name": "花蓮木瓜溪",
+   "imagesInWindow": 32,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20240408",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240420",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240502",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240526",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20240607",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2024-04-20T10:01:34+00:00"
+  },
+  "bl067": {
+   "lakeId": "bl067",
+   "scenarioId": "inv_bl067",
+   "name": "屏東率芒溪",
+   "imagesInWindow": 21,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20241005",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241017",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241029",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241110",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241122",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2024-10-05T10:01:04+00:00"
+  },
+  "bl068": {
+   "lakeId": "bl068",
+   "scenarioId": "inv_bl068",
+   "name": "新竹泰崗溪",
+   "imagesInWindow": 23,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20241029",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241110",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241122",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241204",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241216",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20241228",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2024-11-10T10:01:33+00:00"
+  },
+  "bl069": {
+   "lakeId": "bl069",
+   "scenarioId": "inv_bl069",
+   "name": "花蓮樂樂溪",
+   "imagesInWindow": 32,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 10,
+   "scenes": [
+    {
+     "day": "20250121",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20250202",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20250214",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20250226",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20250310",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20250322",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2025-02-02T10:01:23+00:00"
+  },
+  "bl070": {
+   "lakeId": "bl070",
+   "scenarioId": "inv_bl070",
+   "name": "雲林清水溪(草嶺)",
+   "imagesInWindow": 33,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20250708",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20250720",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20250801",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20250813",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20250819",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20250825",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20250831",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2025-07-08T10:01:23+00:00"
+  },
+  "bl072": {
+   "lakeId": "bl072",
+   "scenarioId": "inv_bl072",
+   "name": "花蓮立霧溪(燕子口)",
+   "imagesInWindow": 38,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 7,
+   "scenes": [
+    {
+     "day": "20251012",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20251018",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20251024",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20251030",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20251105",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20251111",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20251123",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20251129",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20251205",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20251211",
+     "timeUTC": "10:01"
+    }
+   ],
+   "firstAfterFormed": "2025-10-18T10:00:18+00:00"
+  },
+  "bl073": {
+   "lakeId": "bl073",
+   "scenarioId": "inv_bl073",
+   "name": "南投合歡溪",
+   "imagesInWindow": 36,
+   "status": "ok",
+   "pass": "DESCENDING",
+   "orbit": 105,
+   "preCount": 10,
+   "scenes": [
+    {
+     "day": "20260331",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260406",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260412",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260418",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260419",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260424",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260430",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260501",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260506",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260512",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260513",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260518",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260524",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260525",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260530",
+     "timeUTC": "21:52"
+    }
+   ],
+   "firstAfterFormed": "2026-04-06T21:51:18+00:00"
+  },
+  "bl074": {
+   "lakeId": "bl074",
+   "scenarioId": "inv_bl074",
+   "name": "加走寮溪",
+   "imagesInWindow": 39,
+   "status": "ok",
+   "pass": "DESCENDING",
+   "orbit": 105,
+   "preCount": 13,
+   "scenes": [
+    {
+     "day": "20260605",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260606",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260611",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260618",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260623",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260624",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260630",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260706",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260712",
+     "timeUTC": "21:52"
+    },
+    {
+     "day": "20260718",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260724",
+     "timeUTC": "21:51"
+    },
+    {
+     "day": "20260730",
+     "timeUTC": "21:51"
+    }
+   ],
+   "firstAfterFormed": "2026-06-18T21:52:01+00:00"
+  },
+  "bl075": {
+   "lakeId": "bl075",
+   "scenarioId": "inv_bl075",
+   "name": "花蓮萬里溪",
+   "imagesInWindow": 55,
+   "status": "ok",
+   "pass": "ASCENDING",
+   "orbit": 69,
+   "preCount": 5,
+   "scenes": [
+    {
+     "day": "20260621",
+     "timeUTC": "10:01"
+    },
+    {
+     "day": "20260628",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20260710",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20260722",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20260803",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20260809",
+     "timeUTC": "10:00"
+    },
+    {
+     "day": "20260815",
+     "timeUTC": "10:00"
+    }
+   ],
+   "firstAfterFormed": "2026-06-21T10:01:12+00:00"
+  }
+ }
+}

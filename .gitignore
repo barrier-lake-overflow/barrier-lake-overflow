@@ -23,6 +23,8 @@ env/
 data/raw/*
 !data/raw/.gitkeep
 !data/raw/*.csv
+# 小型 JSON：hotspots.json（每日排程必備）、replay_manifest.json、external_evidence_research.json
+!data/raw/*.json
 
 # 風險模型快照（小檔案，非時序矩陣）也要進版控
 !data/raw/risk/

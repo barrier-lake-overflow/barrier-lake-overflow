@@ -1,0 +1,38 @@
+{
+  "note": "全清冊回放的外部證據查證紀錄（進行中）。status: verified=已開原文確認日期與說法；to_verify=只看到搜尋摘要，尚未開原文。time 為報導發布時間（台灣）。kind: optical/aerial/satellite/field 為獨立證據，official 只算背景。",
+  "lakes": {
+    "bl065": {"name": "花蓮萬里溪（2024）", "items": [
+      {"status": "verified", "time": "2024-04-04T15:51:00+08:00", "kind": "satellite",
+       "text": "林保署花蓮分署長黃群策：透過衛星監測，因強震土石坍方，萬里溪上游形成 3.7 公頃堰塞湖（報導未註明感測器）",
+       "source": "中央社", "url": "https://www.cna.com.tw/news/ahel/202404040163.aspx"}],
+      "remark": "清冊形成日 2024/3/13，但報導指為 4/3 花蓮地震後形成，清冊日期可能有誤"},
+    "bl066": {"name": "花蓮木瓜溪（2024）", "items": [
+      {"status": "verified", "time": "2024-04-20T21:12:00+08:00", "kind": "official",
+       "text": "林保署花蓮分署追蹤，木瓜溪上游邊坡崩塌，19 日已形成堰塞湖，湖面約 5.6 公頃、蓄水約 43 萬 m³（報導未說明發現方法）",
+       "source": "台灣英文新聞（照片：林保署花蓮分署提供／中央社）", "url": "https://www.taiwannews.com.tw/zh/news/5669921"}],
+      "remark": "林保署緊急調查報告（hualien.forest.gov.tw File.aspx?fno=87179，已失效）據搜尋摘要記載 4/14 衛星影像發現深潭、4/19 確認、4/20 08:30 緊急通報與無人機空拍；需找到可開啟的原文"},
+    "bl070": {"name": "雲林清水溪草嶺（2025）", "items": [
+      {"status": "to_verify", "time": "2025-07-09T20:54:00+08:00", "kind": "field",
+       "text": "民眾通報；水利署第四河川分署清水溪橋水位站 20 分鐘內降 1.2 m，研判堰塞湖形成並派員勘查",
+       "source": "台灣英文新聞（待確認原始出處與發布時間）", "url": "https://www.taiwannews.com.tw/zh/news/6152277"}]},
+    "bl072": {"name": "花蓮立霧溪燕子口（2025）", "items": [
+      {"status": "verified", "time": "2025-10-17T17:39:00+08:00", "kind": "official",
+       "text": "林業署委託陽明交大團隊估算蓄水量約 270 萬噸、蓄水面積約 10 公頃（報導未說明觀測方法）",
+       "source": "工商時報", "url": "https://www.ctee.com.tw/news/20251017701749-431401"}],
+      "remark": "行政院發言人稱接獲通報後第一時間以無人機空勘（TVBS，發布時間未確認），確認後可加一筆 aerial"},
+    "bl073": {"name": "南投合歡溪（2026）", "items": [
+      {"status": "verified", "time": "2026-04-08T16:19:00+08:00", "kind": "field",
+       "text": "林保署台中分署 4/7 現地勘查並空拍壩體部分（尚無法全面空拍），初步目測崩塌寬 200 m",
+       "source": "公視新聞網", "url": "https://news.pts.org.tw/article/802730"}]},
+    "bl074": {"name": "加走寮溪（2026）", "items": [
+      {"status": "verified", "time": "2026-06-14T09:46:00+08:00", "kind": "field",
+       "text": "民眾 6/13 發現河道遭土石堆積阻塞形成堰塞湖，通報南投縣政府，農村水保署接獲通報後勘查",
+       "source": "ETtoday", "url": "https://www.ettoday.net/news/20260614/3183102.htm"}]},
+    "bl075": {"name": "花蓮萬里溪（2026）", "items": [
+      {"status": "verified", "time": "2026-06-21T20:21:00+08:00", "kind": "aerial",
+       "text": "林業署航測及遙測分署 6/21 15:15 執行馬太鞍溪定期監測時，於萬里溪北邊上游發現疑似新增堰塞湖，照片初估湖面約 3 公頃",
+       "source": "中央社", "url": "https://www.cna.com.tw/news/ahel/202606210181.aspx"}]}
+  },
+  "notFoundYet": ["bl067 屏東率芒溪", "bl069 花蓮樂樂溪"],
+  "notSearchedYet": ["bl051", "bl052", "bl053", "bl054", "bl056", "bl057", "bl058", "bl060", "bl061", "bl062", "bl063", "bl064", "bl068", "bl071（換官方出處）"]
+}
