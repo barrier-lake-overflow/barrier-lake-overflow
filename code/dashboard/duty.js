@@ -417,21 +417,46 @@ const Duty = (() => {
     renderCard();
   }
 
+  function setScenario(i) {
+    st.scenario = i;
+    st.snap = defaultSnap(scen());
+    st.eventId = sortedEvents()[0] ? sortedEvents()[0].id : null;
+    render();
+  }
+
+  /* 正／負案例用分頁；全清冊回放（kind=replay）筆數多，收在下拉選單 */
   function renderScenarioTabs() {
     const box = $('#scenTabs');
     const kindText = { positive: '正案例', negative: '負案例' };
-    const tabs = SCENARIOS.map((s, i) => `
+    const tabs = SCENARIOS.map((s, i) => s.kind === 'replay' ? '' : `
       <button class="filter ${i === st.scenario ? 'is-on' : ''}" type="button" data-i="${i}">
         ${kindText[s.kind] || ''}｜${esc(s.name)}</button>`).join('');
+    const replays = SCENARIOS.map((s, i) => ({ s, i })).filter(x => x.s.kind === 'replay');
+    const select = replays.length ? `
+      <select class="county-select scen-select ${scen().kind === 'replay' ? 'is-on' : ''}" aria-label="全清冊回放：選擇堰塞湖">
+        <option value="">全清冊回放（${replays.length} 筆）…</option>
+        ${replays.map(x => `<option value="${x.i}" ${x.i === st.scenario ? 'selected' : ''}>${esc(x.s.name)}</option>`).join('')}
+      </select>` : '';
     const pending = SCENARIOS.some(s => s.kind === 'negative') ? ''
       : '<span class="scen-pending">負案例（2026 汛期，同窗格同參數）尚未產生：見 scripts/gee_export_series_s1.js、run_sar_series.py</span>';
-    box.innerHTML = `<div class="filters">${tabs}</div>${pending}`;
-    $$('button', box).forEach(b => b.addEventListener('click', () => {
-      st.scenario = +b.dataset.i;
-      st.snap = defaultSnap(scen());
-      st.eventId = sortedEvents()[0] ? sortedEvents()[0].id : null;
-      render();
-    }));
+    box.innerHTML = `<div class="filters">${tabs}</div>${select}${pending}`;
+    $$('button', box).forEach(b => b.addEventListener('click', () => setScenario(+b.dataset.i)));
+    const sel = $('select', box);
+    if (sel) sel.addEventListener('change', () => { if (sel.value !== '') setScenario(+sel.value); });
+  }
+
+  /* 給全清冊回放表用：切到指定情境（可指定時點標籤、事件代號）並捲到值班佇列 */
+  function openScenario(id, snapLabel, eventId) {
+    const i = SCENARIOS.findIndex(s => s.id === id);
+    if (i < 0) return false;
+    st.scenario = i;
+    const k = snapLabel ? scen().snapshots.findIndex(s => s.label === snapLabel) : -1;
+    st.snap = k >= 0 ? k : defaultSnap(scen());
+    const evs = sortedEvents();
+    st.eventId = (eventId && evs.some(e => e.id === eventId)) ? eventId : (evs[0] ? evs[0].id : null);
+    render();
+    document.getElementById('duty').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
   }
 
   function render() {
@@ -470,7 +495,7 @@ const Duty = (() => {
     });
   }
 
-  return { init };
+  return { init, openScenario };
 })();
 
 document.addEventListener('DOMContentLoaded', Duty.init);

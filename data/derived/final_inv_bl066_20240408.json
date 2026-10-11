@@ -1,0 +1,106 @@
+{
+  "lakeId": "inv_bl066",
+  "synthetic": false,
+  "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
+  "orbit": "ASCENDING",
+  "analysisWindowKm": 4.0,
+  "cellSizeM": [
+    9.13,
+    10.0
+  ],
+  "pre": {
+    "date": "事件前中位數",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 4485,
+    "area_m2": 409700.4,
+    "area_hectare": 40.97
+  },
+  "post": {
+    "date": "post 2024-04-08 10:01 UTC",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 4733,
+    "area_m2": 432354.9,
+    "area_hectare": 43.235
+  },
+  "newWaterTotalAreaHectare": 9.162,
+  "landslide": {
+    "date": "post 2024-04-08 10:01 UTC",
+    "method": "sar_log_ratio",
+    "threshold_db": 3.0,
+    "pixel_count": 1738,
+    "increase_pixels": 896,
+    "decrease_pixels": 842,
+    "components": 105,
+    "area_m2": 158764.6,
+    "area_hectare": 15.876
+  },
+  "geometryMask": {
+    "layoverHectare": 130.05,
+    "shadowHectare": 52.96,
+    "excludedForWaterPct": 53.4,
+    "slopeOnlyExcludedHectare": 671.99,
+    "maxWaterSlopeDeg": 35.0
+  },
+  "darkNewPixelsDiagnostic": {
+    "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "thresholdDb": -18.0,
+    "darkNewHectareBeforeMask": 27.74,
+    "maskedHectare": 18.58,
+    "maskedPct": 67.0
+  },
+  "laterScenes": 1,
+  "candidates": [
+    {
+      "id": "cand1",
+      "grade": "C",
+      "areaHectare": 0.557,
+      "centroidRowCol": [
+        194.2,
+        128.2
+      ],
+      "centroidXY": [
+        121.37036264658789,
+        24.00947508776338
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": false,
+      "persistent": false,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 1.325,
+      "lakeFloorM": 774.0,
+      "waterLevelM": 891.0,
+      "reasons": [
+        "新增水體 0.56 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 1.32 公頃（SAR 回波變化 ≥ 門檻）",
+        "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+        "後續 1 期影像同位置水體 IoU 最高 0.05，未確認持續"
+      ],
+      "centroidLonLat": [
+        121.370363,
+        24.009475
+      ],
+      "distanceFromDamM": 830.5,
+      "polygonLonLat": [
+        [
+          121.370389890576,
+          24.009991250889748
+        ],
+        [
+          121.370389890576,
+          24.009362430190862
+        ],
+        [
+          121.36967123834872,
+          24.009901419361334
+        ],
+        [
+          121.370389890576,
+          24.009991250889748
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "inv_bl072",
+  "name": "花蓮立霧溪(燕子口) · 2025",
+  "kind": "replay",
+  "description": "全清冊回放：清冊登載 2025-10-17 形成，清冊蓄水量 190 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "center": [
+    121.55913,
+    24.17315
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 6,
+  "orbitLabel": "升軌 69",
+  "trigger": {
+    "label": "清冊登載形成日",
+    "time": "2025-10-17T00:00:00+08:00",
+    "source": "農村水保署堰塞湖清冊"
+  },
+  "context": [],
+  "observationsLakeId": "bl072",
+  "referenceLakeId": "bl072",
+  "referenceLabel": "清冊壩址（事後登載，僅供對照）",
+  "passes": [
+    {
+      "file": "final_inv_bl072_20251012.json",
+      "time": "2025-10-12T10:01:00+00:00",
+      "recheckTime": "2025-10-18T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251018.json",
+      "time": "2025-10-18T10:00:00+00:00",
+      "recheckTime": "2025-10-24T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251024.json",
+      "time": "2025-10-24T10:01:00+00:00",
+      "recheckTime": "2025-10-30T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251030.json",
+      "time": "2025-10-30T10:00:00+00:00",
+      "recheckTime": "2025-11-05T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251105.json",
+      "time": "2025-11-05T10:01:00+00:00",
+      "recheckTime": "2025-11-11T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251111.json",
+      "time": "2025-11-11T10:00:00+00:00",
+      "recheckTime": "2025-11-23T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251123.json",
+      "time": "2025-11-23T10:00:00+00:00",
+      "recheckTime": "2025-11-29T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251129.json",
+      "time": "2025-11-29T10:01:00+00:00",
+      "recheckTime": "2025-12-05T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251205.json",
+      "time": "2025-12-05T10:00:00+00:00",
+      "recheckTime": "2025-12-11T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl072_20251211.json",
+      "time": "2025-12-11T10:01:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

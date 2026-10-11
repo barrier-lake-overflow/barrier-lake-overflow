@@ -1,0 +1,114 @@
+{
+  "id": "inv_bl073",
+  "name": "南投合歡溪 · 2026",
+  "kind": "replay",
+  "description": "全清冊回放：清冊登載 2026-04-07 形成，清冊蓄水量 4 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 降軌 105 共 15 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "center": [
+    121.24971,
+    24.16209
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 5,
+  "orbitLabel": "降軌 105",
+  "trigger": {
+    "label": "清冊登載形成日",
+    "time": "2026-04-07T00:00:00+08:00",
+    "source": "農村水保署堰塞湖清冊"
+  },
+  "context": [],
+  "observationsLakeId": "bl073",
+  "referenceLakeId": "bl073",
+  "referenceLabel": "清冊壩址（事後登載，僅供對照）",
+  "passes": [
+    {
+      "file": "final_inv_bl073_20260331.json",
+      "time": "2026-03-31T21:52:00+00:00",
+      "recheckTime": "2026-04-06T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260406.json",
+      "time": "2026-04-06T21:51:00+00:00",
+      "recheckTime": "2026-04-12T21:52:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260412.json",
+      "time": "2026-04-12T21:52:00+00:00",
+      "recheckTime": "2026-04-18T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260418.json",
+      "time": "2026-04-18T21:51:00+00:00",
+      "recheckTime": "2026-04-19T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260419.json",
+      "time": "2026-04-19T21:51:00+00:00",
+      "recheckTime": "2026-04-24T21:52:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260424.json",
+      "time": "2026-04-24T21:52:00+00:00",
+      "recheckTime": "2026-04-30T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260430.json",
+      "time": "2026-04-30T21:51:00+00:00",
+      "recheckTime": "2026-05-01T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260501.json",
+      "time": "2026-05-01T21:51:00+00:00",
+      "recheckTime": "2026-05-06T21:52:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260506.json",
+      "time": "2026-05-06T21:52:00+00:00",
+      "recheckTime": "2026-05-12T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260512.json",
+      "time": "2026-05-12T21:51:00+00:00",
+      "recheckTime": "2026-05-13T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260513.json",
+      "time": "2026-05-13T21:51:00+00:00",
+      "recheckTime": "2026-05-18T21:52:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260518.json",
+      "time": "2026-05-18T21:52:00+00:00",
+      "recheckTime": "2026-05-24T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260524.json",
+      "time": "2026-05-24T21:51:00+00:00",
+      "recheckTime": "2026-05-25T21:51:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260525.json",
+      "time": "2026-05-25T21:51:00+00:00",
+      "recheckTime": "2026-05-30T21:52:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl073_20260530.json",
+      "time": "2026-05-30T21:52:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

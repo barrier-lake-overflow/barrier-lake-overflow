@@ -6,6 +6,7 @@
   "center": [121.29752, 23.70061],
   "windowKm": 4.0,
   "revisitDays": 6,
+  "orbitLabel": "降軌 105",
   "trigger": {
     "label": "薇帕颱風外圍環流",
     "time": "2025-07-21T17:54:00+08:00",

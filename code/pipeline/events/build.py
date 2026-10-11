@@ -28,6 +28,7 @@ from typing import Optional
 from pipeline.attribution.annotate import read_lakes
 from pipeline.ingest.observations import load_observations_table
 
+from . import replay as R
 from . import triage as T
 
 CODE_ROOT = Path(__file__).resolve().parents[2]
@@ -143,7 +144,10 @@ def _snapshot_label(t: datetime, analyzed: set, rechecks: dict, trigger: Optiona
     since = ""
     if trigger:
         h = (t - trigger).total_seconds() / 3600
-        since = f"距觸發約 {h:.0f} 小時" if h < 72 else f"距觸發約 {h / 24:.0f} 天"
+        if h < 0:   # 全清冊回放含形成前幾期
+            since = f"觸發前約 {-h / 24:.0f} 天" if -h >= 24 else f"觸發前約 {-h:.0f} 小時"
+        else:
+            since = f"距觸發約 {h:.0f} 小時" if h < 72 else f"距觸發約 {h / 24:.0f} 天"
     return {"what": "＋".join(parts), "since": since}
 
 
@@ -199,6 +203,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
                 "id": ev["id"],
                 "firstSeen": T.tw_label(dets[0].pass_time),
                 "lastSeen": T.tw_label(latest.pass_time),
+                "lastSeenAt": latest.pass_time.isoformat(),
                 "isNew": latest.pass_time == t and len(dets) == 1,
                 "lonLat": list(latest.lon_lat),
                 "distanceFromReferenceM": (round(distance_m(latest.lon_lat, tuple(reference["lonLat"])))
@@ -260,12 +265,14 @@ def write_js(scenarios: list, path: Path = OUT) -> None:
     )
 
 
-def main(scenario_dir: Path = SCENARIOS, derived: Path = DERIVED, out: Path = OUT) -> list:
+def main(scenario_dir: Path = SCENARIOS, derived: Path = DERIVED, out: Path = OUT,
+         replay_out: Path = R.OUT) -> list:
     lakes = read_lakes(LAKES_JS) if LAKES_JS.exists() else []
     observations = load_observations_table()
-    built = []
+    built, scenarios = [], {}
     for path in sorted(scenario_dir.glob("*.json")):
         scenario = json.loads(path.read_text(encoding="utf-8"))
+        scenarios[scenario["id"]] = scenario
         print(f"情境 {scenario['id']}（{scenario['name']}）")
         result = build_scenario(scenario, derived, lakes, observations)
         if result is None:
@@ -277,6 +284,14 @@ def main(scenario_dir: Path = SCENARIOS, derived: Path = DERIVED, out: Path = OU
         built.append(result)
     write_js(built, out)
     print(f"已寫出 {out}（{len(built)} 個情境）")
+
+    if lakes:
+        targets, skipped, before = R.select_targets(lakes)
+        summary = R.summarize(targets, skipped, before, built, scenarios, R.load_manifest())
+        R.write_js(summary, replay_out)
+        tot = summary["totals"]
+        print(f"全清冊回放：{tot['targets']} 筆，偵測到 {tot['detected']}／漏報 {tot['missed']}"
+              f"／期間無過境 {tot['no_pass']}／尚無資料 {tot['no_data']} → {replay_out}")
     return built
 
 

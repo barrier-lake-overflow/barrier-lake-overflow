@@ -1,0 +1,54 @@
+{
+  "id": "inv_bl058",
+  "name": "東埔蚋溪小半天 · 2017",
+  "kind": "replay",
+  "description": "全清冊回放：清冊登載 2017-06-03 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "center": [
+    120.75151,
+    23.70828
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 12,
+  "orbitLabel": "升軌 69",
+  "trigger": {
+    "label": "清冊登載形成日",
+    "time": "2017-06-03T00:00:00+08:00",
+    "source": "農村水保署堰塞湖清冊"
+  },
+  "context": [],
+  "observationsLakeId": "bl058",
+  "referenceLakeId": "bl058",
+  "referenceLabel": "清冊壩址（事後登載，僅供對照）",
+  "passes": [
+    {
+      "file": "final_inv_bl058_20170527.json",
+      "time": "2017-05-27T10:00:00+00:00",
+      "recheckTime": "2017-06-08T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl058_20170608.json",
+      "time": "2017-06-08T10:00:00+00:00",
+      "recheckTime": "2017-07-02T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl058_20170702.json",
+      "time": "2017-07-02T10:00:00+00:00",
+      "recheckTime": "2017-07-14T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl058_20170714.json",
+      "time": "2017-07-14T10:00:00+00:00",
+      "recheckTime": "2017-07-26T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl058_20170726.json",
+      "time": "2017-07-26T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

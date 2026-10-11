@@ -1,0 +1,55 @@
+{
+  "lakeId": "inv_bl070",
+  "synthetic": false,
+  "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
+  "orbit": "ASCENDING",
+  "analysisWindowKm": 4.0,
+  "cellSizeM": [
+    9.17,
+    10.0
+  ],
+  "pre": {
+    "date": "事件前中位數",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 423,
+    "area_m2": 38768.8,
+    "area_hectare": 3.877
+  },
+  "post": {
+    "date": "post 2025-08-13 10:01 UTC",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 434,
+    "area_m2": 39777.0,
+    "area_hectare": 3.978
+  },
+  "newWaterTotalAreaHectare": 1.879,
+  "landslide": {
+    "date": "post 2025-08-13 10:01 UTC",
+    "method": "sar_log_ratio",
+    "threshold_db": 3.0,
+    "pixel_count": 5808,
+    "increase_pixels": 4661,
+    "decrease_pixels": 1147,
+    "components": 201,
+    "area_m2": 532314.6,
+    "area_hectare": 53.231
+  },
+  "geometryMask": {
+    "layoverHectare": 50.51,
+    "shadowHectare": 3.02,
+    "excludedForWaterPct": 28.6,
+    "slopeOnlyExcludedHectare": 404.1,
+    "maxWaterSlopeDeg": 35.0
+  },
+  "darkNewPixelsDiagnostic": {
+    "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "thresholdDb": -18.0,
+    "darkNewHectareBeforeMask": 6.1,
+    "maskedHectare": 4.23,
+    "maskedPct": 69.2
+  },
+  "laterScenes": 1,
+  "candidates": []
+}

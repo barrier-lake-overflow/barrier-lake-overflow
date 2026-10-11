@@ -1,0 +1,414 @@
+{
+  "lakeId": "inv_bl068",
+  "synthetic": false,
+  "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
+  "orbit": "ASCENDING",
+  "analysisWindowKm": 4.0,
+  "cellSizeM": [
+    9.09,
+    10.0
+  ],
+  "pre": {
+    "date": "事件前中位數",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 3337,
+    "area_m2": 303501.5,
+    "area_hectare": 30.35
+  },
+  "post": {
+    "date": "post 2024-11-22 10:01 UTC",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 4423,
+    "area_m2": 402273.6,
+    "area_hectare": 40.227
+  },
+  "newWaterTotalAreaHectare": 13.461,
+  "landslide": {
+    "date": "post 2024-11-22 10:01 UTC",
+    "method": "sar_log_ratio",
+    "threshold_db": 3.0,
+    "pixel_count": 5128,
+    "increase_pixels": 247,
+    "decrease_pixels": 4881,
+    "components": 215,
+    "area_m2": 466393.6,
+    "area_hectare": 46.639
+  },
+  "geometryMask": {
+    "layoverHectare": 103.43,
+    "shadowHectare": 26.12,
+    "excludedForWaterPct": 44.3,
+    "slopeOnlyExcludedHectare": 578.94,
+    "maxWaterSlopeDeg": 35.0
+  },
+  "darkNewPixelsDiagnostic": {
+    "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "thresholdDb": -18.0,
+    "darkNewHectareBeforeMask": 33.42,
+    "maskedHectare": 19.96,
+    "maskedPct": 59.7
+  },
+  "laterScenes": 1,
+  "candidates": [
+    {
+      "id": "cand1",
+      "grade": "A",
+      "areaHectare": 0.864,
+      "centroidRowCol": [
+        357.4,
+        47.6
+      ],
+      "centroidXY": [
+        121.32916809337783,
+        24.5500636004751
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": true,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 0.919,
+      "lakeFloorM": 1891.0,
+      "waterLevelM": 2029.0,
+      "reasons": [
+        "新增水體 0.86 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 0.92 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1891 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.34，持續蓄水"
+      ],
+      "centroidLonLat": [
+        121.329168,
+        24.550064
+      ],
+      "distanceFromDamM": 2223.6,
+      "polygonLonLat": [
+        [
+          121.32960637667698,
+          24.550327894287637
+        ],
+        [
+          121.32924705056334,
+          24.549609242060342
+        ],
+        [
+          121.32888772444969,
+          24.549609242060342
+        ],
+        [
+          121.32906738750651,
+          24.55041772581605
+        ],
+        [
+          121.32960637667698,
+          24.550327894287637
+        ]
+      ]
+    },
+    {
+      "id": "cand2",
+      "grade": "A",
+      "areaHectare": 0.755,
+      "centroidRowCol": [
+        175.0,
+        213.0
+      ],
+      "centroidXY": [
+        121.34402866621738,
+        24.56645157133001
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": true,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 8.531,
+      "lakeFloorM": 1114.0,
+      "waterLevelM": 1171.0,
+      "reasons": [
+        "新增水體 0.75 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 8.53 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1114 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.37，持續蓄水"
+      ],
+      "centroidLonLat": [
+        121.344029,
+        24.566452
+      ],
+      "distanceFromDamM": 252.5,
+      "polygonLonLat": [
+        [
+          121.3439794212229,
+          24.56613824328814
+        ],
+        [
+          121.34496756803543,
+          24.566048411759727
+        ],
+        [
+          121.34523706262065,
+          24.56568908564608
+        ],
+        [
+          121.3439794212229,
+          24.56613824328814
+        ]
+      ]
+    },
+    {
+      "id": "cand3",
+      "grade": "A",
+      "areaHectare": 0.564,
+      "centroidRowCol": [
+        350.6,
+        126.1
+      ],
+      "centroidXY": [
+        121.33621623849335,
+        24.550678527027568
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": true,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 1.774,
+      "lakeFloorM": 1356.0,
+      "waterLevelM": 1485.0,
+      "reasons": [
+        "新增水體 0.56 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 1.77 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1356 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.31，持續蓄水"
+      ],
+      "centroidLonLat": [
+        121.336216,
+        24.550679
+      ],
+      "distanceFromDamM": 1734.4,
+      "polygonLonLat": [
+        [
+          121.33589458366582,
+          24.552214356384287
+        ],
+        [
+          121.33598441519423,
+          24.55149570415699
+        ],
+        [
+          121.33634374130787,
+          24.55131604110017
+        ],
+        [
+          121.33589458366582,
+          24.551046546514932
+        ],
+        [
+          121.33589458366582,
+          24.552214356384287
+        ]
+      ]
+    },
+    {
+      "id": "cand4",
+      "grade": "B",
+      "areaHectare": 0.855,
+      "centroidRowCol": [
+        228.0,
+        195.8
+      ],
+      "centroidXY": [
+        121.34247713225838,
+        24.561690626977192
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": false,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 8.04,
+      "lakeFloorM": 1137.0,
+      "waterLevelM": 1361.0,
+      "reasons": [
+        "新增水體 0.85 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 8.04 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1137 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.22，未確認持續"
+      ],
+      "centroidLonLat": [
+        121.342477,
+        24.561691
+      ],
+      "distanceFromDamM": 358.7,
+      "polygonLonLat": [
+        [
+          121.3410149807853,
+          24.562365319094837
+        ],
+        [
+          121.34146413842736,
+          24.56191616145278
+        ],
+        [
+          121.34083531772848,
+          24.5620958245096
+        ],
+        [
+          121.3410149807853,
+          24.562365319094837
+        ]
+      ]
+    },
+    {
+      "id": "cand5",
+      "grade": "B",
+      "areaHectare": 0.6,
+      "centroidRowCol": [
+        377.1,
+        99.7
+      ],
+      "centroidXY": [
+        121.33384615260127,
+        24.548294435144495
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": false,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 1.191,
+      "lakeFloorM": 1473.0,
+      "waterLevelM": 1608.0,
+      "reasons": [
+        "新增水體 0.60 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 1.19 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1473 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.30，未確認持續"
+      ],
+      "centroidLonLat": [
+        121.333846,
+        24.548294
+      ],
+      "distanceFromDamM": 2084.9,
+      "polygonLonLat": [
+        [
+          121.33328946934186,
+          24.54826176913416
+        ],
+        [
+          121.33373862698393,
+          24.54826176913416
+        ],
+        [
+          121.33346913239869,
+          24.547902443020515
+        ],
+        [
+          121.33328946934186,
+          24.54826176913416
+        ]
+      ]
+    },
+    {
+      "id": "cand6",
+      "grade": "B",
+      "areaHectare": 0.573,
+      "centroidRowCol": [
+        332.8,
+        365.0
+      ],
+      "centroidXY": [
+        121.35767730340844,
+        24.552279234710362
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": false,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 4.175,
+      "lakeFloorM": 1330.0,
+      "waterLevelM": 1444.0,
+      "reasons": [
+        "新增水體 0.57 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 4.17 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1330 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.29，未確認持續"
+      ],
+      "centroidLonLat": [
+        121.357677,
+        24.552279
+      ],
+      "distanceFromDamM": 1876.4,
+      "polygonLonLat": [
+        [
+          121.3575439820131,
+          24.551765198742228
+        ],
+        [
+          121.3575439820131,
+          24.55131604110017
+        ],
+        [
+          121.35727448742786,
+          24.55149570415699
+        ],
+        [
+          121.3575439820131,
+          24.551765198742228
+        ]
+      ]
+    },
+    {
+      "id": "cand7",
+      "grade": "B",
+      "areaHectare": 0.564,
+      "centroidRowCol": [
+        361.6,
+        16.0
+      ],
+      "centroidXY": [
+        121.32632607699432,
+        24.549693278006274
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": false,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 0.236,
+      "lakeFloorM": 2014.0,
+      "waterLevelM": 2180.0,
+      "reasons": [
+        "新增水體 0.56 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 0.24 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（2014 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.16，未確認持續"
+      ],
+      "centroidLonLat": [
+        121.326326,
+        24.549693
+      ],
+      "distanceFromDamM": 2461.7,
+      "polygonLonLat": [
+        [
+          121.32637244165414,
+          24.54942957900352
+        ],
+        [
+          121.32610294706892,
+          24.54907025288987
+        ],
+        [
+          121.32583345248368,
+          24.54951941053193
+        ],
+        [
+          121.32637244165414,
+          24.54942957900352
+        ]
+      ]
+    }
+  ]
+}

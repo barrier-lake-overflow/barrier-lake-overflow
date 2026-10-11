@@ -1,0 +1,192 @@
+{
+  "lakeId": "inv_bl075",
+  "synthetic": false,
+  "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
+  "orbit": "ASCENDING",
+  "analysisWindowKm": 4.0,
+  "cellSizeM": [
+    9.15,
+    10.0
+  ],
+  "pre": {
+    "date": "事件前中位數",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 2968,
+    "area_m2": 271579.2,
+    "area_hectare": 27.158
+  },
+  "post": {
+    "date": "post 2026-07-22 10:00 UTC",
+    "method": "sar_otsu_fallback",
+    "threshold": -18.0,
+    "pixel_count": 4122,
+    "area_m2": 377172.9,
+    "area_hectare": 37.717
+  },
+  "newWaterTotalAreaHectare": 16.772,
+  "landslide": {
+    "date": "post 2026-07-22 10:00 UTC",
+    "method": "sar_log_ratio",
+    "threshold_db": 3.0,
+    "pixel_count": 4288,
+    "increase_pixels": 2338,
+    "decrease_pixels": 1950,
+    "components": 134,
+    "area_m2": 392362.3,
+    "area_hectare": 39.236
+  },
+  "geometryMask": {
+    "layoverHectare": 60.54,
+    "shadowHectare": 19.31,
+    "excludedForWaterPct": 55.0,
+    "slopeOnlyExcludedHectare": 800.65,
+    "maxWaterSlopeDeg": 35.0
+  },
+  "darkNewPixelsDiagnostic": {
+    "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "thresholdDb": -18.0,
+    "darkNewHectareBeforeMask": 49.9,
+    "maskedHectare": 33.12,
+    "maskedPct": 66.4
+  },
+  "laterScenes": 1,
+  "candidates": [
+    {
+      "id": "cand1",
+      "grade": "A",
+      "areaHectare": 4.795,
+      "centroidRowCol": [
+        183.2,
+        186.8
+      ],
+      "centroidXY": [
+        121.26675516494723,
+        23.793524354022836
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": true,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 20.478,
+      "lakeFloorM": 1036.0,
+      "waterLevelM": 1129.0,
+      "reasons": [
+        "新增水體 4.79 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 20.48 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1036 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.65，持續蓄水"
+      ],
+      "centroidLonLat": [
+        121.266755,
+        23.793524
+      ],
+      "distanceFromDamM": 330.9,
+      "polygonLonLat": [
+        [
+          121.26429885552149,
+          23.795293897985182
+        ],
+        [
+          121.26492767622038,
+          23.79439558270106
+        ],
+        [
+          121.26591582303291,
+          23.794215919644238
+        ],
+        [
+          121.26636498067496,
+          23.793587098945352
+        ],
+        [
+          121.26780228512956,
+          23.793587098945352
+        ],
+        [
+          121.26861076888527,
+          23.79197013143394
+        ],
+        [
+          121.27022773639668,
+          23.791880299905525
+        ],
+        [
+          121.27013790486828,
+          23.791431142263466
+        ],
+        [
+          121.26717346443068,
+          23.792239626019175
+        ],
+        [
+          121.26690396984544,
+          23.793048109774883
+        ],
+        [
+          121.26384969787944,
+          23.794485414229474
+        ],
+        [
+          121.26429885552149,
+          23.794665077286297
+        ],
+        [
+          121.26429885552149,
+          23.795293897985182
+        ]
+      ]
+    },
+    {
+      "id": "cand2",
+      "grade": "B",
+      "areaHectare": 0.54,
+      "centroidRowCol": [
+        251.1,
+        29.0
+      ],
+      "centroidXY": [
+        121.2525788862003,
+        23.787426026407744
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": false,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 1.4,
+      "lakeFloorM": 1799.0,
+      "waterLevelM": 1951.0,
+      "reasons": [
+        "新增水體 0.54 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 1.40 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1799 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.30，未確認持續"
+      ],
+      "centroidLonLat": [
+        121.252579,
+        23.787426
+      ],
+      "distanceFromDamM": 1805.3,
+      "polygonLonLat": [
+        [
+          121.25172244154382,
+          23.787209060428104
+        ],
+        [
+          121.25199193612906,
+          23.78738872348493
+        ],
+        [
+          121.25199193612906,
+          23.787119228899694
+        ],
+        [
+          121.25172244154382,
+          23.787209060428104
+        ]
+      ]
+    }
+  ]
+}

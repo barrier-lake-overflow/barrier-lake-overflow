@@ -782,3 +782,47 @@ footer .wrap{
   .q-item{grid-template-columns:30px 1fr}
   .q-tags{grid-column:2;flex-direction:row;align-items:flex-start}
 }
+/* 全清冊回放（replay-view.js）
+   結果：玉綠=偵測到　陶紅=漏報　苔綠=無資料 */
+.scen-select{width:auto;max-width:100%}
+.scen-select.is-on{border-color:var(--jade);color:var(--snow)}
+.replay-desc{font-size:13px;color:var(--moss);max-width:90ch;margin-bottom:12px;line-height:1.65}
+.replay-desc b{color:var(--fog);font-weight:500}
+.replay-totals{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:12px;
+}
+.rt{background:var(--stone);padding:10px 14px;display:flex;flex-direction:column;gap:2px}
+.rt b{font-family:var(--mono);font-size:22px;font-weight:500;color:var(--snow);font-variant-numeric:tabular-nums}
+.rt span{font-size:11.5px;color:var(--moss)}
+.rt.o-hit b{color:var(--jade)}
+.rt.o-miss b{color:var(--clay)}
+.replay-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--stone)}
+.replay-table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:960px}
+.replay-table th{
+  text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;font-weight:400;
+  color:var(--moss);border-bottom:1px solid var(--line-strong);padding:8px 10px;white-space:nowrap;
+}
+.replay-table td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--fog);vertical-align:top}
+.replay-table td b{color:var(--snow);font-weight:500;display:block}
+.replay-table td .dim{color:var(--moss);font-size:11.5px}
+.replay-table td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.replay-table td.num .dim{display:block}
+.replay-table tr.is-link{cursor:pointer}
+.replay-table tr.is-link:hover td,.replay-table tr.is-link:focus-visible td{background:var(--raised)}
+.replay-table tr.is-link:focus-visible{outline:1px solid var(--jade);outline-offset:-1px}
+.ro{font-family:var(--mono);font-size:10.5px;padding:1px 7px;border:1px solid var(--line-strong);white-space:nowrap}
+.ro.o-hit{border-color:var(--jade-dim);color:var(--jade)}
+.ro.o-miss{border-color:var(--clay);color:var(--clay)}
+.ro.o-none{color:var(--moss)}
+.rp{font-family:var(--mono);font-size:11px;padding:0 6px;color:var(--abyss)}
+.rp.p-high{background:var(--clay)}
+.rp.p-medium{background:var(--ochre)}
+.rp.p-low{background:var(--moss)}
+.replay-note{font-size:11.5px;color:var(--moss);margin-top:8px;max-width:110ch;line-height:1.6}
+.rt.o-chance b{color:var(--ochre)}
+.replay-size{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;font-size:12.5px;color:var(--fog);margin-bottom:12px}
+.replay-size .label{width:100%}
+.replay-size b{color:var(--snow);font-weight:500}
+.replay-table td.num.warn{color:var(--ochre)}
+.replay-table td .dim.warn{color:var(--ochre)}

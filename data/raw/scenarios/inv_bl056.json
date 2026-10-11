@@ -1,0 +1,60 @@
+{
+  "id": "inv_bl056",
+  "name": "泰源南溪 · 2016",
+  "kind": "replay",
+  "description": "全清冊回放：清冊登載 2016-07-09 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 6 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "center": [
+    121.22889,
+    22.94524
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 12,
+  "orbitLabel": "升軌 69",
+  "trigger": {
+    "label": "清冊登載形成日",
+    "time": "2016-07-09T00:00:00+08:00",
+    "source": "農村水保署堰塞湖清冊"
+  },
+  "context": [],
+  "observationsLakeId": "bl056",
+  "referenceLakeId": "bl056",
+  "referenceLabel": "清冊壩址（事後登載，僅供對照）",
+  "passes": [
+    {
+      "file": "final_inv_bl056_20160707.json",
+      "time": "2016-07-07T10:00:00+00:00",
+      "recheckTime": "2016-07-19T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl056_20160719.json",
+      "time": "2016-07-19T10:00:00+00:00",
+      "recheckTime": "2016-07-31T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl056_20160731.json",
+      "time": "2016-07-31T10:00:00+00:00",
+      "recheckTime": "2016-08-12T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl056_20160812.json",
+      "time": "2016-08-12T10:00:00+00:00",
+      "recheckTime": "2016-08-24T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl056_20160824.json",
+      "time": "2016-08-24T10:00:00+00:00",
+      "recheckTime": "2016-09-05T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl056_20160905.json",
+      "time": "2016-09-05T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

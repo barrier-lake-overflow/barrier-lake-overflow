@@ -34,6 +34,8 @@ geopandas>=0.14         # exposure.py 疊合村里界線圖用
 rasterio>=1.3           # 讀真實 GeoTIFF（load_dem_geotiff / load_ndwi_geotiff）；
                          # B1 已接上真實 Sentinel-2 NDWI 影像（Google Earth Engine
                          # 匯出），這行從此解開；真實 DEM 到位後同一顆套件直接沿用
+earthengine-api>=1.0    # 全清冊回放：scripts/gee_fetch_inventory.py 直接從 GEE 下載影像
+                         # （第一次用要先跑 earthengine authenticate）
 
 # ── 影像處理（SAR 鏈已實作，這兩個仍不需要）────────────
 # SAR 前處理改由 Google Earth Engine 的 COPERNICUS/S1_GRD 完成（已做輻射／

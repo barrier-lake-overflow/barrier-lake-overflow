@@ -61,6 +61,20 @@
         </div>
         <div class="panel ev-panel" id="evCard"></div>
       </div>
+
+      <!-- 全清冊回放：每筆堰塞湖同一套流程逐期回放的結果（replay-view.js） -->
+      <div class="sec replay" id="replay">
+        <div class="sec-head">
+          <h2>全清冊回放</h2>
+          <span class="rule"></span>
+          <span class="count" id="replayCount">—</span>
+        </div>
+        <p class="replay-desc" id="replayDesc"></p>
+        <div class="replay-totals" id="replayTotals"></div>
+        <div class="replay-size" id="replaySize"></div>
+        <div class="replay-wrap"><table class="replay-table" id="replayTable"></table></div>
+        <p class="replay-note" id="replayNote"></p>
+      </div>
     </div>
   </section>
 
@@ -292,8 +306,10 @@
   <script src="vendor/three.min.js"></script>
   <script src="map3d.js"></script>
   <script src="data/events.js"></script>
+  <script src="data/replay.js"></script>
   <script src="app.js"></script>
   <script src="duty.js"></script>
+  <script src="replay-view.js"></script>
   <script src="live.js"></script>
 </body>
 

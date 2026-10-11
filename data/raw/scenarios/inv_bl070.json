@@ -1,0 +1,66 @@
+{
+  "id": "inv_bl070",
+  "name": "雲林清水溪(草嶺) · 2025",
+  "kind": "replay",
+  "description": "全清冊回放：清冊登載 2025-07-08 形成，清冊蓄水量 1400 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 7 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "center": [
+    120.66859,
+    23.57874
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 9,
+  "orbitLabel": "升軌 69",
+  "trigger": {
+    "label": "清冊登載形成日",
+    "time": "2025-07-08T00:00:00+08:00",
+    "source": "農村水保署堰塞湖清冊"
+  },
+  "context": [],
+  "observationsLakeId": "bl070",
+  "referenceLakeId": "bl070",
+  "referenceLabel": "清冊壩址（事後登載，僅供對照）",
+  "passes": [
+    {
+      "file": "final_inv_bl070_20250708.json",
+      "time": "2025-07-08T10:01:00+00:00",
+      "recheckTime": "2025-07-20T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl070_20250720.json",
+      "time": "2025-07-20T10:01:00+00:00",
+      "recheckTime": "2025-08-01T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl070_20250801.json",
+      "time": "2025-08-01T10:01:00+00:00",
+      "recheckTime": "2025-08-13T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl070_20250813.json",
+      "time": "2025-08-13T10:01:00+00:00",
+      "recheckTime": "2025-08-19T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl070_20250819.json",
+      "time": "2025-08-19T10:00:00+00:00",
+      "recheckTime": "2025-08-25T10:01:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl070_20250825.json",
+      "time": "2025-08-25T10:01:00+00:00",
+      "recheckTime": "2025-08-31T10:00:00+00:00",
+      "evidenceImage": null
+    },
+    {
+      "file": "final_inv_bl070_20250831.json",
+      "time": "2025-08-31T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

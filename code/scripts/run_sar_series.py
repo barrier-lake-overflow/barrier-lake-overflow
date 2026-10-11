@@ -81,6 +81,69 @@ def pass_time(day: str, hhmm: str) -> datetime:
     return datetime.strptime(f"{day} {hhmm}", "%Y%m%d %H:%M").replace(tzinfo=timezone.utc)
 
 
+def run_series(name: str, lon: float, lat: float, orbit: str, raw_dir: Path,
+               pass_times: dict, pre_label: str = "事件前中位數", skip_existing: bool = False) -> list:
+    """
+    逐期跑 analyze_sar_change.py（下一期當複核），回傳情境檔的 passes。
+    pass_times：{YYYYMMDD: "HH:MM"（UTC）}；沒列到的日期用 "default" 的值。
+    skip_existing：結果檔已存在就不重跑（批次中斷後續跑用）。
+    """
+    pre = raw_dir / f"S1_VV_{name}_pre.tif"
+    dem = raw_dir / f"NASADEM_{name}.tif"
+    scenes = scene_files(name, raw_dir)
+    missing = [p for p in (pre, dem) if not p.exists()]
+    if missing or not scenes:
+        raise FileNotFoundError(f"缺少影像：{', '.join(map(str, missing)) or '沒有任何逐期影像'}")
+
+    def when(day):
+        return pass_time(day, pass_times.get(day) or pass_times["default"])
+
+    DERIVED.mkdir(parents=True, exist_ok=True)
+    passes = []
+    for i, (day, path) in enumerate(scenes):
+        later = scenes[i + 1] if i + 1 < len(scenes) else None
+        t = when(day)
+        out = DERIVED / f"final_{name}_{day}.json"
+        print(f"[{i + 1}/{len(scenes)}] {day}" + (f" + 複核 {later[0]}" if later else "（無複核期）"))
+        if not (skip_existing and out.exists()):
+            cmd = [sys.executable, str(CODE / "scripts" / "analyze_sar_change.py"),
+                   "--pre", str(pre), "--post", str(path), "--dem", str(dem),
+                   "--orbit", orbit, "--lon", str(lon), "--lat", str(lat),
+                   "--lake-id", name, "--pre-label", pre_label,
+                   "--post-label", f"post {t:%Y-%m-%d %H:%M} UTC",
+                   "--max-water-slope-deg", MAX_WATER_SLOPE_DEG, "--out", str(out)]
+            if later:
+                cmd += ["--post-later", str(later[1])]
+            log = out.with_suffix(".log")
+            # 輸出導到檔案時，Windows 的 Python 預設用 cp950 編碼，印到「σ⁰」這類字元會
+            # UnicodeEncodeError 而回傳失敗（結果檔其實已寫出）。強制子程序用 UTF-8。
+            env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
+            with open(log, "w", encoding="utf-8") as f:
+                r = subprocess.run(cmd, cwd=CODE, stdout=f, stderr=subprocess.STDOUT, env=env)
+            if r.returncode != 0:
+                print(f"  失敗，見 {log}")
+                continue
+        passes.append({
+            "file": out.name,
+            "time": t.isoformat(),
+            "recheckTime": when(later[0]).isoformat() if later else None,
+            "evidenceImage": None,
+        })
+    return passes
+
+
+def write_scenario(scenario: dict, description_given: bool) -> Path:
+    """寫情境檔；既有檔案裡人工整理的欄位保留（見 merge_scenario）。"""
+    SCENARIOS.mkdir(parents=True, exist_ok=True)
+    path = SCENARIOS / f"{scenario['id']}.json"
+    old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+    scenario = merge_scenario(scenario, old, description_given=description_given)
+    if old:
+        print("保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）")
+    path.write_text(json.dumps(scenario, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return path
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--name", required=True)
@@ -95,43 +158,11 @@ def main() -> None:
     ap.add_argument("--raw-dir", type=Path, default=RAW)
     args = ap.parse_args()
 
-    pre = args.raw_dir / f"S1_VV_{args.name}_pre.tif"
-    dem = args.raw_dir / f"NASADEM_{args.name}.tif"
-    scenes = scene_files(args.name, args.raw_dir)
-    missing = [p for p in (pre, dem) if not p.exists()]
-    if missing or not scenes:
-        sys.exit(f"缺少影像：{', '.join(map(str, missing)) or '沒有任何逐期影像'}（見 gee_export_series_s1.js）")
-
-    DERIVED.mkdir(parents=True, exist_ok=True)
-    passes = []
-    for i, (day, path) in enumerate(scenes):
-        later = scenes[i + 1] if i + 1 < len(scenes) else None
-        t = pass_time(day, args.pass_time)
-        out = DERIVED / f"final_{args.name}_{day}.json"
-        cmd = [sys.executable, str(CODE / "scripts" / "analyze_sar_change.py"),
-               "--pre", str(pre), "--post", str(path), "--dem", str(dem),
-               "--orbit", args.orbit, "--lon", str(args.lon), "--lat", str(args.lat),
-               "--lake-id", args.name, "--pre-label", args.pre_label,
-               "--post-label", f"post {t:%Y-%m-%d %H:%M} UTC",
-               "--max-water-slope-deg", MAX_WATER_SLOPE_DEG, "--out", str(out)]
-        if later:
-            cmd += ["--post-later", str(later[1])]
-        print(f"[{i + 1}/{len(scenes)}] {day}" + (f" + 複核 {later[0]}" if later else "（無複核期）"))
-        log = out.with_suffix(".log")
-        # 輸出導到檔案時，Windows 的 Python 預設用 cp950 編碼，印到「σ⁰」這類字元會
-        # UnicodeEncodeError 而回傳失敗（結果檔其實已寫出）。強制子程序用 UTF-8。
-        env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
-        with open(log, "w", encoding="utf-8") as f:
-            r = subprocess.run(cmd, cwd=CODE, stdout=f, stderr=subprocess.STDOUT, env=env)
-        if r.returncode != 0:
-            print(f"  失敗，見 {log}")
-            continue
-        passes.append({
-            "file": out.name,
-            "time": t.isoformat(),
-            "recheckTime": pass_time(later[0], args.pass_time).isoformat() if later else None,
-            "evidenceImage": None,
-        })
+    try:
+        passes = run_series(args.name, args.lon, args.lat, args.orbit, args.raw_dir,
+                            {"default": args.pass_time}, args.pre_label)
+    except FileNotFoundError as e:
+        sys.exit(f"{e}（見 gee_export_series_s1.js）")
 
     scenario = {
         "id": args.name,
@@ -146,13 +177,7 @@ def main() -> None:
         "referenceLakeId": None,
         "passes": passes,
     }
-    SCENARIOS.mkdir(parents=True, exist_ok=True)
-    path = SCENARIOS / f"{args.name}.json"
-    old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
-    scenario = merge_scenario(scenario, old, description_given=bool(args.description))
-    if old:
-        print("保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）")
-    path.write_text(json.dumps(scenario, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path = write_scenario(scenario, description_given=bool(args.description))
     print(f"已寫出 {path}，接著跑 python -m pipeline.events.build")
 
 
