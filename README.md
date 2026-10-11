@@ -184,10 +184,12 @@ cd code && pip install -e .
 pytest
 
 python -m pipeline.build_all            # 清冊 → lakes.js、風險 → risk.js、成因敘述、事件佇列 events.js
-python -m pipeline.build_all --live     # 風險改抓 CWA 即時雨量
+python -m pipeline.build_all --project <GCP 專案 ID>   # 風險改用 GSMaP 衛星雨量（Google Earth Engine）
+python -m pipeline.daily.run --project <GCP 專案 ID>   # 每日自動更新：清冊、警戒、雨量、Sentinel-1、新聞候選
 ```
 
-`--live` 需要先設 `CWA_API_KEY`（opendata.cwa.gov.tw 免費申請）；沒設的話會退回佔位值，不會失敗。
+雨量一律用 GSMaP v8 雨量計校正版（Google Earth Engine），不需要 CWA 金鑰；沒給 `--project` 時風險用訓練平均值佔位，不會失敗。
+每日自動更新與排程（Windows 工作排程器、GitHub Actions）見 [`docs/daily.md`](docs/daily.md)。
 
 各步驟也可以單獨跑：
 
@@ -260,7 +262,8 @@ python -m pipeline.events.build                                 # 回放＋統�
 ```
 code/
   pipeline/
-    ingest/        清冊、CWA、風險模型、人工觀測
+    ingest/        清冊、風險模型、人工觀測
+    daily/         每日自動更新（清冊、警戒、雨量、監看窗格、新聞候選）
     events/        事件追蹤、優先排序、證據缺口、建議任務
     preprocess/    SAR 濾波與幾何遮罩
     detect/        水體、崩塌、疑似堰塞湖分級

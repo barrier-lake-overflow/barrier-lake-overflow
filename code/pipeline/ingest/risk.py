@@ -3,13 +3,15 @@
 """
 風險模型 → dashboard/data/risk.js
 
-邏輯迴歸係數與特徵平均值寫死在下方（來自 make_risk_snapshot.py）。
-雨量取 CWA O-A0002-001 最近測站的 24 小時累積；沒有 CWA_API_KEY 或加
---offline 時用訓練平均值佔位，RISK_MODEL_META.mode 會標明。
+邏輯迴歸係數與特徵平均值寫死在下方（來自 make_risk_snapshot.py，以 ERA5-Land 網格雨量訓練）。
+雨量取 GSMaP v8 雨量計校正版（Google Earth Engine）在各湖位置的 1／3／7／30 天累積，
+同樣是網格雨量、四個時間窗都是實際值。沒給 --project（或 GEE 失敗）時用訓練平均值佔位，
+RISK_MODEL_META.mode 會標明。每日排程（pipeline.daily.run）會自動帶入 GSMaP。
 
 data/raw/risk/ 底下的舊檔已不再讀取。
 
-    python -m pipeline.ingest.risk [--offline] [--lakes ...] [--out ...]
+    python -m pipeline.ingest.risk --project <GCP 專案 ID> [--lakes ...] [--out ...]
+    python -m pipeline.ingest.risk            # 不連網，訓練平均值佔位
 """
 
 from __future__ import annotations
@@ -22,7 +24,7 @@ import os
 import re
 import sys
 
-from pipeline.ingest import cwa
+from typing import Optional
 
 DEFAULT_LAKES = "dashboard/data/lakes.js"
 DEFAULT_OUT = "dashboard/data/risk.js"
@@ -108,7 +110,7 @@ def write_risk_js(path: str, risk: dict, meta: dict) -> None:
     out = (
         "/* 由 pipeline/ingest/risk.py 產生，請勿手動編輯。\n"
         "   模型與係數採用 package（make_risk_snapshot.py）版本，\n"
-        "   雨量特徵來自 CWA O-A0002-001 即時觀測（或 offline 平均值佔位，\n"
+        "   雨量特徵來自 GSMaP v8 雨量計校正版（或 offline 平均值佔位，\n"
         "   見 RISK_MODEL_META.mode）。\n"
         "   注意：n_positives 極少（見 RISK_MODEL_META.nPositives），\n"
         "   模型驗證方式與泛化能力尚待確認，前端須如實揭露此限制，\n"
@@ -121,33 +123,34 @@ def write_risk_js(path: str, risk: dict, meta: dict) -> None:
         f.write(out)
 
 
-def main(lakes_path: str, out_path: str, offline: bool = False) -> None:
-    lakes = load_lakes(lakes_path)
+RAIN_KEYS = ("rain_1d", "rain_3d", "rain_7d", "rain_30d")
+RAIN_HOURS = {"rain_1d": 24, "rain_3d": 72, "rain_7d": 168, "rain_30d": 720}
 
-    api_key = os.environ.get("CWA_API_KEY", "").strip()
-    stations = None
-    if not offline and api_key:
-        print("抓取 CWA 即時雨量 O-A0002-001 …")
-        try:
-            stations = cwa.fetch_rainfall_stations(api_key)
-            print(f"  取得 {len(stations)} 個雨量站")
-        except Exception as exc:  # 網路/憑證問題不應讓整條 pipeline 中斷
-            print(f"⚠ 抓取 CWA 即時雨量失敗（{exc}），退回 offline 佔位")
-            stations = None
-    elif not offline:
-        print("⚠ 未設定 CWA_API_KEY → 退回 offline 佔位（僅測流程，非真雨量）")
+
+def gsmap_rain(lakes: list, project: Optional[str] = None) -> tuple:
+    """各湖 GSMaP 1／3／7／30 天累積（以 GSMaP 最新一筆為終點）。回傳 ({湖名: {rain_*}}, 終點時間)。"""
+    from pipeline.daily import gee
+    ee = gee.init(project)
+    end = gee.gsmap_latest(ee)
+    pts = {lk["name"]: (lk["lon"], lk["lat"]) for lk in lakes}
+    got = gee.gsmap_totals(ee, pts, end, hours=tuple(RAIN_HOURS.values()))
+    return ({name: {k: v.get(f"h{h}") for k, h in RAIN_HOURS.items()} for name, v in got.items()},
+            end.isoformat(timespec="minutes"))
+
+
+def main(lakes_path: str, out_path: str, rain_by_lake: Optional[dict] = None,
+         rain_as_of: Optional[str] = None) -> None:
+    """rain_by_lake：{湖名: {rain_1d, rain_3d, rain_7d, rain_30d}}；None 時用訓練平均值佔位。"""
+    lakes = load_lakes(lakes_path)
+    if rain_by_lake is None:
+        print("⚠ 沒有雨量資料 → 用訓練平均值佔位（僅測流程，非真雨量）")
 
     risk = {}
     n_hi = 0
     for lk in lakes:
-        if stations:
-            r24, dist_km = cwa.nearest_station_rain(lk["lat"], lk["lon"], stations)
-            rain = {"rain_1d": r24, "rain_3d": r24, "rain_7d": r24,
-                     "rain_30d": FEATURE_MEANS["rain_30d"]}
-        else:
-            rain = {k: FEATURE_MEANS[k] for k in
-                     ("rain_1d", "rain_3d", "rain_7d", "rain_30d")}
-            dist_km = None
+        got = (rain_by_lake or {}).get(lk["name"]) or {}
+        # 個別缺值（例如 GSMaP 在該點無資料）用訓練平均值補
+        rain = {k: got[k] if got.get(k) is not None else FEATURE_MEANS[k] for k in RAIN_KEYS}
 
         features = dict(rain)
         features["volume"] = lk["volume"] if lk["volume"] is not None else FEATURE_MEANS["volume"]
@@ -164,7 +167,6 @@ def main(lakes_path: str, out_path: str, offline: bool = False) -> None:
             "volume": features["volume"],
             "formed_by_quake": features["formed_by_quake"],
             "formed_by_rain": features["formed_by_rain"],
-            "nearest_station_km": dist_km,
             "risk_prob": round(p, 4),
             "risk_level": zh_level(p),
             "alert": alert_level(p),
@@ -172,7 +174,8 @@ def main(lakes_path: str, out_path: str, offline: bool = False) -> None:
 
     meta = {
         "model": "Logistic (package: make_risk_snapshot.py)",
-        "mode": "LIVE(CWA O-A0002-001)" if stations else "OFFLINE(訓練平均值佔位)",
+        "mode": (f"GSMaP v8 雨量計校正（衛星估計，至 {rain_as_of}）" if rain_by_lake is not None
+                 else "OFFLINE(訓練平均值佔位)"),
         "updated": dt.datetime.now().isoformat(),
         "nPositives": N_POSITIVES,
         "rocAuc": None,
@@ -183,18 +186,19 @@ def main(lakes_path: str, out_path: str, offline: bool = False) -> None:
     write_risk_js(out_path, risk, meta)
 
     print(f"✓ 已寫入 {out_path}｜{len(risk)} 座湖｜判高 {n_hi}｜"
-          f"{'即時' if stations else 'offline'}")
+          f"{'GSMaP' if rain_by_lake is not None else 'offline'}")
 
 
 def cli() -> None:
     ap = argparse.ArgumentParser(
-        description="用 package 的模型與 CWA 即時雨量產生 risk.js")
+        description="用 package 的模型與 GSMaP 衛星雨量產生 risk.js")
     ap.add_argument("--lakes", default=DEFAULT_LAKES)
     ap.add_argument("--out", default=DEFAULT_OUT)
-    ap.add_argument("--offline", action="store_true",
-                     help="不呼叫 CWA API，用訓練平均值佔位（僅測流程）")
+    ap.add_argument("--project", default=os.environ.get("GEE_PROJECT"),
+                     help="GCP 專案 ID；不給就不連網，用訓練平均值佔位")
     args = ap.parse_args()
-    main(args.lakes, args.out, offline=args.offline)
+    rain, as_of = gsmap_rain(load_lakes(args.lakes), args.project) if args.project else (None, None)
+    main(args.lakes, args.out, rain, as_of)
 
 
 if __name__ == "__main__":

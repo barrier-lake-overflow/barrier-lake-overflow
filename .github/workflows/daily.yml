@@ -1,0 +1,38 @@
+# 每日自動更新（雲端）。設定步驟見 docs/daily.md「GitHub Actions」。
+# 需要的 Secrets：GEE_SERVICE_ACCOUNT_KEY（服務帳號金鑰 JSON 全文）、GEE_PROJECT。
+name: daily-update
+
+on:
+  schedule:
+    - cron: "30 23 * * *"   # 每天 07:30（台灣時間）
+  workflow_dispatch:         # 也可以在 Actions 頁面手動執行
+
+permissions:
+  contents: write            # 要把結果 commit 回 repo
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-daily.txt
+      - run: pip install -r requirements-daily.txt
+      - name: Run daily update
+        working-directory: code
+        env:
+          GEE_SERVICE_ACCOUNT_KEY: ${{ secrets.GEE_SERVICE_ACCOUNT_KEY }}
+          GEE_PROJECT: ${{ secrets.GEE_PROJECT }}
+          PYTHONIOENCODING: utf-8
+        run: |
+          git config user.name "daily-update[bot]"
+          git config user.email "daily-update@users.noreply.github.com"
+          python -m pipeline.daily.run --commit --push

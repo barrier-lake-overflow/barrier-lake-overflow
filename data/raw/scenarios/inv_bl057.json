@@ -24,19 +24,34 @@
       "file": "final_inv_bl057_20160309.json",
       "time": "2016-03-09T10:00:00+00:00",
       "recheckTime": "2016-03-21T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 6.2,
+        "h72": 7.0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl057_20160321.json",
       "time": "2016-03-21T10:00:00+00:00",
       "recheckTime": "2016-04-14T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 10.8,
+        "h72": 23.7,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl057_20160414.json",
       "time": "2016-04-14T10:00:00+00:00",
       "recheckTime": null,
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 44.1,
+        "h72": 95.4,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     }
   ]
 }

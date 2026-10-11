@@ -18,21 +18,21 @@ window.BARRIER_LAKES = [
   "causeKey": "rain",
   "event": "0612-0613連日降雨",
   "formed": "2026/06/13",
-  "duration": "",
+  "duration": "30",
   "volume": 10.0,
-  "breachDate": "",
-  "breachCause": "已形成溢流道並穩定溢流",
-  "status": "存在(監測中)",
-  "statusKey": "watch",
+  "breachDate": "2026/07/12",
+  "breachCause": "巴威颱風",
+  "status": "消失",
+  "statusKey": "gone",
   "setting": "山坡地",
   "lon": 120.69867,
   "lat": 23.66271,
-  "narrative": "本堰塞湖形成於0612-0613連日降雨期間，觸發發生於加走寮溪，瑞龍瀑布園區崩塌，堵塞加走寮溪，形成蓄水量約 10 萬立方公尺之小型堰塞湖，現況列為監測中。",
+  "narrative": "本堰塞湖形成於0612-0613連日降雨期間，觸發發生於加走寮溪，瑞龍瀑布園區崩塌，堵塞加走寮溪，形成蓄水量約 10 萬立方公尺之小型堰塞湖，於 2026/07/12 因原因未載潰決，存續 30 日（約 4 週）。",
   "rulesFired": [
    "trigger.rain.text",
    "slide.blockage.text",
    "formation.volume.with_scale",
-   "fate.monitoring.text"
+   "fate.breached.full"
   ]
  },
  {

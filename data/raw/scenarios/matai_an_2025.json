@@ -3,7 +3,10 @@
   "name": "馬太鞍溪 · 2025 薇帕颱風",
   "kind": "positive",
   "description": "壩址周圍 4 km 窗格，Sentinel-1 降軌 105 逐期回放。湖於 2025-07-21 17:54 形成，2025-09-23 溢流潰決。",
-  "center": [121.29752, 23.70061],
+  "center": [
+    121.29752,
+    23.70061
+  ],
   "windowKm": 4.0,
   "revisitDays": 6,
   "orbitLabel": "降軌 105",
@@ -20,7 +23,10 @@
     {
       "time": "2025-07-24T23:59:00+08:00",
       "kind": "optical",
-      "lonLat": [121.29752, 23.70061],
+      "lonLat": [
+        121.29752,
+        23.70061
+      ],
       "radiusM": 600,
       "text": "農村水保署以 Planet 光學衛星影像發現堰塞湖，當日成立應變小組",
       "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」（引農村水保署發布）",
@@ -29,7 +35,10 @@
     {
       "time": "2025-07-27T23:59:00+08:00",
       "kind": "aerial",
-      "lonLat": [121.29752, 23.70061],
+      "lonLat": [
+        121.29752,
+        23.70061
+      ],
       "radiusM": 600,
       "text": "航遙分署航拍取得清晰堰塞湖畫面，推估崩塌量約 2 億 m³、壩高約 200 m",
       "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」",
@@ -38,7 +47,10 @@
     {
       "time": "2025-08-20T23:59:00+08:00",
       "kind": "official",
-      "lonLat": [121.29752, 23.70061],
+      "lonLat": [
+        121.29752,
+        23.70061
+      ],
       "radiusM": 600,
       "text": "官方估蓄水量 4,800 萬 m³，滿水位 9,100 萬 m³",
       "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」",
@@ -58,25 +70,45 @@
       "file": "final_0722.json",
       "time": "2025-07-22T21:52:00+00:00",
       "recheckTime": "2025-07-28T21:51:00+00:00",
-      "evidenceImage": "docs/evidence/bl071_sar_0722.png"
+      "evidenceImage": "docs/evidence/bl071_sar_0722.png",
+      "rain": {
+        "h24": 17.8,
+        "h72": 207.9,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_0728.json",
       "time": "2025-07-28T21:51:00+00:00",
       "recheckTime": "2025-08-03T21:52:00+00:00",
-      "evidenceImage": "docs/evidence/bl071_sar_0728.png"
+      "evidenceImage": "docs/evidence/bl071_sar_0728.png",
+      "rain": {
+        "h24": 31.9,
+        "h72": 88.9,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_0821.json",
       "time": "2025-08-21T21:51:00+00:00",
       "recheckTime": "2025-08-27T21:52:00+00:00",
-      "evidenceImage": "docs/evidence/bl071_sar_0821.png"
+      "evidenceImage": "docs/evidence/bl071_sar_0821.png",
+      "rain": {
+        "h24": 1.6,
+        "h72": 1.6,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_0827.json",
       "time": "2025-08-27T21:52:00+00:00",
       "recheckTime": null,
-      "evidenceImage": "docs/evidence/bl071_sar_0827.png"
+      "evidenceImage": "docs/evidence/bl071_sar_0827.png",
+      "rain": {
+        "h24": 8.7,
+        "h72": 31.0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     }
   ]
 }

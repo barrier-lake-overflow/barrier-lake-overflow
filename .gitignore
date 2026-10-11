@@ -96,3 +96,10 @@ package-lock.json
 
 # disclosure
 docs/disclosure.md
+
+# 每日自動更新：執行鎖、日誌（影像 *.tif 已在上方忽略）
+data/live/.lock
+data/live/logs/
+
+# Netlify 建置時複製進發布目錄的證據圖（來源在 docs/evidence/）
+code/dashboard/docs/

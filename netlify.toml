@@ -1,0 +1,17 @@
+# Netlify：直接發布靜態儀表板（code/dashboard/），不需要建置。
+# 每日資料由 GitHub Actions（.github/workflows/daily.yml）更新並 commit，Netlify 偵測到 push 後自動重新部署。
+# 說明見 docs/daily.md「Netlify」。
+
+[build]
+  publish = "code/dashboard"
+  # 事件卡的證據圖連結是 ../../docs/evidence/…（本機直接開檔用）；網站上 ../ 停在根目錄，
+  # 所以把證據圖複製到發布目錄的 docs/evidence/，兩邊都能開。
+  command = "mkdir -p code/dashboard/docs && cp -r docs/evidence code/dashboard/docs/"
+  # 儀表板與證據圖都沒變就不重新部署（例如只改了 pipeline 或文件）
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- code/dashboard docs/evidence"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    # 每日更新的資料檔不要被瀏覽器長期快取
+    Cache-Control = "public, max-age=0, must-revalidate"

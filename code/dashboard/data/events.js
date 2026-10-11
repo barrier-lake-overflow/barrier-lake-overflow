@@ -5,6 +5,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl051",
   "name": "烏來堰塞湖 · 2015",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2015-08-14 形成，清冊蓄水量 0.6 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 4 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.51907,
@@ -88,6 +89,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl052",
   "name": "塔次基里溪 · 2015",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2015-08-12 形成，清冊蓄水量 11 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.42685,
@@ -201,16 +203,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2014 瓦黑爾溪（7.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 6 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -242,10 +245,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -253,7 +252,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -361,13 +359,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2014 瓦黑爾溪（7.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 52 mm、24 小時 19 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -397,7 +396,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -505,13 +503,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2014 瓦黑爾溪（7.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 45 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -541,7 +540,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -642,16 +640,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2009 陶賽溪（8.3 km）、2014 瓦黑爾溪（4.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 9/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -683,10 +682,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -694,7 +689,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -787,13 +781,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2014 瓦黑爾溪（7.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -823,7 +818,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -931,13 +925,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2009 陶賽溪（8.3 km）、2014 瓦黑爾溪（4.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -967,7 +962,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -1060,13 +1054,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2014 瓦黑爾溪（7.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -1096,7 +1091,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -1111,6 +1105,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl053",
   "name": "立霧溪錐麓 · 2016",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2016-01-27 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.55162,
@@ -1208,6 +1203,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl054",
   "name": "桃園霞雲溪 · 2016",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2016-08-19 形成，清冊蓄水量 0.27 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.37322,
@@ -1328,16 +1324,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 12.3 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 68 mm、24 小時 16 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -1369,17 +1366,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -1469,16 +1461,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（524 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 68 mm、24 小時 16 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -1510,10 +1503,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -1521,7 +1510,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -1607,16 +1595,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（417 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 68 mm、24 小時 16 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -1648,10 +1637,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -1659,7 +1644,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -1745,16 +1729,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（244 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 68 mm、24 小時 16 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -1786,10 +1771,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -1797,7 +1778,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -1918,13 +1898,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "context",
         "text": "面積 3.6 → 0.9 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -1955,10 +1936,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 9/17）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -1966,7 +1943,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "trend.shrinking",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -2058,13 +2034,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（417 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2093,10 +2070,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -2104,7 +2077,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -2201,13 +2173,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（524 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2239,7 +2212,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -2333,13 +2305,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（244 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2371,7 +2344,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -2479,13 +2451,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（417 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 48 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2514,10 +2487,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -2525,7 +2494,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -2649,13 +2617,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "context",
         "text": "面積 3.6 → 0.6 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 48 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2686,10 +2655,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 9/29）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -2697,7 +2662,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "trend.shrinking",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -2794,13 +2758,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（524 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 48 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2832,7 +2797,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -2926,13 +2890,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（244 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 48 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -2964,7 +2929,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -3072,13 +3036,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（417 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -3107,10 +3072,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -3118,7 +3079,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -3242,13 +3202,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "context",
         "text": "面積 3.6 → 0.6 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -3277,10 +3238,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -3288,7 +3245,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "trend.shrinking",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -3377,16 +3333,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 4.5 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/11）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -3418,17 +3375,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -3525,13 +3477,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（524 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -3563,7 +3516,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -3657,13 +3609,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（244 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -3695,7 +3648,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -3849,13 +3801,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 9.9 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -3886,17 +3839,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 10/23）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -3991,13 +3939,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 4.5 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -4026,17 +3975,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.lost",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -4128,13 +4072,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（417 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -4163,10 +4108,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -4174,7 +4115,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -4283,16 +4223,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（245 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -4324,10 +4265,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -4335,7 +4272,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -4422,16 +4358,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（248 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -4463,10 +4400,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -4474,7 +4407,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -4571,13 +4503,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（524 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -4609,7 +4542,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -4625,6 +4557,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl056",
   "name": "泰源南溪 · 2016",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2016-07-09 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 6 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.22889,
@@ -4736,6 +4669,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl057",
   "name": "萬里溪 · 2016",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2016-03-07 形成，清冊蓄水量 0.25 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 3 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.37434,
@@ -4805,6 +4739,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl058",
   "name": "東埔蚋溪小半天 · 2017",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2017-06-03 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    120.75151,
@@ -4902,6 +4837,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl060",
   "name": "烏牛欄溪 · 2019",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2019-08-21 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    120.7682,
@@ -5069,6 +5005,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl061",
   "name": "臺東大南溪 · 2021",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2021-02-05 形成，清冊蓄水量 170 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 6 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    120.95323,
@@ -5210,16 +5147,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2005 知本溪（6.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 3/7）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -5251,10 +5189,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -5262,7 +5196,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -5369,13 +5302,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2005 知本溪（6.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -5404,10 +5338,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -5415,7 +5345,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -5522,13 +5451,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2005 知本溪（6.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -5557,10 +5487,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -5568,7 +5494,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -5663,16 +5588,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2005 知本溪（5.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 3/31）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -5704,10 +5630,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -5716,7 +5638,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -5847,13 +5768,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2005 知本溪（5.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -5884,10 +5806,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 4/12）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -5896,7 +5814,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -5988,13 +5905,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2005 知本溪（6.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -6023,10 +5941,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -6034,7 +5948,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -6049,6 +5962,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl062",
   "name": "桃園大曼溪 · 2021",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2021-06-19 形成，清冊蓄水量 1.5 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 降軌 105 共 11 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.4044,
@@ -6204,16 +6118,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 3 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/8）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -6245,10 +6160,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -6256,7 +6167,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -6364,13 +6274,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -6402,7 +6313,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -6511,13 +6421,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -6549,7 +6460,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -6658,13 +6568,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -6696,7 +6607,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -6805,13 +6715,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 65 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -6843,7 +6754,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -6952,13 +6862,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 41 mm、24 小時 41 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -6990,7 +6901,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -7099,13 +7009,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 67 mm、24 小時 56 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -7137,7 +7048,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -7246,13 +7156,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 48 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -7284,7 +7195,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -7300,6 +7210,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl063",
   "name": "花蓮豐坪溪上游 · 2021",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2021-11-06 形成，清冊蓄水量 7.5 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.25644,
@@ -7467,6 +7378,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl064",
   "name": "臺東新武呂溪 · 2022",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2022-11-20 形成，清冊蓄水量 8.6 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.05426,
@@ -7564,6 +7476,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl065",
   "name": "花蓮萬里溪 · 2024",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2024-03-13 形成，清冊蓄水量 55 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.293,
@@ -7677,16 +7590,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（938 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 3/27）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -7718,10 +7632,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -7729,7 +7639,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -7837,13 +7746,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（938 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -7875,7 +7785,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -7984,13 +7893,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（938 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 6 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -8022,7 +7932,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -8131,13 +8040,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（938 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -8169,7 +8079,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -8278,13 +8187,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（938 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 6 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -8316,7 +8226,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -8332,6 +8241,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl066",
   "name": "花蓮木瓜溪 · 2024",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2024-04-14 形成，清冊蓄水量 43 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.37851,
@@ -8445,16 +8355,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 8 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/20）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -8486,10 +8397,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -8497,7 +8404,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -8605,13 +8511,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -8641,7 +8548,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -8749,13 +8655,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 7 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -8785,7 +8692,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -8891,16 +8797,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 7 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 6/7）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -8932,10 +8839,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -8944,7 +8847,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -9037,13 +8939,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 7 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -9073,7 +8976,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -9186,13 +9088,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -9225,7 +9128,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -9319,13 +9221,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2009 木瓜溪銅門（7.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -9355,7 +9258,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -9370,6 +9272,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl067",
   "name": "屏東率芒溪 · 2024",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2024-10-05 形成，清冊蓄水量 3.7 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 5 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    120.67236,
@@ -9467,6 +9370,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl068",
   "name": "新竹泰崗溪 · 2024",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2024-11-02 形成，清冊蓄水量 27 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 6 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.34463,
@@ -9580,16 +9484,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1893 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/10）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -9621,10 +9526,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -9632,7 +9533,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -9718,16 +9618,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1367 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/10）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -9759,10 +9660,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -9770,7 +9667,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -9860,16 +9756,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1106 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/10）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -9901,10 +9798,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -9912,7 +9805,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -10019,13 +9911,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1367 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -10054,10 +9947,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -10065,7 +9954,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -10161,13 +10049,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1106 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -10196,10 +10085,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -10207,7 +10092,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -10300,13 +10184,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1893 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -10338,7 +10223,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -10460,13 +10344,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1114 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -10497,10 +10382,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/4）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -10508,7 +10389,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -10618,13 +10498,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1356 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -10655,10 +10536,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/4）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -10666,7 +10543,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -10770,16 +10646,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1891 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/4）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -10811,10 +10688,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -10822,7 +10695,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -10908,16 +10780,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1137 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/4）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -10949,10 +10822,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -10960,7 +10829,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -11046,16 +10914,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1473 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/4）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -11087,10 +10956,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -11098,7 +10963,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -11189,16 +11053,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/4）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -11230,10 +11095,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -11242,7 +11103,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -11328,16 +11188,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2014 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 13 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/4）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -11369,10 +11230,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -11380,7 +11237,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -11515,13 +11371,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1891 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -11552,10 +11409,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/16）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -11563,7 +11416,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -11669,13 +11521,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1114 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -11704,10 +11557,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -11715,7 +11564,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -11825,13 +11673,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1356 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -11860,10 +11709,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -11871,7 +11716,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -11980,16 +11824,17 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "context",
         "text": "面積 0.9 → 0.5 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/16）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -12021,10 +11866,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -12033,7 +11874,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.shrinking",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -12126,13 +11966,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1473 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -12164,7 +12005,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -12263,13 +12103,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -12302,7 +12143,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -12396,13 +12236,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2014 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -12434,7 +12275,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -12575,13 +12415,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.9 → 1.4 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -12612,10 +12453,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/28）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -12624,7 +12461,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -12744,13 +12580,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1891 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -12779,10 +12616,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -12790,7 +12623,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -12910,13 +12742,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1102 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -12947,10 +12780,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/28）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -12958,7 +12787,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -13068,13 +12896,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1356 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -13103,10 +12932,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -13114,7 +12939,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -13224,16 +13048,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -13265,10 +13090,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -13278,7 +13099,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -13378,16 +13198,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1473 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -13419,10 +13240,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -13430,7 +13247,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -13530,16 +13346,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2033 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -13571,10 +13388,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -13582,7 +13395,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -13673,16 +13485,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -13714,10 +13527,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -13726,7 +13535,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -13872,13 +13680,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -13909,10 +13718,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -13922,7 +13727,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -14057,13 +13861,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1137 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -14094,10 +13899,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -14105,7 +13906,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -14226,13 +14026,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -14263,10 +14064,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -14276,7 +14073,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -14397,13 +14193,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1474 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -14434,10 +14231,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -14445,7 +14238,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -14594,13 +14386,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1891 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -14631,10 +14424,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -14642,7 +14431,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -14763,13 +14551,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1416 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -14800,10 +14589,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -14811,7 +14596,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -14946,13 +14730,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1098 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -14983,10 +14768,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 1/9）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -14994,7 +14775,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -15081,16 +14861,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1169 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 1/9）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -15122,10 +14903,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -15133,7 +14910,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -15225,16 +15001,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 1/9）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -15266,10 +15043,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -15278,7 +15051,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -15385,13 +15157,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2033 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -15423,7 +15196,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -15439,6 +15211,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl069",
   "name": "花蓮樂樂溪 · 2025",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2025-01-25 形成，清冊蓄水量 8.6 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 6 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.1592,
@@ -15570,16 +15343,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1557 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 16 mm、24 小時 3 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 2/14）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -15611,10 +15385,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -15622,7 +15392,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -15748,13 +15517,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.6 → 1.0 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 57 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -15785,10 +15555,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 2/26）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -15797,7 +15563,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -15936,13 +15701,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1529 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -15973,10 +15739,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 3/10）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -15984,7 +15746,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -16133,13 +15894,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1547 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -16170,10 +15932,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 3/22）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -16181,7 +15939,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -16349,13 +16106,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（1545 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -16386,10 +16144,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 4/3）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -16397,7 +16151,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -16412,6 +16165,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl070",
   "name": "雲林清水溪(草嶺) · 2025",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2025-07-08 形成，清冊蓄水量 1400 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 7 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    120.66859,
@@ -16552,16 +16306,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.1 km）、1999 草嶺（0.5 km）、2009 油車寮（6.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 131 mm、24 小時 33 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/29）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -16593,10 +16348,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -16605,7 +16356,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -16726,13 +16476,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.1 km）、1999 草嶺（0.5 km）、2009 油車寮（6.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 92 mm、24 小時 15 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -16765,7 +16516,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -16887,13 +16637,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.1 km）、1999 草嶺（0.5 km）、2009 油車寮（6.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 122 mm、24 小時 99 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -16926,7 +16677,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -17037,16 +16787,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（1.0 km）、1999 草嶺（1.3 km）、2009 油車寮（6.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -17078,10 +16829,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -17090,7 +16837,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -17181,16 +16927,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.5 km）、1999 草嶺（0.1 km）、2009 油車寮（5.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -17222,10 +16969,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -17234,7 +16977,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -17340,13 +17082,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.1 km）、1999 草嶺（0.5 km）、2009 油車寮（6.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -17379,7 +17122,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -17492,13 +17234,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.5 km）、1999 草嶺（0.1 km）、2009 油車寮（5.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 12 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -17527,10 +17270,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -17539,7 +17278,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -17648,16 +17386,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（1.0 km）、1999 草嶺（1.3 km）、2009 油車寮（6.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 12 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 9/3）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -17689,10 +17428,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -17701,7 +17436,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -17807,13 +17541,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.1 km）、1999 草嶺（0.5 km）、2009 油車寮（6.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 12 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -17846,7 +17581,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -17959,13 +17693,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.5 km）、1999 草嶺（0.1 km）、2009 油車寮（5.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -17994,10 +17729,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -18006,7 +17737,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -18093,16 +17823,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（2.3 km）、1999 草嶺（2.5 km）、2009 油車寮（7.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 9/9）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -18134,10 +17865,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -18145,7 +17872,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -18251,13 +17977,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（0.1 km）、1999 草嶺（0.5 km）、2009 油車寮（6.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -18290,7 +18017,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -18407,13 +18133,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（1.0 km）、1999 草嶺（1.3 km）、2009 油車寮（6.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -18446,7 +18173,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -18462,6 +18188,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl072",
   "name": "花蓮立霧溪(燕子口) · 2025",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2025-10-17 形成，清冊蓄水量 190 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.55913,
@@ -18592,16 +18319,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 6 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -18633,10 +18361,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -18645,7 +18369,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -18775,13 +18498,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -18812,10 +18536,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 10/24）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -18824,7 +18544,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -18915,16 +18634,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -18956,10 +18676,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -18968,7 +18684,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -19059,16 +18774,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -19100,10 +18816,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -19112,7 +18824,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -19203,16 +18914,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -19244,10 +18956,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -19256,7 +18964,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -19347,16 +19054,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -19388,10 +19096,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -19400,7 +19104,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -19534,13 +19237,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 241 mm、24 小時 30 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -19571,10 +19275,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 10/30）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -19583,7 +19283,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -19698,13 +19397,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 241 mm、24 小時 30 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -19733,10 +19433,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -19745,7 +19441,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -19843,13 +19538,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 241 mm、24 小時 30 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -19882,7 +19578,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -19981,13 +19676,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 241 mm、24 小時 30 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20020,7 +19716,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -20119,13 +19814,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 241 mm、24 小時 30 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20158,7 +19854,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -20293,13 +19988,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20328,10 +20024,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -20340,7 +20032,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -20455,13 +20146,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20490,10 +20182,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -20502,7 +20190,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -20600,13 +20287,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20639,7 +20327,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -20738,13 +20425,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20777,7 +20465,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -20876,13 +20563,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -20915,7 +20603,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -21050,13 +20737,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 43 mm、24 小時 19 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -21085,10 +20773,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -21097,7 +20781,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -21212,13 +20895,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 43 mm、24 小時 19 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -21247,10 +20931,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -21259,7 +20939,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -21357,13 +21036,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 43 mm、24 小時 19 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -21396,7 +21076,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -21495,13 +21174,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 43 mm、24 小時 19 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -21534,7 +21214,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -21633,13 +21312,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 43 mm、24 小時 19 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -21672,7 +21352,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -21807,13 +21486,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 132 mm、24 小時 130 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -21842,10 +21522,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -21854,7 +21530,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -21969,13 +21644,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 132 mm、24 小時 130 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -22004,10 +21680,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -22016,7 +21688,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -22107,16 +21778,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 132 mm、24 小時 130 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/17）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -22148,10 +21820,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -22160,7 +21828,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -22258,13 +21925,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 132 mm、24 小時 130 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -22297,7 +21965,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -22396,13 +22063,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 132 mm、24 小時 130 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -22435,7 +22103,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -22534,13 +22201,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 132 mm、24 小時 130 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -22573,7 +22241,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -22708,13 +22375,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -22743,10 +22411,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -22755,7 +22419,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -22852,13 +22515,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -22887,10 +22551,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -22899,7 +22559,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -23014,13 +22673,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -23049,10 +22709,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -23061,7 +22717,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -23152,16 +22807,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（8.7 km）、2014 瓦黑爾溪（7.0 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/29）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -23193,10 +22849,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -23205,7 +22857,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -23310,16 +22961,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/29）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -23351,10 +23003,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -23363,7 +23011,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "trend.shrinking",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -23462,16 +23109,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.1 km）、2016 立霧溪錐麓（1.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 11/29）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -23503,10 +23151,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -23515,7 +23159,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -23613,13 +23256,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -23652,7 +23296,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -23751,13 +23394,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -23790,7 +23434,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -23912,13 +23555,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -23949,10 +23593,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/5）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -23960,7 +23600,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -24065,13 +23704,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.1 km）、2016 立霧溪錐麓（1.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -24100,10 +23740,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -24112,7 +23748,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -24242,13 +23877,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -24279,10 +23915,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/5）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -24292,7 +23924,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.shrinking",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -24407,13 +24038,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -24442,10 +24074,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -24454,7 +24082,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -24554,16 +24181,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.4 km）、2016 立霧溪錐麓（0.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/5）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -24595,10 +24223,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -24606,7 +24230,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -24704,13 +24327,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（8.7 km）、2014 瓦黑爾溪（7.0 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -24743,7 +24367,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -24842,13 +24465,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -24881,7 +24505,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -24994,13 +24617,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -25031,7 +24655,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "trend.shrinking",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -25189,13 +24812,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -25226,10 +24850,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/11）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -25238,7 +24858,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -25363,13 +24982,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.5 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -25400,10 +25020,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/11）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -25412,7 +25028,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -25518,13 +25133,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -25553,10 +25169,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -25564,7 +25176,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -25669,13 +25280,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.1 km）、2016 立霧溪錐麓（1.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -25704,10 +25316,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -25716,7 +25324,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -25831,13 +25438,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -25866,10 +25474,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -25878,7 +25482,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -25969,16 +25572,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 12/11）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -26010,10 +25614,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -26022,7 +25622,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -26120,13 +25719,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（8.7 km）、2014 瓦黑爾溪（7.0 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -26159,7 +25759,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -26258,13 +25857,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -26297,7 +25897,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -26410,13 +26009,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 9 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -26447,7 +26047,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "trend.shrinking",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -26628,13 +26227,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.7 km）、2014 瓦黑爾溪（8.0 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -26665,10 +26265,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/17）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -26677,7 +26273,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -26774,13 +26369,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -26809,10 +26405,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -26821,7 +26413,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -26927,13 +26518,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -26962,10 +26554,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -26973,7 +26561,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -27078,13 +26665,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.1 km）、2016 立霧溪錐麓（1.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -27113,10 +26701,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -27125,7 +26709,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -27240,13 +26823,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.9 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -27275,10 +26859,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -27287,7 +26867,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -27422,13 +27001,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（8.5 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -27459,10 +27039,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 12/17）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -27470,7 +27046,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -27568,13 +27143,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（8.7 km）、2014 瓦黑爾溪（7.0 km）、2016 立霧溪錐麓（1.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -27607,7 +27183,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -27706,13 +27281,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2014 瓦黑爾溪（9.5 km）、2016 立霧溪錐麓（1.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -27745,7 +27321,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -27858,13 +27433,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2016 立霧溪錐麓（2.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 53 mm、24 小時 10 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -27895,7 +27471,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "trend.shrinking",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -27910,6 +27485,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl073",
   "name": "南投合歡溪 · 2026",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2026-04-07 形成，清冊蓄水量 4 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 降軌 105 共 15 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.24971,
@@ -28018,16 +27594,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 21 mm、24 小時 12 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/6）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -28059,17 +27636,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -28159,16 +27731,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 21 mm、24 小時 12 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/6）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -28200,10 +27773,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -28211,7 +27780,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -28297,16 +27865,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2778 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 21 mm、24 小時 12 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/6）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -28338,10 +27907,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -28349,7 +27914,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -28430,16 +27994,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.1 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 21 mm、24 小時 12 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/6）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -28471,17 +28036,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -28582,16 +28142,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2829 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 105 mm、24 小時 71 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/12）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -28623,10 +28184,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -28634,7 +28191,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -28738,16 +28294,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2736 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 105 mm、24 小時 71 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/12）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -28779,10 +28336,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -28790,7 +28343,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -28887,13 +28439,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 105 mm、24 小時 71 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -28925,7 +28478,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -29019,13 +28571,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2778 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 105 mm、24 小時 71 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -29057,7 +28610,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -29146,13 +28698,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.1 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 105 mm、24 小時 71 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -29181,7 +28734,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -29314,16 +28866,17 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.7 → 2.0 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -29355,10 +28908,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -29366,7 +28915,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -29464,16 +29012,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3047 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -29505,10 +29054,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -29516,7 +29061,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -29602,16 +29146,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3039 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -29643,10 +29188,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -29654,7 +29195,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -29740,16 +29280,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2979 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -29781,10 +29322,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -29792,7 +29329,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -29887,16 +29423,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.7 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -29928,17 +29465,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -30031,13 +29563,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2829 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -30069,7 +29602,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -30167,13 +29699,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -30205,7 +29738,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -30299,13 +29831,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2778 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -30337,7 +29870,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -30494,16 +30026,17 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.7 → 1.8 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -30535,10 +30068,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -30547,7 +30076,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -30642,16 +30170,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -30683,17 +30212,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -30793,16 +30317,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -30834,10 +30359,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -30845,7 +30366,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -30959,16 +30479,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2732 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -31000,10 +30521,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -31011,7 +30528,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -31116,13 +30632,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3047 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -31154,7 +30671,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -31248,13 +30764,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3039 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -31286,7 +30803,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -31380,13 +30896,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2979 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -31418,7 +30935,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -31516,13 +31032,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 143 mm、24 小時 138 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -31554,7 +31071,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -31731,13 +31247,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.7 → 3.2 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -31768,10 +31285,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 4/25）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -31780,7 +31293,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -31880,16 +31392,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -31921,10 +31434,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -31932,7 +31441,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32032,16 +31540,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3030 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32073,10 +31582,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -32084,7 +31589,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32188,16 +31692,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32229,10 +31734,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -32240,7 +31741,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32330,16 +31830,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32371,10 +31872,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -32382,7 +31879,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32505,16 +32001,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32546,17 +32043,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32646,16 +32138,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32687,10 +32180,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -32698,7 +32187,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32788,16 +32276,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32829,10 +32318,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -32840,7 +32325,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -32934,16 +32418,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -32975,10 +32460,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -32986,7 +32467,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -33071,16 +32551,17 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -33112,17 +32593,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.pending",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -33208,16 +32684,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 4/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -33249,10 +32726,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -33260,7 +32733,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -33362,13 +32834,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -33397,7 +32870,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -33494,13 +32966,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -33532,7 +33005,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -33640,13 +33112,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 155 mm、24 小時 14 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -33678,7 +33151,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -33855,13 +33327,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.7 → 3.2 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -33890,10 +33363,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -33902,7 +33371,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -34009,13 +33477,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34047,7 +33516,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -34155,13 +33623,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3030 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34193,7 +33662,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -34305,13 +33773,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34343,7 +33812,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -34441,13 +33909,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34479,7 +33948,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -34610,13 +34078,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34645,7 +34114,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -34742,13 +34210,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34780,7 +34249,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -34878,13 +34346,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -34916,7 +34385,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -35018,13 +34486,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35056,7 +34525,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -35159,13 +34627,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35194,7 +34663,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -35291,13 +34759,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35329,7 +34798,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -35422,13 +34890,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35457,7 +34926,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -35564,13 +35032,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35602,7 +35071,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -35696,13 +35164,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 25 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35734,7 +35203,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -35911,13 +35379,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "support",
         "text": "面積 0.7 → 3.2 公頃，擴大中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -35946,10 +35415,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -35958,7 +35423,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.growing",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -36065,13 +35529,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36103,7 +35568,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -36211,13 +35675,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3030 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36249,7 +35714,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -36361,13 +35825,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36399,7 +35864,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -36497,13 +35961,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36535,7 +36000,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -36666,13 +36130,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36701,7 +36166,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -36798,13 +36262,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36836,7 +36301,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -36934,13 +36398,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -36972,7 +36437,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -37074,13 +36538,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -37112,7 +36577,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -37215,13 +36679,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -37250,7 +36715,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -37347,13 +36811,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -37385,7 +36850,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -37478,13 +36942,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -37513,7 +36978,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -37620,13 +37084,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -37658,7 +37123,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -37752,13 +37216,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 76 mm、24 小時 42 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -37790,7 +37255,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -37963,13 +37427,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38000,17 +37465,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 5/7）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -38117,13 +37577,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38155,7 +37616,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -38263,13 +37723,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3030 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38301,7 +37762,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -38413,13 +37873,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38451,7 +37912,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -38549,13 +38009,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38587,7 +38048,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -38718,13 +38178,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38753,7 +38214,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -38850,13 +38310,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -38888,7 +38349,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -38986,13 +38446,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39024,7 +38485,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -39126,13 +38586,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39164,7 +38625,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -39267,13 +38727,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39302,7 +38763,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -39399,13 +38859,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39437,7 +38898,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -39530,13 +38990,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39565,7 +39026,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -39672,13 +39132,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39710,7 +39171,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -39804,13 +39264,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 71 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -39842,7 +39303,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -40015,13 +39475,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40050,17 +39511,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.lost",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -40167,13 +39623,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40205,7 +39662,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -40313,13 +39769,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3030 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40351,7 +39808,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -40463,13 +39919,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40501,7 +39958,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -40599,13 +40055,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40637,7 +40094,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -40768,13 +40224,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40803,7 +40260,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -40900,13 +40356,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -40938,7 +40395,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -41036,13 +40492,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41074,7 +40531,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -41176,13 +40632,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41214,7 +40671,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -41317,13 +40773,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41352,7 +40809,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -41449,13 +40905,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41487,7 +40944,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -41580,13 +41036,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41615,7 +41072,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -41722,13 +41178,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41760,7 +41217,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -41854,13 +41310,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 203 mm、24 小時 104 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -41892,7 +41349,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -42065,13 +41521,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -42100,17 +41557,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.lost",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -42224,16 +41676,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3092 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 5/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -42265,10 +41718,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -42276,7 +41725,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -42383,13 +41831,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -42421,7 +41870,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -42533,13 +41981,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -42571,7 +42020,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -42669,13 +42117,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -42707,7 +42156,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -42838,13 +42286,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -42873,7 +42322,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -42970,13 +42418,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43008,7 +42457,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -43106,13 +42554,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43144,7 +42593,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -43246,13 +42694,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43284,7 +42733,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -43387,13 +42835,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43422,7 +42871,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -43519,13 +42967,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43557,7 +43006,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -43650,13 +43098,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43685,7 +43134,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -43792,13 +43240,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43830,7 +43279,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -43924,13 +43372,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 22 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -43962,7 +43411,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -44135,13 +43583,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -44170,17 +43619,12 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
        "persistence.lost",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -44287,13 +43731,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3018 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -44325,7 +43770,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -44437,13 +43881,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -44475,7 +43920,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -44573,13 +44017,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -44611,7 +44056,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -44742,13 +44186,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.4 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -44777,7 +44222,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -44874,13 +44318,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -44912,7 +44357,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -45010,13 +44454,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45048,7 +44493,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -45150,13 +44594,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45188,7 +44633,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -45291,13 +44735,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45326,7 +44771,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -45423,13 +44867,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45461,7 +44906,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -45583,13 +45027,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3092 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45621,7 +45066,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -45714,13 +45158,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45749,7 +45194,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -45856,13 +45300,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -45894,7 +45339,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -45988,13 +45432,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 45 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -46026,7 +45471,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -46218,13 +45662,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2733 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -46255,10 +45700,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 5/24）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -46266,7 +45707,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -46384,16 +45824,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3035 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 5/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -46425,10 +45866,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -46436,7 +45873,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -46564,16 +46000,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3110 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 5/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -46605,10 +46042,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -46616,7 +46049,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -46758,16 +46190,17 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2727 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 5/24）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -46799,10 +46232,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -46810,7 +46239,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -46921,13 +46349,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -46959,7 +46388,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -47057,13 +46485,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47095,7 +46524,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -47193,13 +46621,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47231,7 +46660,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -47329,13 +46757,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47367,7 +46796,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -47469,13 +46897,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47507,7 +46936,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -47610,13 +47038,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47645,7 +47074,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -47742,13 +47170,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47780,7 +47209,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -47873,13 +47301,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -47908,7 +47337,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -48015,13 +47443,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -48053,7 +47482,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -48147,13 +47575,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 10 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -48185,7 +47614,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -48377,13 +47805,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2733 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -48412,10 +47841,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -48423,7 +47848,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -48548,13 +47972,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3035 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -48586,7 +48011,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -48698,13 +48122,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -48736,7 +48161,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -48872,13 +48296,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3110 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -48910,7 +48335,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -49008,13 +48432,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49046,7 +48471,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -49144,13 +48568,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49182,7 +48607,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -49280,13 +48704,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49318,7 +48743,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -49420,13 +48844,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49458,7 +48883,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -49608,13 +49032,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2727 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49646,7 +49071,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -49749,13 +49173,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49784,7 +49209,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -49881,13 +49305,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -49919,7 +49344,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -50012,13 +49436,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -50047,7 +49472,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -50154,13 +49578,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -50192,7 +49617,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -50286,13 +49710,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -50324,7 +49749,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -50530,13 +49954,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2736 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -50567,10 +49992,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 5/31）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -50578,7 +49999,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -50725,16 +50145,17 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "context",
         "text": "面積 0.8 → 0.5 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 5/31）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -50766,10 +50187,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -50778,7 +50195,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.shrinking",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -50903,13 +50319,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3035 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -50941,7 +50358,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51053,13 +50469,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51091,7 +50508,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51189,13 +50605,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51227,7 +50644,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51325,13 +50741,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51363,7 +50780,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51461,13 +50877,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51499,7 +50916,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51601,13 +51017,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51639,7 +51056,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51789,13 +51205,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2727 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51827,7 +51244,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -51930,13 +51346,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -51965,7 +51382,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -52062,13 +51478,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -52100,7 +51517,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -52193,13 +51609,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -52228,7 +51645,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -52335,13 +51751,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -52373,7 +51790,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -52467,13 +51883,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -52505,7 +51922,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -52711,13 +52127,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2736 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -52746,10 +52163,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -52757,7 +52170,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -52882,13 +52294,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3035 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -52920,7 +52333,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53032,13 +52444,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2991 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53070,7 +52483,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53168,13 +52580,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2892 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53206,7 +52619,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53304,13 +52716,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3011 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53342,7 +52755,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53440,13 +52852,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3038 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53478,7 +52891,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53580,13 +52992,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3097 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53618,7 +53031,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53768,13 +53180,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2727 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53806,7 +53219,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -53909,13 +53321,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 1.0 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -53944,7 +53357,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -54041,13 +53453,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2721 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -54079,7 +53492,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -54172,13 +53584,14 @@ window.EVENT_SCENARIOS = [
         "kind": "landslide",
         "status": "support",
         "text": "500 m 內有 SAR 崩塌訊號 0.6 公頃"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -54207,7 +53620,6 @@ window.EVENT_SCENARIOS = [
        "persistence.failed",
        "spatial.on_river",
        "spatial.landslide",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -54314,13 +53726,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（2738 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -54352,7 +53765,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -54446,13 +53858,14 @@ window.EVENT_SCENARIOS = [
         "kind": "terrain",
         "status": "support",
         "text": "崩塌延伸到水體下游、湖底高程（3192 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -54484,7 +53897,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -54639,13 +54051,14 @@ window.EVENT_SCENARIOS = [
         "kind": "trend",
         "status": "context",
         "text": "面積 0.8 → 0.5 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 4 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -54678,7 +54091,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "trend.shrinking",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -54694,6 +54106,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl074",
   "name": "加走寮溪 · 2026",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2026-06-13 形成，清冊蓄水量 10 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 降軌 105 共 12 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    120.69867,
@@ -54849,16 +54262,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.8 km）、1999 草嶺（8.9 km）、2017 東埔蚋溪小半天（7.9 km）、2025 雲林清水溪(草嶺)（8.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 42 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 6/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -54890,10 +54304,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -54901,7 +54311,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -55009,13 +54418,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.8 km）、1999 草嶺（8.9 km）、2017 東埔蚋溪小半天（7.9 km）、2025 雲林清水溪(草嶺)（8.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -55045,7 +54455,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -55165,16 +54574,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 8 mm、24 小時 6 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/1）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -55206,10 +54616,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -55218,7 +54624,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -55345,13 +54750,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 19 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -55384,7 +54790,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -55491,16 +54896,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（10.0 km）、2017 東埔蚋溪小半天（6.7 km）、2025 雲林清水溪(草嶺)（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/13）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -55532,10 +54938,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -55544,7 +54946,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -55656,13 +55057,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -55695,7 +55097,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -55823,13 +55224,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 73 mm、24 小時 6 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -55862,7 +55264,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -55961,13 +55362,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（10.0 km）、2017 東埔蚋溪小半天（6.7 km）、2025 雲林清水溪(草嶺)（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 73 mm、24 小時 6 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -56000,7 +55402,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -56128,13 +55529,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 12 mm、24 小時 3 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -56167,7 +55569,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -56266,13 +55667,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（10.0 km）、2017 東埔蚋溪小半天（6.7 km）、2025 雲林清水溪(草嶺)（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 12 mm、24 小時 3 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -56305,7 +55707,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -56412,16 +55813,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（9.4 km）、1999 草嶺（9.7 km）、2017 東埔蚋溪小半天（7.9 km）、2025 雲林清水溪(草嶺)（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/31）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -56453,10 +55855,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -56465,7 +55863,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -56577,13 +55974,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -56616,7 +56014,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -56715,13 +56112,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（10.0 km）、2017 東埔蚋溪小半天（6.7 km）、2025 雲林清水溪(草嶺)（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -56754,7 +56152,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -56868,13 +56265,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（9.4 km）、1999 草嶺（9.7 km）、2017 東埔蚋溪小半天（7.9 km）、2025 雲林清水溪(草嶺)（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 15 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -56907,7 +56305,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -57020,13 +56417,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 4 筆堰塞湖：1979 草嶺（8.9 km）、1999 草嶺（9.0 km）、2017 東埔蚋溪小半天（7.8 km）、2025 雲林清水溪(草嶺)（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 15 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -57059,7 +56457,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -57158,13 +56555,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：1979 草嶺（10.0 km）、2017 東埔蚋溪小半天（6.7 km）、2025 雲林清水溪(草嶺)（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 15 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -57197,7 +56595,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -57213,6 +56610,7 @@ window.EVENT_SCENARIOS = [
   "id": "inv_bl075",
   "name": "花蓮萬里溪 · 2026",
   "kind": "replay",
+  "active": null,
   "description": "全清冊回放：清冊登載 2026-06-20 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 7 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
   "center": [
    121.26957,
@@ -57349,16 +56747,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（2.4 km）、2025 花蓮馬太鞍溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 183 mm、24 小時 52 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/7）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -57390,10 +56789,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -57402,7 +56797,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -57501,16 +56895,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 183 mm、24 小時 52 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/7）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -57542,10 +56937,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -57554,7 +56945,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -57649,16 +57039,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 183 mm、24 小時 52 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/7）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -57690,10 +57081,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -57702,7 +57089,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -57788,16 +57174,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.2 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 183 mm、24 小時 52 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/7）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -57829,10 +57216,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -57840,7 +57223,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -57970,13 +57352,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（2.4 km）、2025 花蓮馬太鞍溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -58007,10 +57390,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/19）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58019,7 +57398,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -58125,13 +57503,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -58162,10 +57541,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/19）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58173,7 +57548,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -58265,13 +57639,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.2 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -58300,10 +57675,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58311,7 +57682,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -58418,16 +57788,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/19）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -58459,10 +57830,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58471,7 +57838,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -58562,16 +57928,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.9 km）、2025 花蓮馬太鞍溪（10.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/19）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -58603,10 +57970,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58615,7 +57978,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -58710,16 +58072,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/19）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -58751,10 +58114,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58763,7 +58122,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -58854,16 +58212,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（1.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/19）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -58895,10 +58254,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -58907,7 +58262,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -58998,16 +58352,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/19）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -59039,10 +58394,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -59051,7 +58402,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -59157,13 +58507,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 50 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -59196,7 +58547,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -59364,13 +58714,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -59401,10 +58752,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/31）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -59414,7 +58761,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -59529,13 +58875,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（2.4 km）、2025 花蓮馬太鞍溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -59564,10 +58911,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -59576,7 +58919,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -59677,13 +59019,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -59712,10 +59055,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -59724,7 +59063,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -59821,13 +59159,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（1.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -59856,10 +59195,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -59868,7 +59203,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -59993,13 +59327,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60030,10 +59365,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/31）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -60042,7 +59373,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -60134,13 +59464,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.2 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60169,10 +59500,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -60180,7 +59507,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -60278,13 +59604,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.9 km）、2025 花蓮馬太鞍溪（10.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60317,7 +59644,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -60424,13 +59750,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60463,7 +59790,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -60562,13 +59888,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60601,7 +59928,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -60755,13 +60081,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60792,10 +60119,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/12）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -60805,7 +60128,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -60916,13 +60238,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（1.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -60953,10 +60276,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/12）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -60965,7 +60284,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -61104,13 +60422,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -61141,10 +60460,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/12）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -61153,7 +60468,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -61282,13 +60596,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（2.4 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -61319,10 +60634,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/12）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -61331,7 +60642,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -61432,13 +60742,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -61467,10 +60778,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -61479,7 +60786,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -61571,13 +60877,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.2 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -61606,10 +60913,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -61617,7 +60920,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -61722,16 +61024,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/12）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -61763,10 +61066,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -61775,7 +61074,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -61873,13 +61171,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.9 km）、2025 花蓮馬太鞍溪（10.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -61912,7 +61211,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -62011,13 +61309,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -62050,7 +61349,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -62238,13 +61536,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -62275,10 +61574,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/18）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -62288,7 +61583,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -62427,13 +61721,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -62462,10 +61757,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -62474,7 +61765,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -62603,13 +61893,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（2.4 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -62638,10 +61929,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -62650,7 +61937,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -62751,13 +62037,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -62786,10 +62073,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -62798,7 +62081,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -62922,13 +62204,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（1.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -62959,10 +62242,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/18）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -62970,7 +62249,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -63062,13 +62340,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.2 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -63097,10 +62376,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -63108,7 +62383,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -63227,16 +62501,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -63268,10 +62543,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -63280,7 +62551,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -63371,16 +62641,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -63412,10 +62683,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -63424,7 +62691,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -63515,16 +62781,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（3.3 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/18）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -63556,10 +62823,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -63568,7 +62831,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -63666,13 +62928,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.9 km）、2025 花蓮馬太鞍溪（10.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -63705,7 +62968,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -63804,13 +63066,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 115 mm、24 小時 58 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -63843,7 +63106,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -64054,13 +63316,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -64091,10 +63354,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/24）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -64104,7 +63363,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -64243,13 +63501,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -64278,10 +63537,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -64290,7 +63545,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -64419,13 +63673,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（2.4 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -64454,10 +63709,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -64466,7 +63717,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -64567,13 +63817,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -64602,10 +63853,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -64614,7 +63861,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -64738,13 +63984,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（1.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -64773,10 +64020,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -64784,7 +64027,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -64876,13 +64118,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.2 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -64911,10 +64154,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -64922,7 +64161,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -65019,13 +64257,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（3.3 km）、2025 花蓮馬太鞍溪（9.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -65054,10 +64293,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65066,7 +64301,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -65192,13 +64426,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.7 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -65229,7 +64464,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -65327,13 +64561,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 2 筆堰塞湖：2024 花蓮萬里溪（1.9 km）、2025 花蓮馬太鞍溪（10.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -65366,7 +64601,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -65465,13 +64699,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（4.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -65504,7 +64739,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -65603,13 +64837,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 23 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -65642,7 +64877,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -65655,9 +64889,887 @@ window.EVENT_SCENARIOS = [
   ]
  },
  {
+  "id": "live_E121270_N23792",
+  "name": "花蓮萬里溪",
+  "kind": "live",
+  "active": true,
+  "description": "每日監看（監看中）：清冊監測中：花蓮萬里溪（2026/06/20）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 10 張，參數與全清冊回放相同。",
+  "center": [
+   121.26957,
+   23.79204
+  ],
+  "windowKm": 4.0,
+  "reference": {
+   "lakeId": "bl075",
+   "name": "花蓮萬里溪",
+   "lonLat": [
+    121.26957,
+    23.79204
+   ],
+   "label": "清冊壩址"
+  },
+  "trigger": {
+   "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
+   "time": "2026-10-11T15:42+08:00",
+   "source": "每日監看"
+  },
+  "snapshots": [
+   {
+    "asOf": "2026-10-10T21:51:00+00:00",
+    "label": "10/11 05:51",
+    "what": "新一期 SAR 全幅偵測",
+    "since": "觸發前約 10 小時",
+    "nextPass": "10/23",
+    "counts": {
+     "high": 0,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 1,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.267733,
+       23.792923
+      ],
+      "distanceFromReferenceM": 211,
+      "areaHectare": 1.5,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1034.0,
+      "polygonLonLat": [
+       [
+        121.26905992652733,
+        23.792688783661234
+       ],
+       [
+        121.26914975805575,
+        23.79205996296235
+       ],
+       [
+        121.26852093735685,
+        23.792239626019175
+       ],
+       [
+        121.26905992652733,
+        23.792688783661234
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "areaHectare": 1.5,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.50 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.37 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期 SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 1.5 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 1.50 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.4 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
+       },
+       {
+        "kind": "rain",
+        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認暗區是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/23）",
+        "reason": "A 級需要兩期一致；單期出現的暗區多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       },
+       {
+        "label": "補查形成期間雨量",
+        "reason": "確認觸發條件；目前觀測表此欄空白"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.rain",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "hindsight": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "live_E121298_N23701",
+  "name": "花蓮馬太鞍溪",
+  "kind": "live",
+  "active": true,
+  "description": "每日監看（監看中）：清冊監測中：花蓮馬太鞍溪（2025/7/21）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 5 張，參數與全清冊回放相同。",
+  "center": [
+   121.29752,
+   23.70061
+  ],
+  "windowKm": 4.0,
+  "reference": {
+   "lakeId": "bl071",
+   "name": "花蓮馬太鞍溪",
+   "lonLat": [
+    121.29752,
+    23.70061
+   ],
+   "label": "清冊壩址"
+  },
+  "trigger": {
+   "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
+   "time": "2026-10-11T15:42+08:00",
+   "source": "每日監看"
+  },
+  "snapshots": [
+   {
+    "asOf": "2026-10-10T21:51:00+00:00",
+    "label": "10/11 05:51",
+    "what": "新一期 SAR 全幅偵測",
+    "since": "觸發前約 10 小時",
+    "nextPass": "10/23",
+    "counts": {
+     "high": 0,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 1,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.301837,
+       23.700615
+      ],
+      "distanceFromReferenceM": 440,
+      "areaHectare": 1.16,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 916.0,
+      "polygonLonLat": [
+       [
+        121.30229759203976,
+        23.701330119266277
+       ],
+       [
+        121.30148910828406,
+        23.70106062468104
+       ],
+       [
+        121.30139927675565,
+        23.700431803982156
+       ],
+       [
+        121.30130944522723,
+        23.70106062468104
+       ],
+       [
+        121.30229759203976,
+        23.701330119266277
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "areaHectare": 1.16,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.16 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.68 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（916 m）附近或以下，研判土石堵塞下游河道",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期 SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 1.2 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 1.16 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.7 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（916 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
+       },
+       {
+        "kind": "rain",
+        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認暗區是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/23）",
+        "reason": "A 級需要兩期一致；單期出現的暗區多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       },
+       {
+        "label": "補查形成期間雨量",
+        "reason": "確認觸發條件；目前觀測表此欄空白"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.rain",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "hindsight": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "live_E121345_N24564",
+  "name": "新竹泰崗溪",
+  "kind": "live",
+  "active": true,
+  "description": "每日監看（監看中）：清冊監測中：新竹泰崗溪（2024/11/2）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 5 張，參數與全清冊回放相同。",
+  "center": [
+   121.34463,
+   24.56425
+  ],
+  "windowKm": 4.0,
+  "reference": {
+   "lakeId": "bl068",
+   "name": "新竹泰崗溪",
+   "lonLat": [
+    121.34463,
+    24.56425
+   ],
+   "label": "清冊壩址"
+  },
+  "trigger": {
+   "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
+   "time": "2026-10-11T15:42+08:00",
+   "source": "每日監看"
+  },
+  "snapshots": [
+   {
+    "asOf": "2026-10-10T21:51:00+00:00",
+    "label": "10/11 05:51",
+    "what": "新一期 SAR 全幅偵測",
+    "since": "觸發前約 10 小時",
+    "nextPass": "10/23",
+    "counts": {
+     "high": 0,
+     "medium": 3,
+     "low": 0
+    },
+    "newCount": 3,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.358195,
+       24.547716
+      ],
+      "distanceFromReferenceM": 2286,
+      "areaHectare": 0.62,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1394.0,
+      "polygonLonLat": [
+       [
+        121.35943044410975,
+        24.548082106077338
+       ],
+       [
+        121.35925078105292,
+        24.547812611492102
+       ],
+       [
+        121.35916094952451,
+        24.547992274548925
+       ],
+       [
+        121.35943044410975,
+        24.548082106077338
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "areaHectare": 0.62,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.62 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.51 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1394 m）附近或以下，研判土石堵塞下游河道",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期 SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 0.62 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.5 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1394 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.3 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：新竹泰崗溪（2024/11/2）"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
+       },
+       {
+        "kind": "rain",
+        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認暗區是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/23）",
+        "reason": "A 級需要兩期一致；單期出現的暗區多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       },
+       {
+        "label": "補查形成期間雨量",
+        "reason": "確認觸發條件；目前觀測表此欄空白"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.rain",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "hindsight": []
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.353729,
+       24.577187
+      ],
+      "distanceFromReferenceM": 1701,
+      "areaHectare": 0.56,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1796.0,
+      "polygonLonLat": [
+       [
+        121.35269307947885,
+        24.576379037527104
+       ],
+       [
+        121.35242358489361,
+        24.57664853211234
+       ],
+       [
+        121.35269307947885,
+        24.576828195169163
+       ],
+       [
+        121.35269307947885,
+        24.576379037527104
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "areaHectare": 0.56,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 0.87 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1796 m）附近或以下，研判土石堵塞下游河道",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期 SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 0.56 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 0.9 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1796 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（9.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：新竹泰崗溪（2024/11/2）"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
+       },
+       {
+        "kind": "rain",
+        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認暗區是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/23）",
+        "reason": "A 級需要兩期一致；單期出現的暗區多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       },
+       {
+        "label": "補查形成期間雨量",
+        "reason": "確認觸發條件；目前觀測表此欄空白"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.rain",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "hindsight": []
+     },
+     {
+      "id": "E3",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.360967,
+       24.565745
+      ],
+      "distanceFromReferenceM": 1662,
+      "areaHectare": 0.5,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1412.0,
+      "polygonLonLat": [
+       [
+        121.36077791703593,
+        24.56649756940179
+       ],
+       [
+        121.36104741162116,
+        24.56613824328814
+       ],
+       [
+        121.36050842245069,
+        24.566048411759727
+       ],
+       [
+        121.36077791703593,
+        24.56649756940179
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "areaHectare": 0.5,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.50 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.06 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1412 m）附近或以下，研判土石堵塞下游河道",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期 SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E3 需要人工確認：單期 SAR 出現約 0.5 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 0.50 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1412 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2018 宜蘭石頭溪（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：新竹泰崗溪（2024/11/2）"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
+       },
+       {
+        "kind": "rain",
+        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認暗區是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/23）",
+        "reason": "A 級需要兩期一致；單期出現的暗區多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       },
+       {
+        "label": "補查形成期間雨量",
+        "reason": "確認觸發條件；目前觀測表此欄空白"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.rain",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "hindsight": []
+     }
+    ]
+   }
+  ]
+ },
+ {
   "id": "matai_an_2025",
   "name": "馬太鞍溪 · 2025 薇帕颱風",
   "kind": "positive",
+  "active": null,
   "description": "壩址周圍 4 km 窗格，Sentinel-1 降軌 105 逐期回放。湖於 2025-07-21 17:54 形成，2025-09-23 溢流潰決。",
   "center": [
    121.29752,
@@ -65816,6 +65928,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 208 mm、24 小時 18 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -65827,10 +65944,6 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/29）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -65858,10 +65971,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65871,7 +65980,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "priority.medium.pending"
       ],
@@ -65981,6 +66089,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 208 mm、24 小時 18 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -65992,10 +66105,6 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 7/29）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -66023,10 +66132,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -66036,7 +66141,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "priority.medium.pending"
       ],
@@ -66177,14 +66281,14 @@ window.EVENT_SCENARIOS = [
       "action": "建議立即查證",
       "confidence": "高",
       "confidenceReasons": [
-       "SAR 與他單位光學或航拍成果一致（獨立來源）",
+       "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
        "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
       ],
       "persistence": "pending",
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "中",
-      "summary": "E3 值得優先查證：6 項證據一致（SAR 新增水體、貼河道、附近崩塌、堵塞型態、他單位光學影像、他單位航拍），其中光學或航拍來自其他單位、與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
+      "summary": "E3 值得優先查證：6 項證據一致（SAR 新增水體、貼河道、附近崩塌、堵塞型態、他單位光學影像、他單位航拍），其中他單位的觀測與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
       "evidence": [
        {
         "kind": "sar",
@@ -66222,6 +66326,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 89 mm、24 小時 32 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "optical",
         "status": "support",
         "text": "7/24 農村水保署以 Planet 光學衛星影像發現堰塞湖，當日成立應變小組",
@@ -66245,10 +66354,6 @@ window.EVENT_SCENARIOS = [
       ],
       "gaps": [
        {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
-       {
         "kind": "field",
         "text": "人工查證：尚未進行"
        }
@@ -66270,10 +66375,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/4）",
         "reason": "同時完成 SAR 持續性複核"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -66285,7 +66386,6 @@ window.EVENT_SCENARIOS = [
        "external.optical",
        "external.aerial",
        "exposure.known",
-       "gap.rain",
        "priority.high.corroborated"
       ],
       "hindsight": []
@@ -66421,6 +66521,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 89 mm、24 小時 32 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -66429,10 +66534,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -66462,7 +66563,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -66580,6 +66680,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 89 mm、24 小時 32 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -66588,10 +66693,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -66621,7 +66722,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -66764,14 +66864,14 @@ window.EVENT_SCENARIOS = [
       "action": "建議立即查證",
       "confidence": "高",
       "confidenceReasons": [
-       "SAR 與他單位光學或航拍成果一致（獨立來源）",
+       "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
        "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
       ],
       "persistence": "confirmed",
       "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "中",
-      "summary": "E3 值得優先查證：7 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態、他單位光學影像、他單位航拍），其中光學或航拍來自其他單位、與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
+      "summary": "E3 值得優先查證：7 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態、他單位光學影像、他單位航拍），其中他單位的觀測與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
       "evidence": [
        {
         "kind": "sar",
@@ -66814,6 +66914,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 89 mm、24 小時 32 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "optical",
         "status": "support",
         "text": "7/24 農村水保署以 Planet 光學衛星影像發現堰塞湖，當日成立應變小組",
@@ -66837,10 +66942,6 @@ window.EVENT_SCENARIOS = [
       ],
       "gaps": [
        {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
-       {
         "kind": "field",
         "text": "人工查證：尚未進行"
        }
@@ -66862,10 +66963,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/10）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -66877,7 +66974,6 @@ window.EVENT_SCENARIOS = [
        "external.optical",
        "external.aerial",
        "exposure.known",
-       "gap.rain",
        "priority.high.confirmed"
       ],
       "hindsight": []
@@ -67013,6 +67109,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 89 mm、24 小時 32 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -67021,10 +67122,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -67054,7 +67151,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -67172,6 +67268,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 89 mm、24 小時 32 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -67180,10 +67281,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -67213,7 +67310,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -67469,14 +67565,14 @@ window.EVENT_SCENARIOS = [
       "action": "建議立即查證",
       "confidence": "高",
       "confidenceReasons": [
-       "SAR 與他單位光學或航拍成果一致（獨立來源）",
+       "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
        "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
       ],
       "persistence": "confirmed",
       "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "大",
-      "summary": "E3 值得優先查證：8 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態、面積擴大、他單位光學影像、他單位航拍），其中光學或航拍來自其他單位、與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
+      "summary": "E3 值得優先查證：8 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態、面積擴大、他單位光學影像、他單位航拍），其中他單位的觀測與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
       "evidence": [
        {
         "kind": "sar",
@@ -67524,6 +67620,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "optical",
         "status": "support",
         "text": "7/24 農村水保署以 Planet 光學衛星影像發現堰塞湖，當日成立應變小組",
@@ -67554,10 +67655,6 @@ window.EVENT_SCENARIOS = [
       ],
       "gaps": [
        {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
-       {
         "kind": "field",
         "text": "人工查證：尚未進行"
        }
@@ -67579,10 +67676,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/28）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -67596,7 +67689,6 @@ window.EVENT_SCENARIOS = [
        "external.aerial",
        "external.official",
        "exposure.known",
-       "gap.rain",
        "priority.high.confirmed"
       ],
       "hindsight": []
@@ -67709,6 +67801,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -67720,10 +67817,6 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -67751,10 +67844,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -67764,7 +67853,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "priority.medium.pending"
       ],
@@ -67866,6 +67954,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -67877,10 +67970,6 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 8/28）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -67908,10 +67997,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -67921,7 +68006,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "priority.medium.pending"
       ],
@@ -68058,6 +68142,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -68066,10 +68155,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -68099,7 +68184,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -68217,6 +68301,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 2 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -68225,10 +68314,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -68258,7 +68343,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -68433,14 +68517,14 @@ window.EVENT_SCENARIOS = [
       "action": "建議立即查證",
       "confidence": "高",
       "confidenceReasons": [
-       "SAR 與他單位光學或航拍成果一致（獨立來源）",
+       "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
        "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
       ],
       "persistence": "confirmed",
       "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "大",
-      "summary": "E3 值得優先查證：8 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態、面積擴大、他單位光學影像、他單位航拍），其中光學或航拍來自其他單位、與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
+      "summary": "E3 值得優先查證：8 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態、面積擴大、他單位光學影像、他單位航拍），其中他單位的觀測與 SAR 互相獨立；目前缺少現地證據，建議下一步 UAV 現地查證並取得他單位既有判釋成果。",
       "evidence": [
        {
         "kind": "sar",
@@ -68488,6 +68572,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 31 mm、24 小時 9 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "optical",
         "status": "support",
         "text": "7/24 農村水保署以 Planet 光學衛星影像發現堰塞湖，當日成立應變小組",
@@ -68518,10 +68607,6 @@ window.EVENT_SCENARIOS = [
       ],
       "gaps": [
        {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
-       {
         "kind": "field",
         "text": "人工查證：尚未進行"
        }
@@ -68543,10 +68628,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 9/3）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -68560,7 +68641,6 @@ window.EVENT_SCENARIOS = [
        "external.aerial",
        "external.official",
        "exposure.known",
-       "gap.rain",
        "priority.high.confirmed"
       ],
       "hindsight": []
@@ -68696,6 +68776,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 31 mm、24 小時 9 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -68704,10 +68789,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -68737,7 +68818,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -68855,6 +68935,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 31 mm、24 小時 9 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -68863,10 +68948,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -68896,7 +68977,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -69018,6 +69098,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 31 mm、24 小時 9 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -69026,10 +69111,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -69059,7 +69140,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -69169,6 +69249,11 @@ window.EVENT_SCENARIOS = [
         "text": "區域曾受 2024-04-03 花蓮地震（規模 7.2）影響"
        },
        {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 31 mm、24 小時 9 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       },
+       {
         "kind": "exposure",
         "status": "context",
         "text": "下游為光復鄉市區與台 9 線馬太鞍溪橋；9/21 撤離範圍為光復鄉、鳳林鎮、萬榮鄉共 1,800 戶、8,000 多人（事後資料，僅供規模參考）",
@@ -69177,10 +69262,6 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -69210,7 +69291,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "history.nearby",
        "exposure.known",
-       "gap.rain",
        "gap.optical",
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
@@ -69225,6 +69305,7 @@ window.EVENT_SCENARIOS = [
   "id": "neg2026_matai_an",
   "name": "馬太鞍溪 · 2026 汛期（負案例）",
   "kind": "negative",
+  "active": null,
   "description": "2026 汛期 17 期，同一窗格、同一組參數（Sentinel-1 降軌 105）；這段期間窗格內沒有新的堰塞湖。E1 位於崩塌堆積區，自 6/24 起被列為高優先，經 Sentinel-2 事後查證確認為誤報（已知失效情境：事件前地形看不到崩塌後的新地形）。E1 只有 SAR 一種證據，研判信心從未到「高」。",
   "center": [
    121.29752,
@@ -69345,16 +69426,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 74 mm、24 小時 26 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 6/13）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -69386,10 +69468,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -69398,7 +69476,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -69533,13 +69610,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 300 mm、24 小時 28 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -69572,7 +69650,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.spatial_vs_persistence",
@@ -69715,16 +69792,17 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 46 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 6/25）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
        },
        {
         "kind": "optical",
@@ -69756,10 +69834,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -69768,7 +69842,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -69930,13 +70003,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -69967,10 +70041,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 6/30）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -69979,7 +70049,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -70159,13 +70228,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 7 mm、24 小時 7 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -70196,10 +70266,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/1）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -70208,7 +70274,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -70398,13 +70463,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.6 km）、2025 花蓮馬太鞍溪（0.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 50 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -70435,10 +70501,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/7）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -70447,7 +70509,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -70664,13 +70725,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -70701,10 +70763,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/13）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -70714,7 +70772,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -70937,13 +70994,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 170 mm、24 小時 6 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -70974,10 +71032,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/19）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -70987,7 +71041,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -71223,13 +71276,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 8 mm、24 小時 3 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -71260,10 +71314,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 7/25）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -71272,7 +71322,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -71508,13 +71557,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 1 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -71543,10 +71593,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -71555,7 +71601,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -71791,13 +71836,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 8 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -71826,10 +71872,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -71838,7 +71880,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -72089,13 +72130,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 64 mm、24 小時 12 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -72126,10 +72168,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 8/18）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -72139,7 +72177,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -72390,13 +72427,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.7 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 319 mm、24 小時 164 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -72425,10 +72463,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "通報主管機關（農村水保署）",
         "reason": "下游保全對象尚未串接，需由主管機關評估"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -72438,7 +72472,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.lost"
@@ -72698,13 +72731,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.6 km）、2025 花蓮馬太鞍溪（0.5 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 248 mm、24 小時 24 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -72735,10 +72769,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 9/11）",
         "reason": "追蹤湖面變化"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -72747,7 +72777,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -73030,13 +73059,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.6 km）、2025 花蓮馬太鞍溪（0.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 52 mm、24 小時 5 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -73067,10 +73097,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 9/23）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -73080,7 +73106,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"
@@ -73374,13 +73399,14 @@ window.EVENT_SCENARIOS = [
         "kind": "history",
         "status": "context",
         "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.6 km）、2025 花蓮馬太鞍溪（0.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得測站資料（CWA 歷史雨量待補）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
@@ -73411,10 +73437,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "持續 SAR 監測（下一期 10/5）",
         "reason": "追蹤湖面變化；目前面積擴大中"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -73424,7 +73446,6 @@ window.EVENT_SCENARIOS = [
        "spatial.blockage",
        "trend.growing",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.high.confirmed"

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""風險模型測試：係數與 make_risk_snapshot.py 一致、lakes.js 解析、offline 流程。不測 CWA 連線。"""
+"""風險模型測試：係數與 make_risk_snapshot.py 一致、lakes.js 解析、offline 流程。不測 GEE 連線。"""
 
 from __future__ import annotations
 
@@ -99,7 +99,7 @@ class TestOfflineEndToEnd(unittest.TestCase):
             lakes_path = _write(d, "lakes.js", FIXTURE_LAKES_JS)
             out_path = os.path.join(d, "risk.js")
 
-            R.main(lakes_path, out_path, offline=True)
+            R.main(lakes_path, out_path)
 
             text = open(out_path, encoding="utf-8").read()
             risk = json.loads(
@@ -112,10 +112,25 @@ class TestOfflineEndToEnd(unittest.TestCase):
         for entry in risk.values():
             self.assertIn(entry["risk_level"], ("高", "低"))
             self.assertIn("risk_prob", entry)
-            self.assertIsNone(entry["nearest_station_km"])  # offline 模式沒有測站距離
+            self.assertNotIn("nearest_station_km", entry)  # 已改用網格雨量，不再有測站距離
         self.assertEqual(meta["mode"], "OFFLINE(訓練平均值佔位)")
         self.assertEqual(meta["nPositives"], 12)
         self.assertIsNone(meta["rocAuc"])
+
+
+class TestGsmapRainInput(unittest.TestCase):
+    def test_rain_by_lake_used_and_gaps_filled_with_means(self):
+        with tempfile.TemporaryDirectory() as d:
+            lakes_path = _write(d, "lakes.js", FIXTURE_LAKES_JS)
+            out_path = os.path.join(d, "risk.js")
+            R.main(lakes_path, out_path, {"A湖": {"rain_1d": 80.0, "rain_3d": 250.0, "rain_7d": 300.0,
+                                                  "rain_30d": None}}, "2026-10-11T08:00+08:00")
+            text = open(out_path, encoding="utf-8").read()
+            risk = json.loads(re.search(r"window\.LAKE_RISK\s*=\s*(\{.*?\});", text, re.S).group(1))
+            self.assertEqual(risk["A湖"]["rain_7d"], 300.0)
+            self.assertEqual(risk["A湖"]["rain_30d"], R.FEATURE_MEANS["rain_30d"])   # 缺值補平均
+            self.assertEqual(risk["B湖"]["rain_1d"], R.FEATURE_MEANS["rain_1d"])     # 沒給的湖補平均
+            self.assertIn("GSMaP", text)
 
 
 if __name__ == "__main__":

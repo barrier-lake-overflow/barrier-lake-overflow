@@ -1,0 +1,34 @@
+{
+  "id": "live_E121345_N24564",
+  "name": "新竹泰崗溪",
+  "kind": "live",
+  "active": true,
+  "hidden": false,
+  "description": "每日監看（監看中）：清冊監測中：新竹泰崗溪（2024/11/2）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 5 張，參數與全清冊回放相同。",
+  "center": [
+    121.34463,
+    24.56425
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 12,
+  "orbitLabel": "降軌 105",
+  "trigger": {
+    "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
+    "time": "2026-10-11T15:42+08:00",
+    "source": "每日監看"
+  },
+  "context": [
+    "清冊監測中：新竹泰崗溪（2024/11/2）"
+  ],
+  "observationsLakeId": "bl068",
+  "referenceLakeId": "bl068",
+  "referenceLabel": "清冊壩址",
+  "passes": [
+    {
+      "file": "final_live_E121345_N24564_20261010.json",
+      "time": "2026-10-10T21:51:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

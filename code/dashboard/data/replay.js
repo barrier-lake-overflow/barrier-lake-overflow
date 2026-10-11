@@ -1,7 +1,7 @@
 /* 由 pipeline/events/build.py（replay.py）產生，請勿手動編輯。
    全清冊回放：每筆堰塞湖用同一套流程、同一組參數逐期回放的結果。 */
 window.REPLAY_SUMMARY = {
- "generated": "2026-10-11T14:13+08:00",
+ "generated": "2026-10-11T15:53+08:00",
  "rules": {
   "start": "2015-01-01",
   "preGapDays": 7,
@@ -11,14 +11,14 @@ window.REPLAY_SUMMARY = {
   "matchRadiusM": 1000.0
  },
  "totals": {
-  "detected": 9,
-  "missed": 14,
+  "detected": 8,
+  "missed": 15,
   "no_pass": 0,
   "no_data": 0,
   "targets": 23,
   "observable": 23,
   "highAmongDetected": 5,
-  "expectedChanceHits": 5.2
+  "expectedChanceHits": 5.0
  },
  "bySize": [
   {
@@ -30,8 +30,8 @@ window.REPLAY_SUMMARY = {
   {
    "group": "< 20 萬 m³",
    "observable": 11,
-   "detected": 3,
-   "expectedChance": 2.1
+   "detected": 2,
+   "expectedChance": 1.9
   },
   {
    "group": "未登載",
@@ -634,25 +634,25 @@ window.REPLAY_SUMMARY = {
    "name": "加走寮溪",
    "county": "南投縣",
    "formed": "2026-06-13",
-   "breach": null,
+   "breach": "2026-07-12",
    "volume": 10.0,
    "cause": "降雨",
    "orbit": "降軌 105",
    "passCount": 12,
    "firstPassLagDays": 6.2,
-   "outcome": "detected",
-   "reason": "",
-   "detectedAt": "7/25 05:51",
-   "detectLagDays": 42.2,
-   "eventId": "E3",
-   "priority": "medium",
-   "maxPriority": "medium",
-   "confidence": "低",
-   "distanceM": 573,
-   "areaHectare": 0.72,
+   "outcome": "missed",
+   "reason": "有影像，但壩址 1 km 內沒有候選",
+   "detectedAt": null,
+   "detectLagDays": null,
+   "eventId": null,
+   "priority": null,
+   "maxPriority": null,
+   "confidence": null,
+   "distanceM": null,
+   "areaHectare": null,
    "otherHighEvents": 0,
    "otherEvents": 2,
-   "chanceHitProb": 0.4,
+   "chanceHitProb": 0.21,
    "sizeGroup": "< 20 萬 m³",
    "preCount": 13
   },

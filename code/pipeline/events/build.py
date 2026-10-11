@@ -102,6 +102,15 @@ def snapshot_times(scenario: dict, passes: list) -> list:
     return sorted(times)
 
 
+def rain_line(rain: dict) -> str:
+    """
+    >>> rain_line({"h24": 12.3, "h72": 249.1, "source": "GSMaP"})
+    '過境前雨量 72 小時 249 mm、24 小時 12 mm（GSMaP）'
+    """
+    h24 = f"、24 小時 {rain['h24']:.0f} mm" if rain.get("h24") is not None else ""
+    return f"過境前雨量 72 小時 {rain['h72']:.0f} mm{h24}（{rain.get('source', '衛星估計')}）"
+
+
 def nearby_history(lakes: list, lon_lat: tuple, before: datetime,
                    exclude_id: Optional[str]) -> list:
     """清冊中、在 before 之前形成、距離 HISTORY_RADIUS_KM 內的堰塞湖。"""
@@ -168,7 +177,8 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
     trigger = _t(scenario.get("trigger", {}).get("time"))
 
     obs = observations.get(scenario.get("observationsLakeId"))
-    rain_available = bool(obs and obs.rain_24h_mm is not None)
+    station_rain = bool(obs and obs.rain_24h_mm is not None)
+    pass_rain = {_t(p["time"]): p.get("rain") for p, _ in passes}
 
     ref = next((l for l in lakes if l.get("id") == scenario.get("referenceLakeId")), None)
     reference = ({"lakeId": ref["id"], "name": ref["name"], "lonLat": [ref["lon"], ref["lat"]],
@@ -178,13 +188,14 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
     snapshots = []
     for t in snapshot_times(scenario, passes):
         latest_analyzed = max((a for a in analyzed if a <= t), default=None)
+        rain = pass_rain.get(latest_analyzed)   # 該期過境前的衛星雨量，不用到未來
         ctx_base = dict(
             as_of=t,
             latest_analyzed_pass=latest_analyzed,
             next_pass=t + revisit,
-            rain_available=rain_available,
+            rain_available=station_rain or bool(rain),
             trigger_label=scenario.get("trigger", {}).get("label", ""),
-            context_lines=scenario.get("context", []),
+            context_lines=scenario.get("context", []) + ([rain_line(rain)] if rain else []),
         )
         cards = []
         for ev in events:
@@ -246,6 +257,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         "id": scenario["id"],
         "name": scenario["name"],
         "kind": scenario.get("kind", "positive"),
+        "active": scenario.get("active"),
         "description": scenario.get("description", ""),
         "center": scenario["center"],
         "windowKm": scenario.get("windowKm", 4.0),
@@ -273,6 +285,8 @@ def main(scenario_dir: Path = SCENARIOS, derived: Path = DERIVED, out: Path = OU
     for path in sorted(scenario_dir.glob("*.json")):
         scenario = json.loads(path.read_text(encoding="utf-8"))
         scenarios[scenario["id"]] = scenario
+        if scenario.get("hidden"):   # 停用很久的每日監看窗格
+            continue
         print(f"情境 {scenario['id']}（{scenario['name']}）")
         result = build_scenario(scenario, derived, lakes, observations)
         if result is None:

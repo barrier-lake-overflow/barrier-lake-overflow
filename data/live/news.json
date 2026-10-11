@@ -1,0 +1,587 @@
+{
+ "items": {
+  "731880d116": {
+   "title": "115年10月4日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EQ04yQjZvX3dub3lGbFJjQTBITWhTRy1VNzFJWnVLUERaYmVBSnFJMXdrSi0xVlV6OS1Lb3h0bVVDXzh5WjZLekhZZGJISFE?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-05T09:50+08:00",
+   "summary": "115年10月4日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "731880d116",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "bf1bf08fe6": {
+   "title": "【馬太鞍溪堰塞湖01】洪災一年：部落重建如何在沙塵中找未來？ - 環境資訊中心",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5vQmhhMExzdmZtZGdEcy1LWVVVR2UxN1ZJdFgyNEh4LUhFSDlaWjN5MUw2aV9EUHNHMDIxclNlSzFCMFpaZGtJajhlZWlKdw?oc=5",
+   "source": "環境資訊中心",
+   "time": "2026-10-06T17:52+08:00",
+   "summary": "【馬太鞍溪堰塞湖01】洪災一年：部落重建如何在沙塵中找未來？ 環境資訊中心",
+   "id": "bf1bf08fe6",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "9d6b6b9ac0": {
+   "title": "115年10月8日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFB3ZjdDdkUzNnlic2NuTDhTUGw0ajZ6Rl96eFhoNE5WN0JRaktFdzhoQnFlZTNlNlB0X2RxSmVKX3dqR25wX2FsNm5B?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-08T19:09+08:00",
+   "summary": "115年10月8日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "9d6b6b9ac0",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "b72707a0e5": {
+   "title": "堰塞湖恐溢流　台鐵2處「新自強號開放站票了」 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE10T1BTa2M3MDFFMU5vSjYxTzZUaDliTjhZMjlqQkgyaXY5SU1HYXdjcFdVUDhKVTVYMk9MUnZWT0U0SXctdUVLb9IBTEFVX3lxTE83T0NPOGliRFlyYnZMWmRLU1cxaU5xcWFBaVdweEZzMDVEYXU3Vl9iSGt1VjU3dnZIR3dDTEE1OXU1UEdjZzVUTXdkMk0?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-09T06:06+08:00",
+   "summary": "堰塞湖恐溢流 台鐵2處「新自強號開放站票了」 三立新聞",
+   "id": "b72707a0e5",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "2eb725a654": {
+   "title": "萬里溪堰塞湖10月5日現況 水位1,086.34公尺 - 報新聞",
+   "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPTjExM2labnVtTVluLTdEZ1V4VFFTeGdaUUJMZ1VBVmE5eEQxLWRpbUo4WGllMm9xeHE0X0g5STlaS1NiU1RELUIxRDg3dWFTbHVtb2ZKYzdqaVZsb01oc0NTUWlsS3Z4LWp4cHRTaW1xczBHUENjZ3ZScXZLSHA0Rzk4d25fTmNtMzJZeEtOWkVaWm1fZDNzR2U0MEZFNUV5VlNhUGJqMmRfT0ZIWUQ2Ym9Oc0s1NWk0U1Q3XzhpZnM2akR3TUJwdUs3Rm5hd3ZmQUxqcWVwbTR1RHFGOHBfbi1WZVVDT2RHc0d2YXo0cGRlSHBxS1k2TU1lS056X1hES2J2cjRqcEt4YTBpZFB4VXBoMzBLekFZMGw1NmpndnM?oc=5",
+   "source": "報新聞",
+   "time": "2026-10-05T12:31+08:00",
+   "summary": "萬里溪堰塞湖10月5日現況 水位1,086.34公尺 報新聞",
+   "id": "2eb725a654",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "cbbd886094": {
+   "title": "115年10月7日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBWZU5DLURHTXU3NEg1Q0YzN3BxUUxKS0dKMXJrNVM1QjYxUW9QNG1zMWtuaTFwZVlodDM2WHlqLVlUeDFYVFFXMDRFc1Z3XzBrMWc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-07T10:04+08:00",
+   "summary": "115年10月7日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "cbbd886094",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "e087140cee": {
+   "title": "討論牆 | 花蓮堰塞湖恐48hrs內溢流 183人預防性撤離 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1PN1BwWVB6NExJcVVXM0t4ZG5jdWNwaVNVQlp2Nm5VRTI0QU1JUnFEd0dTNlJNcFdLVlhCdnh6VVlOcVJpX21JQnhmTU5fQWplNG1pMTY5Y3lSQkliYXlyRkJma2k?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-11T12:53+08:00",
+   "summary": "討論牆 | 花蓮堰塞湖恐48hrs內溢流 183人預防性撤離 LINE TODAY",
+   "id": "e087140cee",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "f8580817c0": {
+   "title": "10月5日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE53Q2h0MDE0RTR1dXUxSDhlNVBBM2xOVkx6MVU0dm1mQ0kwZ2d0R2Q1X2ktWGxuNlpFRDRvOE92ZmZkcDdFdV9iY2J3?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-05T18:04+08:00",
+   "summary": "10月5日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "f8580817c0",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "f74176ae36": {
+   "title": "【馬太鞍溪堰塞湖02】農傷．傷農：洪災一年，農地復耕之路 - 環境資訊中心",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE96SFlYcEdvS2VIYzZjUmMtYUNFZVFaUHpiMDBrTUlMdkhJaUxDQ1JUanczaDZqREpockE1ZmVna3M0ZkJWRkJBNjRINHZSZw?oc=5",
+   "source": "環境資訊中心",
+   "time": "2026-10-06T17:52+08:00",
+   "summary": "【馬太鞍溪堰塞湖02】農傷．傷農：洪災一年，農地復耕之路 環境資訊中心",
+   "id": "f74176ae36",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "d1e749bdde": {
+   "title": "115年10月6日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1Ea3JOYm9GaXpFTHFJSjhqRUVuU3B1RUNHOUo5akVoMXZ5YmdDQ0dUbHBwUGdCaGJXYWhZS2VCenpDUFlZWHVvVGVQNzNmSHZYOUE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-06T10:33+08:00",
+   "summary": "115年10月6日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "d1e749bdde",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "722a129209": {
+   "title": "討論牆 | 馬太鞍堰塞湖溢流 災後1年重建工程未停歇(圖) - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5ZRUsxMTY1bURYQjVHeVBYejlUR1NqUDdaTGh2V3YyYmh1V0NYNlhJejI5QldpaWtTNVNDS1AzNnFYOWxvZ1hCNmJCMldXNGpGdHRXWVROcTFiU1NWRjVvNEktUy0?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-10T09:17+08:00",
+   "summary": "討論牆 | 馬太鞍堰塞湖溢流 災後1年重建工程未停歇(圖) LINE TODAY",
+   "id": "722a129209",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "e8150ab48a": {
+   "title": "10月9日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBxaXlObDZTU0xRTkotc3FvU0xMMHd5N3cyUm05d2l6N3NFRWVWcGxRYzF5N00wcGdTa3pfRTdqOEVuZ1JVcVZzRlRR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-09T19:23+08:00",
+   "summary": "10月9日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "e8150ab48a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "4c4789ab92": {
+   "title": "115年10月10日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VVmhJcTdjbC1iV0FveDFfV2E0UDVTUFR4M2dIMkJMT3pzRVc0UjQ3Zm5oOS1INm12dkVXMW00YlBMckIxM0M2NGxhV21ubklhbkE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-10T10:12+08:00",
+   "summary": "115年10月10日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "4c4789ab92",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "86baa910db": {
+   "title": "討論牆 | 花蓮萬里溪堰塞湖解除黃色警戒 撤離民眾回家了 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBMdnZ0NDNNS3BVWWxkbXRIVGNGV3VhRVRJcTFvWkd3bGhiMW9KajNBMTkyWExGc3hhNHNHS2dVdXdLMVdZc0RaQWhQTzJDY3VKNjh2empWY282ZVVmWjl1RDhBdE4?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-10T17:22+08:00",
+   "summary": "討論牆 | 花蓮萬里溪堰塞湖解除黃色警戒 撤離民眾回家了 LINE TODAY",
+   "id": "86baa910db",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "4f411f19a7": {
+   "title": "10月4日萬里溪堰塞湖資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5pYllzN1BxcDR4UDlPR2ZFOGExWS03N3RRTGNWcURhM2h0UnhZRHJBUDFOTFRqdE9xbEVUMnFvdm95dVVDcGM1bVhR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-04T18:17+08:00",
+   "summary": "10月4日萬里溪堰塞湖資訊 更生新聞網",
+   "id": "4f411f19a7",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "afbb308563": {
+   "title": "萬里溪堰塞湖10月9日水位1,086.19公尺 河道維持紅色警戒 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1XYzI3WkhnNzV3S1FIQmZ1ZDFVWUQ3RmlheG50UXhKVHVMUFhUTVlIQnlQNFl1UmJrVExVMFJBWmVmSjJTRkxYQXZnenI1b3N6SkE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-09T16:52+08:00",
+   "summary": "萬里溪堰塞湖10月9日水位1,086.19公尺 河道維持紅色警戒 蕃新聞",
+   "id": "afbb308563",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "c81149dc2c": {
+   "title": "國民黨升旗移師高雄！鄭麗文罵到燒聲…掀堰塞湖19死傷口 - 三立新聞網SETN.com",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE4xdEV0bkJ6ZjFzZWRPd0VMTUYyV2xZVWhHR2l4TTFiS0pSNWY5NVU2QWp3WHNFdkZGaU84LV9VZWF1QVgtd21vR9IBTEFVX3lxTE5ldm4yY3hqTGF0c0xmY1ZaU2RHSUMzQjZwU3lDX2MxSjRiaEh4TmN4M2tQOFlPck9qZ1MzeE85S216bUt2LUNQWXRtQWc?oc=5",
+   "source": "三立新聞網SETN.com",
+   "time": "2026-10-10T10:38+08:00",
+   "summary": "國民黨升旗移師高雄！鄭麗文罵到燒聲…掀堰塞湖19死傷口 三立新聞網SETN.com",
+   "id": "c81149dc2c",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "70854e686d": {
+   "title": "卓溪民眾即時通報 化解黑熊滋擾獲公開表揚 - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBrYno5MGZidzc1VjcwcGJSQ2g2eVBvTGczLXVoUE1xYUdEa2NfeHZVZFVWVXlzUGhSN05rQlZoMWk0OTVxLWdFem13N1FaMW9laDhDRFBn?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-10-08T18:00+08:00",
+   "summary": "卓溪民眾即時通報 化解黑熊滋擾獲公開表揚 中央社 CNA",
+   "id": "70854e686d",
+   "kind": "field",
+   "keyword": "通報",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "9091f73e0e": {
+   "title": "馬太鞍溪永久橋北上橋合龍 陳世凱：全線力拚明年中通車 - 中時新聞網",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE44ajdteTl2bTM3MW9JTjEzUjFUUktOOU5PMjJPZzJkR3hvZWhIdGF1VExHRWtvSTkweWs4Q2JCeDRiOC1RcWFtOUxaeHozOWsweXFveFlCemtfdXNvWVVUZGg5d2xCX0lFWWZQX2hR?oc=5",
+   "source": "中時新聞網",
+   "time": "2026-10-07T11:44+08:00",
+   "summary": "馬太鞍溪永久橋北上橋合龍 陳世凱：全線力拚明年中通車 中時新聞網",
+   "id": "9091f73e0e",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "219efa993d": {
+   "title": "馬太鞍溪永久橋雙線拚明年中通車 - 中華日報",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9nZ2ZnTDIxc1kwWTlxRnpBR1l4U2dvak1GY1VQZjlTenAwVEJRNmdVSHo1aGZrQm9yeWdnNUl1SkpWa1JIZ1AxNDQ0bFpEemdlbnc?oc=5",
+   "source": "中華日報",
+   "time": "2026-10-07T20:58+08:00",
+   "summary": "馬太鞍溪永久橋雙線拚明年中通車 中華日報",
+   "id": "219efa993d",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "02559de485": {
+   "title": "「馬太鞍堰塞湖災後農業復建加速！花蓮府公布數據：農地整復、休耕、設備補助全面推進」 - 墨新聞-MORE News",
+   "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBCbFl6dWVqRlBEQXdQTmFQTFhBc3FfcjFZOHBLMHJfZ3cwRE13bDJ5SkRIVG5saGJTQ3pJRmZwZGQ2Zw?oc=5",
+   "source": "墨新聞-MORE News",
+   "time": "2026-10-05T15:58+08:00",
+   "summary": "「馬太鞍堰塞湖災後農業復建加速！花蓮府公布數據：農地整復、休耕、設備補助全面推進」 墨新聞-MORE News",
+   "id": "02559de485",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "9d93ccc2cc": {
+   "title": "馬太鞍溪永久橋鋼梁合龍 交通部：提前於116年中雙線通車 - 放言Fount Media",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE01Z2xSZjYydlEzSDNRbG9wUk5hMDlYeDNaMHo4bVRRNE5HSFVUMnhLMVQ0aWpNRGRJN2ZzQmxhYUxnRFpQR0tfczdMSEsyTEhjamc?oc=5",
+   "source": "放言Fount Media",
+   "time": "2026-10-07T14:09+08:00",
+   "summary": "馬太鞍溪永久橋鋼梁合龍 交通部：提前於116年中雙線通車 放言Fount Media",
+   "id": "9d93ccc2cc",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "c04488132a": {
+   "title": "沈伯洋回答救災爆破超專業 主播黃家緯秒被圈粉 - 自由娛樂",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9hS29YZm1tV0R4bUlzTzROa2JEQUwzMWl6ZERBN2RSSks5RWhtTHBvTlVfZ284Vk5pa1FFMF9iV0g2SVQ0aXU2SXRUeUV2S3U1RXUzTUltc2czbW1Z0gFiQVVfeXFMTUxGYzJyc0s4WEIxTzNQc3U4QTRVLXRGUno0TkRCY2UxRGMxTEFCcGx6Y0NfclZRcWFfQ1JBQ2tCU01Sb3VHVVFnSjcxTVlqWjMxMmFXZ180Zmx2WUtjYV8wSUE?oc=5",
+   "source": "自由娛樂",
+   "time": "2026-10-11T07:53+08:00",
+   "summary": "沈伯洋回答救災爆破超專業 主播黃家緯秒被圈粉 自由娛樂",
+   "id": "c04488132a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "881f6610c5": {
+   "title": "品牌故事專題／工程不只是建設 皇昌挺身扶助社會重新站起 - 鏡週刊Mirror Media",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4wWS1kdFFVN2dBOTAtMldoWnRtaXg0b3Baa0FLd3BNN0VXTmpkdnhpRzloaS1iU09oTmpqOHhhaUZ1UGJJclNoalBleVowck5WcGRUV1JQdXN5WnVpb2NZNnM2OGsxdw?oc=5",
+   "source": "鏡週刊Mirror Media",
+   "time": "2026-10-07T11:40+08:00",
+   "summary": "品牌故事專題／工程不只是建設 皇昌挺身扶助社會重新站起 鏡週刊Mirror Media",
+   "id": "881f6610c5",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "7100cc5a51": {
+   "title": "馬太鞍溪橋北上線合龍 陳世凱：拚年底雙向通車 - 台視新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1leklhSnFvdnk3enRvbUxqeFp6TnlEcG5vSGpzWGdOSjQ1Z2tuOHRkc2lvd1hUY1JBRVpLWG9PUEtPUkItQW1uSGtuaTl6WkwyZGJJNU5jcw?oc=5",
+   "source": "台視新聞網",
+   "time": "2026-10-07T17:35+08:00",
+   "summary": "馬太鞍溪橋北上線合龍 陳世凱：拚年底雙向通車 台視新聞網",
+   "id": "7100cc5a51",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "c663ed8f07": {
+   "title": "馬太鞍溪橋永久橋合龍 明年中提前完工 - 自由時報",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1LcU92UFVOZktXX2lCbk5hUnNrY0ZfcXgxREVVajZ6ZHdGT0Z5MUNhUjZjUWJLUHRVYm9ES290b3NvSjRuUEVDNmhwY1pUdXBiZ3phQVpfdFE5U1XSAWBBVV95cUxONC1DckZ6cXNIOW9DOXY4dm1nR2VLRnIwQ1JhcHZQMkNMTDJjLVlhT0VuYjlRLWtIc3FnX0o3Q0xaQ3NRZmlnVDE0SlFnazU1b2R4X2ZjWXRCSXpQWWtRb3k?oc=5",
+   "source": "自由時報",
+   "time": "2026-10-08T05:30+08:00",
+   "summary": "馬太鞍溪橋永久橋合龍 明年中提前完工 自由時報",
+   "id": "c663ed8f07",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "c33424daa7": {
+   "title": "尼泊爾又山崩！當局急發「洪災警報」 籲下游沿岸居民撤離 - TVBS新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE92TTI1M1FWN0pha3FOTEN2V0RpZTFPRmxWQ2RoaENnSExKOUJTNXVjWmF3Ti1kSU5FdF80aXdCc05DVkxoOGRSNk5wck1mZlk?oc=5",
+   "source": "TVBS新聞網",
+   "time": "2026-10-11T13:17+08:00",
+   "summary": "尼泊爾又山崩！當局急發「洪災警報」 籲下游沿岸居民撤離 TVBS新聞網",
+   "id": "c33424daa7",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  },
+  "71aaaf9d25": {
+   "title": "尼泊爾山崩堵河道 洪災沖毀房屋吊橋 沿岸居民撤離 - 新唐人電視台",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE12Q3o5R1hqWDh6SGdOckRqbG9GOFhlbWNZOWpjaXhGMzY4STExZmNhNmprN284ZVJXazhQTzJYWHRKQmhIbEZzQjI0TlBENC1iQnNOaHRQSXctYXRNMlRGUW9xd1MwZ9IBZkFVX3lxTE12Q3o5R1hqWDh6SGdOckRqbG9GOFhlbWNZOWpjaXhGMzY4STExZmNhNmprN284ZVJXazhQTzJYWHRKQmhIbEZzQjI0TlBENC1iQnNOaHRQSXctYXRNMlRGUW9xd1MwZw?oc=5",
+   "source": "新唐人電視台",
+   "time": "2026-10-11T13:46+08:00",
+   "summary": "尼泊爾山崩堵河道 洪災沖毀房屋吊橋 沿岸居民撤離 新唐人電視台",
+   "id": "71aaaf9d25",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-11T15:46+08:00"
+  }
+ },
+ "updatedAt": "2026-10-11T15:53+08:00"
+}

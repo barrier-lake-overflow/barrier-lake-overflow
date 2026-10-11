@@ -64,9 +64,14 @@ def merge_scenario(new: dict, old: Optional[dict], description_given: bool) -> d
             continue
         if old.get(k) not in (None, "", []):
             out[k] = old[k]
-    images = {p["file"]: p.get("evidenceImage") for p in old.get("passes", [])}
-    out["passes"] = [{**p, "evidenceImage": p.get("evidenceImage") or images.get(p["file"])}
-                     for p in new.get("passes", [])]
+    prev = {p["file"]: p for p in old.get("passes", [])}
+    out["passes"] = []
+    for p in new.get("passes", []):
+        q = prev.get(p["file"], {})
+        p = {**p, "evidenceImage": p.get("evidenceImage") or q.get("evidenceImage")}
+        if q.get("rain") and not p.get("rain"):   # 每日排程補上的過境前雨量
+            p["rain"] = q["rain"]
+        out["passes"].append(p)
     return out
 
 
@@ -81,17 +86,55 @@ def pass_time(day: str, hhmm: str) -> datetime:
     return datetime.strptime(f"{day} {hhmm}", "%Y%m%d %H:%M").replace(tzinfo=timezone.utc)
 
 
+def needs_run(out: Path, has_later: bool, skip_existing: bool) -> bool:
+    """
+    結果檔要不要（重）跑。skip_existing 時：沒有結果檔要跑；結果檔當時沒有複核期、
+    現在有下一期了，也要重跑（不然那一期永遠停在「待複核」）。
+    """
+    if not skip_existing or not out.exists():
+        return True
+    if not has_later:
+        return False
+    try:
+        return json.loads(out.read_text(encoding="utf-8")).get("laterScenes", 0) == 0
+    except (OSError, ValueError):
+        return True
+
+
+def series_plan(name: str, days: list, skip_existing: bool) -> list:
+    """
+    回傳要跑偵測的期別 [(day, later_day or None)]。每日排程據此只下載需要的影像。
+
+    >>> series_plan("x_nonexistent", ["20260101", "20260107"], skip_existing=True)
+    [('20260101', '20260107'), ('20260107', None)]
+    """
+    out = []
+    for i, day in enumerate(days):
+        later = days[i + 1] if i + 1 < len(days) else None
+        if needs_run(DERIVED / f"final_{name}_{day}.json", later is not None, skip_existing):
+            out.append((day, later))
+    return out
+
+
 def run_series(name: str, lon: float, lat: float, orbit: str, raw_dir: Path,
-               pass_times: dict, pre_label: str = "事件前中位數", skip_existing: bool = False) -> list:
+               pass_times: dict, pre_label: str = "事件前中位數", skip_existing: bool = False,
+               days: Optional[list] = None) -> list:
     """
     逐期跑 analyze_sar_change.py（下一期當複核），回傳情境檔的 passes。
     pass_times：{YYYYMMDD: "HH:MM"（UTC）}；沒列到的日期用 "default" 的值。
-    skip_existing：結果檔已存在就不重跑（批次中斷後續跑用）。
+    skip_existing：結果檔已存在就不重跑（批次中斷後續跑用）；當時沒有複核期的會重跑。
+    days：指定期別（YYYYMMDD）；不給就用 raw_dir 裡找得到的影像。指定時只有真的要跑的
+          期別需要影像在本機（每日排程在乾淨環境執行，不會留著舊影像）。
     """
     pre = raw_dir / f"S1_VV_{name}_pre.tif"
     dem = raw_dir / f"NASADEM_{name}.tif"
-    scenes = scene_files(name, raw_dir)
-    missing = [p for p in (pre, dem) if not p.exists()]
+    if days is None:
+        scenes = scene_files(name, raw_dir)
+    else:
+        scenes = [(d, raw_dir / f"S1_VV_{name}_{d}.tif") for d in sorted(days)]
+    todo = {d for d, _ in series_plan(name, [d for d, _ in scenes], skip_existing)}
+    need = [pre, dem] + [p for i, (d, p) in enumerate(scenes) if d in todo]         + [scenes[i + 1][1] for i, (d, _) in enumerate(scenes) if d in todo and i + 1 < len(scenes)]
+    missing = [p for p in need if not p.exists()] if todo else []
     if missing or not scenes:
         raise FileNotFoundError(f"缺少影像：{', '.join(map(str, missing)) or '沒有任何逐期影像'}")
 
@@ -105,7 +148,7 @@ def run_series(name: str, lon: float, lat: float, orbit: str, raw_dir: Path,
         t = when(day)
         out = DERIVED / f"final_{name}_{day}.json"
         print(f"[{i + 1}/{len(scenes)}] {day}" + (f" + 複核 {later[0]}" if later else "（無複核期）"))
-        if not (skip_existing and out.exists()):
+        if day in todo:
             cmd = [sys.executable, str(CODE / "scripts" / "analyze_sar_change.py"),
                    "--pre", str(pre), "--post", str(path), "--dem", str(dem),
                    "--orbit", orbit, "--lon", str(lon), "--lat", str(lat),

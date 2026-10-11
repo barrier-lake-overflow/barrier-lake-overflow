@@ -553,7 +553,7 @@ function renderEvidenceCard(lake) {
       <dt>原始模型分級</dt><dd>${lake.risk.risk_level}風險</dd>
       <dt>現況修正</dt><dd>${riskView(lake).basis}</dd>
       ${RISK_META && RISK_META.mode ? `
-      <dt>資料來源</dt><dd>${RISK_META.mode}${lake.risk.nearest_station_km != null ? `｜距最近雨量站 ${lake.risk.nearest_station_km} km` : ''}</dd>` : ''}
+      <dt>資料來源</dt><dd>${RISK_META.mode}</dd>` : ''}
     </dl>
     ${drivers.length ? `
       <span class="label" style="display:block;margin-bottom:6px">主要驅動因子</span>

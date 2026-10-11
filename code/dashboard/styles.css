@@ -72,45 +72,6 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .stat-meta b{color:var(--fog);font-weight:500}
 .statusbar .spacer{flex:1}
 
-/* ── 即時雨量輸入列 ── */
-.livebar{
-  border-bottom:1px solid var(--line);
-  background:rgba(63,169,160,.05);
-}
-.livebar-inner{
-  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-  padding-top:9px;padding-bottom:9px;
-}
-.livebar-label{
-  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
-  color:var(--jade);white-space:nowrap;
-}
-.livebar-input{
-  font:inherit;font-family:var(--mono);font-size:12.5px;
-  background:var(--raised);color:var(--snow);
-  border:1px solid var(--line-strong);border-radius:3px;
-  padding:6px 10px;min-width:260px;flex:1;max-width:420px;
-}
-.livebar-input::placeholder{color:var(--moss)}
-.livebar-input:focus{outline:none;border-color:var(--jade)}
-.livebar-remember{
-  font-size:12px;color:var(--moss);white-space:nowrap;
-  display:flex;align-items:center;gap:5px;cursor:pointer;
-}
-.livebar-btn{
-  font-family:var(--mono);font-size:12px;color:var(--abyss);
-  background:var(--jade);border-radius:3px;padding:6px 14px;
-  white-space:nowrap;transition:background .16s ease;
-}
-.livebar-btn:hover{background:var(--snow)}
-.livebar-status{
-  font-family:var(--mono);font-size:11.5px;color:var(--moss);
-}
-.livebar-status.live-busy{color:var(--ochre)}
-.livebar-status.live-ok{color:var(--jade)}
-.livebar-status.live-warn{color:var(--ochre)}
-.livebar-status.live-error{color:var(--clay)}
-
 /* ── 頂部第二層：全台風險概況 KPI ── */
 .kpi-bar{border-bottom:1px solid var(--line);background:var(--stone)}
 .kpi-grid{
@@ -826,3 +787,30 @@ footer .wrap{
 .replay-size b{color:var(--snow);font-weight:500}
 .replay-table td.num.warn{color:var(--ochre)}
 .replay-table td .dim.warn{color:var(--ochre)}
+
+/* 每日自動更新（daily-view.js） */
+.daily-steps{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px}
+.daily-steps .label{margin-right:6px}
+.ds{font-family:var(--mono);font-size:11px;padding:2px 8px;border:1px solid var(--line-strong);color:var(--moss)}
+.ds.ok{border-color:var(--jade-dim);color:var(--jade)}
+.ds.err{border-color:var(--clay);color:var(--clay)}
+.daily-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.daily-cols > div{background:var(--stone);border:1px solid var(--line);padding:12px 14px;min-width:0}
+.daily-cols h3{font-size:13px;font-weight:500;color:var(--snow);margin-bottom:8px}
+.daily-cols h3 .dim{font-weight:400}
+.daily .dim{color:var(--moss);font-size:11.5px}
+.daily .mono{font-family:var(--mono)}
+.daily code{font-family:var(--mono);font-size:11px;color:var(--fog)}
+.dw,.dn{list-style:none;display:grid;gap:1px;background:var(--line)}
+.dw button{
+  width:100%;text-align:left;background:var(--stone);border:0;padding:8px 10px;cursor:pointer;
+  display:grid;gap:2px;color:var(--fog);font:inherit;font-size:12.5px;
+}
+.dw button:hover{background:var(--raised)}
+.dw button:focus-visible{outline:1px solid var(--jade);outline-offset:-1px}
+.dw b{color:var(--snow);font-weight:500}
+.dn li{background:var(--stone);padding:7px 10px;display:grid;gap:2px;font-size:12.5px}
+.dn a{color:var(--fog);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.dn a:hover{color:var(--snow)}
+.dn .ro{justify-self:start}
+@media (max-width:860px){.daily-cols{grid-template-columns:1fr}}

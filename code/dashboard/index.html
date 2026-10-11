@@ -62,6 +62,16 @@
         <div class="panel ev-panel" id="evCard"></div>
       </div>
 
+      <!-- 每日自動更新：執行狀態、監看窗格、新聞候選（daily-view.js） -->
+      <div class="sec daily" id="daily">
+        <div class="sec-head">
+          <h2>每日自動更新</h2>
+          <span class="rule"></span>
+          <span class="count" id="dailyCount">—</span>
+        </div>
+        <div id="dailyBody"></div>
+      </div>
+
       <!-- 全清冊回放：每筆堰塞湖同一套流程逐期回放的結果（replay-view.js） -->
       <div class="sec replay" id="replay">
         <div class="sec-head">
@@ -87,20 +97,6 @@
     </div>
   </div>
 
-  <!-- CWA 即時雨量 -->
-  <div class="livebar">
-    <div class="wrap livebar-inner">
-      <span class="livebar-label">CWA 即時雨量</span>
-      <input type="password" id="cwaKeyInput" class="livebar-input" placeholder="貼上你的 CWA-XXXXXXXX-... 授權碼"
-        autocomplete="off">
-      <label class="livebar-remember">
-        <input type="checkbox" id="cwaKeyRemember">記住這台電腦
-      </label>
-      <button class="livebar-btn" id="cwaFetchBtn" type="button">更新即時風險</button>
-      <span class="livebar-status" id="liveStatus">尚未更新，目前顯示的是打包時的批次快照。</span>
-      <span class="info-dot" tabindex="0" title="由瀏覽器直接呼叫 CWA 開放資料 API。金鑰只留在這台電腦，勾選「記住」才會存進瀏覽器。留空會改用訓練平均值。">i</span>
-    </div>
-  </div>
 
   <!-- 第二層：全台風險概況 KPI -->
   <div class="kpi-bar">
@@ -307,10 +303,11 @@
   <script src="map3d.js"></script>
   <script src="data/events.js"></script>
   <script src="data/replay.js"></script>
+  <script src="data/daily.js"></script>
   <script src="app.js"></script>
   <script src="duty.js"></script>
   <script src="replay-view.js"></script>
-  <script src="live.js"></script>
+  <script src="daily-view.js"></script>
 </body>
 
 </html>

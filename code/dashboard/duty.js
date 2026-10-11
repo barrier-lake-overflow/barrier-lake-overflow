@@ -428,21 +428,25 @@ const Duty = (() => {
   function renderScenarioTabs() {
     const box = $('#scenTabs');
     const kindText = { positive: '正案例', negative: '負案例' };
-    const tabs = SCENARIOS.map((s, i) => s.kind === 'replay' ? '' : `
+    const tabs = SCENARIOS.map((s, i) => (s.kind === 'replay' || s.kind === 'live') ? '' : `
       <button class="filter ${i === st.scenario ? 'is-on' : ''}" type="button" data-i="${i}">
         ${kindText[s.kind] || ''}｜${esc(s.name)}</button>`).join('');
-    const replays = SCENARIOS.map((s, i) => ({ s, i })).filter(x => x.s.kind === 'replay');
-    const select = replays.length ? `
-      <select class="county-select scen-select ${scen().kind === 'replay' ? 'is-on' : ''}" aria-label="全清冊回放：選擇堰塞湖">
-        <option value="">全清冊回放（${replays.length} 筆）…</option>
-        ${replays.map(x => `<option value="${x.i}" ${x.i === st.scenario ? 'selected' : ''}>${esc(x.s.name)}</option>`).join('')}
+    const menu = (kind, label, fmt) => {
+      const xs = SCENARIOS.map((s, i) => ({ s, i })).filter(x => x.s.kind === kind);
+      return xs.length ? `
+      <select class="county-select scen-select ${scen().kind === kind ? 'is-on' : ''}" aria-label="${label}">
+        <option value="">${label}（${xs.length}）…</option>
+        ${xs.map(x => `<option value="${x.i}" ${x.i === st.scenario ? 'selected' : ''}>${esc(fmt(x.s))}</option>`).join('')}
       </select>` : '';
+    };
+    const select = menu('live', '每日監看', s => `${s.active === false ? '（已停止）' : ''}${s.name}`)
+      + menu('replay', '全清冊回放', s => s.name);
     const pending = SCENARIOS.some(s => s.kind === 'negative') ? ''
       : '<span class="scen-pending">負案例（2026 汛期，同窗格同參數）尚未產生：見 scripts/gee_export_series_s1.js、run_sar_series.py</span>';
     box.innerHTML = `<div class="filters">${tabs}</div>${select}${pending}`;
     $$('button', box).forEach(b => b.addEventListener('click', () => setScenario(+b.dataset.i)));
-    const sel = $('select', box);
-    if (sel) sel.addEventListener('change', () => { if (sel.value !== '') setScenario(+sel.value); });
+    $$('select', box).forEach(sel =>
+      sel.addEventListener('change', () => { if (sel.value !== '') setScenario(+sel.value); }));
   }
 
   /* 給全清冊回放表用：切到指定情境（可指定時點標籤、事件代號）並捲到值班佇列 */

@@ -1,0 +1,34 @@
+{
+  "id": "live_E121270_N23792",
+  "name": "花蓮萬里溪",
+  "kind": "live",
+  "active": true,
+  "hidden": false,
+  "description": "每日監看（監看中）：清冊監測中：花蓮萬里溪（2026/06/20）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 10 張，參數與全清冊回放相同。",
+  "center": [
+    121.26957,
+    23.79204
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 12,
+  "orbitLabel": "降軌 105",
+  "trigger": {
+    "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
+    "time": "2026-10-11T15:42+08:00",
+    "source": "每日監看"
+  },
+  "context": [
+    "清冊監測中：花蓮萬里溪（2026/06/20）"
+  ],
+  "observationsLakeId": "bl075",
+  "referenceLakeId": "bl075",
+  "referenceLabel": "清冊壩址",
+  "passes": [
+    {
+      "file": "final_live_E121270_N23792_20261010.json",
+      "time": "2026-10-10T21:51:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null
+    }
+  ]
+}

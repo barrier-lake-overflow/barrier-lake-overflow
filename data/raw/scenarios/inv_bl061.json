@@ -24,37 +24,67 @@
       "file": "final_inv_bl061_20210130.json",
       "time": "2021-01-30T10:00:00+00:00",
       "recheckTime": "2021-02-11T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 0,
+        "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl061_20210211.json",
       "time": "2021-02-11T10:00:00+00:00",
       "recheckTime": "2021-02-23T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 25.7,
+        "h72": 28.1,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl061_20210223.json",
       "time": "2021-02-23T10:00:00+00:00",
       "recheckTime": "2021-03-07T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 0.8,
+        "h72": 0.8,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl061_20210307.json",
       "time": "2021-03-07T10:00:00+00:00",
       "recheckTime": "2021-03-19T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 0,
+        "h72": 0.4,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl061_20210319.json",
       "time": "2021-03-19T10:00:00+00:00",
       "recheckTime": "2021-03-31T10:00:00+00:00",
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 0,
+        "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     },
     {
       "file": "final_inv_bl061_20210331.json",
       "time": "2021-03-31T10:00:00+00:00",
       "recheckTime": null,
-      "evidenceImage": null
+      "evidenceImage": null,
+      "rain": {
+        "h24": 0,
+        "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     }
   ]
 }
