@@ -1,12 +1,12 @@
 /* 由 pipeline/daily/run.py 產生，請勿手動編輯。每日自動更新的執行狀態、監看窗格、待確認的新聞候選。 */
 window.DAILY_STATUS = {
- "startedAt": "2026-10-12T09:59+08:00",
- "finishedAt": "2026-10-12T09:59+08:00",
+ "startedAt": "2026-10-12T10:33+08:00",
+ "finishedAt": "2026-10-12T10:34+08:00",
  "steps": [
   {
    "name": "inventory",
    "status": "ok",
-   "seconds": 5.1,
+   "seconds": 3.9,
    "summary": {
     "rows": 75,
     "changed": false
@@ -15,7 +15,7 @@ window.DAILY_STATUS = {
   {
    "name": "alerts",
    "status": "ok",
-   "seconds": 1.4,
+   "seconds": 2.8,
    "summary": {
     "count": 0
    }
@@ -23,13 +23,13 @@ window.DAILY_STATUS = {
   {
    "name": "gee-login",
    "status": "ok",
-   "seconds": 2.2,
+   "seconds": 1.2,
    "summary": null
   },
   {
    "name": "rain",
    "status": "ok",
-   "seconds": 5.3,
+   "seconds": 4.9,
    "summary": {
     "苗縣LL002": {
      "h24": 0.8,
@@ -506,7 +506,7 @@ window.DAILY_STATUS = {
   {
    "name": "risk",
    "status": "ok",
-   "seconds": 4.8,
+   "seconds": 5.9,
    "summary": {
     "lakes": 71,
     "asOf": "2026-10-10T15:00+00:00"
@@ -524,7 +524,7 @@ window.DAILY_STATUS = {
   {
    "name": "sentinel",
    "status": "ok",
-   "seconds": 0.7,
+   "seconds": 0.5,
    "summary": {
     "windows": [
      {
@@ -554,22 +554,22 @@ window.DAILY_STATUS = {
   {
    "name": "passrain",
    "status": "ok",
-   "seconds": 5.3,
+   "seconds": 3.0,
    "summary": {}
   },
   {
    "name": "news",
    "status": "ok",
-   "seconds": 0.8,
+   "seconds": 0.7,
    "summary": {
-    "new": 18,
-    "candidates": 54
+    "new": 1,
+    "candidates": 55
    }
   },
   {
    "name": "build",
    "status": "ok",
-   "seconds": 0.3,
+   "seconds": 0.2,
    "summary": {
     "scenarios": 27
    }
@@ -639,6 +639,31 @@ window.DAILY_STATUS = {
   }
  ],
  "newsCandidates": [
+  {
+   "id": "111a059932",
+   "time": "2026-10-12T10:02+08:00",
+   "title": "115年10月11日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "source": "蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1ZUF84c0RiRmh5UHhoMmtQVTFuSUI3bWpDOW00OUV5NXpRdEVBbFU3T1J6bWNZQmQ0MHQ2VmpPZ1ViWl8wSjlXeUo4dXBHYlFuM1E?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
   {
    "id": "b433a467e3",
    "time": "2026-10-12T08:41+08:00",
@@ -1017,16 +1042,7 @@ window.DAILY_STATUS = {
      "name": "花蓮馬太鞍溪"
     }
    ]
-  },
-  {
-   "id": "6110685d22",
-   "time": "2026-10-08T08:37+08:00",
-   "title": "台灣新聞報Taiwan-News Post - taiwan-news.com.tw",
-   "source": "taiwan-news.com.tw",
-   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9aYTRRRUE5TWNuMGJRNkVSeEN4TDJ0VmR1ZldaU013T2lOdGhmQUI1dm1IdW12clFzcno3WWdzWkhXLTlFc1pYN0RxRzdFY0RnRkZGY3hScnQ2MExO?oc=5",
-   "kind": "official",
-   "matches": []
   }
  ],
- "newsCandidateCount": 54
+ "newsCandidateCount": 55
 };

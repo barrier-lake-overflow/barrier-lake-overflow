@@ -1029,7 +1029,36 @@
    "matches": [],
    "status": "candidate",
    "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "111a059932": {
+   "title": "115年10月11日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1ZUF84c0RiRmh5UHhoMmtQVTFuSUI3bWpDOW00OUV5NXpRdEVBbFU3T1J6bWNZQmQ0MHQ2VmpPZ1ViWl8wSjlXeUo4dXBHYlFuM1E?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-12T10:02+08:00",
+   "summary": "115年10月11日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "111a059932",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T10:34+08:00"
   }
  },
- "updatedAt": "2026-10-12T09:59+08:00"
+ "updatedAt": "2026-10-12T10:34+08:00"
 }
