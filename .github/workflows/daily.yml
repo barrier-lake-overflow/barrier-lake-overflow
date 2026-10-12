@@ -4,7 +4,10 @@ name: daily-update
 
 on:
   schedule:
-    - cron: "30 23 * * *"   # 每天 07:30（台灣時間）
+    # 每兩天 07:17（台灣時間），UTC 的單數日 23:17。月底 31 日與隔月 1 日會連續跑兩天（cron 的 */2 依日期計算）。
+    # GitHub 排程在整點、半點最擁擠，容易延遲或被跳過，所以避開。排程不保證準時，延遲數十分鐘屬正常；
+    # repo 轉移後要重新 push 本檔才會重新登記排程。急著更新時到 Actions 頁面手動 Run workflow。
+    - cron: "17 23 */2 * *"
   workflow_dispatch:         # 也可以在 Actions 頁面手動執行
 
 permissions:

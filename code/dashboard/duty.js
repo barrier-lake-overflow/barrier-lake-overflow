@@ -439,7 +439,7 @@ const Duty = (() => {
         ${xs.map(x => `<option value="${x.i}" ${x.i === st.scenario ? 'selected' : ''}>${esc(fmt(x.s))}</option>`).join('')}
       </select>` : '';
     };
-    const select = menu('live', '每日監看', s => `${s.active === false ? '（已停止）' : ''}${s.name}`)
+    const select = menu('live', '自動監看', s => `${s.active === false ? '（已停止）' : ''}${s.name}`)
       + menu('replay', '全清冊回放', s => s.name);
     const pending = SCENARIOS.some(s => s.kind === 'negative') ? ''
       : '<span class="scen-pending">負案例（2026 汛期，同窗格同參數）尚未產生：見 scripts/gee_export_series_s1.js、run_sar_series.py</span>';

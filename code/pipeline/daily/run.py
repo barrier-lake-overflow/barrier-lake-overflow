@@ -102,7 +102,7 @@ def load_lakes() -> list:
     return read_lakes(CODE / "dashboard" / "data" / "lakes.js")
 
 
-def write_status(runner: Runner, started: datetime) -> dict:
+def write_status(runner: Runner, started: datetime, rain_as_of=None) -> dict:
     from . import news, watchlist
     state = watchlist.load_state()
     windows = [{"id": w["id"], "name": w["name"], "center": w["center"], "activatedAt": w["activatedAt"],
@@ -120,6 +120,8 @@ def write_status(runner: Runner, started: datetime) -> dict:
         "newsCandidates": [{k: v[k] for k in ("id", "time", "title", "source", "url", "kind", "matches")}
                            for v in cands[:30]],
         "newsCandidateCount": len(cands),
+        # GSMaP 在 GEE 上通常落後 1～2 天；儀表板據此顯示雨量資料的新舊
+        "rainAsOf": rain_as_of,
     }
     LIVE.mkdir(parents=True, exist_ok=True)
     STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -172,6 +174,7 @@ def main() -> int:
         need_gee = {"rain", "risk", "sentinel", "passrain"} - skip
         ee = run.step("gee-login", gee.init, args.project) if need_gee else None
         hot_rain = run.step("rain", rain.hotspot_rain, ee, hotspots) if ee else None
+        rain_as_of = next(iter(hot_rain.values()), {}).get("asOf") if hot_rain else None
         if ee:
             run.step("risk", run_risk, args.project)
         run.step("watchlist", watchlist.main, lakes, hot_rain, alerts)
@@ -184,10 +187,10 @@ def main() -> int:
         run.step("news", news.main, lakes)
         from pipeline.events import build
         run.step("build", lambda: {"scenarios": len(build.main())})
-        status = write_status(run, started)
+        write_status(run, started, rain_as_of)
         if args.commit:
             run.step("git", git_commit, args.push)
-            write_status(run, started)
+            write_status(run, started, rain_as_of)
     finally:
         LOCK.unlink(missing_ok=True)
     failed = [s["name"] for s in run.steps if s["status"] == "error"]

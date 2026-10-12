@@ -1,12 +1,16 @@
-# 每日自動更新
+# 自動更新
 
-`python -m pipeline.daily.run`（在 `code/` 底下）每天把資料抓一輪，重產儀表板。
+`python -m pipeline.daily.run`（在 `code/` 底下）把資料抓一輪，重產儀表板。模組名稱沿用 daily，實際排程是**每兩天一次**。
 
-**正式部署：GitHub Actions ＋ Netlify。** GitHub Actions 每天跑這支程式、把結果 commit 回 repo，
-Netlify 偵測到 push 後自動重新部署靜態儀表板。Netlify 本身不跑這條流程（它的排程函式只支援 JS／Go、
-執行時間很短，跑不了影像下載與 rasterio）。本機 Windows 排程只留給開發測試用。
+**正式部署：GitHub Actions ＋ GitHub Pages。** GitHub Actions 每兩天跑這支程式、把結果 commit 回 repo，
+GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overflow.github.io/barrier-lake-overflow/>。
+（repo 根目錄的 `index.html` 會轉到 `code/dashboard/`。）要改用 Netlify 的話設定也已備好，見下方「Netlify」。
+本機 Windows 排程只留給開發測試用。
 
-## 每天做什麼
+為什麼兩天一次：衛星雨量在 GEE 上本來就落後 1～2 天，每天跑對雨量沒有幫助。代價是警戒窗格、Sentinel-1 新影像、
+新聞最多晚 2 天；颱風期間建議到 Actions 頁面手動 Run workflow。
+
+## 每次做什麼
 
 | 步驟 | 來源 | 產出 |
 |---|---|---|
@@ -43,7 +47,8 @@ Netlify 偵測到 push 後自動重新部署靜態儀表板。Netlify 本身不�
 
 ## 雨量
 
-- **GSMaP**（`JAXA/GPM_L3/GSMaP/v8/operational`，`hourlyPrecipRateGC`）：不需要金鑰，GEE 上約延遲半天，1998 年起都有。
+- **GSMaP**（`JAXA/GPM_L3/GSMaP/v8/operational`，`hourlyPrecipRateGC`）：不需要金鑰，1998 年起都有。**GEE 上通常落後 1～2 天**（2026-10-12 實測：GSMaP 36 小時、IMERG 47 小時），儀表板會顯示雨量資料至何時。
+  所以雨量熱區觸發在颱風時會晚 1～2 天；即時的是農村水保署警戒，最緊急的狀況會先由警戒觸發。
   用雨量計校正版，因為未校正版在台灣山區低估明顯（馬太鞍溪形成前 72 小時：未校正 93 mm、校正 249 mm）。
   解析度約 11 km，仍是衛星估計，事件卡上標示「衛星估計，非測站」。
 - **風險模型**的 1／3／7／30 天雨量也用 GSMaP（模型以 ERA5-Land 網格雨量訓練，網格雨量比單點測站接近）。
@@ -81,7 +86,7 @@ Start-ScheduledTask -TaskName BarrierLakeDailyUpdate     # 立即跑一次
 
 ## GitHub Actions（雲端）
 
-`.github/workflows/daily.yml` 每天 07:30（台灣）執行，結果自動 commit 並推回 repo。需要 repo 擁有者設定一次：
+`.github/workflows/daily.yml` 每兩天 07:17（台灣）執行（GitHub 排程可能延遲數十分鐘；急著更新時可手動 Run workflow），結果自動 commit 並推回 repo。需要 repo 擁有者設定一次：
 
 1. **建 GEE 服務帳號**：Google Cloud Console → 專案 `ossint2026` → IAM 與管理 → 服務帳戶 → 建立
    （例如 `daily-update`），角色給「Earth Engine Resource Viewer」與「Service Usage Consumer」。

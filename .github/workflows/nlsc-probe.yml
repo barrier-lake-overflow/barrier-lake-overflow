@@ -1,0 +1,44 @@
+# 一次性診斷：國土測繪中心電子地圖 WFS 的金鑰該怎麼帶。只能手動執行（Actions → nlsc-probe → Run workflow）。
+# 對同一個查詢（馬太鞍溪壩址 400 m 內的河川中線）試幾種常見帶法，只印 HTTP 狀態與回應開頭，不印金鑰。
+# 確認帶法後即可刪除本檔。
+name: nlsc-probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe auth methods
+        env:
+          KEY: ${{ secrets.NLSC_API_KEY }}
+        run: |
+          set +e
+          echo "runner 對外 IP：$(curl -s -m 10 https://api.ipify.org)"
+          echo "金鑰長度：${#KEY}（不印內容）"
+          BASE="https://wfs.nlsc.gov.tw/WFS"
+          Q='SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&SRSNAME=EPSG:4326&TYPENAME=WFS:EMAP_RIVERL'
+          F=$(python3 -c "import urllib.parse as u; print(u.quote('<ogc:Filter><ogc:PropertyIsEqualTo><ogc:PropertyName>point</ogc:PropertyName><ogc:Literal>121.29752,23.70061</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>distance</ogc:PropertyName><ogc:Literal>400</ogc:Literal></ogc:PropertyIsEqualTo></ogc:Filter>'))")
+          try() {  # $1 名稱，其餘是 curl 參數
+            name="$1"; shift
+            out=$(curl -s -m 60 -w '\n%{http_code}' "$@")
+            code=$(echo "$out" | tail -1)
+            body=$(echo "$out" | head -c 400 | tr '\n' ' ')
+            body="${body//"$KEY"/***}"; body="${body:0:120}"   # 雙保險：GitHub 也會自動遮蔽 Secret
+            ok=$([ -n "$(echo "$body" | grep -o 'featureMember\|FeatureCollection')" ] && echo "★ 成功" || echo "")
+            printf '%-28s HTTP %s  %s  %s\n' "$name" "$code" "$ok" "$body"
+          }
+          try "不帶金鑰"                 "$BASE?$Q&FILTER=$F"
+          for p in key KEY apikey apiKey api_key token appkey authkey Authorization; do
+            try "網址參數 $p=" "$BASE?$Q&FILTER=$F&$p=$KEY"
+          done
+          try "Header Authorization"      -H "Authorization: $KEY" "$BASE?$Q&FILTER=$F"
+          try "Header Bearer"             -H "Authorization: Bearer $KEY" "$BASE?$Q&FILTER=$F"
+          try "Header X-API-Key"          -H "X-API-Key: $KEY" "$BASE?$Q&FILTER=$F"
+          try "Header apikey"             -H "apikey: $KEY" "$BASE?$Q&FILTER=$F"
+          try "S_WFS 路徑 + key="          "https://wfs.nlsc.gov.tw/S_WFS/WFS?$Q&FILTER=$F&key=$KEY"

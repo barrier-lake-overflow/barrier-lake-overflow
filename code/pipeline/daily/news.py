@@ -10,8 +10,12 @@
     勘查、會勘、現地、民眾通報、發現      → field
     其他                              → official（只算背景）
 
-地點比對：標題或摘要中出現清冊湖名、監看窗格名稱裡的溪名，就掛到那個情境。對不到的也保留，
-可以人工指定。候選存在 data/live/news.json（進版控）。
+主題篩選：標題或摘要要有堰塞湖、崩塌、大雨、河川水情這類字（TOPIC_WORDS），**不相關的直接不存**
+（例如對到溪名、但講的是橋梁工程或災後重建的新聞）。
+
+地點比對：標題或摘要中出現清冊湖名、監看窗格名稱裡的溪名，就掛到那個情境。**只有對到地點的才算候選**；
+對不到的標為 unmatched、不顯示，但每天仍重新比對（例如颱風時新增的警戒窗格可能對得上），對到就升為候選。
+候選存在 data/live/news.json（進版控）。
 
 確認一筆候選（寫進情境檔 externalEvidence，之後的研判就會用到）：
 
@@ -43,6 +47,10 @@ TW = timezone(timedelta(hours=8))
 QUERIES = ["堰塞湖", "崩塌 阻塞 河道", "土石 堵塞 溪 湖"]
 KEEP_DAYS = 60
 
+# 主題篩選：至少要出現一個，否則不存。以災情與水情為主，不收「洪災週年」「重建」這類回顧報導的通用詞
+TOPIC_WORDS = ("堰塞", "崩塌", "山崩", "坍方", "土石流", "走山", "落石", "大雨", "豪雨", "暴雨", "颱風",
+               "溢流", "潰決", "潰堤", "水位", "暴漲", "河道", "河川", "溪水", "阻塞", "堵塞", "淹水")
+
 KIND_RULES = [
     ("aerial", ("空拍", "航拍", "無人機", "空勘", "航遙測", "航測")),
     ("satellite", ("衛星影像", "衛星監測", "衛星判釋", "衛星圖")),
@@ -67,6 +75,17 @@ def classify(text: str) -> tuple:
             if w in text:
                 return kind, w
     return "official", ""
+
+
+def relevant(text: str) -> bool:
+    """標題＋摘要是否跟堰塞湖、崩塌、大雨、河川水情有關。
+
+    >>> relevant("萬里溪堰塞湖紅色警戒 2村停班停課"), relevant("花蓮崩塌阻塞河道")
+    (True, True)
+    >>> relevant("馬太鞍溪永久橋鋼梁合龍 明年中通車"), relevant("卓溪民眾即時通報 化解黑熊滋擾")
+    (False, False)
+    """
+    return any(w in text for w in TOPIC_WORDS)
 
 
 def place_keys(name: str) -> list:
@@ -160,24 +179,26 @@ def main(lakes: list, now=None) -> dict:
     for q in QUERIES:
         for it in fetch_rss(q):
             iid = hashlib.sha1(it["url"].encode()).hexdigest()[:10]
-            if iid in items:
+            if iid in items or not relevant(it["title"] + " " + it["summary"]):
                 continue
             kind, word = classify(it["title"] + " " + it["summary"])
-            items[iid] = {**it, "id": iid, "kind": kind, "keyword": word,
-                          "matches": match(it, places), "status": "candidate", "fetchedAt": now.isoformat(timespec="minutes")}
+            items[iid] = {**it, "id": iid, "kind": kind, "keyword": word, "matches": [],
+                          "status": "unmatched", "fetchedAt": now.isoformat(timespec="minutes")}
             new += 1
-    # 監看窗格每天會變，待確認的候選每次都重新比對地點
+    # 監看窗格每天會變，未處理的每次都重新比對地點；對到地點的才是候選
     for v in items.values():
-        if v["status"] == "candidate":
+        if v["status"] in ("candidate", "unmatched"):
             v["matches"] = match(v, places)
-    # 過期的未處理候選清掉；已確認／排除的留著當紀錄
+            v["status"] = "candidate" if v["matches"] else "unmatched"
+    # 過期或主題不相關的未處理項目清掉；已確認／排除的留著當紀錄
     cutoff = now - timedelta(days=KEEP_DAYS)
     data["items"] = {k: v for k, v in items.items()
-                     if v["status"] != "candidate" or datetime.fromisoformat(v["time"]) >= cutoff}
+                     if v["status"] not in ("candidate", "unmatched")
+                     or (datetime.fromisoformat(v["time"]) >= cutoff and relevant(v["title"] + " " + v["summary"]))}
     data["updatedAt"] = now.isoformat(timespec="minutes")
     save(data)
     cand = [v for v in data["items"].values() if v["status"] == "candidate"]
-    print(f"新聞：新增 {new} 筆，待確認候選 {len(cand)} 筆（其中對到地點 {sum(1 for v in cand if v['matches'])} 筆）")
+    print(f"新聞：新增 {new} 筆，對到地點的待確認候選 {len(cand)} 筆")
     return {"new": new, "candidates": len(cand)}
 
 

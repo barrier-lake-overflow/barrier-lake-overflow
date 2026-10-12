@@ -44,9 +44,8 @@ const DailyView = (() => {
     return `<ul class="dn">${list.slice(0, 8).map(n => `
       <li><span class="ro">${esc(KIND_TEXT[n.kind] || n.kind)}</span>
         <a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>
-        <span class="dim mono">${esc(n.time.slice(5, 16).replace('T', ' '))} · ${n.matches.length
-          ? '對到：' + n.matches.map(m => esc(m.name)).join('、') : '未對到地點'} · ${esc(n.id)}</span></li>`).join('')}</ul>
-      <p class="dim">共 ${total} 筆待確認。確認後才會進研判：<code>python -m pipeline.daily.news accept &lt;id&gt;</code></p>`;
+        <span class="dim mono">${esc(n.time.slice(5, 16).replace('T', ' '))} · 對到：${n.matches.map(m => esc(m.name)).join('、')}</span></li>`).join('')}</ul>
+      <p class="dim">共 ${total} 筆對到地點、待確認。確認後才會進研判（在本機執行 <code>python -m pipeline.daily.news list</code> 查看與確認）。</p>`;
   }
 
   function init() {
@@ -57,8 +56,15 @@ const DailyView = (() => {
     $('#dailyCount').textContent = `更新 ${D.finishedAt.slice(0, 16).replace('T', ' ')}` + (failed ? ` · ${failed} 步失敗` : '');
     const alerts = D.alerts.length
       ? `${D.alerts.length} 則（${[...new Set(D.alerts.map(a => a.place))].slice(0, 4).map(esc).join('、')}…）` : '目前無警戒';
+    // GSMaP 在 GEE 上通常落後 1～2 天；超過 48 小時標紅
+    let rainNote = '';
+    if (D.rainAsOf) {
+      const lag = Math.round((new Date(D.finishedAt) - new Date(D.rainAsOf)) / 3600000);
+      const at = new Date(D.rainAsOf).toLocaleString('zh-TW', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
+      rainNote = `<span class="ds ${lag > 48 ? 'err' : ''}" title="GSMaP 衛星雨量在 Google Earth Engine 上通常落後 1～2 天">雨量資料至 ${esc(at)}（落後約 ${lag} 小時）</span>`;
+    }
     $('#dailyBody').innerHTML = `
-      <div class="daily-steps"><span class="label">執行步驟</span>${steps(D.steps)}</div>
+      <div class="daily-steps"><span class="label">執行步驟</span>${steps(D.steps)}${rainNote}</div>
       <div class="daily-cols">
         <div><h3>監看窗格（${D.windows.length}）<span class="dim">　土石流／大規模崩塌警戒：${alerts}</span></h3>${windows(D.windows)}</div>
         <div><h3>外部證據候選</h3>${news(D.newsCandidates, D.newsCandidateCount)}</div>
