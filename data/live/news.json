@@ -723,7 +723,313 @@
    "matches": [],
    "status": "candidate",
    "fetchedAt": "2026-10-11T19:02+08:00"
+  },
+  "7c6316d4e4": {
+   "title": "115年10月5日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5GbTdRQXdrYVVjU2ZEaGI3TnBaWHI2Sk05ZDdScm9SYjlZOFZCc1o2eFNYNE8yUlI2cWIyS3VBZUNKYW1TQi1zal9XekI2Q0U?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-06T01:11+08:00",
+   "summary": "115年10月5日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "7c6316d4e4",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "21a8af599c": {
+   "title": "萬里溪堰塞湖10月4日現況 水位1,086.37公尺 - 報新聞",
+   "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxNY1hLRGd6MFR0ZWhwVXNGYTdPYVhzN1c2MGhtekhsdGkxY2R2UmtsWmhBTENDd2xjWGRENWtzMlhTcHpLVDFSNHhnY085UGNKWm96V0w4LVNUcUhYbjdId0pTVVVQdlNGUVpTVDBGTE13aTdmREZqeWN0Mm1yZVNLdFdEOTJRSThDRU9XQkJDb25sWjJNVm9DMEZjeFk0aE00ekdvYklzLThuQ0pobGRwTlREa3FMU3R6RENjeUdJOVNHT0pWNTJOZklTYjVNR1FNS2FySmtQamdVNzFEd01sanVaamNkQzkzYVlRR3YzRUhicmExX1lQdFEyUUNCMEZweV9MclA3alZFOVRGd08xRlZNemFac0FwajQ4VUVPYS0?oc=5",
+   "source": "報新聞",
+   "time": "2026-10-05T12:28+08:00",
+   "summary": "萬里溪堰塞湖10月4日現況 水位1,086.37公尺 報新聞",
+   "id": "21a8af599c",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "dd315a16a6": {
+   "title": "萬里溪堰塞湖紅色警戒！花蓮2村、4里明日停班停課 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE15Tk4xNU92WEdaMEtjakk4b1VFUDFDR0puNmxlellLRVJ3cy1HSG5tQ3U2aWV1bDZYZnVCTXhMd3VZM2FPUjlHa9IBTEFVX3lxTE5RWGZ2RTZ5V1JXU2p6cnR0cVJwLWM2UjlRUWphYlIyOTRTaWlZRkFLUUZ5cUExNzBVTXhnLWZCRXdXR3FhbzJQQWtLRTk?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-11T07:06+08:00",
+   "summary": "萬里溪堰塞湖紅色警戒！花蓮2村、4里明日停班停課 三立新聞",
+   "id": "dd315a16a6",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "f7a98cca07": {
+   "title": "尼泊爾堰塞湖潰堤再傳洪災 至少5人失蹤 - 自由時報",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9fdjdTbUpDZ0tjTXExT2Y3MlpvbWRZYW5FZHo2MUJLeUFfOWJNTmQ4ckloam14ZXVkS3RNYVI3bm5QMkJ2QzY2dlFjVXpwRjM5YU5aQngya2xHcm9nUmN5dVJqNXZlQdIBa0FVX3lxTE1RNlJWN2xaWGg4ZVp3VzlLZW5wZFVsZ0RJa0UwMlNrQ1p1Q1Nhck1fU1NhQWJGYzZtOHVMR3BRenJxRkJ5YU1WdDBiM3RFS3RVd1V6NTBJdERKQU54TThrcjhZODRBVDl4cmFv?oc=5",
+   "source": "自由時報",
+   "time": "2026-10-11T19:13+08:00",
+   "summary": "尼泊爾堰塞湖潰堤再傳洪災 至少5人失蹤 自由時報",
+   "id": "f7a98cca07",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "247851d7db": {
+   "title": "政院東區災害訪評花蓮登場 徐榛蔚秀區域防災韌性 - 中華日報",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1KeHVEZ3RpcmxlUUt6QUpMVVZrMmFrOXN6cGRad3Z2U2tZc1pieWlQalpvVXFBR21odERFQmFMRXZvV1lVbjN2cU9uNmI0d3oyWmc?oc=5",
+   "source": "中華日報",
+   "time": "2026-10-06T17:51+08:00",
+   "summary": "政院東區災害訪評花蓮登場 徐榛蔚秀區域防災韌性 中華日報",
+   "id": "247851d7db",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "4536feab6b": {
+   "title": "馬太鞍溪橋鋼梁合龍 永久橋明年中完工 - Rti 中央廣播電臺",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB3bmJYUHBpbFVTRUg4dUdxLXdwRl9zZ3lQYjM2cHdTamkxblBwa1FzdkxiQ2V5cmpWU2VtdmxSdmRIbU5HQ2dxVjg4WGFZSVpNQzBwMEhXaw?oc=5",
+   "source": "Rti 中央廣播電臺",
+   "time": "2026-10-07T13:42+08:00",
+   "summary": "馬太鞍溪橋鋼梁合龍 永久橋明年中完工 Rti 中央廣播電臺",
+   "id": "4536feab6b",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "1876e05b14": {
+   "title": "馬太鞍溪永久橋鋼梁合龍 交通部：將提前於116年中通車[影] - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1mSUNIRl9zTWd3UVBlRnRRLTg1OXhxMjdjeHd4bUlWcmNjckNjeE9oMy1LN3JtUVlaWFUzdkV4QXNiNm1xOUZVM3pHX21ZdVhVd3RYb1p5UnRxbUJoZ2dB?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-10-07T12:58+08:00",
+   "summary": "馬太鞍溪永久橋鋼梁合龍 交通部：將提前於116年中通車[影] 中央社 CNA",
+   "id": "1876e05b14",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "9deeec32f3": {
+   "title": "沈伯洋後勁太強！ 喚醒主播黃家緯1年前花蓮記憶 - 自由娛樂",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5lSlpmdWQwanpMazFqNF9YaFR3UXV3XzFZaDAyWE5kR1BBVU5XcU94aXYySl8wLXF4aVR2cDU5am96QlNoeUJxTl9wc1N2Qk5vTEticlJkNnI1OWN50gFiQVVfeXFMUDhVSmtKbEZES2RaR3loVXUybEdBZGptODZDRThfTUFfMWpjYzNZWVE5Nnh0Vi1XbHdmQ2c3STc1SkNaN3c4R1VBUmdxWTZ5REhSWE5JRVEwWTQ3djh4S1VjNXc?oc=5",
+   "source": "自由娛樂",
+   "time": "2026-10-12T07:51+08:00",
+   "summary": "沈伯洋後勁太強！ 喚醒主播黃家緯1年前花蓮記憶 自由娛樂",
+   "id": "9deeec32f3",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "d08c972614": {
+   "title": "尼泊爾再爆山洪 沖毀40戶房屋橋梁 數人失蹤 - 大紀元",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBtSFBoS2R5bEFILUM3eDFFcGpRWlhsSmdVdm5feW1vaVE1VVNYRW9pU3ctVXJ0ZGJ1dk1DdDdnOHhxNjlZZWZhd2YzV2FmNERLS0tIeDFFS2FXVTlwQ2szNnRoeHd3czDSAWdBVV95cUxQbUhQaEtkeWxBSC1DN3gxRXBqUVpYbEpnVXZuX3ltb2lRNVVTWEVvaVN3LVVydGRidXZNQ3Q3Zzh4cTY5WWVmYXdmM1dhZjRES0tLSHgxRUthV1U5cENrMzZ0aHh3d3Mw?oc=5",
+   "source": "大紀元",
+   "time": "2026-10-12T00:01+08:00",
+   "summary": "尼泊爾再爆山洪 沖毀40戶房屋橋梁 數人失蹤 大紀元",
+   "id": "d08c972614",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "efad88a327": {
+   "title": "光豐農會農民節暨健走、音樂會活動 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5fb3kwY2VhcENxWkJZQUVMNng1SERibEJoVlFQZktXSTRMNXNRQUFtcE5lY2gtTzVySGR2ZEN6bllEX1JfMGhyY1ln?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-09T17:59+08:00",
+   "summary": "光豐農會農民節暨健走、音樂會活動 更生新聞網",
+   "id": "efad88a327",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "c2e6094897": {
+   "title": "沈伯洋1年前「5分鐘訪問」被翻出！資深主播震撼發聲：訪過上千人他是第一個 - 鏡週刊Mirror Media",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE90S25pS0ZhdmVBTDhMUzVEV2xxWnhIeW5SZzNVTVBNVmxNU2s1SUxzS3ZTQmNxQlhvOTBGYXhkUTlocWZ2ZFA4UnhwSHUzRTk0a3dNWVFVR0h6c21rRjc0QUVfTdIBaEFVX3lxTE1lRDRWZzhXZ052RG8yWTJwQ3RJeFl0elc2U0J4MFN3UnJMMGU5WDlfZklVcktDQWcxVFdvakpLOWthcGNjTUYwZ1JpaDFvOV9SUDk4MDd1blF4dmtreXlqSURkYnRhS2g5?oc=5",
+   "source": "鏡週刊Mirror Media",
+   "time": "2026-10-12T08:24+08:00",
+   "summary": "沈伯洋1年前「5分鐘訪問」被翻出！資深主播震撼發聲：訪過上千人他是第一個 鏡週刊Mirror Media",
+   "id": "c2e6094897",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "570fbe8d6a": {
+   "title": "台9線馬太鞍溪新橋力拚今年底單線通車 陳世凱：安全品質絕不能妥協 - FTNN新聞",
+   "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5DaFdIZThZd2ZOMVB4bldGdzR1SUs1Mk5HQjlOblIyYk5tVG9VZjdHX3lqS2EtdnktTXV4Zmt5cTlYY3lyQ0h1eTF4WQ?oc=5",
+   "source": "FTNN新聞",
+   "time": "2026-10-08T10:00+08:00",
+   "summary": "台9線馬太鞍溪新橋力拚今年底單線通車 陳世凱：安全品質絕不能妥協 FTNN新聞",
+   "id": "570fbe8d6a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "64e394950f": {
+   "title": "社論》韓國瑜又一次失格演出 | 自由電子報 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE14bk5qdHMzXzlnYzhwckNVZEp2WERyZm5FdWtOeVhGc0YyQm1zdWE2VDVBbVQtSTdlVDVqOEVXakZRWDJsblY4MXVibEtFQ2hhZHZVR3dB?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-12T06:45+08:00",
+   "summary": "社論》韓國瑜又一次失格演出 | 自由電子報 LINE TODAY",
+   "id": "64e394950f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "59a0f6fb18": {
+   "title": "馬太鞍溪永久橋鋼梁合龍 預計可提前完工 (圖) - Yahoo新聞",
+   "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQSUN0NTRpS1RSLTZ2b2gwQWJWenI3dnNSWXRwRkZndWRJSVFBMUNwQmVURzZLUHF5R0g5SXNGSjREZnZhVFMzek8zVlBSc0JMeDNpbjVJUkY2enlrVl82VTlldlVqQXpIaV9jSlhMXzBwaVFUQ1R2NjZPNUZucEdkWDhpd1BKQlIzSUV1TlhBRXJ2UjRGQnBXS1pFaGRqUlZZV2xSb0RaaGhRX0E0SlJfZy1KUWJqdUwwd0Z3TkFtZFNidjQ1RzJ0MUxOSldHQzg5VVRlNGZWUmpEMlQ2b0dTeTdwX1M3dzhETWNtc2NPOXZPRlF3dm15bXBtZkRrNjB5dEZnOEsyMHVPYkk4YWoxWXhOY0Z2WV9uaXhsNURqUW5mRzN4YTlzUi1qalJGbjUxaFc4eFJkYXRYQQ?oc=5",
+   "source": "Yahoo新聞",
+   "time": "2026-10-07T14:45+08:00",
+   "summary": "馬太鞍溪永久橋鋼梁合龍 預計可提前完工 (圖) Yahoo新聞",
+   "id": "59a0f6fb18",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "e4aa2985b1": {
+   "title": "幕後》韓國瑜國慶大脫稿 上台前一刻決定「守好院長角色」 - 翻爆",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4wQ1RLU0xVbUxzOF9GZS03b3hvOEZHcnBZNjVBbzFhMEwweE9kV0VMeWFJb2lYZTZvSGxfN2xORkIxWnpuYV9vT05pdVk1eWR5Rk55azNCODM5UTV6Rno1LVhvQU91bUl4RE1DUy1nSE5vWEk?oc=5",
+   "source": "翻爆",
+   "time": "2026-10-10T14:05+08:00",
+   "summary": "幕後》韓國瑜國慶大脫稿 上台前一刻決定「守好院長角色」 翻爆",
+   "id": "e4aa2985b1",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "09b9934546": {
+   "title": "韓國瑜脫稿 上台前一刻決定守好院長角色 - 中國評論新聞",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15OHNiZWtPVjhKUGNBVlM3WlcxcFFpQ3NvZmRlZDFwWEhPcFUwT0prcWo2eUR5Wk0xN1dOMGRhNENxT1F2LUJEYVZLanBQbF83cmxwYl94V2NoVERfZEJhNTQwRTNaaUU?oc=5",
+   "source": "中國評論新聞",
+   "time": "2026-10-10T16:25+08:00",
+   "summary": "韓國瑜脫稿 上台前一刻決定守好院長角色 中國評論新聞",
+   "id": "09b9934546",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "6110685d22": {
+   "title": "台灣新聞報Taiwan-News Post - taiwan-news.com.tw",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9aYTRRRUE5TWNuMGJRNkVSeEN4TDJ0VmR1ZldaU013T2lOdGhmQUI1dm1IdW12clFzcno3WWdzWkhXLTlFc1pYN0RxRzdFY0RnRkZGY3hScnQ2MExO?oc=5",
+   "source": "taiwan-news.com.tw",
+   "time": "2026-10-08T08:37+08:00",
+   "summary": "台灣新聞報Taiwan-News Post taiwan-news.com.tw",
+   "id": "6110685d22",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
+  },
+  "b433a467e3": {
+   "title": "「後勁這麼強是第一個」主播力挺讚沈伯洋 - 鏡週刊Mirror Media",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5KNmZ2THlWeUcxbnlubGdzRmlWVURCSzFDUWt1alY4YjhVbC1YU1FxTUtwR1k1dzcxZXFyR1JxcnBMM3RjMFZLcUpLYXpSWFdkTllxSnFMT05WYnRzNkHSAWJBVV95cUxPaHdMd3lrdEZwYVRXR2t3QWNBWlAxUVhnQkxaQVdZTWNLT0RsczRjS09ZNWRnZ1NqU0dRZ285cXU1MndrcnV0clFhYnlkOXdaSGFXZkFlX0JIU3RzcUtXVEJrdw?oc=5",
+   "source": "鏡週刊Mirror Media",
+   "time": "2026-10-12T08:41+08:00",
+   "summary": "「後勁這麼強是第一個」主播力挺讚沈伯洋 鏡週刊Mirror Media",
+   "id": "b433a467e3",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "candidate",
+   "fetchedAt": "2026-10-12T09:59+08:00"
   }
  },
- "updatedAt": "2026-10-11T19:02+08:00"
+ "updatedAt": "2026-10-12T09:59+08:00"
 }
