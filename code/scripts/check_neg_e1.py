@@ -4,18 +4,21 @@
 
     cd code
     python scripts/check_neg_e1.py
+    python scripts/check_neg_e1.py --fetch --project <GCP 專案 ID>   # 先從 GEE 重抓光學影像
 
 需要：
-    data/raw/sentinel2/S2_E1_check_2026.tif   （scripts/gee_check_s2_e1.js 匯出，12 期 × B2 B3 B4 B8 B11 SCL）
+    data/raw/sentinel2/S2_E1_check_2026.tif   （--fetch 或 scripts/gee_check_s2_e1.js 匯出，每期 B2 B3 B4 B8 B11 CS）
     data/derived/final_neg2026_matai_an_*.json （run_sar_series.py 的結果）
     data/raw/sentinel1/*.tif                   （畫 SAR 對照圖用；缺的話只略過那張圖）
 
 輸出：
-    終端機印出逐期統計表（E1 範圍內的 SCL 分類、MNDWI、近紅外線，並和外圍一圈比較）
+    終端機印出逐期統計表（E1 範圍內的晴空比例、MNDWI、近紅外線，並和外圍一圈比較）
     docs/evidence/neg2026_e1_optical.png      晴天三期真色＋MNDWI，疊 E1 範圍
     docs/evidence/neg2026_e1_sar.png          2025／2026 SAR 與地形，疊 E1 範圍
 
-判讀：水的近紅外線（B8）通常 < 500、MNDWI 明顯 > 0、SCL 會判為 6（水）。
+雲遮罩用 Cloud Score+（cs_cdf ≥ 0.65，與底圖相同），不用 L2A 的 SCL 地物分類（山區常把陰影、
+暗色岩屑判成水或雲，不可靠）。只看晴空像元。
+判讀：水的近紅外線（B8）通常 < 500、MNDWI 明顯 > 0。
 """
 
 from __future__ import annotations
@@ -25,15 +28,48 @@ import glob
 import json
 import math
 import os
-from collections import Counter
 
 import numpy as np
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 DAM = (121.29752, 23.70061)
-SCL_TEXT = {0: "無資料", 1: "飽和", 2: "暗色地表", 3: "雲影", 4: "植生", 5: "裸露地表", 6: "水",
-            7: "未分類", 8: "雲（中）", 9: "雲（高）", 10: "卷雲", 11: "雪"}
-CLOUDY = {3, 8, 9, 10}
+CS_THRESHOLD = 0.65   # Cloud Score+ cs_cdf，與 pipeline/daily/basemap.py 相同
+CLEAR_FRAC = 0.5      # E1 範圍內晴空像元過半才算晴天
+BANDS = ["B2", "B3", "B4", "B8", "B11", "CS"]
+
+
+def fetch(path: str, project: str | None) -> None:
+    """與 gee_check_s2_e1.js 相同的影像，直接用 Python 下載。"""
+    import sys
+    import urllib.request
+    sys.path.insert(0, os.path.join(REPO, "code"))
+    from pipeline.daily import gee
+    ee = gee.init(project)
+    aoi = ee.Geometry.Point(list(DAM)).buffer(1500).bounds()
+    cs = ee.ImageCollection("GOOGLE/CLOUD_SCORE_PLUS/V1/S2_HARMONIZED")
+    s2 = (ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
+          .filterBounds(aoi).filterDate("2026-06-01", "2026-10-01")
+          .filter(ee.Filter.lt("CLOUDY_PIXEL_PERCENTAGE", 40))
+          .linkCollection(cs, ["cs_cdf"])
+          .sort("system:time_start"))
+
+    def one(img):
+        d = img.date().format("YYYYMMdd")
+        return (img.addBands(img.select("cs_cdf").multiply(10000).rename("CS"))
+                .select(BANDS).toUint16()
+                .rename(ee.List(BANDS).map(lambda b: ee.String(b).cat("_").cat(d))))
+
+    stack = s2.map(one).toBands()
+    url = stack.getDownloadURL({"region": aoi, "scale": 10, "crs": "EPSG:4326", "format": "GEO_TIFF"})
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with urllib.request.urlopen(url, timeout=300) as r, open(path, "wb") as f:
+        f.write(r.read())
+    import rasterio   # 直接下載的 GeoTIFF 沒有波段名稱，補上（與 Drive 匯出相同）
+    names = stack.bandNames().getInfo()
+    with rasterio.open(path, "r+") as dst:
+        for i, n in enumerate(names, 1):
+            dst.set_band_description(i, n)
+    print(f"寫入 {path}（{len(names) // len(BANDS)} 期）")
 
 
 def _font():
@@ -73,22 +109,28 @@ def optical(s2_path: str, polys: list, out_png: str) -> None:
                      out_shape=(src.height, src.width), transform=src.transform).astype(bool)
     ring = ndimage.binary_dilation(mask, iterations=6) & ~mask
     print(f"E1 範圍（2026 各期 SAR 候選聯集）：{mask.sum()} 像元，約 {mask.sum() * 0.0091:.1f} 公頃\n")
-    print("日期        E1 範圍內 SCL 分類（前兩名）         MNDWI E1／外圍   B8 E1／外圍   晴天")
-    clear = []
+    print("日期        E1 晴空   MNDWI E1／外圍   B8 E1／外圍   晴天（只算晴空像元）")
+    clear, stats = [], []
     for d in dates:
-        scl = band("SCL", d)
+        ok = band("CS", d) / 10000 >= CS_THRESHOLD
         b3, b8, b11 = band("B3", d), band("B8", d), band("B11", d)
         m = (b3 - b11) / (b3 + b11 + 1e-9)
-        cnt = Counter(scl[mask].astype(int))
-        tot = sum(cnt.values())
-        cls = "、".join(f"{SCL_TEXT.get(k, k)} {100 * v / tot:.0f}%" for k, v in cnt.most_common(2))
-        is_clear = sum(v for k, v in cnt.items() if k in CLOUDY) / tot < 0.5
+        frac = ok[mask].mean()
+        is_clear = frac >= CLEAR_FRAC
+        line = f"{d[:4]}-{d[4:6]}-{d[6:]}  {100 * frac:5.0f}%"
         if is_clear:
             clear.append(d)
-        print(f"{d[:4]}-{d[4:6]}-{d[6:]}  {cls:30s}  {m[mask].mean():6.2f}／{m[ring].mean():5.2f}"
-              f"   {b8[mask].mean():5.0f}／{b8[ring].mean():5.0f}   {'是' if is_clear else '否（雲）'}")
-    water_px = sum(int((band("SCL", d)[mask] == 6).sum()) for d in clear)
-    print(f"\n晴天 {len(clear)} 期，E1 範圍內被判為水的像元合計：{water_px}")
+            e, r = mask & ok, ring & ok
+            stats.append((m[e].mean(), m[e].mean() - m[r].mean(), b8[e].mean()))
+            line += (f"   {m[e].mean():6.2f}／{m[r].mean():5.2f}"
+                     f"   {b8[e].mean():5.0f}／{b8[r].mean():5.0f}   是")
+        else:
+            line += "        —               —        否（雲）"
+        print(line)
+    if stats:
+        mn, dm, nir = zip(*stats)
+        print(f"\n晴天 {len(clear)}／{len(dates)} 期：MNDWI {min(mn):.2f}～{max(mn):.2f}"
+              f"（與外圍差 {min(dm):+.2f}～{max(dm):+.2f}），B8 {min(nir):.0f}～{max(nir):.0f}")
 
     import matplotlib
     matplotlib.use("Agg")
@@ -101,12 +143,14 @@ def optical(s2_path: str, polys: list, out_png: str) -> None:
     for j, d in enumerate(show):
         label = f"{d[:4]}-{d[4:6]}-{d[6:]}"
         rgb = np.clip(np.dstack([band(b, d) for b in ("B4", "B3", "B2")]) / 2500, 0, 1) ** 0.8
-        b3, b11, scl = band("B3", d), band("B11", d), band("SCL", d)
+        b3, b11 = band("B3", d), band("B11", d)
+        cloud = band("CS", d) / 10000 < CS_THRESHOLD
         axs[0, j].imshow(rgb, extent=ext)
         axs[0, j].set_title(f"{label} 真色")
-        axs[1, j].imshow((b3 - b11) / (b3 + b11 + 1e-9), cmap="BrBG", vmin=-0.5, vmax=0.5, extent=ext)
-        axs[1, j].imshow(np.ma.masked_where(scl != 6, scl), cmap="winter", extent=ext)
-        axs[1, j].set_title(f"{label} MNDWI（綠＝偏水）＋S2 判為水（藍）")
+        axs[1, j].imshow(np.ma.masked_where(cloud, (b3 - b11) / (b3 + b11 + 1e-9)),
+                         cmap="BrBG", vmin=-0.5, vmax=0.5, extent=ext)
+        axs[1, j].set_facecolor("#bbbbbb")
+        axs[1, j].set_title(f"{label} MNDWI（綠＝偏水；灰＝雲遮罩）")
         for ax in axs[:, j]:
             for p in polys:
                 xs, ys = zip(*(p + [p[0]]))
@@ -188,8 +232,12 @@ def main() -> None:
     ap.add_argument("--s1-dir", default=os.path.join(REPO, "data", "raw", "sentinel1"))
     ap.add_argument("--derived", default=os.path.join(REPO, "data", "derived"))
     ap.add_argument("--out-dir", default=os.path.join(REPO, "docs", "evidence"))
+    ap.add_argument("--fetch", action="store_true", help="先從 GEE 重抓光學影像（覆蓋 --s2）")
+    ap.add_argument("--project", help="GCP 專案 ID（--fetch 用）")
     args = ap.parse_args()
 
+    if args.fetch:
+        fetch(args.s2, args.project)
     os.makedirs(args.out_dir, exist_ok=True)
     polys = e1_polygons(args.derived, args.name)
     if not polys:
