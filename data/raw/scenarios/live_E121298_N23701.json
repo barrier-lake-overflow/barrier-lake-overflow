@@ -4,14 +4,14 @@
   "kind": "live",
   "active": true,
   "hidden": false,
-  "description": "每日監看（監看中）：清冊監測中：花蓮馬太鞍溪（2025/7/21）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 5 張，參數與全清冊回放相同。",
+  "description": "自動監看（監看中）：清冊監測中：花蓮馬太鞍溪（2025/7/21）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105＋升軌 69，事件前基準 降軌 105 5 張、升軌 69 5 張；各軌道獨立複核，參數與全清冊回放相同。",
   "center": [
     121.29752,
     23.70061
   ],
   "windowKm": 4.0,
   "revisitDays": 12,
-  "orbitLabel": "降軌 105",
+  "orbitLabel": "降軌 105＋升軌 69",
   "trigger": {
     "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
     "time": "2026-10-11T15:42+08:00",
@@ -25,10 +25,16 @@
   "referenceLabel": "清冊壩址",
   "passes": [
     {
-      "file": "final_live_E121298_N23701_20261010.json",
+      "file": "final_live_E121298_N23701_D105_20261010.json",
       "time": "2026-10-10T21:51:00+00:00",
       "recheckTime": null,
-      "evidenceImage": null
+      "evidenceImage": null,
+      "orbitLabel": "降軌 105",
+      "rain": {
+        "h24": 0,
+        "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     }
   ]
 }

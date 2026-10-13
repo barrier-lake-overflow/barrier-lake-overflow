@@ -7,7 +7,7 @@ import doctest
 import unittest
 from datetime import datetime, timedelta, timezone
 
-from pipeline.daily import inventory_fetch, news, watchlist
+from pipeline.daily import inventory_fetch, news, sentinel, watchlist
 
 TW = timezone(timedelta(hours=8))
 NOW = datetime(2026, 7, 1, 8, tzinfo=TW)
@@ -37,10 +37,10 @@ class WatchlistTest(unittest.TestCase):
     def test_reactivated_window_resets_baseline(self):
         w = watchlist.update_windows({}, [self.trig("alert", "A")], NOW)
         k = next(iter(w))
-        w[k].update(orbit={"pass": "DESCENDING"}, scenes=[{"day": "20260620"}])
+        w[k].update(orbits={"D105": {"pass": "DESCENDING", "scenes": [{"day": "20260620"}]}})
         w = watchlist.update_windows({"windows": w}, [], NOW + timedelta(days=31))
         w = watchlist.update_windows({"windows": w}, [self.trig("alert", "A")], NOW + timedelta(days=60))
-        self.assertEqual((w[k]["orbit"], w[k]["scenes"]), (None, []))
+        self.assertEqual(w[k]["orbits"], {})
 
 
 class NewsTest(unittest.TestCase):
@@ -60,7 +60,7 @@ class NewsTest(unittest.TestCase):
 
 
 def load_tests(loader, tests, ignore):
-    for m in (inventory_fetch, news, watchlist):
+    for m in (inventory_fetch, news, sentinel, watchlist):
         tests.addTests(doctest.DocTestSuite(m))
     return tests
 

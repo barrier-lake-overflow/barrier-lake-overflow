@@ -13,24 +13,34 @@
     "bl075": {
      "source": "inventory",
      "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
-     "lastTriggeredAt": "2026-10-12T10:38+08:00"
+     "lastTriggeredAt": "2026-10-13T14:59+08:00"
     }
    },
    "active": true,
-   "orbit": {
-    "pass": "DESCENDING",
-    "orbit": 105,
-    "preCount": 10,
-    "preStart": "2026-08-05",
-    "preEnd": "2026-10-04"
-   },
-   "scenes": [
-    {
-     "day": "20261010",
-     "timeUTC": "21:51"
+   "lastTriggeredAt": "2026-10-13T14:59+08:00",
+   "orbits": {
+    "D105": {
+     "pass": "DESCENDING",
+     "orbit": 105,
+     "preCount": 10,
+     "scenes": [
+      {
+       "day": "20261010",
+       "timeUTC": "21:51"
+      }
+     ],
+     "preStart": "2026-08-05",
+     "preEnd": "2026-10-04"
+    },
+    "A69": {
+     "pass": "ASCENDING",
+     "orbit": 69,
+     "preCount": 5,
+     "scenes": [],
+     "preStart": "2026-08-05",
+     "preEnd": "2026-10-04"
     }
-   ],
-   "lastTriggeredAt": "2026-10-12T10:38+08:00"
+   }
   },
   "live_E121298_N23701": {
    "id": "live_E121298_N23701",
@@ -45,24 +55,34 @@
     "bl071": {
      "source": "inventory",
      "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
-     "lastTriggeredAt": "2026-10-12T10:38+08:00"
+     "lastTriggeredAt": "2026-10-13T14:59+08:00"
     }
    },
    "active": true,
-   "orbit": {
-    "pass": "DESCENDING",
-    "orbit": 105,
-    "preCount": 5,
-    "preStart": "2026-08-05",
-    "preEnd": "2026-10-04"
-   },
-   "scenes": [
-    {
-     "day": "20261010",
-     "timeUTC": "21:51"
+   "lastTriggeredAt": "2026-10-13T14:59+08:00",
+   "orbits": {
+    "D105": {
+     "pass": "DESCENDING",
+     "orbit": 105,
+     "preCount": 5,
+     "scenes": [
+      {
+       "day": "20261010",
+       "timeUTC": "21:51"
+      }
+     ],
+     "preStart": "2026-08-05",
+     "preEnd": "2026-10-04"
+    },
+    "A69": {
+     "pass": "ASCENDING",
+     "orbit": 69,
+     "preCount": 5,
+     "scenes": [],
+     "preStart": "2026-08-05",
+     "preEnd": "2026-10-04"
     }
-   ],
-   "lastTriggeredAt": "2026-10-12T10:38+08:00"
+   }
   },
   "live_E121345_N24564": {
    "id": "live_E121345_N24564",
@@ -77,26 +97,36 @@
     "bl068": {
      "source": "inventory",
      "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
-     "lastTriggeredAt": "2026-10-12T10:38+08:00"
+     "lastTriggeredAt": "2026-10-13T14:59+08:00"
     }
    },
    "active": true,
-   "orbit": {
-    "pass": "DESCENDING",
-    "orbit": 105,
-    "preCount": 5,
-    "preStart": "2026-08-05",
-    "preEnd": "2026-10-04"
-   },
-   "scenes": [
-    {
-     "day": "20261010",
-     "timeUTC": "21:51"
+   "lastTriggeredAt": "2026-10-13T14:59+08:00",
+   "orbits": {
+    "D105": {
+     "pass": "DESCENDING",
+     "orbit": 105,
+     "preCount": 5,
+     "scenes": [
+      {
+       "day": "20261010",
+       "timeUTC": "21:51"
+      }
+     ],
+     "preStart": "2026-08-05",
+     "preEnd": "2026-10-04"
+    },
+    "A69": {
+     "pass": "ASCENDING",
+     "orbit": 69,
+     "preCount": 5,
+     "scenes": [],
+     "preStart": "2026-08-05",
+     "preEnd": "2026-10-04"
     }
-   ],
-   "lastTriggeredAt": "2026-10-12T10:38+08:00"
+   }
   }
  },
- "updatedAt": "2026-10-12T10:38+08:00",
+ "updatedAt": "2026-10-13T14:59+08:00",
  "alerts": []
 }

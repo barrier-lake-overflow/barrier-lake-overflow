@@ -64893,7 +64893,7 @@ window.EVENT_SCENARIOS = [
   "name": "花蓮萬里溪",
   "kind": "live",
   "active": true,
-  "description": "每日監看（監看中）：清冊監測中：花蓮萬里溪（2026/06/20）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 10 張，參數與全清冊回放相同。",
+  "description": "自動監看（監看中）：清冊監測中：花蓮萬里溪（2026/06/20）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105＋升軌 69，事件前基準 降軌 105 10 張、升軌 69 5 張；各軌道獨立複核，參數與全清冊回放相同。",
   "center": [
    121.26957,
    23.79204
@@ -65012,16 +65012,17 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
        },
        {
         "kind": "optical",
@@ -65053,10 +65054,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65064,7 +65061,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -65080,7 +65076,7 @@ window.EVENT_SCENARIOS = [
   "name": "花蓮馬太鞍溪",
   "kind": "live",
   "active": true,
-  "description": "每日監看（監看中）：清冊監測中：花蓮馬太鞍溪（2025/7/21）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 5 張，參數與全清冊回放相同。",
+  "description": "自動監看（監看中）：清冊監測中：花蓮馬太鞍溪（2025/7/21）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105＋升軌 69，事件前基準 降軌 105 5 張、升軌 69 5 張；各軌道獨立複核，參數與全清冊回放相同。",
   "center": [
    121.29752,
    23.70061
@@ -65208,16 +65204,17 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
        },
        {
         "kind": "optical",
@@ -65249,10 +65246,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65261,7 +65254,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -65277,7 +65269,7 @@ window.EVENT_SCENARIOS = [
   "name": "新竹泰崗溪",
   "kind": "live",
   "active": true,
-  "description": "每日監看（監看中）：清冊監測中：新竹泰崗溪（2024/11/2）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105，事件前基準 5 張，參數與全清冊回放相同。",
+  "description": "自動監看（監看中）：清冊監測中：新竹泰崗溪（2024/11/2）。窗格自 2026-10-11 啟用，Sentinel-1 降軌 105＋升軌 69，事件前基準 降軌 105 5 張、升軌 69 5 張；各軌道獨立複核，參數與全清冊回放相同。",
   "center": [
    121.34463,
    24.56425
@@ -65401,16 +65393,17 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：新竹泰崗溪（2024/11/2）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
        },
        {
         "kind": "optical",
@@ -65442,10 +65435,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65454,7 +65443,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -65551,16 +65539,17 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：新竹泰崗溪（2024/11/2）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
        },
        {
         "kind": "optical",
@@ -65592,10 +65581,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65604,7 +65589,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"
@@ -65701,16 +65685,17 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：新竹泰崗溪（2024/11/2）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
        {
         "kind": "persistence",
         "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
        },
        {
         "kind": "optical",
@@ -65742,10 +65727,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -65754,7 +65735,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.medium.pending"

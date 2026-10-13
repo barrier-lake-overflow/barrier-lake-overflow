@@ -1,5 +1,5 @@
 {
-  "lakeId": "live_E121270_N23792",
+  "lakeId": "live_E121270_N23792_D105",
   "synthetic": false,
   "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
   "orbit": "DESCENDING",

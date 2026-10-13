@@ -150,7 +150,7 @@ def update_windows(state: dict, triggers: list, now: datetime, keep_days: int = 
             windows[wid] = {
                 "id": wid, "center": list(ll), "activatedAt": now_s,
                 "name": t.get("name") or t["label"], "lakeId": t.get("lakeId"),
-                "sources": {}, "active": True, "orbit": None, "scenes": [],
+                "sources": {}, "active": True, "orbits": {},
             }
         w = windows[wid]
         w["sources"][t["key"]] = {"source": t["source"], "label": t["label"], "lastTriggeredAt": now_s}

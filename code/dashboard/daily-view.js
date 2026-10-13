@@ -34,7 +34,7 @@ const DailyView = (() => {
       <li><button type="button" data-scen="${esc(w.id)}">
         <b>${esc(w.name)}</b>
         <span class="dim">${w.sources.map(esc).join('；')}</span>
-        <span class="dim mono">${w.orbit ? `${w.orbit.pass === 'DESCENDING' ? '降' : '升'}軌 ${w.orbit.orbit}` : '尚未選軌道'}
+        <span class="dim mono">${w.orbits && w.orbits.length ? w.orbits.map(esc).join('＋') : '尚未選軌道'}
           · 啟用 ${esc(w.activatedAt.slice(5, 10))} · 最新影像 ${day(w.lastScene)}</span>
       </button></li>`).join('')}</ul>`;
   }

@@ -107,7 +107,10 @@ def write_status(runner: Runner, started: datetime, rain_as_of=None) -> dict:
     state = watchlist.load_state()
     windows = [{"id": w["id"], "name": w["name"], "center": w["center"], "activatedAt": w["activatedAt"],
                 "sources": [s["label"] for s in w["sources"].values()],
-                "orbit": w.get("orbit"), "lastScene": (w.get("scenes") or [{}])[-1].get("day")}
+                "orbits": [f"{'降' if o['pass'] == 'DESCENDING' else '升'}軌 {o['orbit']}"
+                           for o in (w.get("orbits") or {}).values()],
+                "lastScene": max((sc["day"] for o in (w.get("orbits") or {}).values() for sc in o.get("scenes", [])),
+                                 default=None)}
                for w in state.get("windows", {}).values() if w["active"]]
     cands = sorted((v for v in news.load()["items"].values() if v["status"] == "candidate"),
                    key=lambda v: v["time"], reverse=True)
