@@ -223,5 +223,10 @@
       ],
       "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
     }
-  ]
+  ],
+  "basemap": {
+    "file": "data/basemaps/neg2026_matai_an.jpg",
+    "before": "2026-05-29",
+    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-05-29 以前；缺漏處以 Landsat 8/9 補"
+  }
 }

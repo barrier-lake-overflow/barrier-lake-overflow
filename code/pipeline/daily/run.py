@@ -15,6 +15,7 @@
     watchlist  監看窗格：清冊監測中＋警戒＋雨量熱區（data/live/state.json）
     sentinel   各窗格新過境 → 下載 → 偵測 → 情境檔
     passrain   各情境每期過境前的 GSMaP 雨量（缺的才補）
+    basemap    各情境小地圖的事件前光學底圖（缺的才做）
     news       Google 新聞 → 外部證據候選（data/live/news.json）
     build      事件佇列 events.js、全清冊回放 replay.js、每日狀態 daily.js
 
@@ -41,8 +42,8 @@ DAILY_JS = CODE / "dashboard" / "data" / "daily.js"
 LOCK = LIVE / ".lock"
 TW = timezone(timedelta(hours=8))
 
-STEPS = ["inventory", "alerts", "rain", "risk", "watchlist", "sentinel", "passrain", "news", "build"]
-GIT_PATHS = ["data/raw/taiwan-barrier-lakes.csv", "data/raw/scenarios", "data/derived",
+STEPS = ["inventory", "alerts", "rain", "risk", "watchlist", "sentinel", "passrain", "basemap", "news", "build"]
+GIT_PATHS = ["data/raw/taiwan-barrier-lakes.csv", "code/dashboard/data/basemaps", "data/raw/scenarios", "data/derived",
              "data/live/state.json", "data/live/news.json", "data/live/status.json", "code/dashboard/data"]
 
 
@@ -169,12 +170,12 @@ def main() -> int:
     started = datetime.now(TW)
     run = Runner(skip)
     try:
-        from . import gee, news, rain, sentinel, watchlist
+        from . import basemap, gee, news, rain, sentinel, watchlist
         run.step("inventory", run_inventory)
         lakes = load_lakes()
         alerts = run.step("alerts", watchlist.fetch_alerts)
         hotspots = watchlist.load_hotspots()
-        need_gee = {"rain", "risk", "sentinel", "passrain"} - skip
+        need_gee = {"rain", "risk", "sentinel", "passrain", "basemap"} - skip
         ee = run.step("gee-login", gee.init, args.project) if need_gee else None
         hot_rain = run.step("rain", rain.hotspot_rain, ee, hotspots) if ee else None
         rain_as_of = next(iter(hot_rain.values()), {}).get("asOf") if hot_rain else None
@@ -186,6 +187,7 @@ def main() -> int:
         if ee:
             run.step("sentinel", sentinel.main, state, args.project)
             run.step("passrain", rain.fill_pass_rain, ee)
+            run.step("basemap", basemap.main, ee)
         watchlist.save_state(state)
         run.step("news", news.main, lakes)
         from pipeline.events import build

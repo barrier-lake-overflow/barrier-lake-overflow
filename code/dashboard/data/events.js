@@ -21,6 +21,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl051.jpg",
+   "before": "2015-08-07",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-07 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-14T00:00:00+08:00",
@@ -104,6 +109,11 @@ window.EVENT_SCENARIOS = [
     24.16742
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl052.jpg",
+   "before": "2015-08-05",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-05 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -1121,6 +1131,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl053.jpg",
+   "before": "2016-01-20",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-01-20 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-01-27T00:00:00+08:00",
@@ -1218,6 +1233,11 @@ window.EVENT_SCENARIOS = [
     24.8075
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl054.jpg",
+   "before": "2016-08-12",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-08-12 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -4573,6 +4593,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl056.jpg",
+   "before": "2016-07-02",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-07-02 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-07-09T00:00:00+08:00",
@@ -4685,6 +4710,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl057.jpg",
+   "before": "2016-02-29",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-02-29 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-03-07T00:00:00+08:00",
@@ -4754,6 +4784,11 @@ window.EVENT_SCENARIOS = [
     23.70828
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl058.jpg",
+   "before": "2017-05-27",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2017-05-27 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -4852,6 +4887,11 @@ window.EVENT_SCENARIOS = [
     24.21974
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl060.jpg",
+   "before": "2019-08-14",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2019-08-14 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -5020,6 +5060,11 @@ window.EVENT_SCENARIOS = [
     22.72525
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl061.jpg",
+   "before": "2021-01-29",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-01-29 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -5977,6 +6022,11 @@ window.EVENT_SCENARIOS = [
     24.67563
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl062.jpg",
+   "before": "2021-06-12",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-06-12 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -7226,6 +7276,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl063.jpg",
+   "before": "2021-10-30",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-10-30 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-11-06T00:00:00+08:00",
@@ -7394,6 +7449,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl064.jpg",
+   "before": "2022-11-13",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2022-11-13 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2022-11-20T00:00:00+08:00",
@@ -7491,6 +7551,11 @@ window.EVENT_SCENARIOS = [
     23.77814
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl065.jpg",
+   "before": "2024-03-06",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-03-06 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -8256,6 +8321,11 @@ window.EVENT_SCENARIOS = [
     24.00896
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl066.jpg",
+   "before": "2024-04-07",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-04-07 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -9288,6 +9358,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl067.jpg",
+   "before": "2024-09-28",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-09-28 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-10-05T00:00:00+08:00",
@@ -9385,6 +9460,11 @@ window.EVENT_SCENARIOS = [
     24.56425
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl068.jpg",
+   "before": "2024-10-26",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -15227,6 +15307,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl069.jpg",
+   "before": "2025-01-18",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-01-18 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-01-25T00:00:00+08:00",
@@ -16180,6 +16265,11 @@ window.EVENT_SCENARIOS = [
     23.57874
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl070.jpg",
+   "before": "2025-07-01",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-07-01 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -18203,6 +18293,11 @@ window.EVENT_SCENARIOS = [
     24.17315
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl072.jpg",
+   "before": "2025-10-10",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-10-10 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -27500,6 +27595,11 @@ window.EVENT_SCENARIOS = [
     24.16209
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl073.jpg",
+   "before": "2026-03-31",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-03-31 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -54122,6 +54222,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
   },
+  "basemap": {
+   "file": "data/basemaps/inv_bl074.jpg",
+   "before": "2026-06-06",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-06-06 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-13T00:00:00+08:00",
@@ -56625,6 +56730,11 @@ window.EVENT_SCENARIOS = [
     23.79204
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/inv_bl075.jpg",
+   "before": "2026-06-13",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-06-13 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊登載形成日",
@@ -64908,6 +65018,11 @@ window.EVENT_SCENARIOS = [
    ],
    "label": "清冊壩址"
   },
+  "basemap": {
+   "file": "data/basemaps/live_E121270_N23792.jpg",
+   "before": "2026-10-11",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": {
    "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
    "time": "2026-10-11T15:42+08:00",
@@ -65090,6 +65205,11 @@ window.EVENT_SCENARIOS = [
     23.70061
    ],
    "label": "清冊壩址"
+  },
+  "basemap": {
+   "file": "data/basemaps/live_E121298_N23701.jpg",
+   "before": "2026-10-11",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
@@ -65283,6 +65403,11 @@ window.EVENT_SCENARIOS = [
     24.56425
    ],
    "label": "清冊壩址"
+  },
+  "basemap": {
+   "file": "data/basemaps/live_E121345_N24564.jpg",
+   "before": "2026-10-11",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
@@ -65764,6 +65889,11 @@ window.EVENT_SCENARIOS = [
     23.70061
    ],
    "label": "清冊壩址（事後登載，僅供對照）"
+  },
+  "basemap": {
+   "file": "data/basemaps/matai_an_2025.jpg",
+   "before": "2025-07-14",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-07-14 以前；缺漏處以 Landsat 8/9 補"
   },
   "trigger": {
    "label": "薇帕颱風外圍環流",
@@ -69293,6 +69423,11 @@ window.EVENT_SCENARIOS = [
   ],
   "windowKm": 4.0,
   "reference": null,
+  "basemap": {
+   "file": "data/basemaps/neg2026_matai_an.jpg",
+   "before": "2026-05-29",
+   "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-05-29 以前；缺漏處以 Landsat 8/9 補"
+  },
   "trigger": null,
   "snapshots": [
    {

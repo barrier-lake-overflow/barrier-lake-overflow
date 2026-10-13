@@ -262,6 +262,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         "center": scenario["center"],
         "windowKm": scenario.get("windowKm", 4.0),
         "reference": reference,
+        "basemap": scenario.get("basemap"),   # 事件前光學底圖（pipeline/daily/basemap.py）
         "trigger": scenario.get("trigger"),
         "snapshots": snapshots,
     }

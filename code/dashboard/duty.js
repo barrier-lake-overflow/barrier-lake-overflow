@@ -25,6 +25,7 @@ const Duty = (() => {
   const EVIDENCE_MARK = { support: '✓', against: '✗', context: '·' };
 
   const st = { scenario: 0, snap: 0, eventId: null };
+  let showBase = true;   // 小地圖是否顯示事件前光學底圖
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -163,7 +164,10 @@ const Duty = (() => {
     const xy = ([lon, lat]) => [W / 2 + (lon - lon0) * kx * pxPerKm, W / 2 - (lat - lat0) * ky * pxPerKm];
     const pts = poly => poly.map(p => xy(p).map(v => v.toFixed(1)).join(',')).join(' ');
 
-    let g = '';
+    // 事件前光學底圖：範圍與小地圖相同（pipeline/daily/basemap.py），經緯度線性對應，直接拉滿
+    let g = sc.basemap && showBase
+      ? `<image class="mm-base" href="${esc(sc.basemap.file)}" x="0" y="0" width="${W}" height="${W}" preserveAspectRatio="none"/>
+         <rect class="mm-dim" x="0" y="0" width="${W}" height="${W}"/>` : '';
     for (let k = 1; k < sc.windowKm; k++) {
       const v = k * pxPerKm;
       g += `<line class="mm-grid" x1="${v}" y1="0" x2="${v}" y2="${W}"/><line class="mm-grid" x1="0" y1="${v}" x2="${W}" y2="${v}"/>`;
@@ -194,8 +198,12 @@ const Duty = (() => {
       el.addEventListener('click', () => selectEvent(el.dataset.id));
       el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectEvent(el.dataset.id); } });
     });
-    $('#minimapNote').textContent =
-      `${sc.windowKm} km 分析窗格 · 色塊為 SAR 新增水體（陡坡遮罩會擋掉部分湖面）· ±${half} km`;
+    const note = $('#minimapNote');
+    note.innerHTML = `${sc.windowKm} km 分析窗格 · 色塊為 SAR 新增水體（陡坡遮罩會擋掉部分湖面）· ±${half} km` +
+      (sc.basemap ? `<br><label class="mm-toggle"><input type="checkbox" ${showBase ? 'checked' : ''}> 底圖</label>
+        <span title="${esc(sc.basemap.source)}">事件前光學影像（${esc(sc.basemap.before)} 以前）· 回放當下可取得，不含事件後的畫面</span>` : '');
+    const tg = $('.mm-toggle input', note);
+    if (tg) tg.addEventListener('change', () => { showBase = tg.checked; renderMinimap(); });
   }
 
   /* ── 事件卡 ── */
@@ -488,6 +496,8 @@ const Duty = (() => {
         '<div class="empty"><b>沒有事件資料</b>請在 code/ 底下執行 python -m pipeline.events.build 產生 data/events.js。</div>';
       return;
     }
+    // 預設開正案例（情境依檔名排序，回放 inv_* 會排在前面）
+    st.scenario = Math.max(0, SCENARIOS.findIndex(s => s.kind === 'positive'));
     st.snap = defaultSnap(scen());
     st.eventId = sortedEvents()[0] ? sortedEvents()[0].id : null;
     render();

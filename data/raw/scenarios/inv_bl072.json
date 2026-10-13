@@ -130,5 +130,10 @@
         "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
       }
     }
-  ]
+  ],
+  "basemap": {
+    "file": "data/basemaps/inv_bl072.jpg",
+    "before": "2025-10-10",
+    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-10-10 以前；缺漏處以 Landsat 8/9 補"
+  }
 }

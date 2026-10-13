@@ -618,6 +618,10 @@ footer .wrap{
 .minimap-wrap{padding:0 12px 14px}
 #minimap{width:100%;max-width:420px;display:block;margin:0 auto;aspect-ratio:1;background:var(--abyss);border:1px solid var(--line)}
 .mm-grid{stroke:var(--line);stroke-width:1}
+.mm-base{image-rendering:auto}
+.mm-dim{fill:var(--abyss);opacity:.35;pointer-events:none}   /* 壓暗底圖，讓色塊與文字清楚 */
+.mm-toggle{font-family:var(--mono);font-size:11px;color:var(--fog);cursor:pointer;margin-right:8px}
+.mm-toggle input{vertical-align:-2px;margin-right:3px}
 .mm-ref path{stroke:var(--fog);stroke-width:1.6}
 .mm-ref text{font-family:var(--mono);font-size:10px;fill:var(--fog)}
 .mm-ref text,.mm-ev text{paint-order:stroke;stroke:var(--abyss);stroke-width:3px;stroke-linejoin:round}
