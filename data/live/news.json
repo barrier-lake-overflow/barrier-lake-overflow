@@ -660,7 +660,204 @@
    "matches": [],
    "status": "unmatched",
    "fetchedAt": "2026-10-12T10:36+08:00"
+  },
+  "6abfbc107f": {
+   "title": "115年10月12日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBQbDY5YzU3STJsN3Z4dmx6THlRVnBMMUp4R2xDOGtwVmswNFNNdEJHWDFPS1NPQmNQUnhzcGdtbEwwc1JWT19iOE9Yb2tJbHM?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-12T11:53+08:00",
+   "summary": "115年10月12日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "6abfbc107f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "405a5c23c5": {
+   "title": "1012萬里溪堰塞湖資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5mVGZRLUpDMkUwMWZFNGlwUGt0eHh3ZVNRZmh1UWJDaWcwaDFsMjU2T0pSOGJPTnpHRk5YOHp4dDl2dGVITFBzYkhn?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-12T18:43+08:00",
+   "summary": "1012萬里溪堰塞湖資訊 更生新聞網",
+   "id": "405a5c23c5",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "a3507b0749": {
+   "title": "10月11日萬里溪堰塞湖水位1,086.28公尺 蓄水量約516.96萬立方公尺 - 報新聞",
+   "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxPQi1EX0hPQ3lXMGtTbVpBaHotTHlTUkp2Y1R0UEZSdHpJN0xUcFhLdTI3UDh1OGM1a2tzalJmcmo3WWQ3a0lEdEVKblNSY2lPZ09ncTY5aEF0R3JVLVBTaTk0WHctcHF1S3hicV9vWV93ejFNSExnOE1sZEIzTUtDYXdkRnlRY2N0QklRSEZUM1BnR3hWRGYzVTNZMDBLUHdBY1VBbGQwbE55RjlJX0E5STB2TzBkTjk5eVlMdFZYUHlrLXFfZ3laUzdYS2tkZ3E5RkFRZ2lhVTJldnZkczVQRFJZRHJlWk9ORnRQenlTUlgyRjRRbWZpOGhRMXpHZUtRSTBuZDhLbmVmN1lOOENOLTlHQjR1SjU3aFdfOGo2V1VacUdfRmpzbmo3cm1YcjVSd2RZclRaY25naV9BSTh0VllEZGtGLVlLd1pjckFEaE05TVRhRXdVclFScFZWdmw5TDh5U2ln?oc=5",
+   "source": "報新聞",
+   "time": "2026-10-12T13:22+08:00",
+   "summary": "10月11日萬里溪堰塞湖水位1,086.28公尺 蓄水量約516.96萬立方公尺 報新聞",
+   "id": "a3507b0749",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "e4dd31589a": {
+   "title": "有機不用真浪費？審計部報告指 堰塞湖監測未多加運用無人機 - TVBS新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5GS1FIcVZPZFR0cGFSTFNEamR0VGpRNUFnRElSRnhEMmduRnE0cGN1Wi1Ucnk4MkM1b2JmcXJQNmRIdnFtZ1VBWGJNQTA1Zw?oc=5",
+   "source": "TVBS新聞網",
+   "time": "2026-10-13T22:00+08:00",
+   "summary": "有機不用真浪費？審計部報告指 堰塞湖監測未多加運用無人機 TVBS新聞網",
+   "id": "e4dd31589a",
+   "kind": "aerial",
+   "keyword": "無人機",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "9f9306a288": {
+   "title": "115年10月13日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1wU0Z3MlE4T3pIbEpvcVdEZHAwVGNQQTdWRGV6M0dDSk80anJCd3RsYUxfQTF4VWI1X1FvRUxONWpRSnI2d1JHamFzUmdLN1lVY0E?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-13T10:07+08:00",
+   "summary": "115年10月13日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "9f9306a288",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "c1e2a2780f": {
+   "title": "10月11日萬里溪堰塞湖水位1,086.28公尺 蓄水量約516.96萬立方公尺 - 行銷人",
+   "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxObVJGenY3dHhRdE9YTGQxZjRyajZxVEsxYVhHb2R4YlVGeDlkd0JhR0duR2RUT3d0WTNqbVBGUlFQZkQ5UDVOamRHcmJwX1NhRUpEZDFjWW9IMzlBNXB3X0tKSW5mR1M1X3dGZkphbXN4ZkNWZjNSYkVfYkZnZ1AtMjZLenNua2hIYkpBZHgtZC1rcUg3UGtBOUdOSzlpTTIyOERySV9MWDU1ak9QeEQ2ZWRSU04zMENycURNUm96MW15UHl3d1JENmVMSjdXSjBqX0JCX3Y3YTJXLU92al95M2hlcW5CNXRxNjdCdE5PaklILW84eXpMRk1XRWJDcVVkdlN6eG56UWM2OUhTc29LRFV1dHRqUExWdmhybUQtZFhWeDR0ck0zRGdOT2FNdEhhdFl2WWdET0tmWUZKR1hsbzlZT2F3OFpEY0ctc0RyV2hCdFVPUVAtVkZCMU9ISGtNLWlHVERB?oc=5",
+   "source": "行銷人",
+   "time": "2026-10-12T14:35+08:00",
+   "summary": "10月11日萬里溪堰塞湖水位1,086.28公尺 蓄水量約516.96萬立方公尺 行銷人",
+   "id": "c1e2a2780f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "4681b2a4c3": {
+   "title": "槓桿堰塞湖值得徹底消失 - CMoney",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBLbGZNU3FDb2phRks2bi12WVgzLUxFOERiUWwxMXpaYU95QjNXSGUza0pIVW5BRnNMSFVRdlFDWkktTjdMUjJLQ2FaLUppSnlaRTNyUEt6Q0E?oc=5",
+   "source": "CMoney",
+   "time": "2026-10-13T21:21+08:00",
+   "summary": "槓桿堰塞湖值得徹底消失 CMoney",
+   "id": "4681b2a4c3",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "cb7d24d569": {
+   "title": "討論牆 | 有機不用真浪費？審計部報告指 堰塞湖監測未多加運用無人機 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBrOFo2cFEyd0hCSmhaMUdBQ0laT1ZkaE1DS2ZEYWozakYteV82WUlqVmVTREdYMXZwVWlGQk4xUUZkbzJuVWJHR0xDUUY3aF85VGt5T2VNSDQ0NDdGVWF6dU9XTWo?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-13T22:24+08:00",
+   "summary": "討論牆 | 有機不用真浪費？審計部報告指 堰塞湖監測未多加運用無人機 LINE TODAY",
+   "id": "cb7d24d569",
+   "kind": "aerial",
+   "keyword": "無人機",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-14T09:57+08:00"
+  },
+  "196e2b4885": {
+   "title": "尼泊爾再爆恐怖洪災 山崩堵河道「黑色巨龍」吞噬建物 - 壹蘋新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQd3ZORmxNWlFfajZraGdiNS16bjlaOHhrVzU3MVg2SkNvTUZWU3RwLV9kajQ0QlVIZ2lManpfN3Ezd3ZYc2tCMVlXSkdMSE05eEpfeUIzaDRaQ2J1a1NBSjY0YVl0cnRMdXU1aUFLenE5QzBsbXFKUjBPX0Ywa2xrQmd0dTdxZkZSV3c?oc=5",
+   "source": "壹蘋新聞網",
+   "time": "2026-10-11T16:21+08:00",
+   "summary": "尼泊爾再爆恐怖洪災 山崩堵河道「黑色巨龍」吞噬建物 壹蘋新聞網",
+   "id": "196e2b4885",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-14T09:57+08:00"
   }
  },
- "updatedAt": "2026-10-12T10:38+08:00"
+ "updatedAt": "2026-10-14T09:57+08:00"
 }
