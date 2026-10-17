@@ -263,6 +263,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         "windowKm": scenario.get("windowKm", 4.0),
         "reference": reference,
         "basemap": scenario.get("basemap"),   # 事件前光學底圖（pipeline/daily/basemap.py）
+        "aerial": scenario.get("aerial", []),  # 航遙分署航照圖層（scripts/aerial_dashboard.py），依可取得時間顯示
         "trigger": scenario.get("trigger"),
         "snapshots": snapshots,
     }

@@ -11,6 +11,7 @@
 | `observations.csv` | 團隊人工查證 | 每個湖一列的歷史雨量／颱風／地震觀測，來源寫在 `source` 欄。欄位說明見 `pipeline/ingest/observations.py` |
 | `sentinel2/*.tif`、`*.csv` | 自行從 GEE 匯出，**有進版控** | `S2_E1_check_2026.tif`（12 期光學，負案例 E1 查證，`scripts/gee_check_s2_e1.js` 匯出，給 `scripts/check_neg_e1.py`）與同名統計表 CSV |
 | `sentinel1/*.tif` | 自行從 GEE 匯出，**有進版控** | 馬太鞍溪 2025 正案例 8 張（`gee_export_matai_an_s1.js`）、2026 負案例 19 張（`gee_export_series_s1.js`），σ⁰ VV 與 DEM，給 `scripts/analyze_sar_change.py`。clone 下來就能直接重跑，不需要 GEE 帳號 |
+| `aerial/` | 農業部林業及自然保育署航測及遙測分署 提供（不進版控） | 馬太鞍溪航照裁切成壩址 4 km 窗格、1 m 的逐日拼接圖，`code/scripts/prepare_aerial.py` 產生；原始航照每張約 4 GB，放在專案外 |
 | `dem/DEM_matai_an.tif` | 自行從 GEE 匯出 NASADEM（不進版控） | 事件前地形，給 `scripts/run_hypsometry_real.py` |
 | `boundaries/` | 內政部國土測繪中心村里界圖，data.gov.tw/dataset/7438（不進版控） | 全台 7,986 個村里，`VILLCODE` 欄位 |
 | `population/` | SEGIS（segis.moi.gov.tw），不用登入（不進版控） | 114 年 12 月花蓮縣村里人口。路徑：資料集查詢下載 → 人口 → 縣市 → 村里別。`V_ID` 格式是 `10015120-004`，去掉連字號才對得上 `VILLCODE`，轉換寫在 `run_exposure_real.py` 的 `load_population()` |

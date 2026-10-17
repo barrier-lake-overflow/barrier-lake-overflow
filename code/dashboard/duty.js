@@ -26,6 +26,7 @@ const Duty = (() => {
 
   const st = { scenario: 0, snap: 0, eventId: null };
   let showBase = true;   // 小地圖是否顯示事件前光學底圖
+  let showAerial = true; // 小地圖是否疊上該時點已可取得的最新航照
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -165,9 +166,14 @@ const Duty = (() => {
     const pts = poly => poly.map(p => xy(p).map(v => v.toFixed(1)).join(',')).join(' ');
 
     // 事件前光學底圖：範圍與小地圖相同（pipeline/daily/basemap.py），經緯度線性對應，直接拉滿
-    let g = sc.basemap && showBase
-      ? `<image class="mm-base" href="${esc(sc.basemap.file)}" x="0" y="0" width="${W}" height="${W}" preserveAspectRatio="none"/>
-         <rect class="mm-dim" x="0" y="0" width="${W}" height="${W}"/>` : '';
+    // 航照圖層（scripts/aerial_dashboard.py）範圍相同、沒拍到處透明；只用這個時點已可取得的最新一張
+    const asOf = new Date(snap().asOf);
+    const air = (sc.aerial || []).filter(a => new Date(a.available) <= asOf).pop();
+    const layer = (cls, file) =>
+      `<image class="${cls}" href="${esc(file)}" x="0" y="0" width="${W}" height="${W}" preserveAspectRatio="none"/>`;
+    let g = (sc.basemap && showBase ? layer('mm-base', sc.basemap.file) : '') +
+            (air && showAerial ? layer('mm-base', air.file) : '');
+    if (g) g += `<rect class="mm-dim" x="0" y="0" width="${W}" height="${W}"/>`;
     for (let k = 1; k < sc.windowKm; k++) {
       const v = k * pxPerKm;
       g += `<line class="mm-grid" x1="${v}" y1="0" x2="${v}" y2="${W}"/><line class="mm-grid" x1="0" y1="${v}" x2="${W}" y2="${v}"/>`;
@@ -201,9 +207,13 @@ const Duty = (() => {
     const note = $('#minimapNote');
     note.innerHTML = `${sc.windowKm} km 分析窗格 · 色塊為 SAR 新增水體（陡坡遮罩會擋掉部分湖面）· ±${half} km` +
       (sc.basemap ? `<br><label class="mm-toggle"><input type="checkbox" ${showBase ? 'checked' : ''}> 底圖</label>
-        <span title="${esc(sc.basemap.source)}">事件前光學影像（${esc(sc.basemap.before)} 以前）· 回放當下可取得，不含事件後的畫面</span>` : '');
-    const tg = $('.mm-toggle input', note);
-    if (tg) tg.addEventListener('change', () => { showBase = tg.checked; renderMinimap(); });
+        <span title="${esc(sc.basemap.source)}">事件前光學影像（${esc(sc.basemap.before)} 以前）· 回放當下可取得，不含事件後的畫面</span>` : '') +
+      (air ? `<br><label class="mm-toggle"><input type="checkbox" data-layer="aerial" ${showAerial ? 'checked' : ''}> 航照</label>
+        <span>${esc(air.shotDate)} 拍攝 · ${esc(air.source)}</span>` : '');
+    $$('.mm-toggle input', note).forEach(tg => tg.addEventListener('change', () => {
+      if (tg.dataset.layer === 'aerial') showAerial = tg.checked; else showBase = tg.checked;
+      renderMinimap();
+    }));
   }
 
   /* ── 事件卡 ── */
@@ -295,8 +305,10 @@ const Duty = (() => {
       ev.human ? `<span class="badge ev-human">${VERDICTS[ev.human.verdict].tag}</span>` : '',
     ].join('');
 
-    const src = e => e.source
-      ? ` <a class="ev-src" href="${esc(e.url || '#')}" target="_blank" rel="noopener" title="${esc(e.source)}">來源</a>` : '';
+    // 沒有網址的出處（例如航遙分署直接提供的航照）直接寫出來源，不做成連結
+    const src = e => !e.source ? ''
+      : e.url ? ` <a class="ev-src" href="${esc(e.url)}" target="_blank" rel="noopener" title="${esc(e.source)}">來源</a>`
+      : ` <span class="ev-src">（${esc(e.source)}）</span>`;
     const evidence = ev.evidence.map(e => `
       <li class="ev-${e.status}"><span class="mk" aria-hidden="true">${EVIDENCE_MARK[e.status]}</span><span>${esc(e.text)}${src(e)}</span></li>`).join('');
     const gaps = ev.gaps.map(g => `<li><span class="mk" aria-hidden="true">?</span>${esc(g.text)}</li>`).join('');

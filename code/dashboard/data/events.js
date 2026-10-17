@@ -26,6 +26,7 @@ window.EVENT_SCENARIOS = [
    "before": "2015-08-07",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-07 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-14T00:00:00+08:00",
@@ -115,6 +116,7 @@ window.EVENT_SCENARIOS = [
    "before": "2015-08-05",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-05 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-12T00:00:00+08:00",
@@ -1136,6 +1138,7 @@ window.EVENT_SCENARIOS = [
    "before": "2016-01-20",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-01-20 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-01-27T00:00:00+08:00",
@@ -1239,6 +1242,7 @@ window.EVENT_SCENARIOS = [
    "before": "2016-08-12",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-08-12 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-08-19T00:00:00+08:00",
@@ -4598,6 +4602,7 @@ window.EVENT_SCENARIOS = [
    "before": "2016-07-02",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-07-02 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-07-09T00:00:00+08:00",
@@ -4715,6 +4720,7 @@ window.EVENT_SCENARIOS = [
    "before": "2016-02-29",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-02-29 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-03-07T00:00:00+08:00",
@@ -4790,6 +4796,7 @@ window.EVENT_SCENARIOS = [
    "before": "2017-05-27",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2017-05-27 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2017-06-03T00:00:00+08:00",
@@ -4893,6 +4900,7 @@ window.EVENT_SCENARIOS = [
    "before": "2019-08-14",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2019-08-14 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2019-08-21T00:00:00+08:00",
@@ -5066,6 +5074,7 @@ window.EVENT_SCENARIOS = [
    "before": "2021-01-29",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-01-29 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-02-05T00:00:00+08:00",
@@ -6028,6 +6037,7 @@ window.EVENT_SCENARIOS = [
    "before": "2021-06-12",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-06-12 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-06-19T00:00:00+08:00",
@@ -7281,6 +7291,7 @@ window.EVENT_SCENARIOS = [
    "before": "2021-10-30",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-10-30 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-11-06T00:00:00+08:00",
@@ -7454,6 +7465,7 @@ window.EVENT_SCENARIOS = [
    "before": "2022-11-13",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2022-11-13 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2022-11-20T00:00:00+08:00",
@@ -7557,6 +7569,7 @@ window.EVENT_SCENARIOS = [
    "before": "2024-03-06",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-03-06 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-03-13T00:00:00+08:00",
@@ -8327,6 +8340,7 @@ window.EVENT_SCENARIOS = [
    "before": "2024-04-07",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-04-07 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-04-14T00:00:00+08:00",
@@ -9363,6 +9377,7 @@ window.EVENT_SCENARIOS = [
    "before": "2024-09-28",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-09-28 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-10-05T00:00:00+08:00",
@@ -9466,6 +9481,7 @@ window.EVENT_SCENARIOS = [
    "before": "2024-10-26",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-11-02T00:00:00+08:00",
@@ -15312,6 +15328,7 @@ window.EVENT_SCENARIOS = [
    "before": "2025-01-18",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-01-18 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-01-25T00:00:00+08:00",
@@ -16271,6 +16288,7 @@ window.EVENT_SCENARIOS = [
    "before": "2025-07-01",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-07-01 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-07-08T00:00:00+08:00",
@@ -18299,6 +18317,7 @@ window.EVENT_SCENARIOS = [
    "before": "2025-10-10",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-10-10 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-10-17T00:00:00+08:00",
@@ -27601,6 +27620,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-03-31",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-03-31 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-04-07T00:00:00+08:00",
@@ -54227,6 +54247,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-06-06",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-06-06 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-13T00:00:00+08:00",
@@ -56736,6 +56757,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-06-13",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-06-13 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-20T00:00:00+08:00",
@@ -65023,6 +65045,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-10-11",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
    "time": "2026-10-11T15:42+08:00",
@@ -65211,6 +65234,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-10-11",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
    "time": "2026-10-11T15:42+08:00",
@@ -65409,6 +65433,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-10-11",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": {
    "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
    "time": "2026-10-11T15:42+08:00",
@@ -65895,6 +65920,50 @@ window.EVENT_SCENARIOS = [
    "before": "2025-07-14",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-07-14 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20250327.png",
+    "shotDate": "2025-03-27",
+    "available": "2025-03-28T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   },
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20250727.png",
+    "shotDate": "2025-07-27",
+    "available": "2025-07-28T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   },
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20250806.png",
+    "shotDate": "2025-08-06",
+    "available": "2025-08-07T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   },
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20250816.png",
+    "shotDate": "2025-08-16",
+    "available": "2025-08-17T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   },
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20250818.png",
+    "shotDate": "2025-08-18",
+    "available": "2025-08-19T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   },
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20250930.png",
+    "shotDate": "2025-09-30",
+    "available": "2025-10-01T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   },
+   {
+    "file": "data/basemaps/aerial_matai_an_2025_20251013.png",
+    "shotDate": "2025-10-13",
+    "available": "2025-10-14T23:59:00+08:00",
+    "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
+   }
+  ],
   "trigger": {
    "label": "薇帕颱風外圍環流",
    "time": "2025-07-21T17:54:00+08:00",
@@ -66392,7 +66461,7 @@ window.EVENT_SCENARIOS = [
       "confidence": "高",
       "confidenceReasons": [
        "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
-       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
+       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」、農業部林業及自然保育署航測及遙測分署 提供"
       ],
       "persistence": "pending",
       "persistenceText": "待複核",
@@ -66450,9 +66519,9 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "aerial",
         "status": "support",
-        "text": "7/27 航遙分署航拍取得清晰堰塞湖畫面，推估崩塌量約 2 億 m³、壩高約 200 m",
-        "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」",
-        "url": "https://zh.wikipedia.org/zh-tw/花蓮馬太鞍溪堰塞湖災害"
+        "text": "7/28 航遙分署 7/27 航拍：壩址上游可見湖面，航照判讀約 28 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
        },
        {
         "kind": "exposure",
@@ -66975,7 +67044,7 @@ window.EVENT_SCENARIOS = [
       "confidence": "高",
       "confidenceReasons": [
        "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
-       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
+       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」、農業部林業及自然保育署航測及遙測分署 提供"
       ],
       "persistence": "confirmed",
       "persistenceText": "已確認持續",
@@ -67038,9 +67107,9 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "aerial",
         "status": "support",
-        "text": "7/27 航遙分署航拍取得清晰堰塞湖畫面，推估崩塌量約 2 億 m³、壩高約 200 m",
-        "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」",
-        "url": "https://zh.wikipedia.org/zh-tw/花蓮馬太鞍溪堰塞湖災害"
+        "text": "7/28 航遙分署 7/27 航拍：壩址上游可見湖面，航照判讀約 28 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
        },
        {
         "kind": "exposure",
@@ -67676,7 +67745,7 @@ window.EVENT_SCENARIOS = [
       "confidence": "高",
       "confidenceReasons": [
        "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
-       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
+       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」、農業部林業及自然保育署航測及遙測分署 提供"
       ],
       "persistence": "confirmed",
       "persistenceText": "已確認持續",
@@ -67744,9 +67813,30 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "aerial",
         "status": "support",
-        "text": "7/27 航遙分署航拍取得清晰堰塞湖畫面，推估崩塌量約 2 億 m³、壩高約 200 m",
-        "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」",
-        "url": "https://zh.wikipedia.org/zh-tw/花蓮馬太鞍溪堰塞湖災害"
+        "text": "7/28 航遙分署 7/27 航拍：壩址上游可見湖面，航照判讀約 28 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
+       },
+       {
+        "kind": "aerial",
+        "status": "support",
+        "text": "8/7 航遙分署 8/6 航拍：壩址上游可見湖面，航照判讀至少 14 公頃（部分在照片範圍外）",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
+       },
+       {
+        "kind": "aerial",
+        "status": "support",
+        "text": "8/17 航遙分署 8/16 航拍：壩址上游可見湖面，航照判讀約 69 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
+       },
+       {
+        "kind": "aerial",
+        "status": "support",
+        "text": "8/19 航遙分署 8/18 航拍：壩址上游可見湖面，航照判讀約 91 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
        },
        {
         "kind": "official",
@@ -67796,6 +67886,9 @@ window.EVENT_SCENARIOS = [
        "trend.growing",
        "history.nearby",
        "external.optical",
+       "external.aerial",
+       "external.aerial",
+       "external.aerial",
        "external.aerial",
        "external.official",
        "exposure.known",
@@ -68628,7 +68721,7 @@ window.EVENT_SCENARIOS = [
       "confidence": "高",
       "confidenceReasons": [
        "SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）",
-       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」"
+       "外部來源：維基百科「花蓮馬太鞍溪堰塞湖災害」、農業部林業及自然保育署航測及遙測分署 提供"
       ],
       "persistence": "confirmed",
       "persistenceText": "已確認持續",
@@ -68696,9 +68789,30 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "aerial",
         "status": "support",
-        "text": "7/27 航遙分署航拍取得清晰堰塞湖畫面，推估崩塌量約 2 億 m³、壩高約 200 m",
-        "source": "維基百科「花蓮馬太鞍溪堰塞湖災害」",
-        "url": "https://zh.wikipedia.org/zh-tw/花蓮馬太鞍溪堰塞湖災害"
+        "text": "7/28 航遙分署 7/27 航拍：壩址上游可見湖面，航照判讀約 28 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
+       },
+       {
+        "kind": "aerial",
+        "status": "support",
+        "text": "8/7 航遙分署 8/6 航拍：壩址上游可見湖面，航照判讀至少 14 公頃（部分在照片範圍外）",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
+       },
+       {
+        "kind": "aerial",
+        "status": "support",
+        "text": "8/17 航遙分署 8/16 航拍：壩址上游可見湖面，航照判讀約 69 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
+       },
+       {
+        "kind": "aerial",
+        "status": "support",
+        "text": "8/19 航遙分署 8/18 航拍：壩址上游可見湖面，航照判讀約 91 公頃",
+        "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）",
+        "url": null
        },
        {
         "kind": "official",
@@ -68748,6 +68862,9 @@ window.EVENT_SCENARIOS = [
        "trend.growing",
        "history.nearby",
        "external.optical",
+       "external.aerial",
+       "external.aerial",
+       "external.aerial",
        "external.aerial",
        "external.official",
        "exposure.known",
@@ -69428,6 +69545,7 @@ window.EVENT_SCENARIOS = [
    "before": "2026-05-29",
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-05-29 以前；缺漏處以 Landsat 8/9 補"
   },
+  "aerial": [],
   "trigger": null,
   "snapshots": [
    {
