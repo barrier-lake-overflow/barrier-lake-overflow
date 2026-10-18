@@ -14,7 +14,7 @@
     python -m pipeline.events.build
 
 產出：data/derived/final_<name>_<YYYYMMDD>.json、data/raw/scenarios/<name>.json。
-參數（坡度門檻 35°、D8 填窪）跟 run_sar_all.bat 一致，負案例不另外調。
+參數（坡度門檻 35°、起始坡度 20°、D8 填窪）跟 run_sar_all.bat 一致，負案例不另外調。
 """
 
 from __future__ import annotations
@@ -36,6 +36,8 @@ DERIVED = REPO / "data" / "derived"
 SCENARIOS = REPO / "data" / "raw" / "scenarios"
 
 MAX_WATER_SLOPE_DEG = "35"   # 與 run_sar_all.bat 相同，不為負案例調整
+# 坡度雙門檻：每塊新增水體至少要有 1 像元坡度 ≤ 20° 才保留（scripts/hysteresis_replay.py、docs/parameters.md）
+SEED_SLOPE_DEG = "20"
 
 # 重跑時從既有情境檔保留的人工整理欄位（說明、外部證據、事後查證等），
 # 只有影像期別（passes）與地點等由程式重新產生。
@@ -154,7 +156,8 @@ def run_series(name: str, lon: float, lat: float, orbit: str, raw_dir: Path,
                    "--orbit", orbit, "--lon", str(lon), "--lat", str(lat),
                    "--lake-id", name, "--pre-label", pre_label,
                    "--post-label", f"post {t:%Y-%m-%d %H:%M} UTC",
-                   "--max-water-slope-deg", MAX_WATER_SLOPE_DEG, "--out", str(out)]
+                   "--max-water-slope-deg", MAX_WATER_SLOPE_DEG, "--seed-slope-deg", SEED_SLOPE_DEG,
+                   "--out", str(out)]
             if later:
                 cmd += ["--post-later", str(later[1])]
             log = out.with_suffix(".log")

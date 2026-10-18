@@ -24,7 +24,7 @@
     "area_m2": 297490.0,
     "area_hectare": 29.749
   },
-  "newWaterTotalAreaHectare": 6.6,
+  "newWaterTotalAreaHectare": 2.928,
   "landslide": {
     "date": "post 2025-03-10 10:00 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 57.94,
     "excludedForWaterPct": 64.3,
     "slopeOnlyExcludedHectare": 749.42,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -55,14 +57,14 @@
     {
       "id": "cand1",
       "grade": "A",
-      "areaHectare": 0.78,
+      "areaHectare": 0.753,
       "centroidRowCol": [
-        143.1,
-        88.6
+        143.8,
+        88.5
       ],
       "centroidXY": [
-        121.14761351274268,
-        23.385971254568567
+        121.1476055091015,
+        23.385907521870145
       ],
       "onRiver": true,
       "landslideNearby": true,
@@ -73,20 +75,24 @@
       "lakeFloorM": 1547.0,
       "waterLevelM": 1629.0,
       "reasons": [
-        "新增水體 0.78 公頃，緊貼事件前河道",
+        "新增水體 0.75 公頃，緊貼事件前河道",
         "500 m 內偵測到崩塌 1.88 公頃（SAR 回波變化 ≥ 門檻）",
         "崩塌延伸至湖底高程（1547 m）附近或以下，研判土石堵塞下游河道",
-        "後續 1 期影像同位置水體 IoU 最高 0.70，持續蓄水"
+        "後續 1 期影像同位置水體 IoU 最高 0.71，持續蓄水"
       ],
       "centroidLonLat": [
-        121.147614,
-        23.385971
+        121.147606,
+        23.385908
       ],
-      "distanceFromDamM": 1313.5,
+      "distanceFromDamM": 1311.2,
       "polygonLonLat": [
         [
-          121.14733820552914,
-          23.38575195995509
+          121.14742803705755,
+          23.385572296898268
+        ],
+        [
+          121.1477873631712,
+          23.38512313925621
         ],
         [
           121.14760770011438,
@@ -97,8 +103,8 @@
           23.384494318557323
         ],
         [
-          121.14733820552914,
-          23.38575195995509
+          121.14742803705755,
+          23.385572296898268
         ]
       ]
     }

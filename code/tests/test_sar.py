@@ -223,6 +223,27 @@ class TestBarrierLake(unittest.TestCase):
         for c in out["candidates"]:
             self.assertFalse((c.mask & puddle).any())            # 但不列入候選
 
+    def test_seed_filter_requires_min_seed_pixels(self):
+        nw = np.zeros((10, 10), dtype=bool)
+        nw[1:4, 1:4] = True                      # 9 像元，其中 2 個在緩坡
+        nw[6:9, 6:9] = True                      # 9 像元，其中 5 個在緩坡
+        gentle = np.zeros_like(nw)
+        gentle[1, 1:3] = True
+        gentle[6, 6:9] = True
+        gentle[7, 6:8] = True
+        kept = B.seed_filter(nw, gentle, min_seed_px=3)
+        self.assertFalse(kept[1:4, 1:4].any())
+        self.assertTrue(kept[6:9, 6:9].all())    # 整塊保留，含陡坡像元
+
+    def test_seeded_chain_keeps_lake(self):
+        s = B.synthetic_scene()
+        kw = dict(dem=s["dem"], later_post_dbs=s["later_dbs"], min_catchment_km2=0.05)
+        strict = B.run_sar_chain(s["pre_db"], s["post_db"], 10.0, max_water_slope_deg=20.0, **kw)
+        seeded = B.run_sar_chain(s["pre_db"], s["post_db"], 10.0, max_water_slope_deg=45.0,
+                                 seed_slope_deg=20.0, seed_min_area_m2=500.0, **kw)
+        self.assertEqual([c.grade for c in seeded["candidates"]], [c.grade for c in strict["candidates"]])
+        self.assertGreaterEqual(seeded["candidates"][0].area_m2, strict["candidates"][0].area_m2)
+
     def test_without_dem_downstream_unknown(self):
         s = B.synthetic_scene()
         out = B.run_sar_chain(s["pre_db"], s["post_db"], 10.0, dem=None,

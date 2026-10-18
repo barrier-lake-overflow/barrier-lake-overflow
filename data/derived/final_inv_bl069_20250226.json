@@ -24,7 +24,7 @@
     "area_m2": 299050.4,
     "area_hectare": 29.905
   },
-  "newWaterTotalAreaHectare": 6.792,
+  "newWaterTotalAreaHectare": 3.057,
   "landslide": {
     "date": "post 2025-02-26 10:00 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 57.94,
     "excludedForWaterPct": 64.3,
     "slopeOnlyExcludedHectare": 749.42,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -55,14 +57,14 @@
     {
       "id": "cand1",
       "grade": "A",
-      "areaHectare": 0.863,
+      "areaHectare": 0.771,
       "centroidRowCol": [
-        143.2,
-        88.8
+        144.5,
+        88.4
       ],
       "centroidXY": [
-        121.1476363697511,
-        23.38595647003041
+        121.14759914473072,
+        23.38584286090646
       ],
       "onRiver": true,
       "landslideNearby": true,
@@ -70,24 +72,20 @@
       "persistent": true,
       "laterScenesChecked": 1,
       "landslideAreaHectare": 1.918,
-      "lakeFloorM": 1529.0,
+      "lakeFloorM": 1547.0,
       "waterLevelM": 1629.0,
       "reasons": [
-        "新增水體 0.86 公頃，緊貼事件前河道",
+        "新增水體 0.77 公頃，緊貼事件前河道",
         "500 m 內偵測到崩塌 1.92 公頃（SAR 回波變化 ≥ 門檻）",
-        "崩塌延伸至湖底高程（1529 m）附近或以下，研判土石堵塞下游河道",
-        "後續 1 期影像同位置水體 IoU 最高 0.77，持續蓄水"
+        "崩塌延伸至湖底高程（1547 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.82，持續蓄水"
       ],
       "centroidLonLat": [
-        121.147636,
-        23.385956
+        121.147599,
+        23.385843
       ],
-      "distanceFromDamM": 1310.7,
+      "distanceFromDamM": 1308.7,
       "polygonLonLat": [
-        [
-          121.14724837400072,
-          23.38575195995509
-        ],
         [
           121.1477873631712,
           23.38512313925621
@@ -98,11 +96,11 @@
         ],
         [
           121.14724837400072,
-          23.38512313925621
+          23.38575195995509
         ],
         [
-          121.14724837400072,
-          23.38575195995509
+          121.1477873631712,
+          23.38512313925621
         ]
       ]
     }

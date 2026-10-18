@@ -24,7 +24,7 @@
     "area_m2": 121417.4,
     "area_hectare": 12.142
   },
-  "newWaterTotalAreaHectare": 9.935,
+  "newWaterTotalAreaHectare": 7.27,
   "landslide": {
     "date": "post 2025-07-28 21:51 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 4.92,
     "excludedForWaterPct": 44.8,
     "slopeOnlyExcludedHectare": 491.9,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -55,14 +57,14 @@
     {
       "id": "cand1",
       "grade": "A",
-      "areaHectare": 5.778,
+      "areaHectare": 5.659,
       "centroidRowCol": [
-        226.8,
-        173.2
+        227.0,
+        172.9
       ],
       "centroidXY": [
-        121.29346627014161,
-        23.69815476692798
+        121.29344308143587,
+        23.698142844309174
       ],
       "onRiver": true,
       "landslideNearby": true,
@@ -70,23 +72,23 @@
       "persistent": true,
       "laterScenesChecked": 1,
       "landslideAreaHectare": 111.482,
-      "lakeFloorM": 882.0,
+      "lakeFloorM": 888.0,
       "waterLevelM": 1031.0,
       "reasons": [
-        "新增水體 5.78 公頃，緊貼事件前河道",
+        "新增水體 5.66 公頃，緊貼事件前河道",
         "500 m 內偵測到崩塌 111.48 公頃（SAR 回波變化 ≥ 門檻）",
-        "崩塌延伸至湖底高程（882 m）附近或以下，研判土石堵塞下游河道",
+        "崩塌延伸至湖底高程（888 m）附近或以下，研判土石堵塞下游河道",
         "後續 1 期影像同位置水體 IoU 最高 0.52，持續蓄水"
       ],
       "centroidLonLat": [
-        121.293466,
-        23.698155
+        121.293443,
+        23.698143
       ],
-      "distanceFromDamM": 495.4,
+      "distanceFromDamM": 498.1,
       "polygonLonLat": [
         [
-          121.29187713474398,
-          23.697108037430915
+          121.29169747168716,
+          23.697018205902502
         ],
         [
           121.29304494461334,
@@ -165,8 +167,8 @@
           23.69737753201615
         ],
         [
-          121.29187713474398,
-          23.697108037430915
+          121.29169747168716,
+          23.697018205902502
         ]
       ]
     }
@@ -176,54 +178,40 @@
     "riverHectare": 10.62,
     "components": [
       {
-        "areaHectare": 5.778,
+        "areaHectare": 5.659,
         "centroidLonLat": [
-          121.293466,
-          23.698155
+          121.293443,
+          23.698143
         ],
-        "distanceFromDamM": 495.4,
+        "distanceFromDamM": 498.1,
         "demMinMaxM": [
-          882,
+          888,
           1031
         ],
         "onRiver": true,
         "status": "保留（見 candidates）"
       },
       {
-        "areaHectare": 0.458,
+        "areaHectare": 0.421,
         "centroidLonLat": [
-          121.298293,
-          23.700394
+          121.298322,
+          23.700354
         ],
-        "distanceFromDamM": 82.4,
+        "distanceFromDamM": 86.5,
         "demMinMaxM": [
           865,
-          912
+          883
         ],
         "onRiver": true,
         "status": "面積不足"
       },
       {
-        "areaHectare": 0.375,
+        "areaHectare": 0.256,
         "centroidLonLat": [
-          121.311317,
-          23.707998
-        ],
-        "distanceFromDamM": 1629.2,
-        "demMinMaxM": [
-          1471,
-          1641
-        ],
-        "onRiver": true,
-        "status": "面積不足"
-      },
-      {
-        "areaHectare": 0.266,
-        "centroidLonLat": [
-          121.308628,
+          121.308634,
           23.705241
         ],
-        "distanceFromDamM": 1244.0,
+        "distanceFromDamM": 1244.6,
         "demMinMaxM": [
           1429,
           1458
@@ -232,71 +220,15 @@
         "status": "面積不足"
       },
       {
-        "areaHectare": 0.247,
+        "areaHectare": 0.156,
         "centroidLonLat": [
-          121.307004,
-          23.70922
+          121.307151,
+          23.709634
         ],
-        "distanceFromDamM": 1361.3,
+        "distanceFromDamM": 1404.6,
         "demMinMaxM": [
-          1248,
+          1290,
           1312
-        ],
-        "onRiver": true,
-        "status": "面積不足"
-      },
-      {
-        "areaHectare": 0.156,
-        "centroidLonLat": [
-          121.307447,
-          23.717249
-        ],
-        "distanceFromDamM": 2110.6,
-        "demMinMaxM": [
-          1403,
-          1510
-        ],
-        "onRiver": true,
-        "status": "面積不足"
-      },
-      {
-        "areaHectare": 0.156,
-        "centroidLonLat": [
-          121.307843,
-          23.71513
-        ],
-        "distanceFromDamM": 1928.7,
-        "demMinMaxM": [
-          1381,
-          1432
-        ],
-        "onRiver": false,
-        "status": "面積不足"
-      },
-      {
-        "areaHectare": 0.137,
-        "centroidLonLat": [
-          121.314823,
-          23.717161
-        ],
-        "distanceFromDamM": 2550.6,
-        "demMinMaxM": [
-          1751,
-          1828
-        ],
-        "onRiver": true,
-        "status": "面積不足"
-      },
-      {
-        "areaHectare": 0.137,
-        "centroidLonLat": [
-          121.27907,
-          23.687457
-        ],
-        "distanceFromDamM": 2383.4,
-        "demMinMaxM": [
-          1223,
-          1256
         ],
         "onRiver": true,
         "status": "面積不足"
@@ -316,57 +248,43 @@
         "status": "面積不足"
       },
       {
-        "areaHectare": 0.128,
+        "areaHectare": 0.119,
         "centroidLonLat": [
-          121.306494,
-          23.705302
+          121.311692,
+          23.708064
         ],
-        "distanceFromDamM": 1053.3,
+        "distanceFromDamM": 1665.9,
         "demMinMaxM": [
-          1294,
-          1321
+          1561,
+          1581
         ],
-        "onRiver": false,
+        "onRiver": true,
         "status": "面積不足"
       },
       {
-        "areaHectare": 0.128,
+        "areaHectare": 0.119,
         "centroidLonLat": [
-          121.305487,
-          23.704031
+          121.279035,
+          23.687486
         ],
-        "distanceFromDamM": 896.9,
+        "distanceFromDamM": 2384.3,
         "demMinMaxM": [
-          1259,
-          1273
+          1223,
+          1234
         ],
-        "onRiver": false,
+        "onRiver": true,
         "status": "面積不足"
       },
       {
-        "areaHectare": 0.128,
+        "areaHectare": 0.101,
         "centroidLonLat": [
-          121.307963,
-          23.702671
+          121.282792,
+          23.690742
         ],
-        "distanceFromDamM": 1089.0,
-        "demMinMaxM": [
-          1363,
-          1401
-        ],
-        "onRiver": false,
-        "status": "面積不足"
-      },
-      {
-        "areaHectare": 0.11,
-        "centroidLonLat": [
-          121.282744,
-          23.690752
-        ],
-        "distanceFromDamM": 1863.5,
+        "distanceFromDamM": 1860.2,
         "demMinMaxM": [
           1118,
-          1148
+          1139
         ],
         "onRiver": false,
         "status": "面積不足"
@@ -383,6 +301,34 @@
           1464
         ],
         "onRiver": true,
+        "status": "面積不足"
+      },
+      {
+        "areaHectare": 0.064,
+        "centroidLonLat": [
+          121.306359,
+          23.711616
+        ],
+        "distanceFromDamM": 1520.8,
+        "demMinMaxM": [
+          1335,
+          1341
+        ],
+        "onRiver": true,
+        "status": "面積不足"
+      },
+      {
+        "areaHectare": 0.046,
+        "centroidLonLat": [
+          121.305163,
+          23.718425
+        ],
+        "distanceFromDamM": 2130.7,
+        "demMinMaxM": [
+          1360,
+          1367
+        ],
+        "onRiver": false,
         "status": "面積不足"
       }
     ]

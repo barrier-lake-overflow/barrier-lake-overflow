@@ -9,7 +9,7 @@
     python scripts/run_inventory_replay.py --rerun      # 結果檔已存在也重跑
     python -m pipeline.events.build                     # 回放＋統計
 
-參數與馬太鞍溪正案例、負案例完全相同（坡度 35°、D8 填窪），不逐湖調整。
+參數與馬太鞍溪正案例、負案例完全相同（坡度 35°、起始坡度 20°、D8 填窪），不逐湖調整。
 情境檔 data/raw/scenarios/inv_<lakeId>.json；重跑時保留人工整理的欄位（事後查證等）。
 """
 

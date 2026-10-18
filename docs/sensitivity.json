@@ -1,12 +1,14 @@
 {
- "generated": "2026-10-13T16:05+08:00",
+ "generated": "2026-10-18T10:31+08:00",
  "note": "scripts/sensitivity_replay.py 產生；每次只動一個參數，其餘維持基準值",
  "base": {
   "min_area_m2": 5000.0,
   "search_radius_m": 500.0,
   "dam_elev_tolerance_m": 5.0,
   "persistence_iou": 0.3,
-  "landslide_threshold_db": 3.0
+  "landslide_threshold_db": 3.0,
+  "max_water_slope_deg": 35.0,
+  "river_buffer_px": 2
  },
  "runs": [
   {
@@ -17,7 +19,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -53,7 +57,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 16,
    "observable": 23,
@@ -105,7 +111,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 3,
    "observable": 23,
@@ -134,7 +142,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 2,
    "observable": 23,
@@ -161,7 +171,9 @@
     "search_radius_m": 200.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -197,7 +209,9 @@
     "search_radius_m": 1000.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -233,7 +247,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 0.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -269,7 +285,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 20.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -305,7 +323,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.1,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -344,7 +364,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.5,
-    "landslide_threshold_db": 3.0
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -379,7 +401,9 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 2.0
+    "landslide_threshold_db": 2.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
@@ -415,13 +439,171 @@
     "search_radius_m": 500.0,
     "dam_elev_tolerance_m": 5.0,
     "persistence_iou": 0.3,
-    "landslide_threshold_db": 4.0
+    "landslide_threshold_db": 4.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 2
    },
    "detected": 8,
    "observable": 23,
    "expectedChance": 5.0,
    "detectedHigh": 5,
    "expectedChanceHigh": 2.6,
+   "otherEvents": 49,
+   "negEvents": 1,
+   "negHighEvents": 1,
+   "detectedLakes": [
+    "bl052",
+    "bl061",
+    "bl066",
+    "bl068",
+    "bl071",
+    "bl072",
+    "bl073",
+    "bl075"
+   ],
+   "detectedHighLakes": [
+    "bl061",
+    "bl068",
+    "bl071",
+    "bl072",
+    "bl075"
+   ]
+  },
+  {
+   "name": "判水最大坡度（°）",
+   "value": 20.0,
+   "params": {
+    "min_area_m2": 5000.0,
+    "search_radius_m": 500.0,
+    "dam_elev_tolerance_m": 5.0,
+    "persistence_iou": 0.3,
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 20.0,
+    "river_buffer_px": 2
+   },
+   "detected": 3,
+   "observable": 23,
+   "expectedChance": 1.2,
+   "detectedHigh": 2,
+   "expectedChanceHigh": 0.7,
+   "otherEvents": 5,
+   "negEvents": 0,
+   "negHighEvents": 0,
+   "detectedLakes": [
+    "bl071",
+    "bl073",
+    "bl075"
+   ],
+   "detectedHighLakes": [
+    "bl071",
+    "bl075"
+   ]
+  },
+  {
+   "name": "判水最大坡度（°）",
+   "value": 45.0,
+   "params": {
+    "min_area_m2": 5000.0,
+    "search_radius_m": 500.0,
+    "dam_elev_tolerance_m": 5.0,
+    "persistence_iou": 0.3,
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 45.0,
+    "river_buffer_px": 2
+   },
+   "detected": 15,
+   "observable": 23,
+   "expectedChance": 11.9,
+   "detectedHigh": 10,
+   "expectedChanceHigh": 7.2,
+   "otherEvents": 202,
+   "negEvents": 10,
+   "negHighEvents": 5,
+   "detectedLakes": [
+    "bl052",
+    "bl053",
+    "bl061",
+    "bl062",
+    "bl063",
+    "bl064",
+    "bl065",
+    "bl066",
+    "bl068",
+    "bl069",
+    "bl071",
+    "bl072",
+    "bl073",
+    "bl074",
+    "bl075"
+   ],
+   "detectedHighLakes": [
+    "bl052",
+    "bl053",
+    "bl061",
+    "bl065",
+    "bl068",
+    "bl069",
+    "bl071",
+    "bl072",
+    "bl073",
+    "bl075"
+   ]
+  },
+  {
+   "name": "貼河道外擴（像元）",
+   "value": 0,
+   "params": {
+    "min_area_m2": 5000.0,
+    "search_radius_m": 500.0,
+    "dam_elev_tolerance_m": 5.0,
+    "persistence_iou": 0.3,
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 0
+   },
+   "detected": 8,
+   "observable": 23,
+   "expectedChance": 5.0,
+   "detectedHigh": 5,
+   "expectedChanceHigh": 2.7,
+   "otherEvents": 48,
+   "negEvents": 1,
+   "negHighEvents": 1,
+   "detectedLakes": [
+    "bl052",
+    "bl061",
+    "bl066",
+    "bl068",
+    "bl071",
+    "bl072",
+    "bl073",
+    "bl075"
+   ],
+   "detectedHighLakes": [
+    "bl061",
+    "bl068",
+    "bl071",
+    "bl072",
+    "bl075"
+   ]
+  },
+  {
+   "name": "貼河道外擴（像元）",
+   "value": 4,
+   "params": {
+    "min_area_m2": 5000.0,
+    "search_radius_m": 500.0,
+    "dam_elev_tolerance_m": 5.0,
+    "persistence_iou": 0.3,
+    "landslide_threshold_db": 3.0,
+    "max_water_slope_deg": 35.0,
+    "river_buffer_px": 4
+   },
+   "detected": 8,
+   "observable": 23,
+   "expectedChance": 5.0,
+   "detectedHigh": 5,
+   "expectedChanceHigh": 2.7,
    "otherEvents": 49,
    "negEvents": 1,
    "negHighEvents": 1,

@@ -24,7 +24,7 @@
     "area_m2": 653495.1,
     "area_hectare": 65.35
   },
-  "newWaterTotalAreaHectare": 12.043,
+  "newWaterTotalAreaHectare": 4.917,
   "landslide": {
     "date": "post 2025-11-29 10:01 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 58.71,
     "excludedForWaterPct": 66.4,
     "slopeOnlyExcludedHectare": 889.03,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -51,156 +53,5 @@
     "maskedPct": 69.8
   },
   "laterScenes": 1,
-  "candidates": [
-    {
-      "id": "cand1",
-      "grade": "A",
-      "areaHectare": 0.557,
-      "centroidRowCol": [
-        206.9,
-        132.9
-      ],
-      "centroidXY": [
-        121.55143650020226,
-        24.17246335120682
-      ],
-      "onRiver": true,
-      "landslideNearby": true,
-      "damDownstream": true,
-      "persistent": true,
-      "laterScenesChecked": 1,
-      "landslideAreaHectare": 1.232,
-      "lakeFloorM": 427.0,
-      "waterLevelM": 536.0,
-      "reasons": [
-        "新增水體 0.56 公頃，緊貼事件前河道",
-        "500 m 內偵測到崩塌 1.23 公頃（SAR 回波變化 ≥ 門檻）",
-        "崩塌延伸至湖底高程（427 m）附近或以下，研判土石堵塞下游河道",
-        "後續 1 期影像同位置水體 IoU 最高 0.45，持續蓄水"
-      ],
-      "centroidLonLat": [
-        121.551437,
-        24.172463
-      ],
-      "distanceFromDamM": 785.1,
-      "polygonLonLat": [
-        [
-          121.55202924102497,
-          24.172226991201732
-        ],
-        [
-          121.55274789325227,
-          24.17204732814491
-        ],
-        [
-          121.55166991491133,
-          24.171867665088087
-        ],
-        [
-          121.55202924102497,
-          24.172226991201732
-        ]
-      ]
-    },
-    {
-      "id": "cand2",
-      "grade": "C",
-      "areaHectare": 0.602,
-      "centroidRowCol": [
-        303.3,
-        158.4
-      ],
-      "centroidXY": [
-        121.55372787356221,
-        24.163799160536175
-      ],
-      "onRiver": true,
-      "landslideNearby": true,
-      "damDownstream": false,
-      "persistent": true,
-      "laterScenesChecked": 1,
-      "landslideAreaHectare": 1.25,
-      "lakeFloorM": 502.0,
-      "waterLevelM": 739.0,
-      "reasons": [
-        "新增水體 0.60 公頃，緊貼事件前河道",
-        "500 m 內偵測到崩塌 1.25 公頃（SAR 回波變化 ≥ 門檻）",
-        "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
-        "後續 1 期影像同位置水體 IoU 最高 0.31，持續蓄水"
-      ],
-      "centroidLonLat": [
-        121.553728,
-        24.163799
-      ],
-      "distanceFromDamM": 1176.7,
-      "polygonLonLat": [
-        [
-          121.55427502923527,
-          24.16477097434354
-        ],
-        [
-          121.55400553465003,
-          24.164591311286717
-        ],
-        [
-          121.55409536617844,
-          24.164860805871953
-        ],
-        [
-          121.55427502923527,
-          24.16477097434354
-        ]
-      ]
-    },
-    {
-      "id": "cand3",
-      "grade": "C",
-      "areaHectare": 0.575,
-      "centroidRowCol": [
-        43.6,
-        401.0
-      ],
-      "centroidXY": [
-        121.57551733391014,
-        24.187126904791267
-      ],
-      "onRiver": true,
-      "landslideNearby": true,
-      "damDownstream": false,
-      "persistent": true,
-      "laterScenesChecked": 1,
-      "landslideAreaHectare": 0.712,
-      "lakeFloorM": 858.0,
-      "waterLevelM": 1091.0,
-      "reasons": [
-        "新增水體 0.57 公頃，緊貼事件前河道",
-        "500 m 內偵測到崩塌 0.71 公頃（SAR 回波變化 ≥ 門檻）",
-        "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
-        "後續 1 期影像同位置水體 IoU 最高 0.40，持續蓄水"
-      ],
-      "centroidLonLat": [
-        121.575517,
-        24.187127
-      ],
-      "distanceFromDamM": 2278.3,
-      "polygonLonLat": [
-        [
-          121.57556510146891,
-          24.188306834787472
-        ],
-        [
-          121.57529560688367,
-          24.18812717173065
-        ],
-        [
-          121.57520577535526,
-          24.188396666315885
-        ],
-        [
-          121.57556510146891,
-          24.188306834787472
-        ]
-      ]
-    }
-  ]
+  "candidates": []
 }

@@ -24,7 +24,7 @@
     "area_m2": 7987.2,
     "area_hectare": 0.799
   },
-  "newWaterTotalAreaHectare": 0.554,
+  "newWaterTotalAreaHectare": 0.082,
   "landslide": {
     "date": "post 2015-08-18 10:00 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 1.94,
     "excludedForWaterPct": 25.7,
     "slopeOnlyExcludedHectare": 360.41,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",

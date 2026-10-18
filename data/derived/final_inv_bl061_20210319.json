@@ -24,7 +24,7 @@
     "area_m2": 230132.9,
     "area_hectare": 23.013
   },
-  "newWaterTotalAreaHectare": 6.613,
+  "newWaterTotalAreaHectare": 3.321,
   "landslide": {
     "date": "post 2021-03-19 10:00 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 14.86,
     "excludedForWaterPct": 34.3,
     "slopeOnlyExcludedHectare": 525.94,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -55,14 +57,14 @@
     {
       "id": "cand1",
       "grade": "A",
-      "areaHectare": 0.729,
+      "areaHectare": 0.581,
       "centroidRowCol": [
-        182.2,
-        210.3
+        181.6,
+        208.2
       ],
       "centroidXY": [
-        120.95265338407124,
-        22.726774589561945
+        120.95247009309855,
+        22.72683128251568
       ],
       "onRiver": true,
       "landslideNearby": true,
@@ -71,38 +73,38 @@
       "laterScenesChecked": 1,
       "landslideAreaHectare": 4.999,
       "lakeFloorM": 512.0,
-      "waterLevelM": 589.0,
+      "waterLevelM": 540.0,
       "reasons": [
-        "新增水體 0.73 公頃，緊貼事件前河道",
+        "新增水體 0.58 公頃，緊貼事件前河道",
         "500 m 內偵測到崩塌 5.00 公頃（SAR 回波變化 ≥ 門檻）",
         "崩塌延伸至湖底高程（512 m）附近或以下，研判土石堵塞下游河道",
-        "後續 1 期影像同位置水體 IoU 最高 0.87，持續蓄水"
+        "後續 1 期影像同位置水體 IoU 最高 0.89，持續蓄水"
       ],
       "centroidLonLat": [
-        120.952653,
-        22.726775
+        120.95247,
+        22.726831
       ],
-      "distanceFromDamM": 179.7,
+      "distanceFromDamM": 192.5,
       "polygonLonLat": [
         [
-          120.95195463123315,
-          22.727376688223895
+          120.95258345193203,
+          22.7266580359966
+        ],
+        [
+          120.95186479970474,
+          22.72710719363866
+        ],
+        [
+          120.95186479970474,
+          22.72746651975231
         ],
         [
           120.95267328346044,
           22.72710719363866
         ],
         [
-          120.95276311498885,
+          120.95258345193203,
           22.7266580359966
-        ],
-        [
-          120.95222412581838,
-          22.72674786752501
-        ],
-        [
-          120.95195463123315,
-          22.727376688223895
         ]
       ]
     }

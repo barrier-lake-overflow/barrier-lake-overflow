@@ -193,7 +193,7 @@ class TestNegativeScenario(unittest.TestCase):
 
 
 class TestMataiAnReplay(unittest.TestCase):
-    """馬太鞍溪真實結果：湖在 7/29 出現、8/4 複核後升高優先；四個誤報複核後都降為低優先。"""
+    """馬太鞍溪真實結果：湖在 7/29 出現、8/4 複核後升高優先；三個誤報複核後都降為低優先。"""
 
     @classmethod
     def setUpClass(cls):
@@ -238,7 +238,7 @@ class TestMataiAnReplay(unittest.TestCase):
     def test_false_alarms_end_low(self):
         p = self._by_priority("8/28 05:52")
         self.assertEqual(p["high"], ["E3"])
-        self.assertEqual(sorted(p["low"]), ["E1", "E2", "E4", "E5"])
+        self.assertEqual(sorted(p["low"]), ["E1", "E2", "E4"])
 
     def test_reference_lake_not_counted_as_history(self):
         e3 = self.snaps["8/4 05:52"]["events"][0]

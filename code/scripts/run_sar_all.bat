@@ -1,8 +1,8 @@
 @echo off
 rem Run from the code folder:  scripts\run_sar_all.bat
-rem Four dates, same parameters (slope 35 deg). Results: data\derived\final_*.json
+rem Four dates, same parameters (slope 35 deg, seed slope 20 deg). Results: data\derived\final_*.json
 set S=..\data\raw\sentinel1
-set COMMON=--pre %S%\S1_VV_pre_matai_an.tif --dem %S%\NASADEM_matai_an.tif --orbit DESCENDING --lon 121.29752 --lat 23.70061 --lake-id bl071 --pre-label "pre 2025-06-04~07-16 median" --max-water-slope-deg 35 --debug-components
+set COMMON=--pre %S%\S1_VV_pre_matai_an.tif --dem %S%\NASADEM_matai_an.tif --orbit DESCENDING --lon 121.29752 --lat 23.70061 --lake-id bl071 --pre-label "pre 2025-06-04~07-16 median" --max-water-slope-deg 35 --seed-slope-deg 20 --debug-components
 
 echo [1/4] 2025-07-22 (36 h) + 07-28 recheck
 python scripts\analyze_sar_change.py %COMMON% --post %S%\S1_VV_post_matai_an.tif --post-later %S%\S1_VV_post2_matai_an.tif --post-label "post 2025-07-22 21:52 UTC" --out ..\data\derived\final_0722.json > ..\data\derived\final_0722.log 2>&1

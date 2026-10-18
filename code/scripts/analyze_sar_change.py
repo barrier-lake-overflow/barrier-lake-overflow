@@ -86,6 +86,9 @@ def main() -> None:
                     help="列出所有新增水體連通塊（含被淘汰的）與淘汰原因，除錯用")
     ap.add_argument("--max-water-slope-deg", type=float, default=20.0,
                     help="坡度超過此值不判水（預設 20）。陡峭窄谷配 30 m DEM 時湖面可能被整片遮掉")
+    ap.add_argument("--seed-slope-deg", type=float, default=None,
+                    help="雙門檻：每塊新增水體至少要有 --seed-min-area-m2 落在此坡度以下才保留（整塊保留）。不給則不啟用")
+    ap.add_argument("--seed-min-area-m2", type=float, default=0.0)
     ap.add_argument("--pre-label", default="事件前")
     ap.add_argument("--post-label", default="事件後")
     ap.add_argument("--ndwi-json", default=None, help="analyze_ndwi_change.py 的輸出，交叉驗證用")
@@ -124,6 +127,7 @@ def main() -> None:
         dates=[args.pre_label, args.post_label] + [f"後續第{i + 1}期" for i in range(len(wins) - 2)],
         min_area_m2=args.min_lake_area_m2, search_radius_m=args.search_radius_m,
         max_water_slope_deg=args.max_water_slope_deg,
+        seed_slope_deg=args.seed_slope_deg, seed_min_area_m2=args.seed_min_area_m2,
     )
 
     candidates = []
@@ -169,6 +173,8 @@ def main() -> None:
             "excludedForWaterPct": round(100.0 * float(invalid["water"].mean()), 1),
             "slopeOnlyExcludedHectare": round(float(slope_only.sum()) * area_px, 2),
             "maxWaterSlopeDeg": args.max_water_slope_deg,
+            "seedSlopeDeg": args.seed_slope_deg,
+            "seedMinAreaM2": args.seed_min_area_m2 if args.seed_slope_deg is not None else None,
         },
         "darkNewPixelsDiagnostic": {
             "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",

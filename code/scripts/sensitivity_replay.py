@@ -8,8 +8,8 @@
 用本機已下載的回放影像（data/raw/sentinel1/replay/、馬太鞍溪正負案例），不重新下載；
 不覆寫 data/derived/ 的結果檔，也不改儀表板。
 
-- 每一期影像的前處理（濾波、判水、河網）只做一次；崩塌門檻每個值各做一次；
-  其餘參數（最小面積、崩塌搜尋半徑、壩體高程容許值、持續 IoU）只重跑 classify。
+- 每一期影像的前處理（濾波、判水、河網）只做一次；判水最大坡度、崩塌門檻每個值各做一次；
+  其餘參數（最小面積、貼河道外擴、崩塌搜尋半徑、壩體高程容許值、持續 IoU）只重跑 classify。
 - 每組參數的候選照正式流程串成事件、研判優先等級（build.build_scenario），
   再用 replay.summarize 算偵測數與隨機基準，口徑與儀表板「全清冊回放」完全相同。
 - 「高優先」欄：只保留研判為高優先的事件，重算偵測數與隨機基準。
@@ -44,20 +44,27 @@ REPO = CODE.parent
 S1 = REPO / "data" / "raw" / "sentinel1"
 OUT = REPO / "docs" / "sensitivity.json"
 MAX_WATER_SLOPE_DEG = 35.0   # 與 run_sar_series.py 相同
+SEED_SLOPE_DEG = 20.0        # 與 run_sar_series.py 相同（docs/sensitivity.json 是加入這條之前算的）
 HALF_WIDTH_KM = 2.0
 
 BASE = {"min_area_m2": 5000.0, "search_radius_m": 500.0, "dam_elev_tolerance_m": 5.0,
-        "persistence_iou": 0.3, "landslide_threshold_db": LANDSLIDE_THRESHOLD_DB}
+        "persistence_iou": 0.3, "landslide_threshold_db": LANDSLIDE_THRESHOLD_DB,
+        "max_water_slope_deg": MAX_WATER_SLOPE_DEG, "river_buffer_px": 2}
 VARY = {
     "min_area_m2": [2000.0, 5000.0, 10000.0, 20000.0],
     "search_radius_m": [200.0, 500.0, 1000.0],
     "dam_elev_tolerance_m": [0.0, 5.0, 20.0],
     "persistence_iou": [0.1, 0.3, 0.5],
     "landslide_threshold_db": [2.0, 3.0, 4.0],
+    "max_water_slope_deg": [20.0, 35.0, 45.0],
+    "river_buffer_px": [0, 2, 4],
 }
 LABEL = {"min_area_m2": "最小面積（m²）", "search_radius_m": "崩塌搜尋半徑（m）",
          "dam_elev_tolerance_m": "壩體高程容許值（m）", "persistence_iou": "持續 IoU",
-         "landslide_threshold_db": "崩塌門檻（dB）"}
+         "landslide_threshold_db": "崩塌門檻（dB）", "max_water_slope_deg": "判水最大坡度（°）",
+         "river_buffer_px": "貼河道外擴（像元）"}
+# 這兩個參數會改變前處理（判水、崩塌），每個值要各跑一次 run_sar_chain
+CHAIN_KEYS = ("max_water_slope_deg", "landslide_threshold_db")
 
 # 馬太鞍溪正案例的影像檔名沿用早期手動匯出（見 scripts/run_sar_all.bat）
 MATAI_AN = {"final_0722.json": ("S1_VV_post_matai_an.tif", "S1_VV_post2_matai_an.tif"),
@@ -85,8 +92,27 @@ def pass_rasters(scenario: dict, orbit: str) -> list:
     return [x for x in out if all(f.exists() for f in (x[1], x[2], x[4]) + ((x[3],) if x[3] else ()))]
 
 
-def prepare(scenario: dict, orbit: str, thresholds: list) -> list:
-    """每期一次前處理；回傳 [(pass, {崩塌門檻: chain 結果}, dem, transform, cell, later 數)]。"""
+def chain_combos() -> list:
+    """要跑前處理的 (判水最大坡度, 崩塌門檻) 組合：基準組，加上一次只動一個的組合。"""
+    combos = [tuple(BASE[k] for k in CHAIN_KEYS)]
+    for key in CHAIN_KEYS:
+        for v in VARY[key]:
+            combo = tuple(v if k == key else BASE[k] for k in CHAIN_KEYS)
+            if combo not in combos:
+                combos.append(combo)
+    return combos
+
+
+def chain_kwargs(combo: tuple) -> dict:
+    slope, thr = combo
+    return {"max_water_slope_deg": slope, "landslide_threshold_db": thr, "seed_slope_deg": SEED_SLOPE_DEG}
+
+
+def prepare(scenario: dict, orbit: str, combos: list, kwargs_of=chain_kwargs) -> list:
+    """
+    每期每組前處理參數跑一次；回傳 [(pass, {combo: chain 結果}, dem, transform, cell, later 數)]。
+    kwargs_of(combo) → 傳給 run_sar_chain 的參數（預設 combo = (坡度, 崩塌門檻)）。
+    """
     lon, lat = scenario["center"]
     out = []
     for p, pre, post, later, dem_path in pass_rasters(scenario, orbit):
@@ -103,22 +129,23 @@ def prepare(scenario: dict, orbit: str, thresholds: list) -> list:
         tr = (a, b, c + col0 * a + row0 * b, d, e, f + col0 * d + row0 * e)
         cell = cell_size_xy_m(scenes[0]["transform"], True, center_lat=lat)
         chains = {}
-        for thr in thresholds:
+        for combo in combos:
             r = run_sar_chain(wins[0], wins[1], cell, dem=dem_win, later_post_dbs=wins[2:], transform=tr,
-                              look_azimuth_deg=S1_LOOK_AZIMUTH_DEG[orbit], landslide_threshold_db=thr,
-                              max_water_slope_deg=MAX_WATER_SLOPE_DEG, min_area_m2=1e12)   # 不分類，只要中間結果
-            chains[thr] = {k: r[k] for k in ("new_water", "river", "later_new_water")}
-            chains[thr]["landslide"] = r["landslides"].mask
+                              look_azimuth_deg=S1_LOOK_AZIMUTH_DEG[orbit], min_area_m2=1e12,   # 不分類，只要中間結果
+                              **kwargs_of(combo))
+            chains[combo] = {k: r[k] for k in ("new_water", "river", "later_new_water")}
+            chains[combo]["landslide"] = r["landslides"].mask
         out.append((p, chains, dem_win, tr, cell, len(wins) - 2))
     return out
 
 
 def candidates(prepared_pass, params: dict) -> dict:
     p, chains, dem, tr, cell, n_later = prepared_pass
-    ch = chains[params["landslide_threshold_db"]]
+    ch = chains[tuple(params[k] for k in CHAIN_KEYS)]
     cands = classify(ch["new_water"], ch["landslide"], ch["river"], cell, dem=dem,
                      later_new_water=ch["later_new_water"], transform=tr,
-                     min_area_m2=params["min_area_m2"], search_radius_m=params["search_radius_m"],
+                     min_area_m2=params["min_area_m2"], river_buffer_px=params["river_buffer_px"],
+                     search_radius_m=params["search_radius_m"],
                      dam_elev_tolerance_m=params["dam_elev_tolerance_m"],
                      persistence_iou=params["persistence_iou"])
     out = []
@@ -182,7 +209,7 @@ def main() -> None:
     ctx = {"lakes": lakes, "obs": load_observations_table(), "targets": targets, "manifest": manifest}
 
     want = [t["scenarioId"] for t in targets] + ["neg2026_matai_an"]
-    thresholds = VARY["landslide_threshold_db"]
+    combos = chain_combos()
     prepared = {}
     for sid in want:
         sc = scenarios.get(sid)
@@ -191,7 +218,7 @@ def main() -> None:
         lake = next((t["lakeId"] for t in targets if t["scenarioId"] == sid), None)
         orbit = entries.get(lake, {}).get("pass") or "DESCENDING"
         print(f"前處理 {sid}（{orbit}）", flush=True)
-        prepared[sid] = prepare(sc, orbit, thresholds)
+        prepared[sid] = prepare(sc, orbit, combos)
 
     runs = [("基準", None, evaluate(prepared, scenarios, BASE, ctx))]
     for key, values in VARY.items():

@@ -1,0 +1,171 @@
+{
+ "generated": "2026-10-18T14:14+08:00",
+ "note": "scripts/hysteresis_replay.py 產生；超出隨機＝Σ(偵測到 − 隨機命中機率)",
+ "primary": "seed20_0.2ha_35",
+ "variants": {
+  "current_35": {
+   "max_water_slope_deg": 35.0
+  },
+  "seed20_0.2ha_35": {
+   "max_water_slope_deg": 35.0,
+   "seed_slope_deg": 20.0,
+   "seed_min_area_m2": 2000.0
+  },
+  "seed20_any_35": {
+   "max_water_slope_deg": 35.0,
+   "seed_slope_deg": 20.0,
+   "seed_min_area_m2": 0.0
+  },
+  "seed20_0.5ha_35": {
+   "max_water_slope_deg": 35.0,
+   "seed_slope_deg": 20.0,
+   "seed_min_area_m2": 5000.0
+  },
+  "seed20_0.2ha_45": {
+   "max_water_slope_deg": 45.0,
+   "seed_slope_deg": 20.0,
+   "seed_min_area_m2": 2000.0
+  }
+ },
+ "lakes": [
+  "bl051",
+  "bl052",
+  "bl053",
+  "bl054",
+  "bl056",
+  "bl057",
+  "bl058",
+  "bl060",
+  "bl061",
+  "bl062",
+  "bl063",
+  "bl064",
+  "bl065",
+  "bl066",
+  "bl067",
+  "bl068",
+  "bl069",
+  "bl070",
+  "bl071",
+  "bl072",
+  "bl073",
+  "bl074",
+  "bl075"
+ ],
+ "results": [
+  {
+   "variant": "current_35",
+   "label": "現行：固定 35°",
+   "excess": 2.97,
+   "excessHigh": 2.34,
+   "detected": 8,
+   "expectedChance": 5.03,
+   "detectedHigh": 5,
+   "expectedChanceHigh": 2.66,
+   "otherEvents": 49,
+   "negEvents": 1,
+   "negHighEvents": 1,
+   "detectedLakes": [
+    "bl052",
+    "bl061",
+    "bl066",
+    "bl068",
+    "bl071",
+    "bl072",
+    "bl073",
+    "bl075"
+   ]
+  },
+  {
+   "variant": "seed20_0.2ha_35",
+   "label": "起始 20° ≥ 0.2 公頃，延伸到 35°（主要）",
+   "excess": 1.94,
+   "excessHigh": 2.26,
+   "detected": 3,
+   "expectedChance": 1.06,
+   "detectedHigh": 3,
+   "expectedChanceHigh": 0.74,
+   "otherEvents": 3,
+   "negEvents": 0,
+   "negHighEvents": 0,
+   "detectedLakes": [
+    "bl071",
+    "bl072",
+    "bl075"
+   ]
+  },
+  {
+   "variant": "seed20_any_35",
+   "label": "起始 20° ≥ 1 像元，延伸到 35°",
+   "excess": 3.89,
+   "excessHigh": 3.19,
+   "detected": 7,
+   "expectedChance": 3.11,
+   "detectedHigh": 5,
+   "expectedChanceHigh": 1.81,
+   "otherEvents": 17,
+   "negEvents": 1,
+   "negHighEvents": 1,
+   "detectedLakes": [
+    "bl061",
+    "bl066",
+    "bl068",
+    "bl071",
+    "bl072",
+    "bl073",
+    "bl075"
+   ]
+  },
+  {
+   "variant": "seed20_0.5ha_35",
+   "label": "起始 20° ≥ 0.5 公頃，延伸到 35°",
+   "excess": 1.28,
+   "excessHigh": 1.6,
+   "detected": 2,
+   "expectedChance": 0.72,
+   "detectedHigh": 2,
+   "expectedChanceHigh": 0.4,
+   "otherEvents": 2,
+   "negEvents": 0,
+   "negHighEvents": 0,
+   "detectedLakes": [
+    "bl071",
+    "bl075"
+   ]
+  },
+  {
+   "variant": "seed20_0.2ha_45",
+   "label": "起始 20° ≥ 0.2 公頃，延伸到 45°",
+   "excess": 1.9,
+   "excessHigh": 2.22,
+   "detected": 3,
+   "expectedChance": 1.1,
+   "detectedHigh": 3,
+   "expectedChanceHigh": 0.78,
+   "otherEvents": 3,
+   "negEvents": 0,
+   "negHighEvents": 0,
+   "detectedLakes": [
+    "bl071",
+    "bl072",
+    "bl075"
+   ]
+  }
+ ],
+ "loo_all": {
+  "detected": 7,
+  "expectedChance": 3.11,
+  "excess": 3.89,
+  "picks": {
+   "seed20_any_35": 23
+  }
+ },
+ "loo_high": {
+  "detected": 5,
+  "expectedChance": 1.81,
+  "excess": 3.19,
+  "picks": {
+   "seed20_any_35": 23
+  }
+ }
+}

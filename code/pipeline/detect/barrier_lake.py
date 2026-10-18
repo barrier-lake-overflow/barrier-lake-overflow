@@ -356,6 +356,26 @@ def classify(new_water: np.ndarray, landslide: np.ndarray, river: np.ndarray,
     return candidates
 
 
+def seed_filter(new_water: np.ndarray, seed_ok: np.ndarray, min_seed_px: int = 1) -> np.ndarray:
+    """
+    雙門檻（hysteresis）：新增水體的連通塊裡，至少 min_seed_px 個像元落在 seed_ok
+    （例如坡度 ≤ 20°）才保留，保留時整塊都留下（含陡坡部分）。
+    用嚴格條件決定「有沒有湖」，用寬鬆條件決定「湖多大」。
+
+    >>> nw = np.array([[1, 1, 0, 1, 1]], dtype=bool)
+    >>> gentle = np.array([[1, 0, 0, 0, 0]], dtype=bool)
+    >>> seed_filter(nw, gentle).astype(int).tolist()
+    [[1, 1, 0, 0, 0]]
+    """
+    new_water = np.asarray(new_water, dtype=bool)
+    labeled, n = ndimage.label(new_water, structure=EIGHT)
+    if n == 0:
+        return new_water.copy()
+    seeds = ndimage.sum(np.asarray(seed_ok, dtype=bool), labeled, index=np.arange(1, n + 1))
+    keep = np.flatnonzero(seeds >= min_seed_px) + 1
+    return np.isin(labeled, keep)
+
+
 # 一站式：事件前後 SAR →（新增水體、崩塌）→ 候選
 
 def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
@@ -374,12 +394,17 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
                   min_catchment_km2: float = 1.0,
                   dates: Sequence[Optional[str]] = (),
                   max_water_slope_deg: float = 20.0,
+                  seed_slope_deg: Optional[float] = None,
+                  seed_min_area_m2: float = 0.0,
                   **classify_kwargs) -> dict:
     """
     pre_db / post_db / later_post_dbs：同軌道、同網格的 σ⁰（dB），未濾波。
     dem：事件前 DEM，同網格；沒有就跳過幾何遮罩、DEM 河網與壩體位置檢核。
     max_water_slope_deg：坡度超過此值的像元不判水（預設 20°）。陡峭窄谷配
     30 m DEM 時，谷底坡度會被山壁拉高，湖面可能整片被遮掉，可視情況放寬。
+    seed_slope_deg：給的話啟用雙門檻（見 seed_filter）。新增水體照 max_water_slope_deg
+    判，但每塊至少要有 seed_min_area_m2（且至少 1 像元）落在坡度 ≤ seed_slope_deg
+    才保留。需要 DEM；後續期別（持續性比對）不套，只看同位置是否還有水。
 
     回傳 dict：pre_water / post_water（WaterExtent）、new_water、
     landslides（LandslideResult）、river、invalid（遮罩 dict 或 None）、
@@ -409,6 +434,15 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
                                    invalid_mask=water_invalid, date=dates[1])
     new_water = change_detection(pre_water, post_water)
 
+    def seeded(nw: np.ndarray) -> np.ndarray:
+        if seed_slope_deg is None or invalid is None:
+            return nw
+        gentle = np.nan_to_num(invalid["slope_deg"], nan=np.inf) <= seed_slope_deg
+        min_px = max(1, int(math.ceil(seed_min_area_m2 / cell ** 2)))
+        return seed_filter(nw, gentle, min_px)
+
+    new_water = seeded(new_water)
+
     # 水體（含事件前河道）外擴幾像元一併排除：濾波後水陸交界像元的 σ⁰
     # 介於兩者之間，沒被判成水但回波掉了好幾 dB，不排除會沿湖岸冒出
     # 一圈假崩塌，進而誤判成「崩塌延伸到湖底」。
@@ -423,6 +457,7 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
     for db, dt in zip(later_post_dbs, dates[2:]):
         ext = extract_water_sar(lee_filter(db, size=water_filter_size), cell,
                                 threshold=water_threshold_db, invalid_mask=water_invalid, date=dt)
+        # 後續期別不套雙門檻：起始條件只用來決定「有沒有湖」，複核只問同位置是否還有水
         later_new.append(change_detection(pre_water, ext))
 
     river = river_mask(pre_water.mask, dem, cell_size_m, min_catchment_km2)

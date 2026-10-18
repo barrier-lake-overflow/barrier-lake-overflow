@@ -24,7 +24,7 @@
     "area_m2": 542946.3,
     "area_hectare": 54.295
   },
-  "newWaterTotalAreaHectare": 13.859,
+  "newWaterTotalAreaHectare": 6.295,
   "landslide": {
     "date": "post 2015-08-06 10:00 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 60.88,
     "excludedForWaterPct": 55.6,
     "slopeOnlyExcludedHectare": 771.57,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -51,56 +53,5 @@
     "maskedPct": 70.3
   },
   "laterScenes": 1,
-  "candidates": [
-    {
-      "id": "cand1",
-      "grade": "C",
-      "areaHectare": 0.538,
-      "centroidRowCol": [
-        187.1,
-        40.8
-      ],
-      "centroidXY": [
-        121.41084376844282,
-        24.16848832479469
-      ],
-      "onRiver": true,
-      "landslideNearby": true,
-      "damDownstream": false,
-      "persistent": false,
-      "laterScenesChecked": 1,
-      "landslideAreaHectare": 0.73,
-      "lakeFloorM": 1439.0,
-      "waterLevelM": 1601.0,
-      "reasons": [
-        "新增水體 0.54 公頃，緊貼事件前河道",
-        "500 m 內偵測到崩塌 0.73 公頃（SAR 回波變化 ≥ 門檻）",
-        "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
-        "後續 1 期影像同位置水體 IoU 最高 0.24，未確認持續"
-      ],
-      "centroidLonLat": [
-        121.410844,
-        24.168488
-      ],
-      "distanceFromDamM": 1630.0,
-      "polygonLonLat": [
-        [
-          121.41000559460568,
-          24.168633730065256
-        ],
-        [
-          121.41000559460568,
-          24.168274403951607
-        ],
-        [
-          121.40973610002044,
-          24.168633730065256
-        ],
-        [
-          121.41000559460568,
-          24.168633730065256
-        ]
-      ]
-    }
-  ]
+  "candidates": []
 }

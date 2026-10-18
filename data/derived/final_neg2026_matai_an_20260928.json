@@ -24,7 +24,7 @@
     "area_m2": 98892.0,
     "area_hectare": 9.889
   },
-  "newWaterTotalAreaHectare": 5.274,
+  "newWaterTotalAreaHectare": 2.024,
   "landslide": {
     "date": "post 2026-09-28 21:52 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 4.92,
     "excludedForWaterPct": 44.8,
     "slopeOnlyExcludedHectare": 491.9,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -55,42 +57,38 @@
     {
       "id": "cand1",
       "grade": "B",
-      "areaHectare": 1.438,
+      "areaHectare": 0.687,
       "centroidRowCol": [
-        200.6,
-        267.0
+        200.2,
+        268.1
       ],
       "centroidXY": [
-        121.30189621103861,
-        23.700515055494158
+        121.30199515922745,
+        23.70054738721538
       ],
       "onRiver": true,
       "landslideNearby": true,
       "damDownstream": true,
       "persistent": false,
       "laterScenesChecked": 0,
-      "landslideAreaHectare": 14.989,
-      "lakeFloorM": 914.0,
-      "waterLevelM": 1106.0,
+      "landslideAreaHectare": 9.825,
+      "lakeFloorM": 1008.0,
+      "waterLevelM": 1071.0,
       "reasons": [
-        "新增水體 1.44 公頃，緊貼事件前河道",
-        "500 m 內偵測到崩塌 14.99 公頃（SAR 回波變化 ≥ 門檻）",
-        "崩塌延伸至湖底高程（914 m）附近或以下，研判土石堵塞下游河道",
+        "新增水體 0.69 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 9.83 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1008 m）附近或以下，研判土石堵塞下游河道",
         "僅單期影像，尚未確認多時相持續性"
       ],
       "centroidLonLat": [
-        121.301896,
-        23.700515
+        121.301995,
+        23.700547
       ],
-      "distanceFromDamM": 446.2,
+      "distanceFromDamM": 456.2,
       "polygonLonLat": [
         [
-          121.30130944522723,
+          121.30229759203976,
           23.70115045620945
-        ],
-        [
-          121.30220776051135,
-          23.700970793152628
         ],
         [
           121.30139927675565,
@@ -98,6 +96,10 @@
         ],
         [
           121.30130944522723,
+          23.70115045620945
+        ],
+        [
+          121.30229759203976,
           23.70115045620945
         ]
       ]

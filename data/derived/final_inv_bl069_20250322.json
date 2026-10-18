@@ -24,7 +24,7 @@
     "area_m2": 299968.3,
     "area_hectare": 29.997
   },
-  "newWaterTotalAreaHectare": 6.306,
+  "newWaterTotalAreaHectare": 2.827,
   "landslide": {
     "date": "post 2025-03-22 10:00 UTC",
     "method": "sar_log_ratio",
@@ -41,7 +41,9 @@
     "shadowHectare": 57.94,
     "excludedForWaterPct": 64.3,
     "slopeOnlyExcludedHectare": 749.42,
-    "maxWaterSlopeDeg": 35.0
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
     "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
@@ -55,14 +57,14 @@
     {
       "id": "cand1",
       "grade": "B",
-      "areaHectare": 0.826,
+      "areaHectare": 0.771,
       "centroidRowCol": [
-        142.2,
-        88.5
+        143.0,
+        88.4
       ],
       "centroidXY": [
-        121.147603707602,
-        23.38604540961457
+        121.14760235299958,
+        23.385974399930205
       ],
       "onRiver": true,
       "landslideNearby": true,
@@ -73,25 +75,17 @@
       "lakeFloorM": 1545.0,
       "waterLevelM": 1630.0,
       "reasons": [
-        "新增水體 0.83 公頃，緊貼事件前河道",
+        "新增水體 0.77 公頃，緊貼事件前河道",
         "500 m 內偵測到崩塌 1.22 公頃（SAR 回波變化 ≥ 門檻）",
         "崩塌延伸至湖底高程（1545 m）附近或以下，研判土石堵塞下游河道",
         "僅單期影像，尚未確認多時相持續性"
       ],
       "centroidLonLat": [
-        121.147604,
-        23.386045
+        121.147602,
+        23.385974
       ],
-      "distanceFromDamM": 1318.0,
+      "distanceFromDamM": 1314.7,
       "polygonLonLat": [
-        [
-          121.14796702622803,
-          23.387368927466504
-        ],
-        [
-          121.14787719469962,
-          23.3865604437108
-        ],
         [
           121.14733820552914,
           23.386021454540327
@@ -101,8 +95,16 @@
           23.387279095938094
         ],
         [
-          121.14796702622803,
-          23.387368927466504
+          121.14787719469962,
+          23.387458758994917
+        ],
+        [
+          121.14787719469962,
+          23.3865604437108
+        ],
+        [
+          121.14733820552914,
+          23.386021454540327
         ]
       ]
     }
