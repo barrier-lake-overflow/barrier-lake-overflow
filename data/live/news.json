@@ -1089,7 +1089,84 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-10-18T09:08+08:00"
+  },
+  "2f40075474": {
+   "title": "10月19日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAxTnlIc090YUVadHNJcHFYRGYyRjdpRFN2a1YzMXNiRHpBaC04eVByVU1GNC1abjM5X0NGWWFxNTZiVkxZRDdBZ0FR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-19T18:14+08:00",
+   "summary": "10月19日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "2f40075474",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-20T09:52+08:00"
+  },
+  "126a58de92": {
+   "title": "115年10月18日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5tLU9ONVl3bDFHd091TjBZNnIxQXJENm0tVEtyNENDb2FCTXo4b3l6ZkF5YXg1aW5XMDdaV1N3d3JPaXo5T1RMSjA1NF9taUJDMmc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-19T10:18+08:00",
+   "summary": "115年10月18日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "126a58de92",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-20T09:52+08:00"
+  },
+  "801ed82504": {
+   "title": "第10屆全球華文永續報導獎／黑色泥流來了，馬太鞍溪堰塞湖 - TVBS新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA4TUJzNmswNXdvcVFienZhQTZaaV9kTWZlRFkxWFNNYXE4Um5jdTg5TFEzY21wUExVZ3pMdzVveHVoVjF1R0FocG9jVUk?oc=5",
+   "source": "TVBS新聞網",
+   "time": "2026-10-18T16:33+08:00",
+   "summary": "第10屆全球華文永續報導獎／黑色泥流來了，馬太鞍溪堰塞湖 TVBS新聞網",
+   "id": "801ed82504",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-20T09:52+08:00"
   }
  },
- "updatedAt": "2026-10-18T09:08+08:00"
+ "updatedAt": "2026-10-20T09:52+08:00"
 }
