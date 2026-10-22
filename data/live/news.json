@@ -1166,7 +1166,307 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-10-20T09:52+08:00"
+  },
+  "b6732fee2f": {
+   "title": "115年10月19日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9ac1FNOVlkZ1Z1YmxkU1l6TjZnS0VOVnFtY1huYWstTk9JRkkzSTU3YzV5eXo1ZnJ3NUN4VFdza3AtOE9QX2RFSGNtaGRoakE?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-19T14:17+08:00",
+   "summary": "115年10月19日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "b6732fee2f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "d1a92c9f86": {
+   "title": "1020萬里溪堰塞湖資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5IWEJlYTJuSzQ3T2ZVOFFrdDVXajQwZG9HdDExZWplSDJGSVFCZ2xtLUY4QWQ1N0dkOUxhVF95Q3Uwam04OVZLV3ln?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-20T17:55+08:00",
+   "summary": "1020萬里溪堰塞湖資訊 更生新聞網",
+   "id": "d1a92c9f86",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "6015cccae6": {
+   "title": "花蓮堰塞湖搶險幕後英雄 嘉南重機黃國寶獲林業及自然保育有功獎 - UDN",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tZ09waVIzWVVuY3RhZk41SURKeUtyX05ybUhRa3g3TF9GRkFtWjRRb0x5ejk0NEs0STJQVDZuQ0ZfNkx0RnRaNUo2dk1RUGg5Y29fQW5R0gFWQVVfeXFMTS1nT3BpUjNZVW5jdGFmTjVJREp5S3JfTnJtSFFreDdMX0ZGQW1aNFFvTHl6OTQ0SzRJMlBUNm5DRl82THRGdFo1SjZ2TVFQaDljb19BblE?oc=5",
+   "source": "UDN",
+   "time": "2026-10-20T16:09+08:00",
+   "summary": "花蓮堰塞湖搶險幕後英雄 嘉南重機黃國寶獲林業及自然保育有功獎 UDN",
+   "id": "6015cccae6",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "7fb8869e81": {
+   "title": "花蓮萬里溪堰塞湖溢流時間 林保署估17日下午或延至19日 仍須持續監測 - Taiwan News",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE92elNJallSa3NmZWtCX2FrbUpCbm5QQWFwT2dER1A3MGxJWGZNR2gzZzVHLVVCX3h4ZHdscElKOGR4c1lrZ0lJSWlwTHRvTkpJWDlSdFBuUjQ?oc=5",
+   "source": "Taiwan News",
+   "time": "2026-10-18T22:40+08:00",
+   "summary": "花蓮萬里溪堰塞湖溢流時間 林保署估17日下午或延至19日 仍須持續監測 Taiwan News",
+   "id": "7fb8869e81",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "dd7a0f9547": {
+   "title": "115年10月20日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YZG85bVFMZ3U1dzkxS183dFFXR2tBTFAxT3pzYkkyUWstaXRxVUZvQm9EdmtaV1VDM2R4ZGZSM2gtYmxQY2RLaVd6cDB0bElmQlE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-20T09:53+08:00",
+   "summary": "115年10月20日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "dd7a0f9547",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "416f38f4d3": {
+   "title": "薔琵颱風逼近！行政院召開災防會議：要求加強防汛、緊盯萬里溪堰塞湖 - Yahoo新聞",
+   "url": "https://news.google.com/rss/articles/CBMiswNBVV95cUxPX29QMnUxSkJ6VW5ETXQyVHZZUkJRRjFJS2NLdHA1VUJ1bWozdXlaOTg0SFZJVzBQZC0xdG1rcmVIWFZmTFByQzFNZzZWTnY0OUYxanJtSVk2UUVVRUJXLS1hU2R4MXItbnd3SFdJRVJUT3BqUS1UcmZDSE1hZ0l5ZnJXQm1oc2ZYbjFIYVhBNTA5ck9tWHA0Z0NJZjJRUnM1STJTNU9kWkl4cW5ZMkFCNHNLbGNQVDkwcjFNZmRfbzhlbmhLWjhVdFZwNjRYaGc1Q2E3NDhjZTU0NGVMc0lKUkdEc3RwUGk2UWtNTUhjRnd3REhOYTk5MnRLbzVTTkxzVXRBMWpkX1Fad0RNSEZoVzQweDdYblBBcElhRlp0WDczeEVZZzNKU2JaWGdialNLWmd3YUYxNlZ1aWFvRVZRLVh6ZWdNU04zRy1qbl9XZXNYVm1VWEFsN3NDRnh4VkJxamsxX1N3RWk4RlMyTVFqcHBFODlraXlJYWdUVWN2QS1DNFh5S3ZoQ1JxbTF6b05pOEQ5M05oR2Q0Q0JBcUNURzBWejRacG9yNEFpZmU5YVY3NGM?oc=5",
+   "source": "Yahoo新聞",
+   "time": "2026-10-21T18:09+08:00",
+   "summary": "薔琵颱風逼近！行政院召開災防會議：要求加強防汛、緊盯萬里溪堰塞湖 Yahoo新聞",
+   "id": "416f38f4d3",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "4d1537415b": {
+   "title": "薔琵颱風逼近 政院要求加強防汛、緊盯萬里溪堰塞湖 - Rti 中央廣播電臺",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9sRXA3SUhjZUNESXh5TWRrS3RTRDhBbzdvaUJWdjVPaVh6dmZUTVA1QzVwTml0VlVOM2RIWEFVMXFHbTNib3dZdHNxRjJmOUhTZmp3UnBlaw?oc=5",
+   "source": "Rti 中央廣播電臺",
+   "time": "2026-10-21T17:25+08:00",
+   "summary": "薔琵颱風逼近 政院要求加強防汛、緊盯萬里溪堰塞湖 Rti 中央廣播電臺",
+   "id": "4d1537415b",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "c330e7a933": {
+   "title": "115年10月21日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9pUmo5YnFXb0dLLXdEVGo2Nm4wYVZKN25QcjF6UmFncmp2cUNMRUlhNWwtWFFUWWx4UkdxT19LbDZRdHZURUY5S1BiQzVZX05vOXc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-21T09:59+08:00",
+   "summary": "115年10月21日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "c330e7a933",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "3ed23b700a": {
+   "title": "10月21日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9EQndpc3JKYi1MSm95Si1MWUE5M1FXRGx0bXdhcVpuV2pEUlFOVXNxYWVOZlR5VmFSQlY5aGNqZU1ncDlkbHpmWURR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-21T17:42+08:00",
+   "summary": "10月21日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "3ed23b700a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "54a1346f30": {
+   "title": "光復4背水堤尚未完工 居民憂薔琵豪雨恐導致淹水 - 你的公共電視",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB0ejFtNC1SSzhRdVFodWg5cTEyTHhjclpDUl9xM05Gbm9jel9KSG1vbTRsdUdhNTE2b3Q1UTlxaV9hRWpRU1VuS2F5SzZXZmM?oc=5",
+   "source": "你的公共電視",
+   "time": "2026-10-21T13:46+08:00",
+   "summary": "光復4背水堤尚未完工 居民憂薔琵豪雨恐導致淹水 你的公共電視",
+   "id": "54a1346f30",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "66a97db9f1": {
+   "title": "颱風將至 蔡依靜關切颱風防災整備 要求完善撤離及安置機制 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE4xZWY5eGtWS1dwTkdOUElGb2hES0ZlYW5xNTdZeVA2NkZEXzJvalQ3SnlHZlYyNmpmcE5EWkMwTWxkQjA3VXptS2pB?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-21T20:27+08:00",
+   "summary": "颱風將至 蔡依靜關切颱風防災整備 要求完善撤離及安置機制 更生新聞網",
+   "id": "66a97db9f1",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-22T09:35+08:00"
+  },
+  "4f7022b85a": {
+   "title": "討論牆 | 薔琵颱風逼近 政院要求加強防汛、緊盯萬里溪堰塞湖 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA3RkhTbVFOeE1xSVhJZ0VBM3pnb3ZaSVpZQUt2ZVZLaGo0aFhjbHVkVWw4UEM1akp3cmxWWmVGcWVheTVVMzVIMFN1d0V6UUVVNDM5bGJZUk1sRjVkRjlIelR0THo?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-21T23:47+08:00",
+   "summary": "討論牆 | 薔琵颱風逼近 政院要求加強防汛、緊盯萬里溪堰塞湖 LINE TODAY",
+   "id": "4f7022b85a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-22T09:35+08:00"
   }
  },
- "updatedAt": "2026-10-20T09:52+08:00"
+ "updatedAt": "2026-10-22T09:35+08:00"
 }

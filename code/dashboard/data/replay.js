@@ -1,7 +1,7 @@
 /* 由 pipeline/events/build.py（replay.py）產生，請勿手動編輯。
    全清冊回放：每筆堰塞湖用同一套流程、同一組參數逐期回放的結果。 */
 window.REPLAY_SUMMARY = {
- "generated": "2026-10-20T09:52+08:00",
+ "generated": "2026-10-22T09:35+08:00",
  "rules": {
   "start": "2015-01-01",
   "preGapDays": 7,
