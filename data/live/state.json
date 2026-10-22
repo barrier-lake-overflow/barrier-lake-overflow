@@ -13,11 +13,11 @@
     "bl075": {
      "source": "inventory",
      "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
-     "lastTriggeredAt": "2026-10-18T09:08+08:00"
+     "lastTriggeredAt": "2026-10-22T09:35+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-10-18T09:08+08:00",
+   "lastTriggeredAt": "2026-10-22T09:35+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -65,11 +65,11 @@
     "bl071": {
      "source": "inventory",
      "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
-     "lastTriggeredAt": "2026-10-18T09:08+08:00"
+     "lastTriggeredAt": "2026-10-22T09:35+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-10-18T09:08+08:00",
+   "lastTriggeredAt": "2026-10-22T09:35+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -117,11 +117,11 @@
     "bl068": {
      "source": "inventory",
      "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
-     "lastTriggeredAt": "2026-10-18T09:08+08:00"
+     "lastTriggeredAt": "2026-10-22T09:35+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-10-18T09:08+08:00",
+   "lastTriggeredAt": "2026-10-22T09:35+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -157,6 +157,6 @@
    }
   }
  },
- "updatedAt": "2026-10-18T09:08+08:00",
+ "updatedAt": "2026-10-22T09:35+08:00",
  "alerts": []
 }
