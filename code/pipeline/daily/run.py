@@ -145,7 +145,12 @@ def git_commit(push: bool) -> None:
     git("commit", "-m", f"每日自動更新 {datetime.now(TW):%Y-%m-%d}")
     print("已 commit")
     if push:
-        git("pull", "--rebase", "--autostash")
+        # 遠端可能已有另一次執行推上的同批產出檔；衝突時以這次較新的結果為準（rebase 中 theirs＝本地 commit）
+        try:
+            git("pull", "--rebase", "--autostash", "-X", "theirs")
+        except subprocess.CalledProcessError:
+            subprocess.run(["git", "rebase", "--abort"], cwd=REPO, capture_output=True)
+            raise
         git("push")
         print("已推上遠端")
 

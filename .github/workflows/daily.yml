@@ -22,8 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+        with:
+          # Re-run 預設會 checkout 當初的舊 commit，改成取分支最新狀態，避免和已推上的結果衝突
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip

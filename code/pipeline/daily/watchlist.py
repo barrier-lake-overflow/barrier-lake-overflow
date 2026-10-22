@@ -17,6 +17,8 @@ from __future__ import annotations
 
 import json
 import math
+import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -50,9 +52,15 @@ def window_id(lon: float, lat: float) -> str:
 def fetch_alerts(timeout: int = 60) -> list:
     """目前發布中的警戒：[{"type": "D"/"L", "no", "level", "place", "updated"}]。沒有警戒回傳 []。"""
     req = urllib.request.Request(ALERT_URL, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        rows = json.loads(r.read().decode("utf-8-sig"))
-    return parse_alerts(rows)
+    for attempt in range(3):   # 來源偶爾逾時，重試幾次
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                rows = json.loads(r.read().decode("utf-8-sig"))
+            return parse_alerts(rows)
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 2:
+                raise
+            time.sleep(15)
 
 
 def parse_alerts(rows: list) -> list:
