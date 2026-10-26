@@ -2001,7 +2001,162 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-10-24T09:43+08:00"
+  },
+  "b1c433b643": {
+   "title": "花蓮堰塞湖搶險幕後英雄 嘉南重機黃國寶獲林業及自然保育有功獎 - UDN",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9DRkVXbTI4Q0Q1cTl0Z1VucEJJOWhzYktzZm0yVVFDT0JyMVpnZmhIVEgzTnBMY1hPRXdlcUJHUEFEQm1Kb0pMZ3o3eWZXUDJS?oc=5",
+   "source": "UDN",
+   "time": "2026-10-20T16:09+08:00",
+   "summary": "花蓮堰塞湖搶險幕後英雄 嘉南重機黃國寶獲林業及自然保育有功獎 UDN",
+   "id": "b1c433b643",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "7b808b1368": {
+   "title": "快訊／萬里溪堰塞湖紅色警戒！花蓮萬榮村「7/17停班停課」 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFA1NjRhQ3VFV2hEenlFazJtTWVyY0Q1ZXN5eElpQklwQlpxSE14cDZQdkY2dldCYlJ3cXZOREVhU1dsalYtUEQtRNIBTEFVX3lxTE5iQzg4UnoyR1hqX0R0d3hWTTU2S1JLcWRQYnVlR2p6R2hFNlhvamVpUVhPOXVIaHNKYkJNY3RXWnA4Z0hvNXNhOTYwcVE?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-25T13:45+08:00",
+   "summary": "快訊／萬里溪堰塞湖紅色警戒！花蓮萬榮村「7/17停班停課」 三立新聞",
+   "id": "7b808b1368",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "ef3a8f5641": {
+   "title": "萬里溪堰塞湖水位飆升恐潰決！花蓮發布「紅色警戒」　最新空拍照曝光 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9BMzJKeDVfRDRDMkFSNEdVR2lndC04RnotTDJhSk91ZnA1ZlB6bWpJZkcwMWtrUHpLNlRDZFdXNnZlNldIb1hLdNIBTEFVX3lxTFBSOE1kTHZmc252ZTVOazBxb2VMejQ4LUhfcVFfSF8wcllJQ2JQYVJJT25zVjl0Vm80OG9OVmlGX2pCQl9jQkY2cVJTZzA?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-25T20:43+08:00",
+   "summary": "萬里溪堰塞湖水位飆升恐潰決！花蓮發布「紅色警戒」 最新空拍照曝光 三立新聞",
+   "id": "ef3a8f5641",
+   "kind": "aerial",
+   "keyword": "空拍",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "19bbfcfad8": {
+   "title": "強颱薔琵逼近 卓揆示警：萬里溪堰塞湖仍有致災風險 - UDN",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBoYlFvNmtkRmQtUHU0WmtRcE5ZbTJkcS0zbHU3dktRQjl6RDhhVnZJZ0tfa3dhdDJqTDcwRHNpNXp1N2xXVWExbjR0cFBkUkEyVjU40gFYQVVfeXFMTTVXaTh1MVZmRjZhd0VrX01wbFVtUXpaRlRzTUpESnRCM3lTOHFnZ2wyY01ZemhEV1MtSlJoWnVsUFQ1ZFRSTmF3b012aXRKbU9YcTRzRTVHcA?oc=5",
+   "source": "UDN",
+   "time": "2026-10-22T12:20+08:00",
+   "summary": "強颱薔琵逼近 卓揆示警：萬里溪堰塞湖仍有致災風險 UDN",
+   "id": "19bbfcfad8",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "ff4b0b9f1b": {
+   "title": "快訊／花蓮堰塞湖「解除黃色警戒」！農業部示警：雨量增恐再撤離 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE03UW8wWkhMTV94eFNyWW9ZMkNhNF9wT2w0dG1kNkhuQVZUdUJocmtlc1NiMkQ3ajFma0hFMHVTSm94MWd6bV80ddIBTEFVX3lxTE42clZDVHMtOTRMdWdKOER6Zm1XZUpmX2FkQlB3eWYtZHNEVlhZNGZHc29wWEVPUlQ1UHBLSm1jS29pOGpaVnpfNGtRRFA?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-25T06:15+08:00",
+   "summary": "快訊／花蓮堰塞湖「解除黃色警戒」！農業部示警：雨量增恐再撤離 三立新聞",
+   "id": "ff4b0b9f1b",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "95fc5534b1": {
+   "title": "花蓮堰塞湖釀災15死！ 賴清德下午親赴災 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE94cWk4NEZfS1FIdG0yei1oZWh2NXh2Uk1oUDVFNkxFellibE1qaWpBOHhDdjY0SUpuN1pkSHlSX3Bfemp1V09GcEd3eWhPdEJFWVh0cw?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-24T02:27+08:00",
+   "summary": "花蓮堰塞湖釀災15死！ 賴清德下午親赴災 三立新聞",
+   "id": "95fc5534b1",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "116c9e8094": {
+   "title": "防薔琵致災！太魯閣預防性封閉 萬里溪堰塞湖溢流急撤保全戶 - 台視新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0ycFJhd3RHTGtCZW5GUmNCa3EtLTlCSnZVQU5rNUVhZDkwTm5iMUtkdXl2UjdEcVpPUVZOTU03SU94b2tOSl9ZVWRaUkxKZTZTVFJhaHFoSUhZOXB1YjRLM1pDQkY?oc=5",
+   "source": "台視新聞網",
+   "time": "2026-10-23T12:20+08:00",
+   "summary": "防薔琵致災！太魯閣預防性封閉 萬里溪堰塞湖溢流急撤保全戶 台視新聞網",
+   "id": "116c9e8094",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-26T09:19+08:00"
   }
  },
- "updatedAt": "2026-10-24T09:43+08:00"
+ "updatedAt": "2026-10-26T09:19+08:00"
 }

@@ -13,11 +13,11 @@
     "bl075": {
      "source": "inventory",
      "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
-     "lastTriggeredAt": "2026-10-24T09:43+08:00"
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-10-24T09:43+08:00",
+   "lastTriggeredAt": "2026-10-26T09:19+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -69,11 +69,11 @@
     "bl071": {
      "source": "inventory",
      "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
-     "lastTriggeredAt": "2026-10-24T09:43+08:00"
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-10-24T09:43+08:00",
+   "lastTriggeredAt": "2026-10-26T09:19+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -125,11 +125,11 @@
     "bl068": {
      "source": "inventory",
      "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
-     "lastTriggeredAt": "2026-10-24T09:43+08:00"
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-10-24T09:43+08:00",
+   "lastTriggeredAt": "2026-10-26T09:19+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -167,8 +167,139 @@
      "preEnd": "2026-10-04"
     }
    }
+  },
+  "live_E121301_N24571": {
+   "id": "live_E121301_N24571",
+   "center": [
+    121.30129,
+    24.57083
+   ],
+   "activatedAt": "2026-10-26T09:19+08:00",
+   "name": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
+   "lakeId": null,
+   "sources": {
+    "竹縣LL002": {
+     "source": "rain",
+     "label": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
+    }
+   },
+   "active": true,
+   "orbits": {
+    "D105": {
+     "pass": "DESCENDING",
+     "orbit": 105,
+     "preCount": 6,
+     "scenes": [
+      {
+       "day": "20261022",
+       "timeUTC": "21:51"
+      }
+     ],
+     "preStart": "2026-08-20",
+     "preEnd": "2026-10-19"
+    },
+    "A69": {
+     "pass": "ASCENDING",
+     "orbit": 69,
+     "preCount": 4,
+     "scenes": [],
+     "preStart": "2026-08-20",
+     "preEnd": "2026-10-19"
+    }
+   },
+   "lastTriggeredAt": "2026-10-26T09:19+08:00"
+  },
+  "live_E121521_N24530": {
+   "id": "live_E121521_N24530",
+   "center": [
+    121.52093,
+    24.53031
+   ],
+   "activatedAt": "2026-10-26T09:19+08:00",
+   "name": "大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
+   "lakeId": null,
+   "sources": {
+    "宜縣LL001": {
+     "source": "rain",
+     "label": "大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
+    },
+    "宜縣LL002": {
+     "source": "rain",
+     "label": "大規模崩塌潛勢區 宜縣LL002（宜蘭縣-大同鄉-F001）72 小時雨量 216 mm",
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
+    }
+   },
+   "active": true,
+   "orbits": {
+    "D105": {
+     "pass": "DESCENDING",
+     "orbit": 105,
+     "preCount": 6,
+     "scenes": [
+      {
+       "day": "20261022",
+       "timeUTC": "21:51"
+      }
+     ],
+     "preStart": "2026-08-20",
+     "preEnd": "2026-10-19"
+    },
+    "A69": {
+     "pass": "ASCENDING",
+     "orbit": 69,
+     "preCount": 4,
+     "scenes": [],
+     "preStart": "2026-08-20",
+     "preEnd": "2026-10-19"
+    }
+   },
+   "lastTriggeredAt": "2026-10-26T09:19+08:00"
+  },
+  "live_E121538_N24489": {
+   "id": "live_E121538_N24489",
+   "center": [
+    121.53808,
+    24.48888
+   ],
+   "activatedAt": "2026-10-26T09:19+08:00",
+   "name": "大規模崩塌潛勢區 宜縣LL003（宜蘭縣-大同鄉-D311）72 小時雨量 315 mm",
+   "lakeId": null,
+   "sources": {
+    "宜縣LL003": {
+     "source": "rain",
+     "label": "大規模崩塌潛勢區 宜縣LL003（宜蘭縣-大同鄉-D311）72 小時雨量 315 mm",
+     "lastTriggeredAt": "2026-10-26T09:19+08:00"
+    }
+   },
+   "active": true,
+   "orbits": {
+    "D105": {
+     "pass": "DESCENDING",
+     "orbit": 105,
+     "preCount": 6,
+     "scenes": [
+      {
+       "day": "20261022",
+       "timeUTC": "21:51"
+      }
+     ],
+     "preStart": "2026-08-20",
+     "preEnd": "2026-10-19"
+    },
+    "A69": {
+     "pass": "ASCENDING",
+     "orbit": 69,
+     "preCount": 4,
+     "scenes": [],
+     "preStart": "2026-08-20",
+     "preEnd": "2026-10-19"
+    }
+   },
+   "lastTriggeredAt": "2026-10-26T09:19+08:00"
   }
  },
- "updatedAt": "2026-10-24T09:43+08:00",
+ "updatedAt": "2026-10-26T09:19+08:00",
  "alerts": []
 }
