@@ -2156,7 +2156,325 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-10-26T09:19+08:00"
+  },
+  "d183eeb514": {
+   "title": "115年10月28日萬里溪堰塞湖現況資訊 - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9rZXNEakdPSllvTjVPcDhIR2Z3NHlqSzcxbXZxSjJVQTFvV25pSzVUbWNxS0pPZTdnWjR5SDBNRkRkV3hUR0RzMnlndjRyMDBRV3RRN2Fn?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-10-28T10:12+08:00",
+   "summary": "115年10月28日萬里溪堰塞湖現況資訊 中央社 CNA",
+   "id": "d183eeb514",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "8bdb75e523": {
+   "title": "115年10月25日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5HZTlYcWhCb1hETngtbUJnS082VV9WVDdZVWY0Vk12UlVLb3NmSW5yNl9HNXlOb3d5Mi1fTU1GT3UwTkVTT0lvQmdQZE14VmM?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-25T15:00+08:00",
+   "summary": "115年10月25日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "8bdb75e523",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "7de1b04554": {
+   "title": "萬里溪堰塞湖警戒 預警撤離15戶 - Yahoo新聞",
+   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQZlVRSFpzSkwyd1A1Ny1tY2xINXJpMFJkZG1pOVp5M0Q1Q0xtQ0p2elZoZEV5Qnh4NWI2QUhCSlg3NjlSY3o4ZUpudXBqck9EQXQ2YjlHbzljTWc4SW5Ed2R3eUJpSmFkOHhLbGl0TFJPNFdCdlU1WGd4NUllTk10WHp2Z19nMldnTUxUdDlDNUt5OUdSMDAwcDdKZW5iZ2Y2eHlsX2JNOEEtMkozT3ZtWEZwTFlyUzN3cG1XNHd3UUpqdjZ2MEVQcTMxaFJLcmpyMkx6bXdIX2lJLWdjVGh6alMwbjZGcmN6ZFhXdUhkMTJJVm8?oc=5",
+   "source": "Yahoo新聞",
+   "time": "2026-10-23T13:15+08:00",
+   "summary": "萬里溪堰塞湖警戒 預警撤離15戶 Yahoo新聞",
+   "id": "7de1b04554",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "45061d4f65": {
+   "title": "115年10月26日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4xbnJxekxZSlV1UmpSblBGZ2IyYjFXWHhVSUpIX1BNMXFIbGlUMGlraHQtUlIxYm5IekZnY0NXM0k2c01KTGxkaUhTTTBJNkRHaGc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-26T10:44+08:00",
+   "summary": "115年10月26日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "45061d4f65",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "045aa8f3ca": {
+   "title": "蘇迪勒重創烏來！山區出現堰塞湖林務局：無安全疑慮| 生活 - 三立新聞",
+   "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBsZkxaT2xpUDhfOTFqWUpZMDRHUUV3NU5FLWJ1UGtIbmh6eGVKN0hyQ2NPcnd6dnpjLTdEQmtDOVJQWl9NR2c?oc=5",
+   "source": "三立新聞",
+   "time": "2026-10-25T21:09+08:00",
+   "summary": "蘇迪勒重創烏來！山區出現堰塞湖林務局：無安全疑慮| 生活 三立新聞",
+   "id": "045aa8f3ca",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "1f5b26baeb": {
+   "title": "115年10月26日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wUVF1OFlJa0dyRXBqZU5sVWtWWm1BY3JhQmNqdHM2YU9uUUlhQXUweEU1MHBwbjNhZDRNcm1XdGpiRDAyOXRDQktWcEJPQWFtV3BN?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-27T14:21+08:00",
+   "summary": "115年10月26日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "1f5b26baeb",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "d0eadefeae": {
+   "title": "115年10月25日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE54X0pzRlZPcHRjRmltYk5fZmZPVjFFVWFlUjJvSnE3UUdqMHJ1YXJudHNyQ0x5REVZWWNvRExRVjA5eEMtcVVxc0xaMW1kMUdLUnc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-27T10:58+08:00",
+   "summary": "115年10月25日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "d0eadefeae",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "49a06c6a89": {
+   "title": "115年10月24日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5QS1ZSbmpyd0RZTkJTYnhVYjVHd2xrRWljRUFzYzZwVlM1VkIzNmlUeGEyRm5Cd2lwT2xzWU5iN0pwcXJvX0VCOENTV1BjV2NoM1E?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-26T10:10+08:00",
+   "summary": "115年10月24日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "49a06c6a89",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "45482b8d29": {
+   "title": "薔琵颱風釀1死42傷！花蓮巨浪淹沒22米紅燈塔 全台千人撤離 - Yahoo新聞",
+   "url": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxNeWdSSFVhQzFuaUh5UkQ1UnM2MUZVcEt2bDE5Q0xLSU5oRjJMa2VuRC11dDJsUGhOUjlFXy1UWDNaSUV4Qk16bmdZM2pnRDlVbnJxTzliVDZOQlpYVnRkUXU4andDaVZFSGstM3N2RjU1bW9jc0s2ay1lYndjTWNuMGlmaFpDSGxKN1RRd3h2MWh1QkZMWlhTanlTY0p4MndrWmNJQy1fTnRjOFZncGRRb24tTERiRGVqT2xRckpGcHZEa1BPTlpvNmhLSlh4bkRHajRHVVhjTXF3bHFVazFHdk54NTUzSU9rRnJIXzBFcm5IaFJYYWdua080ZnhnakZQWm5ZY1NyYTdXWXJGcExVaFRJVVNZNnVob1pOR21nQzRKRm9kUl9GemVlM0x6RklqLWlvc3VRbW1jSFlkN0xxOUpwalJISkdQUnJidl94LXBNY0ZZVkNwNGV0WUp4U1JxQ2VrdlBWVEdRbUsyY25jRQ?oc=5",
+   "source": "Yahoo新聞",
+   "time": "2026-10-23T10:34+08:00",
+   "summary": "薔琵颱風釀1死42傷！花蓮巨浪淹沒22米紅燈塔 全台千人撤離 Yahoo新聞",
+   "id": "45482b8d29",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "03b0900c3a": {
+   "title": "討論牆 | 巴威颱風來襲 萬里溪堰塞湖及馬太鞍溪流域發布紅色警戒 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1MdzM5VThMTGJiOWFtVU52ZTB5Q05WM0hzRmVFUEhUaXBadS1yNjAwSE5KQ04xNVVmS2E1TG5LV1N0U1F1aV9tMHJfbXdMbGZ2aWZzWnRIRWVvVnpPakhPYk5VZHM?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-26T16:56+08:00",
+   "summary": "討論牆 | 巴威颱風來襲 萬里溪堰塞湖及馬太鞍溪流域發布紅色警戒 LINE TODAY",
+   "id": "03b0900c3a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    },
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "a6b77324ff": {
+   "title": "討論牆 | 巴威颱風降雨灌頂！萬里溪堰塞湖蓄水達75.5% 壩體安全暫維持紅色警戒 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE40aV9TOTFjQ0NGRi1teDB3VHZKT3RUdERJekpBTE9ndl9LY09kdjItLXpjWlZ4a1FPOWQxZ2NBQ1N3Vl9ud1ZTemZ6eHdyRXMzWWxvVVQwS3BMTTFSMXpWUkZlZjU?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-27T23:52+08:00",
+   "summary": "討論牆 | 巴威颱風降雨灌頂！萬里溪堰塞湖蓄水達75.5% 壩體安全暫維持紅色警戒 LINE TODAY",
+   "id": "a6b77324ff",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "8b9837c6da": {
+   "title": "中颱「薔琵」逼近張峻籲防山區豪雨提醒鄉親配合撤離 - 台灣新聞雲",
+   "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE45YlBFMzdxVUc5ZkhESzJpMlNiS3I4dXZhZEhLSG5fY3pLVEh3Ni16VGFrTGlBM0RETkZrTUlycUVmVGZqbDhN?oc=5",
+   "source": "台灣新聞雲",
+   "time": "2026-10-22T20:57+08:00",
+   "summary": "中颱「薔琵」逼近張峻籲防山區豪雨提醒鄉親配合撤離 台灣新聞雲",
+   "id": "8b9837c6da",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "02b1c8a4ce": {
+   "title": "颱風薔琵逼近 全台1死42傷 - 信吉衛視+",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE03ZFcxYTRzcTVTdFdTQnlteDVOTTdVdmYydTdLY3lZR0p4N2ptQXkyWFozMVVOMzJoOGxWTm1hZ1BETHVGaGMtNHlaNFJ2X2d2d1JJUDAybnAzZUE?oc=5",
+   "source": "信吉衛視+",
+   "time": "2026-10-22T22:20+08:00",
+   "summary": "颱風薔琵逼近 全台1死42傷 信吉衛視+",
+   "id": "02b1c8a4ce",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-28T10:24+08:00"
   }
  },
- "updatedAt": "2026-10-26T09:19+08:00"
+ "updatedAt": "2026-10-28T10:24+08:00"
 }
