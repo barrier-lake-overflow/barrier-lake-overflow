@@ -2474,7 +2474,220 @@
    "matches": [],
    "status": "unmatched",
    "fetchedAt": "2026-10-28T10:24+08:00"
+  },
+  "cc5351cf00": {
+   "title": "萬里溪堰塞湖10月28日現況 水位1,086.41公尺湖水穩定溢流 - 報新聞",
+   "url": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxONlk0WXFCLXZBVi12dFg3V00zNWNydFp0UnQ1dFQzVVRMeldsRFNqV0NGYWt2dkI3cVVVbVFTaHNUN0NtbmRxeTNIWjBUcTBIQWN1QzNuQ19ycURHZ1FsSklNbElBVmRNUkNRR1lyVUZtMWdhVG9qMGxkSnVDaDRLc09jT3RkamoyalVjekdOd3pBYlhyOTVZTG1qUFY0amtUUExFZmFGOEhPWnBBY3YyWktpOThyc09DQWVlU09tZGlicEMyWmFkSmw0WTQyVzVRZFlzUXpkcGVjcThVekxNRUdYLU85elRsaElaYm8zTXRGdTJ2QTg1aUJpSmhpVXdlNXNfQkptLUhzTXpWMHZIdkdmVHM1UkhjZjE0eUxJZnplSXRyYURkSENsSmZNZndkaVJzUVc2SUVHN3lHU09HVjVLYUp2aTNBeVlzVmFtbm4xTWVkcnRwRERFcnVyZw?oc=5",
+   "source": "報新聞",
+   "time": "2026-10-29T14:28+08:00",
+   "summary": "萬里溪堰塞湖10月28日現況 水位1,086.41公尺湖水穩定溢流 報新聞",
+   "id": "cc5351cf00",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "592e55f72e": {
+   "title": "花蓮老家逃過堰塞湖洪災吳阿民捐贈1966年亞運金牌文物| 文化 - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE55dEN1T1UydEhjRXZlQzlWN19MbUx3TDU1R3dCLUNhaUZQWjZOYTQzall4b1AyLWtLZjJqWmxLTmg2Vy1nWENnc05ibmhDR0t2ckQtT1l0MzEwVWhlVnhJ?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-10-28T12:56+08:00",
+   "summary": "花蓮老家逃過堰塞湖洪災吳阿民捐贈1966年亞運金牌文物| 文化 中央社 CNA",
+   "id": "592e55f72e",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "8318577b44": {
+   "title": "萬里溪堰塞湖10月28日現況 水位1,086.41公尺湖水穩定溢流 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBOamR6b0dncHlFN2M1TWNrNXZUU3hsTWtzM2xDQUtlZS16Nk94S1lMdjV4cVRjZXdWRG1SbnlEeEMyUk9GUHgzWFJ6WkJiU1oxR0E?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-29T14:28+08:00",
+   "summary": "萬里溪堰塞湖10月28日現況 水位1,086.41公尺湖水穩定溢流 蕃新聞",
+   "id": "8318577b44",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "8c936f56da": {
+   "title": "討論牆 | 萬里溪堰塞湖黃色警戒 巴威海陸警齊發 東北角搖滾區 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5sUHJWRWJEdEVMVUhVZ0JoUHp3cDV4QzhkX29ucTBEY0Q2TmtSNG9yaGhNRUJsN1NDVDdaQXpEZjZTRXNBM3k0aUhySzh4aFVOREhEZkZKWllUeDdDeHJ2TXpzVTY?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-29T13:54+08:00",
+   "summary": "討論牆 | 萬里溪堰塞湖黃色警戒 巴威海陸警齊發 東北角搖滾區 LINE TODAY",
+   "id": "8c936f56da",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "60b9d400fb": {
+   "title": "萬里溪堰塞湖10月29日現況 水位1,086.25公尺湖水穩定溢流 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBoTHFUNWtyUHhJMzdlTjZkYlJwR0Noc2F6MFpLMTNGbWM2ZUJhSmpmWnFRRDRTRTFJaVBncGRjRXAzOWM5OUN6Uk1rNUxxU2lJTHc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-29T13:57+08:00",
+   "summary": "萬里溪堰塞湖10月29日現況 水位1,086.25公尺湖水穩定溢流 蕃新聞",
+   "id": "60b9d400fb",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "8e1a266349": {
+   "title": "115年10月30日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE90ZzZtQXFHRERseHpvUGRLZU9mcm12dUM3LVNHWFpsZTJsN0JZdzJZRGYzTkRSakpOQXg1Y1I2dDBOazUyVEJKTkgtVXl2dHpiOXc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-30T09:54+08:00",
+   "summary": "115年10月30日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "8e1a266349",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "365e0e030c": {
+   "title": "颱風薔琵襲台釀1死94傷！騎車自摔、交通事故最多 傷者暴增52人 - 台視新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5kdkF4N19tZG9KcGFQdGpwaUV4UXhreVlPdVQ5WTdDQ0xBSGF3eGpuZVRuSmE5eHE4YjVUWktBbDl4Y084cExnTTZwMHAxaG1sZVNqTmFMOA?oc=5",
+   "source": "台視新聞網",
+   "time": "2026-10-23T10:54+08:00",
+   "summary": "颱風薔琵襲台釀1死94傷！騎車自摔、交通事故最多 傷者暴增52人 台視新聞網",
+   "id": "365e0e030c",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "1cf6767c02": {
+   "title": "討論牆 | 強颱巴威來勢洶洶 劉世芳：萬里溪堰塞湖今提早撤離安置 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5idnNrUGNpcTBzMWhqVlU5VjItRTRFNkE0V3ZidTFSSmQ0QWVPb3pYdDVVdy10RUJLeHNHWG9GeG9RbFFWcGU4S0drMTJMUHI5UUJVOERlRDU0ekRqRkU4SUR3UTE?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-29T13:09+08:00",
+   "summary": "討論牆 | 強颱巴威來勢洶洶 劉世芳：萬里溪堰塞湖今提早撤離安置 LINE TODAY",
+   "id": "1cf6767c02",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "8c5cc0b397": {
+   "title": "薔琵颱風來襲賴清德：中央地方通力合作守護人民生命財產安全- 政治新聞 - PChome Online 新聞",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZmtHMlMwUkM2QWg4QkptN1FndDlTSURLUC1zYVhUR01oUlRXTndzV1BpUFdOTkprcGNsY2JYR2oxQ0RwdWtsZXFfZmt4LXItT3UzcXFINDRqWlZaMGhQNjFoSTV4YXpmdlhtWG5WaThhLW43VVItcnQ4MjdfdWZ5dXhLeDBIT0hmQVBxQXFMSQ?oc=5",
+   "source": "PChome Online 新聞",
+   "time": "2026-10-23T12:19+08:00",
+   "summary": "薔琵颱風來襲賴清德：中央地方通力合作守護人民生命財產安全- 政治新聞 PChome Online 新聞",
+   "id": "8c5cc0b397",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-10-30T10:39+08:00"
   }
  },
- "updatedAt": "2026-10-28T10:24+08:00"
+ "updatedAt": "2026-10-30T10:39+08:00"
 }
