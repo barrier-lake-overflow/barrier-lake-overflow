@@ -720,12 +720,17 @@ const Duty = (() => {
     if (pos >= 0) enter.textContent = `${SCENARIOS[pos].name} 事件回放`;
     const replay = $('#replay');
     if (replay) replay.hidden = !drill || !window.REPLAY_SUMMARY;
-    // 即時監看資料過舊或有影像沒分析：明顯提示，避免把舊結果當成現況
+    // 即時監看資料過舊或有影像沒分析：提示，避免把舊結果當成現況。
+    // 一般畫面只說資料暫停更新（值班人員要知道能不能相信畫面）；原因與處理方式只在網管檢視
     const fresh = $('#freshNote');
     const f = drill ? null : freshness(sc);
+    const admin = typeof Views !== 'undefined' && Views.isAdmin();
     fresh.hidden = !f || (!f.stale && !f.newer);
-    if (f) fresh.innerHTML = `<b>資料可能過舊</b>：最新一期是 ${esc(f.label)}（${f.age} 天前）` +
-      (f.newer ? `，但系統已記到 ${f.newer} 的影像還沒分析，請檢查每日自動更新` : `，衛星約每 6 天經過一次，請檢查每日自動更新`);
+    fresh.classList.toggle('is-admin-note', admin);
+    if (f) fresh.innerHTML = admin
+      ? `<b>資料可能過舊</b>：最新一期是 ${esc(f.label)}（${f.age} 天前）` +
+        (f.newer ? `，但系統已記到 ${f.newer} 的影像還沒分析，請檢查每日自動更新（系統管理分頁）` : `，衛星約每 6 天經過一次，請檢查每日自動更新（系統管理分頁）`)
+      : `<b>即時監看資料暫停更新</b>：最新一期是 ${esc(f.label)}（${f.age} 天前），畫面上是當時的結果，不代表現況。`;
     const news = $('#dutyNews');
     if (news) news.hidden = drill || !news.innerHTML.trim();
     if (!$('#duty').hidden) {

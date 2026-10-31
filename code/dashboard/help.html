@@ -149,13 +149,13 @@
             <div class="fc">
               <a class="fc-step s-start" href="#layout"><span class="n">1</span>打開平台<span>一打開就是「值班 · 即時監看」，不用切換</span></a>
               <div class="fc-arrow"></div>
-              <a class="fc-step" href="#status"><span class="n">2</span>看頂端那一行狀態<span>資料幾點更新？有沒有寫「失敗」「沿用上一次」「未更新」？</span></a>
+              <a class="fc-step" href="#status"><span class="n">2</span>看頂端那一行<span>資料幾點更新？有沒有警戒？</span></a>
               <div class="fc-arrow"></div>
-              <div class="fc-q">畫面上方有紅色的「警戒橫幅」或「資料可能過舊」嗎？</div>
+              <div class="fc-q">畫面上方有紅色的「警戒橫幅」，或黃色的「即時監看資料暫停更新」嗎？</div>
               <div class="fc-branch">
                 <div class="fc-col">
                   <span class="fc-tag yes">有</span>
-                  <a class="fc-step s-warn" href="#fresh">先處理提示<span>警戒：記下地區，留意該區窗格<br>資料過舊：通知系統負責人，畫面結果不能當成現況</span></a>
+                  <a class="fc-step s-warn" href="#fresh">先處理提示<span>警戒：記下地區，留意該區窗格<br>資料暫停更新：畫面結果不代表現況，通知系統管理者</span></a>
                   <div class="fc-arrow"></div>
                   <span class="fc-tag">處理完，繼續往下</span>
                 </div>
@@ -186,16 +186,16 @@
 
         <div class="sub-sec" id="quick-map">
           <h3>圖 2　畫面上什麼在哪裡</h3>
-          <p>下面是平台實際的值班畫面截圖（2026-11-01），分成上半部與下半部。圖上的數字框可以點，跳到該功能的說明；滑鼠停在框上會顯示名稱。</p>
+          <p>下面是平台實際的值班畫面截圖（2026-11-01，一般畫面），分成上半部與下半部。圖上的數字框可以點，跳到該功能的說明；滑鼠停在框上會顯示名稱。</p>
           <div class="fig">
             <div class="fig-cap">上半部：頂端列、提示、待處理、監看窗格、衛星過境 · <a href="help-img/duty-top.jpg" target="_blank" rel="noopener">看大圖</a></div>
             <div class="shot">
               <img src="help-img/duty-top.jpg" alt="值班畫面上半部截圖" width="1400" height="885" loading="lazy">
               <a class="hot" href="#layout" style="left:16.00%;top:0%;width:10.71%;height:6.33%" title="分頁：值班／全台清冊"><span>1</span></a>
-              <a class="hot" href="#status" style="left:46.29%;top:1.02%;width:42.50%;height:3.95%" title="狀態列：更新時間、警戒、失敗與影響"><span>2</span></a>
+              <a class="hot" href="#status" style="left:73.64%;top:1.02%;width:15.14%;height:3.95%" title="狀態列：資料更新時間、警戒"><span>2</span></a>
               <a class="hot" href="#quick" style="left:90.64%;top:1.02%;width:6.57%;height:3.95%" title="使用說明（開新分頁）"><span>3</span></a>
               <a class="hot" href="#drill" style="left:80.36%;top:9.83%;width:16.86%;height:4.41%" title="進入演練模式（歷史事件回放）"><span>4</span></a>
-              <a class="hot" href="#fresh" style="left:2.79%;top:25.99%;width:94.43%;height:4.97%" title="資料可能過舊（有才出現）"><span>5</span></a>
+              <a class="hot" href="#fresh" style="left:2.79%;top:25.99%;width:94.43%;height:4.97%" title="即時監看資料暫停更新（有才出現）"><span>5</span></a>
               <a class="hot r" href="#todo" style="left:2.86%;top:31.98%;width:94.29%;height:4.75%" title="待處理：各窗格最新一期要處理的事件"><span>6</span></a>
               <a class="hot" href="#todo" style="left:2.86%;top:36.05%;width:94.29%;height:7.12%" title="還沒有分析結果的窗格（有才出現）"><span>7</span></a>
               <a class="hot" href="#windows" style="left:9.43%;top:78.42%;width:34.71%;height:4.18%" title="監看窗格：事件數、最新一期幾天前"><span>8</span></a>
@@ -203,10 +203,10 @@
             </div>
             <ol class="shot-key">
               <li><a href="#layout"><b>1</b>分頁：值班／全台清冊</a></li>
-              <li><a href="#status"><b>2</b>狀態列：更新時間、警戒、失敗與影響</a></li>
+              <li><a href="#status"><b>2</b>狀態列：資料更新時間、警戒</a></li>
               <li><a href="#quick"><b>3</b>使用說明（開新分頁）</a></li>
               <li><a href="#drill"><b>4</b>進入演練模式（歷史事件回放）</a></li>
-              <li><a href="#fresh"><b>5</b>資料可能過舊（有才出現）</a></li>
+              <li><a href="#fresh"><b>5</b>即時監看資料暫停更新（有才出現）</a></li>
               <li><a href="#todo"><b>6</b>待處理：各窗格最新一期要處理的事件</a></li>
               <li><a href="#todo"><b>7</b>還沒有分析結果的窗格（有才出現）</a></li>
               <li><a href="#windows"><b>8</b>監看窗格：事件數、最新一期幾天前</a></li>
@@ -217,16 +217,16 @@
           <div class="fig">
             <div class="fig-cap">下半部：事件清單、小地圖、新聞候選（左）與事件卡（右） · <a href="help-img/duty-board.jpg" target="_blank" rel="noopener">看大圖</a></div>
             <div class="shot">
-              <img src="help-img/duty-board.jpg" alt="值班畫面下半部截圖" width="1340" height="1240" loading="lazy">
-              <a class="hot" href="#passes" style="left:15.52%;top:2.26%;width:21.42%;height:1.69%" title="下一期日期與還有幾天"><span>10</span></a>
-              <a class="hot" href="#queue" style="left:0.75%;top:7.10%;width:39.63%;height:10.08%" title="這個窗格這一期的事件清單"><span>11</span></a>
-              <a class="hot" href="#minimap" style="left:4.63%;top:16.77%;width:31.79%;height:34.35%" title="小地圖：事件位置、底圖"><span>12</span></a>
-              <a class="hot" href="#news" style="left:0.75%;top:55.89%;width:39.63%;height:43.71%" title="新聞候選"><span>13</span></a>
-              <a class="hot" href="#card-top" style="left:42.09%;top:11.94%;width:55.07%;height:3.15%" title="座標（含 TWD97）：複製、在地圖上開啟"><span>14</span></a>
-              <a class="hot" href="#card-top" style="left:40.00%;top:15.97%;width:59.25%;height:7.58%" title="建議行動、規模、研判信心、首次出現"><span>15</span></a>
-              <a class="hot" href="#card-top" style="left:41.94%;top:24.27%;width:55.37%;height:23.63%" title="建議任務、複製任務單"><span>16</span></a>
-              <a class="hot" href="#verify" style="left:41.94%;top:48.79%;width:55.37%;height:16.13%" title="人工查證：選結果、填人名、儲存、匯出"><span>17</span></a>
-              <a class="hot" href="#card-folds" style="left:41.94%;top:65.73%;width:55.37%;height:19.76%" title="佐證細節（點開）：摘要、證據、逐期紀錄、規則"><span>18</span></a>
+              <img src="help-img/duty-board.jpg" alt="值班畫面下半部截圖" width="1340" height="1220" loading="lazy">
+              <a class="hot" href="#passes" style="left:15.52%;top:2.30%;width:21.42%;height:1.72%" title="下一期日期與還有幾天"><span>10</span></a>
+              <a class="hot" href="#queue" style="left:0.75%;top:7.21%;width:39.63%;height:10.25%" title="這個窗格這一期的事件清單"><span>11</span></a>
+              <a class="hot" href="#minimap" style="left:4.63%;top:17.05%;width:31.79%;height:34.92%" title="小地圖：事件位置、底圖"><span>12</span></a>
+              <a class="hot" href="#news" style="left:0.75%;top:56.80%;width:39.63%;height:42.70%" title="新聞候選"><span>13</span></a>
+              <a class="hot" href="#card-top" style="left:42.09%;top:12.13%;width:55.07%;height:3.20%" title="座標（含 TWD97）：複製、在地圖上開啟"><span>14</span></a>
+              <a class="hot" href="#card-top" style="left:40.00%;top:16.23%;width:59.25%;height:7.70%" title="建議行動、規模、研判信心、首次出現"><span>15</span></a>
+              <a class="hot" href="#card-top" style="left:41.94%;top:24.67%;width:55.37%;height:24.02%" title="建議任務、複製任務單"><span>16</span></a>
+              <a class="hot" href="#verify" style="left:41.94%;top:49.59%;width:55.37%;height:16.39%" title="人工查證：選結果、填人名、儲存、匯出"><span>17</span></a>
+              <a class="hot" href="#card-folds" style="left:41.94%;top:66.80%;width:55.37%;height:20.08%" title="佐證細節（點開）：摘要、證據、逐期紀錄、規則"><span>18</span></a>
             </div>
             <ol class="shot-key" start="10">
               <li><a href="#passes"><b>10</b>下一期日期與還有幾天</a></li>
@@ -362,6 +362,8 @@
               <tr><td><code>index.html#duty</code></td><td>值班（即時監看）</td></tr>
               <tr><td><code>index.html#drill</code></td><td>直接進演練模式（2025 馬太鞍溪回放），報告或教學用</td></tr>
               <tr><td><code>index.html#inventory</code></td><td>全台清冊</td></tr>
+              <tr><td><code>index.html?admin</code></td><td>網管檢視：多一個「系統管理」分頁，看系統狀態、執行紀錄與錯誤原因（見<a href="#status">系統管理</a>）</td></tr>
+              <tr><td><code>index.html?admin#admin</code></td><td>直接打開系統管理分頁</td></tr>
             </tbody>
           </table>
         </div>
@@ -377,7 +379,7 @@
         </div>
         <div class="sub-sec" id="fresh">
           <h3>資料過舊提示</h3>
-          <p>衛星約每 6 天經過一次。某個窗格最新一期超過 12 天，或系統已經記到更新的影像卻還沒分析，頂端會出現紅色提示「資料可能過舊」，窗格按鈕上的天數也變紅，頂端狀態列會寫「即時監看影像已 X 天未更新」。看到這個提示時，畫面上的結果不能當作現況，請通知負責系統的人檢查每日自動更新。</p>
+          <p>衛星約每 6 天經過一次。某個窗格最新一期超過 12 天，或系統已經記到更新的影像卻還沒分析，即時監看上方會出現黃色提示「即時監看資料暫停更新」，窗格按鈕上的天數也變黃。看到這個提示時，畫面上的結果不能當作現況，請通知系統管理者。原因與處理方式在<a href="#status">網管檢視</a>看得到。</p>
         </div>
         <div class="sub-sec" id="windows">
           <h3>監看窗格</h3>
@@ -536,19 +538,30 @@
       </section>
 
       <section id="status">
-        <h2>系統狀態（頂端那一行）</h2>
-        <p>例如「資料更新 10/28 10:24 · 無警戒 · 1 步失敗」。系統每兩天自動更新一次資料，這一行告訴你資料有多新、有沒有警戒、有沒有步驟出錯。點一下展開：</p>
+        <h2>系統狀態與系統管理（網管檢視）</h2>
+        <p>系統每兩天自動更新一次資料。一般畫面的頂端只寫「資料更新 10/30 10:39 · 無警戒」：資料多新、有沒有警戒，值班只需要知道這兩件事。</p>
+        <p><b>網管檢視</b>：網址加 <code>?admin</code>（例如 <code>index.html?admin</code>）。頂端會標「網管檢視」，另外寫出失敗的步驟與原因（例如「Sentinel-1失敗：GEE 服務帳號沒有下載影像的權限」）、即時監看影像多久沒更新；分頁多一個「<b>系統管理</b>」，點頂端那一行也會直接過去。</p>
+        <div class="note">網管檢視只是把畫面分開，讓一般使用者看不到執行細節，<b>不是權限保護</b>：網站是靜態頁面，知道網址的人都看得到，狀態資料也在公開的 repo 裡（專案 ID 與服務帳號信箱會先遮掉）。</div>
+        <p>系統管理分頁由上到下：</p>
+        <table>
+          <tbody>
+            <tr><td>系統狀態</td><td>這一次自動更新的各步驟、雨量資料時間、失敗步驟的白話原因與原文、各監看窗格（見下表）</td></tr>
+            <tr><td>執行紀錄</td><td>最近 30 次自動更新：開始時間、花費、結果（失敗的步驟與原因），以及每一步的成功或失敗（滑鼠停在上面看秒數與錯誤）。連續失敗、或某一步突然變得很快（例如 Sentinel-1 只花幾秒），都是異常的訊號</td></tr>
+            <tr><td>最近一次的完整輸出</td><td>最近一次自動更新印出的內容（最後 400 行），勾「只看錯誤與警告」只留錯誤與各步驟標題。不用登入 GitHub 就能查原因</td></tr>
+          </tbody>
+        </table>
+        <p>系統狀態的各欄：</p>
         <table>
           <tbody>
             <tr><td>執行步驟</td><td>綠框成功、紅框失敗（滑鼠停在上面看錯誤訊息）、灰框略過。依序是：清冊、警戒、GEE 登入、雨量熱區、風險模型、監看名單、Sentinel-1、過境前雨量、底圖、新聞候選、儀表板資料</td></tr>
             <tr><td>雨量資料時間</td><td>衛星雨量（GSMaP）通常落後 1～2 天；超過 48 小時以紅框標示</td></tr>
-            <tr><td>監看窗格</td><td>目前所有監看中的窗格、加入原因、使用的軌道、最新影像日期；點一個切到該窗格</td></tr>
+            <tr><td>監看窗格</td><td>目前所有監看中的窗格、加入原因、使用的軌道、最新影像日期；最近一次失敗時，以紅字寫出原因的白話說明（滑鼠停在上面看原文）；點一個切到該窗格</td></tr>
           </tbody>
         </table>
-        <div class="note warn">某一步失敗不會擋住其他步驟，但相關資料可能停在上一次。狀態列會直接寫出影響，例如「警戒資料這次沒抓到，沿用上一次」。即時監看影像過舊時也會寫在這一行（見<a href="#fresh">資料過舊提示</a>）。</div>
+        <div class="note warn">某一步失敗不會擋住其他步驟，但相關資料可能停在上一次。網管檢視的狀態列會直接寫出影響，例如「警戒資料這次沒抓到，沿用上一次」。Sentinel-1 只要有一個窗格失敗，這一步就記為失敗，並寫出幾個窗格失敗。</div>
         <div class="sub-sec" id="alert-banner">
           <h3>警戒橫幅</h3>
-          <p>有發布中的土石流或大規模崩塌警戒時，頂端會出現紅色橫幅，列出類型、則數與地點（附警戒等級）。警戒資料沒抓到、沿用上一次時，橫幅會標「沿用上一次」。</p>
+          <p>有發布中的土石流或大規模崩塌警戒時，頂端會出現紅色橫幅，列出類型、則數與地點（附警戒等級）。一般畫面與網管檢視都會顯示；警戒資料沒抓到、沿用上一次時，網管檢視的橫幅會另外標「沿用上一次」。</p>
         </div>
         <div class="sub-sec" id="new-data">
           <h3>有新資料</h3>
@@ -594,7 +607,7 @@
         <h2>常見問題</h2>
         <div class="sub-sec" id="faq-empty">
           <h3>即時監看什麼事件都沒有，是壞掉了嗎？</h3>
-          <p>大多數時候本來就沒有新的堰塞湖，清單是空的很正常。先確認資料是新的：頂端那一行有沒有失敗或「未更新」，即時監看上方有沒有紅色的「資料可能過舊」。</p>
+          <p>大多數時候本來就沒有新的堰塞湖，清單是空的很正常。先確認資料是新的：頂端那一行的更新時間，以及即時監看上方有沒有黃色的「即時監看資料暫停更新」。</p>
         </div>
         <div class="sub-sec" id="faq-latest">
           <h3>為什麼「最新」那一期不是今天？</h3>

@@ -38,13 +38,59 @@ CODE = Path(__file__).resolve().parents[2]
 REPO = CODE.parent
 LIVE = REPO / "data" / "live"
 STATUS = LIVE / "status.json"
+HISTORY = LIVE / "history.json"
 DAILY_JS = CODE / "dashboard" / "data" / "daily.js"
+SYSLOG_JS = CODE / "dashboard" / "data" / "syslog.js"
 LOCK = LIVE / ".lock"
 TW = timezone(timedelta(hours=8))
+HISTORY_KEEP = 30        # 系統管理分頁的執行紀錄保留幾次
+LOG_TAIL_LINES = 400     # 最近一次執行的完整輸出只留最後幾行，避免檔案太大
 
 STEPS = ["inventory", "alerts", "rain", "risk", "watchlist", "sentinel", "passrain", "basemap", "news", "build"]
 GIT_PATHS = ["data/raw/taiwan-barrier-lakes.csv", "code/dashboard/data/basemaps", "data/raw/scenarios", "data/derived",
-             "data/live/state.json", "data/live/news.json", "data/live/status.json", "code/dashboard/data"]
+             "data/live/state.json", "data/live/news.json", "data/live/status.json", "data/live/history.json",
+             "code/dashboard/data"]
+
+
+class Tee:
+    """把輸出同時印到原本的地方並留一份，給系統管理分頁看最近一次執行的完整輸出。"""
+
+    def __init__(self, stream, buf: list):
+        self.stream, self.buf = stream, buf
+
+    def write(self, s):
+        self.stream.write(s)
+        self.buf.append(s)
+        return len(s)
+
+    def flush(self):
+        self.stream.flush()
+
+    def __getattr__(self, name):
+        return getattr(self.stream, name)
+
+
+LOG_BUF: list = []
+
+
+def redact(text: str) -> str:
+    from .gee import redact as _redact   # 與 sentinel 共用同一份規則
+    return _redact(text)
+
+
+def merge_history(history: list, entry: dict, keep: int = HISTORY_KEEP) -> list:
+    """
+    把這次執行加進紀錄（同一次執行寫兩次狀態時取代，不重複），新的在前，只留 keep 筆。
+
+    >>> h = merge_history([], {"startedAt": "a", "n": 1})
+    >>> h = merge_history(h, {"startedAt": "b", "n": 1})
+    >>> [x["startedAt"] for x in merge_history(h, {"startedAt": "b", "n": 2}, keep=5)]
+    ['b', 'a']
+    >>> len(merge_history(h, {"startedAt": "c"}, keep=2))
+    2
+    """
+    rest = [h for h in history if h.get("startedAt") != entry.get("startedAt")]
+    return ([entry] + rest)[:keep]
 
 
 class Runner:
@@ -67,16 +113,22 @@ class Runner:
         except (Exception, SystemExit) as e:   # 有些模組缺套件時呼叫 sys.exit()，也只算這一步失敗
             traceback.print_exc()
             self.steps.append({"name": name, "status": "error", "seconds": round(time.time() - t0, 1),
-                               "error": f"{type(e).__name__}: {e}"[:500]})
+                               "error": redact(f"{type(e).__name__}: {e}")[:500]})
             return None
 
 
 def summarize(out) -> object:
-    """狀態檔只記小的摘要。"""
+    """
+    狀態檔只記小的摘要。太長的清單改記筆數，不整段丟掉。
+
+    >>> summarize({"windows": [{"id": str(i) * 50} for i in range(9)], "n": 3})
+    {'windows': {'count': 9}, 'n': 3}
+    """
     if isinstance(out, list):
         return {"count": len(out)}
     if isinstance(out, dict):
-        return {k: v for k, v in out.items() if not isinstance(v, (list, dict)) or len(str(v)) < 300}
+        return {k: (v if not isinstance(v, (list, dict)) or len(str(v)) < 300
+                    else {"count": len(v)}) for k, v in out.items()}
     return None
 
 
@@ -111,7 +163,8 @@ def write_status(runner: Runner, started: datetime, rain_as_of=None) -> dict:
                 "orbits": [f"{'降' if o['pass'] == 'DESCENDING' else '升'}軌 {o['orbit']}"
                            for o in (w.get("orbits") or {}).values()],
                 "lastScene": max((sc["day"] for o in (w.get("orbits") or {}).values() for sc in o.get("scenes", [])),
-                                 default=None)}
+                                 default=None),
+                "lastError": w.get("lastError")}
                for w in state.get("windows", {}).values() if w["active"]]
     cands = sorted((v for v in news.load()["items"].values() if v["status"] == "candidate"),
                    key=lambda v: v["time"], reverse=True)
@@ -132,7 +185,29 @@ def write_status(runner: Runner, started: datetime, rain_as_of=None) -> dict:
     DAILY_JS.write_text(
         "/* 由 pipeline/daily/run.py 產生，請勿手動編輯。每日自動更新的執行狀態、監看窗格、待確認的新聞候選。 */\n"
         f"window.DAILY_STATUS = {json.dumps(status, ensure_ascii=False, indent=1)};\n", encoding="utf-8")
+    write_syslog(status)
     return status
+
+
+def write_syslog(status: dict) -> None:
+    """系統管理分頁的資料：最近 HISTORY_KEEP 次執行摘要（history.json）＋最近一次的完整輸出（最後幾行）。"""
+    try:
+        history = json.loads(HISTORY.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        history = []
+    t0, t1 = datetime.fromisoformat(status["startedAt"]), datetime.fromisoformat(status["finishedAt"])
+    entry = {"startedAt": status["startedAt"], "finishedAt": status["finishedAt"],
+             "minutes": round((t1 - t0).total_seconds() / 60, 1),
+             "steps": [{k: s[k] for k in ("name", "status", "seconds", "error") if k in s} for s in status["steps"]]}
+    history = merge_history(history, entry)
+    HISTORY.write_text(json.dumps(history, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    lines = redact("".join(LOG_BUF)).splitlines()
+    syslog = {"history": history,
+              "lastRun": {"startedAt": status["startedAt"], "totalLines": len(lines),
+                          "lines": lines[-LOG_TAIL_LINES:]} if lines else None}
+    SYSLOG_JS.write_text(
+        "/* 由 pipeline/daily/run.py 產生，請勿手動編輯。系統管理分頁：每日自動更新的執行紀錄與最近一次的輸出。 */\n"
+        f"window.SYSTEM_LOG = {json.dumps(syslog, ensure_ascii=False, indent=1)};\n", encoding="utf-8")
 
 
 def git_commit(push: bool) -> None:
@@ -163,6 +238,7 @@ def main() -> int:
     ap.add_argument("--push", action="store_true", help="commit 後推上遠端（CI 用）")
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
+    sys.stdout, sys.stderr = Tee(sys.stdout, LOG_BUF), Tee(sys.stderr, LOG_BUF)
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
     if unknown := skip - set(STEPS):
         ap.error(f"不認得的步驟：{','.join(unknown)}")

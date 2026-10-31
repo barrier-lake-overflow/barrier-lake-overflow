@@ -19,6 +19,7 @@
       <nav class="view-tabs" aria-label="分頁">
         <a class="vt" href="#duty" data-view="duty">值班</a>
         <a class="vt" href="#inventory" data-view="inventory">全台清冊</a>
+        <a class="vt vt-admin" href="#admin" data-view="admin" hidden>系統管理</a>
       </nav>
       <span class="spacer"></span>
       <button class="sys-status" id="sysStatusBtn" type="button" aria-expanded="false" aria-controls="sysStatus" hidden>
@@ -33,10 +34,6 @@
   <div class="top-banner alert-banner" id="alertBanner" hidden></div>
   <div class="top-banner new-data" id="newData" hidden></div>
 
-  <!-- 系統狀態：每兩天自動更新的執行步驟與監看窗格（daily-view.js） -->
-  <div class="drawer daily" id="sysStatus" hidden>
-    <div class="wrap" id="dailyBody"></div>
-  </div>
 
   <!-- 值班：即時監看；歷史案例在演練模式（duty.js） -->
   <section class="duty view" id="duty" data-view="duty" aria-labelledby="dutyTitle">
@@ -306,6 +303,27 @@
     </section>
 
   </main>
+  </div>
+
+  <!-- 系統管理：只在網管檢視（網址 ?admin）出現；系統狀態、執行紀錄、最近一次的完整輸出（daily-view.js）
+       只是把畫面分開，不是權限保護 -->
+  <div class="view admin-view daily" id="admin" data-view="admin" hidden>
+    <div class="wrap">
+      <div class="admin-head">
+        <h2>系統管理</h2>
+        <span class="dim">網管檢視：網址加 ?admin 才看得到這個分頁。只是把畫面分開，不是權限保護。</span>
+      </div>
+      <section class="admin-sec" id="adminStatus"></section>
+      <section class="admin-sec">
+        <div class="sec-head"><h2>執行紀錄</h2><span class="rule"></span><span class="count" id="adminHistoryCount">—</span></div>
+        <div class="replay-wrap"><table class="admin-history" id="adminHistory"></table></div>
+      </section>
+      <section class="admin-sec">
+        <div class="sec-head"><h2>最近一次的完整輸出</h2><span class="rule"></span><span class="count" id="adminLogCount">—</span></div>
+        <label class="admin-filter"><input type="checkbox" id="adminLogErrors"> 只看錯誤與警告</label>
+        <pre class="admin-log" id="adminLog"></pre>
+      </section>
+    </div>
   </div>
 
   <footer>

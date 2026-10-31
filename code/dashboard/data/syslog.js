@@ -1,0 +1,934 @@
+/* 由 pipeline/daily/run.py 產生，請勿手動編輯。系統管理分頁：每日自動更新的執行紀錄與最近一次的輸出。 */
+window.SYSTEM_LOG = {
+ "history": [
+  {
+   "startedAt": "2026-10-30T10:39+08:00",
+   "finishedAt": "2026-10-30T10:39+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.3
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.1
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.1
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 5.7
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 5.3
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 2.5
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 2.9
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-28T10:20+08:00",
+   "finishedAt": "2026-10-28T10:24+08:00",
+   "minutes": 4.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.6
+    },
+    {
+     "name": "alerts",
+     "status": "error",
+     "seconds": 212.2,
+     "error": "URLError: <urlopen error timed out>"
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 5.3
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 10.4
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 2.6
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 6.1
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-26T09:15+08:00",
+   "finishedAt": "2026-10-26T09:19+08:00",
+   "minutes": 4.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.4
+    },
+    {
+     "name": "alerts",
+     "status": "error",
+     "seconds": 213.4,
+     "error": "URLError: <urlopen error timed out>"
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.5
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 7.8
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 7.6
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 3.3
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.2
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-24T09:39+08:00",
+   "finishedAt": "2026-10-24T09:43+08:00",
+   "minutes": 4.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.4
+    },
+    {
+     "name": "alerts",
+     "status": "error",
+     "seconds": 213.7,
+     "error": "URLError: <urlopen error timed out>"
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.3
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 6.8
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 10.8
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.3
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.8
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-22T09:34+08:00",
+   "finishedAt": "2026-10-22T09:35+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 4.5
+    },
+    {
+     "name": "alerts",
+     "status": "error",
+     "seconds": 60.7,
+     "error": "URLError: <urlopen error timed out>"
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.6
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 4.6
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 15.9
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 10.2
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-20T09:52+08:00",
+   "finishedAt": "2026-10-20T09:52+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 4.2
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.2
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.9
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 12.7
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 11.4
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.6
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 6.7
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-18T09:07+08:00",
+   "finishedAt": "2026-10-18T09:08+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.1
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.1
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.2
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 6.5
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 7.9
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.8
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 6.2
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-16T09:25+08:00",
+   "finishedAt": "2026-10-16T09:26+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.5
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.4
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 6.2
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 9.4
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.8
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.6
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-14T09:56+08:00",
+   "finishedAt": "2026-10-14T09:57+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.3
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 8.9
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 6.8
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 0.5
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.1
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-13T14:59+08:00",
+   "finishedAt": "2026-10-13T15:00+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "skipped"
+    },
+    {
+     "name": "alerts",
+     "status": "skipped"
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 4.7
+    },
+    {
+     "name": "rain",
+     "status": "skipped"
+    },
+    {
+     "name": "risk",
+     "status": "skipped"
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 59.2
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 9.1
+    },
+    {
+     "name": "news",
+     "status": "skipped"
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 1.0
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-12T10:38+08:00",
+   "finishedAt": "2026-10-12T10:38+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.5
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.3
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 3.8
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 4.1
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 0.6
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 4.3
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.6
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-12T10:36+08:00",
+   "finishedAt": "2026-10-12T10:36+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "skipped"
+    },
+    {
+     "name": "alerts",
+     "status": "skipped"
+    },
+    {
+     "name": "watchlist",
+     "status": "skipped"
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.3
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-12T10:33+08:00",
+   "finishedAt": "2026-10-12T10:34+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.9
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 2.8
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.2
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 4.9
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 5.9
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 0.5
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.7
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-12T09:59+08:00",
+   "finishedAt": "2026-10-12T09:59+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.1
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.4
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 2.2
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 5.3
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 4.8
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 0.7
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 5.3
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.3
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-11T19:02+08:00",
+   "finishedAt": "2026-10-11T19:02+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.2
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.3
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 8.0
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 6.1
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 0.6
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 6.3
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.6
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
+   "startedAt": "2026-10-11T15:53+08:00",
+   "finishedAt": "2026-10-11T15:53+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 2.4
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 3.4
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 5.3
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 11.0
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 4.1
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  }
+ ],
+ "lastRun": null
+};

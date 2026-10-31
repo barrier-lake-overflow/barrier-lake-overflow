@@ -26,6 +26,29 @@ GSMAP_LABEL = "GSMaP v8 雨量計校正（衛星估計，非測站）"
 _ee = None
 
 
+def redact(text: str) -> str:
+    """
+    遮掉 GEE 專案 ID 與服務帳號信箱。錯誤訊息與執行紀錄會跟著網站公開（state.json、status.json、
+    系統管理分頁），GitHub 只遮它自己 log 裡的 secret，我們另存的要自己遮。
+
+    >>> os.environ["GEE_PROJECT"] = "demo-proj"
+    >>> redact("denied on resource 'projects/demo-proj'")
+    "denied on resource 'projects/***'"
+    >>> del os.environ["GEE_PROJECT"]
+    """
+    secrets = [os.environ.get("GEE_PROJECT", "").strip()]
+    key = os.environ.get("GEE_SERVICE_ACCOUNT_KEY", "").strip()
+    if key:
+        try:
+            info = json.loads(key)
+            secrets += [info.get("client_email", ""), info.get("project_id", "")]
+        except ValueError:
+            pass
+    for s in filter(None, secrets):
+        text = text.replace(s, "***")
+    return text
+
+
 def init(project: Optional[str] = None):
     """登入並回傳 ee 模組。"""
     global _ee

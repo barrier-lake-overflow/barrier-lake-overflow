@@ -860,8 +860,7 @@ footer .wrap{
   border:1px solid var(--line-strong);white-space:nowrap;
 }
 .sys-status:hover,.help-btn:hover,.sys-status[aria-expanded="true"],.help-btn[aria-expanded="true"]{color:var(--snow);border-color:var(--fog)}
-.sys-status::after{content:" ▾";color:var(--jade)}
-.sys-status[aria-expanded="true"]::after{content:" ▴"}
+.sys-status::after{content:" →";color:var(--jade)}   /* 網管檢視：點一下到系統管理分頁 */
 .help-btn{text-decoration:none}
 .help-btn::after{content:" ↗";color:var(--jade)}   /* 開新分頁 */
 /* 「?」：開使用說明的對應段落 */
@@ -875,18 +874,41 @@ footer .wrap{
 .ev-folds-head{display:flex;align-items:center;gap:4px;padding-top:12px}
 .ev-folds-head .at{margin-bottom:0}
 .sys-status b{font-weight:500}
+/* 一般畫面的狀態列只是文字，不能點開 */
+.sys-status.is-plain{cursor:default;pointer-events:none}
+.sys-status.is-plain::after{content:none}
+.st-admin{color:var(--iris);border:1px solid var(--iris);padding:0 5px}
+.is-admin .sys-status{white-space:normal;text-align:left;max-width:100%}   /* 網管檢視的狀態較長，允許換行 */
+.dw-err{color:var(--clay);font-size:12px;line-height:1.5}
 .st-alert{color:var(--clay)}
 .st-err{color:var(--ochre)}
-.drawer{border-bottom:1px solid var(--line);background:var(--stone)}
-.drawer > .wrap{padding-top:16px;padding-bottom:18px;display:grid;gap:12px}
-.drawer .duty-principles{margin:0}
-.drawer .flow,.drawer .duty-legend{margin-bottom:0}
-.help-note{font-size:12px;color:var(--moss)}
-.sys-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
-.sys-head b{color:var(--snow);font-weight:500}
-.drawer .daily-steps{margin-bottom:0}
-.drawer h3{font-size:13px;font-weight:500;color:var(--snow);margin-bottom:8px}
-.drawer h3 .dim{font-weight:400}
+/* 系統管理分頁（網管檢視） */
+.vt-admin{color:var(--iris)}
+.vt-admin[aria-current="page"]{color:var(--snow);border-bottom-color:var(--iris)}
+.admin-view{padding:clamp(22px,3vw,36px) 0 48px}
+.admin-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.admin-head h2{font-family:var(--wide);font-variation-settings:'wdth' 108,'wght' 700;font-size:clamp(20px,2.4vw,26px);color:var(--snow)}
+.admin-sec{margin-top:28px}
+.admin-sec h3{font-size:13px;font-weight:500;color:var(--snow);margin:14px 0 8px}
+.admin-sec h3 .dim{font-weight:400}
+.admin-fail{margin:10px 0;padding:8px 12px;border-left:3px solid var(--clay);background:rgba(194,80,60,.08);font-size:13px;color:var(--fog)}
+.admin-fail b{color:var(--clay);font-weight:500}
+.admin-fail .dim{display:block;margin-top:2px;word-break:break-all}
+.admin-history{width:100%;border-collapse:collapse;font-size:12.5px;min-width:760px}
+.admin-history th{text-align:left;font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--moss);border-bottom:1px solid var(--line-strong);padding:8px 10px}
+.admin-history td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--fog);vertical-align:top}
+.admin-history td .dim{display:block;margin-top:2px}
+.admin-history td.mono{font-family:var(--mono);white-space:nowrap}
+.admin-history td .ds{margin:0 4px 4px 0;display:inline-block}
+.admin-history tr.has-fail td:first-child{box-shadow:inset 3px 0 0 var(--clay)}
+.ok-text{color:var(--jade)}
+.admin-filter{display:inline-flex;gap:6px;align-items:center;font-size:12.5px;color:var(--fog);margin-bottom:8px;cursor:pointer}
+.admin-log{
+  max-height:520px;overflow:auto;background:var(--abyss);border:1px solid var(--line);padding:12px 14px;
+  font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--moss);white-space:pre-wrap;word-break:break-all;
+}
+.admin-log .lg-err{color:var(--clay)}
+.admin-log .lg-head{color:var(--snow)}
 @media (max-width:720px){
   .statusbar{position:static}   /* 手機上頂端列換成三行，固定在上方會吃掉太多畫面 */
   .statusbar .wrap{gap:10px}
@@ -910,9 +932,13 @@ footer .wrap{
 .duty.is-drill .snap.is-on{box-shadow:inset 0 -2px 0 var(--iris)}
 .scen-label{margin-right:2px}
 .scen-age{font-family:var(--mono);font-size:10px;color:var(--moss);margin-left:8px}
-.scen-age.is-stale{color:var(--clay)}
-.fresh-note{margin-bottom:14px;padding:8px 14px;border-left:3px solid var(--clay);background:rgba(194,80,60,.1);font-size:13px;color:var(--fog)}
-.fresh-note b{color:var(--clay);font-weight:500}
+/* 資料過舊：一般畫面用琥珀色、語氣平和；網管檢視用陶紅色並寫出處理方式 */
+.scen-age.is-stale{color:var(--ochre)}
+.is-admin .scen-age.is-stale{color:var(--clay)}
+.fresh-note{margin-bottom:14px;padding:8px 14px;border-left:3px solid var(--ochre);background:rgba(201,138,46,.07);font-size:13px;color:var(--fog)}
+.fresh-note b{color:var(--ochre);font-weight:500}
+.fresh-note.is-admin-note{border-left-color:var(--clay);background:rgba(194,80,60,.1)}
+.fresh-note.is-admin-note b{color:var(--clay)}
 
 /* 頂端橫幅：警戒（紅）、有新資料（玉綠） */
 .top-banner .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;font-size:13px}

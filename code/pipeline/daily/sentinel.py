@@ -178,7 +178,27 @@ def process_window(ee, w: dict, now: datetime) -> dict:
             "added": added, "analyzed": analyzed, "passes": len(passes)}
 
 
+def failure_message(results: list) -> str | None:
+    """
+    有窗格失敗時回傳一行摘要（給狀態檔與儀表板），全部成功回傳 None。
+
+    >>> failure_message([{"id": "a", "status": "ok"}]) is None
+    True
+    >>> failure_message([{"id": "a", "status": "error", "error": "denied"}, {"id": "b", "status": "ok"}])
+    '1／2 個窗格失敗：denied'
+    """
+    failed = [r for r in results if r.get("status") == "error"]
+    if not failed:
+        return None
+    return f"{len(failed)}／{len(results)} 個窗格失敗：{failed[0].get('error', '')}"[:500]
+
+
 def main(state: dict, project=None, now=None) -> dict:
+    """
+    處理所有監看中的窗格。單一窗格失敗不影響其他窗格；全部跑完後只要有窗格失敗就拋出錯誤，
+    讓這一步在狀態檔記為失敗（之前只寫在回傳的清單裡，狀態檔一長就被摘要丟掉，失敗看起來像成功）。
+    每個窗格最近一次的錯誤記在 state 的 lastError，成功後清掉，儀表板據此顯示哪個窗格壞了。
+    """
     now = now or datetime.now(TW)
     ee = gee.init(project)
     results = []
@@ -196,7 +216,14 @@ def main(state: dict, project=None, now=None) -> dict:
         try:
             r = process_window(ee, w, now)
         except Exception as e:   # 單一窗格失敗不影響其他窗格
-            r = {"id": w["id"], "status": "error", "error": str(e)}
+            r = {"id": w["id"], "status": "error", "error": gee.redact(str(e))}
+        if r["status"] == "error":
+            w["lastError"] = {"at": now.isoformat(timespec="minutes"), "error": r["error"][:300]}
+        else:
+            w.pop("lastError", None)
         print(f"  {r}")
         results.append(r)
+    msg = failure_message(results)
+    if msg:
+        raise RuntimeError(msg)
     return {"windows": results}
