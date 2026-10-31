@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
 """
-水體萃取：光學 NDWI 與 SAR 低回波
+水體萃取：光學 NDWI 與 SAR 低背向散射
 
-- NDWI = (Green − NIR) / (Green + NIR)（McFeeters 1996），門檻用固定值或 Otsu
-- SAR：濾波後的 σ⁰（dB）切 Otsu 門檻，搭配 preprocess/mask.py 的遮罩，
-  不然山區陰影坡會被當成水。颱風期間光學幾乎都被雲遮，常常只有 SAR 可用
+判水標準（三種資料各一條規則，全部集中在這裡，見 docs/parameters.md「判水標準」）：
 
-兩種都輸出 WaterExtent，共用 change_detection()：新增水體 = 事件後 ∧ ¬事件前。
+| 資料 | 規則 | 用在 |
+|---|---|---|
+| Sentinel-1 SAR | 濾波後 σ⁰ VV < −18 dB（固定，SAR_WATER_DB_DEFAULT） | 偵測（barrier_lake.run_sar_chain） |
+| Sentinel-2（有短波紅外線） | MNDWI > 0 且 B8 < 500（optical_water_rule） | 負案例 E1 查證（scripts/check_neg_e1.py） |
+| 航照（只有紅綠藍＋近紅外線） | NDVI < −0.15 且 NDWI > 0.2（optical_water_rule） | 湖面驗證（scripts/prepare_aerial.py） |
+
+- SAR 搭配 preprocess/mask.py 的遮罩，不然山區陰影坡會被當成水。颱風期間光學幾乎都被雲遮，
+  常常只有 SAR 可用。Otsu 自動門檻（otsu_threshold）保留，但實測山區窗格每一期都退回 −18 dB，
+  所以不再預設使用。
+- NDWI = (Green − NIR) / (Green + NIR)（McFeeters 1996），water_mask() 可用固定值或 Otsu，
+  目前只有已撤下的光學 NDWI 分析用到。
+
+SAR 與光學 NDWI 都輸出 WaterExtent，共用 change_detection()：新增水體 = 事件後 ∧ ¬事件前。
 Otsu 用 numpy 自己寫，不引入 scikit-image。
 
     python -m pipeline.detect.water
@@ -176,6 +186,50 @@ def water_mask(ndwi_arr: np.ndarray, threshold: Optional[float] = None) -> tuple
     return mask, threshold
 
 
+# 光學判水規則（查證與驗證用，不參與偵測）
+
+# Sentinel-2 L2A（反射率 × 10000）：水的近紅外線幾乎完全被吸收，MNDWI（Xu 2006）明顯大於 0。
+# 只看 MNDWI 會把山區陰影、暗色岩屑也算進來，所以加上近紅外線上限。
+S2_WATER_MNDWI_MIN = 0.0
+S2_WATER_NIR_MAX = 500.0
+# 航照沒有短波紅外線，算不出 MNDWI。門檻由 7/27、8/18、3/27 已知地物實測值選定（未看 SAR 結果）：
+# 湖 NDVI −0.22～−0.38、NDWI 0.37～0.56；崩塌地 NDVI −0.06～+0.02，但 NDWI 可到 0.21，
+# 所以要同時看 NDVI（水的近紅外線比紅光還低，其他地表沒有這個特性）。
+AERIAL_WATER_NDVI_MAX = -0.15
+AERIAL_WATER_NDWI_MIN = 0.2
+
+
+def optical_water_rule(green: np.ndarray, nir: np.ndarray,
+                       red: Optional[np.ndarray] = None,
+                       swir: Optional[np.ndarray] = None) -> np.ndarray:
+    """
+    光學影像逐像元判水，回傳布林遮罩。有短波紅外線（Sentinel-2 B11）用 MNDWI 規則，
+    沒有（航照）用 NDVI＋NDWI 規則，兩者至少要給一個。
+
+    - 有 swir：MNDWI = (G − SWIR)/(G + SWIR) > 0 且 NIR < 500（Sentinel-2 L2A 反射率 × 10000）
+    - 只有 red：NDVI = (NIR − R)/(NIR + R) < −0.15 且 NDWI = (G − NIR)/(G + NIR) > 0.2
+
+    >>> g, n = np.array([900.0, 850.0]), np.array([200.0, 790.0])
+    >>> optical_water_rule(g, n, red=np.array([400.0, 800.0])).tolist()   # 湖、崩塌裸地
+    [True, False]
+    >>> optical_water_rule(np.array([700.0, 900.0]), np.array([300.0, 1500.0]),
+    ...                    swir=np.array([200.0, 1600.0])).tolist()       # 水、土石
+    [True, False]
+    """
+    g = np.asarray(green, dtype=np.float32)
+    nir = np.asarray(nir, dtype=np.float32)
+    if swir is not None:
+        s = np.asarray(swir, dtype=np.float32)
+        mndwi = (g - s) / (g + s + 1e-6)
+        return (mndwi > S2_WATER_MNDWI_MIN) & (nir < S2_WATER_NIR_MAX)
+    if red is None:
+        raise ValueError("optical_water_rule 需要 swir（Sentinel-2）或 red（航照）其中一個")
+    r = np.asarray(red, dtype=np.float32)
+    ndwi = (g - nir) / (g + nir + 1e-6)
+    ndvi = (nir - r) / (nir + r + 1e-6)
+    return (ndvi < AERIAL_WATER_NDVI_MAX) & (ndwi > AERIAL_WATER_NDWI_MIN)
+
+
 # 單期水體萃取結果（面積等），單位慣例跟 hypsometry 一致
 
 @dataclass
@@ -183,7 +237,7 @@ class WaterExtent:
     """單一時期（一景影像）的水體萃取結果。"""
     mask: np.ndarray
     threshold: float
-    method: str                    # "otsu"/"fixed"（光學）或 "sar_otsu"/"sar_fixed"/"sar_otsu_fallback"
+    method: str                    # "otsu"/"fixed"（光學）或 "sar_otsu"/"sar_fixed"/"sar_otsu_fallback"（加 VH 時尾綴 "+vh"）
     cell_size_m: float
     date: Optional[str] = None     # ISO 日期，回測用
 
@@ -231,17 +285,26 @@ def extract_water(green: np.ndarray, nir: np.ndarray, cell_size_m: float,
 
 # SAR 半：低回波判水（σ⁰ dB）
 
-# 無可靠雙峰時的固定門檻：C 波段 VV 平靜水面多在 −20 dB 以下、植生山坡
+# 正式流程的固定門檻：C 波段 VV 平靜水面多在 −20 dB 以下、植生山坡
 # 約 −12～−6 dB，文獻常用 −18 dB 左右（例：Twele et al. 2016 以此為
-# 初值再做局部 Otsu）。
+# 初值再做局部 Otsu）。偵測流程（run_sar_chain、analyze_sar_change.py）預設用這個值。
 SAR_WATER_DB_DEFAULT = -18.0
 # Otsu 門檻若高於此值，代表它切到的是「陸地內部兩群」（例如草地 vs
 # 森林）而不是水陸分界——畫面內水體太少時常見，此時退回固定門檻。
 SAR_OTSU_MAX_DB = -14.0
+# B2 實驗（VH 輔助，預設關閉）：VV 介於 −18 與 −15 dB 之間「差一點」的像元，VH 也很低才補判為水。
+# 湖面被風吹皺或混濁時 VV 會偏高，VH 對水面粗糙度的反應不同。VH 門檻在實驗前從文獻選定、不調：
+# Manjusree et al. 2012 對交叉極化（HV/VH）建議的水體範圍約 −15～−24 dB，取最嚴格的 −24 dB，
+# 只補判有把握的像元。VH 無法分辨水與雷達陰影（陰影兩種極化都低），陰影仍靠遮罩處理。
+SAR_VV_MARGINAL_DB = -15.0
+SAR_VH_WATER_DB = -24.0
 
 
 def sar_water_mask(vv_db: np.ndarray, threshold: Optional[float] = None,
-                   invalid_mask: Optional[np.ndarray] = None) -> tuple:
+                   invalid_mask: Optional[np.ndarray] = None,
+                   vh_db: Optional[np.ndarray] = None,
+                   vh_threshold: float = SAR_VH_WATER_DB,
+                   vv_marginal_db: float = SAR_VV_MARGINAL_DB) -> tuple:
     """
     低回波判水：σ⁰ < 門檻 即為水體。回傳 (遮罩, 門檻, method)。
 
@@ -249,6 +312,16 @@ def sar_water_mask(vv_db: np.ndarray, threshold: Optional[float] = None,
       結果高於 SAR_OTSU_MAX_DB 時退回 SAR_WATER_DB_DEFAULT，
       method="sar_otsu_fallback"。
     - invalid_mask（陰影／疊置／陡坡）內的像元一律 False。
+    - vh_db（B2 實驗）：另外把「VV < vv_marginal_db 且 VH < vh_threshold」的像元判為水，
+      method 加上 "+vh"。不給 vh_db 時規則與原本相同。
+
+    >>> vv = np.array([-20.0, -16.0, -16.0, -12.0])
+    >>> vh = np.array([-28.0, -26.0, -20.0, -30.0])
+    >>> sar_water_mask(vv, -18.0)[0].tolist()
+    [True, False, False, False]
+    >>> m, _, method = sar_water_mask(vv, -18.0, vh_db=vh)
+    >>> m.tolist(), method
+    ([True, True, False, False], 'sar_fixed+vh')
 
     >>> vv = np.array([-24.0, -22.0, -8.0, -7.0, -23.0])
     >>> shadow = np.array([False, False, False, False, True])
@@ -272,17 +345,24 @@ def sar_water_mask(vv_db: np.ndarray, threshold: Optional[float] = None,
             if threshold > SAR_OTSU_MAX_DB:
                 threshold, method = SAR_WATER_DB_DEFAULT, "sar_otsu_fallback"
 
-    mask = ~invalid & (np.nan_to_num(vv_db, nan=np.inf) < threshold)
+    vv = np.nan_to_num(vv_db, nan=np.inf)
+    mask = ~invalid & (vv < threshold)
+    if vh_db is not None:
+        vh = np.nan_to_num(np.asarray(vh_db, dtype="float64"), nan=np.inf)
+        mask |= ~invalid & (vv < vv_marginal_db) & (vh < vh_threshold)
+        method += "+vh"
     return mask, float(threshold), method
 
 
 def extract_water_sar(vv_db: np.ndarray, cell_size_m: float,
                       threshold: Optional[float] = None,
                       invalid_mask: Optional[np.ndarray] = None,
-                      date: Optional[str] = None) -> WaterExtent:
+                      date: Optional[str] = None,
+                      vh_db: Optional[np.ndarray] = None) -> WaterExtent:
     """
     SAR 版一站式萃取，輸出跟光學版同一個 WaterExtent，可直接送
     change_detection()。vv_db 建議先過 preprocess.sar.lee_filter。
+    vh_db（B2 實驗）見 sar_water_mask。
 
     >>> vv = np.full((4, 4), -8.0)
     >>> vv[1:3, 1:3] = -23.0
@@ -290,7 +370,8 @@ def extract_water_sar(vv_db: np.ndarray, cell_size_m: float,
     >>> int(ext.mask.sum()), ext.method
     (4, 'sar_fixed')
     """
-    mask, used, method = sar_water_mask(vv_db, threshold=threshold, invalid_mask=invalid_mask)
+    mask, used, method = sar_water_mask(vv_db, threshold=threshold, invalid_mask=invalid_mask,
+                                        vh_db=vh_db)
     return WaterExtent(mask=mask, threshold=used, method=method,
                        cell_size_m=cell_size_m, date=date)
 

@@ -25,6 +25,8 @@ print('各軌道影像數', s1.filterDate(PRE_START, POST_END).aggregate_histogr
 
 var s = s1.filter(ee.Filter.eq('relativeOrbitNumber_start', ORBIT)).select('VV');
 var pre = s.filterDate(PRE_START, PRE_END).median();
+// 一年前基準：事件前期間往前推一年。與事件前比較，標出既有崩塌堆積區（只用於崩塌堆積提醒）
+var prior = s.filterDate(ee.Date(PRE_START).advance(-1, 'year'), ee.Date(PRE_END).advance(-1, 'year')).median();
 var posts = s.filterDate(POST_START, POST_END).sort('system:time_start');
 var dem = ee.Image('NASA/NASADEM_HGT/001').select('elevation').resample('bilinear');
 
@@ -34,6 +36,7 @@ function exp(img, name) {
   Export.image.toDrive(Object.assign({image: img.toFloat(), description: name}, opt));
 }
 exp(pre, 'S1_VV_' + NAME + '_pre');
+exp(prior, 'S1_VV_' + NAME + '_prior');
 exp(dem, 'NASADEM_' + NAME);
 
 // 逐日匯出（同一次過境可能有兩個相鄰 frame 都蓋到窗格，同日先 mosaic），檔名帶 UTC 日期。

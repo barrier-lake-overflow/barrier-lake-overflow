@@ -26,6 +26,8 @@ var s = s1.filter(ee.Filter.eq('relativeOrbitNumber_start', orbit)).select('VV')
 
 // 事件前：6/4～7/16 共 8 張取中位數（dB 中位數等同線性中位數，並壓低斑點雜訊）
 var pre = s.filterDate('2025-06-01', '2025-07-18').median();
+// 一年前基準：同一期間往前推一年。與事件前比較，標出既有崩塌堆積區（只用於崩塌堆積提醒）
+var prior = s.filterDate('2024-06-01', '2024-07-18').median();
 
 // 事件後：各期單張影像
 function scene(day, nextDay) {
@@ -45,6 +47,7 @@ function exp(img, name) {
   Export.image.toDrive(Object.assign({image: img.toFloat(), description: name}, opt));
 }
 exp(pre,      'S1_VV_pre_matai_an');
+exp(prior,    'S1_VV_prior_matai_an');
 exp(post0722, 'S1_VV_post_matai_an');      // 檔名沿用最初版本
 exp(post0728, 'S1_VV_post2_matai_an');     // 7/22 的複核期；與下一行內容相同
 exp(post0728, 'S1_VV_post0728_matai_an');

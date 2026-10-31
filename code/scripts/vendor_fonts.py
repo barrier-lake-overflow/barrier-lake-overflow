@@ -36,7 +36,7 @@ def fetch(url: str) -> bytes:
 
 def used_chars() -> set:
     chars = set()
-    for p in [DASH / "index.html", *DASH.glob("*.js"), *(DASH / "data").glob("*.js")]:
+    for p in [*DASH.glob("*.html"), *DASH.glob("*.js"), *(DASH / "data").glob("*.js")]:
         chars |= set(p.read_text(encoding="utf-8"))
     return {ord(c) for c in chars if ord(c) > 0x7F}
 

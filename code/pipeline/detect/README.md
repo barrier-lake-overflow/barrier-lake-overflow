@@ -4,7 +4,7 @@
 
 | 檔案 | 內容 | 狀態 |
 |---|---|---|
-| `water.py` | 水體萃取：光學 NDWI + SAR 低回波（Otsu，退回 −18 dB）；`change_detection` 算新增水體 | 完成 |
+| `water.py` | 水體萃取：SAR 低背向散射（固定 −18 dB；Otsu 保留但未預設使用）、光學 NDWI；`optical_water_rule` 集中光學判水規則（Sentinel-2、航照）；`change_detection` 算新增水體 | 完成 |
 | `landslide.py` | 崩塌變化偵測：振幅比值法（GRD），\|Δσ⁰\| ≥ 3 dB，扣水體／疊置／陰影、去小碎塊 | 完成（相干性法 SLC 沒做） |
 | `barrier_lake.py` | 堰塞湖判定：新增水體 × 河道相交 × 鄰近崩塌（DEM 檢核壩體在下游）× 多時相持續 → A/B/C | 完成 |
 
@@ -26,11 +26,8 @@ Engine 的 `COPERNICUS/S1_GRD`，不需要 SNAP。
 - 陰影／疊置只做局部坡面判定，沒有沿距離向射線追蹤（被遠處山脊擋住的陰影抓不到）。
 - 坡度 > `max_water_slope_deg` 一律不當水（函式預設 20°，正式流程用 35°），湖緣貼著陡峭山壁的部分會被低估。
   正式流程另外啟用雙門檻（`seed_slope_deg=20`）：整塊都在 20° 以上陡坡的新增水體不列入。
-- D8 河網沒有先填窪，窪地會截斷累積；主要用途是補事件前影像上太窄看不到的河道。
+- D8 河網先以 priority-flood 填窪再計算（`river_mask()` 預設 `fill=True`）；主要用途是補事件前影像上太窄看不到的河道。
 - 崩塌落在疊置／陰影區時偵測不到，湖會被降為 C 級，要靠升降軌互補或光學影像。
-
-- 還沒用真實 Sentinel-1 跑過。GEE 匯出腳本在 `scripts/analyze_sar_change.py` 開頭，
-  其中 `orbit = 69` 是佔位值，要換成事件前後都有影像的軌道號。
 
 ## 開發時遇到的問題
 

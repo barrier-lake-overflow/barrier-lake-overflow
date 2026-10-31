@@ -424,9 +424,9 @@ function renderDetail() {
 
 /* 有事件回放的湖：提醒下方風險快照跟回放的事件期間不同時，避免兩邊結果被直接比較 */
 function renderReplayNote(lake) {
-  const box = $('#replayNote');
+  const box = $('#lakeReplayNote');
   if (!box) return;
-  const scen = (window.EVENT_SCENARIOS || []).find(s => s.reference && s.reference.lakeId === lake.id);
+  const scen = (window.EVENT_SCENARIOS || []).find(s => s.kind !== 'live' && s.reference && s.reference.lakeId === lake.id);
   if (!scen) { box.hidden = true; return; }
   const snaps = scen.snapshots;
   const period = snaps.length ? `${snaps[0].label.split(' ')[0]}～${snaps[snaps.length - 1].label.split(' ')[0]}` : '';
@@ -437,7 +437,12 @@ function renderReplayNote(lake) {
     <span>${riskDate
       ? `下方風險為 ${riskDate} 的批次模型快照，跟事件回放的時間不同，兩者不能直接比較；事件期間的研判以值班佇列為準。`
       : '事件期間的研判以值班佇列為準。'}</span>
-    <a href="#duty">回到值班佇列</a>`;
+    <a href="#duty" data-scen="${scen.id}">開啟這個事件的回放（演練模式）</a>`;
+  box.querySelector('a').addEventListener('click', e => {
+    if (typeof Duty === 'undefined') return;
+    e.preventDefault();
+    Duty.openScenario(scen.id);
+  });
 }
 
 // 存續狀態和風險等級分開顯示

@@ -130,6 +130,8 @@ def run_series(name: str, lon: float, lat: float, orbit: str, raw_dir: Path,
     """
     pre = raw_dir / f"S1_VV_{name}_pre.tif"
     dem = raw_dir / f"NASADEM_{name}.tif"
+    # 一年前基準（事件前基準期間往前推一年）：有的話標出既有崩塌堆積區，供崩塌堆積提醒；沒有就不提醒
+    prior = raw_dir / f"S1_VV_{name}_prior.tif"
     if days is None:
         scenes = scene_files(name, raw_dir)
     else:
@@ -160,6 +162,8 @@ def run_series(name: str, lon: float, lat: float, orbit: str, raw_dir: Path,
                    "--out", str(out)]
             if later:
                 cmd += ["--post-later", str(later[1])]
+            if prior.exists():
+                cmd += ["--prior-baseline", str(prior)]
             log = out.with_suffix(".log")
             # 輸出導到檔案時，Windows 的 Python 預設用 cp950 編碼，印到「σ⁰」這類字元會
             # UnicodeEncodeError 而回傳失敗（結果檔其實已寫出）。強制子程序用 UTF-8。

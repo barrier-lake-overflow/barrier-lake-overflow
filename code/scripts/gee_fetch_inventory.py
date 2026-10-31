@@ -18,7 +18,7 @@ pipeline/events/replay.py，這支只負責查詢與下載。
 
 產出：
     data/raw/sentinel1/replay/S1_VV_inv_<lakeId>_pre.tif、NASADEM_inv_<lakeId>.tif、
-        S1_VV_inv_<lakeId>_YYYYMMDD.tif（約 5 MB／張，不進 git）
+        S1_VV_inv_<lakeId>_prior.tif（一年前基準）、S1_VV_inv_<lakeId>_YYYYMMDD.tif（約 5 MB／張，不進 git）
     data/raw/replay_manifest.json（每湖選了哪一軌、哪幾期、沒選的原因；進 git）
 
 已下載的檔案會略過，中斷後重跑即可續傳。匯出設定（10 km 方框、10 m、EPSG:4326、
@@ -99,6 +99,11 @@ def fetch_one(ee, target: dict, dry_run: bool) -> dict:
     dem = ee.Image("NASA/NASADEM_HGT/001").select("elevation").resample("bilinear")
     download(pre, aoi, RAW / f"S1_VV_{name}_pre.tif")
     download(dem, aoi, RAW / f"NASADEM_{name}.tif")
+    # 一年前基準（事件前期間往前推一年）：標出既有崩塌堆積區，只用於崩塌堆積提醒；沒有影像（2015 年）就不下載
+    prior = s.filterDate(ee.Date(target["preStart"]).advance(-1, "year"),
+                         ee.Date(target["preEnd"]).advance(-1, "year"))
+    if prior.size().getInfo() > 0:
+        download(prior.median(), aoi, RAW / f"S1_VV_{name}_prior.tif")
     for sc in choice["scenes"]:
         d = sc["day"]
         start = ee.Date(f"{d[:4]}-{d[4:6]}-{d[6:]}")

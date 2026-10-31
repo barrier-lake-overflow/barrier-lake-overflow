@@ -3,7 +3,7 @@
 參數敏感度分析：全清冊回放＋負案例，每次只動一個參數，看「偵測數」比「隨機命中期望值」多多少。
 
     cd code
-    python scripts/sensitivity_replay.py                  # → docs/sensitivity.json、終端機表格
+    python scripts/sensitivity_replay.py                  # → docs/results/sensitivity.json、終端機表格
 
 用本機已下載的回放影像（data/raw/sentinel1/replay/、馬太鞍溪正負案例），不重新下載；
 不覆寫 data/derived/ 的結果檔，也不改儀表板。
@@ -42,9 +42,9 @@ from pipeline.preprocess.sar import cell_size_xy_m, load_s1_geotiff  # noqa: E40
 
 REPO = CODE.parent
 S1 = REPO / "data" / "raw" / "sentinel1"
-OUT = REPO / "docs" / "sensitivity.json"
+OUT = REPO / "docs" / "results" / "sensitivity.json"
 MAX_WATER_SLOPE_DEG = 35.0   # 與 run_sar_series.py 相同
-SEED_SLOPE_DEG = 20.0        # 與 run_sar_series.py 相同（docs/sensitivity.json 是加入這條之前算的）
+SEED_SLOPE_DEG = 20.0        # 與 run_sar_series.py 相同（docs/results/sensitivity.json 是加入這條之前算的）
 HALF_WIDTH_KM = 2.0
 
 BASE = {"min_area_m2": 5000.0, "search_radius_m": 500.0, "dam_elev_tolerance_m": 5.0,

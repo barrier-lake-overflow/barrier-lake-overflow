@@ -62,6 +62,22 @@ class TestTriageRules(unittest.TestCase):
         self.assertIn("priority.high.confirmed", a.rules_fired)
         self.assertTrue(any("UAV" in t["label"] for t in a.tasks))
 
+    def test_old_landslide_caution_does_not_change_judgement(self):
+        base = T.assess("E1", [det(T0, cand())], ctx(T0))
+        on_deposit = T.assess("E1", [det(T0, {**cand(), "oldLandslidePct": 64.2})], ctx(T0))
+        self.assertEqual(base.cautions, [])
+        self.assertEqual(len(on_deposit.cautions), 1)
+        self.assertIn("64%", on_deposit.cautions[0])
+        self.assertIn("caution.old_landslide", on_deposit.rules_fired)
+        for k in ("priority", "confidence", "grade", "persistence", "tasks", "conflicts"):
+            self.assertEqual(getattr(base, k), getattr(on_deposit, k))
+        self.assertIn("cautions", on_deposit.to_dict())
+
+    def test_old_landslide_below_threshold_or_missing_has_no_caution(self):
+        low = T.assess("E1", [det(T0, {**cand(), "oldLandslidePct": 5.6})], ctx(T0))
+        self.assertEqual(low.cautions, [])
+        self.assertEqual(T.assess("E1", [det(T0, cand())], ctx(T0)).cautions, [])
+
     def test_sar_only_confidence_caps_at_medium(self):
         d1 = det(T0, cand(persistent=True))
         d2 = det(T0 + DAY6, cand(persistent=True))

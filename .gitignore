@@ -80,6 +80,7 @@ secrets.yaml
 # ── 編輯器與作業系統 ──────────────────────────────────
 .vscode/
 .idea/
+.claude/
 *.swp
 *~
 .DS_Store
@@ -102,6 +103,9 @@ docs/disclosure.md
 # 每日自動更新：執行鎖、日誌（影像 *.tif 已在上方忽略）
 data/live/.lock
 data/live/logs/
+
+# 實驗性修改（B1、B2）的重跑結果，可由 code/scripts/run_experiment.py 重新產生；結論寫在 docs/parameters.md
+data/experiments/
 
 # Netlify 建置時複製進發布目錄的證據圖（來源在 docs/evidence/）
 code/dashboard/docs/

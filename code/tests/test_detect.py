@@ -128,6 +128,147 @@ class TestChangeDetection(unittest.TestCase):
             W.change_detection(pre, post)
 
 
+class TestOpticalWaterRule(unittest.TestCase):
+    def test_sentinel2_rule_needs_both_mndwi_and_low_nir(self):
+        g = np.array([700.0, 700.0, 900.0])
+        swir = np.array([200.0, 200.0, 1600.0])
+        nir = np.array([300.0, 800.0, 1500.0])     # 水、MNDWI 偏水但近紅外線太高、土石
+        self.assertEqual(W.optical_water_rule(g, nir, swir=swir).tolist(), [True, False, False])
+
+    def test_aerial_rule_needs_both_ndvi_and_ndwi(self):
+        g = np.array([900.0, 850.0, 500.0])
+        r = np.array([400.0, 800.0, 400.0])
+        nir = np.array([200.0, 790.0, 300.0])      # 湖、崩塌裸地、NDVI 偏水但 NDWI 不夠
+        self.assertEqual(W.optical_water_rule(g, nir, red=r).tolist(), [True, False, False])
+
+    def test_aerial_rule_matches_previous_prepare_aerial_formula(self):
+        # 原本寫在 scripts/prepare_aerial.py 的判斷式，集中後結果要逐像元相同
+        rng = np.random.default_rng(3)
+        r, g, nir = (rng.integers(0, 3000, 5000).astype(np.float32) for _ in range(3))
+        ndwi = (g - nir) / (g + nir + 1e-6)
+        ndvi = (nir - r) / (nir + r + 1e-6)
+        old = (ndvi < -0.15) & (ndwi > 0.2)
+        np.testing.assert_array_equal(W.optical_water_rule(g, nir, red=r), old)
+
+    def test_requires_red_or_swir(self):
+        with self.assertRaises(ValueError):
+            W.optical_water_rule(np.array([1.0]), np.array([1.0]))
+
+
+class TestSarFixedThreshold(unittest.TestCase):
+    def test_sar_chain_defaults_to_fixed_minus_18_db(self):
+        from pipeline.detect.barrier_lake import run_sar_chain, synthetic_scene
+        s = synthetic_scene(seed=0)
+        out = run_sar_chain(s["pre_db"], s["post_db"], s["cell_size_m"], dem=s["dem"],
+                            later_post_dbs=s["later_dbs"], min_catchment_km2=0.05)
+        for ext in (out["pre_water"], out["post_water"]):
+            self.assertEqual(ext.method, "sar_fixed")
+            self.assertEqual(ext.threshold, W.SAR_WATER_DB_DEFAULT)
+
+
+class TestVhAssist(unittest.TestCase):
+    """B2：VV 差一點（−18～−15 dB）且 VH 很低的像元，打開 VH 才判為水。"""
+
+    def test_marginal_vv_with_low_vh(self):
+        vv = np.array([-16.5, -16.5, -14.0, -20.0])
+        vh = np.array([-26.0, -20.0, -30.0, -10.0])
+        off, _, m_off = W.sar_water_mask(vv, -18.0)
+        on, _, m_on = W.sar_water_mask(vv, -18.0, vh_db=vh)
+        self.assertEqual(off.tolist(), [False, False, False, True])
+        self.assertEqual(on.tolist(), [True, False, False, True])   # VV −14 太亮，VH 再低也不補
+        self.assertEqual((m_off, m_on), ("sar_fixed", "sar_fixed+vh"))
+
+    def test_invalid_mask_still_wins(self):
+        on, _, _ = W.sar_water_mask(np.array([-16.5]), -18.0, invalid_mask=np.array([True]),
+                                    vh_db=np.array([-30.0]))
+        self.assertFalse(on[0])
+
+    def test_sar_chain_without_vh_is_unchanged(self):
+        from pipeline.detect.barrier_lake import run_sar_chain, synthetic_scene
+        s = synthetic_scene(seed=0)
+        kw = dict(dem=s["dem"], later_post_dbs=s["later_dbs"], min_catchment_km2=0.05)
+        a = run_sar_chain(s["pre_db"], s["post_db"], s["cell_size_m"], **kw)
+        b = run_sar_chain(s["pre_db"], s["post_db"], s["cell_size_m"], **kw)
+        np.testing.assert_array_equal(a["new_water"], b["new_water"])
+
+    def test_sar_chain_with_vh_recovers_rough_lake(self):
+        from pipeline.detect.barrier_lake import run_sar_chain, synthetic_scene
+        s = synthetic_scene(seed=0, speckle=False)
+        lake = s["truth"]["lake"]
+        post = s["post_db"].copy()
+        post[lake] = -16.5                       # 湖面被風吹皺，VV 沒低到 −18
+        vh_land = np.full_like(post, -15.0)
+        post_vh = vh_land.copy()
+        post_vh[lake] = -27.0
+        later = [post.copy()]
+        kw = dict(dem=s["dem"], later_post_dbs=later, min_catchment_km2=0.05)
+        vv_only = run_sar_chain(s["pre_db"], post, s["cell_size_m"], **kw)
+        with_vh = run_sar_chain(s["pre_db"], post, s["cell_size_m"], pre_vh_db=vh_land,
+                                post_vh_db=post_vh, later_post_vh_dbs=[post_vh.copy()], **kw)
+        self.assertLess(vv_only["new_water"][lake].mean(), 0.1)
+        self.assertGreater(with_vh["new_water"][lake].mean(), 0.5)
+
+    def test_sar_chain_requires_complete_vh(self):
+        from pipeline.detect.barrier_lake import run_sar_chain, synthetic_scene
+        s = synthetic_scene(seed=0)
+        with self.assertRaises(ValueError):
+            run_sar_chain(s["pre_db"], s["post_db"], s["cell_size_m"], later_post_dbs=s["later_dbs"],
+                          pre_vh_db=s["pre_db"], post_vh_db=s["post_db"])
+
+
+class TestOldLandslide(unittest.TestCase):
+    """A1：候選落在既有崩塌堆積區（前一年到事件前的崩塌）的比例，只記錄、不影響分級。"""
+
+    def _classify(self, old):
+        from pipeline.detect.barrier_lake import classify
+        nw = np.zeros((40, 40), dtype=bool)
+        nw[15:25, 15:25] = True
+        river = np.zeros_like(nw)
+        river[:, 20] = True
+        river[15:25, 20] = False
+        cands = classify(nw, np.zeros_like(nw), river, 10.0, min_area_m2=100, old_landslide=old)
+        self.assertEqual(len(cands), 1)
+        return cands[0]
+
+    def test_candidate_on_old_deposit_scores_high(self):
+        old = np.zeros((40, 40), dtype=bool)
+        old[12:28, 12:28] = True
+        c = self._classify(old)
+        self.assertEqual(c.old_landslide_frac, 1.0)
+        self.assertEqual(c.to_dict()["oldLandslidePct"], 100.0)
+
+    def test_candidate_away_from_old_deposit_scores_zero(self):
+        old = np.zeros((40, 40), dtype=bool)
+        old[0:5, 0:5] = True
+        self.assertEqual(self._classify(old).old_landslide_frac, 0.0)
+
+    def test_buffer_counts_pixels_next_to_deposit(self):
+        old = np.zeros((40, 40), dtype=bool)
+        old[15:25, 26:30] = True          # 緊鄰候選東側 1 像元外
+        self.assertGreater(self._classify(old).old_landslide_frac, 0.0)
+
+    def test_without_prior_field_is_absent(self):
+        c = self._classify(None)
+        self.assertIsNone(c.old_landslide_frac)
+        self.assertNotIn("oldLandslidePct", c.to_dict())
+
+    def test_grade_unchanged(self):
+        old = np.zeros((40, 40), dtype=bool)
+        old[12:28, 12:28] = True
+        self.assertEqual(self._classify(old).grade, self._classify(None).grade)
+
+    def test_sar_chain_prior_same_as_pre_finds_no_old_landslide(self):
+        from pipeline.detect.barrier_lake import run_sar_chain, synthetic_scene
+        s = synthetic_scene(seed=0)
+        kw = dict(dem=s["dem"], later_post_dbs=s["later_dbs"], min_catchment_km2=0.05)
+        base = run_sar_chain(s["pre_db"], s["post_db"], s["cell_size_m"], **kw)
+        out = run_sar_chain(s["pre_db"], s["post_db"], s["cell_size_m"], prior_db=s["pre_db"], **kw)
+        self.assertFalse(out["old_landslides"].mask.any())
+        self.assertEqual([c.grade for c in out["candidates"]], [c.grade for c in base["candidates"]])
+        self.assertTrue(all(c.old_landslide_frac == 0.0 for c in out["candidates"]))
+        self.assertIsNone(base["old_landslides"])
+
+
 class TestSaveExtentSummary(unittest.TestCase):
     def test_round_trip_json(self):
         ext = W.WaterExtent(

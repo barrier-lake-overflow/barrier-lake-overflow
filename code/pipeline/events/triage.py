@@ -18,6 +18,10 @@ rules_fired，跟 attribution 一樣可以對回是哪條規則產生的。
     證據只有 SAR 時最高到「中」。要到「高」需要 SAR 以外的獨立證據：
     他單位已發布的光學、航拍、衛星判釋或現地勘查／目視通報（情境檔 externalEvidence，
     種類見 INDEPENDENT_KINDS），或值班人員在儀表板上記錄的人工查證。
+
+提醒（cautions）：跟證據衝突分開，只提醒值班人員，不改優先、信心、證據強度。
+    崩塌堆積：最新一筆偵測有 OLD_LANDSLIDE_CAUTION_PCT 以上的面積落在既有崩塌堆積區
+    （一年前到事件前之間新出現的崩塌，偵測端 oldLandslidePct；沒有一年前基準的偵測不判斷）。
 """
 
 from __future__ import annotations
@@ -35,6 +39,9 @@ SCALE_MEDIUM_HA = 1.0          # 1～10 公頃為「中」，以下為「小」
 GROWING_RATIO = 1.5            # 最新面積 ≥ 首次 × 此值視為擴大
 SHRINKING_RATIO = 0.67
 HISTORY_RADIUS_KM = 10.0       # 歷史災害的搜尋半徑
+# 崩塌堆積提醒：疑似水體落在既有崩塌堆積區的面積比例門檻（%）。依事先訂好的規則，取「所有已確認
+# 真湖都不會被提醒」的最小 5% 刻度：真湖最高 5.6%，2026 負案例 E1 為 39～80%（docs/parameters.md）
+OLD_LANDSLIDE_CAUTION_PCT = 10.0
 # 算「SAR 以外的獨立證據」的外部成果種類：光學、航拍、他單位衛星判釋（未註明感測器）、
 # 現地勘查或目視通報。只有新聞稿或未說明方法的估算（official）只算背景。
 INDEPENDENT_KINDS = ("optical", "aerial", "satellite", "field")
@@ -191,6 +198,7 @@ class Assessment:
     conflicts: list
     tasks: list
     rules_fired: list
+    cautions: list = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -207,6 +215,7 @@ class Assessment:
             "evidence": self.evidence,
             "gaps": self.gaps,
             "conflicts": self.conflicts,
+            "cautions": self.cautions,
             "tasks": self.tasks,
             "rulesFired": self.rules_fired,
         }
@@ -313,10 +322,18 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
     spatial_ok = all(c.get(k) for k in ("onRiver", "landslideNearby", "damDownstream"))
     if pers == "failed" and spatial_ok:
         rules.append("conflict.spatial_vs_persistence")
-        conflicts.append("空間條件（河道、崩塌、堵塞型態）都符合，但下一期複核未持續。以持續性為準：單期暗區常見"
-                         "成因是崩塌後新陡崖的雷達陰影或濕土暫時變暗。")
+        conflicts.append("空間條件（河道、崩塌、堵塞型態）都符合，但下一期複核未持續。以持續性為準：單期疑似水體常見"
+                         "成因是崩塌後新陡崖的雷達陰影或濕土使背向散射暫時降低。")
     if pers == "lost":
         conflicts.append("前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。")
+
+    # ── 提醒（不影響優先、信心、證據強度）
+    cautions = []
+    old_pct = c.get("oldLandslidePct")
+    if old_pct is not None and old_pct >= OLD_LANDSLIDE_CAUTION_PCT:
+        rules.append("caution.old_landslide")
+        cautions.append(f"疑似水體有 {old_pct:.0f}% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或"
+                        "平滑泥砂，不一定是水；建議以光學影像確認是否為水。")
 
     # ── 優先等級、行動、任務
     tasks = []
@@ -349,8 +366,8 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         priority = "medium"
         rules.append("priority.medium.pending")
         tasks += [
-            {"label": "值班人員判讀 SAR 證據圖", "reason": "確認暗區是否在河谷底、是否為崩塌坡面陰影"},
-            {"label": f"排下一期 SAR 複核（{next_pass}）", "reason": "A 級需要兩期一致；單期出現的暗區多數會在複核時消失"},
+            {"label": "值班人員判讀 SAR 證據圖", "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"},
+            {"label": f"排下一期 SAR 複核（{next_pass}）", "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"},
             {"label": "調閱光學影像（雲況許可時）", "reason": "SAR 以外的獨立證據"},
             {"label": "暫不派遣 UAV", "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"},
         ]
@@ -410,5 +427,5 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         confidence=confidence, confidence_reasons=conf_reasons,
         persistence=pers, grade=grade, scale=scale_of(latest.area_ha),
         summary=summary, evidence=evidence, gaps=gaps, conflicts=conflicts,
-        tasks=tasks, rules_fired=rules,
+        tasks=tasks, rules_fired=rules, cautions=cautions,
     )

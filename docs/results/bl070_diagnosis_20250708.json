@@ -1,0 +1,56 @@
+{
+ "lake": "bl070",
+ "name": "雲林清水溪(草嶺)",
+ "day": "20250708",
+ "later": "20250720",
+ "orbit": "ASCENDING 69",
+ "inventory": {
+  "formed": "2025/7/8",
+  "breach": "2025/07/10",
+  "durationDays": "2",
+  "volumeWanM3": 1400.0
+ },
+ "thresholdDb": -18.0,
+ "stagesHectare": {
+  "darkNewBeforeMask": 5.3,
+  "maskedLayover": 0.0,
+  "maskedShadow": 0.16,
+  "maskedSteepOnly": 3.47,
+  "maskedNoData": 0.0,
+  "afterMask": 1.67,
+  "droppedBySeedSlope": 0.81,
+  "afterSeed": 0.86,
+  "droppedTooSmall": 0.86,
+  "droppedOffRiver": 0.0
+ },
+ "largestComponentHectare": 0.403,
+ "minAreaHectare": 0.5,
+ "candidates": [],
+ "expectedLake": {
+  "areaHectare": 84.4,
+  "waterLevelM": 557.0,
+  "damFloorM": 513.0,
+  "volumeWanM3": 1452.0,
+  "pixelsOutsideWindow": 188,
+  "damSnapM": 210.0,
+  "maskedPct": {
+   "layover": 0.3,
+   "shadow": 0.0,
+   "steepOnly": 1.0,
+   "any": 1.2
+  },
+  "slopeMedianDeg": 9.1,
+  "gentlePct": 89.4,
+  "postBelowThrPct": 0.2,
+  "preBelowThrPct": 0.0,
+  "postMedianDb": -7.2,
+  "preMedianDb": -7.8,
+  "medianChangeDb": 0.6,
+  "darkenedBy3dbPct": 4.6,
+  "darkNewInsideHa": 0.16,
+  "darkNewInsideUnmaskedHa": 0.16,
+  "laterBelowThrPct": 0.7,
+  "laterMedianDb": -7.0
+ },
+ "note": "推估湖面是用事件前 DEM 與清冊蓄水量的粗估，只供判斷湖大概在哪裡、多大"
+}

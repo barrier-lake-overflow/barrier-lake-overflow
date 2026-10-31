@@ -27,7 +27,7 @@ import numpy as np
 from scipy import ndimage
 
 from pipeline.detect.landslide import LANDSLIDE_THRESHOLD_DB, LandslideResult, detect_landslides
-from pipeline.detect.water import WaterExtent, change_detection, extract_water_sar
+from pipeline.detect.water import SAR_WATER_DB_DEFAULT, WaterExtent, change_detection, extract_water_sar
 from pipeline.preprocess.mask import (S1_IW_MID_INCIDENCE_DEG, S1_LOOK_AZIMUTH_DEG,
                                       sar_invalid_masks)
 from pipeline.preprocess.sar import lee_filter
@@ -57,9 +57,9 @@ _D8 = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 def flow_accumulation_d8(dem: np.ndarray) -> np.ndarray:
     """
     簡易 D8 流量累積（像元數，含自身）。每個像元流向 8 鄰域中坡降最大
-    （高差/距離）的較低像元，由高到低依序往下游累加。沒有先做填窪，
-    窪地會截斷累積——窄谷河網用 10m DEM 影響不大，要精確集水區時再換
-    正式水文前處理。nan 視為無資料、不收不送。
+    （高差/距離）的較低像元，由高到低依序往下游累加。這個函式本身不填窪，
+    窪地會截斷累積；呼叫端 river_mask() 預設會先呼叫 fill_depressions()。
+    nan 視為無資料、不收不送。
 
     >>> dem = np.array([[3.0, 2.0, 1.0]])
     >>> flow_accumulation_d8(dem).tolist()
@@ -173,6 +173,8 @@ class Candidate:
     lake_floor_m: Optional[float] = None
     water_level_m: Optional[float] = None  # 事件前 DEM 上湖緣最高點，粗估水位
     centroid_xy: Optional[tuple] = None    # 有 transform 時：地圖座標 (x, y)
+    # 落在既有崩塌堆積區（前一年到事件前之間新出現的崩塌）的面積比例；沒有一年前基準時為 None
+    old_landslide_frac: Optional[float] = None
     reasons: list = field(default_factory=list)
     mask: Optional[np.ndarray] = field(default=None, repr=False)
 
@@ -181,7 +183,7 @@ class Candidate:
         return self.area_m2 / 1e4
 
     def to_dict(self) -> dict:
-        return {
+        out = {
             "id": self.id,
             "grade": self.grade,
             "areaHectare": round(self.area_hectare, 3),
@@ -197,6 +199,9 @@ class Candidate:
             "waterLevelM": None if self.water_level_m is None else round(self.water_level_m, 1),
             "reasons": self.reasons,
         }
+        if self.old_landslide_frac is not None:   # 只有給了一年前基準才輸出，預設結果檔與原本相同
+            out["oldLandslidePct"] = round(100.0 * self.old_landslide_frac, 1)
+        return out
 
 
 def _grade(on_river: bool, landslide_ok: bool, persistent: bool) -> Optional[str]:
@@ -237,10 +242,16 @@ def classify(new_water: np.ndarray, landslide: np.ndarray, river: np.ndarray,
              river_buffer_px: int = 2,
              search_radius_m: float = 500.0,
              dam_elev_tolerance_m: float = 5.0,
-             persistence_iou: float = 0.3) -> list:
+             persistence_iou: float = 0.3,
+             old_landslide: Optional[np.ndarray] = None,
+             old_landslide_buffer_px: int = 2) -> list:
     """
     逐塊評分新增水體，回傳 Candidate 清單（依 A→B→C、面積大→小排序），
     不貼河道的塊不列入。
+
+    old_landslide：既有崩塌堆積區（前一年到事件前之間新出現的崩塌，見 run_sar_chain 的
+    prior_db）。給的話記錄每塊落在裡面（外擴 old_landslide_buffer_px 像元）的面積比例，
+    只供事件研判加註提醒，不影響分級。
 
     分塊：原河道是事件前水體，change_detection 會把它扣掉，於是一座
     湖常被原河道切成左右兩半。這裡先把新增水體外擴 merge_gap_px 像元
@@ -272,6 +283,11 @@ def classify(new_water: np.ndarray, landslide: np.ndarray, river: np.ndarray,
     ls_labeled, _ = ndimage.label(landslide, structure=EIGHT)
     river_zone = ndimage.binary_dilation(river, structure=EIGHT, iterations=river_buffer_px) \
         if river_buffer_px > 0 else river
+    old_zone = None
+    if old_landslide is not None:
+        old_zone = np.asarray(old_landslide, dtype=bool)
+        if old_landslide_buffer_px > 0:
+            old_zone = ndimage.binary_dilation(old_zone, EIGHT, iterations=old_landslide_buffer_px)
 
     candidates = []
     for lab in range(1, n + 1):
@@ -348,6 +364,7 @@ def classify(new_water: np.ndarray, landslide: np.ndarray, river: np.ndarray,
             n_later_scenes=len(later_new_water), landslide_area_m2=landslide_area,
             lake_floor_m=lake_floor, water_level_m=water_level,
             centroid_xy=xy, reasons=reasons, mask=comp,
+            old_landslide_frac=None if old_zone is None else float((comp & old_zone).sum()) / n_px,
         ))
 
     candidates.sort(key=lambda c: (c.grade, -c.area_m2))
@@ -385,7 +402,7 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
                   transform: Optional[tuple] = None,
                   incidence_deg: float = S1_IW_MID_INCIDENCE_DEG,
                   look_azimuth_deg: float = S1_LOOK_AZIMUTH_DEG["ASCENDING"],
-                  water_threshold_db: Optional[float] = None,
+                  water_threshold_db: Optional[float] = SAR_WATER_DB_DEFAULT,
                   landslide_threshold_db: float = LANDSLIDE_THRESHOLD_DB,
                   landslide_min_pixels: int = 10,
                   water_filter_size: int = 3,
@@ -396,15 +413,28 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
                   max_water_slope_deg: float = 20.0,
                   seed_slope_deg: Optional[float] = None,
                   seed_min_area_m2: float = 0.0,
+                  ray_trace_shadow: bool = False,
+                  pre_vh_db: Optional[np.ndarray] = None,
+                  post_vh_db: Optional[np.ndarray] = None,
+                  later_post_vh_dbs: Sequence[np.ndarray] = (),
+                  prior_db: Optional[np.ndarray] = None,
                   **classify_kwargs) -> dict:
     """
     pre_db / post_db / later_post_dbs：同軌道、同網格的 σ⁰（dB），未濾波。
     dem：事件前 DEM，同網格；沒有就跳過幾何遮罩、DEM 河網與壩體位置檢核。
+    water_threshold_db：判水門檻，預設固定 −18 dB；給 None 改用 Otsu（實測山區窗格都會退回 −18 dB）。
     max_water_slope_deg：坡度超過此值的像元不判水（預設 20°）。陡峭窄谷配
     30 m DEM 時，谷底坡度會被山壁拉高，湖面可能整片被遮掉，可視情況放寬。
     seed_slope_deg：給的話啟用雙門檻（見 seed_filter）。新增水體照 max_water_slope_deg
     判，但每塊至少要有 seed_min_area_m2（且至少 1 像元）落在坡度 ≤ seed_slope_deg
     才保留。需要 DEM；後續期別（持續性比對）不套，只看同位置是否還有水。
+    ray_trace_shadow：陰影遮罩加上沿視線的射線追蹤（B1 實驗，預設關閉，見 preprocess/mask.py）。
+    pre_vh_db / post_vh_db / later_post_vh_dbs：VH σ⁰（B2 實驗，預設不給）。給了就用 VH 補判
+    VV 差一點的像元（見 water.sar_water_mask）；要嘛三者都給、要嘛都不給，事件前後才可比。
+    崩塌偵測仍只用 VV。
+    prior_db：一年前基準 σ⁰（事件前基準期間往前推一年的中位數，同軌道同網格，未濾波）。給的話
+    用「一年前 → 事件前」的振幅變化找出既有崩塌堆積區（同一套崩塌偵測與門檻），記在每個候選的
+    old_landslide_frac，供事件研判加註提醒；不影響新增水體、崩塌與分級。
 
     回傳 dict：pre_water / post_water（WaterExtent）、new_water、
     landslides（LandslideResult）、river、invalid（遮罩 dict 或 None）、
@@ -417,7 +447,7 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
     water_invalid = ls_invalid = None
     if dem is not None:
         invalid = sar_invalid_masks(dem, cell_size_m, incidence_deg, look_azimuth_deg,
-                                    max_water_slope_deg=max_water_slope_deg)
+                                    max_water_slope_deg=max_water_slope_deg, ray_trace=ray_trace_shadow)
         water_invalid, ls_invalid = invalid["water"], invalid["landslide"]
 
     # 水體與崩塌用不同濾波視窗：山區河道常只有 2–3 像元寬，5×5 Lee 會把
@@ -428,10 +458,15 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
     pre_f = lee_filter(pre_db, size=landslide_filter_size)
     post_f = lee_filter(post_db, size=landslide_filter_size)
 
+    use_vh = pre_vh_db is not None
+    if use_vh and (post_vh_db is None or len(later_post_vh_dbs) != len(later_post_dbs)):
+        raise ValueError("VH 要和 VV 一樣齊全：事件前、事件後、每一期複核都要有")
+    vh = (lambda db: lee_filter(db, size=water_filter_size)) if use_vh else (lambda db: None)
+
     pre_water = extract_water_sar(pre_w, cell, threshold=water_threshold_db,
-                                  invalid_mask=water_invalid, date=dates[0])
+                                  invalid_mask=water_invalid, date=dates[0], vh_db=vh(pre_vh_db))
     post_water = extract_water_sar(post_w, cell, threshold=water_threshold_db,
-                                   invalid_mask=water_invalid, date=dates[1])
+                                   invalid_mask=water_invalid, date=dates[1], vh_db=vh(post_vh_db))
     new_water = change_detection(pre_water, post_water)
 
     def seeded(nw: np.ndarray) -> np.ndarray:
@@ -454,21 +489,35 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
                                    exclude_mask=water_any, date=dates[1])
 
     later_new = []
-    for db, dt in zip(later_post_dbs, dates[2:]):
+    later_vh = list(later_post_vh_dbs) if use_vh else [None] * len(later_post_dbs)
+    for db, vdb, dt in zip(later_post_dbs, later_vh, dates[2:]):
         ext = extract_water_sar(lee_filter(db, size=water_filter_size), cell,
-                                threshold=water_threshold_db, invalid_mask=water_invalid, date=dt)
+                                threshold=water_threshold_db, invalid_mask=water_invalid, date=dt,
+                                vh_db=vh(vdb) if use_vh else None)
         # 後續期別不套雙門檻：起始條件只用來決定「有沒有湖」，複核只問同位置是否還有水
         later_new.append(change_detection(pre_water, ext))
 
+    old_landslides = None
+    if prior_db is not None:
+        # 既有崩塌堆積區：一年前 → 事件前之間的崩塌。事件前水體（含外擴）一樣排除
+        pre_edge = ndimage.binary_dilation(pre_water.mask, EIGHT, iterations=water_edge_buffer_px) \
+            if water_edge_buffer_px > 0 else pre_water.mask
+        old_landslides = detect_landslides(lee_filter(prior_db, size=landslide_filter_size), pre_f, cell,
+                                           threshold_db=landslide_threshold_db, min_pixels=landslide_min_pixels,
+                                           invalid_mask=ls_invalid, exclude_mask=pre_edge, date=dates[0])
+
     river = river_mask(pre_water.mask, dem, cell_size_m, min_catchment_km2)
     candidates = classify(new_water, landslides.mask, river, cell_size_m, dem=dem,
-                          later_new_water=later_new, transform=transform, **classify_kwargs)
+                          later_new_water=later_new, transform=transform,
+                          old_landslide=None if old_landslides is None else old_landslides.mask,
+                          **classify_kwargs)
     return {
         "pre_water": pre_water,
         "post_water": post_water,
         "new_water": new_water,
         "later_new_water": later_new,
         "landslides": landslides,
+        "old_landslides": old_landslides,
         "river": river,
         "invalid": invalid,
         "candidates": candidates,

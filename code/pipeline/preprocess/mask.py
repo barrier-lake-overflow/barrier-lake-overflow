@@ -9,7 +9,11 @@ SAR 幾何失真遮罩
     s_r >  θ        → 疊置
     s_r < θ − 90°   → 陰影
 
-只看像元本身的坡面，沒有沿距離向做射線追蹤，被遠處山脊擋住的陰影抓不到。
+預設只看像元本身的坡面，被遠處山脊擋住的陰影抓不到。ray_traced_shadow() 沿視線往衛星方向
+追蹤，補上這一類（sar_invalid_masks(ray_trace=True)，B1 實驗用，預設關閉）。兩者都用事件前 DEM，
+崩塌後新陡崖的陰影一樣抓不到。
+前縮（foreshortening_mask）：面向衛星、但還沒到疊置的陡坡，局部入射角很小，影像上被壓縮、偏亮，
+不會被誤判成水，只做統計。
 另外坡度 > max_deg 一律不當水；崩塌偵測不能套這個。
 
 Sentinel-1 右視：視向 = 航向 + 90°。台灣升軌視向約 77°，降軌約 283°。
@@ -20,13 +24,17 @@ IW 入射角 29°–46°，取 39°。
 
 from __future__ import annotations
 
+import math
 from typing import Union
 
 import numpy as np
+from scipy import ndimage
 
 
 S1_LOOK_AZIMUTH_DEG = {"ASCENDING": 77.0, "DESCENDING": 283.0}
 S1_IW_MID_INCIDENCE_DEG = 39.0
+# 局部入射角（入射角 − 距離向坡度）低於此值、但還沒疊置的坡面視為前縮。自訂，只用於統計。
+FORESHORTENING_LOCAL_INC_DEG = 10.0
 
 
 def _cell_xy(cell_size_m: Union[float, tuple]) -> tuple:
@@ -99,6 +107,65 @@ def layover_shadow_mask(dem: np.ndarray, cell_size_m: Union[float, tuple],
     return layover, shadow
 
 
+def ray_traced_shadow(dem: np.ndarray, cell_size_m: Union[float, tuple],
+                      incidence_deg: float = S1_IW_MID_INCIDENCE_DEG,
+                      look_azimuth_deg: float = S1_LOOK_AZIMUTH_DEG["ASCENDING"],
+                      max_distance_m: float = 3000.0) -> np.ndarray:
+    """
+    沿視線往衛星方向追蹤的雷達陰影：從像元 P 朝衛星走距離 d 的點 Q，若
+    (z_Q − z_P) / d > cot(入射角)，Q 擋住了 P 到衛星的視線，P 在陰影中。
+    背向衛星、比 90° − 入射角還陡的坡面也會被自己的上坡擋住。局部判定用有限差分，會把
+    崖頂邊緣也算進陰影，所以 sar_invalid_masks 取兩者聯集，不用射線追蹤取代局部判定。
+
+    逐步取樣（步長一個像元、雙線性內插），不旋轉 DEM。窗格邊緣外的山脊看不到，
+    靠近衛星那一側的邊緣會低估。DEM 為 nan 的像元回傳 False。
+
+    >>> dem = np.zeros((5, 12)); dem[:, :3] = 300.0      # 西側 300 m 高台，東側平地
+    >>> sh = ray_traced_shadow(dem, 50.0, 39.0, 77.0)   # 升軌往東看，衛星在西側
+    >>> sh[2, 3:9].tolist()          # 影長 300 m × cot 39° ≈ 243 m：距高台 205 m 內的平地被擋住
+    [True, True, True, True, False, False]
+    >>> layover_shadow_mask(dem, 50.0, 39.0, 77.0)[1][2, 4:7].tolist()   # 局部判定看不到
+    [False, False, False]
+    """
+    dx, dy = _cell_xy(cell_size_m)
+    z = np.asarray(dem, dtype="float64")
+    valid = np.isfinite(z)
+    zf = np.where(valid, z, np.nanmin(z) if valid.any() else 0.0)
+    toward = math.radians((look_azimuth_deg + 180.0) % 360.0)
+    step = min(dx, dy)
+    dcol = step * math.sin(toward) / dx        # 往東為 +col
+    drow = -step * math.cos(toward) / dy       # 往北為 −row
+    cot = 1.0 / math.tan(math.radians(incidence_deg))
+    rows, cols = np.mgrid[0:z.shape[0], 0:z.shape[1]].astype("float64")
+    best = np.full(z.shape, -np.inf)
+    for k in range(1, int(max_distance_m // step) + 1):
+        r, c = rows + k * drow, cols + k * dcol
+        inside = (r >= 0) & (r <= z.shape[0] - 1) & (c >= 0) & (c <= z.shape[1] - 1)
+        if not inside.any():
+            break
+        zq = ndimage.map_coordinates(zf, [r, c], order=1, mode="nearest")
+        best = np.where(inside, np.maximum(best, (zq - zf) / (k * step)), best)
+    return valid & (best > cot)
+
+
+def foreshortening_mask(dem: np.ndarray, cell_size_m: Union[float, tuple],
+                        incidence_deg: float = S1_IW_MID_INCIDENCE_DEG,
+                        look_azimuth_deg: float = S1_LOOK_AZIMUTH_DEG["ASCENDING"],
+                        max_local_inc_deg: float = FORESHORTENING_LOCAL_INC_DEG) -> np.ndarray:
+    """
+    前縮：局部入射角 = 入射角 − 距離向坡度，介於 0 與 max_local_inc_deg 之間（再陡就是疊置）。
+
+    >>> _, cols = np.mgrid[0:5, 0:5]
+    >>> toward = 100.0 + cols * 7.0                   # 朝西 35° 坡，面向升軌衛星，局部入射角 4°
+    >>> bool(foreshortening_mask(toward, 10.0, 39.0, 77.0)[2, 2])
+    True
+    """
+    slope, aspect = slope_aspect(dem, cell_size_m)
+    s_r = np.nan_to_num(range_slope_deg(slope, aspect, look_azimuth_deg), nan=-90.0)
+    local = incidence_deg - s_r
+    return (local >= 0.0) & (local < max_local_inc_deg)
+
+
 def steep_slope_mask(slope_deg: np.ndarray, max_deg: float = 20.0) -> np.ndarray:
     """
     >>> steep_slope_mask(np.array([5.0, 25.0, np.nan])).tolist()
@@ -111,15 +178,25 @@ def steep_slope_mask(slope_deg: np.ndarray, max_deg: float = 20.0) -> np.ndarray
 def sar_invalid_masks(dem: np.ndarray, cell_size_m: Union[float, tuple],
                       incidence_deg: float = S1_IW_MID_INCIDENCE_DEG,
                       look_azimuth_deg: float = S1_LOOK_AZIMUTH_DEG["ASCENDING"],
-                      max_water_slope_deg: float = 20.0) -> dict:
+                      max_water_slope_deg: float = 20.0,
+                      ray_trace: bool = False) -> dict:
     """
     一次算好兩組遮罩：
     - "water"：水體萃取用 = 疊置 | 陰影 | 陡坡 | DEM nodata
     - "landslide"：崩塌偵測用 = 疊置 | 陰影 | DEM nodata（不排除陡坡）
     另附 "layover"、"shadow"、"slope_deg" 供輸出統計。
+
+    ray_trace=True（B1 實驗）：陰影改為「局部判定 ∪ 射線追蹤」，另附 "ray_shadow"（射線追蹤
+    多抓到的部分）與 "foreshortening"（只統計，不進遮罩）。預設 False，行為與原本相同。
     """
     dem = np.asarray(dem, dtype="float64")
     layover, shadow = layover_shadow_mask(dem, cell_size_m, incidence_deg, look_azimuth_deg)
+    extra = {}
+    if ray_trace:
+        ray = ray_traced_shadow(dem, cell_size_m, incidence_deg, look_azimuth_deg)
+        extra = {"ray_shadow": ray & ~shadow,
+                 "foreshortening": foreshortening_mask(dem, cell_size_m, incidence_deg, look_azimuth_deg)}
+        shadow = shadow | ray
     slope, _ = slope_aspect(dem, cell_size_m)
     nodata = np.isnan(dem)
     geom = layover | shadow | nodata
@@ -129,6 +206,7 @@ def sar_invalid_masks(dem: np.ndarray, cell_size_m: Union[float, tuple],
         "layover": layover,
         "shadow": shadow,
         "slope_deg": slope,
+        **extra,
     }
 
 

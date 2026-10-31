@@ -10,7 +10,7 @@
   ],
   "pre": {
     "date": "事件前中位數",
-    "method": "sar_otsu_fallback",
+    "method": "sar_fixed",
     "threshold": -18.0,
     "pixel_count": 43,
     "area_m2": 3902.8,
@@ -18,7 +18,7 @@
   },
   "post": {
     "date": "post 2015-08-30 10:00 UTC",
-    "method": "sar_otsu_fallback",
+    "method": "sar_fixed",
     "threshold": -18.0,
     "pixel_count": 113,
     "area_m2": 10256.3,
@@ -46,7 +46,7 @@
     "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
-    "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "note": "事件後背向散射低於門檻、事件前沒有的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
     "thresholdDb": -18.0,
     "darkNewHectareBeforeMask": 1.84,
     "maskedHectare": 1.06,

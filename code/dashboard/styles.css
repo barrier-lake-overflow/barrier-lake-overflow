@@ -17,6 +17,7 @@
   --jade-dim:#1E5F5C;
   --ochre:#C98A2E;
   --clay:#C2503C;
+  --iris:#9C8BD9;   /* 演練模式：跟優先等級的顏色分開，一眼看出不是即時資料 */
 
   --wide:'Archivo','Noto Sans TC','Microsoft JhengHei','PingFang TC',system-ui,sans-serif;
   --sans:'Noto Sans TC','Microsoft JhengHei','PingFang TC',system-ui,sans-serif;
@@ -24,6 +25,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
 body{
   background:var(--abyss);color:var(--fog);
   font-family:var(--sans);font-size:15px;line-height:1.7;
@@ -552,6 +554,23 @@ footer .wrap{
 .flow li{padding:4px 12px 4px 0;white-space:nowrap}
 .flow li:not(:last-child)::after{content:"→";margin-left:12px;color:var(--jade-dim)}
 
+/* 圖例：優先等級與研判信心 */
+.duty-legend{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px;
+}
+.lg-col{background:var(--stone);padding:10px 14px;display:grid;gap:5px;align-content:start}
+.lg-title{font-size:12.5px;font-weight:700;color:var(--snow)}
+.lg-title span{font-weight:400;font-family:var(--mono);font-size:10.5px;color:var(--moss);margin-left:6px}
+.lg-row{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:baseline;font-size:12px;line-height:1.6;color:var(--fog)}
+.lg-key{font-family:var(--mono);font-size:11px;text-align:center;padding:0 4px;border:1px solid var(--line-strong);color:var(--moss)}
+.lg-key.p-high{border-color:var(--clay);color:var(--clay)}
+.lg-key.p-medium{border-color:var(--ochre);color:var(--ochre)}
+.lg-key.p-low{border-color:var(--moss);color:var(--moss)}
+.lg-key.c-high{border-color:var(--snow);color:var(--snow)}
+.lg-key.c-medium{border-color:var(--fog);color:var(--fog)}
+.lg-key.c-low{border-color:var(--line-strong);color:var(--moss)}
+
 /* 回放時點 */
 .snap-rail{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
@@ -665,6 +684,12 @@ footer .wrap{
 }
 .at{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--jade);text-transform:uppercase;margin-bottom:8px;display:block}
 .ev-conflict .at{color:var(--ochre)}
+/* 提醒：不影響研判，只提示值班人員（例如疑似崩塌堆積） */
+.ev-caution{
+  margin:16px clamp(16px,2.2vw,26px) 0;padding:10px 14px;
+  border-left:3px solid var(--ochre);background:rgba(201,138,46,.06);font-size:13px;color:var(--fog);line-height:1.8;
+}
+.ev-caution .at{color:var(--ochre)}
 
 /* 事後查證：與系統研判區隔，用虛線框與霧白 */
 .ev-hindsight{
@@ -818,3 +843,158 @@ footer .wrap{
 .dn a:hover{color:var(--snow)}
 .dn .ro{justify-self:start}
 @media (max-width:860px){.daily-cols{grid-template-columns:1fr}}
+
+/* ════════════════════════════════════════
+   分頁、頂端狀態、抽屜（views.js、daily-view.js）
+   ════════════════════════════════════════ */
+.view-tabs{display:flex;gap:4px;align-self:stretch;margin:-12px 0}
+.vt{
+  display:flex;align-items:center;padding:0 14px;font-size:14px;color:var(--moss);text-decoration:none;
+  border-bottom:2px solid transparent;white-space:nowrap;
+}
+.vt:hover{color:var(--fog)}
+.vt[aria-current="page"]{color:var(--snow);border-bottom-color:var(--jade)}
+.vt:focus-visible{outline:1px solid var(--jade);outline-offset:-4px}
+.sys-status,.help-btn{
+  font-family:var(--mono);font-size:11.5px;color:var(--moss);padding:4px 10px;
+  border:1px solid var(--line-strong);white-space:nowrap;
+}
+.sys-status:hover,.help-btn:hover,.sys-status[aria-expanded="true"],.help-btn[aria-expanded="true"]{color:var(--snow);border-color:var(--fog)}
+.sys-status::after{content:" ▾";color:var(--jade)}
+.sys-status[aria-expanded="true"]::after{content:" ▴"}
+.help-btn{text-decoration:none}
+.help-btn::after{content:" ↗";color:var(--jade)}   /* 開新分頁 */
+/* 「?」：開使用說明的對應段落 */
+.help-q{
+  display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;
+  border:1px solid var(--line-strong);color:var(--moss);font-family:var(--mono);font-size:10.5px;line-height:1;
+  text-decoration:none;letter-spacing:0;text-transform:none;vertical-align:1px;margin-left:4px;
+}
+.help-q:hover,.help-q:focus-visible{color:var(--snow);border-color:var(--jade);outline:none}
+.rail-head{display:flex;align-items:center;gap:4px;margin-bottom:6px}
+.ev-folds-head{display:flex;align-items:center;gap:4px;padding-top:12px}
+.ev-folds-head .at{margin-bottom:0}
+.sys-status b{font-weight:500}
+.st-alert{color:var(--clay)}
+.st-err{color:var(--ochre)}
+.drawer{border-bottom:1px solid var(--line);background:var(--stone)}
+.drawer > .wrap{padding-top:16px;padding-bottom:18px;display:grid;gap:12px}
+.drawer .duty-principles{margin:0}
+.drawer .flow,.drawer .duty-legend{margin-bottom:0}
+.help-note{font-size:12px;color:var(--moss)}
+.sys-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.sys-head b{color:var(--snow);font-weight:500}
+.drawer .daily-steps{margin-bottom:0}
+.drawer h3{font-size:13px;font-weight:500;color:var(--snow);margin-bottom:8px}
+.drawer h3 .dim{font-weight:400}
+@media (max-width:720px){
+  .statusbar{position:static}   /* 手機上頂端列換成三行，固定在上方會吃掉太多畫面 */
+  .statusbar .wrap{gap:10px}
+  .sys-status{white-space:normal;text-align:left;max-width:100%}
+  .view-tabs{order:3;width:100%;margin:0;border-top:1px solid var(--line)}
+  .vt{padding:8px 12px}
+  .duty,.sec,.board{scroll-margin-top:0}
+}
+
+/* 值班：模式與時點提示 */
+.duty,.sec,.board{scroll-margin-top:64px}   /* 捲動定位時不要被固定的頂端列蓋住 */
+.duty-head .drill-enter{align-self:flex-start;white-space:nowrap}
+.drill-banner{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;padding:10px 14px;
+  border:1px solid var(--iris);background:rgba(156,139,217,.12);color:var(--snow);font-size:13.5px;
+}
+.drill-banner b{color:var(--iris)}
+.drill-banner .btn{margin-left:auto;border-color:var(--iris);color:var(--snow)}
+.drill-banner .btn:hover{background:rgba(156,139,217,.18)}
+.duty.is-drill .duty-title .label{color:var(--iris)}
+.duty.is-drill .snap.is-on{box-shadow:inset 0 -2px 0 var(--iris)}
+.scen-label{margin-right:2px}
+.scen-age{font-family:var(--mono);font-size:10px;color:var(--moss);margin-left:8px}
+.scen-age.is-stale{color:var(--clay)}
+.fresh-note{margin-bottom:14px;padding:8px 14px;border-left:3px solid var(--clay);background:rgba(194,80,60,.1);font-size:13px;color:var(--fog)}
+.fresh-note b{color:var(--clay);font-weight:500}
+
+/* 頂端橫幅：警戒（紅）、有新資料（玉綠） */
+.top-banner .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;font-size:13px}
+.alert-banner{background:rgba(194,80,60,.18);border-bottom:1px solid var(--clay);color:var(--snow)}
+.alert-banner b{color:var(--clay)}
+.new-data{background:rgba(63,169,160,.12);border-bottom:1px solid var(--jade-dim);color:var(--snow)}
+.new-data b{color:var(--jade)}
+.new-data .btn{margin-left:auto}
+
+/* 待處理：所有監看窗格的高／中優先事件 */
+.todo{margin-bottom:16px;border:1px solid var(--line);background:var(--stone)}
+.todo-head{display:flex;align-items:center;gap:4px;padding:8px 12px;border-bottom:1px solid var(--line)}
+.todo-count{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--fog)}
+.todo-list{display:grid;gap:1px;background:var(--line)}
+.todo-item{
+  display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;align-items:center;
+  background:var(--stone);padding:8px 12px;text-align:left;width:100%;
+}
+.todo-item:hover,.todo-item.is-active{background:var(--raised)}
+.todo-item:focus-visible{outline:1px solid var(--jade);outline-offset:-1px}
+.todo-main{display:grid;min-width:0}
+.todo-main b{color:var(--snow);font-weight:500;font-size:13.5px}
+.todo-main span{font-size:12px;color:var(--moss)}
+.todo-empty{padding:10px 12px;font-size:13px;color:var(--moss)}
+.todo-pending{padding:7px 12px;font-size:12.5px;color:var(--ochre);border-bottom:1px solid var(--line);background:rgba(201,138,46,.06)}
+.q-tag.is-waiting{border-color:var(--clay);color:var(--clay)}
+@media (max-width:720px){.todo-item{grid-template-columns:26px minmax(0,1fr)}.todo-item .q-tag{grid-column:2;justify-self:start}}
+
+/* 事件卡：座標操作 */
+.ev-coord-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.ev-coord-actions a.btn{text-decoration:none}
+
+/* 寬螢幕：事件卡固定在右側，往下捲清單時還看得到 */
+@media (min-width:1200px){
+  .ev-panel{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 76px);overflow:auto}
+  .duty-board{align-items:start}
+}
+.scen-counts{display:inline-flex;gap:3px;margin-left:8px}
+.scen-counts i{font-style:normal;font-size:10px;padding:0 5px;border:1px solid var(--line-strong)}
+.scen-counts .c-high{border-color:var(--clay);color:var(--clay)}
+.scen-counts .c-medium{border-color:var(--ochre);color:var(--ochre)}
+.snap-latest{
+  font-family:var(--mono);font-size:10px;font-variation-settings:normal;font-weight:400;
+  color:var(--jade);border:1px solid var(--jade-dim);padding:0 5px;margin-left:8px;vertical-align:2px;
+}
+.old-snap{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-8px 0 16px;padding:8px 14px;
+  border-left:3px solid var(--ochre);background:rgba(201,138,46,.08);font-size:13px;color:var(--fog);
+}
+.old-snap b{color:var(--snow);font-weight:500}
+.old-snap .btn{margin-left:auto;border-color:var(--ochre);color:var(--snow)}
+.has-tip{cursor:help;text-decoration:underline dotted;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+
+/* 事件卡：收合的佐證細節 */
+.ev-folds{margin:0 clamp(16px,2.2vw,26px) 18px;border-top:1px solid var(--line)}
+.ev-fold{border-bottom:1px solid var(--line);padding:10px 0}
+.ev-fold summary{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--moss);cursor:pointer;list-style:none;
+}
+.ev-fold summary::-webkit-details-marker{display:none}
+.ev-fold summary::before{content:"▸ ";color:var(--jade)}
+.ev-fold[open] summary::before{content:"▾ "}
+.ev-fold summary:hover{color:var(--fog)}
+.ev-fold summary:focus-visible{outline:1px solid var(--jade);outline-offset:2px}
+.ev-fold .ev-summary,.ev-fold .ev-cols{margin:12px 0 4px}
+.ev-fold .ev-dets{margin-top:10px}
+.ev-rules{list-style:none;margin-top:10px;display:grid;gap:4px}
+.ev-rules li{font-family:var(--mono);font-size:11.5px;color:var(--moss);padding-left:14px;position:relative}
+.ev-rules li::before{content:"·";position:absolute;left:2px;color:var(--jade-dim)}
+.ev-folds .ev-inv{margin-top:14px}
+
+/* 新聞候選（值班佇列旁） */
+.duty-news{padding:0 12px 14px;border-top:1px solid var(--line);margin-top:2px}
+.duty-news h3{font-size:13px;font-weight:500;color:var(--snow);margin:12px 0 8px}
+.duty-news h3 .dim{font-weight:400;margin-left:6px}
+.duty-news .dn + .dim{margin-top:8px}
+
+/* 系統歷史成績：明細表收合 */
+.replay-details summary{
+  font-family:var(--mono);font-size:11.5px;color:var(--moss);cursor:pointer;list-style:none;margin-bottom:10px;
+}
+.replay-details summary::-webkit-details-marker{display:none}
+.replay-details summary::before{content:"▸ ";color:var(--jade)}
+.replay-details[open] summary::before{content:"▾ "}
+.replay-details summary:hover{color:var(--fog)}

@@ -3,7 +3,7 @@
 坡度雙門檻（hysteresis）在全清冊回放上的成績，跟現行固定 35° 比。
 
     cd code
-    python scripts/hysteresis_replay.py           # → docs/hysteresis.json、終端機表格
+    python scripts/hysteresis_replay.py           # → docs/results/hysteresis.json、終端機表格
     python scripts/hysteresis_replay.py --jobs 8
 
 雙門檻：新增水體照寬鬆坡度（35°／45°）判，每塊至少要有一定面積落在坡度 ≤ 20° 才保留，
@@ -36,7 +36,7 @@ from pipeline.events import build as B  # noqa: E402
 from pipeline.events import replay as R  # noqa: E402
 
 CACHE = S.REPO / "data" / "cache" / "hysteresis_results.pkl"
-OUT = S.REPO / "docs" / "hysteresis.json"
+OUT = S.REPO / "docs" / "results" / "hysteresis.json"
 PRIMARY = "seed20_0.2ha_35"
 # 名稱 → run_sar_chain 參數（崩塌門檻等其餘參數用現行值）
 VARIANTS = {

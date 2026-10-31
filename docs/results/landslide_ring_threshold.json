@@ -1,0 +1,461 @@
+{
+ "summary": {
+  "trueLakeMaxPct": 39.9,
+  "thresholdPct": 40.0,
+  "trueLakeFlagged": 0,
+  "neg2026E1": "0／3 筆偵測被提醒",
+  "fp2025": "0／3 筆偵測被提醒",
+  "otherEvents": "0／33 筆偵測被提醒",
+  "separable": false
+ },
+ "detections": [
+  {
+   "scenario": "inv_bl054",
+   "event": "E1",
+   "group": "other",
+   "pass": "2016-08-12",
+   "areaHa": 0.554,
+   "ringPct": 3.2
+  },
+  {
+   "scenario": "inv_bl054",
+   "event": "E2",
+   "group": "other",
+   "pass": "2016-08-12",
+   "areaHa": 3.059,
+   "ringPct": 4.0
+  },
+  {
+   "scenario": "inv_bl054",
+   "event": "E2",
+   "group": "other",
+   "pass": "2016-09-17",
+   "areaHa": 0.554,
+   "ringPct": 1.0
+  },
+  {
+   "scenario": "inv_bl054",
+   "event": "E2",
+   "group": "other",
+   "pass": "2016-10-11",
+   "areaHa": 1.815,
+   "ringPct": 2.3
+  },
+  {
+   "scenario": "inv_bl054",
+   "event": "E3",
+   "group": "other",
+   "pass": "2016-09-29",
+   "areaHa": 0.935,
+   "ringPct": 0.4
+  },
+  {
+   "scenario": "inv_bl054",
+   "event": "E3",
+   "group": "other",
+   "pass": "2016-10-11",
+   "areaHa": 0.762,
+   "ringPct": 1.8
+  },
+  {
+   "scenario": "inv_bl054",
+   "event": "E4",
+   "group": "other",
+   "pass": "2016-10-11",
+   "areaHa": 0.835,
+   "ringPct": 11.4
+  },
+  {
+   "scenario": "inv_bl061",
+   "event": "E1",
+   "group": "true_lake",
+   "pass": "2021-03-19",
+   "areaHa": 0.581,
+   "ringPct": 2.7
+  },
+  {
+   "scenario": "inv_bl061",
+   "event": "E1",
+   "group": "true_lake",
+   "pass": "2021-03-31",
+   "areaHa": 0.553,
+   "ringPct": 4.2
+  },
+  {
+   "scenario": "inv_bl066",
+   "event": "E1",
+   "group": "true_lake",
+   "pass": "2024-05-26",
+   "areaHa": 0.603,
+   "ringPct": 36.1
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E1",
+   "group": "other",
+   "pass": "2024-11-22",
+   "areaHa": 0.655,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E1",
+   "group": "other",
+   "pass": "2024-12-04",
+   "areaHa": 0.5,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E1",
+   "group": "other",
+   "pass": "2024-12-28",
+   "areaHa": 0.5,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2024-12-16",
+   "areaHa": 0.846,
+   "ringPct": 8.0
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2024-12-28",
+   "areaHa": 0.828,
+   "ringPct": 8.6
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E3",
+   "group": "other",
+   "pass": "2024-12-16",
+   "areaHa": 0.609,
+   "ringPct": 11.9
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E4",
+   "group": "other",
+   "pass": "2024-12-16",
+   "areaHa": 0.591,
+   "ringPct": 5.5
+  },
+  {
+   "scenario": "inv_bl068",
+   "event": "E5",
+   "group": "other",
+   "pass": "2024-12-28",
+   "areaHa": 0.746,
+   "ringPct": 6.8
+  },
+  {
+   "scenario": "inv_bl069",
+   "event": "E1",
+   "group": "other",
+   "pass": "2025-02-14",
+   "areaHa": 0.532,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl069",
+   "event": "E1",
+   "group": "other",
+   "pass": "2025-02-26",
+   "areaHa": 0.771,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl069",
+   "event": "E1",
+   "group": "other",
+   "pass": "2025-03-10",
+   "areaHa": 0.753,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl069",
+   "event": "E1",
+   "group": "other",
+   "pass": "2025-03-22",
+   "areaHa": 0.771,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl070",
+   "event": "E1",
+   "group": "other",
+   "pass": "2025-07-20",
+   "areaHa": 1.292,
+   "ringPct": 10.2
+  },
+  {
+   "scenario": "inv_bl070",
+   "event": "E2",
+   "group": "other",
+   "pass": "2025-08-19",
+   "areaHa": 0.559,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl070",
+   "event": "E3",
+   "group": "other",
+   "pass": "2025-08-19",
+   "areaHa": 0.577,
+   "ringPct": 0.8
+  },
+  {
+   "scenario": "inv_bl070",
+   "event": "E3",
+   "group": "other",
+   "pass": "2025-08-25",
+   "areaHa": 0.532,
+   "ringPct": 1.2
+  },
+  {
+   "scenario": "inv_bl072",
+   "event": "E1",
+   "group": "other",
+   "pass": "2025-10-12",
+   "areaHa": 0.702,
+   "ringPct": 3.5
+  },
+  {
+   "scenario": "inv_bl072",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2025-10-18",
+   "areaHa": 0.976,
+   "ringPct": 5.9
+  },
+  {
+   "scenario": "inv_bl072",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2025-10-24",
+   "areaHa": 0.894,
+   "ringPct": 0.2
+  },
+  {
+   "scenario": "inv_bl072",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2025-12-05",
+   "areaHa": 0.693,
+   "ringPct": 1.5
+  },
+  {
+   "scenario": "inv_bl072",
+   "event": "E3",
+   "group": "other",
+   "pass": "2025-10-18",
+   "areaHa": 0.557,
+   "ringPct": 1.5
+  },
+  {
+   "scenario": "inv_bl072",
+   "event": "E4",
+   "group": "other",
+   "pass": "2025-11-23",
+   "areaHa": 0.566,
+   "ringPct": 6.7
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E1",
+   "group": "other",
+   "pass": "2026-04-12",
+   "areaHa": 1.268,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E1",
+   "group": "other",
+   "pass": "2026-04-19",
+   "areaHa": 1.359,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E1",
+   "group": "other",
+   "pass": "2026-05-18",
+   "areaHa": 1.734,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E2",
+   "group": "other",
+   "pass": "2026-04-12",
+   "areaHa": 1.031,
+   "ringPct": 0.3
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E2",
+   "group": "other",
+   "pass": "2026-04-18",
+   "areaHa": 0.675,
+   "ringPct": 3.7
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E2",
+   "group": "other",
+   "pass": "2026-04-19",
+   "areaHa": 0.922,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E3",
+   "group": "other",
+   "pass": "2026-04-19",
+   "areaHa": 0.684,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl073",
+   "event": "E4",
+   "group": "true_lake",
+   "pass": "2026-04-19",
+   "areaHa": 0.675,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl074",
+   "event": "E1",
+   "group": "other",
+   "pass": "2026-07-24",
+   "areaHa": 0.669,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl075",
+   "event": "E1",
+   "group": "other",
+   "pass": "2026-06-28",
+   "areaHa": 0.503,
+   "ringPct": 0.0
+  },
+  {
+   "scenario": "inv_bl075",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2026-07-10",
+   "areaHa": 2.333,
+   "ringPct": 30.2
+  },
+  {
+   "scenario": "inv_bl075",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2026-07-22",
+   "areaHa": 4.374,
+   "ringPct": 28.6
+  },
+  {
+   "scenario": "inv_bl075",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2026-08-03",
+   "areaHa": 3.816,
+   "ringPct": 30.7
+  },
+  {
+   "scenario": "inv_bl075",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2026-08-09",
+   "areaHa": 4.328,
+   "ringPct": 32.9
+  },
+  {
+   "scenario": "inv_bl075",
+   "event": "E2",
+   "group": "true_lake",
+   "pass": "2026-08-15",
+   "areaHa": 4.337,
+   "ringPct": 34.1
+  },
+  {
+   "scenario": "matai_an_2025",
+   "event": "E1",
+   "group": "known_false",
+   "pass": "2025-07-22",
+   "areaHa": 2.134,
+   "ringPct": 38.3
+  },
+  {
+   "scenario": "matai_an_2025",
+   "event": "E2",
+   "group": "known_false",
+   "pass": "2025-07-22",
+   "areaHa": 0.879,
+   "ringPct": 12.1
+  },
+  {
+   "scenario": "matai_an_2025",
+   "event": "E3",
+   "group": "true_lake",
+   "pass": "2025-07-28",
+   "areaHa": 5.659,
+   "ringPct": 36.2
+  },
+  {
+   "scenario": "matai_an_2025",
+   "event": "E3",
+   "group": "true_lake",
+   "pass": "2025-08-21",
+   "areaHa": 25.62,
+   "ringPct": 39.5
+  },
+  {
+   "scenario": "matai_an_2025",
+   "event": "E3",
+   "group": "true_lake",
+   "pass": "2025-08-27",
+   "areaHa": 22.48,
+   "ringPct": 39.9
+  },
+  {
+   "scenario": "matai_an_2025",
+   "event": "E4",
+   "group": "known_false",
+   "pass": "2025-08-21",
+   "areaHa": 0.696,
+   "ringPct": 19.1
+  },
+  {
+   "scenario": "neg2026_matai_an",
+   "event": "E1",
+   "group": "known_false",
+   "pass": "2026-07-06",
+   "areaHa": 0.742,
+   "ringPct": 3.0
+  },
+  {
+   "scenario": "neg2026_matai_an",
+   "event": "E1",
+   "group": "known_false",
+   "pass": "2026-07-12",
+   "areaHa": 0.586,
+   "ringPct": 2.0
+  },
+  {
+   "scenario": "neg2026_matai_an",
+   "event": "E1",
+   "group": "known_false",
+   "pass": "2026-09-28",
+   "areaHa": 0.687,
+   "ringPct": 1.9
+  }
+ ]
+}

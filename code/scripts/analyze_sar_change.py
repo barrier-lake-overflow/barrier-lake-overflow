@@ -48,6 +48,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from analyze_ndwi_change import crop_window, mask_to_lonlat_polygon, merge_into_dashboard_layer  # noqa: E402
 from pipeline.detect.barrier_lake import EIGHT, run_sar_chain  # noqa: E402
+from pipeline.detect.water import SAR_VH_WATER_DB, SAR_VV_MARGINAL_DB, SAR_WATER_DB_DEFAULT  # noqa: E402
 from scipy import ndimage  # noqa: E402
 from pipeline.preprocess.mask import S1_IW_MID_INCIDENCE_DEG, S1_LOOK_AZIMUTH_DEG  # noqa: E402
 from pipeline.preprocess.sar import cell_size_xy_m, check_aligned, lee_filter, load_s1_geotiff  # noqa: E402
@@ -73,8 +74,8 @@ def main() -> None:
     ap.add_argument("--lat", type=float, required=True)
     ap.add_argument("--lake-id", required=True)
     ap.add_argument("--half-width-km", type=float, default=2.0)
-    ap.add_argument("--water-threshold-db", type=float, default=None,
-                    help="固定水體門檻（dB）。不給則 Otsu，Otsu 不合理時退回 −18 dB")
+    ap.add_argument("--water-threshold-db", type=float, default=SAR_WATER_DB_DEFAULT,
+                    help="水體門檻（dB），預設固定 −18 dB。實測 Otsu 在山區窗格都退回 −18 dB，故不再預設使用")
     ap.add_argument("--landslide-threshold-db", type=float, default=3.0)
     ap.add_argument("--min-lake-area-m2", type=float, default=5000.0)
     ap.add_argument("--min-catchment-km2", type=float, default=1.0)
@@ -89,6 +90,16 @@ def main() -> None:
     ap.add_argument("--seed-slope-deg", type=float, default=None,
                     help="雙門檻：每塊新增水體至少要有 --seed-min-area-m2 落在此坡度以下才保留（整塊保留）。不給則不啟用")
     ap.add_argument("--seed-min-area-m2", type=float, default=0.0)
+    ap.add_argument("--ray-trace-shadow", action="store_true",
+                    help="B1 實驗：陰影遮罩加上沿視線的射線追蹤，並輸出射線追蹤陰影與前縮面積（預設關閉）")
+    ap.add_argument("--use-vh", action="store_true",
+                    help="B2 實驗：用 VH 補判 VV 差一點的像元（需要 --pre-vh、--post-vh，有複核期時加 --post-later-vh）")
+    ap.add_argument("--pre-vh", default=None, help="事件前 σ⁰ VH（dB），與 --pre 同網格")
+    ap.add_argument("--post-vh", default=None, help="事件後 σ⁰ VH（dB）")
+    ap.add_argument("--post-later-vh", nargs="*", default=[], help="各複核期 σ⁰ VH，順序同 --post-later")
+    ap.add_argument("--prior-baseline", default=None,
+                    help="一年前基準 σ⁰ VV（事件前基準期間往前推一年的中位數，同網格）。給的話標出既有崩塌堆積區，"
+                         "每個候選輸出 oldLandslidePct（落在裡面的面積比例），供事件研判加註提醒")
     ap.add_argument("--pre-label", default="事件前")
     ap.add_argument("--post-label", default="事件後")
     ap.add_argument("--ndwi-json", default=None, help="analyze_ndwi_change.py 的輸出，交叉驗證用")
@@ -99,9 +110,18 @@ def main() -> None:
     scenes += [load_s1_geotiff(p) for p in args.post_later]
     names = ["pre", "post"] + [f"post-later[{i}]" for i in range(len(args.post_later))]
     dem = load_s1_geotiff(args.dem) if args.dem else None   # 單波段通用讀檔，值是高程（m）
-    rasters = scenes + ([dem] if dem else [])
+    vh_scenes = []
+    if args.use_vh:
+        if not (args.pre_vh and args.post_vh) or len(args.post_later_vh) != len(args.post_later):
+            raise SystemExit("--use-vh 需要 --pre-vh、--post-vh，且 --post-later-vh 與 --post-later 一樣多")
+        vh_scenes = [load_s1_geotiff(p) for p in [args.pre_vh, args.post_vh, *args.post_later_vh]]
+        names += ["pre-vh", "post-vh"] + [f"post-later-vh[{i}]" for i in range(len(args.post_later_vh))]
+    prior = load_s1_geotiff(args.prior_baseline) if args.prior_baseline else None
+    if prior:
+        names += ["prior-baseline"]
     try:
-        check_aligned(*rasters, names=tuple(names + (["dem"] if dem else [])))
+        check_aligned(*scenes, *vh_scenes, *([prior] if prior else []), *([dem] if dem else []),
+                      names=tuple(names + (["dem"] if dem else [])))
     except ValueError as e:
         raise SystemExit(str(e))
     if not scenes[0]["geographic"]:
@@ -112,6 +132,8 @@ def main() -> None:
         win, row0, col0 = crop_window(sc, args.lon, args.lat, args.half_width_km, key="db")
         wins.append(win)
     dem_win = crop_window(dem, args.lon, args.lat, args.half_width_km, key="db")[0] if dem else None
+    vh_wins = [crop_window(sc, args.lon, args.lat, args.half_width_km, key="db")[0] for sc in vh_scenes]
+    prior_win = crop_window(prior, args.lon, args.lat, args.half_width_km, key="db")[0] if prior else None
 
     a, b, c, d, e, f = scenes[0]["transform"]
     win_transform = (a, b, c + col0 * a + row0 * b, d, e, f + col0 * d + row0 * e)
@@ -128,6 +150,10 @@ def main() -> None:
         min_area_m2=args.min_lake_area_m2, search_radius_m=args.search_radius_m,
         max_water_slope_deg=args.max_water_slope_deg,
         seed_slope_deg=args.seed_slope_deg, seed_min_area_m2=args.seed_min_area_m2,
+        ray_trace_shadow=args.ray_trace_shadow,
+        **({"pre_vh_db": vh_wins[0], "post_vh_db": vh_wins[1], "later_post_vh_dbs": vh_wins[2:]}
+           if args.use_vh else {}),
+        prior_db=prior_win,
     )
 
     candidates = []
@@ -175,9 +201,14 @@ def main() -> None:
             "maxWaterSlopeDeg": args.max_water_slope_deg,
             "seedSlopeDeg": args.seed_slope_deg,
             "seedMinAreaM2": args.seed_min_area_m2 if args.seed_slope_deg is not None else None,
+            # 只有開 --ray-trace-shadow 才輸出，預設結果檔與原本相同
+            **({"rayTraceShadow": True,
+                "rayShadowExtraHectare": round(float(invalid["ray_shadow"].sum()) * area_px, 2),
+                "foreshorteningHectare": round(float(invalid["foreshortening"].sum()) * area_px, 2)}
+               if args.ray_trace_shadow else {}),
         },
         "darkNewPixelsDiagnostic": {
-            "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+            "note": "事件後背向散射低於門檻、事件前沒有的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
             "thresholdDb": thr,
             "darkNewHectareBeforeMask": round(dark_new_ha, 2),
             "maskedHectare": round(masked_ha, 2),
@@ -186,6 +217,13 @@ def main() -> None:
         "laterScenes": len(wins) - 2,
         "candidates": candidates,
     }
+    if args.use_vh:   # 只有開 --use-vh 才輸出，預設結果檔與原本相同
+        result["vhAssist"] = {"vvMarginalDb": SAR_VV_MARGINAL_DB, "vhThresholdDb": SAR_VH_WATER_DB}
+    if prior:         # 只有給 --prior-baseline 才輸出
+        result["oldLandslide"] = {
+            "note": "一年前基準 → 事件前基準之間的崩塌（既有崩塌堆積區），只供提醒，不影響分級",
+            "areaHectare": round(float(out["old_landslides"].mask.sum()) * area_px, 2),
+        }
 
     if args.ndwi_json and os.path.exists(args.ndwi_json):
         with open(args.ndwi_json, encoding="utf-8") as fh:

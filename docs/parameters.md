@@ -3,14 +3,14 @@
 偵測與研判用到的每個門檻：數值、來源，以及改動後結果會差多少。
 「依據」欄分四種：**規格**（衛星或資料本身的規格）、**文獻**（有出處的常用值）、**清冊**（用農村水保署堰塞湖清冊算出來的）、**自訂**（專案自己定的，沒有校準）。
 
-敏感度的數字來自 `scripts/sensitivity_replay.py`（結果在 `docs/sensitivity.json`），調參來自 `scripts/tune_replay.py`（結果在 `docs/tuning.json`），做法見文末。
+敏感度的數字來自 `scripts/sensitivity_replay.py`（結果在 `docs/results/sensitivity.json`），調參來自 `scripts/tune_replay.py`（結果在 `docs/results/tuning.json`），做法見文末。
 
 ## 偵測（SAR → 候選 A/B/C）
 
 | 參數 | 值 | 程式位置 | 依據 | 敏感度 |
 |---|---|---|---|---|
 | Lee 濾波視窗 | 判水 3×3、崩塌 5×5 | `detect/barrier_lake.py` | 文獻：Lee 1980。自訂：視窗大小（山區河道只有 2～3 像元寬，判水用小視窗） | 未測 |
-| 判水門檻 | Otsu 自動；Otsu 高於 −14 dB 時改用 −18 dB | `detect/water.py` | 文獻：Otsu 1979；−18 dB 參考 Twele et al. 2016 | 未測 |
+| 判水門檻 | 固定 −18 dB（見下方「判水標準」） | `detect/water.py`（`SAR_WATER_DB_DEFAULT`） | 文獻：Twele et al. 2016。實測 Otsu 在山區窗格每一期都失敗、退回 −18 dB，故不使用 | 未測 |
 | 陰影／疊置遮罩 | 入射角 39°；視向升軌 77°、降軌 283° | `preprocess/mask.py` | 規格：Sentinel-1 IW 入射角 29°～46°，取中間值 | 未測 |
 | **判水最大坡度** | **35°** | `scripts/run_sar_series.py`、`scripts/run_sar_all.bat` | 自訂：用馬太鞍溪 8/27 選的。30 m DEM 在窄谷會把谷底坡度拉高，20° 會遮掉該湖約九成湖面。全清冊回放上調參挑出 20°，未採用，見「調參」 | **很敏感**，見下表 |
 | **判水起始坡度** | **20°**（每塊新增水體至少 1 像元） | `detect/barrier_lake.py`（`seed_filter`）、`scripts/run_sar_series.py`、`scripts/run_sar_all.bat` | 雙門檻：坡度 ≤ 35° 判水，但整塊都在 20° 以上陡坡的新增水體不列入。從 5 組雙門檻中依回放選出，見「坡度雙門檻」 | 起始面積 0.2 公頃以上會漏掉大部分湖，見「坡度雙門檻」 |
@@ -23,6 +23,20 @@
 | 崩塌搜尋半徑（條件 2） | 500 m | `detect/barrier_lake.py` | 清冊：72 湖壩址到崩塌點距離中位數 219 m，46 湖（64%）≤ 500 m | 200～1000 m：**沒有影響** |
 | 壩體高程容許值（條件 2） | 5 m | `detect/barrier_lake.py` | 自訂 | 0～20 m：**沒有影響** |
 | 持續 IoU（條件 3） | 0.3 | `detect/barrier_lake.py` | 自訂。存續時間的分布有文獻可對照，見下方「持續性」 | 只影響高優先，見下表 |
+
+## 判水標準
+
+三種資料各用一條規則，全部集中在 `code/pipeline/detect/water.py`：
+
+| 資料 | 規則 | 程式 | 用途 | 依據 |
+|---|---|---|---|---|
+| Sentinel-1 SAR（VV） | 濾波後 σ⁰ < −18 dB | `SAR_WATER_DB_DEFAULT` | 偵測 | 文獻：C 波段 VV 平靜水面多在 −20 dB 以下，−18 dB 為常用值（Twele et al. 2016） |
+| Sentinel-2（有短波紅外線） | MNDWI > 0 且 B8 < 500 | `optical_water_rule(…, swir=…)` | 負案例 E1 查證 | 文獻：MNDWI（Xu 2006）；水的近紅外線幾乎完全被吸收。只看 MNDWI 會把陰影、暗色岩屑算進來，所以加近紅外線上限 |
+| 航照（紅綠藍＋近紅外線） | NDVI < −0.15 且 NDWI > 0.2 | `optical_water_rule(…, red=…)` | 馬太鞍溪湖面驗證 | 自訂：由 7/27、8/18、3/27 已知地物實測值選定（湖 NDVI −0.22～−0.38、NDWI 0.37～0.56；崩塌地 NDWI 可到 0.21），選定時沒有看 SAR 結果 |
+
+**為什麼有三套：** 三種資料量到的東西不同。SAR 量的是背向散射；Sentinel-2 有短波紅外線，可以算 MNDWI；航照沒有短波紅外線，算不出 MNDWI，只能用紅光與近紅外線（NDVI）加上綠光（NDWI）。三條規則依據的物理特性相同：水面平滑（SAR 背向散射低）、水吸收近紅外線與短波紅外線（光學）。
+
+**SAR 為什麼不用 Otsu：** 原本設計是每張影像用 Otsu 自動決定門檻，結果高於 −14 dB 時改用 −18 dB。實際上 177 個結果檔的事件前、事件後判水全部退回 −18 dB（山區窗格水體太少，直方圖沒有明顯雙峰）。2026-10-29 起正式改為固定 −18 dB，重跑全部案例結果不變。`otsu_threshold()` 仍保留在 `water.py`，指定 `water_threshold_db=None` 時可用。
 
 ## 研判與回放
 
@@ -131,10 +145,10 @@
 
 ## 坡度雙門檻（已採用）
 
-固定坡度門檻的兩難：35° 讓陡坡上的暗區混進來（誤報多），20° 會把窄谷湖面遮掉（馬太鞍溪只剩約 5%）。
+固定坡度門檻的兩難：35° 讓陡坡上背向散射低的像元混進來（誤報多），20° 會把窄谷湖面遮掉（馬太鞍溪只剩約 5%）。
 雙門檻把兩件事分開：**坡度 ≤ 35° 的像元都可以判水，但一塊新增水體至少要碰到坡度 ≤ 20° 的地面才列入**；列入時整塊保留，湖面積不被遮掉。複核期不套這條，只看同位置是否還有水。
 
-**回放比較**（`scripts/hysteresis_replay.py`，結果在 `docs/hysteresis.json`；其餘參數全部維持現行值）：
+**回放比較**（`scripts/hysteresis_replay.py`，結果在 `docs/results/hysteresis.json`；其餘參數全部維持現行值）：
 
 | 變體 | 偵測／隨機期望 | 超出隨機 | 高優先／隨機期望 | 其他事件 | 負案例事件／高優先 |
 |---|---|---|---|---|---|
@@ -146,7 +160,7 @@
 
 - **事先選定的是「≥ 0.2 公頃」那組，結果不好**：多數湖在 30 m DEM 上落在 20° 以下的面積不到 0.2 公頃，整塊被丟掉。它只在馬太鞍溪（大湖）上表現好。
 - **採用的「≥ 1 像元」是看過回放結果才選的**，所以在 5 組之間做留一：23 折全部挑到這組，留一成績 7／3.1（**+3.9**）。這跟固定門檻調參（0.2 公頃＋20°）的留一 +3.9 相同，但不會把馬太鞍溪湖面遮掉，高優先也比原本好（+2.3 → +3.2）。
-- 其他事件 49 → 17，負案例不變（1 個高優先誤報，即 Sentinel-2 已查證的崩塌堆積區暗區）。
+- 其他事件 49 → 17，負案例不變（1 個高優先誤報，即 Sentinel-2 已查證的崩塌堆積區疑似水體）。
 - 跟原本相比少偵測到 bl052。
 - 馬太鞍溪（單獨跑）：7/28 A 5.7 公頃、8/21 A 25.6 公頃，面積與原本相近；原本 4 個誤報少 1 個。
 - **改善仍只有約 1 湖**，以 23 湖的樣本在統計上分不開；這是目前最一致的改善，不是證明。
@@ -156,10 +170,116 @@
 
 重現：`cd code && python scripts/tune_replay.py`（需要本機已下載的回放影像，前處理約 1.5 小時，結果快取在 `data/cache/`）。
 
+## 崩塌堆積提醒（第二版已上線）
+
+**想法：** 2026 負案例的 E1 在崩塌堆積上，SAR 會持續看到背向散射低的區域而列高優先。如果疑似水體落在崩塌堆積上，就在事件卡加一句「可能是崩塌堆積上的雷達陰影或平滑泥砂，建議以光學確認」，**不改優先、信心、分級**。第一版用「當期崩塌」失敗，第二版改用「前一年的崩塌範圍」後成功。
+
+### 第二版（已上線）：前一年的崩塌範圍
+
+**指標：** 每個案例多一張**一年前基準**（同一軌道，事件前基準期間整段往前推一年的中位數，季節相同）。用同一套崩塌偵測（|Δσ⁰| ≥ 3 dB，扣疊置、陰影、事件前水體）比較「一年前 → 事件前」，得到這一年內新出現的崩塌，也就是事件發生時已經存在的崩塌堆積區。每個候選記錄落在裡面（外擴 2 像元）的面積比例 `oldLandslidePct`（`detect/barrier_lake.py` 的 `classify`；`analyze_sar_change.py --prior-baseline`）。不影響新增水體、崩塌與分級。
+
+**門檻規則（與第一版相同，事先訂好）：** T 取「所有已確認真湖都不會被提醒」的最小 5% 刻度；E1 提醒不到就不上線。真湖保守地包含馬太鞍溪的湖與全清冊回放判為偵測到的事件。
+
+**結果**（`scripts/old_landslide_threshold.py`，逐筆明細在 `docs/results/old_landslide_threshold.json`）：
+
+| 分組 | 偵測筆數 | 落在既有崩塌堆積區的比例 |
+|---|---|---|
+| 真湖：馬太鞍溪的湖 | 3 | 0～1.3% |
+| 真湖：全清冊回放偵測到的事件 | 14 | 0～5.6% |
+| 已知誤報：2026 負案例 E1 | 3 | **39～80%** |
+| 已知誤報：2025 馬太鞍溪 E1、E2、E4 | 3 | 0% |
+| 回放窗格內其他事件（未查證） | 33 | 0～50%（5 筆 ≥ 10%） |
+
+**T = 10%：真湖全部不會被提醒，E1 三次偵測全部被提醒到。上線。**（`events/triage.py` 的 `OLD_LANDSLIDE_CAUTION_PCT`）
+
+- 2025 馬太鞍溪的 3 個誤報不會被提醒：它們在**當次事件**新產生的崩塌上，不是一年前就存在的堆積；這類誤報靠跨期複核過濾（3 個都在下一期判為未持續）。
+- 偵測結果、優先等級、研判信心、所有統計數字都不變（用 `scripts/run_experiment.py --with-prior` 與正式結果逐項比對相同）。
+- 2015 年的烏來（bl051）、塔次基里溪（bl052）往前一年還沒有 Sentinel-1，沒有一年前基準，不判斷、不提醒。
+- 每日自動監看（`pipeline/daily/`）目前沒有下載一年前基準，監看窗格的事件不會有這個提醒。
+- 門檻是在同一批資料上依事先訂好的規則選的，負案例只有 E1 一個；能分開的原因有物理解釋（E1 所在的堆積在一年前不存在、真湖所在的河谷一年前也沒有崩塌），但樣本很小。
+
+**取得一年前基準：** 馬太鞍溪、負案例見 `gee_export_matai_an_s1.js`、`gee_export_series_s1.js`（已進版控：`data/raw/sentinel1/S1_VV_prior_matai_an.tif`、`S1_VV_neg2026_matai_an_prior.tif`）；全清冊回放見 `gee_fetch_inventory.py`，或 GEE 網頁版 `gee_export_prior.js`（`gee_codeeditor_prior.py` 產生）＋ `split_prior_exports.py`。`run_sar_all.bat`、`run_sar_series.py` 找得到一年前基準就自動帶入。
+
+### 第一版（未上線）：當期崩塌
+
+**指標：** 候選外擴 3～5 像元的一圈裡，SAR 偵測到崩塌的比例（`landslideRingPct`）。崩塌遮罩本來就扣掉水體外擴 2 像元，所以從第 3 像元起算。
+
+**門檻規則（事先訂好）：** T 取「所有已確認真湖都不會被提醒」的最小值（真湖最大值往上取到下一個 5%）；E1 也提醒不到、或真湖與誤報重疊就不上線。真湖保守地包含馬太鞍溪 E3 與全清冊回放判為偵測到的事件。
+
+**結果**（2026-10-29 測試，逐筆明細在 `docs/results/landslide_ring_threshold.json`）：
+
+| 分組 | 偵測筆數 | 外圍崩塌比例 |
+|---|---|---|
+| 真湖：馬太鞍溪 E3 | 3 | 36～40% |
+| 真湖：全清冊回放偵測到的事件 | 14 | 0～36% |
+| 已知誤報：2026 負案例 E1 | 3 | **2～3%** |
+| 已知誤報：2025 馬太鞍溪 E1、E2、E4 | 3 | 12～38% |
+| 回放窗格內其他事件（未查證） | 33 | 0～12% |
+
+T = 40% 才不會提醒到真湖，此時 E1 與 2025 的誤報都提醒不到。**分不開，不上線。**
+
+**為什麼：** 方向跟預期相反。
+- 真湖下游接著壩體，周圍本來就是崩塌，比例反而高（馬太鞍溪 36～40%）。
+- E1 位在 2025 年的崩塌堆積上，但 2026 年的崩塌偵測是以 2026 年 3～5 月為事件前基準，舊堆積前後都在、沒有變化，所以不算崩塌（E1 周圍 500 m 內只偵測到 5～10 公頃零星變化；2025 年同一窗格約 230 公頃）。
+- 也就是說，SAR 變化偵測只看得到「新」崩塌，看不到已經存在的堆積區。要辨識舊堆積，需要前一年的崩塌範圍，因此改成第二版。
+
+第一版的測試程式沒有留在專案裡，結果檔也不輸出 `landslideRingPct`。
+
+## 射線追蹤陰影（B1，測試過，未採用）
+
+**想法：** 原本的陰影只看像元本身的坡面，被前方山脊擋住的平地抓不到。改成沿視線往衛星方向追蹤（`preprocess/mask.py` 的 `ray_traced_shadow`），陰影 = 局部判定 ∪ 射線追蹤。前縮（局部入射角 < 10°）只統計面積，不進判水遮罩。兩者都用事件前 DEM，崩塌後新陡崖的陰影一樣抓不到，事先預期改善有限。
+
+**做法：** 開關 `--ray-trace-shadow`（預設關閉）。`scripts/run_experiment.py` 用正式參數對全部案例（馬太鞍溪 4 期、2026 負案例 17 期、全清冊回放 153 期）各跑一次，結果寫到 `data/experiments/`，不覆蓋正式結果。先跑不加開關的對照組，所有指標與正式結果完全相同，確認比較流程本身沒有偏差。
+
+**結果**（重跑 `run_experiment.py` 會產生 `data/experiments/b1_raytrace/comparison.md`；目錄不進版控，2026-11-01 已清掉）：
+
+| 指標 | 正式 | 射線追蹤 |
+|---|---|---|
+| 全清冊回放偵測到／隨機期望 | 7／3.1 | **6**／2.8 |
+| 大型湖（≥ 20 萬 m³） | 5／7 | **4**／7 |
+| 偵測到且曾列高優先 | 5 | **4** |
+| 窗格內其他事件（其中高優先） | 17（8） | 16（7） |
+| 馬太鞍溪 E3 面積、誤報 | 5.7／25.6 公頃；3 個 | 相同 |
+| 2026 負案例 | 1 個事件，信心最高「中」 | 相同 |
+
+**不採用**：少偵測到臺東大南溪（bl061，170 萬 m³）。它的候選只有 0.58 公頃，剛好超過最小面積 0.5 公頃，湖緊貼陡壁，射線追蹤多遮一塊就掉到門檻以下。誤報只少 1 個；馬太鞍溪與負案例的誤報都在崩塌後的新地形上，事件前 DEM 本來就看不到，結果完全沒變。每個窗格平均多遮約 16 公頃，前縮區平均約 120 公頃（只統計）。
+
+程式保留、開關預設關閉，正式流程不受影響。
+
+## 加入 VH 極化（B2，測試過，未採用）
+
+**想法：** SAR 只抓到真實湖面的兩到四成，有一部分湖面的 VV 沒有低到 −18 dB，可能是湖面被風吹皺或混濁。VH 對水面粗糙度的反應不同，可能補回一部分。VH 無法分辨水與雷達陰影（陰影兩種極化都低），所以只用來補判湖面。
+
+**規則：** 水 = VV < −18 dB，**或**（VV < −15 dB 且 VH < −24 dB）。只在 VV「差一點」的像元用 VH 補判，不整片放寬。VH 門檻在實驗前依文獻寫死、沒有回頭調：Manjusree et al. (2012) 對交叉極化建議的水體範圍約 −15～−24 dB，取最嚴格的一端。事件前、事件後、複核期都同樣套用，崩塌偵測仍只用 VV。
+
+**做法：** 用 GEE 網頁版重新匯出全部案例的 VH（`scripts/gee_export_vh.js`，期別與 VV 完全相同；拆檔 `split_vh_exports.py`），開關 `--use-vh`（預設關閉），以 `scripts/run_experiment.py` 跑全部案例比較。VH 影像與 VV 網格完全對齊，VV − VH 中位數 5.3～6.8 dB，符合 C 波段典型值。
+
+**結果**（重跑 `run_experiment.py` 會產生 `data/experiments/b2_vh/comparison.md`；需要重新匯出 VH 影像）：
+
+| 指標 | 正式 | 加入 VH |
+|---|---|---|
+| 全清冊回放偵測到／隨機期望（超出隨機） | 7／3.1（+3.9） | 10／4.2（+5.8） |
+| 大型湖（≥ 20 萬 m³） | 5／7 | 6／7 |
+| 偵測到且曾列高優先 | 5 | 6 |
+| **窗格內其他事件（其中高優先）** | 17（8） | **30（15）** |
+| 馬太鞍溪湖面積 7/29、8/22、8/28（公頃） | 5.7、25.6、22.5 | 7.3、26.7、26.4 |
+| **馬太鞍溪誤報曾列高優先** | 0 | **1** |
+| **2026 負案例事件數（有高優先的時點）** | 1（9） | **2（11）** |
+
+**不採用**：湖抓得比較多、面積也略大，但誤報幾乎加倍（其他事件 17 → 30，高優先 8 → 15），2025 馬太鞍溪多一個誤報進到高優先，2026 負案例多一個事件。依採用標準（全部指標不能變差）不採用。
+
+- 面積改善有限：馬太鞍溪 8/22 只從 25.6 增加到 26.7 公頃，航照是 69～91 公頃。VV 漏掉的湖面大多連 VH 也沒有低到門檻，不是「差一點」。
+- 多偵測到的 3 筆（豐坪溪上游、草嶺、加走寮溪）都是 0.5～0.6 公頃、剛好過最小面積、信心「低」，碰巧命中機率約 0.2。草嶺那筆（7/8，0.50 公頃）只有約 16% 面積落在依 DEM 推估的湖面內，中心點在湖面外，研判是碰巧，不改變草嶺的診斷（`docs/bl070-diagnosis.md`）。
+- 事件代號會因多出候選而改變（馬太鞍溪的湖從 E3 變成 E2），比較時改用位置對應同一座湖。
+
+程式保留、開關預設關閉，正式流程不受影響。
+
 ## 文獻
 
 - Lee, J.-S. (1980). Digital image enhancement and noise filtering by use of local statistics. *IEEE TPAMI* 2(2).
-- Otsu, N. (1979). A threshold selection method from gray-level histograms. *IEEE TSMC* 9(1).
+- Otsu, N. (1979). A threshold selection method from gray-level histograms. *IEEE TSMC* 9(1).（保留，未預設使用）
+- Manjusree, P., Kumar, L. P., Bhatt, C. M., Rao, G. S., Bhanumurthy, V. (2012). [Optimization of threshold ranges for rapid flood inundation mapping by evaluating backscatter profiles of high incidence angle SAR images](https://link.springer.com/article/10.1007/s13753-012-0011-5). *International Journal of Disaster Risk Science* 3(2).（B2 的 VH 門檻）
+- Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. *IJRS* 27(14).
 - Twele, A., Cao, W., Plank, S., Martinis, S. (2016). Sentinel-1-based flood mapping: a fully automated processing chain. *IJRS* 37(13).
 - Mondini, A. C. et al. (2019). [Sentinel-1 SAR amplitude imagery for rapid landslide detection](https://geomorphology.irpi.cnr.it/publications/repository/links/journals/2019/sentinel-1-sar-amplitude-imagery-for-rapid-landslide-detection-remote-sensing). *Remote Sensing* 11, 760.
 - Schuster, R. L., Costa, J. E. (1986). [A perspective on landslide dams](https://www.usgs.gov/publications/perspective-landslide-dams). USGS.

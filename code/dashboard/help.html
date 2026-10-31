@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用說明 · 堰塞湖事件研判平台</title>
+  <link rel="stylesheet" href="vendor/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 使用說明頁：沿用儀表板色系（styles.css 的 :root），版面自訂 */
+    .help-top .wrap{gap:14px}
+    .help-search{
+      flex:1 1 260px;max-width:420px;background:var(--abyss);border:1px solid var(--line-strong);color:var(--snow);
+      font:inherit;font-size:13px;padding:6px 12px;
+    }
+    .help-search::placeholder{color:var(--moss)}
+    .help-search:focus{outline:none;border-color:var(--jade)}
+    .help-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:clamp(20px,3vw,48px);padding:28px 0 64px}
+    .toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;font-size:13px}
+    .toc ol{list-style:none;display:grid;gap:2px}
+    .toc ol ol{margin:2px 0 6px 12px}
+    .toc a{display:block;padding:3px 8px;color:var(--moss);text-decoration:none;border-left:2px solid transparent}
+    .toc a:hover{color:var(--snow)}
+    .toc a.is-on{color:var(--snow);border-left-color:var(--jade)}
+    .toc li.is-hidden{display:none}
+    .doc{max-width:78ch;min-width:0}
+    .doc section{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line);scroll-margin-top:70px}
+    .doc .sub-sec{scroll-margin-top:70px;margin-top:20px}
+    .doc h1{font-family:var(--wide);font-variation-settings:'wdth' 108,'wght' 700;font-size:clamp(24px,3vw,32px);color:var(--snow);line-height:1.25;margin-bottom:8px}
+    .doc h2{font-family:var(--wide);font-variation-settings:'wdth' 105,'wght' 650;font-size:20px;color:var(--snow);margin-bottom:10px}
+    .doc h3{font-size:15px;font-weight:700;color:var(--snow);margin-bottom:6px}
+    .doc p,.doc li{font-size:14.5px;line-height:1.85;color:var(--fog)}
+    .doc p + p{margin-top:8px}
+    .doc ul,.doc ol.steps{margin:6px 0 6px 20px;display:grid;gap:2px}
+    .doc b{color:var(--snow);font-weight:500}
+    .doc code{font-family:var(--mono);font-size:12.5px;color:var(--snow);background:var(--raised);padding:1px 5px}
+    .doc table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+    .doc th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:400;color:var(--moss);border-bottom:1px solid var(--line-strong);padding:6px 10px 6px 0}
+    .doc td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);color:var(--fog);vertical-align:top;line-height:1.7}
+    .doc td:first-child{white-space:nowrap;color:var(--snow)}
+    .lead{font-size:15px;color:var(--moss);margin-bottom:24px}
+    .note{border-left:3px solid var(--jade-dim);background:rgba(63,169,160,.06);padding:8px 14px;margin:10px 0}
+    .warn{border-left-color:var(--ochre);background:rgba(201,138,46,.07)}
+    .k{font-family:var(--mono);font-size:11px;padding:0 6px;border:1px solid var(--line-strong);white-space:nowrap}
+    .k.h{border-color:var(--clay);color:var(--clay)}
+    .k.m{border-color:var(--ochre);color:var(--ochre)}
+    .k.l{border-color:var(--moss);color:var(--moss)}
+    .k.d{border-color:var(--iris);color:var(--iris)}
+    mark{background:rgba(201,138,46,.35);color:var(--snow);padding:0 1px}
+    .no-hit{color:var(--moss);font-size:14px;padding:12px 0}
+    .doc .is-hidden{display:none}
+    /* ── 圖解：流程圖（HTML 方塊，窄螢幕也能讀；方塊可點，跳到詳細說明）── */
+    .fig{margin:14px 0 8px;padding:18px 16px;border:1px solid var(--line);background:var(--stone)}
+    .fig-cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--moss);margin-bottom:12px}
+    .fc{display:grid;justify-items:center;gap:0}
+    .fc-step{
+      display:block;width:min(100%,460px);padding:10px 14px;border:1px solid var(--line-strong);background:var(--abyss);
+      color:var(--snow);text-decoration:none;font-size:14px;font-weight:500;line-height:1.5;text-align:left;
+    }
+    .fc-step span{display:block;font-size:12.5px;font-weight:400;color:var(--moss);margin-top:2px}
+    a.fc-step:hover{border-color:var(--jade)}
+    .fc-step .n{
+      display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin:0 8px 0 0;
+      border-radius:50%;background:var(--jade-dim);color:var(--snow);font-family:var(--mono);font-size:11.5px;vertical-align:1px;
+    }
+    .fc-step.s-start{border-color:var(--jade)}
+    .fc-step.s-warn{border-color:var(--ochre)}
+    .fc-step.s-end{border-color:var(--jade);background:rgba(63,169,160,.08)}
+    .fc-arrow{width:1px;height:18px;background:var(--line-strong);position:relative;margin-bottom:6px}
+    .fc-arrow::after{content:"";position:absolute;left:-4px;bottom:-6px;border:4px solid transparent;border-top:6px solid var(--line-strong)}
+    .fc-q{
+      width:min(100%,460px);padding:8px 14px;border:1px dashed var(--fog);color:var(--snow);font-size:13.5px;text-align:center;
+    }
+    .fc-branch{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:min(100%,620px)}
+    .fc-col{display:grid;justify-items:center;align-content:start;gap:0}
+    .fc-col .fc-step{width:100%}
+    .fc-tag{font-family:var(--mono);font-size:11px;color:var(--fog);padding:2px 8px;border:1px solid var(--line-strong);margin:6px 0}
+    .fc-tag.yes{color:var(--ochre);border-color:var(--ochre)}
+    .fc-tag.no{color:var(--jade);border-color:var(--jade-dim)}
+    /* 依優先等級的三欄流程 */
+    .lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .lane{display:grid;align-content:start;justify-items:center;gap:0}
+    .lane .fc-step{width:100%;font-size:13px}
+    .lane-head{width:100%;padding:8px 10px;text-align:center;font-weight:700;color:var(--snow);border:1px solid}
+    .lane-head span{display:block;font-weight:400;font-size:12px;color:var(--fog)}
+    .lane.h .lane-head{border-color:var(--clay);background:rgba(194,80,60,.14)}
+    .lane.m .lane-head{border-color:var(--ochre);background:rgba(201,138,46,.12)}
+    .lane.l .lane-head{border-color:var(--moss);background:rgba(124,164,138,.1)}
+    .fc-merge{margin-top:14px;display:grid;justify-items:center}
+    /* 畫面截圖＋可點的數字框：框的位置以截圖的百分比表示，圖縮放時框跟著縮放 */
+    .shot{position:relative;border:1px solid var(--line-strong);line-height:0}
+    .shot img{width:100%;height:auto;display:block}
+    .hot{position:absolute;border:2px solid rgba(201,138,46,.85);border-radius:3px;text-decoration:none}
+    .hot:hover,.hot:focus-visible{border-color:var(--snow);background:rgba(255,255,255,.08);outline:none}
+    .hot span{
+      position:absolute;left:-11px;top:-11px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;
+      display:flex;align-items:center;justify-content:center;background:var(--ochre);color:var(--abyss);
+      font-family:var(--mono);font-size:12px;font-weight:700;line-height:1;box-shadow:0 0 0 2px var(--abyss);
+    }
+    .shot-key{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:4px 16px;margin:12px 0 0}
+    .shot-key a{display:flex;gap:8px;align-items:baseline;color:var(--fog);text-decoration:none;font-size:13px;line-height:1.6}
+    .shot-key a:hover{color:var(--snow)}
+    .shot-key b{
+      flex:none;min-width:22px;text-align:center;border-radius:11px;background:var(--ochre);color:var(--abyss);
+      font-family:var(--mono);font-size:11.5px;font-weight:700;
+    }
+    .hot.r span{left:auto;right:-11px}   /* 跟上下相鄰的標號錯開 */
+    .shot-note{font-size:12.5px;color:var(--moss);margin-top:8px}
+    .shot-note a,.fig-cap a{color:var(--jade)}
+    @media (max-width:640px){
+      .fc-branch,.lanes{grid-template-columns:1fr}
+      .hot span{min-width:18px;height:18px;font-size:10.5px;left:-8px;top:-8px}
+    }
+
+    @media (max-width:860px){
+      .help-layout{grid-template-columns:1fr}
+      .toc{position:static;max-height:none;border:1px solid var(--line);padding:10px}
+      .toc ol ol{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="statusbar help-top">
+    <div class="wrap">
+      <span class="sysname"><span class="pulse"></span>使用說明</span>
+      <input class="help-search" id="q" type="search" placeholder="搜尋功能或名詞，例如：複核、演練、匯出" aria-label="搜尋使用說明" autocomplete="off">
+      <span class="spacer"></span>
+      <a class="stat-link" href="index.html">回到平台</a>
+    </div>
+  </div>
+
+  <div class="wrap help-layout">
+    <nav class="toc" id="toc" aria-label="目錄"></nav>
+
+    <main class="doc" id="doc">
+      <h1>堰塞湖事件研判平台 · 使用說明</h1>
+      <p class="lead">先看最前面的四張圖：值班從哪裡開始、畫面上什麼在哪裡、事件怎麼處理、事件狀態怎麼變。圖上的方塊都可以點，會跳到詳細說明。後面依功能分節；上方搜尋框打關鍵字，只留下有提到的段落。平台上各區塊旁的「?」也會直接開到這裡對應的段落。</p>
+      <p class="no-hit" id="noHit" hidden>找不到相關說明，換個關鍵字試試（例如「優先」「查證」「地圖」）。</p>
+
+      <section id="quick">
+        <h2>圖解：值班快速上手</h2>
+
+        <div class="sub-sec" id="quick-start">
+          <h3>圖 1　一上班先看什麼</h3>
+          <div class="fig">
+            <div class="fig-cap">由上往下照順序看；點方塊看詳細說明</div>
+            <div class="fc">
+              <a class="fc-step s-start" href="#layout"><span class="n">1</span>打開平台<span>一打開就是「值班 · 即時監看」，不用切換</span></a>
+              <div class="fc-arrow"></div>
+              <a class="fc-step" href="#status"><span class="n">2</span>看頂端那一行狀態<span>資料幾點更新？有沒有寫「失敗」「沿用上一次」「未更新」？</span></a>
+              <div class="fc-arrow"></div>
+              <div class="fc-q">畫面上方有紅色的「警戒橫幅」或「資料可能過舊」嗎？</div>
+              <div class="fc-branch">
+                <div class="fc-col">
+                  <span class="fc-tag yes">有</span>
+                  <a class="fc-step s-warn" href="#fresh">先處理提示<span>警戒：記下地區，留意該區窗格<br>資料過舊：通知系統負責人，畫面結果不能當成現況</span></a>
+                  <div class="fc-arrow"></div>
+                  <span class="fc-tag">處理完，繼續往下</span>
+                </div>
+                <div class="fc-col">
+                  <span class="fc-tag no">沒有</span>
+                  <div class="fc-step"><span>資料是新的，直接往下</span></div>
+                </div>
+              </div>
+              <div class="fc-arrow"></div>
+              <a class="fc-step" href="#todo"><span class="n">3</span>看「待處理」清單<span>所有監看窗格最新一期的高、中優先事件，高的排最前面</span></a>
+              <div class="fc-arrow"></div>
+              <div class="fc-q">清單裡有事件嗎？</div>
+              <div class="fc-branch">
+                <div class="fc-col">
+                  <span class="fc-tag yes">有</span>
+                  <a class="fc-step" href="#card"><span class="n">4</span>從最上面一筆點進去<span>看事件卡，依圖 3 處理；紅框「尚未查證 · 已 X 天」優先</span></a>
+                </div>
+                <div class="fc-col">
+                  <span class="fc-tag no">沒有</span>
+                  <a class="fc-step" href="#faq-empty">本期不用處理<span>很正常；有新一期或「有新資料」提示時再看一次</span></a>
+                </div>
+              </div>
+              <div class="fc-arrow"></div>
+              <a class="fc-step s-end" href="#verify"><span class="n">5</span>記錄查證、交班前匯出<span>每件查證完都按「儲存查證紀錄」；交班前「匯出全部查證紀錄」交給下一班</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-sec" id="quick-map">
+          <h3>圖 2　畫面上什麼在哪裡</h3>
+          <p>下面是平台實際的值班畫面截圖（2026-11-01），分成上半部與下半部。圖上的數字框可以點，跳到該功能的說明；滑鼠停在框上會顯示名稱。</p>
+          <div class="fig">
+            <div class="fig-cap">上半部：頂端列、提示、待處理、監看窗格、衛星過境 · <a href="help-img/duty-top.jpg" target="_blank" rel="noopener">看大圖</a></div>
+            <div class="shot">
+              <img src="help-img/duty-top.jpg" alt="值班畫面上半部截圖" width="1400" height="885" loading="lazy">
+              <a class="hot" href="#layout" style="left:16.00%;top:0%;width:10.71%;height:6.33%" title="分頁：值班／全台清冊"><span>1</span></a>
+              <a class="hot" href="#status" style="left:46.29%;top:1.02%;width:42.50%;height:3.95%" title="狀態列：更新時間、警戒、失敗與影響"><span>2</span></a>
+              <a class="hot" href="#quick" style="left:90.64%;top:1.02%;width:6.57%;height:3.95%" title="使用說明（開新分頁）"><span>3</span></a>
+              <a class="hot" href="#drill" style="left:80.36%;top:9.83%;width:16.86%;height:4.41%" title="進入演練模式（歷史事件回放）"><span>4</span></a>
+              <a class="hot" href="#fresh" style="left:2.79%;top:25.99%;width:94.43%;height:4.97%" title="資料可能過舊（有才出現）"><span>5</span></a>
+              <a class="hot r" href="#todo" style="left:2.86%;top:31.98%;width:94.29%;height:4.75%" title="待處理：各窗格最新一期要處理的事件"><span>6</span></a>
+              <a class="hot" href="#todo" style="left:2.86%;top:36.05%;width:94.29%;height:7.12%" title="還沒有分析結果的窗格（有才出現）"><span>7</span></a>
+              <a class="hot" href="#windows" style="left:9.43%;top:78.42%;width:34.71%;height:4.18%" title="監看窗格：事件數、最新一期幾天前"><span>8</span></a>
+              <a class="hot" href="#passes" style="left:2.79%;top:85.99%;width:94.43%;height:13.33%" title="衛星過境：每一期一格，點較早的看前幾期"><span>9</span></a>
+            </div>
+            <ol class="shot-key">
+              <li><a href="#layout"><b>1</b>分頁：值班／全台清冊</a></li>
+              <li><a href="#status"><b>2</b>狀態列：更新時間、警戒、失敗與影響</a></li>
+              <li><a href="#quick"><b>3</b>使用說明（開新分頁）</a></li>
+              <li><a href="#drill"><b>4</b>進入演練模式（歷史事件回放）</a></li>
+              <li><a href="#fresh"><b>5</b>資料可能過舊（有才出現）</a></li>
+              <li><a href="#todo"><b>6</b>待處理：各窗格最新一期要處理的事件</a></li>
+              <li><a href="#todo"><b>7</b>還沒有分析結果的窗格（有才出現）</a></li>
+              <li><a href="#windows"><b>8</b>監看窗格：事件數、最新一期幾天前</a></li>
+              <li><a href="#passes"><b>9</b>衛星過境：每一期一格，點較早的看前幾期</a></li>
+            </ol>
+            <p class="shot-note">截圖時沒有發布中的警戒，所以看不到紅色警戒橫幅；有警戒時它會出現在頂端列正下方（見<a href="#alert-banner">警戒橫幅</a>）。</p>
+          </div>
+          <div class="fig">
+            <div class="fig-cap">下半部：事件清單、小地圖、新聞候選（左）與事件卡（右） · <a href="help-img/duty-board.jpg" target="_blank" rel="noopener">看大圖</a></div>
+            <div class="shot">
+              <img src="help-img/duty-board.jpg" alt="值班畫面下半部截圖" width="1340" height="1240" loading="lazy">
+              <a class="hot" href="#passes" style="left:15.52%;top:2.26%;width:21.42%;height:1.69%" title="下一期日期與還有幾天"><span>10</span></a>
+              <a class="hot" href="#queue" style="left:0.75%;top:7.10%;width:39.63%;height:10.08%" title="這個窗格這一期的事件清單"><span>11</span></a>
+              <a class="hot" href="#minimap" style="left:4.63%;top:16.77%;width:31.79%;height:34.35%" title="小地圖：事件位置、底圖"><span>12</span></a>
+              <a class="hot" href="#news" style="left:0.75%;top:55.89%;width:39.63%;height:43.71%" title="新聞候選"><span>13</span></a>
+              <a class="hot" href="#card-top" style="left:42.09%;top:11.94%;width:55.07%;height:3.15%" title="座標（含 TWD97）：複製、在地圖上開啟"><span>14</span></a>
+              <a class="hot" href="#card-top" style="left:40.00%;top:15.97%;width:59.25%;height:7.58%" title="建議行動、規模、研判信心、首次出現"><span>15</span></a>
+              <a class="hot" href="#card-top" style="left:41.94%;top:24.27%;width:55.37%;height:23.63%" title="建議任務、複製任務單"><span>16</span></a>
+              <a class="hot" href="#verify" style="left:41.94%;top:48.79%;width:55.37%;height:16.13%" title="人工查證：選結果、填人名、儲存、匯出"><span>17</span></a>
+              <a class="hot" href="#card-folds" style="left:41.94%;top:65.73%;width:55.37%;height:19.76%" title="佐證細節（點開）：摘要、證據、逐期紀錄、規則"><span>18</span></a>
+            </div>
+            <ol class="shot-key" start="10">
+              <li><a href="#passes"><b>10</b>下一期日期與還有幾天</a></li>
+              <li><a href="#queue"><b>11</b>這個窗格這一期的事件清單</a></li>
+              <li><a href="#minimap"><b>12</b>小地圖：事件位置、底圖</a></li>
+              <li><a href="#news"><b>13</b>新聞候選</a></li>
+              <li><a href="#card-top"><b>14</b>座標（含 TWD97）：複製、在地圖上開啟</a></li>
+              <li><a href="#card-top"><b>15</b>建議行動、規模、研判信心、首次出現</a></li>
+              <li><a href="#card-top"><b>16</b>建議任務、複製任務單</a></li>
+              <li><a href="#verify"><b>17</b>人工查證：選結果、填人名、儲存、匯出</a></li>
+              <li><a href="#card-folds"><b>18</b>佐證細節（點開）：摘要、證據、逐期紀錄、規則</a></li>
+            </ol>
+          </div>
+          <table>
+            <thead><tr><th>我想知道…</th><th>看截圖上的</th></tr></thead>
+            <tbody>
+              <tr><td>資料是不是最新的</td><td>2 狀態列、5 過舊提示、8 按鈕上的「幾天前」</td></tr>
+              <tr><td>現在有沒有警戒</td><td>2 狀態列；有警戒時頂端還會有紅色橫幅</td></tr>
+              <tr><td>今天要處理哪些事件</td><td>6 待處理（7 是還沒有結果的窗格）</td></tr>
+              <tr><td>某個地點的情況</td><td>8 點那個窗格</td></tr>
+              <tr><td>前幾天（前幾期）的結果</td><td>9 點較早的那一格</td></tr>
+              <tr><td>下一期什麼時候</td><td>10</td></tr>
+              <tr><td>事件在哪裡、座標</td><td>12 小地圖、14 座標（可複製、開地圖）</td></tr>
+              <tr><td>這件事要多快處理、有多確定</td><td>15</td></tr>
+              <tr><td>要派誰、做什麼</td><td>16 建議任務（可複製任務單）</td></tr>
+              <tr><td>記錄查證結果、交班</td><td>17 人工查證</td></tr>
+              <tr><td>為什麼系統這樣排</td><td>18 佐證細節</td></tr>
+              <tr><td>有沒有相關新聞</td><td>13 新聞候選</td></tr>
+              <tr><td>歷年堰塞湖紀錄、風險</td><td>1 切到「全台清冊」</td></tr>
+              <tr><td>練習或看歷史案例</td><td>4 演練模式</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub-sec" id="quick-handle">
+          <h3>圖 3　一個事件怎麼處理</h3>
+          <div class="fig">
+            <div class="fig-cap">看事件卡上的優先等級，走對應的那一欄</div>
+            <div class="lanes">
+              <div class="lane h">
+                <div class="lane-head">高優先<span>建議立即查證</span></div>
+                <div class="fc-arrow"></div>
+                <a class="fc-step" href="#card-top">按「複製任務單」<span>貼給現地或 UAV 團隊</span></a>
+                <div class="fc-arrow"></div>
+                <a class="fc-step" href="#card-top">派 UAV／現地查證<span>壩體、湖面、溢流風險</span></a>
+                <div class="fc-arrow"></div>
+                <div class="fc-step">取得他單位光學、航拍成果<span>已有的直接串接，不重做</span></div>
+                <div class="fc-arrow"></div>
+                <div class="fc-step">通報主管與下游</div>
+              </div>
+              <div class="lane m">
+                <div class="lane-head">中優先<span>建議人工確認</span></div>
+                <div class="fc-arrow"></div>
+                <a class="fc-step" href="#card-folds">看 SAR 證據圖<span>「逐期偵測紀錄」裡的證據圖：在河谷底還是坡面陰影？</span></a>
+                <div class="fc-arrow"></div>
+                <div class="fc-step">雲況許可時調光學影像</div>
+                <div class="fc-arrow"></div>
+                <a class="fc-step" href="#passes">等下一期複核<span>看事件清單右上「下一期」；先不派 UAV</span></a>
+              </div>
+              <div class="lane l">
+                <div class="lane-head">低優先<span>暫時觀察</span></div>
+                <div class="fc-arrow"></div>
+                <div class="fc-step">不需立即處理<span>多半是複核沒持續的誤報</span></div>
+                <div class="fc-arrow"></div>
+                <div class="fc-step">下一期系統自動再看<span>有變化會自動升級</span></div>
+              </div>
+            </div>
+            <div class="fc-merge">
+              <div class="fc-arrow"></div>
+              <a class="fc-step s-end" href="#verify">有結果就記錄「人工查證」<span>確認為堰塞湖 → 信心顯示為高｜持續觀察｜排除 → 移到清單最下面</span></a>
+            </div>
+          </div>
+          <div class="note warn">事件卡上有「提醒」（例如崩塌堆積）或「證據衝突」時，先看完再決定，這兩種情況誤報的機會較高。</div>
+        </div>
+
+        <div class="sub-sec" id="quick-life">
+          <h3>圖 4　事件的狀態怎麼變</h3>
+          <div class="fig">
+            <div class="fig-cap">每次衛星經過，系統用下一期影像「複核」同一個位置</div>
+            <div class="fc">
+              <a class="fc-step s-start" href="#persistence">第一次出現：待複核<span>只有一期，多半是中優先；標「本期新增」</span></a>
+              <div class="fc-arrow"></div>
+              <div class="fc-q">下一期同位置還有水嗎？</div>
+              <div class="fc-branch">
+                <div class="fc-col">
+                  <span class="fc-tag yes">有</span>
+                  <a class="fc-step" href="#persistence">已確認持續<span>附近有崩塌 → 高優先</span></a>
+                  <div class="fc-arrow"></div>
+                  <span class="fc-tag">之後某一期不見了</span>
+                  <a class="fc-step s-warn" href="#persistence">持續性中斷<span>可能潰決或排空 → 高優先，立即查證</span></a>
+                </div>
+                <div class="fc-col">
+                  <span class="fc-tag no">沒有</span>
+                  <a class="fc-step" href="#persistence">複核未持續<span>多半是誤報 → 低優先，暫時觀察</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>這個平台在做什麼</h2>
+        <p>堰塞湖常在颱風、豪雨或地震後的山區形成，雲多、路斷時光學影像和現地人員都很難馬上到位。平台用 <b>Sentinel-1 衛星雷達（SAR）</b> 每一次經過時的影像，找出「事件前沒有、事件後才出現的疑似水體」，整理成<b>事件</b>，排出處理的先後，並建議下一步任務，最後由值班人員查證、決定。</p>
+        <div class="sub-sec" id="principles">
+          <h3>三條原則</h3>
+          <ul>
+            <li><b>SAR 提供證據，不直接下結論。</b>雷達看到的是「水面變平滑」，崩塌堆積、陰影也可能看起來像水。</li>
+            <li><b>系統整理與排序，人員做最後判斷。</b>系統的研判不會因人工查證被覆寫，只在旁邊註記人工結果。</li>
+            <li><b>只有 SAR 證據時，研判信心最高到「中」。</b>要有光學、航拍、判釋或現地等獨立證據，信心才會到「高」。</li>
+          </ul>
+        </div>
+        <div class="sub-sec" id="flow">
+          <h3>處理流程</h3>
+          <p>多源資料 → 疑似事件 → 證據融合 → 優先排序 → 人工查證 → 任務編排。前四步由系統自動完成，後兩步由值班人員操作。</p>
+        </div>
+      </section>
+
+      <section id="layout">
+        <h2>畫面總覽</h2>
+        <table>
+          <thead><tr><th>位置</th><th>內容</th></tr></thead>
+          <tbody>
+            <tr><td>頂端列</td><td>系統名稱；兩個分頁「值班」「全台清冊」；一行資料狀態；「使用說明」（就是這一頁，會開新分頁）</td></tr>
+            <tr><td>值班分頁</td><td>一打開的畫面。即時監看各窗格最新一期的疑似事件；右上角的按鈕可進入<a href="#drill">演練模式</a></td></tr>
+            <tr><td>全台清冊分頁</td><td>歷年堰塞湖紀錄、3D 地圖、風險背景，見<a href="#inventory">全台清冊</a></td></tr>
+          </tbody>
+        </table>
+        <div class="sub-sec" id="urls">
+          <h3>網址直接開某個畫面</h3>
+          <table>
+            <tbody>
+              <tr><td><code>index.html#duty</code></td><td>值班（即時監看）</td></tr>
+              <tr><td><code>index.html#drill</code></td><td>直接進演練模式（2025 馬太鞍溪回放），報告或教學用</td></tr>
+              <tr><td><code>index.html#inventory</code></td><td>全台清冊</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="live">
+        <h2>值班：即時監看</h2>
+        <p>值班分頁預設是即時監看，看的是系統自動選出的<b>監看窗格</b>最近幾次衛星經過的結果。</p>
+        <div class="sub-sec" id="todo">
+          <h3>待處理清單</h3>
+          <p>即時監看最上面的清單，把<b>所有監看窗格最新一期</b>的高、中優先事件集中在一起，高優先在前、同等級面積大的在前。不用一個一個窗格點進去看，交班時也先看這張。</p>
+          <p>每一列寫出窗格名稱、事件代號、建議行動、持續性與規模，右邊是查證狀態：已有人工紀錄的顯示結果；還沒有的顯示「尚未查證 · 已 X 天」（從事件第一次出現算起，高優先以紅框標示）。點一列就切到那個窗格、選好那個事件。人工排除的事件不列入；低優先只在右上角寫件數。</p>
+        </div>
+        <div class="sub-sec" id="fresh">
+          <h3>資料過舊提示</h3>
+          <p>衛星約每 6 天經過一次。某個窗格最新一期超過 12 天，或系統已經記到更新的影像卻還沒分析，頂端會出現紅色提示「資料可能過舊」，窗格按鈕上的天數也變紅，頂端狀態列會寫「即時監看影像已 X 天未更新」。看到這個提示時，畫面上的結果不能當作現況，請通知負責系統的人檢查每日自動更新。</p>
+        </div>
+        <div class="sub-sec" id="windows">
+          <h3>監看窗格</h3>
+          <p>每個窗格是以某個地點為中心、邊長 4 km 的範圍。系統每兩天自動更新時，會把下列地點加入監看：清冊中仍「監測中」的堰塞湖、發布土石流或大規模崩塌警戒的地區、近幾天雨量特別大的大規模崩塌潛勢區。</p>
+          <p>窗格按鈕上的小方塊是<b>最新一期</b>的高優先（紅）、中優先（黃）事件數，沒有方塊表示最新一期沒有需要處理的事件；後面的「X 天前」是最新一期距今多久，過舊時變紅。標「（已停止）」的窗格已不再抓新影像。</p>
+        </div>
+        <div class="sub-sec" id="passes">
+          <h3>衛星過境（時點列）</h3>
+          <p>每一格是一次衛星經過留下的結果，格內三個數字依序是高、中、低優先的事件數。即時監看預設停在標有「最新」的那一格，每格都寫出距今幾天。事件清單右上角寫下一期的日期與還有幾天；如果下一期應該已經過了卻還沒有資料，會寫「應已過境 X 天，尚無資料」。</p>
+          <p><b>看前幾次的結果：</b>點較早的那一格即可，事件清單和事件卡會換成當時的內容。每個時點只用當時已取得的影像，不會偷看到之後的資料。這時下方會出現黃色提示「不是最新一期」，按「回到最新」就回來。</p>
+          <p>衛星不是每天都經過。花蓮一帶有升軌、降軌兩條軌道，合起來大約每 6 天一期（單一軌道約 12 天），所以時點之間會隔幾天。</p>
+        </div>
+        <div class="sub-sec" id="queue">
+          <h3>事件清單</h3>
+          <p>這一期所有疑似事件，依優先等級分成三組，同一組內面積大的在前。每一列顯示事件代號（E1、E2…，依首次出現的順序）、建議行動、持續性、相對規模、與清冊壩址的距離。</p>
+          <table>
+            <tbody>
+              <tr><td><span class="k">本期新增</span></td><td>這一期才第一次出現</td></tr>
+              <tr><td><span class="k h">尚未查證 · 已 X 天</span></td><td>高優先事件還沒有人工查證紀錄，X 是從第一次出現算起的時間（演練模式以回放的時點計算）</td></tr>
+              <tr><td><span class="k">人工確認</span> 等</td><td>已有人工查證紀錄（見<a href="#verify">人工查證</a>）；被人工排除的事件移到最下面的「已人工排除」</td></tr>
+              <tr><td><span class="k">事後查證</span></td><td>只出現在演練模式的歷史案例：回放結束後才做的查證（例如負案例用光學影像確認不是水）</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="minimap">
+          <h3>小地圖</h3>
+          <p>窗格範圍的平面圖，每格 1 km。色塊是 SAR 判定的新增水體（顏色同優先等級），點色塊等於點清單中的事件。× 是清冊登載的壩址（事後登載，事件當下不一定已知）。</p>
+          <ul>
+            <li><b>底圖</b>：事件前的光學影像，不含事件後的畫面。</li>
+            <li><b>航照</b>：只有馬太鞍溪有；只顯示該時點已經拍到的最新一張。</li>
+          </ul>
+          <p>陡坡會被遮罩（雷達在陡坡上不可靠），所以湖面靠山壁的部分可能沒被畫到，色塊面積要當作下限。</p>
+        </div>
+        <div class="sub-sec" id="news">
+          <h3>新聞候選</h3>
+          <p>系統自動搜尋新聞，標題或內文對到監看窗格或清冊地點的，列在事件清單下方，等人工確認。<b>新聞不會自動進入研判</b>，確認後才會當作外部證據。只在即時監看顯示。</p>
+        </div>
+      </section>
+
+      <section id="card">
+        <h2>事件卡</h2>
+        <p>點清單中的事件後右邊（窄螢幕在下方）的卡片。上半部是判斷要用的，直接顯示；下半部是佐證，點了才展開。寬螢幕上卡片固定在右側，往下捲清單、小地圖時仍看得到。</p>
+        <div class="sub-sec" id="card-top">
+          <h3>直接顯示的部分</h3>
+          <table>
+            <tbody>
+              <tr><td>標籤列</td><td>優先等級、持續性、SAR 證據強度（A／B／C）、是否本期新增、人工查證結果</td></tr>
+              <tr><td>位置</td><td>經緯度與 TWD97 二度分帶座標（現場與各單位常用）。「複製座標」兩種一起複製；「在地圖上開啟」用 Google 地圖開這個點，手機可直接導航。任務單裡也附這兩項</td></tr>
+              <tr><td>建議行動</td><td>依優先等級：建議立即查證／建議人工確認／暫時觀察</td></tr>
+              <tr><td>規模（相對）</td><td>大／中／小，依 SAR 面積分級。SAR 面積偏低，只當下限，不換算蓄水量</td></tr>
+              <tr><td>研判信心</td><td>有多確定是堰塞湖，下方小字是主要理由</td></tr>
+              <tr><td>首次出現</td><td>第一次被偵測到的時間與最近一次</td></tr>
+              <tr><td>證據衝突</td><td>證據互相矛盾時出現，例如空間條件符合但下一期沒再出現</td></tr>
+              <tr><td>提醒</td><td>例如<a href="#caution">崩塌堆積提醒</a>。只提示，不改優先與信心</td></tr>
+              <tr><td>建議任務</td><td>系統依優先等級建議的下一步，每項附理由。「複製任務單」會把事件、位置、摘要、任務與證據缺口整理成文字，可直接貼到通訊軟體</td></tr>
+              <tr><td>人工查證</td><td>見<a href="#verify">人工查證</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="card-folds">
+          <h3>點了才展開的部分</h3>
+          <table>
+            <tbody>
+              <tr><td>研判摘要</td><td>一句話說明為什麼這樣排</td></tr>
+              <tr><td>證據</td><td>逐項列出：<b>✓</b> 支持、<b>✗</b> 反對、<b>·</b> 背景；右邊是證據缺口（例如尚未複核、缺光學影像、缺人工查證）。有出處的外部證據附「來源」連結</td></tr>
+              <tr><td>逐期偵測紀錄</td><td>每一期的影像時間、面積、複核結果（持續／未持續／待複核）與證據圖</td></tr>
+              <tr><td>命中規則</td><td>系統排序時實際套用的規則，供查核</td></tr>
+              <tr><td>對照清冊</td><td>事件附近有清冊登載的堰塞湖時，可跳到全台清冊看那一筆</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="priority">
+        <h2>優先等級與研判信心</h2>
+        <p>兩件不同的事：<b>優先等級</b>是「要多快處理」，<b>研判信心</b>是「有多確定是堰塞湖」。事件卡上的標籤，滑鼠停在上面也會顯示下列說明。</p>
+        <div class="sub-sec" id="priority-levels">
+          <h3>優先等級</h3>
+          <table>
+            <tbody>
+              <tr><td><span class="k h">高</span></td><td>建議立即查證：多期 SAR 一致且附近有崩塌、單期 SAR 有他單位獨立觀測佐證，或前期已確認、最新一期未見（可能潰決或排空）</td></tr>
+              <tr><td><span class="k m">中</span></td><td>建議人工確認：只有一期 SAR、空間條件符合，待下一期複核</td></tr>
+              <tr><td><span class="k l">低</span></td><td>暫時觀察：下一期複核未持續，或附近沒有崩塌訊號</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="confidence">
+          <h3>研判信心</h3>
+          <table>
+            <tbody>
+              <tr><td><span class="k">高</span></td><td>有 SAR 以外的獨立證據：他單位光學、航拍、判釋、現地勘查，或人工查證確認</td></tr>
+              <tr><td><span class="k">中</span></td><td>只有 SAR，但跨期結果明確（已確認持續，或複核明確未持續）</td></tr>
+              <tr><td><span class="k">低</span></td><td>只有單期 SAR 尚未複核，或前後期結果不一致</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="persistence">
+          <h3>持續性</h3>
+          <table>
+            <tbody>
+              <tr><td>已確認持續</td><td>下一期同位置仍有水，或兩期以上都偵測到且沒有複核失敗</td></tr>
+              <tr><td>待複核</td><td>只有一期，或下一期影像還沒取得</td></tr>
+              <tr><td>複核未持續</td><td>下一期同位置的水體重疊不足，多半是誤報</td></tr>
+              <tr><td>持續性中斷</td><td>曾確認，但最新一期不見了：可能潰決或排空，列高優先</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="grade">
+          <h3>SAR 證據強度 A／B／C</h3>
+          <p>只代表「雷達這邊的證據有多強」，不等於結論。A：附近有崩塌且跨期持續；B：附近有崩塌；C：只有貼著河道的新增水體。</p>
+        </div>
+      </section>
+
+      <section id="verify">
+        <h2>人工查證</h2>
+        <ol class="steps">
+          <li>在事件卡的「人工查證」選一個結果：<b>確認為堰塞湖</b>、<b>持續觀察</b>、<b>排除（非堰塞湖）</b>。</li>
+          <li>填查證人員與補充說明（例如「UAV 已確認壩體」「光學影像可見湖面」）。</li>
+          <li>按「儲存查證紀錄」。清單上會出現人工標籤；「確認」會把研判信心顯示為高，「排除」的事件移到清單最下面。</li>
+        </ol>
+        <div class="sub-sec" id="verify-store">
+          <h3>紀錄存在哪裡</h3>
+          <ul>
+            <li>只存在<b>這台電腦的這個瀏覽器</b>，換電腦或清除瀏覽資料就看不到，也不會同步給其他人。</li>
+            <li>要留存或交給別人，按「匯出全部查證紀錄」下載 JSON 檔。</li>
+            <li>按「清除」可刪掉這個事件的紀錄。</li>
+            <li>紀錄只在記錄的那個時點和之後的時點看得到；切回更早的時點時看不到，會提示「這個時點還看不到」。</li>
+            <li><b>演練模式的紀錄與即時監看分開存</b>，匯出檔也分開（<code>verification-records-drill.json</code>），練習時填的不會混進真的紀錄。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="drill">
+        <h2>演練模式</h2>
+        <p>用過去真實發生過的事件，照當時衛星一期一期取得影像的順序重播，看系統在每個時點會怎麼排、建議什麼。適合教學、報告與熟悉操作。</p>
+        <div class="note"><b>怎麼分辨：</b>演練模式頂端有紫色橫幅「演練模式：歷史事件回放，不是即時資料」。按橫幅上的「回到即時監看」離開。</div>
+        <div class="sub-sec" id="drill-cases">
+          <h3>可以看的案例</h3>
+          <table>
+            <tbody>
+              <tr><td>正案例</td><td>2025 馬太鞍溪（薇帕颱風）：湖 7/21 形成、9/23 溢流潰決。看系統如何從誤報中找出真的湖（E3）</td></tr>
+              <tr><td>負案例</td><td>2026 汛期同一個窗格、同一組參數：沒有湖時系統會不會亂報。E1 是崩塌堆積上的誤報，事件卡附事後光學查證</td></tr>
+              <tr><td>更多歷史案例</td><td>清冊中 2015 年以後、形成日期完整的其他堰塞湖，每座都用同一套流程回放</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="score">
+          <h3>系統歷史成績</h3>
+          <p>演練模式下方，或按「系統歷史成績」跳過去。把清冊中每座可回放的堰塞湖都跑過一次的統計：</p>
+          <ul>
+            <li><b>偵測到</b>：形成後到潰決前，壩址 1 km 內出現過事件。</li>
+            <li><b>隨機基準</b>：把壩址換成窗格內任意位置，碰巧 1 km 內有事件的期望筆數。偵測到的筆數要明顯多於這個數字，才表示系統真的有用。</li>
+            <li><b>逐湖明細</b>預設收起，點開後每一列是一座湖；點一列會開那座湖的回放、停在首次偵測的時點。「碰巧命中機率」≥ 40% 以琥珀色標示，代表那一列的偵測到可能只是碰巧。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="status">
+        <h2>系統狀態（頂端那一行）</h2>
+        <p>例如「資料更新 10/28 10:24 · 無警戒 · 1 步失敗」。系統每兩天自動更新一次資料，這一行告訴你資料有多新、有沒有警戒、有沒有步驟出錯。點一下展開：</p>
+        <table>
+          <tbody>
+            <tr><td>執行步驟</td><td>綠框成功、紅框失敗（滑鼠停在上面看錯誤訊息）、灰框略過。依序是：清冊、警戒、GEE 登入、雨量熱區、風險模型、監看名單、Sentinel-1、過境前雨量、底圖、新聞候選、儀表板資料</td></tr>
+            <tr><td>雨量資料時間</td><td>衛星雨量（GSMaP）通常落後 1～2 天；超過 48 小時以紅框標示</td></tr>
+            <tr><td>監看窗格</td><td>目前所有監看中的窗格、加入原因、使用的軌道、最新影像日期；點一個切到該窗格</td></tr>
+          </tbody>
+        </table>
+        <div class="note warn">某一步失敗不會擋住其他步驟，但相關資料可能停在上一次。狀態列會直接寫出影響，例如「警戒資料這次沒抓到，沿用上一次」。即時監看影像過舊時也會寫在這一行（見<a href="#fresh">資料過舊提示</a>）。</div>
+        <div class="sub-sec" id="alert-banner">
+          <h3>警戒橫幅</h3>
+          <p>有發布中的土石流或大規模崩塌警戒時，頂端會出現紅色橫幅，列出類型、則數與地點（附警戒等級）。警戒資料沒抓到、沿用上一次時，橫幅會標「沿用上一次」。</p>
+        </div>
+        <div class="sub-sec" id="new-data">
+          <h3>有新資料</h3>
+          <p>網頁開著時畫面不會自己換。平台每 10 分鐘（以及切回這個分頁時）檢查一次，系統有新的更新就在頂端提示「有新資料」，按「重新整理」載入。直接打開本機檔案（網址是 <code>file://</code>）時不會檢查。</p>
+        </div>
+      </section>
+
+      <section id="inventory">
+        <h2>全台清冊</h2>
+        <p>農業部農村發展及水土保持署的堰塞湖清冊（1979 年起），加上風險模型的背景資訊。這一頁是「歷史與背景」，事件當下的研判以值班分頁為準。</p>
+        <div class="sub-sec" id="kpi">
+          <h3>統計卡</h3>
+          <table>
+            <tbody>
+              <tr><td>監測中</td><td>清冊登載仍持續存在、需要監測的</td></tr>
+              <tr><td>高風險</td><td>風險模型判高風險，且清冊現況仍成立的</td></tr>
+              <tr><td>待補評估</td><td>還沒有風險模型結果（不等於低風險）</td></tr>
+              <tr><td>已穩定／已消失</td><td>歷史紀錄，次要統計</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub-sec" id="map3d">
+          <h3>3D 地圖</h3>
+          <ul>
+            <li>拖曳旋轉；右鍵或按住 Shift 拖曳平移；滾輪縮放；點一下回到預設視角。</li>
+            <li>「全螢幕」放大地圖。</li>
+            <li>圖層：堰塞湖點位、高風險標記、SAR 偵測範圍（目前只有馬太鞍溪）、點位名稱，可分別開關。</li>
+            <li>點位顏色是存續狀態（監測中、存在已穩定、已消失），大小是清冊登載的蓄水量。滑鼠停在點上看簡介，點一下在右邊顯示詳細資料。</li>
+          </ul>
+        </div>
+        <div class="sub-sec" id="lake-detail">
+          <h3>湖泊詳細資料</h3>
+          <p>風險機率、現況修正後的風險（模型判高但清冊已穩定時下修）、存續狀態、風險快照日期，以及建議行動與風險模型依據。展開「基本資料」看蓄水量、形成年度、持續時間與清冊原始欄位。</p>
+          <div class="note warn">風險是某一天的<b>批次模型推論</b>，不是即時資料，也不能直接跟事件回放的結果比較。有事件回放的湖，會有一個連結直接開那次事件的演練模式。</div>
+        </div>
+        <div class="sub-sec" id="filters">
+          <h3>清單與篩選</h3>
+          <p>可依存續狀態、風險等級、誘因（地震、颱風、降雨、崩塌）、縣市、關鍵字（名稱、縣市、鄉鎮、地標）篩選，條件可以疊加；「清除全部」一次取消。下方「年度分布」可點年份篩選。</p>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>常見問題</h2>
+        <div class="sub-sec" id="faq-empty">
+          <h3>即時監看什麼事件都沒有，是壞掉了嗎？</h3>
+          <p>大多數時候本來就沒有新的堰塞湖，清單是空的很正常。先確認資料是新的：頂端那一行有沒有失敗或「未更新」，即時監看上方有沒有紅色的「資料可能過舊」。</p>
+        </div>
+        <div class="sub-sec" id="faq-latest">
+          <h3>為什麼「最新」那一期不是今天？</h3>
+          <p>要等衛星經過、影像上架、下一次自動更新跑完才會出現，通常落後幾天。衛星約每 6 天才經過同一個地方一次。</p>
+        </div>
+        <div class="sub-sec" id="faq-medium">
+          <h3>看起來很像湖，為什麼信心只有「中」？</h3>
+          <p>只有雷達證據時，信心最高到中，這是刻意的設計：雷達在崩塌堆積、陡坡陰影上也會看到類似水的訊號。取得光學、航拍或現地確認後，用人工查證「確認」，信心就會顯示為高。</p>
+        </div>
+        <div class="sub-sec" id="caution">
+          <h3>「崩塌堆積提醒」是什麼？</h3>
+          <p>系統比對一年前到事件前的影像，標出事件發生前就已存在的崩塌堆積區。疑似水體有 10% 以上落在裡面時，事件卡會提醒「可能是崩塌堆積上的雷達陰影或平滑泥砂，建議以光學影像確認」。提醒不改優先與信心。每日自動監看與 2015 年的案例沒有一年前的影像，不會提醒。</p>
+        </div>
+        <div class="sub-sec" id="faq-volume">
+          <h3>為什麼不告訴我湖有多少水？</h3>
+          <p>雷達只看得到水面，看不到水深，而且陡坡遮罩會讓面積偏小。所以只給大／中／小的相對規模；清冊上的蓄水量是官方登載的數字，會標明「清冊登載」。</p>
+        </div>
+        <div class="sub-sec" id="faq-records">
+          <h3>我的查證紀錄不見了？</h3>
+          <p>紀錄只存在原本那台電腦的瀏覽器。換了電腦、用無痕視窗或清除瀏覽資料都會看不到。也可能是切到了比記錄時更早的時點，或是在演練模式找即時監看的紀錄（兩邊分開存）。重要的紀錄請記得匯出。</p>
+        </div>
+      </section>
+
+      <section id="terms">
+        <h2>名詞解釋</h2>
+        <table>
+          <tbody>
+            <tr><td>SAR</td><td>合成孔徑雷達。衛星自己發射微波，穿透雲層、日夜都能拍；平靜水面會把訊號反射走，影像上看起來暗</td></tr>
+            <tr><td>Sentinel-1</td><td>歐洲太空總署的雷達衛星，影像免費公開，本平台的主要資料</td></tr>
+            <tr><td>升軌／降軌</td><td>衛星由南往北（傍晚經過台灣）或由北往南（清晨）。兩種方向照射角度相反，陰影位置不同，所以各自獨立複核</td></tr>
+            <tr><td>時點</td><td>一次衛星過境，回放與時點列的最小單位</td></tr>
+            <tr><td>複核</td><td>用下一期影像檢查同一個位置是否仍有水</td></tr>
+            <tr><td>IoU（重疊度）</td><td>兩期水體範圍的重疊比例，0 到 1；≥ 0.3 算持續</td></tr>
+            <tr><td>疑似水體</td><td>事件後雷達訊號低於 −18 dB、事件前沒有的區域；還不等於湖</td></tr>
+            <tr><td>窗格</td><td>以某地點為中心、邊長 4 km 的分析範圍</td></tr>
+            <tr><td>清冊壩址</td><td>清冊登載的堰塞湖位置，多半是事件後才登載</td></tr>
+            <tr><td>外部證據</td><td>他單位的光學影像判釋、航拍、現地勘查等，與 SAR 互相獨立</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <span>堰塞湖事件研判平台 · OSSInt 2026</span>
+      <a class="stat-link" href="index.html">回到平台</a>
+    </div>
+  </footer>
+
+  <script>
+    'use strict';
+    /* 目錄由各節標題自動產生；搜尋只留下有提到關鍵字的段落並標記 */
+    (() => {
+      const doc = document.getElementById('doc');
+      const toc = document.getElementById('toc');
+      const sections = [...doc.querySelectorAll('section')];
+
+      toc.innerHTML = '<ol>' + sections.map(s => {
+        const subs = [...s.querySelectorAll('.sub-sec')].map(d =>
+          `<li data-for="${d.id}"><a href="#${d.id}">${d.querySelector('h3').textContent}</a></li>`).join('');
+        return `<li data-for="${s.id}"><a href="#${s.id}">${s.querySelector('h2').textContent}</a>${subs ? `<ol>${subs}</ol>` : ''}</li>`;
+      }).join('') + '</ol>';
+
+      // 捲動時標出目前所在的節
+      const links = [...toc.querySelectorAll('a')];
+      const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1)));
+      const spy = () => {
+        let cur = 0;
+        targets.forEach((t, i) => { if (t && !t.closest('.is-hidden') && t.getBoundingClientRect().top < 120) cur = i; });
+        links.forEach((a, i) => a.classList.toggle('is-on', i === cur));
+      };
+      window.addEventListener('scroll', spy, { passive: true });
+      spy();
+
+      // 搜尋：以小段落（.sub-sec，沒有小段落的節以整節）為單位
+      const blocks = sections.flatMap(s => {
+        const subs = [...s.querySelectorAll('.sub-sec')];
+        return [{ el: s, own: [...s.children].filter(c => !c.classList.contains('sub-sec')) }, ...subs.map(d => ({ el: d, own: [d] }))];
+      });
+      const original = new Map();
+      doc.querySelectorAll('p, li, td, h2, h3').forEach(el => original.set(el, el.innerHTML));
+      const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+      function search(q) {
+        original.forEach((html, el) => { el.innerHTML = html; });
+        doc.querySelectorAll('.is-hidden').forEach(el => el.classList.remove('is-hidden'));
+        toc.querySelectorAll('.is-hidden').forEach(el => el.classList.remove('is-hidden'));
+        const words = q.trim().split(/\s+/).filter(Boolean);
+        document.getElementById('noHit').hidden = true;
+        if (!words.length) return;
+        const re = new RegExp(words.map(esc).join('|'), 'gi');
+        const has = new RegExp(words.map(esc).join('|'), 'i');
+        const hit = el => words.every(w => el.textContent.toLowerCase().includes(w.toLowerCase()));
+        let any = false;
+        sections.forEach(s => {
+          const subs = [...s.querySelectorAll('.sub-sec')];
+          const ownText = [...s.children].filter(c => !c.classList.contains('sub-sec'));
+          const ownHit = ownText.some(hit);
+          let subHit = false;
+          subs.forEach(d => {
+            const ok = hit(d);
+            d.classList.toggle('is-hidden', !ok);
+            toc.querySelector(`[data-for="${d.id}"]`).classList.toggle('is-hidden', !ok);
+            subHit = subHit || ok;
+          });
+          // 節的開頭段落有命中時，整節顯示
+          if (ownHit) subs.forEach(d => { d.classList.remove('is-hidden'); toc.querySelector(`[data-for="${d.id}"]`).classList.remove('is-hidden'); });
+          const show = ownHit || subHit;
+          s.classList.toggle('is-hidden', !show);
+          toc.querySelector(`[data-for="${s.id}"]`).classList.toggle('is-hidden', !show);
+          any = any || show;
+        });
+        // 標記命中的字（只動文字節點，不破壞連結）
+        doc.querySelectorAll('section:not(.is-hidden) p, section:not(.is-hidden) li, section:not(.is-hidden) td, section:not(.is-hidden) h3').forEach(el => {
+          if (el.closest('.is-hidden')) return;
+          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+          const nodes = [];
+          while (walker.nextNode()) nodes.push(walker.currentNode);
+          nodes.forEach(n => {
+            if (!has.test(n.nodeValue)) return;
+            const span = document.createElement('span');
+            span.innerHTML = n.nodeValue.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])).replace(re, m => `<mark>${m}</mark>`);
+            n.replaceWith(...span.childNodes);
+          });
+        });
+        document.getElementById('noHit').hidden = any;
+        window.scrollTo({ top: 0 });
+      }
+
+      const input = document.getElementById('q');
+      let t;
+      input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => search(input.value), 150); });
+      // 網址帶 ?q=關鍵字 時直接搜尋
+      const q0 = new URLSearchParams(location.search).get('q');
+      if (q0) { input.value = q0; search(q0); }
+    })();
+  </script>
+</body>
+
+</html>

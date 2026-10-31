@@ -106,6 +106,48 @@ class TestGeometryMask(unittest.TestCase):
         self.assertGreater(s_aniso[3, 3], s_iso[3, 3])
 
 
+class TestRayTracedShadow(unittest.TestCase):
+    """B1：被前方山脊擋住的平地，局部判定抓不到，射線追蹤要抓到。"""
+
+    def setUp(self):
+        # 西側一座 300 m 高的陡崖高台（第 0～9 欄），東邊是平地。影長 300 × tan 39° ≈ 243 m
+        self.dem = np.zeros((20, 45))
+        self.dem[:, :10] = 300.0
+
+    def test_flat_ground_behind_cliff_is_shadow_on_ascending(self):
+        asc = M.S1_LOOK_AZIMUTH_DEG["ASCENDING"]          # 往東看，衛星在西側
+        _, local = M.layover_shadow_mask(self.dem, 10.0, 39.0, asc)
+        ray = M.ray_traced_shadow(self.dem, 10.0, 39.0, asc)
+        self.assertFalse(local[10, 20:30].any())          # 平地本身不陡，局部判定看不到
+        self.assertTrue(ray[10, 12:30].all())             # 崖腳往東 200 m 內都被擋住
+        self.assertFalse(ray[10, 40:].any())              # 300 m 外照得到
+
+    def test_same_ground_is_lit_on_descending(self):
+        desc = M.S1_LOOK_AZIMUTH_DEG["DESCENDING"]        # 往西看，衛星在東側，平地朝向衛星
+        self.assertFalse(M.ray_traced_shadow(self.dem, 10.0, 39.0, desc)[10, 30])
+
+    def test_cliff_top_is_lit(self):
+        # 局部判定用有限差分，會把崖頂邊緣也標成陰影；射線追蹤看的是視線，崖頂照得到。
+        # 所以正式流程取兩者聯集（見 test_option_on_widens_shadow_and_reports_foreshortening）
+        asc = M.S1_LOOK_AZIMUTH_DEG["ASCENDING"]
+        self.assertFalse(M.ray_traced_shadow(self.dem, 10.0, 39.0, asc)[10, 9])
+
+    def test_option_off_keeps_original_masks(self):
+        off = M.sar_invalid_masks(self.dem, 10.0, ray_trace=False)
+        base = M.sar_invalid_masks(self.dem, 10.0)
+        for k in ("water", "landslide", "shadow", "layover"):
+            np.testing.assert_array_equal(off[k], base[k])
+        self.assertNotIn("ray_shadow", off)
+
+    def test_option_on_widens_shadow_and_reports_foreshortening(self):
+        on = M.sar_invalid_masks(self.dem, 10.0, ray_trace=True)
+        off = M.sar_invalid_masks(self.dem, 10.0)
+        self.assertTrue(on["ray_shadow"].any())
+        self.assertTrue((on["shadow"] >= off["shadow"]).all())
+        self.assertIn("foreshortening", on)
+        np.testing.assert_array_equal(on["layover"], off["layover"])
+
+
 class TestSarWater(unittest.TestCase):
     def test_otsu_on_bimodal_scene(self):
         rng = np.random.default_rng(0)

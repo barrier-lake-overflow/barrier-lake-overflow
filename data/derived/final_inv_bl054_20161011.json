@@ -10,7 +10,7 @@
   ],
   "pre": {
     "date": "事件前中位數",
-    "method": "sar_otsu_fallback",
+    "method": "sar_fixed",
     "threshold": -18.0,
     "pixel_count": 3104,
     "area_m2": 281759.7,
@@ -18,7 +18,7 @@
   },
   "post": {
     "date": "post 2016-10-11 10:00 UTC",
-    "method": "sar_otsu_fallback",
+    "method": "sar_fixed",
     "threshold": -18.0,
     "pixel_count": 3459,
     "area_m2": 313984.1,
@@ -46,7 +46,7 @@
     "seedMinAreaM2": 0.0
   },
   "darkNewPixelsDiagnostic": {
-    "note": "事件後比門檻暗、事件前不暗的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "note": "事件後背向散射低於門檻、事件前沒有的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
     "thresholdDb": -18.0,
     "darkNewHectareBeforeMask": 9.22,
     "maskedHectare": 1.22,
@@ -80,6 +80,7 @@
         "崩塌延伸至湖底高程（245 m）附近或以下，研判土石堵塞下游河道",
         "僅單期影像，尚未確認多時相持續性"
       ],
+      "oldLandslidePct": 22.8,
       "centroidLonLat": [
         121.370288,
         24.7974
@@ -138,6 +139,7 @@
         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
         "僅單期影像，尚未確認多時相持續性"
       ],
+      "oldLandslidePct": 1.5,
       "centroidLonLat": [
         121.362957,
         24.805168
@@ -196,6 +198,7 @@
         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
         "僅單期影像，尚未確認多時相持續性"
       ],
+      "oldLandslidePct": 0.0,
       "centroidLonLat": [
         121.35808,
         24.805415
@@ -228,5 +231,9 @@
         ]
       ]
     }
-  ]
+  ],
+  "oldLandslide": {
+    "note": "一年前基準 → 事件前基準之間的崩塌（既有崩塌堆積區），只供提醒，不影響分級",
+    "areaHectare": 35.95
+  }
 }

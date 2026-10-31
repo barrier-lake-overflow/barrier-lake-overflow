@@ -54,7 +54,7 @@ def load_dem_geotiff(path: str) -> DemGrid:
     讀取事件前 DEM（GeoTIFF）。需要 rasterio（requirements.txt 裡目前
     註解掉，開工時解開該行 + `pip install -r requirements.txt`）。
 
-    政府開放 DEM 來源見 docs/ossint-open-data-atlas.html。
+    政府開放 DEM 來源見 docs/reference/ossint-open-data-atlas.html。
     """
     try:
         import rasterio

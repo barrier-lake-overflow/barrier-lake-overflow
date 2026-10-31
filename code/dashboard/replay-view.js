@@ -1,7 +1,8 @@
 /* ════════════════════════════════════════
-   全清冊回放 · 統計表
+   全清冊回放 · 系統歷史成績（演練模式才顯示）
    資料由 data/replay.js 提供（window.REPLAY_SUMMARY），
    由 pipeline/events/build.py（replay.py）產生。
+   統計直接顯示，逐湖明細表預設收起。
    點一列 → 值班佇列切到該湖的回放、停在首次偵測的時點。
    ════════════════════════════════════════ */
 
@@ -58,7 +59,7 @@ const ReplayView = (() => {
         <td class="num">${vol(r.volume)}</td>
         <td class="num">${esc(r.orbit || '—')}<span class="dim">${r.passCount ? `${r.passCount} 期` : ''}${
           r.preCount != null ? ` · 基準 ${r.preCount} 張` : ''}</span>${
-          r.preCount != null && r.preCount < 3 ? '<span class="dim warn">基準張數不足，假暗區偏多</span>' : ''}</td>
+          r.preCount != null && r.preCount < 3 ? '<span class="dim warn">基準張數不足，假疑似水體偏多</span>' : ''}</td>
         <td class="num">${days(r.firstPassLagDays)}</td>
         <td><span class="ro ${o.cls}">${o.text}</span></td>
         <td>${result}</td>
@@ -83,6 +84,7 @@ const ReplayView = (() => {
       `不逐湖調整。窗格以清冊壩址為中心 4 km；逐期影像取形成前 ${ru.postBeforeDays} 天到形成後 ${ru.postAfterDays} 天，` +
       `軌道取形成後最早有影像的一軌。形成後（含前 1 天）到潰決為止，壩址 ${ru.matchRadiusM / 1000} km 內出現事件即算偵測到。`;
     $('#replayTotals').innerHTML = totals(t);
+    $('#replaySummary').textContent = `逐湖明細（${DATA.rows.length} 筆，點一列開該湖的回放）`;
     $('#replaySize').innerHTML = `<span class="label">依清冊蓄水量（看到結果後才分組，僅供描述）</span>${bySize(DATA.bySize)}`;
     $('#replayTable').innerHTML = `
       <thead><tr>

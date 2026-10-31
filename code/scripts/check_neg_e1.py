@@ -18,7 +18,8 @@
 
 雲遮罩用 Cloud Score+（cs_cdf ≥ 0.65，與底圖相同），不用 L2A 的 SCL 地物分類（山區常把陰影、
 暗色岩屑判成水或雲，不可靠）。只看晴空像元。
-判讀：水的近紅外線（B8）通常 < 500、MNDWI 明顯 > 0。
+判讀：水的近紅外線（B8）通常 < 500、MNDWI 明顯 > 0（門檻與 pipeline/detect/water.py 的
+optical_water_rule 共用；這裡比的是 E1 範圍的平均值與外圍一圈，不逐像元分類）。
 """
 
 from __future__ import annotations
@@ -28,10 +29,13 @@ import glob
 import json
 import math
 import os
+import sys
 
 import numpy as np
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, os.path.join(REPO, "code"))
+from pipeline.detect.water import S2_WATER_MNDWI_MIN, S2_WATER_NIR_MAX  # noqa: E402
 DAM = (121.29752, 23.70061)
 CS_THRESHOLD = 0.65   # Cloud Score+ cs_cdf，與 pipeline/daily/basemap.py 相同
 CLEAR_FRAC = 0.5      # E1 範圍內晴空像元過半才算晴天
@@ -40,9 +44,7 @@ BANDS = ["B2", "B3", "B4", "B8", "B11", "CS"]
 
 def fetch(path: str, project: str | None) -> None:
     """與 gee_check_s2_e1.js 相同的影像，直接用 Python 下載。"""
-    import sys
     import urllib.request
-    sys.path.insert(0, os.path.join(REPO, "code"))
     from pipeline.daily import gee
     ee = gee.init(project)
     aoi = ee.Geometry.Point(list(DAM)).buffer(1500).bounds()
@@ -130,7 +132,8 @@ def optical(s2_path: str, polys: list, out_png: str) -> None:
     if stats:
         mn, dm, nir = zip(*stats)
         print(f"\n晴天 {len(clear)}／{len(dates)} 期：MNDWI {min(mn):.2f}～{max(mn):.2f}"
-              f"（與外圍差 {min(dm):+.2f}～{max(dm):+.2f}），B8 {min(nir):.0f}～{max(nir):.0f}")
+              f"（與外圍差 {min(dm):+.2f}～{max(dm):+.2f}），B8 {min(nir):.0f}～{max(nir):.0f}"
+              f"｜水應 MNDWI > {S2_WATER_MNDWI_MIN:g}、B8 < {S2_WATER_NIR_MAX:.0f}")
 
     import matplotlib
     matplotlib.use("Agg")

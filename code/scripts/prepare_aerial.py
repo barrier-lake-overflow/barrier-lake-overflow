@@ -28,7 +28,7 @@
 - 水與裸露地逐張原始檔判斷再合併（第 6～9 波段）：同一個位置在某張照片上可能剛好是水面反光或雲，
   其他角度的照片卻看得清楚，所以「有一張判為水」就有意義；不能只看拼接後留下的那一張。
 - 判斷規則（固定門檻，逐張原始檔套用）：
-    水     NDVI < −0.15 且 NDWI > 0.2（水的近紅外線比紅光還低，其他地表沒有這個特性）
+    水     NDVI < −0.15 且 NDWI > 0.2（pipeline/detect/water.py 的 optical_water_rule，判水標準集中在那裡）
     裸露地 −0.15 ≤ NDVI < 0.2 且不是水
     植被   NDVI ≥ 0.3
   門檻由 7/27、8/18、3/27 幾處已知地物（森林、崩塌地、湖面）的實測值選定：湖 NDVI −0.22～−0.38、
@@ -44,6 +44,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import time
 from datetime import date, timedelta
 from pathlib import Path
@@ -58,13 +59,16 @@ from rasterio.vrt import WarpedVRT
 from scipy import ndimage
 
 REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "code"))
+from pipeline.detect.water import (AERIAL_WATER_NDVI_MAX, AERIAL_WATER_NDWI_MIN,  # noqa: E402
+                                   optical_water_rule)
+
 OUT = REPO / "data" / "raw" / "aerial"
 SCENARIO = REPO / "data" / "raw" / "scenarios" / "matai_an_2025.json"
 CRS = "EPSG:3826"
 ATTRIBUTION = "農業部林業及自然保育署航測及遙測分署 提供"
 BANDS = ("red", "green", "blue", "nir", "frame", "seen", "water_votes", "bare_votes", "veg_votes")
-WATER_NDVI_MAX = -0.15
-WATER_NDWI_MIN = 0.2
+WATER_NDVI_MAX = AERIAL_WATER_NDVI_MAX   # 裸露地的下限沿用判水門檻
 BARE_NDVI_MAX = 0.2
 VEG_NDVI_MIN = 0.3
 EDGE_PX = 3
@@ -121,9 +125,8 @@ def classify(a: np.ndarray, valid: np.ndarray) -> tuple:
     [False, True, False]
     """
     r, g, nir = (a[i].astype(np.float32) for i in (0, 1, 3))
-    ndwi = (g - nir) / (g + nir + 1e-6)
     ndvi = (nir - r) / (nir + r + 1e-6)
-    water = valid & (ndvi < WATER_NDVI_MAX) & (ndwi > WATER_NDWI_MIN)
+    water = valid & optical_water_rule(g, nir, red=r)
     bare = valid & ~water & (ndvi >= WATER_NDVI_MAX) & (ndvi < BARE_NDVI_MAX)
     veg = valid & (ndvi >= VEG_NDVI_MIN)
     return water, bare, veg
@@ -216,7 +219,7 @@ def main() -> None:
     manifest.update({"attribution": ATTRIBUTION, "crs": CRS, "resolutionM": RES_M,
                      "center": list(center), "windowKm": window_km, "bands": list(BANDS),
                      "availableRule": "拍攝日隔天 23:59（台灣時間）；實際提供時間不明，取保守值",
-                     "classify": {"waterNdviMax": WATER_NDVI_MAX, "waterNdwiMin": WATER_NDWI_MIN,
+                     "classify": {"waterNdviMax": WATER_NDVI_MAX, "waterNdwiMin": AERIAL_WATER_NDWI_MIN,
                                   "bareNdviMax": BARE_NDVI_MAX, "vegNdviMin": VEG_NDVI_MIN}})
     dates = manifest.setdefault("dates", {})
 

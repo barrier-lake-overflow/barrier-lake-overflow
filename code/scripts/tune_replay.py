@@ -3,7 +3,7 @@
 在全清冊回放的湖上調偵測參數，用留一交叉驗證（leave-one-out）估計「調參」在沒看過的湖上的表現。
 
     cd code
-    python scripts/tune_replay.py                  # → docs/tuning.json、終端機表格
+    python scripts/tune_replay.py                  # → docs/results/tuning.json、終端機表格
     python scripts/tune_replay.py --jobs 4         # 第 2 步平行處理
     python scripts/tune_replay.py --only inv_bl075 # 只跑一個情境（測試用，不寫檔）
 
@@ -52,7 +52,7 @@ from pipeline.events import replay as R  # noqa: E402
 from pipeline.ingest.observations import load_observations_table  # noqa: E402
 
 CACHE = S.REPO / "data" / "cache" / "tune_candidates.pkl"
-OUT = S.REPO / "docs" / "tuning.json"
+OUT = S.REPO / "docs" / "results" / "tuning.json"
 NEG = "neg2026_matai_an"
 KEYS = list(S.VARY)
 COMPARE = ("grade", "areaHectare", "centroidLonLat", "onRiver", "landslideNearby", "damDownstream",
@@ -303,7 +303,7 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
     ap.add_argument("--jobs", type=int, default=max(1, (os.cpu_count() or 2) - 1))
-    ap.add_argument("--only", default="", help="只跑這些情境（逗號分隔，測試用，不寫 docs/tuning.json）")
+    ap.add_argument("--only", default="", help="只跑這些情境（逗號分隔，測試用，不寫 docs/results/tuning.json）")
     ap.add_argument("--verify", type=int, default=2, help="每期抽幾組參數跟直接跑 classify 比對")
     args = ap.parse_args()
     only = [s for s in args.only.split(",") if s]

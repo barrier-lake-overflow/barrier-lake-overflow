@@ -10,7 +10,11 @@
 | `taiwan-barrier-lakes.csv` | 農業部農村發展及水土保持署 | 堰塞湖清冊，75 筆，1979–2026。座標是 TWD97 TM2（EPSG:3826），由 `pipeline/ingest/inventory.py` 轉成經緯度 |
 | `observations.csv` | 團隊人工查證 | 每個湖一列的歷史雨量／颱風／地震觀測，來源寫在 `source` 欄。欄位說明見 `pipeline/ingest/observations.py` |
 | `sentinel2/*.tif`、`*.csv` | 自行從 GEE 匯出，**有進版控** | `S2_E1_check_2026.tif`（12 期光學，負案例 E1 查證，`scripts/gee_check_s2_e1.js` 匯出，給 `scripts/check_neg_e1.py`）與同名統計表 CSV |
-| `sentinel1/*.tif` | 自行從 GEE 匯出，**有進版控** | 馬太鞍溪 2025 正案例 8 張（`gee_export_matai_an_s1.js`）、2026 負案例 19 張（`gee_export_series_s1.js`），σ⁰ VV 與 DEM，給 `scripts/analyze_sar_change.py`。clone 下來就能直接重跑，不需要 GEE 帳號 |
+| `sentinel1/*.tif` | 自行從 GEE 匯出，**有進版控** | 馬太鞍溪 2025 正案例 9 張（`gee_export_matai_an_s1.js`）、2026 負案例 20 張（`gee_export_series_s1.js`），σ⁰ VV 與 DEM，給 `scripts/analyze_sar_change.py`；其中 `*prior*.tif` 是一年前基準（崩塌堆積提醒用）。clone 下來就能直接重跑，不需要 GEE 帳號 |
+| `sentinel1/replay/*.tif` | 自行從 GEE 下載（不進版控，約 1 GB） | 全清冊回放 22 座湖的事件前、逐期、一年前基準與 DEM（`gee_fetch_inventory.py`，或網頁版 `gee_export_inventory.js`、`gee_export_prior.js`） |
+| `sentinel1/vh_manifest.json` | `scripts/gee_codeeditor_vh.py` | B2（加入 VH，未採用）實驗的拆檔對照表 |
+| `scenarios/*.json` | 程式產生＋人工整理 | 事件研判情境：影像期別、外部證據、事後查證（格式見 `docs/system-spec.md`） |
+| `replay_manifest.json` | `scripts/gee_fetch_inventory.py` | 全清冊回放每湖選用的軌道與期別 |
 | `aerial/` | 農業部林業及自然保育署航測及遙測分署 提供（不進版控） | 馬太鞍溪航照裁切成壩址 4 km 窗格、1 m 的逐日拼接圖，`code/scripts/prepare_aerial.py` 產生；原始航照每張約 4 GB，放在專案外 |
 | `dem/DEM_matai_an.tif` | 自行從 GEE 匯出 NASADEM（不進版控） | 事件前地形，給 `scripts/run_hypsometry_real.py` |
 | `boundaries/` | 內政部國土測繪中心村里界圖，data.gov.tw/dataset/7438（不進版控） | 全台 7,986 個村里，`VILLCODE` 欄位 |
@@ -23,9 +27,14 @@ SAR 和 DEM 的 GEE 匯出腳本寫在 `analyze_sar_change.py`、`run_hypsometry
 
 ```bash
 cd code
-python -m pipeline.build_all          # 清冊、風險、成因敘述
-python -m pipeline.build_all --live   # 風險改用 CWA 即時雨量（需 CWA_API_KEY）
+python -m pipeline.build_all                         # 清冊、風險、成因敘述、事件佇列
+python -m pipeline.build_all --project <GCP 專案 ID>  # 風險改用 GSMaP 衛星雨量（Google Earth Engine）
 ```
+
+## experiments/（不進版控）
+
+`code/scripts/run_experiment.py` 執行時才會建立：每個實驗一個子資料夾，放重跑的偵測結果、事件佇列與比較表（`comparison.md`）。
+目前沒有這個資料夾（2026-11-01 清掉）；各實驗的結論都已寫進 `docs/parameters.md`。
 
 ## derived/
 

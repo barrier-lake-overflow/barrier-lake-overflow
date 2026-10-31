@@ -4,7 +4,7 @@ SAR 判定結果 → 影像證據圖（PNG），給 GitHub、簡報、儀表板�
 
 每張圖三格：事件前中位數｜事件後｜複核期（沒有複核期就兩格），
 疊上候選多邊形（A 級綠、B 級橘、C 級灰；複核未持續者虛線）與壩址紅點。
-影像以 σ⁰ VV dB 顯示（-25～0 dB，水體為暗色）。
+影像以 σ⁰ VV dB 顯示（-25～0 dB，水體背向散射低）。
 
     cd code
     python scripts/make_sar_evidence.py              # 跑下面 RUNS 裡檔案齊全的組合
@@ -106,7 +106,7 @@ def render(result_json: str, pre_tif: str, post_tif: str, later_tif, out_png: st
     fig.suptitle(f"馬太鞍溪 Sentinel-1 SAR｜{title}", fontsize=13, weight="bold")
     fig.text(0.5, 0.02,
              (f"候選 {n} 個：{grades}" if n else "無候選")
-             + "｜紅點：壩址｜實線：持續或未複核，虛線：複核未持續｜σ⁰ VV −25～0 dB，水體為暗色",
+             + "｜紅點：壩址｜實線：持續或未複核，虛線：複核未持續｜σ⁰ VV −25～0 dB，水體背向散射低",
              ha="center", fontsize=9, color="#444")
     fig.tight_layout(rect=(0, 0.05, 1, 0.94))
     fig.savefig(out_png, dpi=130)
