@@ -141,12 +141,12 @@ barrier-lake-overflow-main/
 │   │   ├─ attribution/       成因敘述、溢流預報
 │   │   └─ assess/            蓄水量、規模、淹沒、暴露、回測（後續擴充）
 │   ├─ scripts/               真實資料分析、GEE 下載、回放、證據圖、實驗（README.md 依用途分類）
-│   ├─ tests/                 單元測試（216 項）
+│   ├─ tests/                 單元測試（226 項）
 │   └─ dashboard/             儀表板（HTML/CSS/JS、data/、vendor/）
 ├─ data/
 │   ├─ raw/                   原始資料（清冊、情境、Sentinel-1/2、熱點、觀測）
 │   │   └─ sentinel1/replay/  全清冊回放影像（不進版控）
-│   ├─ derived/               偵測結果 final_*.json
+│   ├─ derived/               偵測結果 final_*.json；satpasses/ 演練回放的衛星過境紀錄
 │   ├─ live/                  自動更新狀態（state、news、status）
 │   └─ experiments/           實驗結果與修改前基準（不進版控）
 └─ docs/                      規格、規則、參數、驗證、自動更新、進度（目錄見 docs/README.md）
@@ -226,11 +226,15 @@ cd code && pip install -e .
 | 土石流潛勢溪流（1745 條）、大規模崩塌潛勢區（94 處） | data.gov.tw | `scripts/prepare_hotspots.py` → `data/raw/hotspots.json` | 警戒位置、雨量熱區 |
 | Sentinel-1 GRD σ⁰（VV） | ESA，經 GEE `COPERNICUS/S1_GRD` | GEE 匯出／下載 | SAR 偵測 |
 | NASADEM | NASA，經 GEE | GEE 匯出 | 遮罩、河網、壩體高程檢核 |
-| Sentinel-2（含 Cloud Score+）、Landsat 8/9 | ESA／USGS，經 GEE | GEE | 小地圖底圖、負案例查證 |
+| Sentinel-2（含 Cloud Score+）、Landsat 8/9 | ESA／USGS，經 GEE | GEE | 小地圖底圖、負案例查證、光學判讀、衛星時間軸（`daily/optical.py`、`daily/passes.py`） |
 | GSMaP v8 雨量計校正版 | JAXA，經 GEE | GEE | 雨量熱區、過境前雨量、風險模型 |
 | 馬太鞍溪航照（2025 年 7 個日期，約 15 cm，RGB＋NIR） | 林業及自然保育署航測及遙測分署 提供 | 不進版控 | 湖面驗證、誤報地表檢查、小地圖航照圖層 |
+| 福衛八號多光譜（2026-03-31／04-15 拼接，2 m） | 國家太空中心（授權書 C0920-18） | 申請取得，原始檔在 `data/restricted/`，不進版控 | 候選查證、小地圖水面與裸露堆積範圍（`scripts/fs8_validate.py`、`fs8_dashboard.py`）；只公開不含影像的衍生產品 |
+| 通用電子地圖水系（河川中線、河川面、面狀水域） | 內政部國土測繪中心 | WFS（`scripts/fetch_nlsc_water.py`，金鑰在 `.env`） | D8 河網比對（`docs/fs8-validation.md`） |
 | Google 新聞 RSS | Google | `daily/news.py` | 外部證據候選 |
 | 村里界、SEGIS 人口 | 內政部 | 不進版控 | 暴露人口（後續擴充） |
+
+儀表板頂端「⚙ 設定」小視窗與使用說明「資料來源與授權」列出上述來源；Copernicus、USGS 照其規定的標註原文。衛星時間軸的「開啟影像」連到 Copernicus Browser（外部網站），不是本平台的資料。
 
 ---
 
@@ -405,6 +409,7 @@ cd code && pip install -e .
 | passrain | 每期過境前 24／72 小時雨量（缺的才補） | 情境檔 `passes[].rain` |
 | basemap | 各情境事件前光學底圖（Sentinel-2 中位數，空白處用 Landsat 補） | `dashboard/data/basemaps/*.jpg` |
 | optical | 監看窗格最近 45 天 Sentinel-2／Landsat 8/9 雲量、下一次預計過境（依重訪週期推估）、各事件位置光學判水（只供參考，不進研判） | 情境檔 `optical` |
+| passes | 演練回放情境（kind ≠ live）中心點上實際的 Sentinel-1／2、Landsat 8/9 取像時間（Landsat 含 T2、只留白天），缺的才抓；build 時每一期只用該期以前的取像、依固定週期（12／10／16 天）推估之後的過境 | `data/derived/satpasses/<情境 id>.json` |
 | news | Google 新聞 RSS 關鍵字分類為外部證據**候選**，人工確認後才寫進情境 | `data/live/news.json` |
 | build | 事件佇列、全清冊回放、執行狀態 | `events.js`、`replay.js`、`daily.js` |
 
@@ -447,16 +452,22 @@ cd code && pip install -e .
 
 | 區塊 | 檔案 | 功能 |
 |---|---|---|
-| 頂端列 | `index.html`、`views.js` | 系統名稱、分頁（值班／全台清冊）、一行資料狀態、使用說明（開新分頁）。一般畫面的狀態只寫資料更新時間與警戒則數；網管檢視（網址加 `?admin`）另寫失敗的步驟與白話原因（例如「Sentinel-1失敗：GEE 服務帳號沒有下載影像的權限」「警戒資料這次沒抓到，沿用上一次」）、即時監看影像多久沒更新 |
+| 頂端列 | `index.html`、`views.js` | 系統名稱、分頁（值班／全台清冊）、一行資料狀態、使用說明（開新分頁）、「⚙ 設定」（與使用說明同高的按鈕；小視窗：外觀跟隨電腦／淺色／深色，存在 `localStorage` 的 `theme`，預設 `auto`；字體標準／大／特大，存在 `fontScale`；兩者使用說明頁也套用；下方是資料來源致謝）。一般畫面的狀態只寫資料更新時間與警戒則數；網管檢視（網址加 `?admin`）另寫失敗的步驟與白話原因（例如「Sentinel-1失敗：GEE 服務帳號沒有下載影像的權限」「警戒資料這次沒抓到，沿用上一次」）、即時監看影像多久沒更新 |
 | 系統管理分頁（網管檢視，`#admin`） | `daily-view.js`、`code/dashboard/data/syslog.js` | 只在 `?admin` 時出現（點頂端狀態列也會過去）。系統狀態：本次各步驟（滑鼠停留看錯誤原文與白話說明）、雨量資料時間、失敗步驟的白話原因、監看窗格（各窗格最近一次失敗的時間與原因；點一個切到該窗格）。執行紀錄：最近 30 次自動更新的開始時間、花費、失敗步驟與原因、各步驟成功與否（`data/live/history.json`）。最近一次的完整輸出：最後 400 行，可只看錯誤與警告。`syslog.js` 只在網管檢視載入。網管檢視只是把畫面分開，不是權限保護；寫出前會遮掉 GEE 專案 ID 與服務帳號信箱（`gee.redact()`） |
-| 使用說明 | `help.html` | 獨立頁面。最前面是「圖解：值班快速上手」四張圖（HTML 方塊流程圖，方塊可點、跳到詳細說明）：一上班先看什麼、畫面上什麼在哪裡（值班畫面實際截圖 `help-img/duty-top.jpg`、`duty-board.jpg`，疊上 18 個可點的數字框，框的位置以截圖百分比表示；附「我想知道…看哪裡」對照表）、一個事件怎麼處理（高／中／低三欄）、事件的狀態怎麼變。之後依功能分節：平台在做什麼（原則、流程）、畫面總覽與網址、即時監看（窗格、衛星過境、事件清單、小地圖、新聞候選）、事件卡、優先等級與研判信心（含持續性、證據強度）、人工查證、演練模式與系統歷史成績、系統狀態、全台清冊、常見問題、名詞解釋。左側目錄自動產生並標出目前位置；搜尋框只留下有提到關鍵字的段落並標記（網址 `help.html?q=關鍵字` 可直接搜尋）。儀表板各區塊旁的「?」開新分頁到對應段落（`help.html#段落 id`） |
+| 使用說明 | `help.html` | 獨立頁面。最前面是「圖解：值班快速上手」四張圖（HTML 方塊流程圖，方塊可點、跳到詳細說明）：一上班先看什麼、畫面上什麼在哪裡（值班畫面實際截圖 `help-img/duty-top.jpg`、`duty-board.jpg`，疊上 19 個數字（截圖當下有出現的 17 個可點框），框的位置以截圖百分比表示；截圖為淺色外觀、標準字體，以 headless Chrome 截取並同時量出各區塊位置；附「我想知道…看哪裡」對照表）、一個事件怎麼處理（高／中／低三欄）、事件的狀態怎麼變。之後依功能分節：平台在做什麼（原則、流程）、畫面總覽與網址、即時監看（窗格、衛星過境、事件清單、小地圖、新聞候選）、事件卡、優先等級與研判信心（含持續性、證據強度）、人工查證、演練模式與系統歷史成績、系統狀態、全台清冊、常見問題、名詞解釋。左側目錄自動產生並標出目前位置；搜尋框只留下有提到關鍵字的段落並標記（網址 `help.html?q=關鍵字` 可直接搜尋）。儀表板各區塊旁的「?」開新分頁到對應段落（`help.html#段落 id`） |
 | 頂端橫幅 | `daily-view.js` | 發布中的警戒（紅，列類型、則數、地點與等級）；網頁開著時每 10 分鐘與切回分頁時檢查 `code/dashboard/data/daily.js`，有新的更新就提示重新整理 |
-| 值班 · 即時監看 | `duty.js` | 資料過舊提示（最新一期超過 12 天，或每日更新已記到更新的影像卻沒分析；一般畫面是琥珀色「即時監看資料暫停更新…不代表現況」，網管檢視是陶紅色並寫出處理方式）、待處理清單（各窗格最新一期的高／中優先事件，標題寫出依據的日期；附查證狀態與「尚未查證 · 已 X 天」，點列切過去；每日更新已在監看但還沒有分析結果的窗格另列一行）、監看窗格按鈕（最新一期高／中優先事件數、距今天數，過舊變紅）、衛星過境時點軸（標「最新」與距今天數；看舊一期時提示並可回到最新）、依優先分組的佇列（高優先未查證標等待天數；下一期還有幾天或「應已過境 X 天，尚無資料」）、SVG 小地圖（事件多邊形、壩址、事件前底圖、可切換的航照圖層）、新聞候選、事件卡 |
+| 值班 · 即時監看 | `duty.js` | 資料過舊提示（最新一期超過 12 天，或每日更新已記到更新的影像卻沒分析；一般畫面是琥珀色「即時監看資料暫停更新…不代表現況」，網管檢視是陶紅色並寫出處理方式）、待處理清單（各窗格最新一期的高／中優先事件，標題寫出依據的日期；附查證狀態與「尚未查證 · 已 X 天」，點列切過去；每日更新已在監看但還沒有分析結果的窗格另列一行）、監看窗格按鈕（最新一期高／中優先事件數、距今天數，過舊變紅）、衛星過境時點軸（標「最新」與距今天數；看舊一期時提示並可回到最新）、時點軸下方一行「接下來」：下一期雷達與最快的光學過境、依優先分組的佇列（高優先未查證標等待天數；下一期還有幾天或「應已過境 X 天，尚無資料」）、SVG 小地圖（事件多邊形、壩址、事件前底圖、可切換的航照圖層、福衛八號水面與裸露堆積圖層——收到日以前的時點標為事後資料、預設關；「放大檢視」展開成覆蓋全畫面的大圖，Esc 或「關閉」縮回）、新聞候選、事件卡 |
 | 值班 · 演練模式 | `duty.js`、`replay-view.js` | 橫幅與「回到即時監看」、歷史案例（正案例、負案例、更多歷史案例下拉選單）、系統歷史成績（全清冊回放總計、依蓄水量分組；逐湖明細表預設收起，點一列跳到該湖首次偵測的時點） |
-| 事件卡 | `duty.js` | 寬螢幕（≥ 1200 px）固定在右側。直接顯示：位置（經緯度＋TWD97 TM2，網頁端換算，與清冊 TWD97 誤差 ≤ 1 m；複製座標、Google 地圖連結，任務單同附）、優先／信心／規模／首次出現、證據衝突、提醒（例如崩塌堆積）、建議任務（可複製任務單）、人工查證表單、事後查證框（負案例）。點開才顯示：研判摘要、證據（✓ ✗ ·）與缺口、逐期偵測紀錄與證據圖、命中規則。優先與信心標籤滑鼠停留顯示圖例說明 |
+| 事件卡 | `duty.js` | 寬螢幕（≥ 1200 px）固定在右側。直接顯示：位置（經緯度＋TWD97 TM2，網頁端換算，與清冊 TWD97 誤差 ≤ 1 m；複製座標、Google 地圖連結，任務單同附）、優先／信心／規模／下一期複核（日期、軌道、還有幾天）、**衛星時間軸**（事件首次出現、最多往回 45 天，到未來約兩週；雷達標這期有沒有偵測到，光學在即時監看標自動判讀與晴空比例、在回放只標有過境；紅線為今天／本期，之後為虛線預估，第一個雷達標「下一期複核」；光學有「開啟影像」連到 Copernicus Browser，位置與日期帶好、不濾雲量；桌機橫向可拖曳／滾輪捲動，手機直排；光學超過 6 張時雲遮的先收起）、證據衝突、提醒（例如崩塌堆積）、建議任務（可複製任務單，附衛星時程）、人工查證表單、事後查證框（負案例；同結論多筆時佇列標籤只列一次）。點開才顯示：研判摘要、證據（✓ ✗ ·）與缺口、逐期偵測紀錄與證據圖、命中規則。優先與信心標籤滑鼠停留顯示圖例說明 |
 | 全台清冊 | `app.js`、`map3d.js` | KPI、three.js 立體地形圖（點位、高風險、SAR 範圍、名稱圖層）、湖泊詳情（結論、行動、證據、基本資料；有事件回放的湖可直接開演練模式）、篩選（存續狀態、風險、誘因、縣市、關鍵字）、年度分布 |
 
 網址：`#duty`（值班）、`#inventory`（全台清冊）、`#drill`（直接開演練模式，報告用）。
+
+字體：所有字體大小乘上 CSS 變數 `--fs`（標準 1、大 1.15、特大 1.3）；17 px 以上的標題與大數字用 `--fs-h`（1、1.07、1.12），放大得少一點以免擠爆版面。720 px 以下另有換行規則（佇列標籤移到文字下方、長按鈕可換行）。
+
+外觀：`<html data-theme="light|dark">`，由 `<head>` 的小程式依設定決定（`auto` 跟隨 `prefers-color-scheme`，電腦切換時跟著換）。色票是 `styles.css` 開頭的 CSS 變數，淺色一組覆寫；半透明底色用 `--jade-rgb` 等 RGB 變數。兩種外觀的文字對比都達 WCAG AA（一般字 4.5:1、大字 3:1，逐一檢查值班、演練、全台清冊、設定小視窗與使用說明的所有文字）；深色的紅字因此改為 `#E5755E`，實心紅色塊另用 `--clay-fill` 配白字。小地圖（含放大檢視）兩種外觀都用深色色票，衛星照片與事件色塊才清楚；3D 地圖有深淺兩組地形與點位配色，換外觀時重建。
+
+頁尾三段：左「程式這樣寫對不隊 開發」、中「堰塞湖事件研判平台 · OSSInt 2026」、右「資料來源見頂端「設定」」；手機改為上下三行。
 
 **6.10.2 人工查證**
 
@@ -483,6 +494,8 @@ cd code && pip install -e .
 | `data/raw/sentinel1/*.tif` | GEE 匯出 | `analyze_sar_change.py` | 馬太鞍溪正／負案例是（含一年前基準 `*prior*.tif`）；回放（`replay/`）與 live 否 |
 | `data/raw/sentinel2/S2_E1_check_2026.tif` | GEE | `check_neg_e1.py` | 是 |
 | `data/derived/final_*.json` | `analyze_sar_change.py` | `events.build` | 是 |
+| `data/derived/satpasses/*.json` | `pipeline.daily.passes` | `events.build` | 是 |
+| `docs/results/fs8_*`、`river_*` | `fs8_validate.py`、`fs8_sar_sameday.py`、`river_compare.py` | 文件引用、`fs8_dashboard.py` | 是（只有衍生產品） |
 | `data/live/state.json`、`news.json`、`status.json` | `pipeline.daily` | `pipeline.daily`、`daily.js` | 是 |
 | `code/dashboard/data/*.js` | 各 pipeline 模組 | 儀表板 | 是 |
 | `docs/results/*.json` | `sensitivity_replay.py`、`tune_replay.py`、`hysteresis_replay.py`、`diagnose_missed_lake.py`、`old_landslide_threshold.py` | 文件引用 | 是 |
@@ -538,7 +551,7 @@ cd code && pip install -e .
 | `context` | 字串陣列 | 背景說明 |
 | `externalEvidence` | [{time, kind, lonLat, radiusM, text, source, url}] | 他單位成果；`kind` 為 `optical`／`aerial`／`satellite`／`field`／`official` |
 | `exposure` | {text, source, url} | 下游保全對象 |
-| `hindsight` | [{lonLat, radiusM, verdict, title, text, images}] | 事後查證 |
+| `hindsight` | [{lonLat, radiusM, verdict, title, text, images, method}] | 事後查證；同一事件可有多筆（例如 2026 E1：Sentinel-2、福衛八號同日雷達比對） |
 | `observationsLakeId`、`referenceLakeId`、`referenceLabel` | 字串 | 對應觀測表、清冊參考點 |
 | `basemap`、`aerial` | 物件／陣列 | 小地圖底圖、航照圖層（依可取得時間顯示） |
 | `orbits`、`sarCheckedAt` | [{label, satellite, cycleDays, last}]、時間 | 監看窗格每一軌每顆還在拍的衛星（12 天重複）最近一次取得、最近一次成功查詢（`daily/sentinel.py` 產生），推算下一期用 |
@@ -554,7 +567,8 @@ cd code && pip install -e .
 
 | 檔案 | 全域變數 | 內容 |
 |---|---|---|
-| `events.js` | `window.EVENT_SCENARIOS` | 情境陣列 → `snapshots[]`（`asOf`、`label`、`what`、`since`、`nextPass`、`counts{high,medium,low}`、`newCount`）→ `events[]` 事件卡 |
+| `events.js` | `window.EVENT_SCENARIOS` | 情境陣列（即時監看另有 `upcoming[{date, time, sensor, kind, orbit}]`：從最近一次查詢往後推估的過境；回放另有 `opticalPasses[{time, sensor}]`：實際的光學過境）→ `snapshots[]`（`asOf`、`label`、`what`、`since`、`nextPass`、`nextPassOrbit`、`counts{high,medium,low}`、`newCount`；回放另有 `upcoming`：只用該期以前的取像推估之後的過境）→ `events[]` 事件卡 |
+| `fs8.js` | `window.FS8_COVER` | 福衛八號水面與裸露堆積範圍（`scripts/fs8_dashboard.py`，簡化到約 2 m）：`center`、`windowKm`、`shot`、`available`（收到日）、`source`、`layers[{class, label, areaHa, rings}]` |
 | `replay.js` | `window.REPLAY_SUMMARY` | `rules`、`totals`（detected、missed、expectedChanceHits…）、`bySize`、逐湖列 |
 | `daily.js` | — | 最近一次自動更新狀態、監看窗格、新聞候選 |
 | `lakes.js` | `window.BARRIER_LAKES` | 清冊（id、seq、year、name、county、town、village、cause、formed、duration、volume、breachDate、status、lon、lat、narrative、rulesFired…） |
@@ -562,7 +576,7 @@ cd code && pip install -e .
 | `inundation.js` | — | 地圖上的 SAR 偵測範圍（`synthetic: false` 才畫） |
 | `terrain.js` | — | 全台立體地形網格 |
 
-事件卡欄位：`id`、`firstSeen`、`lastSeen`、`lastSeenAt`、`isNew`、`lonLat`、`distanceFromReferenceM`、`areaHectare`、`areaNote`、`lakeFloorM`、`polygonLonLat`、`detections[]`、`priority`、`priorityText`、`action`、`confidence`、`confidenceReasons`、`persistence`、`persistenceText`、`grade`、`scale`、`summary`、`evidence`、`gaps`、`conflicts`、`cautions`、`tasks`、`rulesFired`、`hindsight`。
+事件卡欄位：`id`、`firstSeen`、`lastSeen`、`lastSeenAt`、`isNew`、`lonLat`、`distanceFromReferenceM`、`areaHectare`、`areaNote`、`lakeFloorM`、`polygonLonLat`、`detections[]`、`priority`、`priorityText`、`action`、`confidence`、`confidenceReasons`、`persistence`、`persistenceText`、`grade`、`scale`、`summary`、`evidence`、`gaps`、`conflicts`、`cautions`、`tasks`、`rulesFired`、`hindsight`、`optical`（即時監看：各景光學判讀）。
 
 ### 7.5 人工觀測 `data/raw/observations.csv`
 
@@ -659,15 +673,15 @@ GEE 網頁版腳本：`scripts/gee_export_matai_an_s1.js`（正案例）、`gee_
 | `test_assess.py` | 31 | 蓄水量、淹沒、暴露 |
 | `test_attribution.py` | 39 | 成因規則與敘述 |
 | `test_backtest.py` | 10 | 回測 |
-| `test_daily.py` | 6 | 自動更新 |
+| `test_daily.py` | 10 | 自動更新（含 `passes` doctest） |
 | `test_detect.py` | 35 | 判水、光學判水規則、固定門檻、VH 補判、既有崩塌堆積比例 |
-| `test_events.py` | 31 | 持續性、優先、信心、提醒、任務 |
+| `test_events.py` | 37 | 持續性、優先、信心、提醒、任務、下一期與過境推估 |
 | `test_observations.py` | 5 | 觀測表 |
 | `test_replay.py` | 4 | 回放判定 |
 | `test_risk.py` | 9 | 風險模型 |
 | `test_sar.py` | 38 | 前處理、遮罩、射線追蹤陰影、雙門檻、整條 SAR 流程 |
 | `test_scale.py` | 8 | 規模級距 |
-| **合計** | **216** | 另有各模組 doctest（`python -m unittest discover -s tests` 連同 doctest 計數較多） |
+| **合計** | **226** | 另有各模組 doctest（`python -m unittest discover -s tests` 連同 doctest 計數較多） |
 
 沒裝 shapely、rasterio 時，部分測試會失敗（`docs/notes/handoff.md` 記為 5 項，屬正常）。
 
@@ -692,6 +706,7 @@ GEE 網頁版腳本：`scripts/gee_export_matai_an_s1.js`（正案例）、`gee_
 ### 12.2 2026 汛期負案例（同窗格同參數，17 期）
 
 整季只有一個事件 E1（崩塌堆積區，0.6～0.7 公頃），7/13 起列高優先，之後 7 個時點顯示「持續性中斷」。Sentinel-2 查證確認不是水（B8 1,091～1,803、MNDWI −0.08～0.03）。信心從未到「高」。
+福衛八號（2026-03-31／04-15，汛期前）看到 E1 是乾的裸露堆積（水像元 0.5%），同一天 3/31 的降軌雷達在 E1 卻有 20% 像元低於 −18 dB，與 7 月列為高優先時的 28～32% 相近：E1 的暗是堆積本身的性質，不是汛期才出現的水（`docs/fs8-validation.md`）。
 
 ### 12.3 全清冊回放（23 筆）
 

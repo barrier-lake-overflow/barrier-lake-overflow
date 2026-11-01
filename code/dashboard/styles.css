@@ -5,8 +5,9 @@
    ════════════════════════════════════════ */
 
 :root{
-  --fs:1;     /* 字級：右上角齒輪切換（views.js），所有 font-size 都乘上它 */
+  --fs:1;     /* 字體大小：頂端「設定」切換（views.js），所有 font-size 都乘上它 */
   --fs-h:1;   /* 標題與大數字（17 px 以上）放大得少一點，免得擠爆版面 */
+  color-scheme:dark;
   --abyss:#0F1613;
   --stone:#17201C;
   --raised:#1E2A24;
@@ -18,12 +19,55 @@
   --jade:#3FA9A0;
   --jade-dim:#1E5F5C;
   --ochre:#C98A2E;
-  --clay:#C2503C;
+  --clay:#E5755E;      /* 文字用：深底上 4.7:1 以上（原本的 #C2503C 只有 3.2～3.6） */
+  --clay-fill:#A8361F; /* 實心色塊（高優先徽章等），上面配白字 6.5:1 */
   --iris:#9C8BD9;   /* 演練模式：跟優先等級的顏色分開，一眼看出不是即時資料 */
+  /* 半透明底色用的 RGB（淺色外觀沿用同一組色相，淡底在白底上一樣清楚） */
+  --jade-rgb:63,169,160;
+  --ochre-rgb:201,138,46;
+  --clay-rgb:194,80,60;
+  --iris-rgb:156,139,217;
+  --ink-rgb:255,255,255;    /* 中性的一點點提亮／壓暗：深色外觀是白、淺色是黑 */
+  --base-rgb:15,22,19;      /* 3D 地圖上浮動面板的半透明底 */
+  --shadow:rgba(0,0,0,.45);
+  --water:#4FA3E0;          /* 福衛八號水面（小地圖） */
 
   --wide:'Archivo','Noto Sans TC','Microsoft JhengHei','PingFang TC',system-ui,sans-serif;
   --sans:'Noto Sans TC','Microsoft JhengHei','PingFang TC',system-ui,sans-serif;
   --mono:'IBM Plex Mono','Noto Sans TC','Microsoft JhengHei',ui-monospace,monospace;
+}
+
+/* 淺色外觀：頂端「設定」切換，預設跟隨電腦（<head> 的小程式先套用 data-theme）。
+   文字色在白底與淺灰底上都達 WCAG AA（一般字 4.5:1 以上）。 */
+:root[data-theme="light"]{
+  color-scheme:light;
+  --abyss:#F3F5F3;
+  --stone:#FFFFFF;
+  --raised:#EAEFEB;
+  --line:rgba(22,33,28,.13);
+  --line-strong:rgba(22,33,28,.26);
+  --moss:#4C6656;
+  --fog:#2E4237;
+  --snow:#111A15;
+  --jade:#12706A;
+  --jade-dim:#5FA9A1;
+  --ochre:#8A5A0E;
+  --clay:#A8361F;
+  --clay-fill:#A8361F;
+  --iris:#5A47B0;
+  --ink-rgb:0,0,0;
+  --base-rgb:255,255,255;
+  --shadow:rgba(22,33,28,.18);
+  --water:#1F78C1;
+}
+/* 小地圖是衛星照片，兩種外觀都用深色（放大檢視整塊都是），照片與色塊才清楚 */
+#minimap,.minimap-wrap.is-expanded{
+  color-scheme:dark;
+  --abyss:#0F1613;--stone:#17201C;--raised:#1E2A24;
+  --line:rgba(202,216,206,.13);--line-strong:rgba(202,216,206,.26);
+  --moss:#7CA48A;--fog:#BCCDC2;--snow:#E9F1EB;
+  --jade:#3FA9A0;--jade-dim:#1E5F5C;--ochre:#C98A2E;--clay:#C2503C;--iris:#9C8BD9;
+  --ink-rgb:255,255,255;--water:#4FA3E0;
 }
 
 :root[data-fs="l"]{--fs:1.15;--fs-h:1.07}
@@ -56,7 +100,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 /* ── 頂部第一層：系統名稱與資料狀態 ── */
 .statusbar{
   border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(63,169,160,.05),transparent);
+  background:linear-gradient(180deg,rgba(var(--jade-rgb),.05),transparent);
   position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);
 }
 .statusbar .wrap{
@@ -70,9 +114,9 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 }
 .pulse{
   width:8px;height:8px;border-radius:50%;background:var(--jade);
-  box-shadow:0 0 0 0 rgba(63,169,160,.6);animation:pulse 2.4s infinite;
+  box-shadow:0 0 0 0 rgba(var(--jade-rgb),.6);animation:pulse 2.4s infinite;
 }
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(63,169,160,0)}100%{box-shadow:0 0 0 0 rgba(63,169,160,0)}}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(var(--jade-rgb),0)}100%{box-shadow:0 0 0 0 rgba(var(--jade-rgb),0)}}
 .stat-meta{
   font-family:var(--mono);font-size:calc(13.5px*var(--fs));color:var(--moss);white-space:nowrap;
 }
@@ -124,7 +168,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
 .map3d-wrap{
   position:relative;width:100%;aspect-ratio:0.59;max-height:72vh;
-  background:radial-gradient(120% 100% at 50% 20%,rgba(63,169,160,.06),transparent 60%);
+  background:radial-gradient(120% 100% at 50% 20%,rgba(var(--jade-rgb),.06),transparent 60%);
   border:1px solid var(--line);overflow:hidden;
 }
 .map3d-wrap canvas{width:100%;height:100%;display:block;cursor:grab}
@@ -136,7 +180,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .map3d-label{
   position:absolute;top:0;left:0;transform:translate(-9999px,-9999px);
   font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--snow);
-  text-shadow:0 0 4px #0F1613,0 0 4px #0F1613,0 0 6px #0F1613;
+  text-shadow:0 0 4px var(--abyss),0 0 4px var(--abyss),0 0 6px var(--abyss);
   white-space:nowrap;opacity:0;transition:opacity .18s ease;
   margin-left:9px;margin-top:-6px;
 }
@@ -146,7 +190,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .map3d-hint{
   position:absolute;top:10px;right:10px;z-index:3;
   font-family:var(--mono);font-size:calc(12px*var(--fs));letter-spacing:.06em;color:var(--moss);
-  border:1px solid var(--line-strong);background:rgba(15,22,19,.55);
+  border:1px solid var(--line-strong);background:rgba(var(--base-rgb),.55);
   padding:5px 10px;backdrop-filter:blur(3px);transition:color .16s ease,border-color .16s ease;
 }
 .map3d-hint:hover{color:var(--snow);border-color:var(--jade-dim)}
@@ -154,7 +198,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .map3d-fullscreen{
   position:absolute;right:10px;bottom:10px;z-index:3;
   font-family:var(--mono);font-size:calc(12px*var(--fs));letter-spacing:.06em;color:var(--moss);
-  border:1px solid var(--line-strong);background:rgba(15,22,19,.55);
+  border:1px solid var(--line-strong);background:rgba(var(--base-rgb),.55);
   padding:5px 10px;backdrop-filter:blur(3px);transition:color .16s ease,border-color .16s ease;
 }
 .map3d-fullscreen:hover{color:var(--snow);border-color:var(--jade-dim)}
@@ -167,7 +211,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 /* 圖層控制（任務六） */
 .layer-control{
   position:absolute;top:10px;left:10px;z-index:2;
-  background:rgba(15,22,19,.72);border:1px solid var(--line-strong);
+  background:rgba(var(--base-rgb),.72);border:1px solid var(--line-strong);
   padding:9px 11px;font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--fog);
   backdrop-filter:blur(3px);
 }
@@ -182,14 +226,14 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .area-note{
   position:absolute;bottom:10px;left:10px;right:10px;z-index:2;
   font-family:var(--mono);font-size:calc(12px*var(--fs));color:var(--moss);
-  background:rgba(15,22,19,.72);border:1px solid var(--line-strong);
+  background:rgba(var(--base-rgb),.72);border:1px solid var(--line-strong);
   padding:5px 9px;backdrop-filter:blur(3px);
 }
 
 /* 地圖 hover 資訊卡（任務十一）：只放摘要 */
 .map-hover-card{
   position:absolute;top:0;left:0;z-index:3;pointer-events:none;
-  background:rgba(15,22,19,.92);border:1px solid var(--line-strong);
+  background:rgba(var(--base-rgb),.92);border:1px solid var(--line-strong);
   padding:10px 12px;min-width:150px;
 }
 .map-hover-card .hc-name{font-weight:700;color:var(--snow);font-size:calc(14.5px*var(--fs));margin-bottom:3px}
@@ -228,7 +272,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .badge-status.s-watch{border-color:var(--clay);color:var(--clay)}
 .badge-status.s-stable{border-color:var(--ochre);color:var(--ochre)}
 /* 風險等級：實心標籤，與存續狀態視覺區隔開來 */
-.badge-risk.is-high{background:var(--clay);color:var(--snow)}
+.badge-risk.is-high{background:var(--clay-fill);color:#fff}
 .badge-risk.is-low{background:var(--jade-dim);color:var(--snow)}
 .badge-risk.is-none{border:1px solid var(--ochre);color:var(--ochre)}
 .badge-risk.is-na{border:1px solid var(--line-strong);color:var(--moss)}
@@ -242,7 +286,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 /* 事件回放提醒（風險快照與回放不同時） */
 .replay-note{
   margin:0 clamp(16px,2.2vw,26px) 14px;padding:10px 14px;
-  border:1px solid var(--ochre);background:rgba(201,138,46,.08);
+  border:1px solid var(--ochre);background:rgba(var(--ochre-rgb),.08);
   font-size:calc(14px*var(--fs));line-height:1.75;color:var(--fog);display:grid;gap:2px;
 }
 .replay-note b{color:var(--snow);font-weight:700}
@@ -256,13 +300,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .decision-summary .num.risk-high{color:var(--clay)}
 
 /* 系統結論 */
-.conclusion{padding:16px clamp(16px,2.2vw,26px);border-top:1px solid var(--line);background:rgba(194,80,60,.05)}
+.conclusion{padding:16px clamp(16px,2.2vw,26px);border-top:1px solid var(--line);background:rgba(var(--clay-rgb),.05)}
 .conclusion .line1{font-weight:700;color:var(--snow);font-size:calc(16px*var(--fs));margin-bottom:6px}
 .conclusion .line2,.conclusion .line3{font-size:calc(14.5px*var(--fs));color:var(--fog);margin-bottom:3px}
 .conclusion .line3{color:var(--moss)}
 
 /* 建議行動卡 */
-.action-card{margin:16px clamp(16px,2.2vw,26px);padding:14px 16px;border-left:2px solid var(--jade-dim);background:rgba(63,169,160,.06)}
+.action-card{margin:16px clamp(16px,2.2vw,26px);padding:14px 16px;border-left:2px solid var(--jade-dim);background:rgba(var(--jade-rgb),.06)}
 .action-card .at{font-family:var(--mono);font-size:calc(12px*var(--fs));letter-spacing:.1em;color:var(--jade);text-transform:uppercase;margin-bottom:8px;display:block}
 .action-card ol{margin-left:18px;font-size:calc(15px*var(--fs));color:var(--snow);line-height:1.9}
 
@@ -394,7 +438,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--jade);
   border:1px solid var(--jade-dim);padding:3px 10px;transition:background .16s ease;
 }
-.chip:hover{background:rgba(63,169,160,.12);color:var(--snow)}
+.chip:hover{background:rgba(var(--jade-rgb),.12);color:var(--snow)}
 
 /* ── 區段 ── */
 .sec{margin-top:clamp(32px,4.6vw,60px)}
@@ -437,7 +481,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 }
 .pill.s-watch{border-color:var(--clay);color:var(--clay)}
 .pill.s-stable{border-color:var(--ochre);color:var(--ochre)}
-.pill.risk-pill.is-high{background:var(--clay);color:var(--snow);border-color:var(--clay)}
+.pill.risk-pill.is-high{background:var(--clay-fill);color:#fff;border-color:var(--clay-fill)}
 .pill.risk-pill.is-low{background:var(--jade-dim);color:var(--snow);border-color:var(--jade-dim)}
 .pill.risk-pill.is-none{border-color:var(--ochre);color:var(--ochre)}
 .pill.risk-pill.is-na{border-color:var(--line-strong);color:var(--moss)}
@@ -466,7 +510,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   font-family:var(--mono);font-size:calc(13px*var(--fs));padding:6px 14px;
   border:1px solid var(--jade-dim);color:var(--jade);transition:background .16s ease;
 }
-.btn:hover{background:rgba(63,169,160,.12);color:var(--snow)}
+.btn:hover{background:rgba(var(--jade-rgb),.12);color:var(--snow)}
 .btn:disabled{border-color:var(--line-strong);color:var(--moss);cursor:not-allowed}
 .btn.ghost{border-color:var(--line-strong);color:var(--moss)}
 .btn.ghost:hover{color:var(--fog);background:transparent}
@@ -478,6 +522,14 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .empty b{display:block;color:var(--fog);font-weight:500;margin-bottom:4px}
 
 footer{margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line)}
+/* 頁尾三段：左開發團隊、中平台名稱、右資料來源；手機改成上下三行 */
+footer .wrap.ft-3{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+footer .ft-3 > :nth-child(2){text-align:center}
+footer .ft-3 > :nth-child(3){text-align:right;justify-self:end}
+@media (max-width:720px){
+  footer .wrap.ft-3{grid-template-columns:1fr;justify-items:start}
+  footer .ft-3 > :nth-child(2),footer .ft-3 > :nth-child(3){text-align:left;justify-self:start}
+}
 footer .wrap{
   padding-top:20px;padding-bottom:36px;
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
@@ -656,11 +708,11 @@ body.mm-open{overflow:hidden}
 .mm-dim{fill:var(--abyss);opacity:.35;pointer-events:none}   /* 壓暗底圖，讓色塊與文字清楚 */
 /* 福衛八號：水面藍色實心，裸露堆積琥珀色虛線框（與事件優先等級的顏色分開） */
 .mm-fs8{pointer-events:none}
-.mm-fs8.water{fill:#4FA3E0;fill-opacity:.75;stroke:#8CC8F2;stroke-width:.5}
+.mm-fs8.water{fill:var(--water);fill-opacity:.75;stroke:#8CC8F2;stroke-width:.5}
 .mm-fs8.bare{fill:var(--ochre);fill-opacity:.1;stroke:var(--ochre);stroke-width:.7;stroke-dasharray:3 2}
 .mm-key{display:inline-block;width:10px;height:10px;margin:0 3px 0 6px;vertical-align:-1px}
-.mm-key.water{background:#4FA3E0}
-.mm-key.bare{border:1px dashed var(--ochre);background:rgba(201,138,46,.12)}
+.mm-key.water{background:var(--water)}
+.mm-key.bare{border:1px dashed var(--ochre);background:rgba(var(--ochre-rgb),.12)}
 .mm-late{color:var(--iris);font-weight:500}
 .mm-toggle{font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--fog);cursor:pointer;margin-right:8px}
 .mm-toggle input{vertical-align:-2px;margin-right:3px}
@@ -685,17 +737,17 @@ body.mm-open{overflow:hidden}
 /* 事件卡 */
 .ev-empty{padding:28px}
 .ev-pri{color:var(--snow)}
-.ev-pri.p-high{background:var(--clay)}
+.ev-pri.p-high{background:var(--clay-fill);color:#fff}
 .ev-pri.p-medium{background:var(--ochre);color:var(--abyss)}
 .ev-pri.p-low{background:var(--jade-dim)}
 .ev-human{border:1px solid var(--snow);color:var(--snow)}
 .ev-summary{
   margin:0 clamp(16px,2.2vw,26px) 16px;padding:12px 16px;
   font-size:calc(16px*var(--fs));line-height:1.85;color:var(--snow);
-  border-left:3px solid var(--line-strong);background:rgba(255,255,255,.03);
+  border-left:3px solid var(--line-strong);background:rgba(var(--ink-rgb),.03);
 }
-.ev-summary.p-high{border-left-color:var(--clay);background:rgba(194,80,60,.08)}
-.ev-summary.p-medium{border-left-color:var(--ochre);background:rgba(201,138,46,.08)}
+.ev-summary.p-high{border-left-color:var(--clay);background:rgba(var(--clay-rgb),.08)}
+.ev-summary.p-medium{border-left-color:var(--ochre);background:rgba(var(--ochre-rgb),.08)}
 .ev-readout .num{font-size:clamp(calc(16px*var(--fs-h)),calc(1.6vw*var(--fs-h)),calc(20px*var(--fs-h)))}
 .ev-readout .num.t-high{color:var(--clay)}
 .ev-readout .num.t-medium{color:var(--ochre)}
@@ -710,14 +762,14 @@ body.mm-open{overflow:hidden}
 /* 提醒：不影響研判，只提示值班人員（例如疑似崩塌堆積） */
 .ev-caution{
   margin:16px clamp(16px,2.2vw,26px) 0;padding:10px 14px;
-  border-left:3px solid var(--ochre);background:rgba(201,138,46,.06);font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.8;
+  border-left:3px solid var(--ochre);background:rgba(var(--ochre-rgb),.06);font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.8;
 }
 .ev-caution .at{color:var(--ochre)}
 
 /* 事後查證：與系統研判區隔，用虛線框與霧白 */
 .ev-hindsight{
   margin:16px clamp(16px,2.2vw,26px) 0;padding:10px 14px;
-  border:1px dashed var(--fog);background:rgba(188,205,194,.05);font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.8;
+  border:1px dashed var(--fog);background:rgba(var(--ink-rgb),.04);font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.8;
 }
 .ev-hindsight .at{color:var(--fog)}
 .ev-hindsight b{color:var(--snow);font-size:calc(15.5px*var(--fs))}
@@ -744,11 +796,11 @@ body.mm-open{overflow:hidden}
 .q-tag.is-optical.v-partial{color:var(--ochre)}
 .optical-note{font-family:var(--mono);font-size:calc(13px*var(--fs));color:var(--moss);padding:10px clamp(14px,1.8vw,22px) 0;line-height:1.7}
 .optical-note b{color:var(--fog);font-weight:500}
-.optical-note .op-est{opacity:.75}
+.optical-note .op-est{color:var(--moss)}
 
 /* 接下來的衛星過境：雷達＝玉綠邊、光學＝苔綠虛線邊；兩天內＝亮、已過待更新＝淡 */
 /* 時點列下方一行：下一期雷達、最快的光學 */
-.upcoming{margin-bottom:16px;padding:8px 12px;border-left:3px solid var(--jade-dim);background:rgba(63,169,160,.06);
+.upcoming{margin-bottom:16px;padding:8px 12px;border-left:3px solid var(--jade-dim);background:rgba(var(--jade-rgb),.06);
   font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.7}
 .upcoming b{color:var(--snow);font-weight:600}
 .up-label{font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--jade);margin-right:8px}
@@ -790,7 +842,7 @@ body.mm-open{overflow:hidden}
 .is-hit .tl-st{color:var(--jade)}
 .is-cloud .tl-st,.is-miss .tl-st{color:var(--moss)}
 .is-future .tl-date,.is-future .tl-sat{color:var(--fog)}
-.tl-i.is-recheck{background:rgba(63,169,160,.1)}
+.tl-i.is-recheck{background:rgba(var(--jade-rgb),.1)}
 .tl-i.is-recheck .tl-st{color:var(--jade);font-weight:600}
 .tl-i.is-late{opacity:.7}
 .tl-open{align-self:flex-start;justify-self:start;margin-top:2px;font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--jade);
@@ -840,7 +892,7 @@ body.mm-open{overflow:hidden}
 
 /* 人工查證 */
 .verify{margin:0 clamp(16px,2.2vw,26px) 16px;padding:14px 16px;border:1px solid var(--line-strong)}
-.vf-saved{font-size:calc(14.5px*var(--fs));color:var(--fog);padding:8px 10px;margin-bottom:10px;background:rgba(255,255,255,.03);border-left:2px solid var(--fog)}
+.vf-saved{font-size:calc(14.5px*var(--fs));color:var(--fog);padding:8px 10px;margin-bottom:10px;background:rgba(var(--ink-rgb),.03);border-left:2px solid var(--fog)}
 .vf-saved b{color:var(--snow)}
 .vf-saved p{margin-top:4px}
 .vf-at{display:block;font-family:var(--mono);font-size:calc(12px*var(--fs));color:var(--moss);margin-top:2px}
@@ -922,7 +974,7 @@ body.mm-open{overflow:hidden}
 .ro.o-miss{border-color:var(--clay);color:var(--clay)}
 .ro.o-none{color:var(--moss)}
 .rp{font-family:var(--mono);font-size:calc(12.5px*var(--fs));padding:0 6px;color:var(--abyss)}
-.rp.p-high{background:var(--clay)}
+.rp.p-high{background:var(--clay-fill);color:#fff}
 .rp.p-medium{background:var(--ochre)}
 .rp.p-low{background:var(--moss)}
 .replay-note{font-size:calc(13px*var(--fs));color:var(--moss);margin-top:8px;max-width:110ch;line-height:1.6}
@@ -979,19 +1031,22 @@ body.mm-open{overflow:hidden}
 .sys-status::after{content:" →";color:var(--jade)}   /* 網管檢視：點一下到系統管理分頁 */
 .help-btn{text-decoration:none}
 .help-btn::after{content:" ↗";color:var(--jade)}   /* 開新分頁 */
-/* 字級設定：使用說明旁的齒輪 */
+/* 「設定」：使用說明旁，外觀、字體與資料來源 */
 .fs-set{position:relative;display:flex}
-.fs-btn{display:flex;align-items:center;justify-content:center;width:calc(30px*var(--fs-h));align-self:stretch;
+/* 「⚙ 設定」：與「使用說明」同高、同樣的字與內距，看起來是一組按鈕 */
+.fs-btn{display:flex;align-items:center;justify-content:center;gap:6px;align-self:stretch;
+  font-family:var(--mono);font-size:calc(13px*var(--fs));padding:4px 12px;white-space:nowrap;
   color:var(--moss);border:1px solid var(--line-strong)}
-.fs-btn svg{width:calc(16px*var(--fs));height:calc(16px*var(--fs))}
+.fs-btn svg{width:calc(16px*var(--fs));height:calc(16px*var(--fs));flex:none}
 .fs-btn:hover,.fs-btn[aria-expanded="true"]{color:var(--snow);border-color:var(--fog)}
 .fs-btn:focus-visible{outline:1px solid var(--jade);outline-offset:2px}
-/* 齒輪小視窗：位置由 views.js 依按鈕算（手機上按鈕不在右緣，固定靠右會超出畫面） */
+/* 設定小視窗：位置由 views.js 依按鈕算（手機上按鈕不在右緣，固定靠右會超出畫面） */
 .fs-menu{position:fixed;z-index:60;width:min(380px,calc(100vw - 24px));max-height:calc(100vh - 90px);overflow:auto;
   padding:12px 14px;background:var(--stone);border:1px solid var(--line-strong);display:grid;gap:8px;
-  box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  box-shadow:0 10px 30px var(--shadow)}
 .fs-menu .fs-title{font-family:var(--mono);font-size:calc(12px*var(--fs));color:var(--moss)}
 .fs-opts{display:flex;flex-wrap:wrap;gap:6px 16px}
+.fs-row{display:grid;gap:4px}
 .fs-menu label{display:flex;align-items:center;gap:6px;font-size:calc(14.5px*var(--fs));color:var(--fog);cursor:pointer;white-space:nowrap}
 .fs-menu input{accent-color:var(--jade)}
 .fs-thanks{padding-top:8px;border-top:1px solid var(--line)}
@@ -1028,7 +1083,7 @@ body.mm-open{overflow:hidden}
 .admin-sec{margin-top:28px}
 .admin-sec h3{font-size:calc(14.5px*var(--fs));font-weight:500;color:var(--snow);margin:14px 0 8px}
 .admin-sec h3 .dim{font-weight:400}
-.admin-fail{margin:10px 0;padding:8px 12px;border-left:3px solid var(--clay);background:rgba(194,80,60,.08);font-size:calc(14.5px*var(--fs));color:var(--fog)}
+.admin-fail{margin:10px 0;padding:8px 12px;border-left:3px solid var(--clay);background:rgba(var(--clay-rgb),.08);font-size:calc(14.5px*var(--fs));color:var(--fog)}
 .admin-fail b{color:var(--clay);font-weight:500}
 .admin-fail .dim{display:block;margin-top:2px;word-break:break-all}
 .admin-history{width:100%;border-collapse:collapse;font-size:calc(14px*var(--fs));min-width:760px}
@@ -1060,11 +1115,11 @@ body.mm-open{overflow:hidden}
 .duty-head .drill-enter{align-self:flex-start;white-space:nowrap}
 .drill-banner{
   display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;padding:10px 14px;
-  border:1px solid var(--iris);background:rgba(156,139,217,.12);color:var(--snow);font-size:calc(15px*var(--fs));
+  border:1px solid var(--iris);background:rgba(var(--iris-rgb),.12);color:var(--snow);font-size:calc(15px*var(--fs));
 }
 .drill-banner b{color:var(--iris)}
 .drill-banner .btn{margin-left:auto;border-color:var(--iris);color:var(--snow)}
-.drill-banner .btn:hover{background:rgba(156,139,217,.18)}
+.drill-banner .btn:hover{background:rgba(var(--iris-rgb),.18)}
 .duty.is-drill .duty-title .label{color:var(--iris)}
 .duty.is-drill .snap.is-on{box-shadow:inset 0 -2px 0 var(--iris)}
 .scen-label{margin-right:2px}
@@ -1072,16 +1127,16 @@ body.mm-open{overflow:hidden}
 /* 資料過舊：一般畫面用琥珀色、語氣平和；網管檢視用陶紅色並寫出處理方式 */
 .scen-age.is-stale{color:var(--ochre)}
 .is-admin .scen-age.is-stale{color:var(--clay)}
-.fresh-note{margin-bottom:14px;padding:8px 14px;border-left:3px solid var(--ochre);background:rgba(201,138,46,.07);font-size:calc(14.5px*var(--fs));color:var(--fog)}
+.fresh-note{margin-bottom:14px;padding:8px 14px;border-left:3px solid var(--ochre);background:rgba(var(--ochre-rgb),.07);font-size:calc(14.5px*var(--fs));color:var(--fog)}
 .fresh-note b{color:var(--ochre);font-weight:500}
-.fresh-note.is-admin-note{border-left-color:var(--clay);background:rgba(194,80,60,.1)}
+.fresh-note.is-admin-note{border-left-color:var(--clay);background:rgba(var(--clay-rgb),.1)}
 .fresh-note.is-admin-note b{color:var(--clay)}
 
 /* 頂端橫幅：警戒（紅）、有新資料（玉綠） */
 .top-banner .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;font-size:calc(14.5px*var(--fs))}
-.alert-banner{background:rgba(194,80,60,.18);border-bottom:1px solid var(--clay);color:var(--snow)}
+.alert-banner{background:rgba(var(--clay-rgb),.18);border-bottom:1px solid var(--clay);color:var(--snow)}
 .alert-banner b{color:var(--clay)}
-.new-data{background:rgba(63,169,160,.12);border-bottom:1px solid var(--jade-dim);color:var(--snow)}
+.new-data{background:rgba(var(--jade-rgb),.12);border-bottom:1px solid var(--jade-dim);color:var(--snow)}
 .new-data b{color:var(--jade)}
 .new-data .btn{margin-left:auto}
 
@@ -1100,7 +1155,7 @@ body.mm-open{overflow:hidden}
 .todo-main b{color:var(--snow);font-weight:500;font-size:calc(15px*var(--fs))}
 .todo-main span{font-size:calc(13.5px*var(--fs));color:var(--moss)}
 .todo-empty{padding:10px 12px;font-size:calc(14.5px*var(--fs));color:var(--moss)}
-.todo-pending{padding:7px 12px;font-size:calc(14px*var(--fs));color:var(--ochre);border-bottom:1px solid var(--line);background:rgba(201,138,46,.06)}
+.todo-pending{padding:7px 12px;font-size:calc(14px*var(--fs));color:var(--ochre);border-bottom:1px solid var(--line);background:rgba(var(--ochre-rgb),.06)}
 .q-tag.is-waiting{border-color:var(--clay);color:var(--clay)}
 @media (max-width:720px){.todo-item{grid-template-columns:26px minmax(0,1fr)}.todo-item .q-tag{grid-column:2;justify-self:start}}
 
@@ -1123,7 +1178,7 @@ body.mm-open{overflow:hidden}
 }
 .old-snap{
   display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-8px 0 16px;padding:8px 14px;
-  border-left:3px solid var(--ochre);background:rgba(201,138,46,.08);font-size:calc(14.5px*var(--fs));color:var(--fog);
+  border-left:3px solid var(--ochre);background:rgba(var(--ochre-rgb),.08);font-size:calc(14.5px*var(--fs));color:var(--fog);
 }
 .old-snap b{color:var(--snow);font-weight:500}
 .old-snap .btn{margin-left:auto;border-color:var(--ochre);color:var(--snow)}
@@ -1162,7 +1217,7 @@ body.mm-open{overflow:hidden}
 .replay-details[open] summary::before{content:"▾ "}
 .replay-details summary:hover{color:var(--fog)}
 
-/* 手機：字級放大後，長字串要能換行，不撐出畫面（桌機版面不受影響） */
+/* 手機：字體放大後，長字串要能換行，不撐出畫面（桌機版面不受影響） */
 @media (max-width:720px){
   .filters{flex-wrap:wrap}
   .filter{white-space:normal;text-align:left}

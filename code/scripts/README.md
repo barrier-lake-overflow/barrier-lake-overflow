@@ -43,6 +43,7 @@
 | `aerial_lake_check.py` | 航照湖面 vs SAR 偵測（`docs/aerial-validation.md`） |
 | `aerial_deposit_check.py` | 誤報位置的地表類型 |
 | `aerial_dashboard.py` | 航照放進值班佇列小地圖與外部證據 |
+| `fs8_dashboard.py` | 福衛八號水面與裸露堆積範圍放上小地圖（`dashboard/data/fs8.js`，只有向量、不含影像） |
 
 ## 參數與實驗（結果寫在 `docs/parameters.md`）
 

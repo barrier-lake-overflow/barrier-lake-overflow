@@ -23,8 +23,9 @@
 
 const Map3D = (() => {
 
-  // ── 色票（對齊 styles.css 的設計變數）───────────
-  const COL = {
+  // ── 色票（對齊 styles.css 的設計變數）：深色、淺色兩組，跟著頂端「設定」的外觀切換 ──
+  const PALETTES = {};
+  PALETTES.dark = {
     coastDark: 0x18211C,   // 對齊 --stone 系，海岸/低窪過渡色
     lowland: 0x3F5C4C,   // 低地：偏暗的苔綠
     mid: 0x7CA48A,   // 中海拔：--moss
@@ -36,7 +37,25 @@ const Map3D = (() => {
     jade: 0x3FA9A0,   // --jade（hover/select 光環）
     alert: 0xF5D547,   // 高風險警示環專用亮黃色，刻意跟監測中的紅點區隔開
     locate: 0x38E1FF,   // 垂直定位線專用亮青色，純粹是「這裡有東西」的視覺提示，跟狀態色無關
+    plate: 0x0F1613,    // 地形下方底盤
   };
+  // 淺色：地形改淡、點位與光環加深，白底上才分得出來
+  PALETTES.light = {
+    coastDark: 0xE6ECE7,
+    lowland: 0xB7CDBE,
+    mid: 0x8DB099,
+    high: 0xCF9F55,
+    peak: 0xEDE3CC,
+    watch: 0xA8361F,
+    stable: 0x9A6412,
+    gone: 0x4C6656,
+    jade: 0x12706A,
+    alert: 0xC99400,
+    locate: 0x0A8FB0,
+    plate: 0x8FA597,
+  };
+  const themeNow = () => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+  let COL = PALETTES[themeNow()];
 
   let renderer, scene, camera, canvas, labelsEl, wrapEl;
   let terrainMesh, groundPlate;
@@ -194,7 +213,7 @@ const Map3D = (() => {
     const geo = new THREE.PlaneGeometry(WORLD.width * 1.5, WORLD.depth * 1.5, 1, 1);
     geo.rotateX(-Math.PI / 2);
     const mat = new THREE.MeshBasicMaterial({
-      color: 0x0F1613, transparent: true, opacity: 0.35, depthWrite: false,
+      color: COL.plate, transparent: true, opacity: themeNow() === 'light' ? 0 : 0.35, depthWrite: false,   // 淺色底上底盤反而像一塊色塊，不畫
     });
     const mesh = new THREE.Mesh(geo, mat);
     mesh.position.y = -0.06;
@@ -311,7 +330,9 @@ const Map3D = (() => {
     m.label.classList.toggle('is-visible', layers.points && (on || m._active || layers.labels));
   }
 
+  let lastLakes = [];
   function setLakes(lakes) {
+    lastLakes = lakes;
     markers.forEach(m => { labelsEl.removeChild(m.label); markerGroup.remove(m.group); });
     markers = new Map();
     const maxVol = Math.max(...lakes.map(l => l.volume || 0)) || 1;
@@ -445,7 +466,10 @@ const Map3D = (() => {
 
   /* area：{ lakeId, polygonLonLat } | null，代表目前選取的湖是否要畫出
      偵測範圍；null 就是沒有可用的範圍，不畫。 */
-  function sync({ selectedId, visibleIds, highRiskIds, area }) {
+  let lastSync = null;   // 換外觀重建點位後，照上一次的選取與篩選再套一次
+  function sync(state) {
+    lastSync = state;
+    const { selectedId, visibleIds, highRiskIds, area } = state;
     currentSelectedId = selectedId || null;
     markers.forEach((m, id) => {
       const visible = !visibleIds || visibleIds.has(id);
@@ -795,12 +819,27 @@ const Map3D = (() => {
     }
 
     window.addEventListener('resize', resize);
+    window.addEventListener('themechange', e => setTheme(e.detail.theme));
     if (typeof ResizeObserver !== 'undefined') {
       new ResizeObserver(resize).observe(wrapEl);
     }
     resize();
     canvas.style.cursor = 'grab';
     animate();
+  }
+
+  /* 外觀切換：換色票後重建地形、底盤、點位與範圍圈（幾何不變，只是顏色） */
+  function setTheme(theme) {
+    if (!PALETTES[theme] || COL === PALETTES[theme]) return;
+    COL = PALETTES[theme];
+    if (!scene) return;
+    [terrainMesh, groundPlate].forEach(m => { scene.remove(m); m.geometry.dispose(); m.material.dispose(); });
+    groundPlate = buildGroundPlate(); scene.add(groundPlate);
+    terrainMesh = buildTerrain(); scene.add(terrainMesh);
+    if (areaRing) areaRing.traverse(o => { if (o.material) o.material.color.setHex(COL.jade); });
+    if (areaPoly) [areaPoly.fillMesh, areaPoly.borderLine].forEach(o => { if (o && o.material) o.material.color.setHex(COL.jade); });
+    setLakes(lastLakes);
+    if (lastSync) sync(lastSync);
   }
 
   return { init, setLakes, sync, hoverMarker, unhoverMarker, setLayers, resize, resetView };

@@ -8,8 +8,15 @@
   <!-- 字型放在本機（scripts/vendor_fonts.py），會場離線也能正常顯示 -->
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
-  <!-- 字級（右上角齒輪）：先套用，畫面才不會先小後大 -->
-  <script>try { var f = localStorage.getItem('fontScale'); if (f) document.documentElement.dataset.fs = f; } catch (e) {}</script>
+  <!-- 外觀與字體（頂端「設定」）：先套用，畫面才不會先閃一下。外觀預設跟隨電腦（auto） -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = 'auto';
+      try { var f = localStorage.getItem('fontScale'); if (f) d.dataset.fs = f; t = localStorage.getItem('theme') || 'auto'; } catch (e) {}
+      var light = t === 'light' || (t === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches);
+      d.dataset.theme = light ? 'light' : 'dark';
+    })();
+  </script>
 </head>
 
 <body>
@@ -30,20 +37,30 @@
       <!-- 使用說明在另一頁（help.html），開新分頁；各區塊旁的「?」直接開到對應段落 -->
       <a class="help-btn" href="help.html" target="_blank" rel="noopener">使用說明</a>
       <div class="fs-set">
-        <button class="fs-btn" id="fsBtn" type="button" title="設定與資料來源" aria-label="設定與資料來源" aria-expanded="false" aria-controls="fsMenu">
+        <button class="fs-btn" id="fsBtn" type="button" title="外觀、字體與資料來源" aria-label="設定：外觀、字體與資料來源" aria-expanded="false" aria-controls="fsMenu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <circle cx="12" cy="12" r="3"/>
             <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>
             <circle cx="12" cy="12" r="6.5"/>
-          </svg>
+          </svg>設定
         </button>
-        <!-- 齒輪小視窗：字級（views.js）＋資料來源致謝（各家規定的標註文字照原文；詳細授權見使用說明） -->
+        <!-- 設定小視窗：外觀、字體（views.js）＋資料來源致謝（各家規定的標註文字照原文；詳細授權見使用說明） -->
         <div class="fs-menu" id="fsMenu" role="dialog" aria-label="設定與資料來源" hidden>
-          <span class="fs-title">字級</span>
-          <div class="fs-opts" role="radiogroup" aria-label="字級">
+          <div class="fs-row">
+            <span class="fs-title">外觀</span>
+            <div class="fs-opts" role="radiogroup" aria-label="外觀">
+              <label><input type="radio" name="theme" value="auto"> 跟隨電腦</label>
+              <label><input type="radio" name="theme" value="light"> 淺色</label>
+              <label><input type="radio" name="theme" value="dark"> 深色</label>
+            </div>
+          </div>
+          <div class="fs-row">
+          <span class="fs-title">字體</span>
+          <div class="fs-opts" role="radiogroup" aria-label="字體大小">
             <label><input type="radio" name="fontScale" value=""> 標準</label>
             <label><input type="radio" name="fontScale" value="l"> 大</label>
             <label><input type="radio" name="fontScale" value="xl"> 特大</label>
+          </div>
           </div>
           <span class="fs-title fs-thanks">感謝以下單位提供資料</span>
           <ul class="fs-src">
@@ -369,9 +386,10 @@
   </div>
 
   <footer>
-    <div class="wrap">
-      <span>堰塞湖事件研判平台 · OSSInt 2026 · 由 程式這樣寫對不隊 開發</span>
-      <span>資料來源見頂端齒輪</span>
+    <div class="wrap ft-3">
+      <span>程式這樣寫對不隊 開發</span>
+      <span>堰塞湖事件研判平台 · OSSInt 2026</span>
+      <span>資料來源見頂端「設定」</span>
     </div>
   </footer>
 

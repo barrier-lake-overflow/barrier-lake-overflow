@@ -59,12 +59,33 @@ const Views = (() => {
     initFontScale();
   }
 
-  /* 齒輪小視窗：字級（標準／大／特大，記在這台瀏覽器，使用說明頁也套用；<head> 已先套用）＋資料來源致謝 */
+  /* 「設定」小視窗：外觀（跟隨電腦／淺色／深色）、字體（標準／大／特大）＋資料來源致謝。
+     都記在這台瀏覽器，使用說明頁也套用；<head> 的小程式已先套用，這裡只處理選單與之後的切換 */
+  const systemLight = window.matchMedia ? matchMedia('(prefers-color-scheme: light)') : null;
+  function applyTheme(pref) {
+    const light = pref === 'light' || (pref === 'auto' && systemLight && systemLight.matches);
+    const theme = light ? 'light' : 'dark';
+    if (document.documentElement.dataset.theme === theme) return;
+    document.documentElement.dataset.theme = theme;
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));   // 3D 地圖換色
+  }
   function initFontScale() {
     const btn = $('#fsBtn'), menu = $('#fsMenu');
     if (!btn || !menu) return;
+    let themePref = 'auto';
+    try { themePref = localStorage.getItem('theme') || 'auto'; } catch (e) { /* 無痕模式 */ }
+    $$('input[name="theme"]', menu).forEach(r => {
+      r.checked = r.value === themePref;
+      r.addEventListener('change', () => {
+        themePref = r.value;
+        try { localStorage.setItem('theme', r.value); } catch (e) { /* 無痕模式：只套用這一次 */ }
+        applyTheme(themePref);
+      });
+    });
+    // 跟隨電腦時，電腦切換深淺色就跟著換
+    if (systemLight) systemLight.addEventListener('change', () => { if (themePref === 'auto') applyTheme('auto'); });
     const cur = document.documentElement.dataset.fs || '';
-    $$('input', menu).forEach(r => {
+    $$('input[name="fontScale"]', menu).forEach(r => {
       r.checked = r.value === cur;
       r.addEventListener('change', () => {
         if (r.value) document.documentElement.dataset.fs = r.value;

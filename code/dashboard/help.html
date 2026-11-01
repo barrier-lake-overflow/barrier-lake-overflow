@@ -7,8 +7,15 @@
   <title>使用說明 · 堰塞湖事件研判平台</title>
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
-  <!-- 字級（右上角齒輪）：先套用，畫面才不會先小後大 -->
-  <script>try { var f = localStorage.getItem('fontScale'); if (f) document.documentElement.dataset.fs = f; } catch (e) {}</script>
+  <!-- 外觀與字體（頂端「設定」）：先套用，畫面才不會先閃一下。外觀預設跟隨電腦（auto） -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = 'auto';
+      try { var f = localStorage.getItem('fontScale'); if (f) d.dataset.fs = f; t = localStorage.getItem('theme') || 'auto'; } catch (e) {}
+      var light = t === 'light' || (t === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches);
+      d.dataset.theme = light ? 'light' : 'dark';
+    })();
+  </script>
   <style>
     /* 使用說明頁：沿用儀表板色系（styles.css 的 :root），版面自訂 */
     .help-top .wrap{gap:14px}
@@ -42,14 +49,14 @@
     .doc td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);color:var(--fog);vertical-align:top;line-height:1.7}
     .doc td:first-child{white-space:nowrap;color:var(--snow)}
     .lead{font-size:calc(16px*var(--fs));color:var(--moss);margin-bottom:24px}
-    .note{border-left:3px solid var(--jade-dim);background:rgba(63,169,160,.06);padding:8px 14px;margin:10px 0}
-    .warn{border-left-color:var(--ochre);background:rgba(201,138,46,.07)}
+    .note{border-left:3px solid var(--jade-dim);background:rgba(var(--jade-rgb),.06);padding:8px 14px;margin:10px 0}
+    .warn{border-left-color:var(--ochre);background:rgba(var(--ochre-rgb),.07)}
     .k{font-family:var(--mono);font-size:calc(12.5px*var(--fs));padding:0 6px;border:1px solid var(--line-strong);white-space:nowrap}
     .k.h{border-color:var(--clay);color:var(--clay)}
     .k.m{border-color:var(--ochre);color:var(--ochre)}
     .k.l{border-color:var(--moss);color:var(--moss)}
     .k.d{border-color:var(--iris);color:var(--iris)}
-    mark{background:rgba(201,138,46,.35);color:var(--snow);padding:0 1px}
+    mark{background:rgba(var(--ochre-rgb),.35);color:var(--snow);padding:0 1px}
     .no-hit{color:var(--moss);font-size:calc(15.5px*var(--fs));padding:12px 0}
     .doc .is-hidden{display:none}
     /* ── 圖解：流程圖（HTML 方塊，窄螢幕也能讀；方塊可點，跳到詳細說明）── */
@@ -68,7 +75,7 @@
     }
     .fc-step.s-start{border-color:var(--jade)}
     .fc-step.s-warn{border-color:var(--ochre)}
-    .fc-step.s-end{border-color:var(--jade);background:rgba(63,169,160,.08)}
+    .fc-step.s-end{border-color:var(--jade);background:rgba(var(--jade-rgb),.08)}
     .fc-arrow{width:1px;height:18px;background:var(--line-strong);position:relative;margin-bottom:6px}
     .fc-arrow::after{content:"";position:absolute;left:-4px;bottom:-6px;border:4px solid transparent;border-top:6px solid var(--line-strong)}
     .fc-q{
@@ -86,15 +93,15 @@
     .lane .fc-step{width:100%;font-size:calc(14.5px*var(--fs))}
     .lane-head{width:100%;padding:8px 10px;text-align:center;font-weight:700;color:var(--snow);border:1px solid}
     .lane-head span{display:block;font-weight:400;font-size:calc(13.5px*var(--fs));color:var(--fog)}
-    .lane.h .lane-head{border-color:var(--clay);background:rgba(194,80,60,.14)}
-    .lane.m .lane-head{border-color:var(--ochre);background:rgba(201,138,46,.12)}
-    .lane.l .lane-head{border-color:var(--moss);background:rgba(124,164,138,.1)}
+    .lane.h .lane-head{border-color:var(--clay);background:rgba(var(--clay-rgb),.14)}
+    .lane.m .lane-head{border-color:var(--ochre);background:rgba(var(--ochre-rgb),.12)}
+    .lane.l .lane-head{border-color:var(--moss);background:rgba(var(--ink-rgb),.05)}
     .fc-merge{margin-top:14px;display:grid;justify-items:center}
     /* 畫面截圖＋可點的數字框：框的位置以截圖的百分比表示，圖縮放時框跟著縮放 */
     .shot{position:relative;border:1px solid var(--line-strong);line-height:0}
     .shot img{width:100%;height:auto;display:block}
-    .hot{position:absolute;border:2px solid rgba(201,138,46,.85);border-radius:3px;text-decoration:none}
-    .hot:hover,.hot:focus-visible{border-color:var(--snow);background:rgba(255,255,255,.08);outline:none}
+    .hot{position:absolute;border:2px solid rgba(var(--ochre-rgb),.85);border-radius:3px;text-decoration:none}
+    .hot:hover,.hot:focus-visible{border-color:var(--snow);background:rgba(var(--ink-rgb),.08);outline:none}
     .hot span{
       position:absolute;left:-11px;top:-11px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;
       display:flex;align-items:center;justify-content:center;background:var(--ochre);color:var(--abyss);
@@ -188,58 +195,58 @@
 
         <div class="sub-sec" id="quick-map">
           <h3>圖 2　畫面上什麼在哪裡</h3>
-          <p>下面是平台實際的值班畫面截圖（2026-11-01，一般畫面），分成上半部與下半部。圖上的數字框可以點，跳到該功能的說明；滑鼠停在框上會顯示名稱。</p>
+          <p>下面是平台實際的值班畫面截圖（2026-11-02，一般畫面、淺色外觀、標準字體），分成上半部與下半部。圖上的數字框可以點，跳到該功能的說明；滑鼠停在框上會顯示名稱。深色外觀的位置完全相同，只是顏色不同。</p>
           <div class="fig">
-            <div class="fig-cap">上半部：頂端列、提示、待處理、監看窗格、衛星過境 · <a href="help-img/duty-top.jpg" target="_blank" rel="noopener">看大圖</a></div>
+            <div class="fig-cap">上半部：頂端列、待處理、監看窗格、衛星過境 · <a href="help-img/duty-top.jpg" target="_blank" rel="noopener">看大圖</a></div>
             <div class="shot">
-              <img src="help-img/duty-top.jpg" alt="值班畫面上半部截圖" width="1400" height="885" loading="lazy">
-              <a class="hot" href="#layout" style="left:16.00%;top:0%;width:10.71%;height:6.33%" title="分頁：值班／全台清冊"><span>1</span></a>
-              <a class="hot" href="#status" style="left:73.64%;top:1.02%;width:15.14%;height:3.95%" title="狀態列：資料更新時間、警戒"><span>2</span></a>
-              <a class="hot" href="#quick" style="left:90.64%;top:1.02%;width:6.57%;height:3.95%" title="使用說明（開新分頁）"><span>3</span></a>
-              <a class="hot" href="#drill" style="left:80.36%;top:9.83%;width:16.86%;height:4.41%" title="進入演練模式（歷史事件回放）"><span>4</span></a>
-              <a class="hot" href="#fresh" style="left:2.79%;top:25.99%;width:94.43%;height:4.97%" title="即時監看資料暫停更新（有才出現）"><span>5</span></a>
-              <a class="hot r" href="#todo" style="left:2.86%;top:31.98%;width:94.29%;height:4.75%" title="待處理：各窗格最新一期要處理的事件"><span>6</span></a>
-              <a class="hot" href="#todo" style="left:2.86%;top:36.05%;width:94.29%;height:7.12%" title="還沒有分析結果的窗格（有才出現）"><span>7</span></a>
-              <a class="hot" href="#windows" style="left:9.43%;top:78.42%;width:34.71%;height:4.18%" title="監看窗格：事件數、最新一期幾天前"><span>8</span></a>
-              <a class="hot" href="#passes" style="left:2.79%;top:85.99%;width:94.43%;height:13.33%" title="衛星過境：每一期一格，點較早的看前幾期"><span>9</span></a>
+              <img src="help-img/duty-top.jpg" alt="值班畫面上半部截圖" width="1400" height="907" loading="lazy">
+              <a class="hot" href="#layout" style="left:16.64%;top:0.00%;width:11.36%;height:6.85%" title="分頁：值班／全台清冊"><span>1</span></a>
+              <a class="hot" href="#status" style="left:63.73%;top:0.99%;width:16.86%;height:4.20%" title="狀態列：資料更新時間、警戒"><span>2</span></a>
+              <a class="hot" href="#quick" style="left:82.44%;top:0.99%;width:14.77%;height:4.20%" title="使用說明（開新分頁）、⚙ 設定（外觀、字體、資料來源）"><span>3</span></a>
+              <a class="hot" href="#drill" style="left:78.49%;top:9.93%;width:18.73%;height:4.64%" title="進入演練模式（歷史事件回放）"><span>4</span></a>
+              <a class="hot" href="#todo" style="left:2.86%;top:31.46%;width:94.29%;height:29.41%" title="待處理：各窗格最新一期要處理的事件"><span>6</span></a>
+              <a class="hot" href="#windows" style="left:2.79%;top:62.09%;width:94.43%;height:10.68%" title="監看窗格：事件數、最新一期幾天前"><span>8</span></a>
+              <a class="hot" href="#passes" style="left:2.79%;top:76.34%;width:94.43%;height:22.45%" title="衛星過境：每一期一格，點較早的看前幾期；下方一行是接下來的雷達與光學"><span>9</span></a>
             </div>
             <ol class="shot-key">
               <li><a href="#layout"><b>1</b>分頁：值班／全台清冊</a></li>
               <li><a href="#status"><b>2</b>狀態列：資料更新時間、警戒</a></li>
-              <li><a href="#quick"><b>3</b>使用說明（開新分頁）</a></li>
+              <li><a href="#quick"><b>3</b>使用說明（開新分頁）、⚙ 設定（外觀、字體、資料來源）</a></li>
               <li><a href="#drill"><b>4</b>進入演練模式（歷史事件回放）</a></li>
-              <li><a href="#fresh"><b>5</b>即時監看資料暫停更新（有才出現）</a></li>
+              <li><a href="#fresh"><b>5</b>即時監看資料暫停更新（有才出現，截圖時沒有）</a></li>
               <li><a href="#todo"><b>6</b>待處理：各窗格最新一期要處理的事件</a></li>
-              <li><a href="#todo"><b>7</b>還沒有分析結果的窗格（有才出現）</a></li>
+              <li><a href="#todo"><b>7</b>還沒有分析結果的窗格（有才出現，截圖時沒有）</a></li>
               <li><a href="#windows"><b>8</b>監看窗格：事件數、最新一期幾天前</a></li>
-              <li><a href="#passes"><b>9</b>衛星過境：每一期一格，點較早的看前幾期</a></li>
+              <li><a href="#passes"><b>9</b>衛星過境：每一期一格，點較早的看前幾期；下方一行是接下來的雷達與光學</a></li>
             </ol>
-            <p class="shot-note">截圖時沒有發布中的警戒，所以看不到紅色警戒橫幅；有警戒時它會出現在頂端列正下方（見<a href="#alert-banner">警戒橫幅</a>）。</p>
+            <p class="shot-note">截圖時沒有發布中的警戒，所以看不到紅色警戒橫幅；有警戒時它會出現在頂端列正下方（見<a href="#alert-banner">警戒橫幅</a>）。5、7 也是有狀況才出現。</p>
           </div>
           <div class="fig">
             <div class="fig-cap">下半部：事件清單、小地圖、新聞候選（左）與事件卡（右） · <a href="help-img/duty-board.jpg" target="_blank" rel="noopener">看大圖</a></div>
             <div class="shot">
-              <img src="help-img/duty-board.jpg" alt="值班畫面下半部截圖" width="1340" height="1220" loading="lazy">
-              <a class="hot" href="#passes" style="left:15.52%;top:2.30%;width:21.42%;height:1.72%" title="下一期日期與還有幾天"><span>10</span></a>
-              <a class="hot" href="#queue" style="left:0.75%;top:7.21%;width:39.63%;height:10.25%" title="這個窗格這一期的事件清單"><span>11</span></a>
-              <a class="hot" href="#minimap" style="left:4.63%;top:17.05%;width:31.79%;height:34.92%" title="小地圖：事件位置、底圖"><span>12</span></a>
-              <a class="hot" href="#news" style="left:0.75%;top:56.80%;width:39.63%;height:42.70%" title="新聞候選"><span>13</span></a>
-              <a class="hot" href="#card-top" style="left:42.09%;top:12.13%;width:55.07%;height:3.20%" title="座標（含 TWD97）：複製、在地圖上開啟"><span>14</span></a>
-              <a class="hot" href="#card-top" style="left:40.00%;top:16.23%;width:59.25%;height:7.70%" title="建議行動、規模、研判信心、首次出現"><span>15</span></a>
-              <a class="hot" href="#card-top" style="left:41.94%;top:24.67%;width:55.37%;height:24.02%" title="建議任務、複製任務單"><span>16</span></a>
-              <a class="hot" href="#verify" style="left:41.94%;top:49.59%;width:55.37%;height:16.39%" title="人工查證：選結果、填人名、儲存、匯出"><span>17</span></a>
-              <a class="hot" href="#card-folds" style="left:41.94%;top:66.80%;width:55.37%;height:20.08%" title="佐證細節（點開）：摘要、證據、逐期紀錄、規則"><span>18</span></a>
+              <img src="help-img/duty-board.jpg" alt="值班畫面下半部截圖" width="1340" height="1745" loading="lazy">
+              <a class="hot" href="#upcoming" style="left:2.39%;top:3.49%;width:20.05%;height:1.32%" title="這一期的事件數、下一期雷達與還有幾天"><span>10</span></a>
+              <a class="hot" href="#queue" style="left:0.75%;top:8.72%;width:39.64%;height:16.20%" title="這個窗格這一期的事件清單"><span>11</span></a>
+              <a class="hot" href="#minimap" style="left:0.75%;top:24.58%;width:39.64%;height:34.06%" title="小地圖：事件位置、底圖、航照與福衛八號圖層；「放大檢視」看大圖"><span>12</span></a>
+              <a class="hot" href="#news" style="left:0.75%;top:58.41%;width:39.64%;height:32.58%" title="新聞候選"><span>13</span></a>
+              <a class="hot" href="#card-top" style="left:42.10%;top:7.43%;width:55.06%;height:4.20%" title="座標（含 TWD97）：複製、在地圖上開啟"><span>14</span></a>
+              <a class="hot" href="#card-top" style="left:40.01%;top:12.20%;width:59.24%;height:6.84%" title="建議行動、規模、研判信心、下一期複核"><span>15</span></a>
+              <a class="hot" href="#upcoming" style="left:41.95%;top:18.70%;width:55.36%;height:15.81%" title="衛星時間軸：事件出現後拍到的影像、下一期複核前的過境，可拖曳、開啟影像"><span>16</span></a>
+              <a class="hot" href="#card-top" style="left:41.95%;top:54.87%;width:55.36%;height:15.20%" title="建議任務、複製任務單"><span>17</span></a>
+              <a class="hot" href="#verify" style="left:41.95%;top:70.65%;width:55.36%;height:12.22%" title="人工查證：選結果、填人名、儲存、匯出"><span>18</span></a>
+              <a class="hot" href="#card-folds" style="left:41.95%;top:83.45%;width:55.36%;height:15.01%" title="佐證細節（點開）：摘要、證據、逐期紀錄、規則"><span>19</span></a>
             </div>
             <ol class="shot-key" start="10">
-              <li><a href="#passes"><b>10</b>下一期日期與還有幾天</a></li>
+              <li><a href="#upcoming"><b>10</b>這一期的事件數、下一期雷達與還有幾天</a></li>
               <li><a href="#queue"><b>11</b>這個窗格這一期的事件清單</a></li>
-              <li><a href="#minimap"><b>12</b>小地圖：事件位置、底圖</a></li>
+              <li><a href="#minimap"><b>12</b>小地圖：事件位置、底圖、航照與福衛八號圖層；「放大檢視」看大圖</a></li>
               <li><a href="#news"><b>13</b>新聞候選</a></li>
               <li><a href="#card-top"><b>14</b>座標（含 TWD97）：複製、在地圖上開啟</a></li>
-              <li><a href="#card-top"><b>15</b>建議行動、規模、研判信心、首次出現</a></li>
-              <li><a href="#card-top"><b>16</b>建議任務、複製任務單</a></li>
-              <li><a href="#verify"><b>17</b>人工查證：選結果、填人名、儲存、匯出</a></li>
-              <li><a href="#card-folds"><b>18</b>佐證細節（點開）：摘要、證據、逐期紀錄、規則</a></li>
+              <li><a href="#card-top"><b>15</b>建議行動、規模、研判信心、下一期複核</a></li>
+              <li><a href="#upcoming"><b>16</b>衛星時間軸：事件出現後拍到的影像、下一期複核前的過境，可拖曳、開啟影像</a></li>
+              <li><a href="#card-top"><b>17</b>建議任務、複製任務單</a></li>
+              <li><a href="#verify"><b>18</b>人工查證：選結果、填人名、儲存、匯出</a></li>
+              <li><a href="#card-folds"><b>19</b>佐證細節（點開）：摘要、證據、逐期紀錄、規則</a></li>
             </ol>
           </div>
           <table>
@@ -250,13 +257,14 @@
               <tr><td>今天要處理哪些事件</td><td>6 待處理（7 是還沒有結果的窗格）</td></tr>
               <tr><td>某個地點的情況</td><td>8 點那個窗格</td></tr>
               <tr><td>前幾天（前幾期）的結果</td><td>9 點較早的那一格</td></tr>
-              <tr><td>下一期什麼時候</td><td>10</td></tr>
+              <tr><td>下一期什麼時候、之前有哪些光學影像</td><td>9 下方一行、15 下一期複核、16 衛星時間軸</td></tr>
               <tr><td>事件在哪裡、座標</td><td>12 小地圖、14 座標（可複製、開地圖）</td></tr>
               <tr><td>這件事要多快處理、有多確定</td><td>15</td></tr>
-              <tr><td>要派誰、做什麼</td><td>16 建議任務（可複製任務單）</td></tr>
-              <tr><td>記錄查證結果、交班</td><td>17 人工查證</td></tr>
-              <tr><td>為什麼系統這樣排</td><td>18 佐證細節</td></tr>
+              <tr><td>要派誰、做什麼</td><td>17 建議任務（可複製任務單）</td></tr>
+              <tr><td>記錄查證結果、交班</td><td>18 人工查證</td></tr>
+              <tr><td>為什麼系統這樣排</td><td>19 佐證細節</td></tr>
               <tr><td>有沒有相關新聞</td><td>13 新聞候選</td></tr>
+              <tr><td>字太小、想換淺色或深色</td><td>3 ⚙ 設定</td></tr>
               <tr><td>歷年堰塞湖紀錄、風險</td><td>1 切到「全台清冊」</td></tr>
               <tr><td>練習或看歷史案例</td><td>4 演練模式</td></tr>
             </tbody>
@@ -352,7 +360,7 @@
         <table>
           <thead><tr><th>位置</th><th>內容</th></tr></thead>
           <tbody>
-            <tr><td>頂端列</td><td>系統名稱；兩個分頁「值班」「全台清冊」；一行資料狀態；「使用說明」（就是這一頁，會開新分頁）；旁邊的<b>齒輪</b>打開小視窗：上面調整字級（標準／大／特大，記在這台電腦的瀏覽器，使用說明頁也會套用），下面是提供資料的單位</td></tr>
+            <tr><td>頂端列</td><td>系統名稱；兩個分頁「值班」「全台清冊」；一行資料狀態；「使用說明」（就是這一頁，會開新分頁）；旁邊的<b>⚙ 設定</b>打開小視窗：<b>外觀</b>（跟隨電腦／淺色／深色，預設跟隨電腦的深淺色設定）、<b>字體</b>大小（標準／大／特大）；兩項都記在這台電腦的瀏覽器，使用說明頁也會套用。下面是提供資料的單位</td></tr>
             <tr><td>值班分頁</td><td>一打開的畫面。即時監看各窗格最新一期的疑似事件；右上角的按鈕可進入<a href="#drill">演練模式</a></td></tr>
             <tr><td>全台清冊分頁</td><td>歷年堰塞湖紀錄、3D 地圖、風險背景，見<a href="#inventory">全台清冊</a></td></tr>
           </tbody>
@@ -681,7 +689,7 @@
 
       <section id="sources">
         <h2>資料來源與授權</h2>
-        <p>平台用到的資料都來自公開或經授權的來源。頂端齒輪的小視窗列的是簡要致謝；下表是各項用在哪裡、要注意的條件。有規定標註文字的（Copernicus、USGS）照原文寫。</p>
+        <p>平台用到的資料都來自公開或經授權的來源。頂端「設定」小視窗列的是簡要致謝；下表是各項用在哪裡、要注意的條件。有規定標註文字的（Copernicus、USGS）照原文寫。</p>
         <table>
           <thead><tr><th>資料</th><th>來源</th><th>用在哪裡、注意事項</th></tr></thead>
           <tbody>
@@ -702,8 +710,9 @@
   </div>
 
   <footer>
-    <div class="wrap">
-      <span>堰塞湖事件研判平台 · OSSInt 2026 · 由 程式這樣寫對不隊 開發</span>
+    <div class="wrap ft-3">
+      <span>程式這樣寫對不隊 開發</span>
+      <span>堰塞湖事件研判平台 · OSSInt 2026</span>
       <a class="stat-link" href="index.html">回到平台</a>
     </div>
   </footer>

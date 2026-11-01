@@ -514,7 +514,8 @@ const Duty = (() => {
     // 福衛八號水面與裸露堆積（scripts/fs8_dashboard.py）：窗格中心相同才畫；收到日以前的時點算事後資料
     const fs8 = (window.FS8_COVER || []).find(f => f.windowKm === sc.windowKm &&
       Math.abs(f.center[0] - lon0) < 0.003 && Math.abs(f.center[1] - lat0) < 0.003);
-    const fs8Late = fs8 && new Date(fs8.available) > asOf;
+    // 即時監看的最新一期以「現在」為準（收到了就是一般圖層）；回放與舊時點以該期時間為準
+    const fs8Late = fs8 && new Date(fs8.available) > (!isDrill() && st.snap === lastSnap() ? new Date() : asOf);
     const fs8On = fs8 && (fs8Late ? showFs8Late : showFs8);
     if (fs8On) {
       const d = rings => rings.map(r => 'M' + r.map(p => xy(p).map(v => v.toFixed(1)).join(',')).join('L') + 'Z').join('');
