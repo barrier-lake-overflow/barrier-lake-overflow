@@ -720,6 +720,22 @@
 
   <script>
     'use strict';
+    /* 外觀與字體跟著設定走：電腦切換深淺色（外觀選「跟隨電腦」時）、或在平台分頁改了設定，這一頁立刻跟著換 */
+    (() => {
+      const d = document.documentElement;
+      const mq = window.matchMedia ? matchMedia('(prefers-color-scheme: light)') : null;
+      const apply = () => {
+        let t = 'auto', f = '';
+        try { t = localStorage.getItem('theme') || 'auto'; f = localStorage.getItem('fontScale') || ''; } catch (e) { return; }
+        d.dataset.theme = t === 'light' || (t === 'auto' && mq && mq.matches) ? 'light' : 'dark';
+        if (f) d.dataset.fs = f; else delete d.dataset.fs;
+      };
+      if (mq) mq.addEventListener('change', apply);
+      window.addEventListener('focus', apply);   // 切回來時再看一次（有些情況收不到 change 事件）
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) apply(); });
+      window.addEventListener('storage', e => { if (e.key === 'theme' || e.key === 'fontScale') apply(); });
+    })();
+
     /* 目錄由各節標題自動產生；搜尋只留下有提到關鍵字的段落並標記 */
     (() => {
       const doc = document.getElementById('doc');

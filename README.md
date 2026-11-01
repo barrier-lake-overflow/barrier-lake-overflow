@@ -1,10 +1,3 @@
-<p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="code/dashboard/img/logo-dark.svg">
-    <img src="code/dashboard/img/logo.svg" alt="程式這樣寫對不隊標誌" width="96" height="96">
-  </picture>
-</p>
-
 # 堰塞湖事件研判平台
 
 **網站：<https://barrier-lake-overflow.github.io/barrier-lake-overflow/>**

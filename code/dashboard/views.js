@@ -82,8 +82,11 @@ const Views = (() => {
         applyTheme(themePref);
       });
     });
-    // 跟隨電腦時，電腦切換深淺色就跟著換
-    if (systemLight) systemLight.addEventListener('change', () => { if (themePref === 'auto') applyTheme('auto'); });
+    // 跟隨電腦時，電腦切換深淺色就跟著換；保險起見，切回這個視窗或分頁時也再看一次（有些情況收不到 change 事件）
+    const recheck = () => { if (themePref === 'auto') applyTheme('auto'); };
+    if (systemLight) systemLight.addEventListener('change', recheck);
+    window.addEventListener('focus', recheck);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) recheck(); });
     const cur = document.documentElement.dataset.fs || '';
     $$('input[name="fontScale"]', menu).forEach(r => {
       r.checked = r.value === cur;
@@ -93,6 +96,19 @@ const Views = (() => {
         try { localStorage.setItem('fontScale', r.value); } catch (e) { /* 無痕模式：只套用這一次 */ }
         window.dispatchEvent(new Event('resize'));   // 3D 地圖等依尺寸繪製的元件重排
       });
+    });
+    // 別的分頁（另一個平台分頁或使用說明頁）改了設定：這裡跟著換，選單也更新
+    window.addEventListener('storage', e => {
+      if (e.key === 'theme') {
+        themePref = e.newValue || 'auto';
+        $$('input[name="theme"]', menu).forEach(r => { r.checked = r.value === themePref; });
+        applyTheme(themePref);
+      } else if (e.key === 'fontScale') {
+        if (e.newValue) document.documentElement.dataset.fs = e.newValue;
+        else delete document.documentElement.dataset.fs;
+        $$('input[name="fontScale"]', menu).forEach(r => { r.checked = r.value === (e.newValue || ''); });
+        window.dispatchEvent(new Event('resize'));
+      }
     });
     // 小視窗貼在按鈕下方、右緣對齊按鈕，但不超出畫面左右
     const place = () => {
