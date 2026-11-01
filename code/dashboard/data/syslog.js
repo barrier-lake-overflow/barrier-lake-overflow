@@ -2,6 +2,68 @@
 window.SYSTEM_LOG = {
  "history": [
   {
+   "startedAt": "2026-11-01T09:32+08:00",
+   "finishedAt": "2026-11-01T09:32+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.3
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.1
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 4.3
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 3.9
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.3
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.1
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.7
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
    "startedAt": "2026-11-01T09:23+08:00",
    "finishedAt": "2026-11-01T09:27+08:00",
    "minutes": 4.0,
@@ -993,8 +1055,8 @@ window.SYSTEM_LOG = {
   }
  ],
  "lastRun": {
-  "startedAt": "2026-11-01T09:23+08:00",
-  "totalLines": 309,
+  "startedAt": "2026-11-01T09:32+08:00",
+  "totalLines": 312,
   "lines": [
    "",
    "== inventory ==",
@@ -1037,7 +1099,7 @@ window.SYSTEM_LOG = {
    "[1/2] 20261014 + 複核 20261026",
    "[2/2] 20261026（無複核期）",
    "保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）",
-   "  {'id': 'live_E121270_N23792', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 1, 'analyzed': 5, 'passes': 5}",
+   "  {'id': 'live_E121270_N23792', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 0, 'analyzed': 0, 'passes': 5}",
    "== live_E121298_N23701 花蓮馬太鞍溪",
    "[1/3] 20261010 + 複核 20261016",
    "[2/3] 20261016 + 複核 20261022",
@@ -1045,7 +1107,7 @@ window.SYSTEM_LOG = {
    "[1/2] 20261014 + 複核 20261026",
    "[2/2] 20261026（無複核期）",
    "保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）",
-   "  {'id': 'live_E121298_N23701', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 1, 'analyzed': 5, 'passes': 5}",
+   "  {'id': 'live_E121298_N23701', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 0, 'analyzed': 0, 'passes': 5}",
    "== live_E121345_N24564 新竹泰崗溪",
    "[1/3] 20261010 + 複核 20261016",
    "[2/3] 20261016 + 複核 20261022",
@@ -1053,28 +1115,31 @@ window.SYSTEM_LOG = {
    "[1/2] 20261014 + 複核 20261026",
    "[2/2] 20261026（無複核期）",
    "保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）",
-   "  {'id': 'live_E121345_N24564', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 1, 'analyzed': 5, 'passes': 5}",
+   "  {'id': 'live_E121345_N24564', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 0, 'analyzed': 0, 'passes': 5}",
    "== live_E121301_N24571 大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
    "[1/1] 20261022（無複核期）",
    "[1/1] 20261026（無複核期）",
-   "  {'id': 'live_E121301_N24571', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 1, 'analyzed': 2, 'passes': 2}",
+   "保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）",
+   "  {'id': 'live_E121301_N24571', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 0, 'analyzed': 0, 'passes': 2}",
    "== live_E121521_N24530 大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
    "[1/1] 20261022（無複核期）",
    "[1/1] 20261026（無複核期）",
-   "  {'id': 'live_E121521_N24530', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 1, 'analyzed': 2, 'passes': 2}",
+   "保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）",
+   "  {'id': 'live_E121521_N24530', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 0, 'analyzed': 0, 'passes': 2}",
    "== live_E121538_N24489 大規模崩塌潛勢區 宜縣LL003（宜蘭縣-大同鄉-D311）72 小時雨量 315 mm",
    "[1/1] 20261022（無複核期）",
    "[1/1] 20261026（無複核期）",
-   "  {'id': 'live_E121538_N24489', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 1, 'analyzed': 2, 'passes': 2}",
+   "保留既有情境檔中人工整理的欄位（說明、事後查證、外部證據等）",
+   "  {'id': 'live_E121538_N24489', 'status': 'ok', 'orbits': '降軌 105＋升軌 69', 'added': 0, 'analyzed': 0, 'passes': 2}",
    "",
    "== passrain ==",
-   "過境前雨量：補了 18 期（6 個情境）",
+   "過境前雨量：補了 0 期（0 個情境）",
    "",
    "== basemap ==",
-   "底圖：新做 3 張",
+   "底圖：新做 0 張",
    "",
    "== news ==",
-   "新聞：新增 7 筆，對到地點的待確認候選 85 筆",
+   "新聞：新增 0 筆，對到地點的待確認候選 85 筆",
    "",
    "== build ==",
    "情境 inv_bl051（烏來堰塞湖 · 2015）",

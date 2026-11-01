@@ -1,12 +1,12 @@
 /* 由 pipeline/daily/run.py 產生，請勿手動編輯。每日自動更新的執行狀態、監看窗格、待確認的新聞候選。 */
 window.DAILY_STATUS = {
- "startedAt": "2026-11-01T09:23+08:00",
- "finishedAt": "2026-11-01T09:27+08:00",
+ "startedAt": "2026-11-01T09:32+08:00",
+ "finishedAt": "2026-11-01T09:32+08:00",
  "steps": [
   {
    "name": "inventory",
    "status": "ok",
-   "seconds": 5.5,
+   "seconds": 3.3,
    "summary": {
     "rows": 75,
     "changed": false
@@ -15,7 +15,7 @@ window.DAILY_STATUS = {
   {
    "name": "alerts",
    "status": "ok",
-   "seconds": 1.7,
+   "seconds": 0.9,
    "summary": {
     "count": 0
    }
@@ -23,13 +23,13 @@ window.DAILY_STATUS = {
   {
    "name": "gee-login",
    "status": "ok",
-   "seconds": 1.2,
+   "seconds": 1.1,
    "summary": null
   },
   {
    "name": "rain",
    "status": "ok",
-   "seconds": 4.6,
+   "seconds": 4.3,
    "summary": {
     "苗縣LL002": {
      "h24": 0,
@@ -506,7 +506,7 @@ window.DAILY_STATUS = {
   {
    "name": "risk",
    "status": "ok",
-   "seconds": 6.7,
+   "seconds": 3.9,
    "summary": {
     "lakes": 71,
     "asOf": "2026-10-30T15:00+00:00"
@@ -524,7 +524,7 @@ window.DAILY_STATUS = {
   {
    "name": "sentinel",
    "status": "ok",
-   "seconds": 177.1,
+   "seconds": 1.3,
    "summary": {
     "windows": {
      "count": 6
@@ -534,31 +534,24 @@ window.DAILY_STATUS = {
   {
    "name": "passrain",
    "status": "ok",
-   "seconds": 4.2,
-   "summary": {
-    "live_E121270_N23792": 4,
-    "live_E121298_N23701": 4,
-    "live_E121301_N24571": 2,
-    "live_E121345_N24564": 4,
-    "live_E121521_N24530": 2,
-    "live_E121538_N24489": 2
-   }
+   "seconds": 3.1,
+   "summary": {}
   },
   {
    "name": "basemap",
    "status": "ok",
-   "seconds": 43.7,
+   "seconds": 0.0,
    "summary": {
-    "made": 3,
+    "made": 0,
     "failed": 0
    }
   },
   {
    "name": "news",
    "status": "ok",
-   "seconds": 0.8,
+   "seconds": 0.7,
    "summary": {
-    "new": 7,
+    "new": 0,
     "candidates": 85
    }
   },
