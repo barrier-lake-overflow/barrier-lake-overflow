@@ -107,6 +107,9 @@ const Duty = (() => {
     const h = Math.floor(ms / 3600000);
     return h >= 1 ? `${h} 小時前` : '剛剛';
   }
+  /* 「尚未查證 · 已 3 天」；事件這一期才剛出現（不到 1 小時）時只寫「尚未查證」 */
+  const waitingText = ms => (ms < 3600000 ? '尚未查證' : `尚未查證 · 已 ${agoText(ms).replace('前', '')}`);
+
   /* 「10/23」這類只到日的標籤：年份取自參考時間，跨年時往後推一年 */
   function labelDate(label, ref) {
     const m = String(label || '').match(/(\d{1,2})\/(\d{1,2})/);
@@ -202,7 +205,7 @@ const Duty = (() => {
     // 高優先還沒人查證：標出已經等了多久
     if (ev.priority === 'high' && !ev.human) {
       const t0 = firstSeenAt(scen(), ev.id);
-      if (t0 != null) tags.push(`<span class="q-tag is-waiting" title="首次出現後還沒有人工查證紀錄">尚未查證 · 已 ${agoText(nowFor() - t0).replace('前', '')}</span>`);
+      if (t0 != null) tags.push(`<span class="q-tag is-waiting" title="首次出現後還沒有人工查證紀錄">${waitingText(nowFor() - t0)}</span>`);
     }
     (ev.hindsight || []).forEach(h => tags.push(
       `<span class="q-tag is-hindsight v-${esc(h.verdict)}">${h.verdict === 'false_positive' ? '事後：誤報' : '事後查證'}</span>`));
@@ -690,7 +693,7 @@ const Duty = (() => {
         pending.map(w => `${esc(w.name.replace(/\s*\d+ 小時雨量.*$/, ''))}（${esc(w.activatedAt.slice(5, 10).replace('-', '/'))} 加入）`).join('、')}</p>` : '');
     const body = rows.length ? `<div class="todo-list">${rows.map(r => {
       const state = r.human ? `<span class="q-tag is-human">${VERDICTS[r.human.verdict].tag}</span>`
-        : r.t0 != null ? `<span class="q-tag ${r.ev.priority === 'high' ? 'is-waiting' : ''}">尚未查證 · 已 ${agoText(Date.now() - r.t0).replace('前', '')}</span>` : '';
+        : r.t0 != null ? `<span class="q-tag ${r.ev.priority === 'high' ? 'is-waiting' : ''}">${waitingText(Date.now() - r.t0)}</span>` : '';
       return `
         <button class="todo-item p-${r.ev.priority} ${r.i === st.scenario && r.ev.id === st.eventId ? 'is-active' : ''}" type="button"
                 data-scen="${esc(r.sc.id)}" data-ev="${esc(r.ev.id)}">
