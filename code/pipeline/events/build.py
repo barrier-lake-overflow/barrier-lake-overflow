@@ -43,6 +43,7 @@ OUT = CODE_ROOT / "dashboard" / "data" / "events.js"
 
 TRACK_RADIUS_M = 250.0
 INGEST_LAG_DAYS = 1   # 過境後這麼久還查不到影像，視為衛星沒拍（GEE 上的 Sentinel-1 通常一天內上架）
+UPCOMING_DAYS = 16    # 儀表板列出接下來幾天的衛星過境（與 daily/optical.py NEXT_DAYS 相同）
 
 
 def distance_m(a: tuple, b: tuple) -> float:
@@ -205,6 +206,39 @@ def next_sar_pass(t: datetime, orbits: list, revisit: timedelta,
     return best
 
 
+def upcoming_passes(scenario: dict, days: int = UPCOMING_DAYS) -> list:
+    """
+    監看窗格接下來 days 天的衛星過境，依日期排序：
+    Sentinel-1 由各軌各衛星 12 天推（從最近一次成功查詢 − INGEST_LAG_DAYS 起算，已查過卻沒拍的不列）；
+    Sentinel-2／Landsat 用 optical.next（daily/optical.py）。只是推估。
+
+    >>> sc = {"sarCheckedAt": "2026-11-01T09:38+08:00",
+    ...       "orbits": [{"label": "降軌 105", "satellite": "S1C", "cycleDays": 12, "last": "2026-10-23T05:51+08:00"},
+    ...                  {"label": "升軌 69", "satellite": "S1D", "cycleDays": 12, "last": "2026-10-26T18:00+08:00"}],
+    ...       "optical": {"next": [{"date": "2026-11-05", "sensor": "Sentinel-2C"}]}}
+    >>> [(p["date"], p["time"], p["sensor"], p["kind"], p["orbit"]) for p in upcoming_passes(sc)]
+    [('2026-11-04', '05:51', 'Sentinel-1C', 'sar', '降軌 105'), ('2026-11-05', None, 'Sentinel-2C', 'optical', None), ('2026-11-07', '18:00', 'Sentinel-1D', 'sar', '升軌 69'), ('2026-11-16', '05:51', 'Sentinel-1C', 'sar', '降軌 105')]
+    >>> upcoming_passes({"orbits": [], "optical": None})
+    []
+    """
+    out = []
+    checked = _t(scenario.get("sarCheckedAt"))
+    if checked:
+        start, end = checked - timedelta(days=INGEST_LAG_DAYS), checked + timedelta(days=days)
+        for o in scenario.get("orbits") or []:
+            last, cycle = _t(o["last"]), timedelta(days=o["cycleDays"])
+            t = last + ((start - last) // cycle + 1) * cycle
+            while t <= end:
+                t_tw = t.astimezone(T.TW)
+                out.append({"date": t_tw.date().isoformat(), "time": f"{t_tw:%H:%M}",
+                            "sensor": o.get("satellite", "Sentinel-1").replace("S1", "Sentinel-1"),
+                            "kind": "sar", "orbit": o["label"]})
+                t += cycle
+    for p in (scenario.get("optical") or {}).get("next", []):
+        out.append({"date": p["date"], "time": None, "sensor": p["sensor"], "kind": "optical", "orbit": None})
+    return sorted(out, key=lambda p: (p["date"], p["time"] or "99"))
+
+
 def _snapshot_label(t: datetime, analyzed: set, rechecks: dict, trigger: Optional[datetime]) -> dict:
     parts = []
     if t in analyzed:
@@ -339,6 +373,8 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         # 監看窗格最近的光學影像雲量與下一次預計過境（pipeline/daily/optical.py）；事件判讀已附在各事件卡
         "optical": ({k: scenario["optical"][k] for k in ("checkedAt", "scenes", "next")}
                     if scenario.get("optical") else None),
+        # 監看窗格接下來的衛星過境（Sentinel-1／2、Landsat），儀表板提醒用
+        "upcoming": upcoming_passes(scenario) if scenario.get("kind") == "live" else [],
         "trigger": scenario.get("trigger"),
         "snapshots": snapshots,
     }

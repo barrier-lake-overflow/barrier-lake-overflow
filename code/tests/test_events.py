@@ -310,6 +310,15 @@ class TestNextSarPass(unittest.TestCase):
         self.assertEqual(self.build("2026-10-27T09:38+08:00")[-1]["nextPass"], "10/29")
         self.assertEqual(self.build(None)[-1]["nextPass"], "10/29")
 
+    def test_upcoming_list_skips_missed_pass_and_merges_optical(self):
+        sc = {"kind": "live", "orbits": self.ORBITS, "sarCheckedAt": "2026-11-01T09:38+08:00",
+              "optical": {"next": [{"date": "2026-11-06", "sensor": "Landsat 9"}]}}
+        got = [(p["date"], p["sensor"], p["orbit"]) for p in B.upcoming_passes(sc)]
+        self.assertEqual(got[:4], [("2026-11-04", "Sentinel-1C", "降軌 105"), ("2026-11-06", "Landsat 9", None),
+                                   ("2026-11-07", "Sentinel-1D", "升軌 69"), ("2026-11-10", "Sentinel-1D", "降軌 105")])
+        self.assertNotIn("2026-10-29", [d for d, _, _ in got])   # S1D 10/29 已查過卻沒拍
+        self.assertEqual(B.upcoming_passes({"orbits": self.ORBITS}), [])   # 沒成功查過就不推
+
     def test_replay_scenario_without_orbits_unchanged(self):
         t = datetime.fromisoformat("2026-10-26T18:00+08:00")
         self.assertEqual(B.next_sar_pass(t, [], DAY6), (t + DAY6, None))

@@ -53,6 +53,9 @@ GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overfl
 取最早的一次（`daily/sentinel.py` `orbit_satellites`、`events/build.py` `next_sar_pass`）。最新一期另外參考最近一次**成功**查詢的時間
 （情境檔 `sarCheckedAt`）：查詢前一天以前該到卻沒有影像的過境，視為衛星沒拍，跳到再下一次。查詢失敗時這個時間不會更新，
 所以排程壞掉時儀表板仍會顯示「應已過境 X 天，尚無資料」。回放情境沒有軌道資料，沿用「該期 + 重訪間隔」。
+
+儀表板「接下來的衛星過境」（`events/build.py` `upcoming_passes`）列出監看窗格接下來 16 天的 Sentinel-1（同上推法）
+與 Sentinel-2／Landsat（`optical.next`）預計過境，只在即時監看顯示。
 偵測參數與全清冊回放完全相同。全清冊回放仍是每湖一軌（形成後最早有影像的一軌），規則不變。
 
 **未校準的門檻**：雨量 200 mm／72 h、保留 30 天、合併 2 km 都是自訂值。可以用

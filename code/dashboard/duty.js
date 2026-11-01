@@ -268,16 +268,42 @@ const Duty = (() => {
     if (box.hidden) return;
     const recent = o.scenes.slice(0, 3).map(r =>
       `${mdText(r.time)} ${esc(r.sensor)} ${r.clearPct != null ? `晴空 ${r.clearPct}%` : '雲量資料未到'}`).join('、');
-    const today = new Date(); today.setHours(0, 0, 0, 0);
-    const next = ['Sentinel-2', 'Landsat'].map(f => {
-      const p = o.next.find(x => x.sensor.startsWith(f));
-      if (!p) return null;
-      const [y, m, d] = p.date.split('-').map(Number);
-      const days = Math.round((new Date(y, m - 1, d) - today) / DAY);
-      return `${f} ${mdText(p.date)}（${days > 0 ? `${days} 天後` : days === 0 ? '今天' : '應已過境，待下次更新'}）`;
-    }).filter(Boolean).join('、');
     box.innerHTML = `<b>光學影像</b> ${helpQ('optical', '光學影像')} ${o.scenes.length ? `最近 ${recent}` : '最近沒有影像'}` +
-      ` · 下一次 ${next || '—'}<span class="op-est">（依衛星重訪週期推估）</span>`;
+      '<span class="op-est"> · 之後的過境見上方「接下來的衛星過境」</span>';
+  }
+
+  /* 接下來的衛星過境（pipeline/events/build.py upcoming_passes）：提醒值班人員什麼時候會有新影像。
+     日期是推估；已過但還沒進來的標「待更新」（衛星可能沒拍，或影像還沒上架、下次自動更新才會分析）。 */
+  const UPCOMING_KIND = {
+    sar: { tag: '雷達', note: '不受雲影響，通常隔天可分析' },
+    s2: { tag: '光學', note: '有雲就看不到，通常隔天上架' },
+    landsat: { tag: '光學', note: '有雲就看不到，上架約晚 1～2 週' },
+  };
+  const WEEKDAY = '日一二三四五六';
+  function renderUpcoming() {
+    const box = $('#upcoming');
+    const list = scen().upcoming || [];
+    box.hidden = isDrill() || !list.length;
+    if (box.hidden) return;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const items = list.map(p => {
+      const [y, m, d] = p.date.split('-').map(Number);
+      const day = new Date(y, m - 1, d);
+      const n = Math.round((day - today) / DAY);
+      const k = p.kind === 'sar' ? 'sar' : p.sensor.startsWith('Landsat') ? 'landsat' : 's2';
+      const when = n > 0 ? `${n} 天後` : n === 0 ? '今天' : '待更新';
+      return `
+        <li class="up-${k}${n < 0 ? ' is-past' : ''}${n >= 0 && n <= 2 ? ' is-soon' : ''}" title="${esc(UPCOMING_KIND[k].note)}">
+          <span class="up-date">${m}/${d}（${WEEKDAY[day.getDay()]}）${p.time ? ` ${esc(p.time)}` : ''}</span>
+          <span class="up-sat">${esc(p.sensor)}${p.orbit ? ` · ${esc(p.orbit)}` : ''}</span>
+          <span class="up-kind">${UPCOMING_KIND[k].tag} · ${when}</span>
+        </li>`;
+    }).join('');
+    box.innerHTML = `
+      <div class="rail-head"><span class="label">接下來的衛星過境 · 推估</span>${helpQ('upcoming', '接下來的衛星過境')}</div>
+      <ul class="up-list">${items}</ul>
+      <p class="up-note">雷達（Sentinel-1）穿得過雲，是主要的新資料；光學（Sentinel-2、Landsat）要沒雲才看得到地面。
+        日期依各衛星重訪週期推估，衛星偶爾沒拍；影像上架後，下一次自動更新（每兩天）才會分析。</p>`;
   }
 
   /* ── 窗格小地圖 ── */
@@ -783,6 +809,7 @@ const Duty = (() => {
     renderTodo();
     renderScenarioTabs();
     renderRail();
+    renderUpcoming();
     renderQueue();
     renderMinimap();
     renderCard();
