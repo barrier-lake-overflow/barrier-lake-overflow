@@ -206,6 +206,8 @@ const Duty = (() => {
     }
     (ev.hindsight || []).forEach(h => tags.push(
       `<span class="q-tag is-hindsight v-${esc(h.verdict)}">${h.verdict === 'false_positive' ? '事後：誤報' : '事後查證'}</span>`));
+    const opt = (ev.optical || []).find(r => r.verdict !== 'cloud');
+    if (opt) tags.push(`<span class="q-tag is-optical v-${esc(opt.verdict)}" title="光學影像自動判讀，只供參考">光學 ${mdText(opt.time)}：${OPTICAL_TEXT[opt.verdict]}</span>`);
     const dist = ev.distanceFromReferenceM != null ? ` · 距清冊壩址 ${ev.distanceFromReferenceM.toLocaleString()} m` : '';
     return `
       <button class="q-item p-${ev.priority} ${ev.id === st.eventId ? 'is-active' : ''}" type="button" data-id="${ev.id}">
@@ -229,7 +231,8 @@ const Duty = (() => {
       const days = Math.ceil((nd - Date.now()) / DAY);
       next = days > 0 ? `（${days} 天後）` : days === 0 ? '（今天）' : `（應已過境 ${-days} 天，尚無資料）`;
     }
-    $('#queueNote').textContent = `${evs.length} 件 · 下一期 ${s.nextPass}${next}`;
+    $('#queueNote').textContent = `${evs.length} 件 · 下一期 ${s.nextPass}${s.nextPassOrbit ? ` ${s.nextPassOrbit}` : ''}${next}`;
+    renderOpticalNote();
 
     const excluded = evs.filter(e => e.human && e.human.verdict === 'exclude');
     const active = evs.filter(e => !excluded.includes(e));
@@ -251,6 +254,30 @@ const Duty = (() => {
     }
     $('#queue').innerHTML = html || '<p class="narr-empty q-empty">這個時點沒有偵測到疑似事件。</p>';
     $$('#queue .q-item').forEach(b => b.addEventListener('click', () => selectEvent(b.dataset.id)));
+  }
+
+  /* 光學影像（pipeline/daily/optical.py）：最近幾景的雲量、下一次 Sentinel-2／Landsat 預計過境。
+     只有即時監看的最新一期顯示；回看前幾期時這是現在的資料，不是當時的，所以不顯示。 */
+  const OPTICAL_TEXT = { water: '看得到水', partial: '少量水', no_water: '看不到水', cloud: '雲遮' };
+  // 「2026-10-29…」→「10/29」（直接取字串，不受瀏覽器時區影響）
+  const mdText = s => { const m = String(s).match(/^\d{4}-(\d{2})-(\d{2})/); return m ? `${+m[1]}/${+m[2]}` : '—'; };
+  function renderOpticalNote() {
+    const box = $('#opticalNote');
+    const o = scen().optical;
+    box.hidden = isDrill() || st.snap !== lastSnap() || !o;
+    if (box.hidden) return;
+    const recent = o.scenes.slice(0, 3).map(r =>
+      `${mdText(r.time)} ${esc(r.sensor)} ${r.clearPct != null ? `晴空 ${r.clearPct}%` : '雲量資料未到'}`).join('、');
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const next = ['Sentinel-2', 'Landsat'].map(f => {
+      const p = o.next.find(x => x.sensor.startsWith(f));
+      if (!p) return null;
+      const [y, m, d] = p.date.split('-').map(Number);
+      const days = Math.round((new Date(y, m - 1, d) - today) / DAY);
+      return `${f} ${mdText(p.date)}（${days > 0 ? `${days} 天後` : days === 0 ? '今天' : '應已過境，待下次更新'}）`;
+    }).filter(Boolean).join('、');
+    box.innerHTML = `<b>光學影像</b> ${helpQ('optical', '光學影像')} ${o.scenes.length ? `最近 ${recent}` : '最近沒有影像'}` +
+      ` · 下一次 ${next || '—'}<span class="op-est">（依衛星重訪週期推估）</span>`;
   }
 
   /* ── 窗格小地圖 ── */
@@ -388,6 +415,21 @@ const Duty = (() => {
       </div>`).join('');
   }
 
+  /* 光學影像自動判讀（監看窗格）：每景事件範圍內的晴空比例與判為水的比例。只供參考，不改動研判。 */
+  function opticalBox(ev) {
+    const rs = (ev.optical || []).slice(0, 5);
+    if (!rs.length) return '';
+    const rows = rs.map(r => `
+      <li class="v-${esc(r.verdict)}"><span class="op-when">${mdText(r.time)} ${esc(r.sensor)}</span><b>${OPTICAL_TEXT[r.verdict]}</b>
+        <span>晴空 ${r.clearPct}%${r.waterPct != null ? `，其中 ${r.waterPct}% 判為水` : ''}</span></li>`).join('');
+    return `
+      <div class="ev-optical">
+        <span class="at">光學影像自動判讀 · 只供參考，不影響上方研判 ${helpQ('optical', '光學影像')}</span>
+        <ul>${rows}</ul>
+        <p>範圍是 SAR 最近一次偵測到的水體。山區陰影、薄雲、濕泥都可能誤判；要當作證據，請調閱影像確認後記在人工查證。</p>
+      </div>`;
+  }
+
   function renderCard() {
     const box = $('#evCard');
     const ev = events().find(e => e.id === st.eventId);
@@ -452,6 +494,7 @@ const Duty = (() => {
 
       ${ev.conflicts.length ? `<div class="ev-conflict"><span class="at">證據衝突</span>${ev.conflicts.map(c => `<p>${esc(c)}</p>`).join('')}</div>` : ''}
       ${(ev.cautions || []).length ? `<div class="ev-caution"><span class="at">提醒</span>${ev.cautions.map(c => `<p>${esc(c)}</p>`).join('')}</div>` : ''}
+      ${opticalBox(ev)}
 
       <div class="action-card">
         <span class="at">建議任務 ${helpQ('card-top', '事件卡各欄位')}</span>

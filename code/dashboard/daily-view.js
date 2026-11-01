@@ -18,7 +18,8 @@ const DailyView = (() => {
 
   const STEP_TEXT = {
     inventory: '清冊', alerts: '警戒', 'gee-login': 'GEE 登入', rain: '雨量熱區', risk: '風險模型', watchlist: '監看名單',
-    sentinel: 'Sentinel-1', passrain: '過境前雨量', news: '新聞候選', build: '儀表板資料', git: 'git',
+    sentinel: 'Sentinel-1', passrain: '過境前雨量', basemap: '底圖', optical: '光學影像', news: '新聞候選',
+    build: '儀表板資料', git: 'git',
   };
   const KIND_TEXT = { aerial: '航拍', satellite: '衛星', field: '現地／通報', official: '背景', optical: '光學' };
   const day = s => s ? `${s.slice(4, 6)}/${s.slice(6, 8)}` : '—';

@@ -99,11 +99,11 @@ def s1_collection(ee, region):
             .filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VV")))
 
 
-def s1_images(ee, region, start: str, end: str) -> list:
-    """[(pass, relativeOrbit, epoch_ms)]，與 replay.choose_orbit 的輸入相同。"""
+def s1_images(ee, region, start: str, end: str, platform: bool = False) -> list:
+    """[(pass, relativeOrbit, epoch_ms)]，與 replay.choose_orbit 的輸入相同；platform=True 時多一欄衛星（"A"、"C"、"D"）。"""
+    cols = ["orbitProperties_pass", "relativeOrbitNumber_start", "system:time_start"] + (["platform_number"] if platform else [])
     return s1_collection(ee, region).filterDate(start, end).reduceColumns(
-        ee.Reducer.toList(3), ["orbitProperties_pass", "relativeOrbitNumber_start", "system:time_start"]
-    ).get("list").getInfo()
+        ee.Reducer.toList(len(cols)), cols).get("list").getInfo()
 
 
 def s1_orbit(ee, region, orbit_pass: str, orbit: int):

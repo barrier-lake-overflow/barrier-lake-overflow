@@ -404,6 +404,7 @@ cd code && pip install -e .
 | sentinel | 各窗格新過境 → 下載 → 偵測；事件前基準 ≥ 3 張的軌道全部抓，各軌獨立複核，只保留最近 90 天 | `final_live_*.json`、`scenarios/live_*.json` |
 | passrain | 每期過境前 24／72 小時雨量（缺的才補） | 情境檔 `passes[].rain` |
 | basemap | 各情境事件前光學底圖（Sentinel-2 中位數，空白處用 Landsat 補） | `dashboard/data/basemaps/*.jpg` |
+| optical | 監看窗格最近 45 天 Sentinel-2／Landsat 8/9 雲量、下一次預計過境（依重訪週期推估）、各事件位置光學判水（只供參考，不進研判） | 情境檔 `optical` |
 | news | Google 新聞 RSS 關鍵字分類為外部證據**候選**，人工確認後才寫進情境 | `data/live/news.json` |
 | build | 事件佇列、全清冊回放、執行狀態 | `events.js`、`replay.js`、`daily.js` |
 
@@ -540,10 +541,12 @@ cd code && pip install -e .
 | `hindsight` | [{lonLat, radiusM, verdict, title, text, images}] | 事後查證 |
 | `observationsLakeId`、`referenceLakeId`、`referenceLabel` | 字串 | 對應觀測表、清冊參考點 |
 | `basemap`、`aerial` | 物件／陣列 | 小地圖底圖、航照圖層（依可取得時間顯示） |
+| `orbits`、`sarCheckedAt` | [{label, satellite, cycleDays, last}]、時間 | 監看窗格每一軌每顆還在拍的衛星（12 天重複）最近一次取得、最近一次成功查詢（`daily/sentinel.py` 產生），推算下一期用 |
+| `optical` | {checkedAt, scenes[{time, sensor, clearPct}], next[{date, sensor}], checks[{event, lonLat, results[{time, sensor, verdict, clearPct, waterPct}]}]} | 監看窗格的光學影像（`daily/optical.py` 產生）；`verdict` 為 `water`／`partial`／`no_water`／`cloud` |
 | `passes` | [{file, time, recheckTime, evidenceImage, rain{h24, h72, source}}] | 逐期影像與對應結果檔 |
 | `hidden`、`active` | 布林 | 停用的監看窗格不輸出 |
 
-人工整理欄位（`description`、`context`、`trigger`、`externalEvidence`、`exposure`、`hindsight`、`basemap`、`aerial` 等）在重跑偵測時會保留，只重新產生 `passes`。
+人工整理欄位（`description`、`context`、`trigger`、`externalEvidence`、`exposure`、`hindsight`、`basemap`、`aerial`、`optical` 等）在重跑偵測時會保留，只重新產生 `passes`。
 
 目前共 27 個情境：正案例 1（`matai_an_2025`，4 期）、負案例 1（`neg2026_matai_an`，17 期）、回放 22（`inv_bl051`～`inv_bl075`）、即時監看 3（`live_*`）。
 
@@ -598,6 +601,7 @@ cd code && pip install -e .
 | 雨量熱區 | GSMaP 72 h ≥ 200 mm | `daily/watchlist.py` | 自訂、未校準 |
 | 窗格保留／合併 | 30 天／2 km | 同上 | 自訂 |
 | 去雲 | Cloud Score+ cs_cdf ≥ 0.65 | `daily/basemap.py` 等 | 自訂 |
+| 光學判讀（參考用） | 晴空 ≥ 50% 才判讀；晴空像元判為水 ≥ 30% 看得到水、< 10% 看不到水 | `daily/optical.py` | 自訂、未校準 |
 
 敏感度重點：**最小湖面積**與**判水最大坡度**左右結果；崩塌搜尋半徑、高程容許值、崩塌門檻、貼河道外擴在回放資料上沒有影響（條件 ② 形同虛設）；持續 IoU 只影響高優先。
 

@@ -15,6 +15,9 @@
 
 事後查證（情境檔 hindsight）：回放結束後才做的查證，例如負案例用光學影像確認誤報。
 依位置附到事件卡上供展示，不參與優先等級、信心等研判（回放當下系統不知道這些結果）。
+
+光學影像判讀（情境檔 optical，只有監看窗格有，見 pipeline/daily/optical.py）：同樣依位置附到事件卡，
+只供參考、不進研判；每個時點只放下一期 SAR 之前拍到的影像。
 """
 
 from __future__ import annotations
@@ -39,6 +42,7 @@ LAKES_JS = CODE_ROOT / "dashboard" / "data" / "lakes.js"
 OUT = CODE_ROOT / "dashboard" / "data" / "events.js"
 
 TRACK_RADIUS_M = 250.0
+INGEST_LAG_DAYS = 1   # 過境後這麼久還查不到影像，視為衛星沒拍（GEE 上的 Sentinel-1 通常一天內上架）
 
 
 def distance_m(a: tuple, b: tuple) -> float:
@@ -144,6 +148,63 @@ def matching_hindsight(scenario: dict, lon_lat: tuple) -> list:
             if distance_m(lon_lat, tuple(h["lonLat"])) <= h.get("radiusM", 300)]
 
 
+def matching_optical(scenario: dict, lon_lat: tuple, until: Optional[datetime]) -> list:
+    """
+    情境檔 optical.checks（pipeline/daily/optical.py）中位置最近、且在 TRACK_RADIUS_M 內的事件，
+    取 until 以前拍的影像（None＝不限），新的在前。只供展示，不進研判。
+
+    >>> sc = {"optical": {"checks": [{"lonLat": [121.0, 23.7], "results": [
+    ...     {"time": "2026-10-29T10:30+08:00", "verdict": "water"}, {"time": "2026-10-19T10:30+08:00", "verdict": "cloud"}]}]}}
+    >>> [r["verdict"] for r in matching_optical(sc, (121.0, 23.7005), None)]
+    ['water', 'cloud']
+    >>> [r["verdict"] for r in matching_optical(sc, (121.0, 23.7005), datetime.fromisoformat("2026-10-26T18:00+08:00"))]
+    ['cloud']
+    >>> matching_optical(sc, (121.1, 23.7), None)
+    []
+    """
+    near = [(distance_m(lon_lat, tuple(c["lonLat"])), c) for c in (scenario.get("optical") or {}).get("checks", [])]
+    near = [x for x in near if x[0] <= TRACK_RADIUS_M]
+    if not near:
+        return []
+    c = min(near, key=lambda x: x[0])[1]
+    return [r for r in c["results"] if until is None or _t(r["time"]) <= until]
+
+
+def next_sar_pass(t: datetime, orbits: list, revisit: timedelta,
+                  floor: Optional[datetime] = None) -> tuple:
+    """
+    t 之後（且晚於 floor）最早的一次 SAR 過境：(時間, 軌道名稱)。orbits 每筆是一軌的一顆衛星
+    （daily/sentinel.py），從它最近一次取得時間 last 往前或往後推整數個週期 cycleDays。
+    沒有軌道資料（回放情境）時沿用 t + revisit。
+    floor：最新一期用「最近一次成功查詢 − INGEST_LAG_DAYS」，比它早卻沒有影像的過境視為衛星沒拍。
+
+    >>> orbits = [{"label": "降軌 105", "satellite": "S1C", "cycleDays": 12, "last": "2026-10-23T05:51+08:00"},
+    ...           {"label": "降軌 105", "satellite": "S1D", "cycleDays": 12, "last": "2026-10-17T05:51+08:00"},
+    ...           {"label": "升軌 69", "satellite": "S1D", "cycleDays": 12, "last": "2026-10-26T18:00+08:00"}]
+    >>> t = datetime.fromisoformat("2026-10-26T18:00+08:00")
+    >>> n, o = next_sar_pass(t, orbits, timedelta(days=4)); n.isoformat(), o
+    ('2026-10-29T05:51:00+08:00', '降軌 105')
+    >>> n, o = next_sar_pass(t, orbits, timedelta(days=4), datetime.fromisoformat("2026-10-31T09:38+08:00"))
+    >>> n.isoformat(), o
+    ('2026-11-04T05:51:00+08:00', '降軌 105')
+    >>> next_sar_pass(datetime.fromisoformat("2026-10-17T05:51+08:00"), orbits, timedelta(days=4))[0].isoformat()
+    '2026-10-23T05:51:00+08:00'
+    >>> next_sar_pass(t, [], timedelta(days=6))
+    (datetime.datetime(2026, 11, 1, 18, 0, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800))), None)
+    """
+    if not orbits:
+        return t + revisit, None
+    after = max(t, floor) if floor else t
+    best = None
+    for o in orbits:
+        last, cycle = _t(o["last"]), timedelta(days=o["cycleDays"])
+        k = (after - last) // cycle + 1      # 第一個晚於 after 的整數週期（after 早於 last 時 k ≤ 0）
+        nxt = last + k * cycle
+        if best is None or nxt < best[0]:
+            best = (nxt, o["label"])
+    return best
+
+
 def _snapshot_label(t: datetime, analyzed: set, rechecks: dict, trigger: Optional[datetime]) -> dict:
     parts = []
     if t in analyzed:
@@ -185,14 +246,22 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
                   "label": scenario.get("referenceLabel", "")} if ref else None)
 
     revisit = timedelta(days=scenario.get("revisitDays", 6))
+    checked = _t(scenario.get("sarCheckedAt"))
     snapshots = []
-    for t in snapshot_times(scenario, passes):
+    times = snapshot_times(scenario, passes)
+    for i, t in enumerate(times):
+        is_last = i + 1 == len(times)
+        # 光學影像：到下一期 SAR 之前拍到的都算這個時點看得到（最新一期不限）
+        optical_until = None if is_last else times[i + 1]
+        # 下一期：各軌依自己的週期推；最新一期已查過卻沒有影像的過境跳過（衛星沒拍）
+        floor = checked - timedelta(days=INGEST_LAG_DAYS) if is_last and checked else None
+        next_pass, next_orbit = next_sar_pass(t, scenario.get("orbits") or [], revisit, floor)
         latest_analyzed = max((a for a in analyzed if a <= t), default=None)
         rain = pass_rain.get(latest_analyzed)   # 該期過境前的衛星雨量，不用到未來
         ctx_base = dict(
             as_of=t,
             latest_analyzed_pass=latest_analyzed,
-            next_pass=t + revisit,
+            next_pass=next_pass,
             rain_available=station_rain or bool(rain),
             trigger_label=scenario.get("trigger", {}).get("label", ""),
             context_lines=scenario.get("context", []) + ([rain_line(rain)] if rain else []),
@@ -236,6 +305,8 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
                 **a.to_dict(),
                 # 事後查證：回放當下系統不知道，只供展示，不影響上面的研判
                 "hindsight": matching_hindsight(scenario, latest.lon_lat),
+                # 光學影像自動判讀（監看窗格）：只供參考，不影響上面的研判
+                "optical": matching_optical(scenario, latest.lon_lat, optical_until),
             }
             cards.append(card)
         cards.sort(key=lambda c: (T.PRIORITY_RANK[c["priority"]], -c["areaHectare"]))
@@ -247,7 +318,8 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
             "label": T.tw_label(t),
             "what": label["what"],
             "since": label["since"],
-            "nextPass": T.tw_date(t + revisit),
+            "nextPass": T.tw_date(next_pass),
+            "nextPassOrbit": next_orbit,
             "counts": counts,
             "newCount": sum(1 for c in cards if c["isNew"]),
             "events": cards,
@@ -264,6 +336,9 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         "reference": reference,
         "basemap": scenario.get("basemap"),   # 事件前光學底圖（pipeline/daily/basemap.py）
         "aerial": scenario.get("aerial", []),  # 航遙分署航照圖層（scripts/aerial_dashboard.py），依可取得時間顯示
+        # 監看窗格最近的光學影像雲量與下一次預計過境（pipeline/daily/optical.py）；事件判讀已附在各事件卡
+        "optical": ({k: scenario["optical"][k] for k in ("checkedAt", "scenes", "next")}
+                    if scenario.get("optical") else None),
         "trigger": scenario.get("trigger"),
         "snapshots": snapshots,
     }

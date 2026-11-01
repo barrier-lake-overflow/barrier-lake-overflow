@@ -281,5 +281,78 @@ class TestMataiAnReplay(unittest.TestCase):
             self.assertEqual(data[0]["id"], "matai_an_2025")
 
 
+class TestNextSarPass(unittest.TestCase):
+    """下一期：各軌依自己的週期推；最新一期跳過已查過卻沒拍的過境；查詢失敗時不跳。"""
+
+    # 2026-10 的實際排程：降軌 105 由 S1C、S1D 錯開拍，升軌 69 只剩 S1D
+    ORBITS = [{"label": "降軌 105", "satellite": "S1C", "cycleDays": 12, "last": "2026-10-23T05:51+08:00"},
+              {"label": "降軌 105", "satellite": "S1D", "cycleDays": 12, "last": "2026-10-17T05:51+08:00"},
+              {"label": "升軌 69", "satellite": "S1D", "cycleDays": 12, "last": "2026-10-26T18:00+08:00"}]
+
+    def build(self, checked):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            for name in ("a", "b"):
+                (d / f"final_{name}.json").write_text(json.dumps({"candidates": []}), encoding="utf-8")
+            scenario = {"id": "live_x", "name": "x", "kind": "live", "center": [121.3, 23.7], "revisitDays": 4,
+                        "orbits": self.ORBITS, "sarCheckedAt": checked,
+                        "passes": [{"file": "final_a.json", "time": "2026-10-22T21:51:00+00:00"},
+                                   {"file": "final_b.json", "time": "2026-10-26T10:00:00+00:00"}]}
+            return B.build_scenario(scenario, d)["snapshots"]
+
+    def test_skipped_pass_moves_to_next(self):
+        first, last = self.build("2026-11-01T09:38+08:00")
+        self.assertEqual((first["nextPass"], first["nextPassOrbit"]), ("10/26", "升軌 69"))
+        self.assertEqual((last["nextPass"], last["nextPassOrbit"]), ("11/4", "降軌 105"))
+
+    def test_without_successful_check_keeps_overdue_pass(self):
+        # 查詢一直失敗（sarCheckedAt 停在 10/27）：10/29 那次不能當作衛星沒拍
+        self.assertEqual(self.build("2026-10-27T09:38+08:00")[-1]["nextPass"], "10/29")
+        self.assertEqual(self.build(None)[-1]["nextPass"], "10/29")
+
+    def test_replay_scenario_without_orbits_unchanged(self):
+        t = datetime.fromisoformat("2026-10-26T18:00+08:00")
+        self.assertEqual(B.next_sar_pass(t, [], DAY6), (t + DAY6, None))
+
+
+class TestOptical(unittest.TestCase):
+    """光學影像自動判讀（pipeline/daily/optical.py）：依位置附到事件卡、不看到下一期以後、不影響研判。"""
+
+    def build(self, optical):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            for name in ("a", "b"):
+                (d / f"final_{name}.json").write_text(json.dumps({"candidates": [cand()]}), encoding="utf-8")
+            scenario = {"id": "live_x", "name": "x", "kind": "live", "center": [121.3, 23.7],
+                        "passes": [{"file": "final_a.json", "time": T0.isoformat()},
+                                   {"file": "final_b.json", "time": (T0 + DAY6).isoformat()}]}
+            if optical:
+                scenario["optical"] = optical
+            return B.build_scenario(scenario, d)
+
+    def test_results_cut_at_next_snapshot_and_triage_unchanged(self):
+        between, after = T0 + timedelta(days=2), T0 + timedelta(days=8)
+        optical = {"checkedAt": after.isoformat(), "scenes": [], "next": [{"date": "2025-08-05", "sensor": "Landsat 9"}],
+                   "checks": [{"event": "E1", "lonLat": [121.3001, 23.7], "results": [
+                       {"time": after.isoformat(), "sensor": "Sentinel-2B", "verdict": "water"},
+                       {"time": between.isoformat(), "sensor": "Landsat 9", "verdict": "cloud"}]}]}
+        with_opt, without = self.build(optical), self.build(None)
+        first, last = with_opt["snapshots"]
+        self.assertEqual([r["verdict"] for r in first["events"][0]["optical"]], ["cloud"])
+        self.assertEqual([r["verdict"] for r in last["events"][0]["optical"]], ["water", "cloud"])
+        self.assertEqual(with_opt["optical"]["next"][0]["sensor"], "Landsat 9")
+        self.assertIsNone(without["optical"])
+        for a, b in zip(with_opt["snapshots"], without["snapshots"]):
+            ea, eb = a["events"][0], b["events"][0]
+            self.assertEqual((ea["priority"], ea["confidence"], ea["rulesFired"]),
+                             (eb["priority"], eb["confidence"], eb["rulesFired"]))
+
+    def test_far_check_not_attached(self):
+        optical = {"checkedAt": "", "scenes": [], "next": [],
+                   "checks": [{"event": "E9", "lonLat": [121.31, 23.7], "results": [
+                       {"time": T0.isoformat(), "sensor": "Sentinel-2B", "verdict": "water"}]}]}
+        self.assertEqual(self.build(optical)["snapshots"][-1]["events"][0]["optical"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

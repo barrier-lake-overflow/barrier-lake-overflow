@@ -7,7 +7,7 @@ import doctest
 import unittest
 from datetime import datetime, timedelta, timezone
 
-from pipeline.daily import gee, inventory_fetch, news, run, sentinel, watchlist
+from pipeline.daily import gee, inventory_fetch, news, optical, run, sentinel, watchlist
 
 TW = timezone(timedelta(hours=8))
 NOW = datetime(2026, 7, 1, 8, tzinfo=TW)
@@ -135,7 +135,7 @@ class SyslogTest(unittest.TestCase):
 
 
 def load_tests(loader, tests, ignore):
-    for m in (gee, inventory_fetch, news, run, sentinel, watchlist):
+    for m in (gee, inventory_fetch, news, optical, run, sentinel, watchlist):
         tests.addTests(doctest.DocTestSuite(m))
     return tests
 

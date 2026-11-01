@@ -21,6 +21,8 @@ GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overfl
 | watchlist | 上面三項 | 監看窗格（`data/live/state.json`） |
 | sentinel | Sentinel-1 GRD（Google Earth Engine） | 各窗格新過境的偵測結果、情境檔 `data/raw/scenarios/live_*.json` |
 | passrain | GSMaP | 每一期過境前 24／72 小時雨量，寫進情境檔 `passes[].rain` |
+| basemap | Sentinel-2、Landsat 8/9 | 各情境小地圖的事件前光學底圖（缺的才做） |
+| optical | Sentinel-2 L2A、Landsat 8/9 L2（Google Earth Engine） | 監看窗格最近 45 天光學影像雲量、下一次預計過境、各事件位置光學判水，寫進情境檔 `optical`（只供參考，見下節） |
 | news | Google 新聞 RSS | 外部證據候選 `data/live/news.json` |
 | build | 以上 | `events.js`、`replay.js`、`daily.js` |
 
@@ -45,10 +47,31 @@ GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overfl
 事件追蹤跨軌道（250 m 內視為同一事件）。兩軌交錯讓重訪從約 12 天縮短到約 6 天。
 
 每次執行抓各軌新過境，只保留最近 90 天；前一期當時沒有複核期的，新影像到了會拿來重跑。
+
+**下一期**：每顆 Sentinel-1 同一軌固定 12 天重複一次，但哪幾顆衛星拍哪一軌會變（2026 年：升軌 69 從 S1A 換成只剩 S1D；
+降軌 105 以 S1C 為主、S1D 偶爾加拍），所以每一軌**每顆衛星**各自從最近一次取得往後推 12 天，只算 36 天內在這一軌拍過的衛星，
+取最早的一次（`daily/sentinel.py` `orbit_satellites`、`events/build.py` `next_sar_pass`）。最新一期另外參考最近一次**成功**查詢的時間
+（情境檔 `sarCheckedAt`）：查詢前一天以前該到卻沒有影像的過境，視為衛星沒拍，跳到再下一次。查詢失敗時這個時間不會更新，
+所以排程壞掉時儀表板仍會顯示「應已過境 X 天，尚無資料」。回放情境沒有軌道資料，沿用「該期 + 重訪間隔」。
 偵測參數與全清冊回放完全相同。全清冊回放仍是每湖一軌（形成後最早有影像的一軌），規則不變。
 
 **未校準的門檻**：雨量 200 mm／72 h、保留 30 天、合併 2 km 都是自訂值。可以用
 [警戒發布紀錄](https://data.gov.tw/dataset/156617) 與 GSMaP 歷史雨量回頭校準，尚未做。
+
+## 光學影像（Sentinel-2、Landsat）
+
+`pipeline/daily/optical.py`，只做監看中的窗格，每個窗格兩次 GEE 呼叫（影像清單、統計），不下載影像。
+
+- **影像**：Sentinel-2 L2A（`COPERNICUS/S2_SR_HARMONIZED`）用 Cloud Score+ cs_cdf ≥ 0.65 當晴空（與底圖、負案例查證相同，
+  不用 SCL）；Landsat 8/9 Collection 2 L2 用 `QA_PIXEL` 排除雲、膨脹雲、卷雲、雲影。同一天同一顆衛星的相鄰圖幅併成一景。
+  Cloud Score+ 偶爾比影像晚上架，那一景先記「雲量資料未到」，下次更新再判讀。
+- **判水**：`detect/water.py` 的 Sentinel-2 規則（MNDWI > 0 且 B8 < 500）；Landsat 換算成同一反射率尺度後套同一規則（未另外驗證）。
+  範圍是 SAR 最近一次偵測的水體多邊形，只看事件首次偵測以後的影像。晴空像元未過半＝雲遮；晴空像元中判為水 ≥ 30%＝看得到水、
+  < 10%＝看不到水、其間＝少量水。**門檻自訂、未校準**。
+- **下一次過境**：Sentinel-2 每顆衛星每個軌道 10 天、Landsat 每顆衛星每個 WRS 圖幅 16 天，從最近 45 天實際取得的影像往後推 16 天內的日期。
+  只是估計（衛星排程、影像上架延遲都可能不同）。
+- **不進研判**：結果附在事件卡與事件清單上供值班參考，不改變優先等級與研判信心（SAR 以外的獨立證據仍要人工查證確認）。
+  回看前幾期時，事件卡只列下一期 SAR 過境前拍到的影像。
 
 ## 雨量
 

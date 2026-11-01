@@ -42,7 +42,7 @@ SEED_SLOPE_DEG = "20"
 # 重跑時從既有情境檔保留的人工整理欄位（說明、外部證據、事後查證等），
 # 只有影像期別（passes）與地點等由程式重新產生。
 CURATED_KEYS = ("description", "context", "trigger", "externalEvidence", "exposure", "hindsight",
-                "observationsLakeId", "referenceLakeId", "referenceLabel", "basemap", "aerial")
+                "observationsLakeId", "referenceLakeId", "referenceLabel", "basemap", "aerial", "optical")
 
 
 def merge_scenario(new: dict, old: Optional[dict], description_given: bool) -> dict:

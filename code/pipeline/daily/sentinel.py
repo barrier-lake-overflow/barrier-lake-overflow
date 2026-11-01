@@ -38,6 +38,8 @@ POST_BEFORE_DAYS = R.POST_BEFORE_DAYS
 KEEP_SCENE_DAYS = 90
 MIN_PRE = R.MIN_PRE   # 事件前基準至少幾張才抓這一軌
 HIDE_AFTER_DAYS = 60   # 停用超過這麼久的窗格不放進儀表板
+S1_REPEAT_DAYS = 12    # 每顆 Sentinel-1 同一軌的重複週期（衛星軌道設計值）
+S1_ACTIVE_DAYS = 36    # 三個週期內在這一軌拍過，才當作還在拍、拿來推下一期
 
 
 def orbit_key(orbit_pass: str, orbit: int) -> str:
@@ -86,6 +88,36 @@ def new_scenes(images: list, orbit_pass: str, orbit: int, start: datetime) -> li
     return [{"day": d, "timeUTC": t.strftime("%H:%M")} for d, t in sorted(days.items())]
 
 
+def orbit_satellites(images: list, orbit_pass: str, orbit: int, now: datetime) -> dict:
+    """
+    這一軌最近有在拍的衛星：{"C": 最近一次取得時間 ISO, …}。每顆 Sentinel-1 同一軌固定 S1_REPEAT_DAYS 天重複一次，
+    但哪幾顆衛星拍哪一軌會變（例如升軌 69 原本 S1A，後來只剩 S1D），所以只留 S1_ACTIVE_DAYS 內拍過的；
+    都太久沒拍時留最近的一顆。images：[(pass, orbit, epoch_ms, platform)]。
+
+    >>> ms = lambda s: datetime.fromisoformat(s).replace(tzinfo=timezone.utc).timestamp() * 1000
+    >>> imgs = [("DESCENDING", 105, ms("2026-10-10T21:51"), "C"), ("DESCENDING", 105, ms("2026-10-22T21:51"), "C"),
+    ...         ("DESCENDING", 105, ms("2026-10-16T21:51"), "D"), ("DESCENDING", 105, ms("2026-06-06T21:51"), "A"),
+    ...         ("ASCENDING", 69, ms("2026-08-09T10:00"), "C"), ("ASCENDING", 69, ms("2026-10-26T10:00"), "D")]
+    >>> now = datetime(2026, 11, 1, 9, 38, tzinfo=TW)
+    >>> orbit_satellites(imgs, "DESCENDING", 105, now)
+    {'C': '2026-10-23T05:51+08:00', 'D': '2026-10-17T05:51+08:00'}
+    >>> orbit_satellites(imgs, "ASCENDING", 69, now)
+    {'D': '2026-10-26T18:00+08:00'}
+    >>> orbit_satellites(imgs[3:4], "DESCENDING", 105, now)
+    {'A': '2026-06-07T05:51+08:00'}
+    """
+    last: dict = {}
+    for p, o, ms, sat in images:
+        if p == orbit_pass and int(o) == orbit:
+            t = datetime.fromtimestamp(ms / 1000, tz=TW).replace(second=0, microsecond=0)
+            last[sat] = max(last.get(sat, t), t)
+    active = {s: t for s, t in last.items() if now - t <= timedelta(days=S1_ACTIVE_DAYS)}
+    if not active and last:
+        s = max(last, key=last.get)
+        active = {s: last[s]}
+    return {s: t.isoformat(timespec="minutes") for s, t in sorted(active.items())}
+
+
 def scenario_for(w: dict, passes: list, now: datetime) -> dict:
     orbits = list(w.get("orbits", {}).values())
     obs = "＋".join(orbit_label(o) for o in orbits)
@@ -109,6 +141,11 @@ def scenario_for(w: dict, passes: list, now: datetime) -> dict:
         # 合併後相鄰兩期的典型間隔（兩軌交錯約 6 天）
         "revisitDays": gaps[len(gaps) // 2] if gaps else min((o.get("revisitDays", 12) for o in orbits), default=12),
         "orbitLabel": obs,
+        # 各軌各衛星最近一次取得時間，build 依此推下一期（events/build.py next_sar_pass）
+        "orbits": [{"label": orbit_label(o), "satellite": f"S1{sat}", "cycleDays": S1_REPEAT_DAYS, "last": last}
+                   for o in orbits for sat, last in (o.get("satellites") or {}).items()],
+        # 最近一次成功查過新影像的時間：之前該到卻沒有影像的過境，視為衛星沒拍
+        "sarCheckedAt": w.get("sarCheckedAt"),
         "trigger": {"label": labels[0] if labels else "", "time": w["activatedAt"], "source": "自動監看"},
         "context": labels,
         "observationsLakeId": w.get("lakeId"),
@@ -154,7 +191,9 @@ def process_window(ee, w: dict, now: datetime) -> dict:
     act = datetime.fromisoformat(w["activatedAt"])
     pre0, pre1 = act - timedelta(days=PRE_GAP_DAYS + PRE_DAYS), act - timedelta(days=PRE_GAP_DAYS)
     post0 = max(act - timedelta(days=POST_BEFORE_DAYS), now - timedelta(days=KEEP_SCENE_DAYS))
-    images = gee.s1_images(ee, region, pre0.strftime("%Y-%m-%d"), (now + timedelta(days=1)).strftime("%Y-%m-%d"))
+    with_sat = gee.s1_images(ee, region, pre0.strftime("%Y-%m-%d"), (now + timedelta(days=1)).strftime("%Y-%m-%d"),
+                             platform=True)
+    images = [(p, o, ms) for p, o, ms, _ in with_sat]
     if not w.get("orbits"):
         w.pop("orbit", None)   # 舊版單軌欄位
         w.pop("scenes", None)
@@ -166,10 +205,12 @@ def process_window(ee, w: dict, now: datetime) -> dict:
                        for p, o, n in chosen}
     passes, added, analyzed = [], 0, 0
     for o in w["orbits"].values():
+        o["satellites"] = orbit_satellites(with_sat, o["pass"], o["orbit"], now) or o.get("satellites", {})
         ps, a, n = process_orbit(ee, w, o, images, region, post0)
         passes += ps
         added += a
         analyzed += n
+    w["sarCheckedAt"] = now.isoformat(timespec="minutes")   # 查詢與下載都成功才更新
     if not passes:
         return {"id": w["id"], "status": "no_scene", "added": 0}
     passes.sort(key=lambda p: p["time"])
