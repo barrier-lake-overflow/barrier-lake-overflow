@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- 程式這樣寫對不隊標誌的簡化版（分頁小圖示用）：外框、山脈、河流 -->
+  <style>
+    .n{fill:none;stroke:#153B63;stroke-width:34;stroke-linecap:round;stroke-linejoin:round}
+    .b{fill:none;stroke:#1689C9;stroke-width:40;stroke-linecap:round;stroke-linejoin:round}
+    @media (prefers-color-scheme: dark){ .n{stroke:#DCE8F2} .b{stroke:#3AA7E6} }
+  </style>
+  <path class="n" stroke-dasharray="560 70" transform="rotate(-38 256 256)" d="M256 40a216 216 0 1 1 0 432a216 216 0 1 1 0-432"/>
+  <path class="n" d="M78 300l100-104 44 38 72-88 88 92 52-40"/>
+  <path class="b" d="M78 360c76-38 132-36 184-13 58 24 108 22 172-8"/>
+</svg>

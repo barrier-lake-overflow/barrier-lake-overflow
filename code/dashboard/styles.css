@@ -112,11 +112,9 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   font-size:calc(16px*var(--fs));color:var(--snow);display:flex;align-items:center;gap:10px;
   white-space:nowrap;
 }
-.pulse{
-  width:8px;height:8px;border-radius:50%;background:var(--jade);
-  box-shadow:0 0 0 0 rgba(var(--jade-rgb),.6);animation:pulse 2.4s infinite;
-}
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(var(--jade-rgb),0)}100%{box-shadow:0 0 0 0 rgba(var(--jade-rgb),0)}}
+/* 系統與團隊標誌（程式這樣寫對不隊）：深淺兩版，依外觀只顯示一個（深色底上原本的深藍看不到） */
+.logo{width:calc(30px*var(--fs-h));height:calc(30px*var(--fs-h));flex:none}
+:root[data-theme="light"] .logo-on-dark,:root:not([data-theme="light"]) .logo-on-light{display:none}
 .stat-meta{
   font-family:var(--mono);font-size:calc(13.5px*var(--fs));color:var(--moss);white-space:nowrap;
 }

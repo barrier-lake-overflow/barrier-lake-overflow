@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">程式這樣寫對不隊｜山水雷達科技標誌（深色底版本）</title>
+  <desc id="desc">以山脈、河流、堰塞湖監測設施與衛星雷達訊號組成的簡約幾何標誌。</desc>
+  <defs>
+    <style>
+      .navy{fill:none;stroke:#DCE8F2;stroke-width:19;stroke-linecap:round;stroke-linejoin:round}
+      .blue{fill:none;stroke:#3AA7E6;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
+      .solid-navy{fill:#DCE8F2}
+      .solid-blue{fill:#3AA7E6}
+    </style>
+  </defs>
+
+  <!-- Open circular frame: monitoring / resilience -->
+  <path class="navy" stroke-dasharray="510 105" transform="rotate(-38 256 256)"
+        d="M256 62a194 194 0 1 1 0 388a194 194 0 1 1 0-388"/>
+
+  <!-- Satellite -->
+  <g transform="translate(329 87) rotate(38)">
+    <rect class="solid-navy" x="-19" y="-19" width="38" height="38" rx="5"/>
+    <path class="navy" stroke-width="9" d="M-27-7h-47v-20h47M27-7h47v-20H27M-27 7h-47v20h47M27 7h47v20H27"/>
+    <path class="blue" stroke-width="8" d="M-5 31q-24 19-5 40M8 31q-34 29-7 57M20 29q-43 39-9 74"/>
+  </g>
+
+  <!-- Mountain range -->
+  <path class="navy" d="M82 300l93-95 42 36 70-83 83 86 35-28 48 44"/>
+  <path class="navy" d="M175 205l20 49 22-13M287 158l-17 44 30-9"/>
+
+  <!-- Monitoring / dam structure -->
+  <path class="navy" d="M329 277h91l-22 72h-91z"/>
+  <path class="navy" stroke-width="12" d="M344 291l-10 43M372 291l-10 43M400 291l-10 43"/>
+
+  <!-- River / water body -->
+  <path class="blue" d="M72 344c72-36 126-35 184-12 58 23 105 22 184-8"/>
+  <path class="blue" d="M111 389c64-26 115-23 163-5 43 16 78 17 121 1"/>
+</svg>

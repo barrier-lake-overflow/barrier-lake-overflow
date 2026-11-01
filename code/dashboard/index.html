@@ -8,6 +8,7 @@
   <!-- 字型放在本機（scripts/vendor_fonts.py），會場離線也能正常顯示 -->
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <!-- 外觀與字體（頂端「設定」）：先套用，畫面才不會先閃一下。外觀預設跟隨電腦（auto） -->
   <script>
     (function () {
@@ -24,7 +25,7 @@
   <!-- 頂端：系統名稱、分頁、資料狀態、使用說明（分頁切換見 views.js） -->
   <div class="statusbar">
     <div class="wrap">
-      <span class="sysname"><span class="pulse"></span>堰塞湖事件研判平台</span>
+      <span class="sysname"><img class="logo logo-on-light" src="img/logo.svg" alt="" width="30" height="30"><img class="logo logo-on-dark" src="img/logo-dark.svg" alt="" width="30" height="30">堰塞湖事件研判平台</span>
       <nav class="view-tabs" aria-label="分頁">
         <a class="vt" href="#duty" data-view="duty">值班</a>
         <a class="vt" href="#inventory" data-view="inventory">全台清冊</a>
