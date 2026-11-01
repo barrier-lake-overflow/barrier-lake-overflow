@@ -29,6 +29,7 @@ from pathlib import Path
 from typing import Optional
 
 from pipeline.attribution.annotate import read_lakes
+from pipeline.daily import passes as SP
 from pipeline.ingest.observations import load_observations_table
 
 from . import replay as R
@@ -281,6 +282,10 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
 
     revisit = timedelta(days=scenario.get("revisitDays", 6))
     checked = _t(scenario.get("sarCheckedAt"))
+    # 演練回放：每一期之後的衛星過境（daily/passes.py）；即時監看用情境層的 upcoming
+    replay_passes = SP.load(scenario["id"]) if scenario.get("kind") != "live" else []
+    sar_orbits = {o for lbl in [scenario.get("orbitLabel")] + [p.get("orbitLabel") for p, _ in passes]
+                  for o in (lbl or "").split("＋") if o}
     snapshots = []
     times = snapshot_times(scenario, passes)
     for i, t in enumerate(times):
@@ -354,6 +359,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
             "since": label["since"],
             "nextPass": T.tw_date(next_pass),
             "nextPassOrbit": next_orbit,
+            **({"upcoming": SP.upcoming_at(replay_passes, t, sar_orbits)} if replay_passes else {}),
             "counts": counts,
             "newCount": sum(1 for c in cards if c["isNew"]),
             "events": cards,
@@ -375,6 +381,10 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
                     if scenario.get("optical") else None),
         # 監看窗格接下來的衛星過境（Sentinel-1／2、Landsat），儀表板提醒用
         "upcoming": upcoming_passes(scenario) if scenario.get("kind") == "live" else [],
+        # 演練回放：實際的光學過境（daily/passes.py），事件卡時間軸只列該時點以前的，不偷看未來
+        "opticalPasses": [{"time": _t(iso).astimezone(T.TW).isoformat(timespec="minutes"), "sensor": sat}
+                          for kind, sat, _, iso in replay_passes
+                          if kind != "sar" and snapshots and _t(iso) <= _t(snapshots[-1]["asOf"])],
         "trigger": scenario.get("trigger"),
         "snapshots": snapshots,
     }

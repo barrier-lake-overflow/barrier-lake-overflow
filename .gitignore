@@ -39,6 +39,7 @@ data/raw/*
 # 中繼產物可重新產生，不進版控
 data/derived/*
 !data/derived/final_*.json
+!data/derived/satpasses/
 data/interim/
 data/cache/
 

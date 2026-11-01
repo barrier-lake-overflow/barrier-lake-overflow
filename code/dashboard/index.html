@@ -8,6 +8,8 @@
   <!-- 字型放在本機（scripts/vendor_fonts.py），會場離線也能正常顯示 -->
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
+  <!-- 字級（右上角齒輪）：先套用，畫面才不會先小後大 -->
+  <script>try { var f = localStorage.getItem('fontScale'); if (f) document.documentElement.dataset.fs = f; } catch (e) {}</script>
 </head>
 
 <body>
@@ -27,6 +29,37 @@
       </button>
       <!-- 使用說明在另一頁（help.html），開新分頁；各區塊旁的「?」直接開到對應段落 -->
       <a class="help-btn" href="help.html" target="_blank" rel="noopener">使用說明</a>
+      <div class="fs-set">
+        <button class="fs-btn" id="fsBtn" type="button" title="設定與資料來源" aria-label="設定與資料來源" aria-expanded="false" aria-controls="fsMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>
+            <circle cx="12" cy="12" r="6.5"/>
+          </svg>
+        </button>
+        <!-- 齒輪小視窗：字級（views.js）＋資料來源致謝（各家規定的標註文字照原文；詳細授權見使用說明） -->
+        <div class="fs-menu" id="fsMenu" role="dialog" aria-label="設定與資料來源" hidden>
+          <span class="fs-title">字級</span>
+          <div class="fs-opts" role="radiogroup" aria-label="字級">
+            <label><input type="radio" name="fontScale" value=""> 標準</label>
+            <label><input type="radio" name="fontScale" value="l"> 大</label>
+            <label><input type="radio" name="fontScale" value="xl"> 特大</label>
+          </div>
+          <span class="fs-title fs-thanks">感謝以下單位提供資料</span>
+          <ul class="fs-src">
+            <li><b>農業部農村發展及水土保持署</b>堰塞湖清冊</li>
+            <li><b>歐盟 Copernicus（ESA）</b>Sentinel-1／2 影像<i>Contains modified Copernicus Sentinel data (2015–2026)</i></li>
+            <li><b>美國地質調查局（USGS）</b>Landsat 8/9 影像<i>Landsat imagery courtesy of the U.S. Geological Survey</i></li>
+            <li><b>日本宇宙航空研究開發機構（JAXA）</b>GSMaP 衛星雨量</li>
+            <li><b>美國國家航空暨太空總署（NASA）</b>NASADEM 地形</li>
+            <li><b>農業部林業及自然保育署航測及遙測分署</b>航照</li>
+            <li><b>國家太空中心</b>福衛八號（© 國家太空中心，只用衍生範圍與數值）</li>
+            <li><b>內政部國土測繪中心</b>水系、村里界</li>
+            <li><b>Google Earth Engine</b>影像查詢與計算</li>
+          </ul>
+          <a class="fs-more" href="help.html#sources" target="_blank" rel="noopener">詳細授權與用途 ↗</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -76,7 +109,12 @@
           <!-- 光學影像：最近幾景雲量、下一次 Sentinel-2／Landsat（duty.js），只在即時監看最新一期顯示 -->
           <p class="optical-note" id="opticalNote" hidden></p>
           <div class="queue" id="queue"></div>
-          <div class="minimap-wrap">
+          <div class="minimap-wrap" id="minimapWrap">
+            <!-- 放大檢視：小地圖展開成大圖（duty.js），Esc 或「關閉」縮回 -->
+            <div class="mm-bar">
+              <span class="mm-bar-title">窗格小地圖</span>
+              <button class="btn ghost mm-expand" type="button" id="mmExpand" aria-expanded="false">放大檢視</button>
+            </div>
             <svg id="minimap" role="img" aria-label="分析窗格內各事件的位置與 SAR 新增水體範圍"></svg>
             <p class="map-note" id="minimapNote"></p>
           </div>
@@ -332,8 +370,8 @@
 
   <footer>
     <div class="wrap">
-      <span>堰塞湖事件研判平台 · OSSInt 2026</span>
-      <span>清冊：農業部農村發展及水土保持署 · 座標由 TWD97 TM2 轉 WGS84</span>
+      <span>堰塞湖事件研判平台 · OSSInt 2026 · 由 程式這樣寫對不隊 開發</span>
+      <span>資料來源見頂端齒輪</span>
     </div>
   </footer>
 
@@ -344,6 +382,7 @@
   <script src="vendor/three.min.js"></script>
   <script src="map3d.js"></script>
   <script src="data/events.js"></script>
+  <script src="data/fs8.js"></script>
   <script src="data/replay.js"></script>
   <script src="data/daily.js"></script>
   <script src="views.js"></script>

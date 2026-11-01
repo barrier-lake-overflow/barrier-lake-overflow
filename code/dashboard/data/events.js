@@ -29,6 +29,36 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2015-06-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-07-11T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-07-27T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-08-12T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-08-28T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-09-13T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-09-29T10:20+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-14T00:00:00+08:00",
@@ -42,6 +72,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 5 天",
     "nextPass": "8/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-08-28",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-08-30",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -57,6 +103,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 17 天",
     "nextPass": "9/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-09-11",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2015-09-13",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -72,6 +134,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 29 天",
     "nextPass": "9/23",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-09-13",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-09-23",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -87,6 +165,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 53 天",
     "nextPass": "10/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-10-15",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-10-17",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -125,6 +219,40 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2015-06-09T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-06-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-07-11T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-07-27T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-08-12T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-08-28T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-09-13T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2015-09-29T10:20+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-12T00:00:00+08:00",
@@ -138,6 +266,22 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 5 天",
     "nextPass": "8/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-08-12",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-08-18",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -153,6 +297,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "8/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-08-28",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-08-30",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -168,6 +328,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 19 天",
     "nextPass": "9/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-09-11",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2015-09-13",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -183,6 +359,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 31 天",
     "nextPass": "9/23",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-09-13",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-09-23",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -198,6 +390,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "10/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2015-10-15",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2015-10-17",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -236,6 +444,36 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2015-12-18T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-01-03T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-01-19T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-02-04T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-02-11T10:34+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-02-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-03-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-01-27T00:00:00+08:00",
@@ -249,6 +487,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "2/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-02-04",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-02-14",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -264,6 +518,29 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 19 天",
     "nextPass": "2/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-02-20",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-02-21",
+      "time": "10:34",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-02-26",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -279,6 +556,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 31 天",
     "nextPass": "3/9",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-03-02",
+      "time": "10:34",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-03-07",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-03-09",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-03-12",
+      "time": "10:34",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -294,6 +601,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 43 天",
     "nextPass": "3/21",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-03-21",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-03-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -309,6 +632,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "4/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-03-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-04-02",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -347,6 +686,64 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2016-06-27T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-06-30T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-07-13T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-07-20T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-07-20T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-07-29T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-08-09T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-08-14T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-08-29T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-08-30T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-09-15T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-09-18T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-10-01T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-10-08T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-08-19T00:00:00+08:00",
@@ -360,6 +757,29 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 6 天",
     "nextPass": "8/24",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-08-14",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-08-19",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-08-24",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 2,
@@ -662,6 +1082,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 18 天",
     "nextPass": "9/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-09-08",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-15",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-17",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-09-18",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -962,6 +1412,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 30 天",
     "nextPass": "9/29",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-09-18",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-28",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-29",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-10-01",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -1276,6 +1756,29 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 天",
     "nextPass": "10/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-10-01",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-10-08",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-10-11",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 1,
@@ -1726,6 +2229,29 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 54 天",
     "nextPass": "10/23",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-10-17",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-10-18",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-10-23",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 1,
@@ -2385,6 +2911,68 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2016-05-10T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-05-21T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-05-26T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-06-10T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-06-11T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-06-27T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-06-30T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-07-13T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-07-20T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-07-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-07-29T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-08-09T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-08-14T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-08-29T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-08-30T10:21+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-07-09T00:00:00+08:00",
@@ -2398,6 +2986,36 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 1 天",
     "nextPass": "7/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-07-10",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-07-13",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-07-19",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-07-20",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2413,6 +3031,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 11 天",
     "nextPass": "7/31",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-07-20",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-07-29",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-07-30",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-07-31",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2428,6 +3076,29 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 23 天",
     "nextPass": "8/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-08-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-08-12",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-08-14",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2443,6 +3114,29 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 35 天",
     "nextPass": "8/24",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-08-14",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-08-19",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-08-24",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2458,6 +3152,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 47 天",
     "nextPass": "9/5",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-08-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-08-30",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-05",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-09-08",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2473,6 +3197,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 59 天",
     "nextPass": "9/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-09-08",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-15",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-09-17",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-09-18",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2511,6 +3265,56 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2016-01-19T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-01-19T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-02-04T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-02-04T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-02-11T10:34+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2016-02-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-02-20T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-03-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-03-07T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-03-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-04-08T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2016-04-11T10:36+08:00",
+    "sensor": "Sentinel-2A"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-03-07T00:00:00+08:00",
@@ -2524,6 +3328,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 66 小時",
     "nextPass": "3/27",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-03-21",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2016-03-23",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2539,6 +3359,22 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 15 天",
     "nextPass": "4/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-03-23",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-04-02",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2554,6 +3390,29 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 39 天",
     "nextPass": "5/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2016-04-21",
+      "time": "10:36",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-04-24",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2016-04-26",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2592,6 +3451,112 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2017-04-02T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-04-11T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-04-16T10:35+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2017-04-18T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-04-27T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-05-04T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-05-06T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2017-05-13T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-05-20T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-05-26T10:35+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2017-05-29T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-06-05T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-06-05T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-06-14T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-06-15T10:35+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2017-06-21T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-06-21T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-06-30T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-07-05T10:35+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2017-07-07T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-07-07T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-07-16T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-07-20T10:35+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2017-07-23T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-07-23T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2017-07-25T10:35+08:00",
+    "sensor": "Sentinel-2A"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2017-06-03T00:00:00+08:00",
@@ -2605,6 +3570,36 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 6 天",
     "nextPass": "6/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2017-05-29",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-06-05",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-06-05",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-06-08",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2620,6 +3615,36 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 6 天",
     "nextPass": "6/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2017-06-14",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-06-15",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-06-20",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2017-06-21",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2635,6 +3660,43 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 30 天",
     "nextPass": "7/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2017-07-05",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-07",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-14",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2017-07-15",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-16",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2650,6 +3712,43 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 天",
     "nextPass": "7/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2017-07-15",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-16",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-23",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-25",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-07-26",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2665,6 +3764,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 54 天",
     "nextPass": "8/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2017-07-30",
+      "time": "10:35",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-08-01",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-08-04",
+      "time": "10:35",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-08-07",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2017-08-08",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2017-08-09",
+      "time": "10:35",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2703,6 +3846,164 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2019-06-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-06-20T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-06-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-06-27T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-06-30T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-07-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-07-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-07-10T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-07-13T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-07-15T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-07-20T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-07-22T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-07-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-07-29T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-07-30T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-08-04T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-08-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-08-09T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-08-14T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-08-14T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-08-19T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-08-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-08-24T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-08-29T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-08-30T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-09-03T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-09-08T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-09-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-09-13T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-09-15T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-09-18T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-09-23T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-09-24T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-09-28T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-10-01T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-10-03T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2019-10-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2019-10-10T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2019-10-13T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2019-08-21T00:00:00+08:00",
@@ -2716,6 +4017,57 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 5 天",
     "nextPass": "8/21",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-08-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-21",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-08-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-27",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-08-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-30",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2731,6 +4083,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 18 小時",
     "nextPass": "8/27",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-08-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-27",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-08-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-30",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-02",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2746,6 +4149,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "9/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-08-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-08-30",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-02",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-08",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-08",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2761,6 +4215,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 13 天",
     "nextPass": "9/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-08",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-08",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-15",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2776,6 +4288,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 19 天",
     "nextPass": "9/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-09-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-15",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-20",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-24",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2791,6 +4354,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 31 天",
     "nextPass": "9/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-09-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-24",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-09-26",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-09-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-01",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-02",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2806,6 +4420,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 37 天",
     "nextPass": "10/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-09-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-01",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-02",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-08",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-10",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2821,6 +4486,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 43 天",
     "nextPass": "10/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-10-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-08",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-10",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-14",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-17",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2836,6 +4559,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 49 天",
     "nextPass": "10/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-10-10",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-14",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-17",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2851,6 +4625,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "10/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2019-10-17",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-26",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2019-10-26",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2019-10-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2889,6 +4714,132 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2020-12-06T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2020-12-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2020-12-15T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2020-12-16T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2020-12-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2020-12-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2020-12-31T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2020-12-31T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-01-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-01-10T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-01-15T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-01-16T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-01-20T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-01-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-01-30T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-02-01T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-02-04T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-02-09T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-02-14T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-02-17T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-02-19T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-02-24T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-03-01T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-03-05T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-03-06T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-03-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-03-16T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-03-21T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-03-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-03-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-03-31T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-02-05T00:00:00+08:00",
@@ -2902,6 +4853,43 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 5 天",
     "nextPass": "2/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-02-01",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-02-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-02-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-02-11",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-02-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2917,6 +4905,43 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "2/23",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-02-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-02-17",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-02-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-02-23",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-02-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2932,6 +4957,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 19 天",
     "nextPass": "3/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-02-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-05",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-07",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-03-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2947,6 +5016,43 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 31 天",
     "nextPass": "3/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-03-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-19",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-03-21",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2962,6 +5068,43 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 43 天",
     "nextPass": "3/31",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-03-21",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-03-31",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -3124,6 +5267,43 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "4/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-04-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-04-06",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-04-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-04-12",
+      "time": "18:00",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-04-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -3326,6 +5506,136 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2021-04-15T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-04-20T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-04-22T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-04-25T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-04-30T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-05-05T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-05-08T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-05-10T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-05-15T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-05-20T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-05-24T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-05-25T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-05-30T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-06-04T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-06-09T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-06-09T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-06-14T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-06-19T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-06-24T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-06-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-06-29T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-07-04T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-07-09T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-07-11T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-07-14T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-07-19T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-07-24T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-07-27T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-07-29T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-08-03T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-08-08T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-08-12T10:20+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-06-19T00:00:00+08:00",
@@ -3339,6 +5649,57 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 5 天",
     "nextPass": "6/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-06-14",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-06-19",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-06-20",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-06-24",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-06-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-06-26",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-06-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3354,6 +5715,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 30 小時",
     "nextPass": "6/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-06-24",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-06-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-06-26",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-06-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-02",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-04",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3369,6 +5774,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "7/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-06-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-02",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-04",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-08",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-09",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-11",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3384,6 +5833,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 13 天",
     "nextPass": "7/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-07-04",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-08",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-09",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-11",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-14",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-14",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3399,6 +5892,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 19 天",
     "nextPass": "7/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-07-09",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-11",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-14",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-14",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-19",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-20",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3414,6 +5951,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 25 天",
     "nextPass": "7/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-07-14",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-19",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-20",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-24",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-26",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-27",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3429,6 +6017,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 31 天",
     "nextPass": "7/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-07-24",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-26",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-07-27",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-01",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-03",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3444,6 +6076,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 37 天",
     "nextPass": "8/1",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-07-27",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-07-29",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-01",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-03",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-08",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3459,6 +6135,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 43 天",
     "nextPass": "8/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-08-03",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-08",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-12",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-13",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-13",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3474,6 +6194,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 49 天",
     "nextPass": "8/13",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-08-08",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-12",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-13",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-13",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-18",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-19",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3489,6 +6253,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "8/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-08-13",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-18",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-19",
+      "time": "05:51",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-23",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-25",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2021-08-28",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-08-28",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3527,6 +6342,148 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2021-09-07T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-09-12T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-09-13T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-09-17T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-09-22T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-09-27T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-09-29T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-10-02T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-10-07T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-10-12T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-10-15T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-10-17T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-10-22T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-10-27T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-10-31T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-11-01T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-11-06T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-11-11T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-11-16T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-11-16T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-11-21T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-11-26T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-12-01T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-12-02T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-12-06T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-12-06T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-12-10T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2021-12-11T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-12-16T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-12-16T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-12-18T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2021-12-21T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2021-12-26T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2021-12-26T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2021-12-31T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-11-06T00:00:00+08:00",
@@ -3540,6 +6497,50 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 3 天",
     "nextPass": "11/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-11-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-08",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-11-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-11-16",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3555,6 +6556,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 66 小時",
     "nextPass": "11/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-11-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-11-16",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-20",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-11-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3570,6 +6615,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 9 天",
     "nextPass": "11/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-11-16",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-20",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-11-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-26",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3585,6 +6674,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 15 天",
     "nextPass": "11/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-11-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-11-26",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-02",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-02",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3600,6 +6740,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 21 天",
     "nextPass": "12/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-12-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-02",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-02",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-08",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3615,6 +6799,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 27 天",
     "nextPass": "12/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-12-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-08",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-14",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-18",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3630,6 +6858,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 33 天",
     "nextPass": "12/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-12-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-14",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-18",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3645,6 +6917,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 39 天",
     "nextPass": "12/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-12-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-18",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-26",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-26",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3660,6 +6983,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 45 天",
     "nextPass": "12/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2021-12-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-26",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2021-12-26",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2021-12-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-01-01",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2022-01-03",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-01-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3675,6 +7056,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 57 天",
     "nextPass": "1/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2022-01-03",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-01-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-01-07",
+      "time": "18:00",
+      "sensor": "Sentinel-1B",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2022-01-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-01-11",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-01-13",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2022-01-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3713,6 +7145,148 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2022-09-24T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-09-27T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-10-02T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2022-10-02T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-10-07T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-10-10T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-10-12T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-10-17T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-10-18T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2022-10-22T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-10-26T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-10-27T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-11-01T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-11-03T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2022-11-06T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-11-11T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-11-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-11-16T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-11-19T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2022-11-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-11-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-11-27T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-12-01T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-12-05T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2022-12-06T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-12-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-12-13T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-12-16T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-12-21T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2022-12-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2022-12-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2022-12-29T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2022-12-31T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2023-01-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2023-01-06T10:21+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2022-11-20T00:00:00+08:00",
@@ -3726,6 +7300,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 小時",
     "nextPass": "12/3",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2022-11-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-11-27",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-03",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2022-12-05",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3741,6 +7359,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 14 天",
     "nextPass": "12/15",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2022-12-05",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-13",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-15",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2022-12-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3756,6 +7418,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 26 天",
     "nextPass": "12/27",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2022-12-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-21",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-27",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2022-12-29",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3771,6 +7484,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 38 天",
     "nextPass": "1/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2022-12-29",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2022-12-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-06",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-08",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2023-01-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3786,6 +7543,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 50 天",
     "nextPass": "1/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2023-01-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-14",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2023-01-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2023-01-22",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3824,6 +7625,172 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2024-01-17T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-01-20T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-01-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-01-25T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-01-25T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-01-30T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-02-02T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-02-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-02-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-02-10T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-02-10T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-02-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-02-18T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-02-19T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-02-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-02-26T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-02-26T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-02-29T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-03-05T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-03-05T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-03-10T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-03-13T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-03-13T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-03-15T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-03-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-03-21T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-03-21T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-03-25T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-03-29T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-03-30T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-04-06T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-04-06T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-04-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-14T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-04-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-04-19T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-22T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-04-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-04-29T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-30T10:20+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-03-13T00:00:00+08:00",
@@ -3837,6 +7804,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 66 小時",
     "nextPass": "3/27",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-03-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-03-21",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-03-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-03-27",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-03-29",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-03-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3852,6 +7863,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 15 天",
     "nextPass": "4/8",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-03-29",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-03-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-06",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-08",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-04-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3867,6 +7922,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 27 天",
     "nextPass": "4/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-04-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-14",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-04-22",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3882,6 +7988,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 39 天",
     "nextPass": "5/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-04-22",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-30",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-02",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3897,6 +8047,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 51 天",
     "nextPass": "5/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-08",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-05-16",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3935,6 +8129,164 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2024-02-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-02-10T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-02-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-02-18T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-02-19T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-02-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-02-26T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-02-29T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-03-05T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-03-05T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-03-10T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-03-13T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-03-15T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-03-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-03-21T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-03-25T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-03-29T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-03-30T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-04-06T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-04-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-14T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-04-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-04-19T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-22T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-04-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-04-29T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-04-30T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-05-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-05-08T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-05-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-05-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-05-16T10:19+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-05-19T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-05-24T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-05-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-05-29T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-06-01T10:19+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-06-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-04-14T00:00:00+08:00",
@@ -3948,6 +8300,57 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 5 天",
     "nextPass": "4/20",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-04-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-14",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-04-22",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3963,6 +8366,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "5/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-04-22",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-04-30",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-02",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3978,6 +8425,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 19 天",
     "nextPass": "5/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-08",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-05-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-05-16",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3993,6 +8484,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 43 天",
     "nextPass": "6/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-05-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-01",
+      "time": "10:19",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-07",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-09",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -4151,6 +8686,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "6/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-09",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-17",
+      "time": "10:19",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-06-19",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-06-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4330,6 +8916,160 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2024-08-07T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-08-12T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-08-12T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-08-12T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-08-17T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-08-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-08-20T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-08-22T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-08-27T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-08-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-08-28T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-09-01T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-09-05T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-09-06T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-09-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-09-13T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-09-16T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-09-21T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-09-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-09-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-09-29T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-10-01T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-10-06T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-10-07T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-10-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-10-15T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-10-16T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-10-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-10-23T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-10-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-10-31T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-10-31T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-11-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-11-08T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-11-10T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-11-15T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-11-16T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-11-20T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-10-05T00:00:00+08:00",
@@ -4343,6 +9083,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 18 小時",
     "nextPass": "10/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-10-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-07",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-15",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-17",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-10-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4358,6 +9149,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 13 天",
     "nextPass": "10/29",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-10-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-23",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-29",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-10-31",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4373,6 +9208,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 25 天",
     "nextPass": "11/10",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-10-31",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-08",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-10",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4388,6 +9267,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 37 天",
     "nextPass": "11/22",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-11-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-16",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-22",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-11-24",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4403,6 +9326,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 49 天",
     "nextPass": "12/4",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-11-24",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-02",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-04",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-12-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4441,6 +9408,168 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2024-09-01T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-09-05T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-09-06T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-09-11T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-09-13T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-09-16T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-09-21T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-09-21T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-09-26T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-09-29T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-10-01T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-10-06T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-10-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-10-11T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-10-15T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-10-16T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-10-21T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-10-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-10-26T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-10-31T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-10-31T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-11-05T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-11-08T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-11-10T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-11-15T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-11-16T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-11-20T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-11-24T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-11-25T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-11-30T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-12-02T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-12-05T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-12-10T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-12-10T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-12-15T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-12-15T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2024-12-18T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-12-20T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-12-25T10:40+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-12-26T10:20+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-11-02T00:00:00+08:00",
@@ -4454,6 +9583,50 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 3 天",
     "nextPass": "11/10",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-10-31",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-10-31",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-05",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-08",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-10",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-10",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4469,6 +9642,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 9 天",
     "nextPass": "11/22",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-11-15",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-16",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-20",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-22",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-11-24",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-25",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4484,6 +9701,50 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 21 天",
     "nextPass": "12/4",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-11-24",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-25",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-11-30",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-04",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-12-05",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -4636,6 +9897,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 33 天",
     "nextPass": "12/16",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-12-05",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-10",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-10",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-15",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-16",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-12-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-20",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -4812,6 +10124,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 45 天",
     "nextPass": "12/28",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-12-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-20",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-25",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-26",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2024-12-28",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2024-12-30",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 3,
@@ -5394,6 +10757,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 57 天",
     "nextPass": "1/9",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2024-12-30",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-03",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-04",
+      "time": "10:40",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-09",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-09",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-01-11",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 4,
      "medium": 1,
@@ -6176,6 +11590,168 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2024-11-24T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-11-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-11-30T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-12-02T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-12-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-12-10T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-12-10T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-12-15T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-12-15T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2024-12-18T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2024-12-20T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2024-12-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2024-12-26T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2024-12-30T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-01-03T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-01-04T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-01-09T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-01-11T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-01-14T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-01-19T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-01-19T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-01-24T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-01-27T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-01-29T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-02-03T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-02-04T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-02-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-02-12T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-02-13T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-02-18T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-02-20T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-02-23T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-02-28T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-02-28T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-03-05T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-03-08T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-03-10T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-03-15T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-03-16T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-03-20T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-01-25T00:00:00+08:00",
@@ -6189,6 +11765,57 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 3 天",
     "nextPass": "2/2",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-01-21",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-01-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-27",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-01-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-02",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-02-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-04",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -6204,6 +11831,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 9 天",
     "nextPass": "2/14",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-02-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-04",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-12",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-02-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -6219,6 +11911,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 21 天",
     "nextPass": "2/26",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-02-14",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-02-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-20",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-26",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-02-28",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -6374,6 +12117,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 33 天",
     "nextPass": "3/10",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-02-26",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-02-28",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-02-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-08",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-10",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -6545,6 +12339,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 45 天",
     "nextPass": "3/22",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-03-10",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-03-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-16",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-22",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-03-24",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -6734,6 +12579,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 57 天",
     "nextPass": "4/3",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-03-22",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-03-24",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-03-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-04-01",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-04-03",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-04-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -6961,6 +12857,260 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2025-05-10T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-05-11T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-05-14T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-05-18T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-05-19T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-05-19T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-05-24T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-05-26T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-05-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-05-27T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-05-29T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-06-03T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-03T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-06-04T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-06-11T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-12T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-13T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-06-15T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-06-18T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-06-19T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-19T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-27T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-27T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-28T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-03T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-07-05T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-07-05T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-07-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-07-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-13T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-13T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-13T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-07-14T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-07-18T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-21T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-07-21T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-07-22T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-23T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-07-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-07-28T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-29T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-29T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-30T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-02T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-06T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-06T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-07T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-07T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-12T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-14T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-14T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-08-15T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-17T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-22T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-22T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-23T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-27T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-30T10:27+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-31T10:21+08:00",
+    "sensor": "Landsat 9"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-07-08T00:00:00+08:00",
@@ -6974,6 +13124,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 18 小時",
     "nextPass": "7/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-07-13",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-14",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-20",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-07-21",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-22",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -6989,6 +13204,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 13 天",
     "nextPass": "7/29",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-07-21",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-22",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-29",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-30",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-01",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -7155,6 +13442,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 25 天",
     "nextPass": "8/10",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-06",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-13",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-08-14",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-15",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -7319,6 +13685,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 37 天",
     "nextPass": "8/22",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-14",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-15",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-22",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-23",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-25",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -7483,6 +13921,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 43 天",
     "nextPass": "8/28",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-22",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-23",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-25",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-30",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-31",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-31",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-09-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 2,
@@ -7935,6 +14452,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 49 天",
     "nextPass": "9/3",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-30",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-31",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-31",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-09-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-06",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-09-07",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-08",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 1,
@@ -8401,6 +14990,92 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 55 天",
     "nextPass": "9/9",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-09-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-06",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-09-07",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-08",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-12",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-09-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-15",
+      "time": "10:27",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-16",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -8888,6 +15563,184 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2025-08-14T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-08-15T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-17T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-22T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-27T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-31T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-09-01T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-09-03T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-09-06T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-09-08T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-09-11T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-09-16T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-09-16T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-09-21T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-09-23T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-09-24T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-09-26T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-10-01T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-10-02T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-10-06T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-10-10T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-10-11T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-10-13T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-10-16T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-10-21T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-10-26T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-10-26T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-10-31T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-11-02T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-11-03T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-11-05T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-11-10T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-11-11T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-11-15T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-11-19T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-11-20T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-11-22T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-11-25T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-11-27T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-11-30T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-12-05T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-12-05T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-12-10T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-10-17T00:00:00+08:00",
@@ -8901,6 +15754,64 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 4 天",
     "nextPass": "10/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-10-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-24",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-10-26",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -9079,6 +15990,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 小時",
     "nextPass": "10/24",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-10-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-24",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-10-26",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-30",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-10-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-03",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 2,
@@ -9541,6 +16517,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 8 天",
     "nextPass": "10/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-10-26",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-10-30",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-10-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-03",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-05",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -10025,6 +17059,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 14 天",
     "nextPass": "11/5",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-10-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-03",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-05",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-11",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-11",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -10507,6 +17613,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 20 天",
     "nextPass": "11/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-11-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-11",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-11",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-17",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-19",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -10989,6 +18153,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 26 天",
     "nextPass": "11/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-11-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-17",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-19",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-23",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-27",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -11471,6 +18700,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 38 天",
     "nextPass": "11/29",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-11-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-27",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-11-29",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-11-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-05",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-05",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-05",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 1,
@@ -12111,6 +19398,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 44 天",
     "nextPass": "12/5",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-11-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-05",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-05",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-05",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-12-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-11",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-12-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-13",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-15",
+      "time": "10:40",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 3,
      "medium": 0,
@@ -12751,6 +20110,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 50 天",
     "nextPass": "12/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-12-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-11",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-12-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-13",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-17",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-12-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-21",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 3,
      "medium": 0,
@@ -13399,6 +20816,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 56 天",
     "nextPass": "12/17",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-12-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-13",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-15",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-17",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-12-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-21",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-12-23",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2025-12-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 3,
      "medium": 0,
@@ -14068,6 +21550,176 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2026-02-03T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-02-07T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-02-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-02-13T10:40+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-02-15T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-02-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-02-23T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-02-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-02-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-03-03T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-03-05T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-03-10T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-03-11T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-03-15T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-03-19T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-03-20T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-03-25T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-03-27T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-03-30T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-01T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-04-04T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-04-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-12T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-04-21T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-04-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-11T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-05-14T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-22T10:19+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-30T10:20+08:00",
+    "sensor": "Landsat 9"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-04-07T00:00:00+08:00",
@@ -14081,6 +21733,57 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 6 天",
     "nextPass": "4/6",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-04-04",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-12",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-13",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -14096,6 +21799,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 6 小時",
     "nextPass": "4/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-04-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-12",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-13",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-19",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-20",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -14111,6 +21879,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 6 天",
     "nextPass": "4/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-04-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-19",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-20",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-25",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-28",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 2,
@@ -14405,6 +22231,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 12 天",
     "nextPass": "4/24",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-04-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-20",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-25",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-28",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-01",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -14737,6 +22635,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 13 天",
     "nextPass": "4/25",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-04-20",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-25",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-04-28",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-01",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-02",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 3,
@@ -15351,6 +23321,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 18 天",
     "nextPass": "4/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-04-28",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-04-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-01",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-02",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-06",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-07",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -15957,6 +23992,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 24 天",
     "nextPass": "5/6",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-02",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-06",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-07",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-13",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -16563,6 +24677,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 25 天",
     "nextPass": "5/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-06",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-07",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-13",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -17169,6 +25348,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 30 天",
     "nextPass": "5/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-13",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-19",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-22",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -17775,6 +26026,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 36 天",
     "nextPass": "5/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-14",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-19",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-22",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-25",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-26",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -18381,6 +26704,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 37 天",
     "nextPass": "5/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-14",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-19",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-22",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-25",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-26",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -18987,6 +27382,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 天",
     "nextPass": "5/24",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-22",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-25",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-26",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-30",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-31",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 1,
@@ -19609,6 +28083,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 48 天",
     "nextPass": "5/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-26",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-30",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-31",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-06",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "10:19",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -20229,6 +28775,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 49 天",
     "nextPass": "5/31",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-30",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-05-31",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-05-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-06",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "10:19",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -20849,6 +29467,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 54 天",
     "nextPass": "6/5",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-05-31",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-06",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "10:19",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-12",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -21492,6 +30182,252 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2026-04-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-11T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-04-12T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-19T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-19T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-04-21T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-04-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-27T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-04-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-05T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-05T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-11T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-05-13T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-14T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-21T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-22T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-29T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-30T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-31T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-06-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-06T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-06-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-13T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-14T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-15T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-06-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-06-22T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-06-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-30T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-01T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-08T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-09T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-09T20:46+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-10T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-07-13T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-16T10:26+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-17T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-07-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-24T10:26+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-24T10:27+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-13T00:00:00+08:00",
@@ -21505,6 +30441,99 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 7 天",
     "nextPass": "6/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-06",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-07",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-07",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-12",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-14",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-18",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-19",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21520,6 +30549,92 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 6 天",
     "nextPass": "6/13",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-07",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-12",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-14",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-18",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-19",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-22",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21535,6 +30650,85 @@ window.EVENT_SCENARIOS = [
     "since": "觸發前約 18 小時",
     "nextPass": "6/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-14",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-18",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-19",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-22",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-24",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21550,6 +30744,92 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 6 天",
     "nextPass": "6/25",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-22",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-24",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21565,6 +30845,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 11 天",
     "nextPass": "6/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-06",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21580,6 +30939,92 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 12 天",
     "nextPass": "7/1",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-06",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21595,6 +31040,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 18 天",
     "nextPass": "7/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-06",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-07",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-13",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-16",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21610,6 +31134,92 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 24 天",
     "nextPass": "7/13",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-08",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-13",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-16",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-17",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-18",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-19",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21625,6 +31235,99 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 30 天",
     "nextPass": "7/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-16",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-17",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-18",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-19",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-24",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21640,6 +31343,99 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 36 天",
     "nextPass": "7/25",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-24",
+      "time": "10:26",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "05:52",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-30",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-07-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-31",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-08-01",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21655,6 +31451,92 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 天",
     "nextPass": "7/31",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-31",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-08-01",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-06",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -21813,6 +31695,85 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 48 天",
     "nextPass": "8/6",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-01",
+      "time": "10:26",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-06",
+      "time": "05:51",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:27",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-12",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2026-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21992,6 +31953,196 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2026-04-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-11T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-05-14T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-22T10:19+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-22T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-30T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-31T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-06-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-07T10:19+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-13T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-15T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-06-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-06-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-01T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-09T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-09T20:46+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-10T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-07-13T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-17T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-07-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-08-02T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-08-02T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-08-02T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-08-07T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-08-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-08-10T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-08-12T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   }
+  ],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-20T00:00:00+08:00",
@@ -22005,6 +32156,57 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 42 小時",
     "nextPass": "6/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -22020,6 +32222,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 9 天",
     "nextPass": "7/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "18:00",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -22176,6 +32443,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 21 天",
     "nextPass": "7/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-15",
+      "time": "18:01",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-07-17",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-22",
+      "time": "18:00",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 1,
@@ -22494,6 +32826,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 33 天",
     "nextPass": "7/31",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-03",
+      "time": "18:00",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -22850,6 +33247,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 45 天",
     "nextPass": "8/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-15",
+      "time": "18:00",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -23196,6 +33658,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 51 天",
     "nextPass": "8/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-10",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-15",
+      "time": "18:00",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-21",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-08-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -23572,6 +34099,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 57 天",
     "nextPass": "8/24",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-21",
+      "time": "18:00",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-08-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-26",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-27",
+      "time": "18:00",
+      "sensor": "Sentinel-1D",
+      "kind": "sar",
+      "orbit": "升軌 69"
+     },
+     {
+      "date": "2026-08-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 2,
      "medium": 0,
@@ -24191,6 +34783,7 @@ window.EVENT_SCENARIOS = [
     "orbit": null
    }
   ],
+  "opticalPasses": [],
   "trigger": {
    "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
    "time": "2026-10-11T15:42+08:00",
@@ -25491,6 +36084,7 @@ window.EVENT_SCENARIOS = [
     "orbit": null
    }
   ],
+  "opticalPasses": [],
   "trigger": {
    "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
    "time": "2026-10-11T15:42+08:00",
@@ -28164,6 +38758,7 @@ window.EVENT_SCENARIOS = [
     "orbit": null
    }
   ],
+  "opticalPasses": [],
   "trigger": {
    "label": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
    "time": "2026-10-26T09:19+08:00",
@@ -28427,6 +39022,7 @@ window.EVENT_SCENARIOS = [
     "orbit": null
    }
   ],
+  "opticalPasses": [],
   "trigger": {
    "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
    "time": "2026-10-11T15:42+08:00",
@@ -28727,6 +39323,7 @@ window.EVENT_SCENARIOS = [
     "orbit": null
    }
   ],
+  "opticalPasses": [],
   "trigger": {
    "label": "大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
    "time": "2026-10-26T09:19+08:00",
@@ -28982,6 +39579,7 @@ window.EVENT_SCENARIOS = [
     "orbit": null
    }
   ],
+  "opticalPasses": [],
   "trigger": {
    "label": "大規模崩塌潛勢區 宜縣LL003（宜蘭縣-大同鄉-D311）72 小時雨量 315 mm",
    "time": "2026-10-26T09:19+08:00",
@@ -29091,6 +39689,152 @@ window.EVENT_SCENARIOS = [
   ],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2025-05-24T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-05-26T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-05-27T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-05-29T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-06-03T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-06-04T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-06-12T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-13T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-06-15T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-06-18T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-06-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-06-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-06-28T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-03T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-07-05T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-07-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-08T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-13T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-07-14T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-07-18T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-22T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-07-23T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-07-25T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-07-28T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-07-30T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-02T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-07T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-07T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-12T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-14T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2025-08-15T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2025-08-17T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2025-08-22T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2025-08-23T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2025-08-27T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   }
+  ],
   "trigger": {
    "label": "薇帕颱風外圍環流",
    "time": "2025-07-21T17:54:00+08:00",
@@ -29104,6 +39848,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 36 小時",
     "nextPass": "7/29",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-25",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-07-29",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-07-30",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-04",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-08-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 2,
@@ -29462,6 +40278,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 7 天",
     "nextPass": "8/4",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-07-30",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-04",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-08-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-10",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -30047,6 +40921,71 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 13 天",
     "nextPass": "8/10",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-04",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-10",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-14",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-15",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-16",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -30638,6 +41577,78 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 31 天",
     "nextPass": "8/28",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-23",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-24",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-08-28",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-08-31",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-03",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 1,
@@ -31559,6 +42570,64 @@ window.EVENT_SCENARIOS = [
     "since": "距觸發約 37 天",
     "nextPass": "9/3",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2025-08-31",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-03",
+      "time": "05:51",
+      "sensor": "Sentinel-1C",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-09-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-08",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2025-09-09",
+      "time": "05:52",
+      "sensor": "Sentinel-1A",
+      "kind": "sar",
+      "orbit": "降軌 105"
+     },
+     {
+      "date": "2025-09-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -32400,6 +43469,276 @@ window.EVENT_SCENARIOS = [
   "aerial": [],
   "optical": null,
   "upcoming": [],
+  "opticalPasses": [
+   {
+    "time": "2026-04-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-12T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-04-20T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-04-21T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-04-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-04-28T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-04-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-04T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-06T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-09T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-11T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-05-14T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-14T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-19T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-22T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-05-24T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-05-29T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-05-30T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-05-31T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-06-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-07T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-13T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-15T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-06-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-06-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-06-23T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-06-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-06-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-01T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-03T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-08T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-09T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-09T20:46+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-10T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-07-13T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-17T10:20+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-07-18T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-07-20T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-07-23T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-07-25T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-07-28T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-08-02T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-08-02T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-08-07T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-08-09T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-08-10T10:20+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-08-12T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-08-17T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-08-18T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-08-22T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-08-26T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-08-27T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-08-29T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-09-01T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-09-03T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-09-06T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-09-11T10:21+08:00",
+    "sensor": "Landsat 8"
+   },
+   {
+    "time": "2026-09-11T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-09-16T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-09-18T10:41+08:00",
+    "sensor": "Sentinel-2A"
+   },
+   {
+    "time": "2026-09-19T10:21+08:00",
+    "sensor": "Landsat 9"
+   },
+   {
+    "time": "2026-09-21T10:41+08:00",
+    "sensor": "Sentinel-2B"
+   },
+   {
+    "time": "2026-09-26T10:41+08:00",
+    "sensor": "Sentinel-2C"
+   },
+   {
+    "time": "2026-09-27T10:21+08:00",
+    "sensor": "Landsat 8"
+   }
+  ],
   "trigger": null,
   "snapshots": [
    {
@@ -32409,6 +43748,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "6/12",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-07",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32424,6 +43814,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "6/13",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-07",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32439,6 +43880,50 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "6/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-15",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32454,6 +43939,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "6/25",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32469,6 +44005,50 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "6/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32484,6 +44064,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "7/1",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-06-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-06-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32499,6 +44130,50 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "7/7",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-01",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-03",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 0,
@@ -32514,6 +44189,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "7/13",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-09",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-10",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-17",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 0,
      "medium": 1,
@@ -32688,6 +44414,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -32701,6 +44448,64 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "7/19",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-13",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-17",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -32887,6 +44692,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -32900,6 +44726,64 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "7/25",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-20",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-23",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -33084,6 +44968,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -33097,6 +45002,64 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "7/31",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-07-25",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-25",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-07-30",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -33281,6 +45244,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -33294,6 +45278,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "8/6",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-02",
+      "time": "10:20",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-02",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-07",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-09",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-10",
+      "time": "20:46",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -33478,6 +45513,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -33491,6 +45547,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "8/18",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-12",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-17",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-18",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-19",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-22",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-26",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -33675,6 +45782,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -33688,6 +45816,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "8/30",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-08-26",
+      "time": "10:20",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-27",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-08-29",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-03",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -33872,6 +46051,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -33885,6 +46085,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "9/11",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-09-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-11",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-16",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-19",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -34069,6 +46320,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -34082,6 +46354,57 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "9/23",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-09-18",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-19",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-21",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-26",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-27",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-09-28",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-10-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -34266,6 +46589,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []
@@ -34279,6 +46623,50 @@ window.EVENT_SCENARIOS = [
     "since": "",
     "nextPass": "10/5",
     "nextPassOrbit": null,
+    "upcoming": [
+     {
+      "date": "2026-10-01",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-10-05",
+      "time": "10:21",
+      "sensor": "Landsat 9",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-10-06",
+      "time": "10:41",
+      "sensor": "Sentinel-2C",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-10-08",
+      "time": "10:41",
+      "sensor": "Sentinel-2A",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-10-11",
+      "time": "10:41",
+      "sensor": "Sentinel-2B",
+      "kind": "optical",
+      "orbit": null
+     },
+     {
+      "date": "2026-10-13",
+      "time": "10:21",
+      "sensor": "Landsat 8",
+      "kind": "optical",
+      "orbit": null
+     }
+    ],
     "counts": {
      "high": 1,
      "medium": 0,
@@ -34480,6 +46868,27 @@ window.EVENT_SCENARIOS = [
          }
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+       },
+       {
+        "lonLat": [
+         121.3024,
+         23.7002
+        ],
+        "radiusM": 300,
+        "verdict": "false_positive",
+        "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+        "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+        "images": [
+         {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+         },
+         {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+         }
+        ],
+        "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
        }
       ],
       "optical": []

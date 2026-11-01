@@ -55,7 +55,8 @@ GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overfl
 所以排程壞掉時儀表板仍會顯示「應已過境 X 天，尚無資料」。回放情境沒有軌道資料，沿用「該期 + 重訪間隔」。
 
 儀表板「接下來的衛星過境」（`events/build.py` `upcoming_passes`）列出監看窗格接下來 16 天的 Sentinel-1（同上推法）
-與 Sentinel-2／Landsat（`optical.next`）預計過境，只在即時監看顯示。
+與 Sentinel-2／Landsat（`optical.next`）預計過境。演練回放改用各期自己的過境（`daily/passes.py`，步驟 `passes`）：
+抓情境中心實際的取像時間存到 `data/derived/satpasses/`，每一期只用該期以前的取像、同樣的固定週期往後推，不偷看事後資料。
 偵測參數與全清冊回放完全相同。全清冊回放仍是每湖一軌（形成後最早有影像的一軌），規則不變。
 
 **未校準的門檻**：雨量 200 mm／72 h、保留 30 天、合併 2 km 都是自訂值。可以用

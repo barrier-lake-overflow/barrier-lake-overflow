@@ -222,6 +222,27 @@
         }
       ],
       "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
+    },
+    {
+      "lonLat": [
+        121.3024,
+        23.7002
+      ],
+      "radiusM": 300,
+      "verdict": "false_positive",
+      "title": "事後查證：福衛八號與同日雷達比對（汛期前）",
+      "text": "國家太空中心福衛八號 2026-03-31／04-15 影像（2 m）：E1 範圍內是乾的裸露堆積，水像元只有 0.5%（近紅外線比值中位數 1.18，水 < 0.9）。同一天 3/31 21:52 UTC（台灣 4/1 清晨）降軌 105 雷達，E1 範圍內卻有 20% 像元低於 −18 dB（系統會當成水）；4/12、4/18 也有 30%、28%，和 7 月列為高優先時的 28%、32% 差不多。同一時間雷達暗、光學乾，表示 E1 的暗是崩塌堆積本身的性質（雷達陰影或平滑面），不是汛期才出現的水。限制：福衛八號比警報早約 3 個月，不能單獨證明警報當天沒有水；判水比值門檻是看過分布後才選的。",
+      "images": [
+        {
+          "label": "查證說明",
+          "path": "docs/fs8-validation.md"
+        },
+        {
+          "label": "逐期雷達暗像元比例",
+          "path": "docs/results/fs8_sar_sameday.csv"
+        }
+      ],
+      "method": "scripts/fs8_validate.py、scripts/fs8_sar_sameday.py（© 國家太空中心，只用衍生數值，不含影像）"
     }
   ],
   "basemap": {

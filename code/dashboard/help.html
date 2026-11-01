@@ -7,17 +7,19 @@
   <title>使用說明 · 堰塞湖事件研判平台</title>
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
+  <!-- 字級（右上角齒輪）：先套用，畫面才不會先小後大 -->
+  <script>try { var f = localStorage.getItem('fontScale'); if (f) document.documentElement.dataset.fs = f; } catch (e) {}</script>
   <style>
     /* 使用說明頁：沿用儀表板色系（styles.css 的 :root），版面自訂 */
     .help-top .wrap{gap:14px}
     .help-search{
       flex:1 1 260px;max-width:420px;background:var(--abyss);border:1px solid var(--line-strong);color:var(--snow);
-      font:inherit;font-size:13px;padding:6px 12px;
+      font:inherit;font-size:calc(14.5px*var(--fs));padding:6px 12px;
     }
     .help-search::placeholder{color:var(--moss)}
     .help-search:focus{outline:none;border-color:var(--jade)}
     .help-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:clamp(20px,3vw,48px);padding:28px 0 64px}
-    .toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;font-size:13px}
+    .toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;font-size:calc(14.5px*var(--fs))}
     .toc ol{list-style:none;display:grid;gap:2px}
     .toc ol ol{margin:2px 0 6px 12px}
     .toc a{display:block;padding:3px 8px;color:var(--moss);text-decoration:none;border-left:2px solid transparent}
@@ -27,42 +29,42 @@
     .doc{max-width:78ch;min-width:0}
     .doc section{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line);scroll-margin-top:70px}
     .doc .sub-sec{scroll-margin-top:70px;margin-top:20px}
-    .doc h1{font-family:var(--wide);font-variation-settings:'wdth' 108,'wght' 700;font-size:clamp(24px,3vw,32px);color:var(--snow);line-height:1.25;margin-bottom:8px}
-    .doc h2{font-family:var(--wide);font-variation-settings:'wdth' 105,'wght' 650;font-size:20px;color:var(--snow);margin-bottom:10px}
-    .doc h3{font-size:15px;font-weight:700;color:var(--snow);margin-bottom:6px}
-    .doc p,.doc li{font-size:14.5px;line-height:1.85;color:var(--fog)}
+    .doc h1{font-family:var(--wide);font-variation-settings:'wdth' 108,'wght' 700;font-size:clamp(calc(25.5px*var(--fs-h)),calc(3vw*var(--fs-h)),calc(34px*var(--fs-h)));color:var(--snow);line-height:1.25;margin-bottom:8px}
+    .doc h2{font-family:var(--wide);font-variation-settings:'wdth' 105,'wght' 650;font-size:calc(21px*var(--fs-h));color:var(--snow);margin-bottom:10px}
+    .doc h3{font-size:calc(16px*var(--fs));font-weight:700;color:var(--snow);margin-bottom:6px}
+    .doc p,.doc li{font-size:calc(16px*var(--fs));line-height:1.85;color:var(--fog)}
     .doc p + p{margin-top:8px}
     .doc ul,.doc ol.steps{margin:6px 0 6px 20px;display:grid;gap:2px}
     .doc b{color:var(--snow);font-weight:500}
-    .doc code{font-family:var(--mono);font-size:12.5px;color:var(--snow);background:var(--raised);padding:1px 5px}
-    .doc table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
-    .doc th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:400;color:var(--moss);border-bottom:1px solid var(--line-strong);padding:6px 10px 6px 0}
+    .doc code{font-family:var(--mono);font-size:calc(14px*var(--fs));color:var(--snow);background:var(--raised);padding:1px 5px}
+    .doc table{width:100%;border-collapse:collapse;margin:8px 0;font-size:calc(15px*var(--fs))}
+    .doc th{text-align:left;font-family:var(--mono);font-size:calc(12.5px*var(--fs));font-weight:400;color:var(--moss);border-bottom:1px solid var(--line-strong);padding:6px 10px 6px 0}
     .doc td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);color:var(--fog);vertical-align:top;line-height:1.7}
     .doc td:first-child{white-space:nowrap;color:var(--snow)}
-    .lead{font-size:15px;color:var(--moss);margin-bottom:24px}
+    .lead{font-size:calc(16px*var(--fs));color:var(--moss);margin-bottom:24px}
     .note{border-left:3px solid var(--jade-dim);background:rgba(63,169,160,.06);padding:8px 14px;margin:10px 0}
     .warn{border-left-color:var(--ochre);background:rgba(201,138,46,.07)}
-    .k{font-family:var(--mono);font-size:11px;padding:0 6px;border:1px solid var(--line-strong);white-space:nowrap}
+    .k{font-family:var(--mono);font-size:calc(12.5px*var(--fs));padding:0 6px;border:1px solid var(--line-strong);white-space:nowrap}
     .k.h{border-color:var(--clay);color:var(--clay)}
     .k.m{border-color:var(--ochre);color:var(--ochre)}
     .k.l{border-color:var(--moss);color:var(--moss)}
     .k.d{border-color:var(--iris);color:var(--iris)}
     mark{background:rgba(201,138,46,.35);color:var(--snow);padding:0 1px}
-    .no-hit{color:var(--moss);font-size:14px;padding:12px 0}
+    .no-hit{color:var(--moss);font-size:calc(15.5px*var(--fs));padding:12px 0}
     .doc .is-hidden{display:none}
     /* ── 圖解：流程圖（HTML 方塊，窄螢幕也能讀；方塊可點，跳到詳細說明）── */
     .fig{margin:14px 0 8px;padding:18px 16px;border:1px solid var(--line);background:var(--stone)}
-    .fig-cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--moss);margin-bottom:12px}
+    .fig-cap{font-family:var(--mono);font-size:calc(12.5px*var(--fs));letter-spacing:.08em;color:var(--moss);margin-bottom:12px}
     .fc{display:grid;justify-items:center;gap:0}
     .fc-step{
       display:block;width:min(100%,460px);padding:10px 14px;border:1px solid var(--line-strong);background:var(--abyss);
-      color:var(--snow);text-decoration:none;font-size:14px;font-weight:500;line-height:1.5;text-align:left;
+      color:var(--snow);text-decoration:none;font-size:calc(15.5px*var(--fs));font-weight:500;line-height:1.5;text-align:left;
     }
-    .fc-step span{display:block;font-size:12.5px;font-weight:400;color:var(--moss);margin-top:2px}
+    .fc-step span{display:block;font-size:calc(14px*var(--fs));font-weight:400;color:var(--moss);margin-top:2px}
     a.fc-step:hover{border-color:var(--jade)}
     .fc-step .n{
       display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin:0 8px 0 0;
-      border-radius:50%;background:var(--jade-dim);color:var(--snow);font-family:var(--mono);font-size:11.5px;vertical-align:1px;
+      border-radius:50%;background:var(--jade-dim);color:var(--snow);font-family:var(--mono);font-size:calc(13px*var(--fs));vertical-align:1px;
     }
     .fc-step.s-start{border-color:var(--jade)}
     .fc-step.s-warn{border-color:var(--ochre)}
@@ -70,20 +72,20 @@
     .fc-arrow{width:1px;height:18px;background:var(--line-strong);position:relative;margin-bottom:6px}
     .fc-arrow::after{content:"";position:absolute;left:-4px;bottom:-6px;border:4px solid transparent;border-top:6px solid var(--line-strong)}
     .fc-q{
-      width:min(100%,460px);padding:8px 14px;border:1px dashed var(--fog);color:var(--snow);font-size:13.5px;text-align:center;
+      width:min(100%,460px);padding:8px 14px;border:1px dashed var(--fog);color:var(--snow);font-size:calc(15px*var(--fs));text-align:center;
     }
     .fc-branch{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:min(100%,620px)}
     .fc-col{display:grid;justify-items:center;align-content:start;gap:0}
     .fc-col .fc-step{width:100%}
-    .fc-tag{font-family:var(--mono);font-size:11px;color:var(--fog);padding:2px 8px;border:1px solid var(--line-strong);margin:6px 0}
+    .fc-tag{font-family:var(--mono);font-size:calc(12.5px*var(--fs));color:var(--fog);padding:2px 8px;border:1px solid var(--line-strong);margin:6px 0}
     .fc-tag.yes{color:var(--ochre);border-color:var(--ochre)}
     .fc-tag.no{color:var(--jade);border-color:var(--jade-dim)}
     /* 依優先等級的三欄流程 */
     .lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     .lane{display:grid;align-content:start;justify-items:center;gap:0}
-    .lane .fc-step{width:100%;font-size:13px}
+    .lane .fc-step{width:100%;font-size:calc(14.5px*var(--fs))}
     .lane-head{width:100%;padding:8px 10px;text-align:center;font-weight:700;color:var(--snow);border:1px solid}
-    .lane-head span{display:block;font-weight:400;font-size:12px;color:var(--fog)}
+    .lane-head span{display:block;font-weight:400;font-size:calc(13.5px*var(--fs));color:var(--fog)}
     .lane.h .lane-head{border-color:var(--clay);background:rgba(194,80,60,.14)}
     .lane.m .lane-head{border-color:var(--ochre);background:rgba(201,138,46,.12)}
     .lane.l .lane-head{border-color:var(--moss);background:rgba(124,164,138,.1)}
@@ -96,21 +98,21 @@
     .hot span{
       position:absolute;left:-11px;top:-11px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;
       display:flex;align-items:center;justify-content:center;background:var(--ochre);color:var(--abyss);
-      font-family:var(--mono);font-size:12px;font-weight:700;line-height:1;box-shadow:0 0 0 2px var(--abyss);
+      font-family:var(--mono);font-size:calc(13.5px*var(--fs));font-weight:700;line-height:1;box-shadow:0 0 0 2px var(--abyss);
     }
     .shot-key{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:4px 16px;margin:12px 0 0}
-    .shot-key a{display:flex;gap:8px;align-items:baseline;color:var(--fog);text-decoration:none;font-size:13px;line-height:1.6}
+    .shot-key a{display:flex;gap:8px;align-items:baseline;color:var(--fog);text-decoration:none;font-size:calc(14.5px*var(--fs));line-height:1.6}
     .shot-key a:hover{color:var(--snow)}
     .shot-key b{
       flex:none;min-width:22px;text-align:center;border-radius:11px;background:var(--ochre);color:var(--abyss);
-      font-family:var(--mono);font-size:11.5px;font-weight:700;
+      font-family:var(--mono);font-size:calc(13px*var(--fs));font-weight:700;
     }
     .hot.r span{left:auto;right:-11px}   /* 跟上下相鄰的標號錯開 */
-    .shot-note{font-size:12.5px;color:var(--moss);margin-top:8px}
+    .shot-note{font-size:calc(14px*var(--fs));color:var(--moss);margin-top:8px}
     .shot-note a,.fig-cap a{color:var(--jade)}
     @media (max-width:640px){
       .fc-branch,.lanes{grid-template-columns:1fr}
-      .hot span{min-width:18px;height:18px;font-size:10.5px;left:-8px;top:-8px}
+      .hot span{min-width:18px;height:18px;font-size:calc(12px*var(--fs));left:-8px;top:-8px}
     }
 
     @media (max-width:860px){
@@ -350,7 +352,7 @@
         <table>
           <thead><tr><th>位置</th><th>內容</th></tr></thead>
           <tbody>
-            <tr><td>頂端列</td><td>系統名稱；兩個分頁「值班」「全台清冊」；一行資料狀態；「使用說明」（就是這一頁，會開新分頁）</td></tr>
+            <tr><td>頂端列</td><td>系統名稱；兩個分頁「值班」「全台清冊」；一行資料狀態；「使用說明」（就是這一頁，會開新分頁）；旁邊的<b>齒輪</b>打開小視窗：上面調整字級（標準／大／特大，記在這台電腦的瀏覽器，使用說明頁也會套用），下面是提供資料的單位</td></tr>
             <tr><td>值班分頁</td><td>一打開的畫面。即時監看各窗格最新一期的疑似事件；右上角的按鈕可進入<a href="#drill">演練模式</a></td></tr>
             <tr><td>全台清冊分頁</td><td>歷年堰塞湖紀錄、3D 地圖、風險背景，見<a href="#inventory">全台清冊</a></td></tr>
           </tbody>
@@ -393,8 +395,13 @@
           <p>衛星不是每天都經過。花蓮一帶有升軌、降軌兩條軌道，合起來大約每 6 天一期（單一軌道約 12 天），所以時點之間會隔幾天。</p>
         </div>
         <div class="sub-sec" id="upcoming">
-          <h3>接下來的衛星過境</h3>
-          <p>衛星過境那一排下面，列出這個窗格接下來約 16 天預計會有哪些衛星經過，依時間排序，方便安排什麼時候再回來看。每一格寫日期（星期）、衛星與軌道、雷達或光學、還有幾天；兩天內的比較亮，滑鼠停留可看這種資料大概多久能用。</p>
+          <h3>衛星時間軸</h3>
+          <p><b>時點列下方那一行</b>：下一期雷達什麼時候來、最快的光學是哪天。<b>每個事件的完整時程在事件卡</b>四格摘要下方的「衛星時間軸」：從這個事件第一次出現（最多往回 45 天）畫到未來約兩週，中間一條紅線是<b>今天</b>（演練回放是<b>本期</b>）。用滑鼠<b>左右拖曳</b>（或滾輪、方向鍵）看前後，邊緣變淡表示那一側還有；手機上是直的，往下滑就好。</p>
+          <ul>
+            <li><b>紅線左邊是已經拍到的</b>：雷達（圓點）寫這一期有沒有偵測到這個事件，實心是有；光學（方塊）在即時監看寫系統自動判讀的結果與晴空比例，實心是晴空、空心是雲遮。演練回放只標有沒有光學過境，不含雲量。光學超過 6 張時，雲遮的先收起來，按右上角「另有 N 張雲遮」展開。</li>
+            <li><b>紅線右邊是預估</b>（虛線）：第一個雷達過境就是<b>下一期複核</b>，特別標亮；也寫在四格摘要的第四格。在那之前的光學過境，雲況許可時可以先調閱。</li>
+            <li>回頭看比較早出現的事件（例如 10/11 的 E1）時，紅線左邊就是事件出現後到今天之間的所有影像，可以一張張打開確認。</li>
+          </ul>
           <table>
             <tbody>
               <tr><td><span class="k">雷達</span> Sentinel-1</td><td>穿得過雲，是主要的新資料。每顆衛星同一條軌道 12 天經過一次，從上次經過往後推；過境後通常隔天就能分析</td></tr>
@@ -404,11 +411,12 @@
             </tbody>
           </table>
           <p>日期都是推估：衛星偶爾會漏拍或調整排程。影像上架後，要等下一次自動更新跑完才會出現在畫面上。</p>
+          <p><b>開啟影像 ↗</b>：光學過境旁的連結會直接開 Copernicus Browser（歐盟免費影像網站），位置是目前選取的事件、日期是那次過境，顯示真實色彩。第一次要選登入或「匿名使用」。打開後先看雲量，整片白的就是被雲遮住；看得到地面再跟事件前的日期比較。看完記得在<a href="#verify">人工查證</a>記下結果。即時監看只有已經拍到（或日期已過、待更新）的光學有連結；演練回放每個光學日期都有。</p>
         </div>
         <div class="sub-sec" id="optical">
           <h3>光學影像（Sentinel-2、Landsat）</h3>
           <p>雷達穿得過雲，光學影像穿不過，但沒被雲遮時看得出地面是不是水，可以拿來對照雷達的結果。每次自動更新會替每個監看窗格查最近 45 天的 Sentinel-2 與 Landsat 8/9 影像。</p>
-          <p><b>事件清單上方那一行</b>：最近幾景的日期、衛星與窗格內的晴空比例。只在最新一期顯示。之後什麼時候會再拍，見<a href="#upcoming">接下來的衛星過境</a>。</p>
+          <p><b>事件清單上方那一行</b>：最近幾景的日期、衛星與窗格內的晴空比例。只在最新一期顯示。之後什麼時候會再拍，見事件卡的<a href="#upcoming">衛星時間軸</a>。</p>
           <p><b>事件卡的「光學影像自動判讀」</b>：每一景在 SAR 偵測到的水體範圍內，先看晴空像元有沒有過半（沒有就是「雲遮」），再看晴空像元中有多少符合判水規則（短波紅外線水體指數 MNDWI 大於 0、近紅外線反射率低於 5%）：30% 以上「看得到水」、不到 10%「看不到水」、其間「少量水」。只看事件第一次被偵測到以後拍的影像；回看前幾期時，只列下一期雷達過境前拍到的。</p>
           <p><b>只供參考，不會改變優先等級與研判信心。</b>山區陰影、薄雲、濕泥都可能誤判，門檻也還沒校準。要當作 SAR 以外的獨立證據，請調閱影像確認後，在<a href="#verify">人工查證</a>記下結果。</p>
         </div>
@@ -427,6 +435,7 @@
         </div>
         <div class="sub-sec" id="minimap">
           <h3>小地圖</h3>
+          <p>右上角的<b>放大檢視</b>會把小地圖展開成大圖，看清楚事件範圍與河道、崩塌的相對位置；按「關閉」、按 Esc 或點大圖外的暗色區域縮回。底圖約 8 公尺一個像素，放大後線條清楚，但影像本身不會變得更細。</p>
           <p>窗格範圍的平面圖，每格 1 km。色塊是 SAR 判定的新增水體（顏色同優先等級），點色塊等於點清單中的事件。× 是清冊登載的壩址（事後登載，事件當下不一定已知）。</p>
           <ul>
             <li><b>底圖</b>：事件前的光學影像，不含事件後的畫面。</li>
@@ -669,12 +678,32 @@
           </tbody>
         </table>
       </section>
+
+      <section id="sources">
+        <h2>資料來源與授權</h2>
+        <p>平台用到的資料都來自公開或經授權的來源。頂端齒輪的小視窗列的是簡要致謝；下表是各項用在哪裡、要注意的條件。有規定標註文字的（Copernicus、USGS）照原文寫。</p>
+        <table>
+          <thead><tr><th>資料</th><th>來源</th><th>用在哪裡、注意事項</th></tr></thead>
+          <tbody>
+            <tr><td>堰塞湖清冊</td><td>農業部農村發展及水土保持署</td><td>全台清冊、對照壩址。政府資料開放授權條款，須標示出處；座標由 TWD97 TM2 轉 WGS84</td></tr>
+            <tr><td>Sentinel-1 雷達、Sentinel-2 光學</td><td>歐盟 Copernicus 計畫（ESA）</td><td>事件偵測、小地圖底圖、光學判讀、衛星時間軸。標註：Contains modified Copernicus Sentinel data (2015–2026)</td></tr>
+            <tr><td>Landsat 8/9</td><td>美國地質調查局（USGS）</td><td>底圖補洞、光學判讀、衛星時間軸。標註：Landsat imagery courtesy of the U.S. Geological Survey</td></tr>
+            <tr><td>GSMaP 衛星雨量</td><td>日本宇宙航空研究開發機構（JAXA）</td><td>風險模型、過境前雨量。衛星估計，不是測站觀測</td></tr>
+            <tr><td>NASADEM 地形</td><td>美國國家航空暨太空總署（NASA）</td><td>河網（D8）、湖底高程</td></tr>
+            <tr><td>航照</td><td>農業部林業及自然保育署航測及遙測分署</td><td>小地圖航照圖層、外部證據。依提供時間顯示</td></tr>
+            <tr><td>福衛八號</td><td>國家太空中心</td><td>候選查證、小地圖的水面與裸露堆積範圍。授權書規定原始影像不得上網，平台只放不含影像的衍生範圍與數值</td></tr>
+            <tr><td>通用電子地圖水系、村里界</td><td>內政部國土測繪中心</td><td>河網比對、保全對象。政府資料開放授權條款，須標示出處</td></tr>
+            <tr><td>影像查詢與計算</td><td>Google Earth Engine</td><td>Sentinel、Landsat、GSMaP、NASADEM 都在這裡查詢與計算</td></tr>
+            <tr><td>開啟影像連結</td><td>Copernicus Browser（歐盟）</td><td>衛星時間軸的「開啟影像 ↗」開的外部網站，不是本平台的資料</td></tr>
+          </tbody>
+        </table>
+      </section>
     </main>
   </div>
 
   <footer>
     <div class="wrap">
-      <span>堰塞湖事件研判平台 · OSSInt 2026</span>
+      <span>堰塞湖事件研判平台 · OSSInt 2026 · 由 程式這樣寫對不隊 開發</span>
       <a class="stat-link" href="index.html">回到平台</a>
     </div>
   </footer>

@@ -40,6 +40,8 @@ const Duty = (() => {
   const st = { scenario: 0, snap: 0, eventId: null, lastLive: -1 };
   let showBase = true;   // 小地圖是否顯示事件前光學底圖
   let showAerial = true; // 小地圖是否疊上該時點已可取得的最新航照
+  let showFs8 = true;    // 福衛八號水面與堆積範圍：該時點已收到時預設開
+  let showFs8Late = false; // 回放時點還沒收到（事後資料）：預設關，要看再打開
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -207,8 +209,9 @@ const Duty = (() => {
       const t0 = firstSeenAt(scen(), ev.id);
       if (t0 != null) tags.push(`<span class="q-tag is-waiting" title="首次出現後還沒有人工查證紀錄">${waitingText(nowFor() - t0)}</span>`);
     }
-    (ev.hindsight || []).forEach(h => tags.push(
-      `<span class="q-tag is-hindsight v-${esc(h.verdict)}">${h.verdict === 'false_positive' ? '事後：誤報' : '事後查證'}</span>`));
+    // 同一個結論的事後查證可能有好幾筆（例如 Sentinel-2、福衛八號），標籤只列一次
+    [...new Set((ev.hindsight || []).map(h => h.verdict))].forEach(v => tags.push(
+      `<span class="q-tag is-hindsight v-${esc(v)}">${v === 'false_positive' ? '事後：誤報' : '事後查證'}</span>`));
     const opt = (ev.optical || []).find(r => r.verdict !== 'cloud');
     if (opt) tags.push(`<span class="q-tag is-optical v-${esc(opt.verdict)}" title="光學影像自動判讀，只供參考">光學 ${mdText(opt.time)}：${OPTICAL_TEXT[opt.verdict]}</span>`);
     const dist = ev.distanceFromReferenceM != null ? ` · 距清冊壩址 ${ev.distanceFromReferenceM.toLocaleString()} m` : '';
@@ -272,41 +275,215 @@ const Duty = (() => {
     const recent = o.scenes.slice(0, 3).map(r =>
       `${mdText(r.time)} ${esc(r.sensor)} ${r.clearPct != null ? `晴空 ${r.clearPct}%` : '雲量資料未到'}`).join('、');
     box.innerHTML = `<b>光學影像</b> ${helpQ('optical', '光學影像')} ${o.scenes.length ? `最近 ${recent}` : '最近沒有影像'}` +
-      '<span class="op-est"> · 之後的過境見上方「接下來的衛星過境」</span>';
+      '<span class="op-est"> · 各次過境見事件卡的「衛星時間軸」</span>';
   }
 
-  /* 接下來的衛星過境（pipeline/events/build.py upcoming_passes）：提醒值班人員什麼時候會有新影像。
-     日期是推估；已過但還沒進來的標「待更新」（衛星可能沒拍，或影像還沒上架、下次自動更新才會分析）。 */
+  /* ── 衛星過境：上方一行摘要＋事件卡的衛星時間軸 ──
+     預估過境：即時監看用 events/build.py upcoming_passes（從現在往後推）；演練回放用各期自己的
+     （daily/passes.py，只用該期以前的取像推）。已經拍到的：雷達是各期偵測結果，光學在即時監看用
+     daily/optical.py 的逐景判讀，回放用實際過境日（opticalPasses，沒有雲量）。 */
   const UPCOMING_KIND = {
     sar: { tag: '雷達', note: '不受雲影響，通常隔天可分析' },
     s2: { tag: '光學', note: '有雲就看不到，通常隔天上架' },
     landsat: { tag: '光學', note: '有雲就看不到，上架約晚 1～2 週' },
   };
+  const OPT_VERDICT = { water: '看得到水', partial: '少量水', no_water: '看不到水', cloud: '雲遮' };
   const WEEKDAY = '日一二三四五六';
+  const TW_MS = 8 * 3600000;
+  const TIMELINE_DAYS = 45;   // 往回看幾天（與 daily/optical.py LOOKBACK_DAYS 相同）
+  const CLOUDY_FOLD = 6;      // 已拍到的光學超過這麼多張時，雲遮的先收起來
+  // 一律用台灣時間顯示，不受瀏覽器時區影響
+  const twParts = ms => {
+    const d = new Date(ms + TW_MS);
+    return { m: d.getUTCMonth() + 1, d: d.getUTCDate(), w: WEEKDAY[d.getUTCDay()], day: Math.floor((ms + TW_MS) / DAY),
+             hm: `${String(d.getUTCHours()).padStart(2, '0')}:${String(d.getUTCMinutes()).padStart(2, '0')}` };
+  };
+  const passMs = p => Date.parse(`${p.date}T${p.time || '12:00'}:00+08:00`);
+  const sensorKind = (kind, sensor) => kind === 'sar' ? 'sar' : sensor.startsWith('Landsat') ? 'landsat' : 's2';
+  const dayDiff = (ms, ref) => twParts(ms).day - twParts(ref).day;
+  // 即時監看最新一期從現在算；回放（和即時監看的舊時點）從該期影像時間算
+  const liveNow = () => !isDrill() && st.snap === lastSnap();
+  const refMs = () => (liveNow() ? Date.now() : Date.parse(snap().asOf));
+  function whenText(ms, ref) {
+    const n = dayDiff(ms, ref);
+    if (liveNow()) return n > 0 ? `${n} 天後` : n === 0 ? '今天' : '待更新';
+    return n > 0 ? `本期後 ${n} 天` : '本期當天';
+  }
+  // 預估過境：即時監看只有最新一期有（舊時點當時的預估沒有存）
+  function futurePasses() {
+    const list = isDrill() ? snap().upcoming : liveNow() ? scen().upcoming : null;
+    return (list || []).map(p => ({ ...p, ms: passMs(p), k: sensorKind(p.kind, p.sensor) }));
+  }
+  // 下一期複核：第一個還沒過的雷達過境（即時監看已過但還沒資料的「待更新」不算）
+  const nextRecheck = (fut, ref) => fut.find(p => p.kind === 'sar' && dayDiff(p.ms, ref) >= 0);
+
+  // 光學過境：直接開 Copernicus Browser，位置（選取的事件，沒有就窗格中心）、日期、真實色彩都帶好
+  const COPERNICUS_DATASET = { s2: 'S2_L2A_CDAS', landsat: 'CDAS_L8_L9_LOTL1' };
+  function imageLink(ms, k, lonLat) {
+    const [lng, lat] = lonLat;
+    const day = new Date(ms).toISOString().slice(0, 10);   // Copernicus 用 UTC 日期
+    const q = new URLSearchParams({
+      zoom: 15, lat: lat.toFixed(5), lng: lng.toFixed(5), datasetId: COPERNICUS_DATASET[k],
+      fromTime: `${day}T00:00:00.000Z`, toTime: `${day}T23:59:59.999Z`, layerId: '1_TRUE_COLOR', dateMode: 'SINGLE',
+      cloudCoverage: 100,   // 網站預設只列雲量 30% 以下，颱風期間常整張被濾掉；讓值班人員自己看雲
+    });
+    return `https://browser.dataspace.copernicus.eu/?${q}`;
+  }
+
+  /* 時點列下方的一行摘要：下一期雷達、最快的光學；各事件的完整時程在事件卡 */
   function renderUpcoming() {
     const box = $('#upcoming');
-    const list = scen().upcoming || [];
-    box.hidden = isDrill() || !list.length;
+    const ref = refMs(), fut = futurePasses();
+    box.hidden = !fut.length;
     if (box.hidden) return;
-    const today = new Date(); today.setHours(0, 0, 0, 0);
-    const items = list.map(p => {
-      const [y, m, d] = p.date.split('-').map(Number);
-      const day = new Date(y, m - 1, d);
-      const n = Math.round((day - today) / DAY);
-      const k = p.kind === 'sar' ? 'sar' : p.sensor.startsWith('Landsat') ? 'landsat' : 's2';
-      const when = n > 0 ? `${n} 天後` : n === 0 ? '今天' : '待更新';
-      return `
-        <li class="up-${k}${n < 0 ? ' is-past' : ''}${n >= 0 && n <= 2 ? ' is-soon' : ''}" title="${esc(UPCOMING_KIND[k].note)}">
-          <span class="up-date">${m}/${d}（${WEEKDAY[day.getDay()]}）${p.time ? ` ${esc(p.time)}` : ''}</span>
-          <span class="up-sat">${esc(p.sensor)}${p.orbit ? ` · ${esc(p.orbit)}` : ''}</span>
-          <span class="up-kind">${UPCOMING_KIND[k].tag} · ${when}</span>
+    const rc = nextRecheck(fut, ref);
+    const opt = fut.find(p => p.kind !== 'sar' && dayDiff(p.ms, ref) >= 0);
+    const fmt = p => { const t = twParts(p.ms); return `${t.m}/${t.d}（${whenText(p.ms, ref)}）`; };
+    box.innerHTML = `<span class="up-label">接下來</span>` +
+      (rc ? `下一期雷達 <b>${fmt(rc)}</b>${rc.orbit ? ` · ${esc(rc.orbit)}` : ''}` : '兩週內沒有雷達過境') +
+      (opt ? ` · 光學最快 ${fmt(opt)}` : '') +
+      ` <span class="up-more">· 各事件的時程見事件卡「衛星時間軸」</span>${helpQ('upcoming', '衛星時間軸')}`;
+  }
+
+  /* 事件卡的衛星時間軸：事件首次出現（最多往回 45 天）→ 今天／本期 → 未來約兩週 */
+  function timelineBox(ev) {
+    const sc = scen(), s = snap(), ref = refMs(), live = !isDrill();
+    const first = sc.snapshots.find(x => x.label === ev.firstSeen);
+    const start = Math.max(first ? Date.parse(first.asOf) : Date.parse(ev.lastSeenAt), ref - TIMELINE_DAYS * DAY);
+    const items = [];
+    // 雷達：已分析的各期，這個事件有沒有被偵測到
+    sc.snapshots.forEach(x => {
+      const ms = Date.parse(x.asOf);
+      if (ms < start || ms > Date.parse(s.asOf)) return;
+      const det = ev.detections.find(d => d.passTime === x.label);
+      items.push({ ms, k: 'sar', past: true, cls: det ? 'is-hit' : 'is-miss', sensor: 'Sentinel-1',
+        status: (x.label === ev.firstSeen ? '首次出現 · ' : '') + (det ? `偵測到 ${det.areaHectare} 公頃` : '未偵測到') });
+    });
+    // 光學：已經拍到的
+    if (live) {
+      (ev.optical || []).forEach(o => {
+        const ms = Date.parse(o.time);
+        if (ms < start || ms > ref) return;
+        items.push({ ms, k: sensorKind('optical', o.sensor), past: true, sensor: o.sensor, cloudy: o.verdict === 'cloud',
+          cls: o.verdict === 'cloud' ? 'is-cloud' : 'is-clear',
+          status: `${OPT_VERDICT[o.verdict] || '—'}${o.clearPct != null ? ` · 晴空 ${o.clearPct}%` : ''}` });
+      });
+    } else {
+      (sc.opticalPasses || []).forEach(o => {
+        const ms = Date.parse(o.time);
+        if (ms < start || ms > ref) return;
+        items.push({ ms, k: sensorKind('optical', o.sensor), past: true, sensor: o.sensor, cls: 'is-pass', status: '有過境' });
+      });
+    }
+    // 未來：預估過境
+    const fut = futurePasses();
+    const rc = nextRecheck(fut, ref);
+    fut.forEach(p => {
+      const late = p.ms <= ref;   // 即時監看：日期過了、資料還沒進來
+      items.push({ ms: p.ms, k: p.k, past: false, late, sensor: p.sensor, orbit: p.orbit, recheck: p === rc, noTime: !p.time,
+        cls: late ? 'is-late' : 'is-est',
+        status: p === rc ? '下一期複核' : late ? '待更新' : '預估' });
+    });
+    if (!items.length) return '';
+    items.sort((a, b) => a.ms - b.ms);
+
+    const pastOpt = items.filter(x => x.past && x.k !== 'sar');
+    const fold = pastOpt.length > CLOUDY_FOLD ? pastOpt.filter(x => x.cloudy).length : 0;
+    const before = rc ? items.filter(x => !x.past && !x.late && x.k !== 'sar' && x.ms < rc.ms).length : 0;
+    const okNow = pastOpt.filter(x => !x.cloudy).length;
+    const t = p => twParts(p);
+    const lead = [
+      pastOpt.length ? `事件出現後已有 ${pastOpt.length} 次光學過境${live ? `（${okNow} 次不是雲遮）` : ''}，可以先打開來看` : '',
+      rc ? `下一期雷達複核 ${t(rc.ms).m}/${t(rc.ms).d}${before ? `，在那之前還有 ${before} 次光學過境` : ''}` : '',
+    ].filter(Boolean).join('；');
+
+    let nowDone = false;
+    const nowMark = () => {
+      const n = twParts(ref);
+      return `<li class="tl-now" aria-label="${live ? '今天' : '本期'}"><span>${live ? '今天' : '本期'}</span><b>${n.m}/${n.d}</b></li>`;
+    };
+    const html = items.map(x => {
+      let pre = '';
+      if (!nowDone && x.ms > ref) { pre = nowMark(); nowDone = true; }
+      const p = twParts(x.ms);
+      // 已拍到的、即時監看待更新的都有連結；演練回放的預估日期也有（影像實際存在，練習「到那天去開」）
+      const link = x.k !== 'sar' && (x.past || x.late || !live)
+        ? `<a class="tl-open" href="${esc(imageLink(x.ms, x.k, ev.lonLat))}" target="_blank" rel="noopener"
+             title="在 Copernicus Browser 開這一天的影像（需登入或選匿名使用；先看雲量）">開啟影像 ↗</a>` : '';
+      return pre + `
+        <li class="tl-i k-${x.k === 'sar' ? 'sar' : 'opt'} ${x.past ? 'is-past' : 'is-future'} ${x.cls}${x.recheck ? ' is-recheck' : ''}${x.cloudy && fold ? ' is-folded' : ''}"
+            title="${esc(UPCOMING_KIND[x.k].note)}">
+          <span class="tl-date">${p.m}/${p.d}（${p.w}）${x.noTime ? '' : p.hm}</span>
+          <span class="tl-mark" aria-hidden="true"></span>
+          <span class="tl-sat">${esc(x.sensor)}${x.orbit ? ` · ${esc(x.orbit)}` : ''}</span>
+          <span class="tl-st">${UPCOMING_KIND[x.k].tag} · ${esc(x.status)}${x.past ? '' : ` · ${whenText(x.ms, ref)}`}</span>
+          ${link}
         </li>`;
-    }).join('');
-    box.innerHTML = `
-      <div class="rail-head"><span class="label">接下來的衛星過境 · 推估</span>${helpQ('upcoming', '接下來的衛星過境')}</div>
-      <ul class="up-list">${items}</ul>
-      <p class="up-note">雷達（Sentinel-1）穿得過雲，是主要的新資料；光學（Sentinel-2、Landsat）要沒雲才看得到地面。
-        日期依各衛星重訪週期推估，衛星偶爾沒拍；影像上架後，下一次自動更新（每兩天）才會分析。</p>`;
+    }).join('') + (nowDone ? '' : nowMark());
+
+    return `
+      <div class="ev-timeline">
+        <div class="tl-head">
+          <span class="at">衛星時間軸 ${helpQ('upcoming', '衛星時間軸')}</span>
+          ${fold ? `<button class="btn ghost tl-fold" type="button" aria-expanded="false">另有 ${fold} 張雲遮 ▸</button>` : ''}
+        </div>
+        ${lead ? `<p class="tl-lead">${lead}。</p>` : ''}
+        <div class="tl-wrap"><ol class="tl" tabindex="0" aria-label="衛星時間軸，可左右拖曳或用方向鍵捲動">${html}</ol></div>
+        <p class="tl-note"><i class="tl-key sar"></i>雷達 <i class="tl-key opt"></i>光學 <i class="tl-key est"></i>虛線＝預估 · 可左右拖曳 ·
+          ${live ? '光學判讀由系統自動計算，只供參考，要當證據請打開影像確認' : '演練回放：光學只標有沒有過境，不含雲量；預估只用該期以前的取像'} ·
+          影像：Copernicus Sentinel、USGS Landsat</p>
+      </div>`;
+  }
+
+  function bindTimeline() {
+    const tl = $('#evCard .tl');
+    if (!tl) return;
+    const wrap = tl.parentElement;
+    // 左右還有內容時，邊緣淡出提示可以拖曳（捲軸藏起來了）
+    const edges = () => {
+      wrap.classList.toggle('more-left', tl.scrollLeft > 2);
+      wrap.classList.toggle('more-right', tl.scrollLeft + tl.clientWidth < tl.scrollWidth - 2);
+    };
+    tl.addEventListener('scroll', edges, { passive: true });
+    // 一打開就讓「今天／本期」出現在畫面右側，前面已拍到的、後面的預估都看得到一部分
+    const now = $('.tl-now', tl);
+    if (now && tl.scrollWidth > tl.clientWidth) tl.scrollLeft = Math.max(0, now.offsetLeft - tl.clientWidth * 0.6);
+    edges();
+    // 滑鼠拖曳左右捲動；觸控用瀏覽器原生的滑動。拖過就不觸發連結點擊
+    let drag = null;
+    tl.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse' || e.button !== 0 || tl.scrollWidth <= tl.clientWidth) return;
+      drag = { x: e.clientX, left: tl.scrollLeft, moved: false };
+    });
+    window.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x;
+      if (!drag.moved && Math.abs(dx) < 4) return;
+      if (!drag.moved) { drag.moved = true; tl.classList.add('is-dragging'); }
+      tl.scrollLeft = drag.left - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (!drag) return;
+      const moved = drag.moved;
+      drag = null;
+      tl.classList.remove('is-dragging');
+      if (moved) tl.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); }, { capture: true, once: true });
+    });
+    // 滑鼠滾輪上下滾也能左右移（不用按 Shift）；到底了就讓頁面照常捲動
+    tl.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || tl.scrollWidth <= tl.clientWidth) return;
+      const max = tl.scrollWidth - tl.clientWidth;
+      if ((e.deltaY < 0 && tl.scrollLeft <= 0) || (e.deltaY > 0 && tl.scrollLeft >= max)) return;
+      e.preventDefault();
+      tl.scrollLeft += e.deltaY;
+    }, { passive: false });
+    const btn = $('#evCard .tl-fold');
+    if (btn) btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      tl.classList.toggle('show-folded', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? '收起雲遮 ▴' : btn.textContent.replace('▴', '▸').replace('收起雲遮', `另有 ${$$('.is-folded', tl).length} 張雲遮`);
+    });
   }
 
   /* ── 窗格小地圖 ── */
@@ -333,6 +510,17 @@ const Duty = (() => {
     for (let k = 1; k < sc.windowKm; k++) {
       const v = k * pxPerKm;
       g += `<line class="mm-grid" x1="${v}" y1="0" x2="${v}" y2="${W}"/><line class="mm-grid" x1="0" y1="${v}" x2="${W}" y2="${v}"/>`;
+    }
+    // 福衛八號水面與裸露堆積（scripts/fs8_dashboard.py）：窗格中心相同才畫；收到日以前的時點算事後資料
+    const fs8 = (window.FS8_COVER || []).find(f => f.windowKm === sc.windowKm &&
+      Math.abs(f.center[0] - lon0) < 0.003 && Math.abs(f.center[1] - lat0) < 0.003);
+    const fs8Late = fs8 && new Date(fs8.available) > asOf;
+    const fs8On = fs8 && (fs8Late ? showFs8Late : showFs8);
+    if (fs8On) {
+      const d = rings => rings.map(r => 'M' + r.map(p => xy(p).map(v => v.toFixed(1)).join(',')).join('L') + 'Z').join('');
+      fs8.layers.slice().sort((a, b) => (a.class === 'water') - (b.class === 'water')).forEach(l => {
+        g += `<path class="mm-fs8 ${esc(l.class)}" d="${d(l.rings)}" fill-rule="evenodd"/>`;
+      });
     }
     if (sc.reference) {
       const [rx, ry] = xy(sc.reference.lonLat);
@@ -363,16 +551,46 @@ const Duty = (() => {
     const note = $('#minimapNote');
     note.innerHTML = `${sc.windowKm} km 分析窗格 · 色塊為 SAR 新增水體（陡坡遮罩會擋掉部分湖面）· ±${half} km ${helpQ('minimap', '小地圖')}` +
       (sc.basemap ? `<br><label class="mm-toggle"><input type="checkbox" ${showBase ? 'checked' : ''}> 底圖</label>
-        <span title="${esc(sc.basemap.source)}">事件前光學影像（${esc(sc.basemap.before)} 以前）· 回放當下可取得，不含事件後的畫面</span>` : '') +
+        <span title="${esc(sc.basemap.source)}">事件前光學影像（${esc(sc.basemap.before)} 以前）· 回放當下可取得，不含事件後的畫面 · Copernicus Sentinel-2、USGS Landsat</span>` : '') +
       (air ? `<br><label class="mm-toggle"><input type="checkbox" data-layer="aerial" ${showAerial ? 'checked' : ''}> 航照</label>
-        <span>${esc(air.shotDate)} 拍攝 · ${esc(air.source)}</span>` : '');
+        <span>${esc(air.shotDate)} 拍攝 · ${esc(air.source)}</span>` : '') +
+      (fs8 ? `<br><label class="mm-toggle"><input type="checkbox" data-layer="fs8" ${fs8On ? 'checked' : ''}> 福衛八號</label>
+        <span title="${esc(fs8.rule)}"><i class="mm-key water"></i>水面 <i class="mm-key bare"></i>裸露堆積 · ${esc(fs8.shot)} 拍攝 · ${esc(fs8.source)}${
+          fs8Late ? ' · <b class="mm-late">事後資料：回放當下還沒有，不影響研判</b>' : ''}</span>` : '');
     $$('.mm-toggle input', note).forEach(tg => tg.addEventListener('change', () => {
-      if (tg.dataset.layer === 'aerial') showAerial = tg.checked; else showBase = tg.checked;
+      if (tg.dataset.layer === 'aerial') showAerial = tg.checked;
+      else if (tg.dataset.layer === 'fs8') { if (fs8Late) showFs8Late = tg.checked; else showFs8 = tg.checked; }
+      else showBase = tg.checked;
       renderMinimap();
     }));
   }
 
+  /* 放大檢視：同一張 SVG 改成覆蓋整個畫面的大圖（viewBox 不變，向量線條放大仍清楚；底圖約 8 m 一像素） */
+  function initMinimapExpand() {
+    const wrap = $('#minimapWrap'), btn = $('#mmExpand');
+    if (!wrap || !btn) return;
+    const set = on => {
+      wrap.classList.toggle('is-expanded', on);
+      document.body.classList.toggle('mm-open', on);
+      btn.textContent = on ? '關閉' : '放大檢視';
+      btn.setAttribute('aria-expanded', String(on));
+      if (!on) btn.focus();
+    };
+    btn.addEventListener('click', () => set(!wrap.classList.contains('is-expanded')));
+    // 點大圖外的暗色區域也關閉
+    wrap.addEventListener('click', e => { if (e.target === wrap && wrap.classList.contains('is-expanded')) set(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && wrap.classList.contains('is-expanded')) set(false); });
+  }
+
   /* ── 事件卡 ── */
+
+  // 四格摘要的第四格：下一期複核（首次出現改由時間軸的起點與逐期紀錄表呈現）
+  function recheckCell() {
+    const ref = refMs(), rc = nextRecheck(futurePasses(), ref);
+    if (!rc) return readCell('下一期複核', snap().nextPass, '雷達下一期（推估）');
+    const p = twParts(rc.ms);
+    return readCell('下一期複核', `${p.m}/${p.d} ${p.hm}`, `${rc.orbit ? `${rc.orbit} · ` : ''}${whenText(rc.ms, ref)}`);
+  }
 
   function readCell(label, value, sub, cls, tip) {
     const v = tip ? `<span class="has-tip" title="${esc(tip)}">${value}</span>` : value;
@@ -518,8 +736,10 @@ const Duty = (() => {
         ${readCell('建議行動', ev.action, ev.priorityText, `t-${ev.priority}`, PRIORITY_TIP[ev.priority])}
         ${readCell('規模（相對）', ev.scale, `SAR ${ev.areaHectare} 公頃，偏低，視為下限`)}
         ${readCell('研判信心', ev.confidence, ev.confidenceReasons[0], '', CONFIDENCE_TIP[ev.confidence])}
-        ${readCell('首次出現', ev.firstSeen, `最近一次 ${ev.lastSeen}`)}
+        ${recheckCell()}
       </div>
+
+      ${timelineBox(ev)}
 
       ${ev.conflicts.length ? `<div class="ev-conflict"><span class="at">證據衝突</span>${ev.conflicts.map(c => `<p>${esc(c)}</p>`).join('')}</div>` : ''}
       ${(ev.cautions || []).length ? `<div class="ev-caution"><span class="at">提醒</span>${ev.cautions.map(c => `<p>${esc(c)}</p>`).join('')}</div>` : ''}
@@ -562,6 +782,7 @@ const Duty = (() => {
       </div>`;
 
     bindCard(ev);
+    bindTimeline();
   }
 
   function bindCard(ev) {
@@ -628,6 +849,7 @@ const Duty = (() => {
 
   function selectEvent(id) {
     st.eventId = id;
+    renderUpcoming();   // 「開啟影像」連結跟著選取的事件位置
     renderTodo();
     renderQueue();
     renderMinimap();
@@ -834,6 +1056,7 @@ const Duty = (() => {
       return;
     }
     $('#drillEnter').addEventListener('click', enterDrill);
+    initMinimapExpand();
     $('#drillExit').addEventListener('click', exitDrill);
     // 預設開即時監看的第一個窗格；網址是 #drill（報告用）或沒有即時監看資料時開演練模式
     const live = liveIndices();

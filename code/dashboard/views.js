@@ -56,6 +56,36 @@ const Views = (() => {
     // 網管檢視：點頂端狀態列直接到系統管理分頁
     const btn = $('#sysStatusBtn');
     if (ADMIN && btn) btn.addEventListener('click', () => show('admin'));
+    initFontScale();
+  }
+
+  /* 齒輪小視窗：字級（標準／大／特大，記在這台瀏覽器，使用說明頁也套用；<head> 已先套用）＋資料來源致謝 */
+  function initFontScale() {
+    const btn = $('#fsBtn'), menu = $('#fsMenu');
+    if (!btn || !menu) return;
+    const cur = document.documentElement.dataset.fs || '';
+    $$('input', menu).forEach(r => {
+      r.checked = r.value === cur;
+      r.addEventListener('change', () => {
+        if (r.value) document.documentElement.dataset.fs = r.value;
+        else delete document.documentElement.dataset.fs;
+        try { localStorage.setItem('fontScale', r.value); } catch (e) { /* 無痕模式：只套用這一次 */ }
+        window.dispatchEvent(new Event('resize'));   // 3D 地圖等依尺寸繪製的元件重排
+      });
+    });
+    // 小視窗貼在按鈕下方、右緣對齊按鈕，但不超出畫面左右
+    const place = () => {
+      const r = btn.getBoundingClientRect();
+      const w = menu.offsetWidth;
+      const left = Math.min(Math.max(12, r.right - w), window.innerWidth - w - 12);
+      menu.style.top = `${Math.round(r.bottom + 6)}px`;
+      menu.style.left = `${Math.round(left)}px`;
+    };
+    const open = v => { menu.hidden = !v; btn.setAttribute('aria-expanded', String(v)); if (v) place(); };
+    window.addEventListener('resize', () => { if (!menu.hidden) place(); });
+    btn.addEventListener('click', e => { e.stopPropagation(); open(menu.hidden); });
+    document.addEventListener('click', e => { if (!menu.hidden && !menu.contains(e.target)) open(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { open(false); btn.focus(); } });
   }
 
   return { init, show, isAdmin: () => ADMIN };
