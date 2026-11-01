@@ -935,7 +935,7 @@ window.LAKE_RISK = {
 window.RISK_MODEL_META = {
  "model": "Logistic (package: make_risk_snapshot.py)",
  "mode": "GSMaP v8 雨量計校正（衛星估計，至 2026-10-30T15:00+00:00）",
- "updated": "2026-11-01T01:39:18.769819",
+ "updated": "2026-11-01T02:17:13.160257",
  "nPositives": 12,
  "rocAuc": null,
  "coefficients": {

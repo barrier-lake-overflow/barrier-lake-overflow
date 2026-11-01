@@ -1,18 +1,21 @@
 /* 由 pipeline/daily/run.py 產生，請勿手動編輯。每日自動更新的執行狀態、監看窗格、待確認的新聞候選。 */
 window.DAILY_STATUS = {
- "startedAt": "2026-11-01T09:38+08:00",
- "finishedAt": "2026-11-01T09:39+08:00",
+ "startedAt": "2026-11-01T10:16+08:00",
+ "finishedAt": "2026-11-01T10:17+08:00",
  "steps": [
   {
    "name": "inventory",
-   "status": "error",
-   "seconds": 7.0,
-   "error": "HTTPError: HTTP Error 503: Service Unavailable"
+   "status": "ok",
+   "seconds": 3.4,
+   "summary": {
+    "rows": 75,
+    "changed": false
+   }
   },
   {
    "name": "alerts",
    "status": "ok",
-   "seconds": 1.6,
+   "seconds": 0.9,
    "summary": {
     "count": 0
    }
@@ -20,13 +23,13 @@ window.DAILY_STATUS = {
   {
    "name": "gee-login",
    "status": "ok",
-   "seconds": 1.4,
+   "seconds": 3.4,
    "summary": null
   },
   {
    "name": "rain",
    "status": "ok",
-   "seconds": 4.6,
+   "seconds": 4.0,
    "summary": {
     "苗縣LL002": {
      "h24": 0,
@@ -521,7 +524,7 @@ window.DAILY_STATUS = {
   {
    "name": "sentinel",
    "status": "ok",
-   "seconds": 1.7,
+   "seconds": 1.5,
    "summary": {
     "windows": {
      "count": 6
@@ -531,7 +534,7 @@ window.DAILY_STATUS = {
   {
    "name": "passrain",
    "status": "ok",
-   "seconds": 5.7,
+   "seconds": 5.4,
    "summary": {}
   },
   {
@@ -546,7 +549,7 @@ window.DAILY_STATUS = {
   {
    "name": "news",
    "status": "ok",
-   "seconds": 0.9,
+   "seconds": 0.8,
    "summary": {
     "new": 0,
     "candidates": 85
