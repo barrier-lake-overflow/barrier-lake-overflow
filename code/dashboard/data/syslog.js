@@ -2,6 +2,69 @@
 window.SYSTEM_LOG = {
  "history": [
   {
+   "startedAt": "2026-11-01T09:38+08:00",
+   "finishedAt": "2026-11-01T09:39+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "error",
+     "seconds": 7.0,
+     "error": "HTTPError: HTTP Error 503: Service Unavailable"
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.6
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.4
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 4.6
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 4.4
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 5.7
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
    "startedAt": "2026-11-01T09:32+08:00",
    "finishedAt": "2026-11-01T09:32+08:00",
    "minutes": 0.0,
@@ -1055,29 +1118,39 @@ window.SYSTEM_LOG = {
   }
  ],
  "lastRun": {
-  "startedAt": "2026-11-01T09:32+08:00",
-  "totalLines": 312,
+  "startedAt": "2026-11-01T09:38+08:00",
+  "totalLines": 322,
   "lines": [
    "",
    "== inventory ==",
-   "清冊 75 筆，沒有變動 taiwan-barrier-lakes.csv",
-   "寫入 /home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/dashboard/data/lakes.js：75 筆（監測中 3、已穩定 4、消失 68）",
-   "已加註 75/75 筆敘述 → /home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/dashboard/data/lakes.js",
-   "所有句子皆完整填槽，無略過。",
-   "",
-   "抽樣（2025 年）：",
-   "",
-   "  #71 花蓮馬太鞍溪",
-   "  本堰塞湖形成於薇帕颱風影響期間，形成期間之雨量資料不足，未納入判定，觸發林田山第118林班崩塌，堵塞馬太鞍溪，形成蓄水量約 9,100 萬立方公尺之極大型堰塞湖，自形成迄今 64 日（約 2.1 個月），現況列為監測中。",
-   "",
-   "  #70 雲林清水溪(草嶺)",
-   "  本堰塞湖形成於丹娜絲颱風影響期間，觸發草嶺村崩塌，堵塞清水溪，形成蓄水量約 1,400 萬立方公尺之大型堰塞湖，於 2025/07/10 因溢流沖刷潰決，存續 2 日。",
-   "",
-   "  #72 花蓮立霧溪(燕子口)",
-   "  本堰塞湖之形成誘因於清冊中未記載，觸發燕子口、立霧溪第20林班崩塌，堵塞立霧溪，形成蓄水量約 190 萬立方公尺之中型堰塞湖，於 2025/10/26 因人為機具開挖潰決，存續 9 日。",
-   "",
-   "  #69 花蓮樂樂溪",
-   "  本堰塞湖之形成與0121地震相關，觸發秀姑巒第8林班崩塌，堵塞樂樂溪，形成蓄水量約 8.6 萬立方公尺之小型堰塞湖，於 2025/06/17 潰決，存續 143 日（約 4.7 個月）。",
+   "Traceback (most recent call last):",
+   "  File \"/home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/pipeline/daily/run.py\", line 109, in step",
+   "    out = fn(*args)",
+   "          ^^^^^^^^^",
+   "  File \"/home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/pipeline/daily/run.py\", line 139, in run_inventory",
+   "    r = inventory_fetch.main()",
+   "        ^^^^^^^^^^^^^^^^^^^^^^",
+   "  File \"/home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/pipeline/daily/inventory_fetch.py\", line 85, in main",
+   "    text = xlsx_to_csv(download_xlsx())",
+   "                       ^^^^^^^^^^^^^^^",
+   "  File \"/home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/pipeline/daily/inventory_fetch.py\", line 32, in download_xlsx",
+   "    html = op.open(PAGE, timeout=timeout).read().decode(\"utf-8\")",
+   "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+   "  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py\", line 521, in open",
+   "    response = meth(req, response)",
+   "               ^^^^^^^^^^^^^^^^^^^",
+   "  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py\", line 630, in http_response",
+   "    response = self.parent.error(",
+   "               ^^^^^^^^^^^^^^^^^^",
+   "  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py\", line 559, in error",
+   "    return self._call_chain(*args)",
+   "           ^^^^^^^^^^^^^^^^^^^^^^^",
+   "  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py\", line 492, in _call_chain",
+   "    result = func(*args)",
+   "             ^^^^^^^^^^^",
+   "  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py\", line 639, in http_error_default",
+   "    raise HTTPError(req.full_url, code, msg, hdrs, fp)",
+   "urllib.error.HTTPError: HTTP Error 503: Service Unavailable",
    "",
    "== alerts ==",
    "",
