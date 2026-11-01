@@ -1,0 +1,57 @@
+{
+  "id": "live_E121301_N24571",
+  "name": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
+  "kind": "live",
+  "active": true,
+  "hidden": false,
+  "description": "自動監看（監看中）：大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm。窗格自 2026-10-26 啟用，Sentinel-1 降軌 105＋升軌 69，事件前基準 降軌 105 6 張、升軌 69 4 張；各軌道獨立複核，參數與全清冊回放相同。",
+  "center": [
+    121.30129,
+    24.57083
+  ],
+  "windowKm": 4.0,
+  "revisitDays": 4,
+  "orbitLabel": "降軌 105＋升軌 69",
+  "trigger": {
+    "label": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
+    "time": "2026-10-26T09:19+08:00",
+    "source": "自動監看"
+  },
+  "context": [
+    "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm"
+  ],
+  "observationsLakeId": null,
+  "referenceLakeId": null,
+  "referenceLabel": "",
+  "passes": [
+    {
+      "file": "final_live_E121301_N24571_D105_20261022.json",
+      "time": "2026-10-22T21:51:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "降軌 105",
+      "rain": {
+        "h24": 16.0,
+        "h72": 17.0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
+    },
+    {
+      "file": "final_live_E121301_N24571_A69_20261026.json",
+      "time": "2026-10-26T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "升軌 69",
+      "rain": {
+        "h24": 5.0,
+        "h72": 151.3,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
+    }
+  ],
+  "basemap": {
+    "file": "data/basemaps/live_E121301_N24571.jpg",
+    "before": "2026-10-26",
+    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
+  }
+}

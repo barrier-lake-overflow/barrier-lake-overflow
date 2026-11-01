@@ -2687,7 +2687,174 @@
    "matches": [],
    "status": "unmatched",
    "fetchedAt": "2026-10-30T10:39+08:00"
+  },
+  "147f2a106b": {
+   "title": "10月31日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1mZ0ZrbmRTRWJyRW4zSzA4N1lBTFVJRDhmUDdpT0pDN05KcDNveXIxZWdRS1ZMbmxQZVNITjBLN2NlXzh0aWJYU3VR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-31T16:03+08:00",
+   "summary": "10月31日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "147f2a106b",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "6d984ed065": {
+   "title": "花蓮氣象雷達站60年慶！最新雙頻移動雷達現身 明年監測堰塞湖 - 自由時報",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9zdGZRWHd0S0NPakVXU282Qk5IdVdOV1lfQ1BYOHhBdmVpNXB6VVB5dUhFcHo1a2doQnNqYzJEc1lCc2xUSVBiTmxiWnkybzVTMUV3Q2Z1ckp3XzRLWGI2ZVpUUXnSAWpBVV95cUxQQzNkXzFGeVFFRGtKMGFfRlRDa1Zlc2pEeWdRbHNwblVWUUNYS0liSkQwN25QakpEYzg2V0l1MXNXbEdUTFNwU0s2Rk9uY29VRWRRTlVVOE1uSUFVaHc2YXpwMS1XS0lBZG5n?oc=5",
+   "source": "自由時報",
+   "time": "2026-10-30T14:08+08:00",
+   "summary": "花蓮氣象雷達站60年慶！最新雙頻移動雷達現身 明年監測堰塞湖 自由時報",
+   "id": "6d984ed065",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "d16621f591": {
+   "title": "115年10月29日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBabGtzZlFvMHVXYURUVDQyQkVUNUNTdzIyOGhVM2p2dzBNczZvdnhobFR5ZUZCdzNQR3I5d0dadW13eW9TbDFWRXFsMndyekU?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-29T10:39+08:00",
+   "summary": "115年10月29日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "d16621f591",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "f8e0fd0ab1": {
+   "title": "無人機空投種子救馬太鞍溪崩塌地！但該投什麼種子？怎麼投？——專訪林保署花蓮分署 - OUTSiDERS - 戶外風格誌",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9BcVJoZmwxNmFkZ2ptQnphZFNSM2tyMkNEM0NfYldsbHlNSjUwTHBINUxJRV9JbXZsSHk1S19pV1NjRldNOVNpYlcyZWlQMUJV?oc=5",
+   "source": "OUTSiDERS - 戶外風格誌",
+   "time": "2026-10-28T11:47+08:00",
+   "summary": "無人機空投種子救馬太鞍溪崩塌地！但該投什麼種子？怎麼投？——專訪林保署花蓮分署 OUTSiDERS - 戶外風格誌",
+   "id": "f8e0fd0ab1",
+   "kind": "aerial",
+   "keyword": "無人機",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "e65546b020": {
+   "title": "10月29日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBmZlhJUFBqc1B4VkN5b2dFVmZVUWd1cWNqMTdKbkV4dk1BSHMxa3VMUFB0MDhKcEVndUJkZlE2UmZaWUl3QzZBc09R?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-10-29T18:48+08:00",
+   "summary": "10月29日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "e65546b020",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "368b8a767f": {
+   "title": "討論牆 | 清明豪雨炸出新堰塞湖！合歡西峰往合歡溪便道路段暫停開放 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBmUUc1RmpJOGw5eW9UcmFnajUzN2g2WXdDSXNwaEpzcnN3cmlzMWNvR1FOUDZUTzJlQU5UMmhHeEU3WTFiVFNTS29ObVpwSDVYOGNZcHJPZjc4VGZUdE93aWhqZHk?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-10-28T00:39+08:00",
+   "summary": "討論牆 | 清明豪雨炸出新堰塞湖！合歡西峰往合歡溪便道路段暫停開放 LINE TODAY",
+   "id": "368b8a767f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "inv_bl073",
+     "lakeId": "bl073",
+     "name": "南投合歡溪（2026）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "2ba552faff": {
+   "title": "115年10月31日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YZkdsNl9rcjZONkNPRGtqVzdrR3ZJR1B5aFZuWG5zaFlkVFV6M2pIQmtPcTN1UUplbWp1bElPUGEzRjVEYV9CM2JXWUZ3Z2xZd1E?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-10-31T09:48+08:00",
+   "summary": "115年10月31日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "2ba552faff",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-01T09:27+08:00"
   }
  },
- "updatedAt": "2026-10-30T10:39+08:00"
+ "updatedAt": "2026-11-01T09:27+08:00"
 }

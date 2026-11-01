@@ -10,7 +10,7 @@
     23.70061
   ],
   "windowKm": 4.0,
-  "revisitDays": 12,
+  "revisitDays": 4,
   "orbitLabel": "降軌 105＋升軌 69",
   "trigger": {
     "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
@@ -27,12 +27,60 @@
     {
       "file": "final_live_E121298_N23701_D105_20261010.json",
       "time": "2026-10-10T21:51:00+00:00",
-      "recheckTime": null,
+      "recheckTime": "2026-10-16T21:51:00+00:00",
       "evidenceImage": null,
       "orbitLabel": "降軌 105",
       "rain": {
         "h24": 0,
         "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
+    },
+    {
+      "file": "final_live_E121298_N23701_A69_20261014.json",
+      "time": "2026-10-14T10:00:00+00:00",
+      "recheckTime": "2026-10-26T10:00:00+00:00",
+      "evidenceImage": null,
+      "orbitLabel": "升軌 69",
+      "rain": {
+        "h24": 0,
+        "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
+    },
+    {
+      "file": "final_live_E121298_N23701_D105_20261016.json",
+      "time": "2026-10-16T21:51:00+00:00",
+      "recheckTime": "2026-10-22T21:51:00+00:00",
+      "evidenceImage": null,
+      "orbitLabel": "降軌 105",
+      "rain": {
+        "h24": 0.3,
+        "h72": 0.3,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
+    },
+    {
+      "file": "final_live_E121298_N23701_D105_20261022.json",
+      "time": "2026-10-22T21:51:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "降軌 105",
+      "rain": {
+        "h24": 85.8,
+        "h72": 93.6,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
+    },
+    {
+      "file": "final_live_E121298_N23701_A69_20261026.json",
+      "time": "2026-10-26T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "升軌 69",
+      "rain": {
+        "h24": 4.5,
+        "h72": 91.2,
         "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
       }
     }

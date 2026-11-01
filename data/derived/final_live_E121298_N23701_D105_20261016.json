@@ -1,0 +1,112 @@
+{
+  "lakeId": "live_E121298_N23701_D105",
+  "synthetic": false,
+  "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
+  "orbit": "DESCENDING",
+  "analysisWindowKm": 4.0,
+  "cellSizeM": [
+    9.16,
+    10.0
+  ],
+  "pre": {
+    "date": "事件前中位數",
+    "method": "sar_fixed",
+    "threshold": -18.0,
+    "pixel_count": 674,
+    "area_m2": 61715.9,
+    "area_hectare": 6.172
+  },
+  "post": {
+    "date": "post 2026-10-16 21:51 UTC",
+    "method": "sar_fixed",
+    "threshold": -18.0,
+    "pixel_count": 1044,
+    "area_m2": 95595.6,
+    "area_hectare": 9.56
+  },
+  "newWaterTotalAreaHectare": 1.639,
+  "landslide": {
+    "date": "post 2026-10-16 21:51 UTC",
+    "method": "sar_log_ratio",
+    "threshold_db": 3.0,
+    "pixel_count": 2779,
+    "increase_pixels": 406,
+    "decrease_pixels": 2373,
+    "components": 120,
+    "area_m2": 254463.8,
+    "area_hectare": 25.446
+  },
+  "geometryMask": {
+    "layoverHectare": 220.5,
+    "shadowHectare": 4.92,
+    "excludedForWaterPct": 44.8,
+    "slopeOnlyExcludedHectare": 491.9,
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
+  },
+  "darkNewPixelsDiagnostic": {
+    "note": "事件後背向散射低於門檻、事件前沒有的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "thresholdDb": -18.0,
+    "darkNewHectareBeforeMask": 11.02,
+    "maskedHectare": 6.02,
+    "maskedPct": 54.6
+  },
+  "laterScenes": 1,
+  "candidates": [
+    {
+      "id": "cand1",
+      "grade": "A",
+      "areaHectare": 0.723,
+      "centroidRowCol": [
+        200.9,
+        273.1
+      ],
+      "centroidXY": [
+        121.30243802487216,
+        23.70048354239409
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": true,
+      "persistent": true,
+      "laterScenesChecked": 1,
+      "landslideAreaHectare": 3.397,
+      "lakeFloorM": 1004.0,
+      "waterLevelM": 1104.0,
+      "reasons": [
+        "新增水體 0.72 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 3.40 公頃（SAR 回波變化 ≥ 門檻）",
+        "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+        "後續 1 期影像同位置水體 IoU 最高 0.56，持續蓄水"
+      ],
+      "centroidLonLat": [
+        121.302438,
+        23.700484
+      ],
+      "distanceFromDamM": 501.5,
+      "polygonLonLat": [
+        [
+          121.30238742356818,
+          23.701240287737864
+        ],
+        [
+          121.30220776051135,
+          23.700970793152628
+        ],
+        [
+          121.30148910828406,
+          23.70106062468104
+        ],
+        [
+          121.30157893981247,
+          23.701330119266277
+        ],
+        [
+          121.30238742356818,
+          23.701240287737864
+        ]
+      ]
+    }
+  ]
+}
