@@ -31,6 +31,10 @@ scipy>=1.11            # ndimage.label 做連通分量分析（填洼演算法�
                         # 且不用額外裝 C++ 編譯依賴，對新成員環境比較友善）
 shapely>=2.0            # 幾何運算、淹沒範圍轉多邊形
 geopandas>=0.14         # exposure.py 疊合村里界線圖用
+pyogrio>=0.7            # scripts/fetch_nlsc_water.py 讀 NLSC WFS 的 GML、寫 GeoPackage
+python-dotenv>=1.0      # scripts/fetch_nlsc_water.py 從 .env 讀 NLSC_WFS_KEY
+truststore>=0.9         # scripts/fetch_nlsc_water.py 用系統憑證驗證 NLSC 的政府憑證
+                         # （Python 3.13+ 內建 OpenSSL 驗證會因缺 Subject Key Identifier 拒絕）
 rasterio>=1.3           # 讀真實 GeoTIFF（load_dem_geotiff / load_ndwi_geotiff）；
                          # B1 已接上真實 Sentinel-2 NDWI 影像（Google Earth Engine
                          # 匯出），這行從此解開；真實 DEM 到位後同一顆套件直接沿用

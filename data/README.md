@@ -2,6 +2,9 @@
 
 - `raw/`：原始資料，小檔進版控
 - `derived/`：中間產物，大多不進版控、可重新產生；`final_*.json`（SAR 偵測結果）例外，有進版控
+- `restricted/`：有授權限制的圖資（福衛八號等），**整個資料夾不進版控**，原始檔不得上網際網路
+- `cache/`：WFS 等線上服務的下載快取，不進版控
+- `inventory.csv`：外部申請圖資的清冊（來源、日期、坐標系統、授權、收件狀態），只有中繼資料，有進版控
 
 ## raw/
 
@@ -22,6 +25,13 @@
 | `risk/` | 舊版外部建模流程的輸出（已停用） | 係數現在寫在 `pipeline/ingest/risk.py`，這些檔案沒有程式讀取，只留著對照 |
 
 SAR 和 DEM 的 GEE 匯出腳本寫在 `analyze_sar_change.py`、`run_hypsometry_real.py` 開頭。
+
+## restricted/、cache/
+
+| 檔案 | 來源 | 說明 |
+|---|---|---|
+| `restricted/fs8/fs8_matai_an_2026.tif` | 國家太空中心（不進版控，授權書同資料夾） | 福衛八號 2026-03-31／04-15 拼接，2 m、6 波段、EPSG:3826，給 `scripts/fs8_validate.py`。只有衍生產品（判定表、向量範圍）可公開，見 `docs/fs8-validation.md` |
+| `cache/nlsc_water_mataian.gpkg` | 國土測繪中心 臺灣通用電子地圖 WFS（不進版控） | 河川中線、河川面、面狀水域，`scripts/fetch_nlsc_water.py` 產生（金鑰放 `.env` 的 `NLSC_WFS_KEY`），給 `scripts/river_compare.py` |
 
 ## 重新產生
 

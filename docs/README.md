@@ -18,6 +18,7 @@
 |---|---|
 | 所有驗證結果：馬太鞍溪正案例、2026 負案例、全清冊回放、已知限制 | [`validation.md`](validation.md) |
 | SAR 湖面跟航照比對的結果 | [`aerial-validation.md`](aerial-validation.md) |
+| 福衛八號查證候選、D8 河網與官方水系比對 | [`fs8-validation.md`](fs8-validation.md) |
 | 草嶺為什麼漏報 | [`bl070-diagnosis.md`](bl070-diagnosis.md) |
 
 ## 子資料夾

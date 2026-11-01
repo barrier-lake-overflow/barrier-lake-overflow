@@ -42,6 +42,10 @@ data/derived/*
 data/interim/
 data/cache/
 
+# 有授權限制的圖資（福衛八號等）：原始檔不得上網際網路，整個資料夾一律不進版控
+# 只有不含影像的衍生產品（判定表、向量範圍）可以公開，放在 docs/results/
+data/restricted/
+
 # ── 衛星影像與地理資料 ────────────────────────────────
 # 單景 Sentinel-1 動輒數 GB，GitHub 單檔上限 100 MB
 *.SAFE/

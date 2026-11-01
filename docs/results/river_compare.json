@@ -1,0 +1,31 @@
+{
+ "dem": "NASADEM_neg2026_matai_an.tif",
+ "min_catchment_km2": 1.0,
+ "tolerance_m": 60.0,
+ "all_features": {
+  "d8_cells": 4731,
+  "official_km": 112.77,
+  "d8_within_tol": 0.818,
+  "official_covered": 0.438,
+  "n_segments": 204
+ },
+ "pre_event_features": {
+  "d8_cells": 4731,
+  "official_km": 36.18,
+  "d8_within_tol": 0.165,
+  "official_covered": 0.27,
+  "n_segments": 82,
+  "mdate_max": 202506
+ },
+ "mdate_counts": {
+  "201803": 9,
+  "202101": 3,
+  "202311": 11,
+  "202407": 52,
+  "202506": 7,
+  "202507": 107,
+  "202509": 8,
+  "202510": 3,
+  "202601": 4
+ }
+}
