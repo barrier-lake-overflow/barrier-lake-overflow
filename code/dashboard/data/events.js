@@ -27,6 +27,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-07 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-14T00:00:00+08:00",
@@ -39,6 +41,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 5 天",
     "nextPass": "8/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -53,6 +56,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/18 的候選",
     "since": "距觸發約 17 天",
     "nextPass": "9/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -67,6 +71,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/30 的候選",
     "since": "距觸發約 29 天",
     "nextPass": "9/23",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -81,6 +86,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/11 的候選",
     "since": "距觸發約 53 天",
     "nextPass": "10/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -117,6 +123,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-05 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2015-08-12T00:00:00+08:00",
@@ -129,6 +137,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 5 天",
     "nextPass": "8/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -143,6 +152,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/6 的候選",
     "since": "距觸發約 7 天",
     "nextPass": "8/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -157,6 +167,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/18 的候選",
     "since": "距觸發約 19 天",
     "nextPass": "9/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -171,6 +182,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/30 的候選",
     "since": "距觸發約 31 天",
     "nextPass": "9/23",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -185,6 +197,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/11 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "10/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -221,6 +234,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-01-20 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-01-27T00:00:00+08:00",
@@ -233,6 +248,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 7 天",
     "nextPass": "2/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -247,6 +263,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/2 的候選",
     "since": "距觸發約 19 天",
     "nextPass": "2/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -261,6 +278,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/14 的候選",
     "since": "距觸發約 31 天",
     "nextPass": "3/9",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -275,6 +293,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/26 的候選",
     "since": "距觸發約 43 天",
     "nextPass": "3/21",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -289,6 +308,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/9 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "4/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -325,6 +345,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-08-12 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-08-19T00:00:00+08:00",
@@ -337,6 +359,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 6 天",
     "nextPass": "8/24",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 2,
@@ -483,7 +506,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -626,7 +650,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -636,6 +661,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/12 的候選",
     "since": "距觸發約 18 天",
     "nextPass": "9/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -782,7 +808,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -923,7 +950,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -933,6 +961,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/5 的候選",
     "since": "距觸發約 30 天",
     "nextPass": "9/29",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -1093,7 +1122,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -1234,7 +1264,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -1244,6 +1275,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/17 的候選",
     "since": "距觸發約 42 天",
     "nextPass": "10/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 1,
@@ -1402,7 +1434,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -1539,7 +1572,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -1680,7 +1714,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -1690,6 +1725,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/29 的候選",
     "since": "距觸發約 54 天",
     "nextPass": "10/23",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 1,
@@ -1869,7 +1905,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -2023,7 +2060,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -2170,7 +2208,8 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -2311,7 +2350,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -2343,6 +2383,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-07-02 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-07-09T00:00:00+08:00",
@@ -2355,6 +2397,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 1 天",
     "nextPass": "7/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2369,6 +2412,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/7 的候選",
     "since": "距觸發約 11 天",
     "nextPass": "7/31",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2383,6 +2427,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/19 的候選",
     "since": "距觸發約 23 天",
     "nextPass": "8/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2397,6 +2442,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/31 的候選",
     "since": "距觸發約 35 天",
     "nextPass": "8/24",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2411,6 +2457,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/12 的候選",
     "since": "距觸發約 47 天",
     "nextPass": "9/5",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2425,6 +2472,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/24 的候選",
     "since": "距觸發約 59 天",
     "nextPass": "9/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2461,6 +2509,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2016-02-29 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2016-03-07T00:00:00+08:00",
@@ -2473,6 +2523,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 66 小時",
     "nextPass": "3/27",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2487,6 +2538,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/9 的候選",
     "since": "距觸發約 15 天",
     "nextPass": "4/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2501,6 +2553,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/21 的候選",
     "since": "距觸發約 39 天",
     "nextPass": "5/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2537,6 +2590,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2017-05-27 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2017-06-03T00:00:00+08:00",
@@ -2549,6 +2604,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 6 天",
     "nextPass": "6/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2563,6 +2619,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/27 的候選",
     "since": "距觸發約 6 天",
     "nextPass": "6/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2577,6 +2634,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/8 的候選",
     "since": "距觸發約 30 天",
     "nextPass": "7/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2591,6 +2649,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/2 的候選",
     "since": "距觸發約 42 天",
     "nextPass": "7/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2605,6 +2664,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/14 的候選",
     "since": "距觸發約 54 天",
     "nextPass": "8/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2641,6 +2701,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2019-08-14 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2019-08-21T00:00:00+08:00",
@@ -2653,6 +2715,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 5 天",
     "nextPass": "8/21",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2667,6 +2730,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/15 的候選",
     "since": "距觸發約 18 小時",
     "nextPass": "8/27",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2681,6 +2745,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/21 的候選",
     "since": "距觸發約 7 天",
     "nextPass": "9/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2695,6 +2760,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/27 的候選",
     "since": "距觸發約 13 天",
     "nextPass": "9/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2709,6 +2775,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/2 的候選",
     "since": "距觸發約 19 天",
     "nextPass": "9/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2723,6 +2790,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/8 的候選",
     "since": "距觸發約 31 天",
     "nextPass": "9/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2737,6 +2805,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/20 的候選",
     "since": "距觸發約 37 天",
     "nextPass": "10/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2751,6 +2820,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/26 的候選",
     "since": "距觸發約 43 天",
     "nextPass": "10/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2765,6 +2835,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/2 的候選",
     "since": "距觸發約 49 天",
     "nextPass": "10/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2779,6 +2850,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/8 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "10/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2815,6 +2887,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-01-29 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-02-05T00:00:00+08:00",
@@ -2827,6 +2901,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 5 天",
     "nextPass": "2/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2841,6 +2916,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 1/30 的候選",
     "since": "距觸發約 7 天",
     "nextPass": "2/23",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2855,6 +2931,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/11 的候選",
     "since": "距觸發約 19 天",
     "nextPass": "3/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2869,6 +2946,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/23 的候選",
     "since": "距觸發約 31 天",
     "nextPass": "3/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -2883,6 +2961,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/7 的候選",
     "since": "距觸發約 43 天",
     "nextPass": "3/31",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -3033,7 +3112,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -3043,6 +3123,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/19 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "4/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -3210,7 +3291,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -3242,6 +3324,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-06-12 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-06-19T00:00:00+08:00",
@@ -3254,6 +3338,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 5 天",
     "nextPass": "6/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3268,6 +3353,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/14 的候選",
     "since": "距觸發約 30 小時",
     "nextPass": "6/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3282,6 +3368,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/20 的候選",
     "since": "距觸發約 7 天",
     "nextPass": "7/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3296,6 +3383,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/26 的候選",
     "since": "距觸發約 13 天",
     "nextPass": "7/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3310,6 +3398,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/2 的候選",
     "since": "距觸發約 19 天",
     "nextPass": "7/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3324,6 +3413,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/8 的候選",
     "since": "距觸發約 25 天",
     "nextPass": "7/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3338,6 +3428,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/14 的候選",
     "since": "距觸發約 31 天",
     "nextPass": "7/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3352,6 +3443,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/20 的候選",
     "since": "距觸發約 37 天",
     "nextPass": "8/1",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3366,6 +3458,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/26 的候選",
     "since": "距觸發約 43 天",
     "nextPass": "8/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3380,6 +3473,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/1 的候選",
     "since": "距觸發約 49 天",
     "nextPass": "8/13",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3394,6 +3488,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/7 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "8/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3430,6 +3525,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-10-30 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2021-11-06T00:00:00+08:00",
@@ -3442,6 +3539,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 3 天",
     "nextPass": "11/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3456,6 +3554,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/2 的候選",
     "since": "距觸發約 66 小時",
     "nextPass": "11/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3470,6 +3569,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/8 的候選",
     "since": "距觸發約 9 天",
     "nextPass": "11/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3484,6 +3584,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/14 的候選",
     "since": "距觸發約 15 天",
     "nextPass": "11/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3498,6 +3599,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/20 的候選",
     "since": "距觸發約 21 天",
     "nextPass": "12/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3512,6 +3614,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/26 的候選",
     "since": "距觸發約 27 天",
     "nextPass": "12/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3526,6 +3629,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/2 的候選",
     "since": "距觸發約 33 天",
     "nextPass": "12/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3540,6 +3644,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/8 的候選",
     "since": "距觸發約 39 天",
     "nextPass": "12/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3554,6 +3659,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/14 的候選",
     "since": "距觸發約 45 天",
     "nextPass": "12/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3568,6 +3674,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/20 的候選",
     "since": "距觸發約 57 天",
     "nextPass": "1/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3604,6 +3711,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2022-11-13 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2022-11-20T00:00:00+08:00",
@@ -3616,6 +3725,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 42 小時",
     "nextPass": "12/3",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3630,6 +3740,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/21 的候選",
     "since": "距觸發約 14 天",
     "nextPass": "12/15",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3644,6 +3755,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/3 的候選",
     "since": "距觸發約 26 天",
     "nextPass": "12/27",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3658,6 +3770,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/15 的候選",
     "since": "距觸發約 38 天",
     "nextPass": "1/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3672,6 +3785,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/27 的候選",
     "since": "距觸發約 50 天",
     "nextPass": "1/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3708,6 +3822,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-03-06 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-03-13T00:00:00+08:00",
@@ -3720,6 +3836,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 66 小時",
     "nextPass": "3/27",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3734,6 +3851,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/15 的候選",
     "since": "距觸發約 15 天",
     "nextPass": "4/8",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3748,6 +3866,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/27 的候選",
     "since": "距觸發約 27 天",
     "nextPass": "4/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3762,6 +3881,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/8 的候選",
     "since": "距觸發約 39 天",
     "nextPass": "5/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3776,6 +3896,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/20 的候選",
     "since": "距觸發約 51 天",
     "nextPass": "5/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3812,6 +3933,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-04-07 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-04-14T00:00:00+08:00",
@@ -3824,6 +3947,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 5 天",
     "nextPass": "4/20",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3838,6 +3962,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/8 的候選",
     "since": "距觸發約 7 天",
     "nextPass": "5/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3852,6 +3977,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/20 的候選",
     "since": "距觸發約 19 天",
     "nextPass": "5/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -3866,6 +3992,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/2 的候選",
     "since": "距觸發約 43 天",
     "nextPass": "6/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -4012,7 +4139,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -4022,6 +4150,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/26 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "6/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4166,7 +4295,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -4198,6 +4328,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-09-28 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-10-05T00:00:00+08:00",
@@ -4210,6 +4342,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 18 小時",
     "nextPass": "10/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4224,6 +4357,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/5 的候選",
     "since": "距觸發約 13 天",
     "nextPass": "10/29",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4238,6 +4372,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
     "since": "距觸發約 25 天",
     "nextPass": "11/10",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4252,6 +4387,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/29 的候選",
     "since": "距觸發約 37 天",
     "nextPass": "11/22",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4266,6 +4402,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/10 的候選",
     "since": "距觸發約 49 天",
     "nextPass": "12/4",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4302,6 +4439,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2024-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2024-11-02T00:00:00+08:00",
@@ -4314,6 +4453,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 3 天",
     "nextPass": "11/10",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4328,6 +4468,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/29 的候選",
     "since": "距觸發約 9 天",
     "nextPass": "11/22",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -4342,6 +4483,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/10 的候選",
     "since": "距觸發約 21 天",
     "nextPass": "12/4",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -4482,7 +4624,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -4492,6 +4635,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/22 的候選",
     "since": "距觸發約 33 天",
     "nextPass": "12/16",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -4656,7 +4800,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -4666,6 +4811,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/4 的候選",
     "since": "距觸發約 45 天",
     "nextPass": "12/28",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 3,
@@ -4828,7 +4974,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -4963,7 +5110,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -5098,7 +5246,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -5233,7 +5382,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -5243,6 +5393,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/16 的候選",
     "since": "距觸發約 57 天",
     "nextPass": "1/9",
+    "nextPassOrbit": null,
     "counts": {
      "high": 4,
      "medium": 1,
@@ -5400,7 +5551,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -5535,7 +5687,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -5670,7 +5823,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -5844,7 +5998,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E5",
@@ -5986,7 +6141,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -6018,6 +6174,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-01-18 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-01-25T00:00:00+08:00",
@@ -6030,6 +6188,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 3 天",
     "nextPass": "2/2",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -6044,6 +6203,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 1/21 的候選",
     "since": "距觸發約 9 天",
     "nextPass": "2/14",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -6058,6 +6218,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/2 的候選",
     "since": "距觸發約 21 天",
     "nextPass": "2/26",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -6201,7 +6362,8 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -6211,6 +6373,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/14 的候選",
     "since": "距觸發約 33 天",
     "nextPass": "3/10",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -6370,7 +6533,8 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -6380,6 +6544,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 2/26 的候選",
     "since": "距觸發約 45 天",
     "nextPass": "3/22",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -6557,7 +6722,8 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -6567,6 +6733,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 3/10 的候選",
     "since": "距觸發約 57 天",
     "nextPass": "4/3",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -6759,7 +6926,8 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -6791,6 +6959,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-07-01 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-07-08T00:00:00+08:00",
@@ -6803,6 +6973,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 18 小時",
     "nextPass": "7/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -6817,6 +6988,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/8 的候選",
     "since": "距觸發約 13 天",
     "nextPass": "7/29",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -6971,7 +7143,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -6981,6 +7154,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/20 的候選",
     "since": "距觸發約 25 天",
     "nextPass": "8/10",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -7133,7 +7307,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -7143,6 +7318,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/1 的候選",
     "since": "距觸發約 37 天",
     "nextPass": "8/22",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -7295,7 +7471,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -7305,6 +7482,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/13 的候選",
     "since": "距觸發約 43 天",
     "nextPass": "8/28",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 2,
@@ -7455,7 +7633,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -7596,7 +7775,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -7743,7 +7923,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -7753,6 +7934,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/19 的候選",
     "since": "距觸發約 49 天",
     "nextPass": "9/3",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 1,
@@ -7899,7 +8081,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -8058,7 +8241,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -8205,7 +8389,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -8215,6 +8400,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/25 的候選",
     "since": "距觸發約 55 天",
     "nextPass": "9/9",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -8361,7 +8547,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -8508,7 +8695,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -8665,7 +8853,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -8697,6 +8886,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-10-10 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2025-10-17T00:00:00+08:00",
@@ -8709,6 +8900,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 4 天",
     "nextPass": "10/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -8875,7 +9067,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -8885,6 +9078,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/12 的候選",
     "since": "距觸發約 42 小時",
     "nextPass": "10/24",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 2,
@@ -9051,7 +9245,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -9192,7 +9387,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -9333,7 +9529,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -9343,6 +9540,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/18 的候選",
     "since": "距觸發約 8 天",
     "nextPass": "10/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -9513,7 +9711,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -9674,7 +9873,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -9813,7 +10013,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -9823,6 +10024,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/24 的候選",
     "since": "距觸發約 14 天",
     "nextPass": "11/5",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -9991,7 +10193,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -10152,7 +10355,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -10291,7 +10495,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -10301,6 +10506,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 10/30 的候選",
     "since": "距觸發約 20 天",
     "nextPass": "11/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -10469,7 +10675,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -10630,7 +10837,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -10769,7 +10977,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -10779,6 +10988,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/5 的候選",
     "since": "距觸發約 26 天",
     "nextPass": "11/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -10947,7 +11157,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -11108,7 +11319,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -11247,7 +11459,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -11257,6 +11470,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/11 的候選",
     "since": "距觸發約 38 天",
     "nextPass": "11/29",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 1,
@@ -11425,7 +11639,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -11586,7 +11801,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -11743,7 +11959,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -11882,7 +12099,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -11892,6 +12110,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/23 的候選",
     "since": "距觸發約 44 天",
     "nextPass": "12/5",
+    "nextPassOrbit": null,
     "counts": {
      "high": 3,
      "medium": 0,
@@ -12060,7 +12279,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -12221,7 +12441,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -12378,7 +12599,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -12517,7 +12739,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -12527,6 +12750,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 11/29 的候選",
     "since": "距觸發約 50 天",
     "nextPass": "12/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 3,
      "medium": 0,
@@ -12693,7 +12917,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -12864,7 +13089,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -13021,7 +13247,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -13160,7 +13387,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -13170,6 +13398,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 12/5 的候選",
     "since": "距觸發約 56 天",
     "nextPass": "12/17",
+    "nextPassOrbit": null,
     "counts": {
      "high": 3,
      "medium": 0,
@@ -13336,7 +13565,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -13505,7 +13735,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -13662,7 +13893,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -13801,7 +14033,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -13833,6 +14066,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-03-31 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-04-07T00:00:00+08:00",
@@ -13845,6 +14080,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 6 天",
     "nextPass": "4/6",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -13859,6 +14095,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/1 的候選",
     "since": "距觸發約 6 小時",
     "nextPass": "4/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -13873,6 +14110,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/7 的候選",
     "since": "距觸發約 6 天",
     "nextPass": "4/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 2,
@@ -14025,7 +14263,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -14154,7 +14393,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -14164,6 +14404,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/13 的候選",
     "since": "距觸發約 12 天",
     "nextPass": "4/24",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -14338,7 +14579,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -14483,7 +14725,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -14493,6 +14736,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/19 的候選",
     "since": "距觸發約 13 天",
     "nextPass": "4/25",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 3,
@@ -14665,7 +14909,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -14818,7 +15063,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -14953,7 +15199,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -15092,7 +15339,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -15102,6 +15350,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/20 的候選",
     "since": "距觸發約 18 天",
     "nextPass": "4/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -15272,7 +15521,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -15423,7 +15673,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -15556,7 +15807,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -15693,7 +15945,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -15703,6 +15956,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 4/25 的候選",
     "since": "距觸發約 24 天",
     "nextPass": "5/6",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -15873,7 +16127,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -16024,7 +16279,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -16157,7 +16413,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -16294,7 +16551,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -16304,6 +16562,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/1 的候選",
     "since": "距觸發約 25 天",
     "nextPass": "5/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -16474,7 +16733,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -16625,7 +16885,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -16758,7 +17019,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -16895,7 +17157,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -16905,6 +17168,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/2 的候選",
     "since": "距觸發約 30 天",
     "nextPass": "5/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -17075,7 +17339,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -17226,7 +17491,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -17359,7 +17625,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -17496,7 +17763,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -17506,6 +17774,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/7 的候選",
     "since": "距觸發約 36 天",
     "nextPass": "5/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -17676,7 +17945,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -17827,7 +18097,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -17960,7 +18231,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -18097,7 +18369,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -18107,6 +18380,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/13 的候選",
     "since": "距觸發約 37 天",
     "nextPass": "5/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -18277,7 +18551,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -18428,7 +18703,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -18561,7 +18837,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -18698,7 +18975,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -18708,6 +18986,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/14 的候選",
     "since": "距觸發約 42 天",
     "nextPass": "5/24",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 1,
@@ -18878,7 +19157,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -19045,7 +19325,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -19178,7 +19459,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -19315,7 +19597,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -19325,6 +19608,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/19 的候選",
     "since": "距觸發約 48 天",
     "nextPass": "5/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -19495,7 +19779,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -19660,7 +19945,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -19793,7 +20079,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -19930,7 +20217,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -19940,6 +20228,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/25 的候選",
     "since": "距觸發約 49 天",
     "nextPass": "5/31",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -20110,7 +20399,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -20275,7 +20565,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -20408,7 +20699,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -20545,7 +20837,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -20555,6 +20848,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 5/26 的候選",
     "since": "距觸發約 54 天",
     "nextPass": "6/5",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -20725,7 +21019,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -20890,7 +21185,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E3",
@@ -21023,7 +21319,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -21160,7 +21457,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -21192,6 +21490,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-06-06 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-13T00:00:00+08:00",
@@ -21204,6 +21504,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 7 天",
     "nextPass": "6/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21218,6 +21519,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/6 的候選",
     "since": "觸發前約 6 天",
     "nextPass": "6/13",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21232,6 +21534,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/7 的候選",
     "since": "觸發前約 18 小時",
     "nextPass": "6/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21246,6 +21549,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/12 的候選",
     "since": "距觸發約 6 天",
     "nextPass": "6/25",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21260,6 +21564,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/19 的候選",
     "since": "距觸發約 11 天",
     "nextPass": "6/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21274,6 +21579,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/24 的候選",
     "since": "距觸發約 12 天",
     "nextPass": "7/1",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21288,6 +21594,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/25 的候選",
     "since": "距觸發約 18 天",
     "nextPass": "7/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21302,6 +21609,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/1 的候選",
     "since": "距觸發約 24 天",
     "nextPass": "7/13",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21316,6 +21624,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/7 的候選",
     "since": "距觸發約 30 天",
     "nextPass": "7/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21330,6 +21639,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/13 的候選",
     "since": "距觸發約 36 天",
     "nextPass": "7/25",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21344,6 +21654,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/19 的候選",
     "since": "距觸發約 42 天",
     "nextPass": "7/31",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -21490,7 +21801,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -21500,6 +21812,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/25 的候選",
     "since": "距觸發約 48 天",
     "nextPass": "8/6",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21644,7 +21957,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -21676,6 +21990,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-06-13 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "清冊登載形成日",
    "time": "2026-06-20T00:00:00+08:00",
@@ -21688,6 +22004,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 42 小時",
     "nextPass": "6/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -21702,6 +22019,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/21 的候選",
     "since": "距觸發約 9 天",
     "nextPass": "7/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -21846,7 +22164,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -21856,6 +22175,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/28 的候選",
     "since": "距觸發約 21 天",
     "nextPass": "7/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 1,
@@ -22000,7 +22320,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -22161,7 +22482,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -22171,6 +22493,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/10 的候選",
     "since": "距觸發約 33 天",
     "nextPass": "7/31",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -22375,7 +22698,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -22514,7 +22838,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -22524,6 +22849,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/22 的候選",
     "since": "距觸發約 45 天",
     "nextPass": "8/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -22718,7 +23044,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -22857,7 +23184,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -22867,6 +23195,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/3 的候選",
     "since": "距觸發約 51 天",
     "nextPass": "8/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -23091,7 +23420,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -23230,7 +23560,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -23240,6 +23571,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/9 的候選",
     "since": "距觸發約 57 天",
     "nextPass": "8/24",
+    "nextPassOrbit": null,
     "counts": {
      "high": 2,
      "medium": 0,
@@ -23487,7 +23819,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -23626,7 +23959,8 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -23658,6 +23992,205 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": {
+   "checkedAt": "2026-11-01T10:36+08:00",
+   "scenes": [
+    {
+     "time": "2026-10-31T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-28T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-26T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 55
+    },
+    {
+     "time": "2026-10-21T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-21T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-16T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 71
+    },
+    {
+     "time": "2026-10-13T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-11T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 81
+    },
+    {
+     "time": "2026-10-08T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-06T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-05T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 24
+    },
+    {
+     "time": "2026-10-01T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 88
+    },
+    {
+     "time": "2026-09-27T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 99
+    },
+    {
+     "time": "2026-09-26T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-21T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 11
+    },
+    {
+     "time": "2026-09-19T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-18T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 66
+    }
+   ],
+   "next": [
+    {
+     "date": "2026-11-05",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-06",
+     "sensor": "Landsat 9"
+    },
+    {
+     "date": "2026-11-07",
+     "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-10",
+     "sensor": "Sentinel-2B"
+    },
+    {
+     "date": "2026-11-14",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-15",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-17",
+     "sensor": "Sentinel-2A"
+    }
+   ]
+  },
+  "upcoming": [
+   {
+    "date": "2026-11-04",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-05",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-06",
+    "time": null,
+    "sensor": "Landsat 9",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-07",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-07",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-10",
+    "time": "05:51",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-10",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-14",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-15",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-16",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-17",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   }
+  ],
   "trigger": {
    "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
    "time": "2026-10-11T15:42+08:00",
@@ -23669,7 +24202,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/11 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 10 小時",
-    "nextPass": "10/15",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 1,
@@ -23739,7 +24273,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "中",
-      "summary": "E1 需要人工確認：單期 SAR 出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/15 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/14 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -23775,7 +24309,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/15）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/14）"
        },
        {
         "kind": "optical",
@@ -23798,7 +24332,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/15）",
+        "label": "排下一期 SAR 複核（10/14）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -23819,7 +24353,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
      }
     ]
    },
@@ -23828,7 +24378,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/14 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 3 天",
-    "nextPass": "10/18",
+    "nextPass": "10/17",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 1,
@@ -23898,7 +24449,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "中",
-      "summary": "E1 需要人工確認：單期 SAR 出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/18 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -23934,7 +24485,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/18）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
        },
        {
         "kind": "optical",
@@ -23957,7 +24508,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/18）",
+        "label": "排下一期 SAR 複核（10/17）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -23978,7 +24529,30 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
      }
     ]
    },
@@ -23987,7 +24561,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/17 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/11 的候選",
     "since": "距觸發約 6 天",
-    "nextPass": "10/21",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 1,
      "medium": 0,
@@ -24145,7 +24720,7 @@ window.EVENT_SCENARIOS = [
         "reason": "下游聚落、道路圖層尚未串接"
        },
        {
-        "label": "持續 SAR 監測（下一期 10/21）",
+        "label": "持續 SAR 監測（下一期 10/23）",
         "reason": "追蹤湖面變化；目前面積擴大中"
        }
       ],
@@ -24159,7 +24734,44 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 19
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
      }
     ]
    },
@@ -24168,7 +24780,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
     "since": "距觸發約 12 天",
-    "nextPass": "10/27",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 1,
      "medium": 0,
@@ -24340,7 +24953,7 @@ window.EVENT_SCENARIOS = [
         "reason": "下游聚落、道路圖層尚未串接"
        },
        {
-        "label": "持續 SAR 監測（下一期 10/27）",
+        "label": "持續 SAR 監測（下一期 10/26）",
         "reason": "追蹤湖面變化"
        }
       ],
@@ -24353,7 +24966,51 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 19
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
      }
     ]
    },
@@ -24362,7 +25019,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測＋複核 10/14 的候選",
     "since": "距觸發約 15 天",
-    "nextPass": "10/30",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 1,
      "medium": 0,
@@ -24544,7 +25202,65 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 19
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
      }
     ]
    }
@@ -24576,6 +25292,205 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": {
+   "checkedAt": "2026-11-01T10:36+08:00",
+   "scenes": [
+    {
+     "time": "2026-10-31T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 90
+    },
+    {
+     "time": "2026-10-28T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 2
+    },
+    {
+     "time": "2026-10-26T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 8
+    },
+    {
+     "time": "2026-10-21T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 53
+    },
+    {
+     "time": "2026-10-21T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 51
+    },
+    {
+     "time": "2026-10-16T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 36
+    },
+    {
+     "time": "2026-10-13T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 71
+    },
+    {
+     "time": "2026-10-11T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 3
+    },
+    {
+     "time": "2026-10-08T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 1
+    },
+    {
+     "time": "2026-10-06T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-05T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-01T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 70
+    },
+    {
+     "time": "2026-09-27T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 97
+    },
+    {
+     "time": "2026-09-26T10:41+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 99
+    },
+    {
+     "time": "2026-09-21T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 10
+    },
+    {
+     "time": "2026-09-19T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 93
+    },
+    {
+     "time": "2026-09-18T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 14
+    }
+   ],
+   "next": [
+    {
+     "date": "2026-11-05",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-06",
+     "sensor": "Landsat 9"
+    },
+    {
+     "date": "2026-11-07",
+     "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-10",
+     "sensor": "Sentinel-2B"
+    },
+    {
+     "date": "2026-11-14",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-15",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-17",
+     "sensor": "Sentinel-2A"
+    }
+   ]
+  },
+  "upcoming": [
+   {
+    "date": "2026-11-04",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-05",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-06",
+    "time": null,
+    "sensor": "Landsat 9",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-07",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-07",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-10",
+    "time": "05:51",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-10",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-14",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-15",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-16",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-17",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   }
+  ],
   "trigger": {
    "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
    "time": "2026-10-11T15:42+08:00",
@@ -24587,7 +25502,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/11 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 10 小時",
-    "nextPass": "10/15",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 1,
@@ -24657,7 +25573,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E1 需要人工確認：單期 SAR 出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/15 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/14 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -24698,7 +25614,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/15）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/14）"
        },
        {
         "kind": "optical",
@@ -24721,7 +25637,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/15）",
+        "label": "排下一期 SAR 複核（10/14）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -24743,7 +25659,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
      }
     ]
    },
@@ -24752,7 +25684,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/14 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 3 天",
-    "nextPass": "10/18",
+    "nextPass": "10/17",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 3,
@@ -24822,7 +25755,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/18 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -24863,7 +25796,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/18）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
        },
        {
         "kind": "optical",
@@ -24886,7 +25819,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/18）",
+        "label": "排下一期 SAR 複核（10/17）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -24908,7 +25841,16 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      },
      {
       "id": "E1",
@@ -24972,7 +25914,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E1 需要人工確認：單期 SAR 出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/18 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -25013,7 +25955,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/18）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
        },
        {
         "kind": "optical",
@@ -25036,7 +25978,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/18）",
+        "label": "排下一期 SAR 複核（10/17）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -25058,7 +26000,30 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
      },
      {
       "id": "E3",
@@ -25118,7 +26083,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/18 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -25159,7 +26124,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/18）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
        },
        {
         "kind": "optical",
@@ -25182,7 +26147,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/18）",
+        "label": "排下一期 SAR 複核（10/17）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -25204,7 +26169,16 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      }
     ]
    },
@@ -25213,7 +26187,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/17 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/11 的候選",
     "since": "距觸發約 6 天",
-    "nextPass": "10/21",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 1,
      "medium": 2,
@@ -25371,7 +26346,7 @@ window.EVENT_SCENARIOS = [
         "reason": "下游聚落、道路圖層尚未串接"
        },
        {
-        "label": "持續 SAR 監測（下一期 10/21）",
+        "label": "持續 SAR 監測（下一期 10/23）",
         "reason": "追蹤湖面變化"
        }
       ],
@@ -25385,7 +26360,44 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
      },
      {
       "id": "E2",
@@ -25449,7 +26461,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/21 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -25490,7 +26502,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/21）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
        },
        {
         "kind": "optical",
@@ -25513,7 +26525,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/21）",
+        "label": "排下一期 SAR 複核（10/23）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -25535,7 +26547,30 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 92,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      },
      {
       "id": "E3",
@@ -25595,7 +26630,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/21 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -25636,7 +26671,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/21）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
        },
        {
         "kind": "optical",
@@ -25659,7 +26694,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/21）",
+        "label": "排下一期 SAR 複核（10/23）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -25681,7 +26716,30 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      }
     ]
    },
@@ -25690,7 +26748,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
     "since": "距觸發約 12 天",
-    "nextPass": "10/27",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 1,
      "medium": 2,
@@ -25860,7 +26919,51 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
      },
      {
       "id": "E2",
@@ -25924,7 +27027,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/27 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -25965,7 +27068,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/27）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
        },
        {
         "kind": "optical",
@@ -25988,7 +27091,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/27）",
+        "label": "排下一期 SAR 複核（10/26）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -26010,7 +27113,37 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 2,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 92,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      },
      {
       "id": "E3",
@@ -26070,7 +27203,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/27 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -26111,7 +27244,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/27）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
        },
        {
         "kind": "optical",
@@ -26134,7 +27267,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/27）",
+        "label": "排下一期 SAR 複核（10/26）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -26156,7 +27289,37 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      }
     ]
    },
@@ -26165,7 +27328,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測＋複核 10/14 的候選",
     "since": "距觸發約 15 天",
-    "nextPass": "10/30",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 3,
      "medium": 0,
@@ -26321,7 +27485,51 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 2,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 92,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      },
      {
       "id": "E1",
@@ -26485,7 +27693,65 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
      },
      {
       "id": "E3",
@@ -26631,7 +27897,51 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
      }
     ]
    }
@@ -26655,6 +27965,205 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": {
+   "checkedAt": "2026-11-01T10:36+08:00",
+   "scenes": [
+    {
+     "time": "2026-10-31T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-28T10:40+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 97
+    },
+    {
+     "time": "2026-10-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 27
+    },
+    {
+     "time": "2026-10-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-21T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-16T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-13T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-11T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-08T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 69
+    },
+    {
+     "time": "2026-10-06T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-05T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 86
+    },
+    {
+     "time": "2026-10-01T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 95
+    },
+    {
+     "time": "2026-09-27T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 59
+    },
+    {
+     "time": "2026-09-19T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-18T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 100
+    }
+   ],
+   "next": [
+    {
+     "date": "2026-11-05",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-06",
+     "sensor": "Landsat 9"
+    },
+    {
+     "date": "2026-11-07",
+     "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-10",
+     "sensor": "Sentinel-2B"
+    },
+    {
+     "date": "2026-11-14",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-15",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-17",
+     "sensor": "Sentinel-2A"
+    }
+   ]
+  },
+  "upcoming": [
+   {
+    "date": "2026-11-04",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-05",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-06",
+    "time": null,
+    "sensor": "Landsat 9",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-07",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-07",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-10",
+    "time": "05:51",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-10",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-14",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-15",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-16",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-17",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   }
+  ],
   "trigger": {
    "label": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
    "time": "2026-10-26T09:19+08:00",
@@ -26666,7 +28175,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 3 天",
-    "nextPass": "10/27",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26680,7 +28190,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 9 小時",
-    "nextPass": "10/30",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26717,6 +28228,205 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": {
+   "checkedAt": "2026-11-01T10:36+08:00",
+   "scenes": [
+    {
+     "time": "2026-10-31T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 97
+    },
+    {
+     "time": "2026-10-28T10:40+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 88
+    },
+    {
+     "time": "2026-10-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 78
+    },
+    {
+     "time": "2026-10-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-21T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-16T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-13T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-11T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-08T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 95
+    },
+    {
+     "time": "2026-10-06T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-05T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 66
+    },
+    {
+     "time": "2026-10-01T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 99
+    },
+    {
+     "time": "2026-09-27T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 80
+    },
+    {
+     "time": "2026-09-19T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-18T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 100
+    }
+   ],
+   "next": [
+    {
+     "date": "2026-11-05",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-06",
+     "sensor": "Landsat 9"
+    },
+    {
+     "date": "2026-11-07",
+     "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-10",
+     "sensor": "Sentinel-2B"
+    },
+    {
+     "date": "2026-11-14",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-15",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-17",
+     "sensor": "Sentinel-2A"
+    }
+   ]
+  },
+  "upcoming": [
+   {
+    "date": "2026-11-04",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-05",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-06",
+    "time": null,
+    "sensor": "Landsat 9",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-07",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-07",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-10",
+    "time": "05:51",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-10",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-14",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-15",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-16",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-17",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   }
+  ],
   "trigger": {
    "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
    "time": "2026-10-11T15:42+08:00",
@@ -26728,7 +28438,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/11 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 10 小時",
-    "nextPass": "10/15",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26742,7 +28453,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/14 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 3 天",
-    "nextPass": "10/18",
+    "nextPass": "10/17",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26756,7 +28468,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/17 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/11 的候選",
     "since": "距觸發約 6 天",
-    "nextPass": "10/21",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26770,7 +28483,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
     "since": "距觸發約 12 天",
-    "nextPass": "10/27",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26784,7 +28498,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測＋複核 10/14 的候選",
     "since": "距觸發約 15 天",
-    "nextPass": "10/30",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26813,6 +28528,205 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": {
+   "checkedAt": "2026-11-01T10:36+08:00",
+   "scenes": [
+    {
+     "time": "2026-10-31T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-28T10:40+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 12
+    },
+    {
+     "time": "2026-10-21T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 59
+    },
+    {
+     "time": "2026-10-16T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 90
+    },
+    {
+     "time": "2026-10-13T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-11T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-08T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-06T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-05T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 10
+    },
+    {
+     "time": "2026-10-01T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 31
+    },
+    {
+     "time": "2026-09-27T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 53
+    },
+    {
+     "time": "2026-09-19T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-18T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 40
+    }
+   ],
+   "next": [
+    {
+     "date": "2026-11-05",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-06",
+     "sensor": "Landsat 9"
+    },
+    {
+     "date": "2026-11-07",
+     "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-10",
+     "sensor": "Sentinel-2B"
+    },
+    {
+     "date": "2026-11-14",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-15",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-17",
+     "sensor": "Sentinel-2A"
+    }
+   ]
+  },
+  "upcoming": [
+   {
+    "date": "2026-11-04",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-05",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-06",
+    "time": null,
+    "sensor": "Landsat 9",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-07",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-07",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-10",
+    "time": "05:51",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-10",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-14",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-15",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-16",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-17",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   }
+  ],
   "trigger": {
    "label": "大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
    "time": "2026-10-26T09:19+08:00",
@@ -26824,7 +28738,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 3 天",
-    "nextPass": "10/27",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26838,7 +28753,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 9 小時",
-    "nextPass": "10/30",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26867,6 +28783,205 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": {
+   "checkedAt": "2026-11-01T10:36+08:00",
+   "scenes": [
+    {
+     "time": "2026-10-31T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 13
+    },
+    {
+     "time": "2026-10-28T10:40+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 96
+    },
+    {
+     "time": "2026-10-21T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-16T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 71
+    },
+    {
+     "time": "2026-10-13T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-10-11T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 76
+    },
+    {
+     "time": "2026-10-08T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 5
+    },
+    {
+     "time": "2026-10-06T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-05T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-10-01T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 60
+    },
+    {
+     "time": "2026-09-27T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-26T10:40+08:00",
+     "sensor": "Sentinel-2C",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-21T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-09-19T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 100
+    },
+    {
+     "time": "2026-09-18T10:41+08:00",
+     "sensor": "Sentinel-2A",
+     "clearPct": 90
+    }
+   ],
+   "next": [
+    {
+     "date": "2026-11-05",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-06",
+     "sensor": "Landsat 9"
+    },
+    {
+     "date": "2026-11-07",
+     "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-10",
+     "sensor": "Sentinel-2B"
+    },
+    {
+     "date": "2026-11-14",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-15",
+     "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-17",
+     "sensor": "Sentinel-2A"
+    }
+   ]
+  },
+  "upcoming": [
+   {
+    "date": "2026-11-04",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-05",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-06",
+    "time": null,
+    "sensor": "Landsat 9",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-07",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-07",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-10",
+    "time": "05:51",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-10",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-14",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-15",
+    "time": null,
+    "sensor": "Sentinel-2C",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-16",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-17",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   }
+  ],
   "trigger": {
    "label": "大規模崩塌潛勢區 宜縣LL003（宜蘭縣-大同鄉-D311）72 小時雨量 315 mm",
    "time": "2026-10-26T09:19+08:00",
@@ -26878,7 +28993,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 3 天",
-    "nextPass": "10/27",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26892,7 +29008,8 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 9 小時",
-    "nextPass": "10/30",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 0,
@@ -26972,6 +29089,8 @@ window.EVENT_SCENARIOS = [
     "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
    }
   ],
+  "optical": null,
+  "upcoming": [],
   "trigger": {
    "label": "薇帕颱風外圍環流",
    "time": "2025-07-21T17:54:00+08:00",
@@ -26984,6 +29103,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 36 小時",
     "nextPass": "7/29",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 2,
@@ -27171,7 +29291,8 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -27329,7 +29450,8 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -27339,6 +29461,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/23 的候選",
     "since": "距觸發約 7 天",
     "nextPass": "8/4",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -27574,7 +29697,8 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.corroborated"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -27754,7 +29878,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -27910,7 +30035,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -27920,6 +30046,7 @@ window.EVENT_SCENARIOS = [
     "what": "複核 7/29 的候選",
     "since": "距觸發約 13 天",
     "nextPass": "8/10",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -28161,7 +30288,8 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -28341,7 +30469,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -28497,7 +30626,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -28507,6 +30637,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 31 天",
     "nextPass": "8/28",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 1,
@@ -28911,7 +31042,8 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -29077,7 +31209,8 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "priority.medium.pending"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -29257,7 +31390,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -29413,7 +31547,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    },
@@ -29423,6 +31558,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/22 的候選",
     "since": "距觸發約 37 天",
     "nextPass": "9/3",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -29734,7 +31870,8 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.confirmed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E1",
@@ -29914,7 +32051,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E2",
@@ -30070,7 +32208,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      },
      {
       "id": "E4",
@@ -30234,7 +32373,8 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
-      "hindsight": []
+      "hindsight": [],
+      "optical": []
      }
     ]
    }
@@ -30258,6 +32398,8 @@ window.EVENT_SCENARIOS = [
    "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-05-29 以前；缺漏處以 Landsat 8/9 補"
   },
   "aerial": [],
+  "optical": null,
+  "upcoming": [],
   "trigger": null,
   "snapshots": [
    {
@@ -30266,6 +32408,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測",
     "since": "",
     "nextPass": "6/12",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30280,6 +32423,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/6 的候選",
     "since": "",
     "nextPass": "6/13",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30294,6 +32438,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/7 的候選",
     "since": "",
     "nextPass": "6/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30308,6 +32453,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/12 的候選",
     "since": "",
     "nextPass": "6/25",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30322,6 +32468,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/19 的候選",
     "since": "",
     "nextPass": "6/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30336,6 +32483,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/24 的候選",
     "since": "",
     "nextPass": "7/1",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30350,6 +32498,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 6/25 的候選",
     "since": "",
     "nextPass": "7/7",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 0,
@@ -30364,6 +32513,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/1 的候選",
     "since": "",
     "nextPass": "7/13",
+    "nextPassOrbit": null,
     "counts": {
      "high": 0,
      "medium": 1,
@@ -30539,7 +32689,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -30549,6 +32700,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/7 的候選",
     "since": "",
     "nextPass": "7/19",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -30736,7 +32888,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -30746,6 +32899,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/13 的候選",
     "since": "",
     "nextPass": "7/25",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -30931,7 +33085,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -30941,6 +33096,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/19 的候選",
     "since": "",
     "nextPass": "7/31",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -31126,7 +33282,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -31136,6 +33293,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/25 的候選",
     "since": "",
     "nextPass": "8/6",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -31321,7 +33479,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -31331,6 +33490,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 7/31 的候選",
     "since": "",
     "nextPass": "8/18",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -31516,7 +33676,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -31526,6 +33687,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/12 的候選",
     "since": "",
     "nextPass": "8/30",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -31711,7 +33873,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -31721,6 +33884,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 8/24 的候選",
     "since": "",
     "nextPass": "9/11",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -31906,7 +34070,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -31916,6 +34081,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/5 的候選",
     "since": "",
     "nextPass": "9/23",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -32101,7 +34267,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    },
@@ -32111,6 +34278,7 @@ window.EVENT_SCENARIOS = [
     "what": "新一期 SAR 全幅偵測＋複核 9/17 的候選",
     "since": "",
     "nextPass": "10/5",
+    "nextPassOrbit": null,
     "counts": {
      "high": 1,
      "medium": 0,
@@ -32313,7 +34481,8 @@ window.EVENT_SCENARIOS = [
         ],
         "method": "scripts/gee_check_s2_e1.js、scripts/check_neg_e1.py"
        }
-      ]
+      ],
+      "optical": []
      }
     ]
    }

@@ -12,6 +12,27 @@
   "windowKm": 4.0,
   "revisitDays": 4,
   "orbitLabel": "降軌 105＋升軌 69",
+  "orbits": [
+    {
+      "label": "降軌 105",
+      "satellite": "S1C",
+      "cycleDays": 12,
+      "last": "2026-10-23T05:51+08:00"
+    },
+    {
+      "label": "降軌 105",
+      "satellite": "S1D",
+      "cycleDays": 12,
+      "last": "2026-10-17T05:51+08:00"
+    },
+    {
+      "label": "升軌 69",
+      "satellite": "S1D",
+      "cycleDays": 12,
+      "last": "2026-10-26T18:00+08:00"
+    }
+  ],
+  "sarCheckedAt": "2026-11-01T10:36+08:00",
   "trigger": {
     "label": "大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
     "time": "2026-10-26T09:19+08:00",
@@ -54,5 +75,126 @@
     "file": "data/basemaps/live_E121521_N24530.jpg",
     "before": "2026-10-26",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "optical": {
+    "checkedAt": "2026-11-01T10:36+08:00",
+    "scenes": [
+      {
+        "time": "2026-10-31T10:40+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-28T10:40+08:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-26T10:40+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-21T10:40+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 12
+      },
+      {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "clearPct": 59
+      },
+      {
+        "time": "2026-10-16T10:40+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 90
+      },
+      {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "clearPct": 100
+      },
+      {
+        "time": "2026-10-11T10:40+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-08T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-06T10:40+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-05T10:20+08:00",
+        "sensor": "Landsat 9",
+        "clearPct": 10
+      },
+      {
+        "time": "2026-10-01T10:40+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 31
+      },
+      {
+        "time": "2026-09-27T10:20+08:00",
+        "sensor": "Landsat 8",
+        "clearPct": 100
+      },
+      {
+        "time": "2026-09-26T10:40+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 100
+      },
+      {
+        "time": "2026-09-21T10:40+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 53
+      },
+      {
+        "time": "2026-09-19T10:20+08:00",
+        "sensor": "Landsat 9",
+        "clearPct": 100
+      },
+      {
+        "time": "2026-09-18T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 40
+      }
+    ],
+    "next": [
+      {
+        "date": "2026-11-05",
+        "sensor": "Sentinel-2C"
+      },
+      {
+        "date": "2026-11-06",
+        "sensor": "Landsat 9"
+      },
+      {
+        "date": "2026-11-07",
+        "sensor": "Sentinel-2A"
+      },
+      {
+        "date": "2026-11-10",
+        "sensor": "Sentinel-2B"
+      },
+      {
+        "date": "2026-11-14",
+        "sensor": "Landsat 8"
+      },
+      {
+        "date": "2026-11-15",
+        "sensor": "Sentinel-2C"
+      },
+      {
+        "date": "2026-11-17",
+        "sensor": "Sentinel-2A"
+      }
+    ],
+    "checks": []
   }
 }

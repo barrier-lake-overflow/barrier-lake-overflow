@@ -2,6 +2,73 @@
 window.SYSTEM_LOG = {
  "history": [
   {
+   "startedAt": "2026-11-01T10:36+08:00",
+   "finishedAt": "2026-11-01T10:36+08:00",
+   "minutes": 0.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.4
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 6.6
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 5.0
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 6.3
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.2
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.3
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "optical",
+     "status": "ok",
+     "seconds": 8.2
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
    "startedAt": "2026-11-01T10:16+08:00",
    "finishedAt": "2026-11-01T10:17+08:00",
    "minutes": 1.0,
@@ -1180,8 +1247,8 @@ window.SYSTEM_LOG = {
   }
  ],
  "lastRun": {
-  "startedAt": "2026-11-01T10:16+08:00",
-  "totalLines": 312,
+  "startedAt": "2026-11-01T10:36+08:00",
+  "totalLines": 320,
   "lines": [
    "",
    "== inventory ==",
@@ -1262,6 +1329,14 @@ window.SYSTEM_LOG = {
    "",
    "== basemap ==",
    "底圖：新做 0 張",
+   "",
+   "== optical ==",
+   "  live_E121270_N23792：17 景，最近 10-31 Sentinel-2B 晴空 100%，事件 1 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
+   "  live_E121298_N23701：17 景，最近 10-31 Sentinel-2B 晴空 90%，事件 3 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
+   "  live_E121301_N24571：17 景，最近 10-31 Sentinel-2B 晴空 100%，事件 0 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
+   "  live_E121345_N24564：17 景，最近 10-31 Sentinel-2B 晴空 97%，事件 0 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
+   "  live_E121521_N24530：17 景，最近 10-31 Sentinel-2B 晴空 0%，事件 0 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
+   "  live_E121538_N24489：17 景，最近 10-31 Sentinel-2B 晴空 13%，事件 0 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
    "",
    "== news ==",
    "新聞：新增 0 筆，對到地點的待確認候選 85 筆",

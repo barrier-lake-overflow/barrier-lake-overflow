@@ -12,6 +12,27 @@
   "windowKm": 4.0,
   "revisitDays": 4,
   "orbitLabel": "降軌 105＋升軌 69",
+  "orbits": [
+    {
+      "label": "降軌 105",
+      "satellite": "S1C",
+      "cycleDays": 12,
+      "last": "2026-10-23T05:51+08:00"
+    },
+    {
+      "label": "降軌 105",
+      "satellite": "S1D",
+      "cycleDays": 12,
+      "last": "2026-10-17T05:51+08:00"
+    },
+    {
+      "label": "升軌 69",
+      "satellite": "S1D",
+      "cycleDays": 12,
+      "last": "2026-10-26T18:00+08:00"
+    }
+  ],
+  "sarCheckedAt": "2026-11-01T10:36+08:00",
   "trigger": {
     "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
     "time": "2026-10-11T15:42+08:00",
@@ -89,5 +110,294 @@
     "file": "data/basemaps/live_E121298_N23701.jpg",
     "before": "2026-10-11",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "optical": {
+    "checkedAt": "2026-11-01T10:36+08:00",
+    "scenes": [
+      {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 90
+      },
+      {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 2
+      },
+      {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 8
+      },
+      {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 53
+      },
+      {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "clearPct": 51
+      },
+      {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 36
+      },
+      {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "clearPct": 71
+      },
+      {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 3
+      },
+      {
+        "time": "2026-10-08T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 1
+      },
+      {
+        "time": "2026-10-06T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-05T10:20+08:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-10-01T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 70
+      },
+      {
+        "time": "2026-09-27T10:20+08:00",
+        "sensor": "Landsat 8",
+        "clearPct": 97
+      },
+      {
+        "time": "2026-09-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 99
+      },
+      {
+        "time": "2026-09-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 10
+      },
+      {
+        "time": "2026-09-19T10:20+08:00",
+        "sensor": "Landsat 9",
+        "clearPct": 93
+      },
+      {
+        "time": "2026-09-18T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 14
+      }
+    ],
+    "next": [
+      {
+        "date": "2026-11-05",
+        "sensor": "Sentinel-2C"
+      },
+      {
+        "date": "2026-11-06",
+        "sensor": "Landsat 9"
+      },
+      {
+        "date": "2026-11-07",
+        "sensor": "Sentinel-2A"
+      },
+      {
+        "date": "2026-11-10",
+        "sensor": "Sentinel-2B"
+      },
+      {
+        "date": "2026-11-14",
+        "sensor": "Landsat 8"
+      },
+      {
+        "date": "2026-11-15",
+        "sensor": "Sentinel-2C"
+      },
+      {
+        "date": "2026-11-17",
+        "sensor": "Sentinel-2A"
+      }
+    ],
+    "checks": [
+      {
+        "event": "E1",
+        "lonLat": [
+          121.30201,
+          23.701168
+        ],
+        "results": [
+          {
+            "time": "2026-10-31T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-28T10:41+08:00",
+            "sensor": "Sentinel-2A",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-26T10:41+08:00",
+            "sensor": "Sentinel-2C",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-21T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-21T10:20+08:00",
+            "sensor": "Landsat 9",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-16T10:41+08:00",
+            "sensor": "Sentinel-2C",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-13T10:20+08:00",
+            "sensor": "Landsat 8",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-11T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          }
+        ]
+      },
+      {
+        "event": "E2",
+        "lonLat": [
+          121.302369,
+          23.69524
+        ],
+        "results": [
+          {
+            "time": "2026-10-31T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-28T10:41+08:00",
+            "sensor": "Sentinel-2A",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-26T10:41+08:00",
+            "sensor": "Sentinel-2C",
+            "verdict": "cloud",
+            "clearPct": 2,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-21T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "no_water",
+            "clearPct": 92,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-21T10:20+08:00",
+            "sensor": "Landsat 9",
+            "verdict": "no_water",
+            "clearPct": 90,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-16T10:41+08:00",
+            "sensor": "Sentinel-2C",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          }
+        ]
+      },
+      {
+        "event": "E3",
+        "lonLat": [
+          121.296706,
+          23.698882
+        ],
+        "results": [
+          {
+            "time": "2026-10-31T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          },
+          {
+            "time": "2026-10-28T10:41+08:00",
+            "sensor": "Sentinel-2A",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-26T10:41+08:00",
+            "sensor": "Sentinel-2C",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-21T10:41+08:00",
+            "sensor": "Sentinel-2B",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-21T10:20+08:00",
+            "sensor": "Landsat 9",
+            "verdict": "cloud",
+            "clearPct": 0,
+            "waterPct": null
+          },
+          {
+            "time": "2026-10-16T10:41+08:00",
+            "sensor": "Sentinel-2C",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 0
+          }
+        ]
+      }
+    ]
   }
 }
