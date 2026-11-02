@@ -33,6 +33,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.full"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於0612-0613連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發發生於加走寮溪，瑞龍瀑布園區崩塌，堵塞加走寮溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 10 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.full",
+    "section": "後續",
+    "sentence": "於 2026/07/12 因原因未載潰決，存續 30 日（約 4 週）"
+   }
   ]
  },
  {
@@ -63,6 +85,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.with_cause"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於4/7連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發合歡溪步道大約3.5公里處(大甲溪事業區第82林班)崩塌，堵塞合歡溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 4 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.with_cause",
+    "section": "後續",
+    "sentence": "存續 56 日（約 8 週） 後因溢流沖刷潰決"
+   }
   ]
  },
  {
@@ -93,6 +137,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.monitoring.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.slide_only.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖係由萬榮村邊坡崩塌所形成"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發萬榮村崩塌，堵塞萬里溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.monitoring.text",
+    "section": "後續",
+    "sentence": "現況列為監測中"
+   }
   ]
  },
  {
@@ -124,6 +190,33 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.monitoring.with_duration"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於薇帕颱風影響期間"
+   },
+   {
+    "rule": "rainfall.no_data.text",
+    "section": "降雨條件",
+    "sentence": "形成期間之雨量資料不足，未納入判定"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發林田山第118林班崩塌，堵塞馬太鞍溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 9,100 萬立方公尺之極大型堰塞湖"
+   },
+   {
+    "rule": "fate.monitoring.with_duration",
+    "section": "後續",
+    "sentence": "自形成迄今 64 日（約 2.1 個月），現況列為監測中"
+   }
   ]
  },
  {
@@ -154,6 +247,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.full"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於丹娜絲颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發草嶺村崩塌，堵塞清水溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 1,400 萬立方公尺之大型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.full",
+    "section": "後續",
+    "sentence": "於 2025/07/10 因溢流沖刷潰決，存續 2 日"
+   }
   ]
  },
  {
@@ -184,6 +299,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.full"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發燕子口、立霧溪第20林班崩塌，堵塞立霧溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 190 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.full",
+    "section": "後續",
+    "sentence": "於 2025/10/26 因人為機具開挖潰決，存續 9 日"
+   }
   ]
  },
  {
@@ -214,6 +351,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.with_date"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與0121地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發秀姑巒第8林班崩塌，堵塞樂樂溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 8.6 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.with_date",
+    "section": "後續",
+    "sentence": "於 2025/06/17 潰決，存續 143 日（約 4.7 個月）"
+   }
   ]
  },
  {
@@ -244,6 +403,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發林田山第78林班崩塌，堵塞萬里溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 55 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 134 日（約 4.4 個月） 後潰決"
+   }
   ]
  },
  {
@@ -274,6 +455,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發木瓜山57林班崩塌，堵塞木瓜溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 43 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 107 日（約 3.5 個月） 後潰決"
+   }
   ]
  },
  {
@@ -304,6 +507,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.monitoring.with_duration"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於康芮颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發大溪第114林班崩塌，堵塞泰崗溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 27 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.monitoring.with_duration",
+    "section": "後續",
+    "sentence": "自形成迄今 持續至今，現況列為監測中"
+   }
   ]
  },
  {
@@ -334,6 +559,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於山陀兒颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發士文村崩塌，堵塞率芒溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 3.7 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 9 日 後潰決"
+   }
   ]
  },
  {
@@ -364,6 +611,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發關山第13林班與山坡地交界崩塌，堵塞新武呂溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 8.6 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 243 日（約 8.0 個月） 後潰決"
+   }
   ]
  },
  {
@@ -394,6 +663,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發台東第27林班崩塌，堵塞大南溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 170 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 251 日（約 8.2 個月） 後潰決"
+   }
   ]
  },
  {
@@ -424,6 +715,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發玉里第27林班崩塌，堵塞豐坪溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 7.5 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 633 日（約 1.7 年） 後潰決"
+   }
   ]
  },
  {
@@ -454,6 +767,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於110年0621豪雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發大溪第35林班崩塌，堵塞大曼溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 1.5 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -484,6 +819,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於米塔颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發八仙山第132林班崩塌，堵塞烏牛欄溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -514,6 +871,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發太平山第30林班崩塌，堵塞石頭溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -544,6 +923,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發竹豐村崩塌，堵塞東埔蚋溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 1 日 後潰決"
+   }
   ]
  },
  {
@@ -574,6 +975,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發霞雲里崩塌，堵塞霞雲溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 0.27 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -604,6 +1027,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與高雄美濃地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發林田山第112林班崩塌，堵塞萬里溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 0.25 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 133 日（約 4.4 個月） 後潰決"
+   }
   ]
  },
  {
@@ -634,6 +1079,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發中橫公路臺8線176.3k、立霧溪第20林班崩塌，堵塞立霧溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 175 日（約 5.7 個月） 後潰決"
+   }
   ]
  },
  {
@@ -664,6 +1131,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發延平第35林班崩塌，堵塞鹿野溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -694,6 +1183,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於尼伯特颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發尚德村崩塌，堵塞泰源南溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -724,6 +1235,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於蘇迪勒颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發六十四、七十七林班地交界處崩塌，堵塞塔次基里溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 11 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 40 日（約 6 週） 後潰決"
+   }
   ]
  },
  {
@@ -753,6 +1286,23 @@ window.BARRIER_LAKES = [
    "trigger.typhoon.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於蘇迪勒颱風影響期間"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 0.60 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -783,6 +1333,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發丹大第17林班崩塌，堵塞郡大溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 13 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -813,6 +1385,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發巒大第205林班崩塌，堵塞哈伊拉羅溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 6 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 93 日（約 3.1 個月） 後潰決"
+   }
   ]
  },
  {
@@ -843,6 +1437,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發立霧溪第54林班崩塌，堵塞瓦黑爾溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 0.95 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 135 日（約 4.4 個月） 後潰決"
+   }
   ]
  },
  {
@@ -873,6 +1489,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發鹿野溪上游北絲鬮溪(延平第35林班)崩塌，堵塞鹿野溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -903,6 +1541,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與2013年0602地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發鳳凰谷瀑谷上游300公尺崩塌，堵塞南清水溝溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 1 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -932,6 +1592,23 @@ window.BARRIER_LAKES = [
    "trigger.quake.unknown_time",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與2013年0602地震相關"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -962,6 +1639,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於2012年0610豪雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發頭坑溪，隆華橋上游700公尺崩塌，堵塞和社溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 6 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -992,6 +1691,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於2012年0610豪雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發桃源里崩塌，堵塞唐布那斯溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1021,6 +1742,23 @@ window.BARRIER_LAKES = [
    "trigger.rain.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於2012年0610豪雨期間"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 約 1 小時 後潰決"
+   }
   ]
  },
  {
@@ -1051,6 +1789,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於泰利颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發達卡努瓦里崩塌，堵塞旗山溪一溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1080,6 +1840,23 @@ window.BARRIER_LAKES = [
    "trigger.slide_only.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.slide_only.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖係由桃山村邊坡崩塌所形成"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 1 日 後潰決"
+   }
   ]
  },
  {
@@ -1110,6 +1887,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發勤和里崩塌，堵塞唐布那斯溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 70 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1140,6 +1939,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發小林村; (旗山第21林班)崩塌，堵塞旗山溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 1,000 萬立方公尺之大型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 約 1.5 小時 後潰決"
+   }
   ]
  },
  {
@@ -1170,6 +1991,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發包盛社、大武第9林班崩塌，堵塞太麻里溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 533 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 433 日（約 1.2 年） 後潰決"
+   }
   ]
  },
  {
@@ -1200,6 +2043,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發那瑪夏民生村上游七公里處;(那瑪夏鄉；旗山第16林班)崩塌，堵塞旗山溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 157 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 730 日（約 2.0 年） 後潰決"
+   }
   ]
  },
  {
@@ -1230,6 +2095,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發潮州第20林班崩塌，堵塞士文溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 122 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 437 日（約 1.2 年） 後潰決"
+   }
   ]
  },
  {
@@ -1260,6 +2147,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.stable.with_duration"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發梅蘭村；荖濃溪第114林班崩塌，堵塞拉克斯溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 74 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.stable.with_duration",
+    "section": "後續",
+    "sentence": "自形成迄今 持續至今，現況為存在且已穩定"
+   }
   ]
  },
  {
@@ -1290,6 +2199,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.slide_only.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖係由太魯閣梅園竹村步道2.9公里處溪谷; 立霧溪第46林班邊坡崩塌所形成"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發太魯閣梅園竹村步道2.9公里處溪谷; 立霧溪第46林班崩塌，堵塞陶賽溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 20 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 2 日 後潰決"
+   }
   ]
  },
  {
@@ -1320,6 +2251,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發木瓜山第19林班崩塌，堵塞木瓜溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 11 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 193 日（約 6.3 個月） 後潰決"
+   }
   ]
  },
  {
@@ -1350,6 +2303,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發大社村崩塌，堵塞口社溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 4 日 後潰決"
+   }
   ]
  },
  {
@@ -1380,6 +2355,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發牡丹村、恆春第16林班崩塌，堵塞汝仍溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1410,6 +2407,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發神木村崩塌，堵塞和社溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 不足 24 小時 後潰決"
+   }
   ]
  },
  {
@@ -1440,6 +2459,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發神木村崩塌，堵塞和社溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1469,6 +2510,23 @@ window.BARRIER_LAKES = [
    "trigger.typhoon.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1499,6 +2557,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發梅山口；旗山第77林班崩塌，堵塞荖濃溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 3 日 後潰決"
+   }
   ]
  },
  {
@@ -1528,6 +2608,23 @@ window.BARRIER_LAKES = [
    "trigger.rain.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1558,6 +2655,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發玉山第41林班崩塌，堵塞荖濃溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 3 日 後潰決"
+   }
   ]
  },
  {
@@ -1588,6 +2707,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發拉芙蘭里崩塌，堵塞荖濃溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1618,6 +2759,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發茂林里崩塌，堵塞荖濃溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 11 日 後潰決"
+   }
   ]
  },
  {
@@ -1648,6 +2811,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發神池營地; 荖濃溪第97林班崩塌，堵塞荖濃溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1678,6 +2863,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發復興部落崩塌，堵塞荖濃溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1708,6 +2915,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於莫拉克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發平坑產業道路鎮安宮崩塌，堵塞後堀溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 9 日 後潰決"
+   }
   ]
  },
  {
@@ -1737,6 +2966,23 @@ window.BARRIER_LAKES = [
    "trigger.slide_only.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.slide_only.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖係由巒大第180林班邊坡崩塌所形成"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 200 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1767,6 +3013,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.typhoon.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於辛樂克颱風影響期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發精英村崩塌，堵塞塔羅灣溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 1 日 後潰決"
+   }
   ]
  },
  {
@@ -1797,6 +3065,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與碧利斯颱風、0716地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發關山第3林班崩塌，堵塞龍泉溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 100 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 1,468 日（約 4.0 年） 後潰決"
+   }
   ]
  },
  {
@@ -1827,6 +3117,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.unknown.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成誘因於清冊中未記載"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發關山第28林班崩塌，堵塞大崙溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 8 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 1,424 日（約 3.9 年） 後潰決"
+   }
   ]
  },
  {
@@ -1857,6 +3169,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發台東第33林班崩塌，堵塞知本溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 39.8 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1887,6 +3221,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發霧鹿天龍橋上游崩塌，堵塞新武呂溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 45 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -1916,6 +3272,23 @@ window.BARRIER_LAKES = [
    "trigger.quake.unknown_time",
    "formation.volume.with_scale",
    "fate.breached.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 4,600 萬立方公尺之大型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.text",
+    "section": "後續",
+    "sentence": "存續 1,746 日（約 4.8 年） 後潰決"
+   }
   ]
  },
  {
@@ -1945,6 +3318,23 @@ window.BARRIER_LAKES = [
    "trigger.quake.unknown_time",
    "formation.volume.with_scale",
    "fate.stable.with_duration"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 108.97 萬立方公尺之中型堰塞湖"
+   },
+   {
+    "rule": "fate.stable.with_duration",
+    "section": "後續",
+    "sentence": "自形成迄今 持續至今，現況為存在且已穩定"
+   }
   ]
  },
  {
@@ -1974,6 +3364,23 @@ window.BARRIER_LAKES = [
    "trigger.quake.unknown_time",
    "formation.volume.with_scale",
    "fate.stable.with_duration"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 68 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.stable.with_duration",
+    "section": "後續",
+    "sentence": "自形成迄今 持續至今，現況為存在且已穩定"
+   }
   ]
  },
  {
@@ -2004,6 +3411,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.stable.with_duration"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發水漾森林，阿里山第52林班崩塌，堵塞石鼓盤溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 23.1 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.stable.with_duration",
+    "section": "後續",
+    "sentence": "自形成迄今 持續至今，現況為存在且已穩定"
+   }
   ]
  },
  {
@@ -2034,6 +3463,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發大安溪支流雪山坑溪，達觀村雪山花園農場處(大安溪第113林班)崩塌，堵塞雪山坑溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 16 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2064,6 +3515,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發大安溪中游，位於卓蘭鎮內灣與上新交界處，斷層隆起阻塞河道崩塌，堵塞大安溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2094,6 +3567,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發石盤溪上游線浸山區(台大實驗林第10林班內)崩塌，堵塞石盤溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2123,6 +3618,23 @@ window.BARRIER_LAKES = [
    "trigger.quake.unknown_time",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2153,6 +3665,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發大甲溪支流，位於東勢鎮興隆橋下游50公尺，接近石岡水庫，斷層隆起阻塞河道崩塌，堵塞沙漣河"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2183,6 +3717,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.no_volume.text",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.quake.unknown_time",
+    "section": "誘因",
+    "sentence": "本堰塞湖之形成與九二一地震相關"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發龍寶橋上游200公尺崩塌，堵塞頭汴坑溪"
+   },
+   {
+    "rule": "formation.no_volume.text",
+    "section": "形成結果",
+    "sentence": "蓄水量未登載或規模極小"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2213,6 +3769,28 @@ window.BARRIER_LAKES = [
    "slide.blockage.text",
    "formation.volume.with_scale",
    "fate.gone_unknown.text"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於連日降雨期間"
+   },
+   {
+    "rule": "slide.blockage.text",
+    "section": "崩塌與堵塞",
+    "sentence": "觸發丹大第40林班崩塌，堵塞丹大溪"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 2 萬立方公尺之小型堰塞湖"
+   },
+   {
+    "rule": "fate.gone_unknown.text",
+    "section": "後續",
+    "sentence": "現況已消失，潰決時間與原因未載"
+   }
   ]
  },
  {
@@ -2242,6 +3820,23 @@ window.BARRIER_LAKES = [
    "trigger.rain.text",
    "formation.volume.with_scale",
    "fate.breached.full"
+  ],
+  "rulesExplained": [
+   {
+    "rule": "trigger.rain.text",
+    "section": "誘因",
+    "sentence": "本堰塞湖形成於0815豪雨期間"
+   },
+   {
+    "rule": "formation.volume.with_scale",
+    "section": "形成結果",
+    "sentence": "形成蓄水量約 4,000 萬立方公尺之大型堰塞湖"
+   },
+   {
+    "rule": "fate.breached.full",
+    "section": "後續",
+    "sentence": "於 1979/08/24 因豪雨沖刷潰決，存續 9 日"
+   }
   ]
  }
 ];

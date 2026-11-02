@@ -274,6 +274,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .badge-risk.is-low{background:var(--jade-dim);color:var(--snow)}
 .badge-risk.is-none{border:1px solid var(--ochre);color:var(--ochre)}
 .badge-risk.is-na{border:1px solid var(--line-strong);color:var(--moss)}
+.badge-risk.is-duty{border:1px solid var(--jade);color:var(--jade)}
 .detail-head h1{
   font-family:var(--wide);font-variation-settings:'wdth' 108,'wght' 700;
   font-size:clamp(calc(23px*var(--fs-h)),calc(3vw*var(--fs-h)),calc(36px*var(--fs-h)));color:var(--snow);line-height:1.2;
@@ -483,6 +484,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .pill.risk-pill.is-low{background:var(--jade-dim);color:var(--snow);border-color:var(--jade-dim)}
 .pill.risk-pill.is-none{border-color:var(--ochre);color:var(--ochre)}
 .pill.risk-pill.is-na{border-color:var(--line-strong);color:var(--moss)}
+.pill.risk-pill.is-duty{border-color:var(--jade);color:var(--jade)}
 
 /* ── 成因敘述（判定依據卡的展開區塊）── */
 .narr-text{font-size:calc(16px*var(--fs));line-height:1.95;color:var(--fog);max-width:60ch}
@@ -502,6 +504,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   padding-left:14px;position:relative;
 }
 .narr-rules li::before{content:"·";position:absolute;left:2px;color:var(--jade-dim)}
+/* 命中規則：類別＋產生的句子是主角，規則代號縮小放後面供稽核 */
+.narr-rule-list li{font-family:inherit;color:var(--fog);line-height:1.7}
+.narr-rule-list li b{color:var(--jade);font-weight:600;margin-right:8px}
+.narr-rule-list li code{display:block;font-family:var(--mono);font-size:calc(11.5px*var(--fs));color:var(--moss);overflow-wrap:anywhere}
 
 /* ── 按鈕 ── */
 .btn{
@@ -763,6 +769,12 @@ body.mm-open{overflow:hidden}
   border-left:3px solid var(--ochre);background:rgba(var(--ochre-rgb),.06);font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.8;
 }
 .ev-caution .at{color:var(--ochre)}
+/* 高優先逾時未查證：提醒值班人員處理或記錄，不改研判 */
+.ev-overdue{
+  margin:16px clamp(16px,2.2vw,26px) 0;padding:10px 14px;
+  border-left:3px solid var(--clay);background:rgba(var(--clay-rgb),.08);font-size:calc(14.5px*var(--fs));color:var(--fog);line-height:1.8;
+}
+.ev-overdue .at{color:var(--clay)}
 
 /* 事後查證：與系統研判區隔，用虛線框與霧白 */
 .ev-hindsight{
@@ -839,6 +851,8 @@ body.mm-open{overflow:hidden}
 .tl-st{color:var(--moss);font-size:calc(12.5px*var(--fs))}
 .is-hit .tl-st{color:var(--jade)}
 .is-cloud .tl-st,.is-miss .tl-st{color:var(--moss)}
+.tl-i.is-other{opacity:.6}
+.k-sar.is-other .tl-mark::after{border-color:var(--fog)}
 .is-future .tl-date,.is-future .tl-sat{color:var(--fog)}
 .tl-i.is-recheck{background:rgba(var(--jade-rgb),.1)}
 .tl-i.is-recheck .tl-st{color:var(--jade);font-weight:600}
@@ -1155,6 +1169,7 @@ body.mm-open{overflow:hidden}
 .todo-empty{padding:10px 12px;font-size:calc(14.5px*var(--fs));color:var(--moss)}
 .todo-pending{padding:7px 12px;font-size:calc(14px*var(--fs));color:var(--ochre);border-bottom:1px solid var(--line);background:rgba(var(--ochre-rgb),.06)}
 .q-tag.is-waiting{border-color:var(--clay);color:var(--clay)}
+.q-tag.is-overdue{background:var(--clay);color:var(--abyss);font-weight:600}
 @media (max-width:720px){.todo-item{grid-template-columns:26px minmax(0,1fr)}.todo-item .q-tag{grid-column:2;justify-self:start}}
 
 /* 事件卡：座標操作 */

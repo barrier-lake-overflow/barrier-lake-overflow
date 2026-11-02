@@ -85,6 +85,7 @@ def track(passes: list) -> list:
                 recheck_time=_t(p.get("recheckTime")),
                 cand=cand,
                 evidence_image=p.get("evidenceImage"),
+                orbit=p.get("orbitLabel"),
             )
             match = None
             for ev in events:
@@ -153,7 +154,7 @@ def matching_hindsight(scenario: dict, lon_lat: tuple) -> list:
 def matching_optical(scenario: dict, lon_lat: tuple, until: Optional[datetime]) -> list:
     """
     情境檔 optical.checks（pipeline/daily/optical.py）中位置最近、且在 TRACK_RADIUS_M 內的事件，
-    取 until 以前拍的影像（None＝不限），新的在前。只供展示，不進研判。
+    取 until 以前拍的影像（None＝不限），新的在前。研判只拿它來壓低優先（triage.py）。
 
     >>> sc = {"optical": {"checks": [{"lonLat": [121.0, 23.7], "results": [
     ...     {"time": "2026-10-29T10:30+08:00", "verdict": "water"}, {"time": "2026-10-19T10:30+08:00", "verdict": "cloud"}]}]}}
@@ -266,6 +267,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
 
     events = track(passes)
     analyzed = {_t(p["time"]) for p, _ in passes}
+    analyzed_orbits = [(_t(p["time"]), p.get("orbitLabel")) for p, _ in passes]
     rechecks: dict = {}
     for p, _ in passes:
         if p.get("recheckTime"):
@@ -292,6 +294,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         is_last = i + 1 == len(times)
         # 光學影像：到下一期 SAR 之前拍到的都算這個時點看得到（最新一期不限）
         optical_until = None if is_last else times[i + 1]
+        live_now = is_last and scenario.get("kind") == "live"
         # 下一期：各軌依自己的週期推；最新一期已查過卻沒有影像的過境跳過（衛星沒拍）
         floor = checked - timedelta(days=INGEST_LAG_DAYS) if is_last and checked else None
         next_pass, next_orbit = next_sar_pass(t, scenario.get("orbits") or [], revisit, floor)
@@ -300,6 +303,7 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
         ctx_base = dict(
             as_of=t,
             latest_analyzed_pass=latest_analyzed,
+            analyzed=[(a, o) for a, o in analyzed_orbits if a <= t],
             next_pass=next_pass,
             rain_available=station_rain or bool(rain),
             trigger_label=scenario.get("trigger", {}).get("label", ""),
@@ -311,11 +315,16 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
             if not dets:
                 continue
             latest = dets[-1]
+            # 下一期複核只看事件被看到過的軌道：另一個軌道的陰影不同，複核不了
+            ev_orbits = [o for o in scenario.get("orbits") or [] if T.same_orbit(o["label"], dets)]
+            ev_next = (next_sar_pass(t, ev_orbits, revisit, floor) if ev_orbits else (next_pass, next_orbit))
             ctx = T.Context(
-                **ctx_base,
+                **{**ctx_base, "next_pass": ev_next[0]},
                 history=nearby_history(lakes, latest.lon_lat, t, scenario.get("referenceLakeId")),
                 external=matching_external(scenario, latest.lon_lat, t),
                 exposure=scenario.get("exposure"),
+                # 研判只用 t 以前拍的光學；即時監看的最新一期就是現在，到今天為止拍的都能用
+                optical=matching_optical(scenario, latest.lon_lat, None if live_now else t),
             )
             a = T.assess(ev["id"], dets, ctx)
             card = {
@@ -342,9 +351,15 @@ def build_scenario(scenario: dict, derived: Path = DERIVED,
                                 if d.recheck_state(t) != "pending" or "IoU" not in r],
                 } for d in dets],
                 **a.to_dict(),
+                # 每一期雷達對這個事件的意義（跟研判同一套規則），事件卡時間軸照實顯示
+                "radar": T.radar_history(dets, ctx),
+                # 能複核這個事件的軌道（None＝不分軌道）；時間軸與「下一期複核」只標這些軌道的過境
+                "recheckOrbits": sorted({o["label"] for o in ev_orbits}) or None,
+                "nextRecheck": T.tw_date(ev_next[0]) if ev_next[0] else None,
+                "nextRecheckOrbit": ev_next[1],
                 # 事後查證：回放當下系統不知道，只供展示，不影響上面的研判
                 "hindsight": matching_hindsight(scenario, latest.lon_lat),
-                # 光學影像自動判讀（監看窗格）：只供參考，不影響上面的研判
+                # 光學影像自動判讀（監看窗格）：研判只用到 t 為止的，這裡列到下一期為止
                 "optical": matching_optical(scenario, latest.lon_lat, optical_until),
             }
             cards.append(card)

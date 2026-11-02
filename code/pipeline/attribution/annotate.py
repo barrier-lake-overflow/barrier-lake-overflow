@@ -105,6 +105,7 @@ def main() -> None:
 
         row["narrative"] = result.text
         row["rulesFired"] = result.rules_fired
+        row["rulesExplained"] = result.explained
         if result.text:
             annotated += 1
         if result.unresolved:

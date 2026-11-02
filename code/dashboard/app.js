@@ -24,8 +24,18 @@ const CAUSE_TEXT = { quake: '地震', typhoon: '颱風', rain: '降雨', slide: 
 
 const fmtProb = p => (p == null ? '—' : `${(p * 100).toFixed(0)}%`);
 
+/* 在值班監看窗格內的湖（events.js 即時監看情境對到這筆清冊）：最新一期的事件，已依優先排好 */
+function dutyStatus(lake) {
+  const sc = (window.EVENT_SCENARIOS || []).find(s =>
+    s.kind === 'live' && s.active !== false && s.reference && s.reference.lakeId === lake.id);
+  if (!sc || !sc.snapshots.length) return null;
+  const last = sc.snapshots[sc.snapshots.length - 1];
+  return { scen: sc, label: last.label, events: last.events, top: last.events[0] || null };
+}
+
 /* 風險模型不知道湖還在不在，用清冊現況修正：
      gone   → 不適用
+     值班監看中 → 不用模型結果，以值班研判為準（模型正樣本少，兩頁說法相反時以值班為準）
      stable → 模型判高時下修一級（已形成穩定溢流道，模型未納入）
      watch  → 直接用模型結果 */
 function riskView(lake) {
@@ -35,6 +45,16 @@ function riskView(lake) {
       level: 'na', text: '不適用',
       basis: '清冊登載為「已消失」，壩體已不存在；風險模型未區分現況存續，對已消失個案不具意義',
       instruction: '壩體已消失，無需採取行動。如發現清冊現況與實際不符，請通報更新清冊資料。',
+    };
+  }
+  const duty = dutyStatus(lake);
+  if (duty) {
+    const top = duty.top;
+    return {
+      level: 'duty', text: '值班監看中',
+      basis: '此湖在值班監看窗格內，研判以值班頁的事件佇列為準；風險模型是批次統計（正樣本少），不用於監看中的湖',
+      instruction: (top ? `值班頁目前 ${duty.events.length} 件事件，最高為「${top.priorityText}」（${duty.label}）` :
+        `值班頁目前沒有待處理事件（${duty.label}）`) + '；請到值班頁查看事件卡與建議任務。',
     };
   }
   if (!risk) {
@@ -66,9 +86,9 @@ function riskView(lake) {
   };
 }
 
-// 監測中且模型判高：KPI「高風險」與地圖上的高風險環
+// 監測中且模型判高：KPI「高風險」與地圖上的高風險環（值班監看中的湖以值班為準，不算）
 function isHighRiskWatch(lake) {
-  return !!(lake && lake.statusKey === 'watch' && lake.risk && lake.risk.risk_level === '高');
+  return !!(lake && lake.statusKey === 'watch' && lake.risk && lake.risk.risk_level === '高' && !dutyStatus(lake));
 }
 
 function modelLimitation() {
@@ -112,6 +132,7 @@ const state = {
 /* 供搜尋/篩選使用的風險分類，跟 riskBadgeInfo() 用同一套邏輯，
    避免兩處各自判斷造成不一致。 */
 function riskCategory(lake) {
+  if (lake.statusKey !== 'gone' && dutyStatus(lake)) return 'duty';
   if (!lake.risk) return 'none';
   return lake.risk.risk_level === '高' ? 'high' : 'low';
 }
@@ -189,6 +210,7 @@ function bindFullscreenToggle(wrap) {
 
 function hoverCardRiskText(lake) {
   if (lake.statusKey === 'gone') return '不適用';
+  if (dutyStatus(lake)) return '值班監看中';
   if (!lake.risk) return '尚無評估';
   return `${lake.risk.risk_level}風險 ${(lake.risk.risk_prob * 100).toFixed(0)}%`;
 }
@@ -430,7 +452,7 @@ function renderReplayNote(lake) {
   if (!scen) { box.hidden = true; return; }
   const snaps = scen.snapshots;
   const period = snaps.length ? `${snaps[0].label.split(' ')[0]}～${snaps[snaps.length - 1].label.split(' ')[0]}` : '';
-  const riskDate = lake.risk ? fmtDateOnly(lake.risk.date) : null;
+  const riskDate = lake.risk && !dutyStatus(lake) ? fmtDateOnly(lake.risk.date) : null;
   box.hidden = false;
   box.innerHTML = `
     <b>此湖有事件回放：${scen.name}（${period}）</b>
@@ -456,6 +478,7 @@ function volumeScaleText(wanM3) {
 
 function riskBadgeInfo(lake) {
   if (lake.statusKey === 'gone') return { text: '不適用', cls: 'is-na' };
+  if (dutyStatus(lake)) return { text: '值班監看中', cls: 'is-duty' };
   if (!lake.risk) return { text: '尚無評估', cls: 'is-none' };
   return lake.risk.risk_level === '高'
     ? { text: '高風險', cls: 'is-high' }
@@ -494,6 +517,16 @@ function renderDecisionSummary(lake) {
       ${sub ? `<div class="sub">${sub}</div>` : ''}
     </div>`;
 
+  const duty = rv.level === 'duty' ? dutyStatus(lake) : null;
+  if (duty) {
+    box.innerHTML = [
+      cell('值班研判', duty.top ? duty.top.priorityText : '無待處理', `${duty.events.length} 件事件 · 見值班頁`, duty.top && duty.top.priority === 'high'),
+      cell('最新一期', duty.label, '衛星過境（台灣時間）'),
+      cell('存續狀態', STATUS_TEXT[lake.statusKey], '清冊登載'),
+      cell('風險模型', '不採用', '監看中以值班研判為準'),
+    ].join('');
+    return;
+  }
   box.innerHTML = [
     cell('風險機率', lake.risk ? fmtProb(lake.risk.risk_prob) : '尚無評估', null, rv.level === 'high'),
     cell('現況修正後', rv.text, lake.risk ? `模型原判 ${lake.risk.risk_level}` : null, rv.level === 'high'),
@@ -514,6 +547,20 @@ function conclusionHeadline(lake) {
 function renderConclusion(lake) {
   const box = $('#conclusion');
   if (!box) return;
+
+  const duty = riskView(lake).level === 'duty' ? dutyStatus(lake) : null;
+  if (duty) {
+    box.innerHTML = `
+      <div class="line1">值班監看中：${duty.top ? `最新一期 ${duty.events.length} 件事件，最高為「${duty.top.priorityText}」` : '最新一期沒有待處理事件'}。</div>
+      <div class="line2">研判以值班頁為準。<a href="#duty" class="duty-open">打開值班頁的事件卡</a></div>
+      <div class="line3">風險模型是批次統計（正樣本少、未留出驗證），不用於監看中的湖，避免兩頁說法相反。</div>`;
+    box.querySelector('.duty-open').addEventListener('click', e => {
+      if (typeof Duty === 'undefined') return;
+      e.preventDefault();
+      Duty.openScenario(duty.scen.id, null, duty.top && duty.top.id);
+    });
+    return;
+  }
 
   const drivers = topDrivers(lake.risk);
 
@@ -549,10 +596,13 @@ function renderEvidenceCard(lake) {
   }
 
   const drivers = topDrivers(lake.risk);
-  const rules = lake.rulesFired || [];
+  // 每條命中規則產生的句子（attribution/compose.py）；舊資料沒有就只列代號
+  const rules = lake.rulesExplained ||
+    (lake.rulesFired || []).map(r => ({ rule: r, section: '', sentence: '' }));
 
   box.innerHTML = `
     <div class="et">風險模型依據</div>
+    ${dutyStatus(lake) && lake.statusKey !== 'gone' ? '<p class="limitation-note">此湖在值班監看中，下列模型結果只是背景，不代表目前研判；目前研判見值班頁。</p>' : ''}
     <dl class="evidence-row">
       <dt>風險機率</dt><dd>${fmtProb(lake.risk.risk_prob)}</dd>
       <dt>原始模型分級</dt><dd>${lake.risk.risk_level}風險</dd>
@@ -568,7 +618,11 @@ function renderEvidenceCard(lake) {
       <details class="narr-rules" style="margin-top:12px">
         <summary>成因敘述與命中規則${rules.length ? `（${rules.length} 條）` : ''}</summary>
         <p class="narr-text" style="margin:8px 0 0">${lake.narrative}</p>
-        ${rules.length ? `<ul>${rules.map(r => `<li>${r}</li>`).join('')}</ul>` : ''}
+        ${rules.length ? `
+          <span class="label" style="display:block;margin:10px 0 4px">每一句由哪條規則產生（規則與句型見 templates.yaml，不用 AI 生成）</span>
+          <ul class="narr-rule-list">${rules.map(r => `
+            <li>${r.section ? `<b>${r.section}</b>` : ''}${r.sentence ? `<span>${r.sentence}</span>` : ''}
+              <code title="規則代號，對應 code/pipeline/attribution/templates.yaml">${r.rule}</code></li>`).join('')}</ul>` : ''}
       </details>` : ''}`;
 }
 

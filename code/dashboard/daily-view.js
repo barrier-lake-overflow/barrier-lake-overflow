@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════
    每日自動更新 · 狀態
    資料由 data/daily.js 提供（window.DAILY_STATUS），由 pipeline/daily/run.py 產生：
-   各步驟是否成功、目前監看的窗格、發布中的警戒、待人工確認的新聞候選。
+   各步驟是否成功、目前監看的窗格、發布中的警戒、對到地點的新聞候選（背景參考，不進研判）。
    一般畫面：頂端只寫資料更新時間與警戒則數，不寫執行細節。
    網管檢視（網址 ?admin，見 views.js）：頂端加上失敗步驟與即時監看影像新舊，點一下到「系統管理」分頁：
    系統狀態（執行步驟、各窗格最近一次的錯誤與白話說明）、執行紀錄、最近一次的完整輸出（data/syslog.js）。
@@ -61,12 +61,12 @@ const DailyView = (() => {
   }
 
   function news(list, total) {
-    if (!list.length) return '<p class="dim">沒有待確認的新聞候選。</p>';
+    if (!list.length) return '<p class="dim">沒有對到地點的新聞。</p>';
     return `<ul class="dn">${list.slice(0, 5).map(n => `
       <li><span class="ro">${esc(KIND_TEXT[n.kind] || n.kind)}</span>
         <a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>
         <span class="dim mono">${esc(n.time.slice(5, 16).replace('T', ' '))} · 對到：${n.matches.map(m => esc(m.name)).join('、')}</span></li>`).join('')}</ul>
-      <p class="dim">共 ${total} 筆對到地點、待確認。確認後才會進研判（在本機執行 <code>python -m pipeline.daily.news list</code> 查看與確認）。</p>`;
+      <p class="dim">共 ${total} 筆對到地點。新聞只當背景參考，不會進入研判；要當作證據，請打開原文確認後，記在事件卡的人工查證。</p>`;
   }
 
   /* 網頁開著時資料不會自己換：每 10 分鐘（以及切回這個分頁時）看一下 daily.js 有沒有更新，
@@ -218,7 +218,7 @@ const DailyView = (() => {
   function newsBox() {
     const nb = $('#dutyNews');
     if (!nb) return;
-    nb.innerHTML = `<h3>新聞候選 ${helpQ('news', '新聞候選')} <span class="dim">對到監看窗格或清冊地點、待人工確認</span></h3>${news(D.newsCandidates, D.newsCandidateCount)}`;
+    nb.innerHTML = `<h3>新聞候選 ${helpQ('news', '新聞候選')} <span class="dim">對到監看窗格或清冊地點 · 背景參考，不進研判</span></h3>${news(D.newsCandidates, D.newsCandidateCount)}`;
     nb.hidden = $('#duty').classList.contains('is-drill');
   }
 

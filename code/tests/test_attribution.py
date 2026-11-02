@@ -181,6 +181,15 @@ class TestNarrative(unittest.TestCase):
                 self.assertNotIn("None", text)
                 self.assertNotIn("{", text)
 
+    def test_explained_matches_sentences(self):
+        """每條規則對到的句子，依序就是敘述裡的句子，且都有中文類別。"""
+        for rec in (CAOLING, MATAIAN, YANZIKOU, JIUFEN):
+            n = self.render(rec)
+            with self.subTest(rec.name):
+                self.assertEqual([e["sentence"] for e in n.explained], n.sentences)
+                self.assertTrue(all(e["rule"] in n.rules_fired for e in n.explained))
+                self.assertTrue(all("." not in e["section"] for e in n.explained))
+
     def test_caoling_short_lived(self):
         """草嶺：2 日潰決、溢流沖刷、大型。"""
         text = self.render(CAOLING).text

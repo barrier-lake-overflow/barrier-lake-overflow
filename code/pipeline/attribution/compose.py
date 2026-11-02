@@ -33,6 +33,8 @@ class Narrative:
     sentences: list = field(default_factory=list)   # 依語序的各段片語
     rules_fired: list = field(default_factory=list)
     unresolved: list = field(default_factory=list)  # 缺槽而略過的規則
+    # 每條規則產生的句子，依語序：[{"rule", "section"（中文類別）, "sentence"}]；略過的規則不列
+    explained: list = field(default_factory=list)
 
     def __str__(self) -> str:
         return self.text
@@ -113,11 +115,14 @@ class Composer:
             if sentence is None:
                 unresolved.append(f"{rule}（槽位缺值）")
                 continue
-            by_section.setdefault(section, []).append(sentence)
+            by_section.setdefault(section, []).append((rule, sentence))
 
-        sentences = []
+        names = self.tpl.get("section_names", {})
+        sentences, explained = [], []
         for sec in self.order:
-            sentences.extend(by_section.get(sec, []))
+            for rule, sentence in by_section.get(sec, []):
+                sentences.append(sentence)
+                explained.append({"rule": rule, "section": names.get(sec, sec), "sentence": sentence})
 
         text = (joiner.join(sentences) + end) if sentences else ""
 
@@ -126,6 +131,7 @@ class Composer:
             sentences=sentences,
             rules_fired=list(attr.rules_fired),
             unresolved=unresolved,
+            explained=explained,
         )
 
 

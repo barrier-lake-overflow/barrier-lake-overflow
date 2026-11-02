@@ -126,6 +126,14 @@ const Duty = (() => {
     const s = sc.snapshots.find(x => x.events.some(e => e.id === id));
     return s ? new Date(s.asOf).getTime() : null;
   }
+  /* 高優先、沒有查證紀錄、出現超過 OVERDUE_DAYS 天：回傳天數，否則 null */
+  const OVERDUE_DAYS = 3;
+  function overdueDays(ev) {
+    if (ev.priority !== 'high' || ev.human) return null;
+    const t0 = firstSeenAt(scen(), ev.id);
+    const d = t0 == null ? 0 : Math.floor((nowFor() - t0) / DAY);
+    return d >= OVERDUE_DAYS ? d : null;
+  }
 
   /* 查證紀錄只在記錄當下及之後的時點生效，往前回放時看不到 */
   function verification(id) {
@@ -207,13 +215,13 @@ const Duty = (() => {
     // 高優先還沒人查證：標出已經等了多久
     if (ev.priority === 'high' && !ev.human) {
       const t0 = firstSeenAt(scen(), ev.id);
-      if (t0 != null) tags.push(`<span class="q-tag is-waiting" title="首次出現後還沒有人工查證紀錄">${waitingText(nowFor() - t0)}</span>`);
+      if (t0 != null) tags.push(`<span class="q-tag is-waiting${overdueDays(ev) ? ' is-overdue' : ''}" title="首次出現後還沒有人工查證紀錄">${waitingText(nowFor() - t0)}</span>`);
     }
     // 同一個結論的事後查證可能有好幾筆（例如 Sentinel-2、福衛八號），標籤只列一次
     [...new Set((ev.hindsight || []).map(h => h.verdict))].forEach(v => tags.push(
       `<span class="q-tag is-hindsight v-${esc(v)}">${v === 'false_positive' ? '事後：誤報' : '事後查證'}</span>`));
     const opt = (ev.optical || []).find(r => r.verdict !== 'cloud');
-    if (opt) tags.push(`<span class="q-tag is-optical v-${esc(opt.verdict)}" title="光學影像自動判讀，只供參考">光學 ${mdText(opt.time)}：${OPTICAL_TEXT[opt.verdict]}</span>`);
+    if (opt) tags.push(`<span class="q-tag is-optical v-${esc(opt.verdict)}" title="光學影像自動判讀：只會壓低研判，不會提高；要當證據請打開影像確認">光學 ${mdText(opt.time)}：${OPTICAL_TEXT[opt.verdict]}</span>`);
     const dist = ev.distanceFromReferenceM != null ? ` · 距清冊壩址 ${ev.distanceFromReferenceM.toLocaleString()} m` : '';
     return `
       <button class="q-item p-${ev.priority} ${ev.id === st.eventId ? 'is-active' : ''}" type="button" data-id="${ev.id}">
@@ -299,6 +307,7 @@ const Duty = (() => {
              hm: `${String(d.getUTCHours()).padStart(2, '0')}:${String(d.getUTCMinutes()).padStart(2, '0')}` };
   };
   const passMs = p => Date.parse(`${p.date}T${p.time || '12:00'}:00+08:00`);
+  const RADAR_CLS = { hit: 'is-hit', wet: 'is-hit', miss: 'is-miss', other: 'is-other' };
   const sensorKind = (kind, sensor) => kind === 'sar' ? 'sar' : sensor.startsWith('Landsat') ? 'landsat' : 's2';
   const dayDiff = (ms, ref) => twParts(ms).day - twParts(ref).day;
   // 即時監看最新一期從現在算；回放（和即時監看的舊時點）從該期影像時間算
@@ -315,7 +324,9 @@ const Duty = (() => {
     return (list || []).map(p => ({ ...p, ms: passMs(p), k: sensorKind(p.kind, p.sensor) }));
   }
   // 下一期複核：第一個還沒過的雷達過境（即時監看已過但還沒資料的「待更新」不算）
-  const nextRecheck = (fut, ref) => fut.find(p => p.kind === 'sar' && dayDiff(p.ms, ref) >= 0);
+  // 事件卡傳 ev：只算能複核這個事件的軌道（另一個軌道陰影不同，複核不了；events/build.py recheckOrbits）
+  const nextRecheck = (fut, ref, ev) => fut.find(p => p.kind === 'sar' && dayDiff(p.ms, ref) >= 0 &&
+    (!ev || !ev.recheckOrbits || ev.recheckOrbits.includes(p.orbit)));
 
   // 光學過境：直接開 Copernicus Browser，位置（選取的事件，沒有就窗格中心）、日期、真實色彩都帶好
   const COPERNICUS_DATASET = { s2: 'S2_L2A_CDAS', landsat: 'CDAS_L8_L9_LOTL1' };
@@ -347,17 +358,15 @@ const Duty = (() => {
 
   /* 事件卡的衛星時間軸：事件首次出現（最多往回 45 天）→ 今天／本期 → 未來約兩週 */
   function timelineBox(ev) {
-    const sc = scen(), s = snap(), ref = refMs(), live = !isDrill();
+    const sc = scen(), ref = refMs(), live = !isDrill();
     const first = sc.snapshots.find(x => x.label === ev.firstSeen);
     const start = Math.max(first ? Date.parse(first.asOf) : Date.parse(ev.lastSeenAt), ref - TIMELINE_DAYS * DAY);
     const items = [];
-    // 雷達：已分析的各期，這個事件有沒有被偵測到
-    sc.snapshots.forEach(x => {
-      const ms = Date.parse(x.asOf);
-      if (ms < start || ms > Date.parse(s.asOf)) return;
-      const det = ev.detections.find(d => d.passTime === x.label);
-      items.push({ ms, k: 'sar', past: true, cls: det ? 'is-hit' : 'is-miss', sensor: 'Sentinel-1',
-        status: (x.label === ev.firstSeen ? '首次出現 · ' : '') + (det ? `偵測到 ${det.areaHectare} 公頃` : '未偵測到') });
+    // 雷達：已分析的各期對這個事件的意義，研判端（events/triage.py radar_history）算好，這裡照實顯示
+    (ev.radar || []).forEach(r => {
+      const ms = Date.parse(r.time);
+      if (ms < start) return;
+      items.push({ ms, k: 'sar', past: true, cls: RADAR_CLS[r.status], sensor: 'Sentinel-1', orbit: r.orbit, status: r.text });
     });
     // 光學：已經拍到的
     if (live) {
@@ -377,7 +386,7 @@ const Duty = (() => {
     }
     // 未來：預估過境
     const fut = futurePasses();
-    const rc = nextRecheck(fut, ref);
+    const rc = nextRecheck(fut, ref, ev);
     fut.forEach(p => {
       const late = p.ms <= ref;   // 即時監看：日期過了、資料還沒進來
       items.push({ ms: p.ms, k: p.k, past: false, late, sensor: p.sensor, orbit: p.orbit, recheck: p === rc, noTime: !p.time,
@@ -430,7 +439,7 @@ const Duty = (() => {
         ${lead ? `<p class="tl-lead">${lead}。</p>` : ''}
         <div class="tl-wrap"><ol class="tl" tabindex="0" aria-label="衛星時間軸，可左右拖曳或用方向鍵捲動">${html}</ol></div>
         <p class="tl-note"><i class="tl-key sar"></i>雷達 <i class="tl-key opt"></i>光學 <i class="tl-key est"></i>虛線＝預估 · 可左右拖曳 ·
-          ${live ? '光學判讀由系統自動計算，只供參考，要當證據請打開影像確認' : '演練回放：光學只標有沒有過境，不含雲量；預估只用該期以前的取像'} ·
+          ${live ? '光學判讀由系統自動計算，只會壓低研判、不會提高，要當證據請打開影像確認' :'演練回放：光學只標有沒有過境，不含雲量；預估只用該期以前的取像'} ·
           影像：Copernicus Sentinel、USGS Landsat</p>
       </div>`;
   }
@@ -586,9 +595,9 @@ const Duty = (() => {
   /* ── 事件卡 ── */
 
   // 四格摘要的第四格：下一期複核（首次出現改由時間軸的起點與逐期紀錄表呈現）
-  function recheckCell() {
-    const ref = refMs(), rc = nextRecheck(futurePasses(), ref);
-    if (!rc) return readCell('下一期複核', snap().nextPass, '雷達下一期（推估）');
+  function recheckCell(ev) {
+    const ref = refMs(), rc = nextRecheck(futurePasses(), ref, ev);
+    if (!rc) return readCell('下一期複核', ev.nextRecheck || snap().nextPass, '雷達下一期（推估）');
     const p = twParts(rc.ms);
     return readCell('下一期複核', `${p.m}/${p.d} ${p.hm}`, `${rc.orbit ? `${rc.orbit} · ` : ''}${whenText(rc.ms, ref)}`);
   }
@@ -627,7 +636,7 @@ const Duty = (() => {
             ${live ? '<button class="btn ghost" type="button" id="verifyClear">清除</button>' : ''}
             <button class="btn ghost" type="button" id="verifyExport">匯出全部查證紀錄</button>
           </div>
-          <p class="vf-note">紀錄只存在這台電腦的瀏覽器。系統的研判不會被覆寫，只在旁邊註記人工結果。${
+          <p class="vf-note">系統的研判不會被覆寫，只在旁邊註記人工結果。${
             isDrill() ? '演練模式的紀錄與即時監看分開存，匯出時也分開。' : ''}</p>
         </form>
       </div>`;
@@ -663,7 +672,7 @@ const Duty = (() => {
       </div>`).join('');
   }
 
-  /* 光學影像自動判讀（監看窗格）：每景事件範圍內的晴空比例與判為水的比例。只供參考，不改動研判。 */
+  /* 光學影像自動判讀（監看窗格）：每景事件範圍內的晴空比例與判為水的比例。只會壓低研判，不會提高（events/triage.py）。 */
   function opticalBox(ev) {
     const rs = (ev.optical || []).slice(0, 5);
     if (!rs.length) return '';
@@ -672,7 +681,7 @@ const Duty = (() => {
         <span>晴空 ${r.clearPct}%${r.waterPct != null ? `，其中 ${r.waterPct}% 判為水` : ''}</span></li>`).join('');
     return `
       <div class="ev-optical">
-        <span class="at">光學影像自動判讀 · 只供參考，不影響上方研判 ${helpQ('optical', '光學影像')}</span>
+        <span class="at">光學影像自動判讀 · 只會壓低上方研判，不會提高 ${helpQ('optical', '光學影像')}</span>
         <ul>${rows}</ul>
         <p>範圍是 SAR 最近一次偵測到的水體。山區陰影、薄雲、濕泥都可能誤判；要當作證據，請調閱影像確認後記在人工查證。</p>
       </div>`;
@@ -737,7 +746,7 @@ const Duty = (() => {
         ${readCell('建議行動', ev.action, ev.priorityText, `t-${ev.priority}`, PRIORITY_TIP[ev.priority])}
         ${readCell('規模（相對）', ev.scale, `SAR ${ev.areaHectare} 公頃，偏低，視為下限`)}
         ${readCell('研判信心', ev.confidence, ev.confidenceReasons[0], '', CONFIDENCE_TIP[ev.confidence])}
-        ${recheckCell()}
+        ${recheckCell(ev)}
       </div>
 
       ${timelineBox(ev)}
@@ -745,6 +754,9 @@ const Duty = (() => {
       ${ev.conflicts.length ? `<div class="ev-conflict"><span class="at">證據衝突</span>${ev.conflicts.map(c => `<p>${esc(c)}</p>`).join('')}</div>` : ''}
       ${(ev.cautions || []).length ? `<div class="ev-caution"><span class="at">提醒</span>${ev.cautions.map(c => `<p>${esc(c)}</p>`).join('')}</div>` : ''}
       ${opticalBox(ev)}
+
+      ${overdueDays(ev) ? `<div class="ev-overdue"><span class="at">逾時未查證</span>
+        <p>這件列高優先已 ${overdueDays(ev)} 天，還沒有人工查證紀錄。請依下方建議任務查證；已經處理過的，在下方「人工查證」記一筆（確認、持續觀察或排除），就不會再提醒。</p></div>` : ''}
 
       <div class="action-card">
         <span class="at">建議任務 ${helpQ('card-top', '事件卡各欄位')}</span>

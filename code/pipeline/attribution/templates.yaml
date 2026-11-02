@@ -18,6 +18,14 @@ order:
   - formation    # 形成結果
   - fate         # 後續（潰決／穩定／監測中）
 
+# ── 段落名稱：儀表板列「命中規則」時，每條規則前面標的類別 ──────
+section_names:
+  trigger: 誘因
+  rainfall: 降雨條件
+  slide: 崩塌與堵塞
+  formation: 形成結果
+  fate: 後續
+
 # ── 1. 誘因 ────────────────────────────────────────────
 trigger:
   quake:

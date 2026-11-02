@@ -33,9 +33,14 @@ def det(t, c, recheck=True):
     return T.Detection(pass_time=t, recheck_time=t + DAY6 if recheck else None, cand=c)
 
 
-def ctx(as_of, latest_pass=None, rain=False):
+def ctx(as_of, latest_pass=None, rain=False, analyzed=(), optical=()):
     return T.Context(as_of=as_of, latest_analyzed_pass=latest_pass or as_of,
-                     next_pass=as_of + DAY6, rain_available=rain)
+                     next_pass=as_of + DAY6, rain_available=rain,
+                     analyzed=list(analyzed), optical=list(optical))
+
+
+def opt(t, verdict):
+    return {"time": t.isoformat(), "sensor": "Sentinel-2B", "verdict": verdict, "clearPct": 100, "waterPct": None}
 
 
 class TestTriageRules(unittest.TestCase):
@@ -95,11 +100,71 @@ class TestTriageRules(unittest.TestCase):
         a = T.assess("E1", [det(T0, cand(landslide=False))], ctx(T0))
         self.assertEqual((a.priority, a.grade), ("low", "C"))
 
-    def test_confirmed_then_missing_is_high_lost(self):
+    def test_confirmed_then_one_miss_is_medium_missing(self):
         d1 = det(T0, cand(persistent=True))
         later_pass = T0 + 2 * DAY6
         a = T.assess("E1", [d1], ctx(later_pass, latest_pass=later_pass))
+        self.assertEqual((a.persistence, a.priority), ("missing", "medium"))
+        self.assertNotIn("立即查證是否潰決或排空", [t["label"] for t in a.tasks])
+
+    def test_confirmed_then_two_misses_is_high_lost(self):
+        d1 = det(T0, cand(persistent=True))
+        misses = [(T0 + 2 * DAY6, None), (T0 + 3 * DAY6, None)]
+        a = T.assess("E1", [d1], ctx(T0 + 3 * DAY6, analyzed=misses))
         self.assertEqual((a.persistence, a.priority), ("lost", "high"))
+
+    def test_other_orbit_does_not_count_as_miss(self):
+        # 降軌看得到、升軌看不到：陰影方向不同，不算湖不見了
+        d1 = T.Detection(T0, T0 + DAY6, cand(persistent=True), orbit="降軌 105")
+        d2 = T.Detection(T0 + DAY6, None, cand(), orbit="降軌 105")
+        asc = [(T0 + DAY6 + timedelta(days=2), "升軌 69"), (T0 + DAY6 + timedelta(days=4), "升軌 69")]
+        a = T.assess("E1", [d1, d2], ctx(asc[-1][0], analyzed=[(T0, "降軌 105"), (T0 + DAY6, "降軌 105")] + asc))
+        self.assertEqual((a.persistence, a.priority), ("confirmed", "high"))
+
+    def test_radar_history_matches_persistence_rules(self):
+        d1 = T.Detection(T0, T0 + DAY6, cand(persistent=True), orbit="降軌 105")
+        asc, d105b, d105c = T0 + timedelta(days=3), T0 + DAY6, T0 + 2 * DAY6
+        analyzed = [(T0 - DAY6, "降軌 105"), (T0, "降軌 105"), (asc, "升軌 69"), (d105b, "降軌 105"), (d105c, "降軌 105")]
+        c = ctx(d105c, analyzed=analyzed)
+        rows = T.radar_history([d1], c)
+        self.assertEqual([r["status"] for r in rows], ["hit", "other", "wet", "miss"])   # 首次出現以前不列
+        self.assertTrue(rows[0]["text"].startswith("首次出現"))
+        self.assertEqual(T.persistence([d1], c), "missing")   # 時間軸上的 miss 數跟研判一致
+
+    def test_persistent_recheck_counts_as_seen(self):
+        # 複核期同位置仍有水（只是沒成為候選），那一期不算漏看
+        d1 = det(T0, cand(persistent=True))
+        a = T.assess("E1", [d1], ctx(T0 + DAY6, analyzed=[(T0, None), (T0 + DAY6, None)]))
+        self.assertEqual(a.persistence, "confirmed")
+
+    def test_repeated_dry_optical_caps_at_medium(self):
+        d1 = det(T0, cand(persistent=True))
+        dry = [opt(T0 + timedelta(days=2), "no_water"), opt(T0 + timedelta(days=5), "no_water")]
+        a = T.assess("E1", [d1], ctx(T0 + DAY6, latest_pass=T0, optical=dry))
+        self.assertEqual((a.persistence, a.priority, a.confidence), ("confirmed", "medium", "低"))
+        self.assertIn("priority.capped.optical_dry", a.rules_fired)
+        self.assertIn("暫不派遣 UAV", [t["label"] for t in a.tasks])
+
+    def test_one_dry_or_any_wet_optical_does_not_cap(self):
+        d1 = det(T0, cand(persistent=True))
+        one = [opt(T0 + timedelta(days=2), "no_water")]
+        mixed = one + [opt(T0 + timedelta(days=3), "no_water"), opt(T0 + timedelta(days=4), "water")]
+        for o in (one, mixed):
+            self.assertEqual(T.assess("E1", [d1], ctx(T0 + DAY6, latest_pass=T0, optical=o)).priority, "high")
+
+    def test_optical_before_event_is_ignored(self):
+        d1 = det(T0, cand(persistent=True))
+        dry = [opt(T0 - timedelta(days=5), "no_water"), opt(T0 - timedelta(days=2), "no_water")]
+        self.assertEqual(T.assess("E1", [d1], ctx(T0 + DAY6, latest_pass=T0, optical=dry)).priority, "high")
+
+    def test_wet_optical_after_sar_lost_is_not_breach(self):
+        d1 = det(T0, cand(persistent=True))
+        misses = [(T0 + 2 * DAY6, None), (T0 + 3 * DAY6, None)]
+        wet = [opt(T0 + 3 * DAY6 - timedelta(days=1), "water")]
+        a = T.assess("E1", [d1], ctx(T0 + 3 * DAY6, analyzed=misses, optical=wet))
+        self.assertEqual((a.persistence, a.priority), ("lost", "medium"))
+        self.assertIn("conflict.sar_missing_optical_wet", a.rules_fired)
+        self.assertNotIn("可能已潰決", a.summary)
 
     def test_failed_then_reappears_goes_back_to_pending(self):
         d1 = det(T0, cand(persistent=False))
@@ -339,7 +404,7 @@ class TestOptical(unittest.TestCase):
                 scenario["optical"] = optical
             return B.build_scenario(scenario, d)
 
-    def test_results_cut_at_next_snapshot_and_triage_unchanged(self):
+    def test_results_cut_at_next_snapshot_and_no_peeking_in_triage(self):
         between, after = T0 + timedelta(days=2), T0 + timedelta(days=8)
         optical = {"checkedAt": after.isoformat(), "scenes": [], "next": [{"date": "2025-08-05", "sensor": "Landsat 9"}],
                    "checks": [{"event": "E1", "lonLat": [121.3001, 23.7], "results": [
@@ -351,10 +416,12 @@ class TestOptical(unittest.TestCase):
         self.assertEqual([r["verdict"] for r in last["events"][0]["optical"]], ["water", "cloud"])
         self.assertEqual(with_opt["optical"]["next"][0]["sensor"], "Landsat 9")
         self.assertIsNone(without["optical"])
-        for a, b in zip(with_opt["snapshots"], without["snapshots"]):
-            ea, eb = a["events"][0], b["events"][0]
-            self.assertEqual((ea["priority"], ea["confidence"], ea["rulesFired"]),
-                             (eb["priority"], eb["confidence"], eb["rulesFired"]))
+        # 第一期：卡片列得到 T0+2 的光學，但研判只用 T0 以前的 → 跟沒有光學一樣
+        ea, eb = first["events"][0], without["snapshots"][0]["events"][0]
+        self.assertEqual((ea["priority"], ea["confidence"], ea["rulesFired"]),
+                         (eb["priority"], eb["confidence"], eb["rulesFired"]))
+        # 即時監看最新一期就是現在：之後拍到的光學也算進研判
+        self.assertIn("optical_auto.water", last["events"][0]["rulesFired"])
 
     def test_far_check_not_attached(self):
         optical = {"checkedAt": "", "scenes": [], "next": [],

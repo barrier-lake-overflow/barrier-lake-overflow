@@ -926,6 +926,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 3.06 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -1070,6 +1081,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.55 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -1182,15 +1204,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "中",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E2 值得優先查證：4 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -1199,8 +1222,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "9/5 複核同位置仍有水體（IoU 0.38），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -1232,32 +1255,51 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 9/17）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 3.06 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -1400,6 +1442,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.55 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -1602,6 +1661,29 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 3.06 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2016-09-17T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.55 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -1744,6 +1826,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.55 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2016-09-17T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -1780,166 +1885,12 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 1,
-     "medium": 1,
+     "high": 0,
+     "medium": 2,
      "low": 1
     },
     "newCount": 1,
     "events": [
-     {
-      "id": "E2",
-      "firstSeen": "8/12 18:00",
-      "lastSeen": "9/17 18:01",
-      "lastSeenAt": "2016-09-17T10:01:00+00:00",
-      "isNew": false,
-      "lonLat": [
-       121.362618,
-       24.805455
-      ],
-      "distanceFromReferenceM": 1095,
-      "areaHectare": 0.55,
-      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
-      "lakeFloorM": 236.0,
-      "polygonLonLat": [
-       [
-        121.36230505301893,
-        24.8063477502617
-       ],
-       [
-        121.3621253899621,
-        24.80580876109123
-       ],
-       [
-        121.36176606384846,
-        24.80589859261964
-       ],
-       [
-        121.36194572690528,
-        24.806437581790114
-       ],
-       [
-        121.36230505301893,
-        24.8063477502617
-       ]
-      ],
-      "detections": [
-       {
-        "passTime": "8/12 18:00",
-        "areaHectare": 3.06,
-        "recheck": "persistent",
-        "recheckTime": "9/5 18:00",
-        "iou": 0.38,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 3.06 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 10.50 公頃（SAR 回波變化 ≥ 門檻）",
-         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
-         "後續 1 期影像同位置水體 IoU 最高 0.38，持續蓄水"
-        ]
-       },
-       {
-        "passTime": "9/17 18:01",
-        "areaHectare": 0.55,
-        "recheck": "not_persistent",
-        "recheckTime": "9/29 18:00",
-        "iou": 0.15,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.55 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 5.39 公頃（SAR 回波變化 ≥ 門檻）",
-         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
-         "後續 1 期影像同位置水體 IoU 最高 0.15，未確認持續"
-        ]
-       }
-      ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
-      "confidence": "低",
-      "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
-      ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
-      "grade": "A",
-      "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
-      "evidence": [
-       {
-        "kind": "sar",
-        "status": "support",
-        "text": "9/17 18:01 SAR 新增水體 0.55 公頃（證據強度 A 級）"
-       },
-       {
-        "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
-       },
-       {
-        "kind": "river",
-        "status": "support",
-        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
-       },
-       {
-        "kind": "landslide",
-        "status": "support",
-        "text": "500 m 內有 SAR 崩塌訊號 5.4 公頃"
-       },
-       {
-        "kind": "trend",
-        "status": "context",
-        "text": "面積 3.1 → 0.6 公頃，縮小中"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
-       }
-      ],
-      "gaps": [
-       {
-        "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
-       },
-       {
-        "kind": "exposure",
-        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
-       },
-       {
-        "kind": "field",
-        "text": "人工查證：尚未進行"
-       }
-      ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
-      "cautions": [],
-      "tasks": [
-       {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
-       },
-       {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
-       }
-      ],
-      "rulesFired": [
-       "persistence.lost",
-       "spatial.on_river",
-       "spatial.landslide",
-       "trend.shrinking",
-       "gap.optical",
-       "gap.exposure",
-       "priority.high.lost"
-      ],
-      "hindsight": [],
-      "optical": []
-     },
      {
       "id": "E3",
       "firstSeen": "9/29 18:00",
@@ -2075,6 +2026,196 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2016-09-29T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.94 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/11",
+      "nextRecheckOrbit": null,
+      "hindsight": [],
+      "optical": []
+     },
+     {
+      "id": "E2",
+      "firstSeen": "8/12 18:00",
+      "lastSeen": "9/17 18:01",
+      "lastSeenAt": "2016-09-17T10:01:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.362618,
+       24.805455
+      ],
+      "distanceFromReferenceM": 1095,
+      "areaHectare": 0.55,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 236.0,
+      "polygonLonLat": [
+       [
+        121.36230505301893,
+        24.8063477502617
+       ],
+       [
+        121.3621253899621,
+        24.80580876109123
+       ],
+       [
+        121.36176606384846,
+        24.80589859261964
+       ],
+       [
+        121.36194572690528,
+        24.806437581790114
+       ],
+       [
+        121.36230505301893,
+        24.8063477502617
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "8/12 18:00",
+        "areaHectare": 3.06,
+        "recheck": "persistent",
+        "recheckTime": "9/5 18:00",
+        "iou": 0.38,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 3.06 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 10.50 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.38，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "9/17 18:01",
+        "areaHectare": 0.55,
+        "recheck": "not_persistent",
+        "recheckTime": "9/29 18:00",
+        "iou": 0.15,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 5.39 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.15，未確認持續"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "前後期結果不一致，需人工判斷"
+      ],
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E2 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 10/11 再看不到才判持續性中斷。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "9/17 18:01 SAR 新增水體 0.55 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 5.4 公頃"
+       },
+       {
+        "kind": "trend",
+        "status": "context",
+        "text": "面積 3.1 → 0.6 公頃，縮小中"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 212 mm、24 小時 1 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/11）",
+        "reason": "同軌道再看不到才判持續性中斷"
+       }
+      ],
+      "rulesFired": [
+       "persistence.missing",
+       "spatial.on_river",
+       "spatial.landslide",
+       "trend.shrinking",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.missing"
+      ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 3.06 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2016-09-17T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.55 公頃"
+       },
+       {
+        "time": "2016-09-29T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -2217,6 +2358,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.55 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2016-09-17T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2016-09-29T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -2431,6 +2601,41 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 3.06 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2016-09-17T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.55 公頃"
+       },
+       {
+        "time": "2016-09-29T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2016-10-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.81 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -2586,6 +2791,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2016-09-29T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.94 公頃"
+       },
+       {
+        "time": "2016-10-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.76 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -2734,6 +2956,17 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2016-10-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.83 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -2876,6 +3109,41 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2016-08-12T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.55 公頃"
+       },
+       {
+        "time": "2016-09-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2016-09-17T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2016-09-29T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2016-10-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -5255,6 +5523,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2021-03-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.58 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "3/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -5471,6 +5750,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2021-03-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.58 公頃"
+       },
+       {
+        "time": "2021-03-31T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.55 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -8674,6 +8970,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2024-05-26T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.60 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "6/7",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -8881,6 +9188,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2024-05-26T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.60 公頃"
+       },
+       {
+        "time": "2024-06-07T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "6/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -9885,6 +10209,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2024-11-22T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.66 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/4",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -10112,6 +10447,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2024-11-22T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.66 公頃"
+       },
+       {
+        "time": "2024-12-04T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.50 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/16",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -10176,170 +10528,12 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 1,
-     "medium": 3,
+     "high": 0,
+     "medium": 4,
      "low": 0
     },
     "newCount": 3,
     "events": [
-     {
-      "id": "E1",
-      "firstSeen": "11/22 18:01",
-      "lastSeen": "12/4 18:01",
-      "lastSeenAt": "2024-12-04T10:01:00+00:00",
-      "isNew": false,
-      "lonLat": [
-       121.329341,
-       24.550074
-      ],
-      "distanceFromReferenceM": 2203,
-      "areaHectare": 0.5,
-      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
-      "lakeFloorM": 1900.0,
-      "polygonLonLat": [
-       [
-        121.32960637667698,
-        24.5500583997024
-       ],
-       [
-        121.32906738750651,
-        24.549609242060342
-       ],
-       [
-        121.32870806139286,
-        24.549878736645578
-       ],
-       [
-        121.32933688209174,
-        24.549968568173988
-       ],
-       [
-        121.32924705056334,
-        24.550327894287637
-       ],
-       [
-        121.32960637667698,
-        24.5500583997024
-       ]
-      ],
-      "detections": [
-       {
-        "passTime": "11/22 18:01",
-        "areaHectare": 0.66,
-        "recheck": "persistent",
-        "recheckTime": "12/4 18:01",
-        "iou": 0.37,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.65 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 0.82 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（1900 m）附近或以下，研判土石堵塞下游河道",
-         "後續 1 期影像同位置水體 IoU 最高 0.37，持續蓄水"
-        ]
-       },
-       {
-        "passTime": "12/4 18:01",
-        "areaHectare": 0.5,
-        "recheck": "not_persistent",
-        "recheckTime": "12/16 18:01",
-        "iou": 0.23,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.50 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 1.54 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（1900 m）附近或以下，研判土石堵塞下游河道",
-         "後續 1 期影像同位置水體 IoU 最高 0.23，未確認持續"
-        ]
-       }
-      ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
-      "confidence": "低",
-      "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
-      ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
-      "grade": "A",
-      "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
-      "evidence": [
-       {
-        "kind": "sar",
-        "status": "support",
-        "text": "12/4 18:01 SAR 新增水體 0.50 公頃（證據強度 A 級）"
-       },
-       {
-        "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
-       },
-       {
-        "kind": "river",
-        "status": "support",
-        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
-       },
-       {
-        "kind": "landslide",
-        "status": "support",
-        "text": "500 m 內有 SAR 崩塌訊號 1.5 公頃"
-       },
-       {
-        "kind": "terrain",
-        "status": "support",
-        "text": "崩塌延伸到水體下游、湖底高程（1900 m）以下，符合堵塞型態"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
-       }
-      ],
-      "gaps": [
-       {
-        "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
-       },
-       {
-        "kind": "exposure",
-        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
-       },
-       {
-        "kind": "field",
-        "text": "人工查證：尚未進行"
-       }
-      ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
-      "cautions": [],
-      "tasks": [
-       {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
-       },
-       {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
-       }
-      ],
-      "rulesFired": [
-       "persistence.lost",
-       "spatial.on_river",
-       "spatial.landslide",
-       "spatial.blockage",
-       "gap.optical",
-       "gap.exposure",
-       "priority.high.lost"
-      ],
-      "hindsight": [],
-      "optical": []
-     },
      {
       "id": "E2",
       "firstSeen": "12/16 18:01",
@@ -10473,6 +10667,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.85 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -10609,6 +10814,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -10745,6 +10961,194 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.59 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/28",
+      "nextRecheckOrbit": null,
+      "hindsight": [],
+      "optical": []
+     },
+     {
+      "id": "E1",
+      "firstSeen": "11/22 18:01",
+      "lastSeen": "12/4 18:01",
+      "lastSeenAt": "2024-12-04T10:01:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.329341,
+       24.550074
+      ],
+      "distanceFromReferenceM": 2203,
+      "areaHectare": 0.5,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1900.0,
+      "polygonLonLat": [
+       [
+        121.32960637667698,
+        24.5500583997024
+       ],
+       [
+        121.32906738750651,
+        24.549609242060342
+       ],
+       [
+        121.32870806139286,
+        24.549878736645578
+       ],
+       [
+        121.32933688209174,
+        24.549968568173988
+       ],
+       [
+        121.32924705056334,
+        24.550327894287637
+       ],
+       [
+        121.32960637667698,
+        24.5500583997024
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "11/22 18:01",
+        "areaHectare": 0.66,
+        "recheck": "persistent",
+        "recheckTime": "12/4 18:01",
+        "iou": 0.37,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.65 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 0.82 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1900 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.37，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "12/4 18:01",
+        "areaHectare": 0.5,
+        "recheck": "not_persistent",
+        "recheckTime": "12/16 18:01",
+        "iou": 0.23,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.50 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.54 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1900 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.23，未確認持續"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "前後期結果不一致，需人工判斷"
+      ],
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E1 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 12/28 再看不到才判持續性中斷。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "12/4 18:01 SAR 新增水體 0.50 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.5 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1900 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
+       },
+       {
+        "label": "排下一期 SAR 複核（12/28）",
+        "reason": "同軌道再看不到才判持續性中斷"
+       }
+      ],
+      "rulesFired": [
+       "persistence.missing",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.missing"
+      ],
+      "radar": [
+       {
+        "time": "2024-11-22T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.66 公頃"
+       },
+       {
+        "time": "2024-12-04T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.50 公頃"
+       },
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -10965,6 +11369,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.85 公頃"
+       },
+       {
+        "time": "2024-12-28T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.83 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "1/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -11019,15 +11440,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E3 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E3 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -11036,8 +11458,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "12/28 複核同位置仍有水體（IoU 0.47），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -11074,33 +11496,52 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 1/9）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2024-12-28T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "1/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -11155,15 +11596,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E4 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E4 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -11172,8 +11614,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "12/28 複核同位置仍有水體（IoU 0.32），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -11210,33 +11652,52 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 1/9）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.59 公頃"
+       },
+       {
+        "time": "2024-12-28T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "1/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -11412,6 +11873,35 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2024-11-22T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.66 公頃"
+       },
+       {
+        "time": "2024-12-04T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.50 公頃"
+       },
+       {
+        "time": "2024-12-16T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2024-12-28T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.50 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "1/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -11555,6 +12045,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2024-12-28T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.75 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "1/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -12105,6 +12606,17 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-02-14T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.53 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "2/26",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -12327,6 +12839,23 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-02-14T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.53 公頃"
+       },
+       {
+        "time": "2025-02-26T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.77 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "3/10",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -12567,6 +13096,29 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-02-14T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.53 公頃"
+       },
+       {
+        "time": "2025-02-26T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.77 公頃"
+       },
+       {
+        "time": "2025-03-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.75 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "3/22",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -12822,6 +13374,35 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-02-14T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.53 公頃"
+       },
+       {
+        "time": "2025-02-26T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.77 公頃"
+       },
+       {
+        "time": "2025-03-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.75 公頃"
+       },
+       {
+        "time": "2025-03-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.77 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -13430,6 +14011,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-07-20T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.29 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -13673,6 +14265,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-20T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.29 公頃"
+       },
+       {
+        "time": "2025-08-01T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/10",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -13909,6 +14518,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-20T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.29 公頃"
+       },
+       {
+        "time": "2025-08-01T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-13T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/22",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -14150,6 +14782,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.58 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -14292,6 +14935,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -14440,6 +15094,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-20T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.29 公頃"
+       },
+       {
+        "time": "2025-08-01T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-13T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -14582,15 +15265,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E2 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -14599,8 +15283,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "8/25 複核同位置仍有水體（IoU 0.31），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -14642,34 +15326,53 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 9/3）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-08-25T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -14830,6 +15533,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.58 公頃"
+       },
+       {
+        "time": "2025-08-25T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.53 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -14978,6 +15698,41 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-20T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.29 公頃"
+       },
+       {
+        "time": "2025-08-01T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-13T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-25T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -15077,8 +15832,8 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 1,
-     "medium": 0,
+     "high": 0,
+     "medium": 1,
      "low": 2
     },
     "newCount": 0,
@@ -15131,18 +15886,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
        "前後期結果不一致，需人工判斷"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
       "grade": "A",
       "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E2 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 9/9 再看不到才判持續性中斷。",
       "evidence": [
        {
         "kind": "sar",
@@ -15152,7 +15907,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
        },
        {
         "kind": "river",
@@ -15195,33 +15950,52 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "排下一期 SAR 複核（9/9）",
+        "reason": "同軌道再看不到才判持續性中斷"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.missing",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.medium.missing"
       ],
+      "radar": [
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-08-25T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-08-31T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -15370,6 +16144,47 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-20T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.29 公頃"
+       },
+       {
+        "time": "2025-08-01T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-13T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-25T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-31T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -15528,6 +16343,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-08-19T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.58 公頃"
+       },
+       {
+        "time": "2025-08-25T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.53 公頃"
+       },
+       {
+        "time": "2025-08-31T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/9",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -15978,6 +16816,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -16133,15 +16982,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -16150,8 +17000,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "10/18 複核同位置仍有水體（IoU 0.42），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -16193,34 +17043,53 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/24）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -16363,6 +17232,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -16505,6 +17385,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -16576,8 +17467,8 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 2,
-     "medium": 0,
+     "high": 1,
+     "medium": 1,
      "low": 1
     },
     "newCount": 0,
@@ -16745,6 +17636,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -16816,18 +17724,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
        "前後期結果不一致，需人工判斷"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 10/30 再看不到才判持續性中斷。",
       "evidence": [
        {
         "kind": "sar",
@@ -16837,7 +17745,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
        },
        {
         "kind": "river",
@@ -16880,33 +17788,52 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "排下一期 SAR 複核（10/30）",
+        "reason": "同軌道再看不到才判持續性中斷"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.missing",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.medium.missing"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -17047,6 +17974,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -17132,176 +18076,12 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 2,
-     "medium": 0,
+     "high": 1,
+     "medium": 1,
      "low": 1
     },
     "newCount": 0,
     "events": [
-     {
-      "id": "E2",
-      "firstSeen": "10/18 18:00",
-      "lastSeen": "10/24 18:01",
-      "lastSeenAt": "2025-10-24T10:01:00+00:00",
-      "isNew": false,
-      "lonLat": [
-       121.551577,
-       24.172468
-      ],
-      "distanceFromReferenceM": 771,
-      "areaHectare": 0.89,
-      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
-      "lakeFloorM": 425.0,
-      "polygonLonLat": [
-       [
-        121.55104109421244,
-        24.173125306485854
-       ],
-       [
-        121.55158008338292,
-        24.17240665425856
-       ],
-       [
-        121.5514902518545,
-        24.172137159673323
-       ],
-       [
-        121.55077159962721,
-        24.17303547495744
-       ],
-       [
-        121.55023261045673,
-        24.172945643429028
-       ],
-       [
-        121.55104109421244,
-        24.173125306485854
-       ]
-      ],
-      "detections": [
-       {
-        "passTime": "10/18 18:00",
-        "areaHectare": 0.98,
-        "recheck": "persistent",
-        "recheckTime": "10/24 18:01",
-        "iou": 0.59,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.98 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 3.97 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（425 m）附近或以下，研判土石堵塞下游河道",
-         "後續 1 期影像同位置水體 IoU 最高 0.59，持續蓄水"
-        ]
-       },
-       {
-        "passTime": "10/24 18:01",
-        "areaHectare": 0.89,
-        "recheck": "not_persistent",
-        "recheckTime": "10/30 18:00",
-        "iou": 0.12,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.89 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 2.70 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（425 m）附近或以下，研判土石堵塞下游河道",
-         "後續 1 期影像同位置水體 IoU 最高 0.12，未確認持續"
-        ]
-       }
-      ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
-      "confidence": "低",
-      "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
-      ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
-      "grade": "A",
-      "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
-      "evidence": [
-       {
-        "kind": "sar",
-        "status": "support",
-        "text": "10/24 18:01 SAR 新增水體 0.89 公頃（證據強度 A 級）"
-       },
-       {
-        "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
-       },
-       {
-        "kind": "river",
-        "status": "support",
-        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
-       },
-       {
-        "kind": "landslide",
-        "status": "support",
-        "text": "500 m 內有 SAR 崩塌訊號 2.7 公頃"
-       },
-       {
-        "kind": "terrain",
-        "status": "support",
-        "text": "崩塌延伸到水體下游、湖底高程（425 m）以下，符合堵塞型態"
-       },
-       {
-        "kind": "history",
-        "status": "context",
-        "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
-       }
-      ],
-      "gaps": [
-       {
-        "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
-       },
-       {
-        "kind": "exposure",
-        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
-       },
-       {
-        "kind": "field",
-        "text": "人工查證：尚未進行"
-       }
-      ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
-      "cautions": [],
-      "tasks": [
-       {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
-       },
-       {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
-       }
-      ],
-      "rulesFired": [
-       "persistence.lost",
-       "spatial.on_river",
-       "spatial.landslide",
-       "spatial.blockage",
-       "history.nearby",
-       "gap.optical",
-       "gap.exposure",
-       "priority.high.lost"
-      ],
-      "hindsight": [],
-      "optical": []
-     },
      {
       "id": "E1",
       "firstSeen": "10/12 18:01",
@@ -17391,7 +18171,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 2 期同位置未見"
        },
        {
         "kind": "river",
@@ -17434,13 +18214,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -17461,6 +18241,218 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/5",
+      "nextRecheckOrbit": null,
+      "hindsight": [],
+      "optical": []
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/18 18:00",
+      "lastSeen": "10/24 18:01",
+      "lastSeenAt": "2025-10-24T10:01:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.551577,
+       24.172468
+      ],
+      "distanceFromReferenceM": 771,
+      "areaHectare": 0.89,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 425.0,
+      "polygonLonLat": [
+       [
+        121.55104109421244,
+        24.173125306485854
+       ],
+       [
+        121.55158008338292,
+        24.17240665425856
+       ],
+       [
+        121.5514902518545,
+        24.172137159673323
+       ],
+       [
+        121.55077159962721,
+        24.17303547495744
+       ],
+       [
+        121.55023261045673,
+        24.172945643429028
+       ],
+       [
+        121.55104109421244,
+        24.173125306485854
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/18 18:00",
+        "areaHectare": 0.98,
+        "recheck": "persistent",
+        "recheckTime": "10/24 18:01",
+        "iou": 0.59,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.98 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.97 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（425 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.59，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/24 18:01",
+        "areaHectare": 0.89,
+        "recheck": "not_persistent",
+        "recheckTime": "10/30 18:00",
+        "iou": 0.12,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.89 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.70 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（425 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.12，未確認持續"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "前後期結果不一致，需人工判斷"
+      ],
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E2 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 11/5 再看不到才判持續性中斷。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/24 18:01 SAR 新增水體 0.89 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.7 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（425 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2009 陶賽溪（9.6 km）、2014 瓦黑爾溪（7.9 km）、2016 立霧溪錐麓（0.1 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 59 mm、24 小時 8 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
+       },
+       {
+        "label": "排下一期 SAR 複核（11/5）",
+        "reason": "同軌道再看不到才判持續性中斷"
+       }
+      ],
+      "rulesFired": [
+       "persistence.missing",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.missing"
+      ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -17601,6 +18593,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -17769,7 +18784,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 2 期同位置未見"
        },
        {
         "kind": "river",
@@ -17812,13 +18827,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -17839,6 +18854,35 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -17931,7 +18975,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 3 期同位置未見"
        },
        {
         "kind": "river",
@@ -17974,13 +19018,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -18001,6 +19045,41 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -18141,6 +19220,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -18316,7 +19424,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 3 期同位置未見"
        },
        {
         "kind": "river",
@@ -18359,13 +19467,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -18386,6 +19494,41 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -18478,7 +19621,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 4 期同位置未見"
        },
        {
         "kind": "river",
@@ -18521,13 +19664,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -18548,6 +19691,47 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -18688,6 +19872,41 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -18856,7 +20075,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 4 期同位置未見"
        },
        {
         "kind": "river",
@@ -18899,13 +20118,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -18926,6 +20145,47 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -19018,7 +20278,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 5 期同位置未見"
        },
        {
         "kind": "river",
@@ -19061,13 +20321,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -19088,6 +20348,53 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -19246,6 +20553,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.57 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -19386,6 +20704,47 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -19568,7 +20927,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 5 期同位置未見"
        },
        {
         "kind": "river",
@@ -19611,13 +20970,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -19638,6 +20997,53 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -19730,7 +21136,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 6 期同位置未見"
        },
        {
         "kind": "river",
@@ -19773,13 +21179,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -19800,6 +21206,59 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -19870,15 +21329,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E4 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E4 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -19887,8 +21347,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "11/29 複核同位置仍有水體（IoU 0.38），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -19930,34 +21390,53 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 12/5）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.57 公頃"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -20098,6 +21577,53 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -20169,8 +21695,8 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 3,
-     "medium": 0,
+     "high": 2,
+     "medium": 1,
      "low": 1
     },
     "newCount": 0,
@@ -20264,7 +21790,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 7 期同位置未見"
        },
        {
         "kind": "river",
@@ -20307,13 +21833,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -20334,6 +21860,65 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -20506,6 +22091,59 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.69 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -20573,18 +22211,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
        "前後期結果不一致，需人工判斷"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
       "grade": "A",
       "scale": "小",
-      "summary": "E4 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E4 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 12/11 再看不到才判持續性中斷。",
       "evidence": [
        {
         "kind": "sar",
@@ -20594,7 +22232,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
        },
        {
         "kind": "river",
@@ -20637,33 +22275,52 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "排下一期 SAR 複核（12/11）",
+        "reason": "同軌道再看不到才判持續性中斷"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.missing",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.medium.missing"
       ],
+      "radar": [
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.57 公頃"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -20804,6 +22461,59 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/11",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -20977,7 +22687,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 8 期同位置未見"
        },
        {
         "kind": "river",
@@ -21020,13 +22730,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -21047,6 +22757,71 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-10-12T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-11T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -21129,15 +22904,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 3 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E2 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -21146,8 +22922,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "12/11 複核同位置仍有水體（IoU 0.48），共 3 期偵測到"
        },
        {
         "kind": "river",
@@ -21189,34 +22965,95 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 12/17）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.98 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.89 公頃"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.69 公頃"
+       },
+       {
+        "time": "2025-12-11T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -21305,7 +23142,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 2 期同位置未見"
        },
        {
         "kind": "river",
@@ -21348,13 +23185,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -21375,6 +23212,35 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.57 公頃"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-11T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -21515,6 +23381,65 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-10-18T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.56 公頃"
+       },
+       {
+        "time": "2025-10-24T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-10-30T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-05T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-11T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-23T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-11-29T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-05T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-12-11T10:01:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "12/17",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -22089,6 +24014,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -22219,6 +24155,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -22477,6 +24424,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -22623,6 +24587,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -22879,6 +24860,29 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/25",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -23033,6 +25037,29 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/25",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -23169,6 +25196,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/25",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -23309,6 +25347,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/25",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -23387,8 +25436,8 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 1,
-     "medium": 0,
+     "high": 0,
+     "medium": 1,
      "low": 3
     },
     "newCount": 0,
@@ -23477,18 +25526,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
        "前後期結果不一致，需人工判斷"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
       "grade": "A",
       "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E2 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 4/30 再看不到才判持續性中斷。",
       "evidence": [
        {
         "kind": "sar",
@@ -23498,7 +25547,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
        },
        {
         "kind": "river",
@@ -23531,31 +25580,56 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "排下一期 SAR 複核（4/30）",
+        "reason": "同軌道再看不到才判持續性中斷"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.missing",
        "spatial.on_river",
        "spatial.landslide",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.medium.missing"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -23708,6 +25782,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -23842,6 +25945,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -23980,6 +26100,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "4/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -24183,7 +26320,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 2 期同位置未見"
        },
        {
         "kind": "river",
@@ -24216,13 +26353,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -24241,6 +26378,41 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/6",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -24393,6 +26565,41 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/6",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -24527,6 +26734,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/6",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -24665,6 +26895,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/6",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -24854,7 +27107,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 3 期同位置未見"
        },
        {
         "kind": "river",
@@ -24887,13 +27140,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -24912,6 +27165,47 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/7",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -25064,6 +27358,47 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/7",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -25198,6 +27533,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/7",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -25336,6 +27700,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/7",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -25532,7 +27925,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 4 期同位置未見"
        },
        {
         "kind": "river",
@@ -25565,13 +27958,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -25590,6 +27983,53 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -25742,6 +28182,53 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -25876,6 +28363,41 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -26014,6 +28536,41 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -26210,7 +28767,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 5 期同位置未見"
        },
        {
         "kind": "river",
@@ -26243,13 +28800,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -26268,6 +28825,59 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -26420,6 +29030,59 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -26554,6 +29217,47 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -26692,6 +29396,47 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -26888,7 +29633,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 6 期同位置未見"
        },
        {
         "kind": "river",
@@ -26921,13 +29666,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -26946,6 +29691,65 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -27098,6 +29902,65 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -27232,6 +30095,53 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -27370,6 +30280,53 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -27573,7 +30530,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 7 期同位置未見"
        },
        {
         "kind": "river",
@@ -27606,13 +30563,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -27631,6 +30588,71 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -27799,6 +30821,71 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.73 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -27933,6 +31020,59 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -28071,6 +31211,59 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -28267,7 +31460,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 8 期同位置未見"
        },
        {
         "kind": "river",
@@ -28300,13 +31493,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -28325,6 +31518,77 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -28491,6 +31755,77 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.73 公頃"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -28625,6 +31960,65 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -28763,6 +32157,65 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/30",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -28959,7 +32412,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 9 期同位置未見"
        },
        {
         "kind": "river",
@@ -28992,13 +32445,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -29017,6 +32470,83 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -29183,6 +32713,83 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.73 公頃"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -29317,6 +32924,71 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -29455,6 +33127,71 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "5/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -29651,7 +33388,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 10 期同位置未見"
        },
        {
         "kind": "river",
@@ -29684,13 +33421,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -29709,6 +33446,89 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.03 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.92 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "6/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -29875,6 +33695,89 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-04-18T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.36 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 1.73 公頃"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "6/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -30009,6 +33912,77 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "6/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -30147,6 +34121,77 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-04-19T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.68 公頃"
+       },
+       {
+        "time": "2026-04-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2026-04-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-01T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-12T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-13T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-25T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-05-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "6/5",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -31683,6 +35728,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-07-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.67 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -31918,6 +35974,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-24T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.67 公頃"
+       },
+       {
+        "time": "2026-07-30T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/6",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -32431,6 +36504,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-06-28T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.50 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/7",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -32570,15 +36654,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 1 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 值得優先查證：4 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -32587,8 +36672,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "7/10 複核同位置仍有水體（IoU 0.47），共 1 期偵測到"
        },
        {
         "kind": "river",
@@ -32625,33 +36710,52 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 7/19）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-06-28T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.50 公頃"
+       },
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -32814,6 +36918,17 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.33 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/19",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -32892,8 +37007,8 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 2,
-     "medium": 0,
+     "high": 1,
+     "medium": 1,
      "low": 0
     },
     "newCount": 0,
@@ -33095,6 +37210,23 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.33 公頃"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.37 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -33150,18 +37282,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
        "前後期結果不一致，需人工判斷"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 7/31 再看不到才判持續性中斷。",
       "evidence": [
        {
         "kind": "sar",
@@ -33171,7 +37303,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
        },
        {
         "kind": "river",
@@ -33209,32 +37341,51 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "排下一期 SAR 複核（7/31）",
+        "reason": "同軌道再看不到才判持續性中斷"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.missing",
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.medium.missing"
       ],
+      "radar": [
+       {
+        "time": "2026-06-28T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.50 公頃"
+       },
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/31",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -33506,6 +37657,29 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.33 公頃"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.37 公頃"
+       },
+       {
+        "time": "2026-08-03T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 3.82 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -33582,7 +37756,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 2 期同位置未見"
        },
        {
         "kind": "river",
@@ -33620,13 +37794,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -33646,6 +37820,35 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-06-28T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.50 公頃"
+       },
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-03T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/12",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -33947,6 +38150,35 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.33 公頃"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.37 公頃"
+       },
+       {
+        "time": "2026-08-03T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 3.82 公頃"
+       },
+       {
+        "time": "2026-08-09T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.33 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -34023,7 +38255,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 3 期同位置未見"
        },
        {
         "kind": "river",
@@ -34061,13 +38293,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -34087,6 +38319,41 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-06-28T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.50 公頃"
+       },
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-03T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-09T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/18",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -34411,6 +38678,41 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.33 公頃"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.37 公頃"
+       },
+       {
+        "time": "2026-08-03T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 3.82 公頃"
+       },
+       {
+        "time": "2026-08-09T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.33 公頃"
+       },
+       {
+        "time": "2026-08-15T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 4.34 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -34487,7 +38789,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 4 期同位置未見"
        },
        {
         "kind": "river",
@@ -34525,13 +38827,13 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [],
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -34551,6 +38853,47 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-06-28T10:00:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.50 公頃"
+       },
+       {
+        "time": "2026-07-10T10:00:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-22T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-03T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-09T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-15T10:00:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/24",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -34866,7 +39209,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "中",
-      "summary": "E1 需要人工確認：單期 SAR 出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/14 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -34902,7 +39245,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/14）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
        },
        {
         "kind": "optical",
@@ -34925,7 +39268,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/14）",
+        "label": "排下一期 SAR 複核（10/17）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -34946,6 +39289,19 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -35050,6 +39406,11 @@ window.EVENT_SCENARIOS = [
         "text": "10/11 05:51 SAR 新增水體 1.10 公頃（證據強度 B 級）"
        },
        {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
         "kind": "river",
         "status": "support",
         "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
@@ -35082,7 +39443,7 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/13、10/11），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -35115,6 +39476,7 @@ window.EVENT_SCENARIOS = [
       ],
       "rulesFired": [
        "persistence.pending",
+       "optical_auto.water",
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
@@ -35122,6 +39484,25 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -35240,7 +39621,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "中",
-      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、面積擴大）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "summary": "E1 值得優先查證：6 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌、面積擴大）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -35251,6 +39632,11 @@ window.EVENT_SCENARIOS = [
         "kind": "persistence",
         "status": "support",
         "text": "10/17 複核同位置仍有水體（IoU 0.41），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
        },
        {
         "kind": "river",
@@ -35286,7 +39672,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/16、10/13、10/11），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -35319,6 +39705,7 @@ window.EVENT_SCENARIOS = [
       ],
       "rulesFired": [
        "persistence.confirmed",
+       "optical_auto.water",
        "spatial.on_river",
        "spatial.landslide",
        "trend.growing",
@@ -35327,6 +39714,31 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 1.81 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -35478,7 +39890,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "中",
-      "summary": "E1 值得優先查證：4 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -35489,6 +39901,11 @@ window.EVENT_SCENARIOS = [
         "kind": "persistence",
         "status": "support",
         "text": "10/23 複核同位置仍有水體（IoU 0.70），共 3 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21、10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
        },
        {
         "kind": "river",
@@ -35519,7 +39936,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/21、10/16、10/13、10/11），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -35546,12 +39963,13 @@ window.EVENT_SCENARIOS = [
         "reason": "下游聚落、道路圖層尚未串接"
        },
        {
-        "label": "持續 SAR 監測（下一期 10/26）",
+        "label": "持續 SAR 監測（下一期 10/29）",
         "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
        "persistence.confirmed",
+       "optical_auto.water",
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
@@ -35559,6 +39977,37 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 1.81 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 1.27 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -35708,15 +40157,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 3 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "中",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -35725,8 +40175,13 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "10/23 複核同位置仍有水體（IoU 0.70），共 3 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/31、10/26、10/21、10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
        },
        {
         "kind": "river",
@@ -35757,7 +40212,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/31、10/26、10/21、10/16、10/13、10/11），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -35768,33 +40223,73 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 11/4）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
+       "optical_auto.water",
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 1.81 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "11/4",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -36167,7 +40662,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E1 需要人工確認：單期 SAR 出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/14 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E1 需要人工確認：單期 SAR 出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -36208,7 +40703,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/14）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
        },
        {
         "kind": "optical",
@@ -36231,7 +40726,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/14）",
+        "label": "排下一期 SAR 複核（10/17）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -36253,6 +40748,19 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -36349,7 +40857,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -36390,7 +40898,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
        },
        {
         "kind": "optical",
@@ -36413,7 +40921,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/17）",
+        "label": "排下一期 SAR 複核（10/26）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -36435,6 +40943,19 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
        {
@@ -36594,6 +41115,25 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -36677,7 +41217,7 @@ window.EVENT_SCENARIOS = [
       "persistenceText": "待複核",
       "grade": "B",
       "scale": "小",
-      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
+      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -36718,7 +41258,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
        },
        {
         "kind": "optical",
@@ -36741,7 +41281,7 @@ window.EVENT_SCENARIOS = [
         "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
        },
        {
-        "label": "排下一期 SAR 複核（10/17）",
+        "label": "排下一期 SAR 複核（10/26）",
         "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
        },
        {
@@ -36763,6 +41303,19 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
        {
@@ -36880,6 +41433,11 @@ window.EVENT_SCENARIOS = [
         "text": "10/17 複核同位置仍有水體（IoU 0.42），共 2 期偵測到"
        },
        {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
         "kind": "river",
         "status": "support",
         "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
@@ -36913,7 +41471,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -36946,6 +41504,7 @@ window.EVENT_SCENARIOS = [
       ],
       "rulesFired": [
        "persistence.confirmed",
+       "optical_auto.no_water",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
@@ -36954,574 +41513,33 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 0.72 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
-       {
-        "time": "2026-10-21T10:41+08:00",
-        "sensor": "Sentinel-2B",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       },
-       {
-        "time": "2026-10-21T10:20+08:00",
-        "sensor": "Landsat 9",
-        "verdict": "no_water",
-        "clearPct": 100,
-        "waterPct": 0
-       },
-       {
-        "time": "2026-10-16T10:41+08:00",
-        "sensor": "Sentinel-2C",
-        "verdict": "no_water",
-        "clearPct": 100,
-        "waterPct": 0
-       },
-       {
-        "time": "2026-10-13T10:20+08:00",
-        "sensor": "Landsat 8",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       },
-       {
-        "time": "2026-10-11T10:41+08:00",
-        "sensor": "Sentinel-2B",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       }
-      ]
-     },
-     {
-      "id": "E2",
-      "firstSeen": "10/14 18:00",
-      "lastSeen": "10/14 18:00",
-      "lastSeenAt": "2026-10-14T10:00:00+00:00",
-      "isNew": false,
-      "lonLat": [
-       121.30266,
-       23.695073
-      ],
-      "distanceFromReferenceM": 806,
-      "areaHectare": 0.77,
-      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
-      "lakeFloorM": 861.0,
-      "polygonLonLat": [
-       [
-        121.30148910828406,
-        23.695850396033148
-       ],
-       [
-        121.30202809745454,
-        23.695131743805852
-       ],
-       [
-        121.30355523343754,
-        23.69423342852173
-       ],
-       [
-        121.3032857388523,
-        23.695131743805852
-       ],
-       [
-        121.30148910828406,
-        23.695850396033148
-       ]
-      ],
-      "detections": [
-       {
-        "passTime": "10/14 18:00",
-        "areaHectare": 0.77,
-        "recheck": "pending",
-        "recheckTime": "10/26 18:00",
-        "iou": null,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.77 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 3.08 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（861 m）附近或以下，研判土石堵塞下游河道"
-        ]
-       }
-      ],
-      "priority": "medium",
-      "priorityText": "中優先",
-      "action": "建議人工確認",
-      "confidence": "低",
-      "confidenceReasons": [
-       "只有單期 SAR，尚未複核"
-      ],
-      "persistence": "pending",
-      "persistenceText": "待複核",
-      "grade": "B",
-      "scale": "小",
-      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
-      "evidence": [
-       {
-        "kind": "sar",
-        "status": "support",
-        "text": "10/14 18:00 SAR 新增水體 0.77 公頃（證據強度 B 級）"
-       },
-       {
-        "kind": "river",
-        "status": "support",
-        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
-       },
-       {
-        "kind": "landslide",
-        "status": "support",
-        "text": "500 m 內有 SAR 崩塌訊號 3.1 公頃"
-       },
-       {
-        "kind": "terrain",
-        "status": "support",
-        "text": "崩塌延伸到水體下游、湖底高程（861 m）以下，符合堵塞型態"
-       },
-       {
-        "kind": "history",
-        "status": "context",
-        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.6 km）、2024 花蓮萬里溪（9.2 km）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
-       }
-      ],
-      "gaps": [
-       {
-        "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
-       },
-       {
-        "kind": "exposure",
-        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
-       },
-       {
-        "kind": "field",
-        "text": "人工查證：尚未進行"
-       }
-      ],
-      "conflicts": [],
-      "cautions": [],
-      "tasks": [
-       {
-        "label": "值班人員判讀 SAR 證據圖",
-        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
-       },
-       {
-        "label": "排下一期 SAR 複核（10/23）",
-        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
-       },
-       {
-        "label": "調閱光學影像（雲況許可時）",
-        "reason": "SAR 以外的獨立證據"
-       },
-       {
-        "label": "暫不派遣 UAV",
-        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       }
-      ],
-      "rulesFired": [
-       "persistence.pending",
-       "spatial.on_river",
-       "spatial.landslide",
-       "spatial.blockage",
-       "history.nearby",
-       "gap.optical",
-       "gap.exposure",
-       "priority.medium.pending"
-      ],
-      "hindsight": [],
-      "optical": [
-       {
-        "time": "2026-10-21T10:41+08:00",
-        "sensor": "Sentinel-2B",
-        "verdict": "no_water",
-        "clearPct": 92,
-        "waterPct": 0
-       },
-       {
-        "time": "2026-10-21T10:20+08:00",
-        "sensor": "Landsat 9",
-        "verdict": "no_water",
-        "clearPct": 90,
-        "waterPct": 0
-       },
-       {
-        "time": "2026-10-16T10:41+08:00",
-        "sensor": "Sentinel-2C",
-        "verdict": "no_water",
-        "clearPct": 100,
-        "waterPct": 0
-       }
-      ]
-     },
-     {
-      "id": "E3",
-      "firstSeen": "10/14 18:00",
-      "lastSeen": "10/14 18:00",
-      "lastSeenAt": "2026-10-14T10:00:00+00:00",
-      "isNew": false,
-      "lonLat": [
-       121.296941,
-       23.698486
-      ],
-      "distanceFromReferenceM": 242,
-      "areaHectare": 0.61,
-      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
-      "lakeFloorM": 896.0,
-      "polygonLonLat": [
-       [
-        121.29681786880664,
-        23.6992639941128
-       ],
-       [
-        121.29699753186347,
-        23.69863517341392
-       ],
-       [
-        121.29618904810775,
-        23.698365678828683
-       ],
-       [
-        121.29681786880664,
-        23.6992639941128
-       ]
-      ],
-      "detections": [
-       {
-        "passTime": "10/14 18:00",
-        "areaHectare": 0.61,
-        "recheck": "pending",
-        "recheckTime": "10/26 18:00",
-        "iou": null,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.61 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 4.11 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（896 m）附近或以下，研判土石堵塞下游河道"
-        ]
-       }
-      ],
-      "priority": "medium",
-      "priorityText": "中優先",
-      "action": "建議人工確認",
-      "confidence": "低",
-      "confidenceReasons": [
-       "只有單期 SAR，尚未複核"
-      ],
-      "persistence": "pending",
-      "persistenceText": "待複核",
-      "grade": "B",
-      "scale": "小",
-      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/23 下一期過境複核，暫不派遣 UAV。",
-      "evidence": [
-       {
-        "kind": "sar",
-        "status": "support",
-        "text": "10/14 18:00 SAR 新增水體 0.61 公頃（證據強度 B 級）"
-       },
-       {
-        "kind": "river",
-        "status": "support",
-        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
-       },
-       {
-        "kind": "landslide",
-        "status": "support",
-        "text": "500 m 內有 SAR 崩塌訊號 4.1 公頃"
-       },
-       {
-        "kind": "terrain",
-        "status": "support",
-        "text": "崩塌延伸到水體下游、湖底高程（896 m）以下，符合堵塞型態"
-       },
-       {
-        "kind": "history",
-        "status": "context",
-        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.9 km）、2024 花蓮萬里溪（8.8 km）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
-       }
-      ],
-      "gaps": [
-       {
-        "kind": "persistence",
-        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/23）"
-       },
-       {
-        "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
-       },
-       {
-        "kind": "exposure",
-        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
-       },
-       {
-        "kind": "field",
-        "text": "人工查證：尚未進行"
-       }
-      ],
-      "conflicts": [],
-      "cautions": [],
-      "tasks": [
-       {
-        "label": "值班人員判讀 SAR 證據圖",
-        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
-       },
-       {
-        "label": "排下一期 SAR 複核（10/23）",
-        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
-       },
-       {
-        "label": "調閱光學影像（雲況許可時）",
-        "reason": "SAR 以外的獨立證據"
-       },
-       {
-        "label": "暫不派遣 UAV",
-        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
-       }
-      ],
-      "rulesFired": [
-       "persistence.pending",
-       "spatial.on_river",
-       "spatial.landslide",
-       "spatial.blockage",
-       "history.nearby",
-       "gap.optical",
-       "gap.exposure",
-       "priority.medium.pending"
-      ],
-      "hindsight": [],
-      "optical": [
-       {
-        "time": "2026-10-21T10:41+08:00",
-        "sensor": "Sentinel-2B",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       },
-       {
-        "time": "2026-10-21T10:20+08:00",
-        "sensor": "Landsat 9",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       },
-       {
-        "time": "2026-10-16T10:41+08:00",
-        "sensor": "Sentinel-2C",
-        "verdict": "no_water",
-        "clearPct": 100,
-        "waterPct": 0
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "asOf": "2026-10-22T21:51:00+00:00",
-    "label": "10/23 05:51",
-    "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
-    "since": "距觸發約 12 天",
-    "nextPass": "10/26",
-    "nextPassOrbit": "升軌 69",
-    "counts": {
-     "high": 1,
-     "medium": 2,
-     "low": 0
-    },
-    "newCount": 0,
-    "events": [
-     {
-      "id": "E1",
-      "firstSeen": "10/11 05:51",
-      "lastSeen": "10/17 05:51",
-      "lastSeenAt": "2026-10-16T21:51:00+00:00",
-      "isNew": false,
-      "lonLat": [
-       121.302438,
-       23.700484
-      ],
-      "distanceFromReferenceM": 501,
-      "areaHectare": 0.72,
-      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
-      "lakeFloorM": 1004.0,
-      "polygonLonLat": [
-       [
-        121.30238742356818,
-        23.701240287737864
-       ],
-       [
-        121.30220776051135,
-        23.700970793152628
-       ],
-       [
-        121.30148910828406,
-        23.70106062468104
-       ],
-       [
-        121.30157893981247,
-        23.701330119266277
-       ],
-       [
-        121.30238742356818,
-        23.701240287737864
-       ]
-      ],
-      "detections": [
-       {
-        "passTime": "10/11 05:51",
-        "areaHectare": 0.65,
-        "recheck": "persistent",
-        "recheckTime": "10/17 05:51",
-        "iou": 0.42,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.65 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 2.32 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
-         "後續 1 期影像同位置水體 IoU 最高 0.42，持續蓄水"
-        ]
-       },
-       {
-        "passTime": "10/17 05:51",
-        "areaHectare": 0.72,
-        "recheck": "persistent",
-        "recheckTime": "10/23 05:51",
-        "iou": 0.56,
-        "evidenceImage": null,
-        "reasons": [
-         "新增水體 0.72 公頃，緊貼事件前河道",
-         "500 m 內偵測到崩塌 3.40 公頃（SAR 回波變化 ≥ 門檻）",
-         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
-         "後續 1 期影像同位置水體 IoU 最高 0.56，持續蓄水"
-        ]
-       }
-      ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
-      "confidence": "低",
-      "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
-      ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
-      "grade": "A",
-      "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
-      "evidence": [
-       {
-        "kind": "sar",
-        "status": "support",
-        "text": "10/17 05:51 SAR 新增水體 0.72 公頃（證據強度 A 級）"
-       },
-       {
-        "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
-       },
-       {
-        "kind": "river",
-        "status": "support",
-        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
-       },
-       {
-        "kind": "landslide",
-        "status": "support",
-        "text": "500 m 內有 SAR 崩塌訊號 3.4 公頃"
-       },
-       {
-        "kind": "terrain",
-        "status": "support",
-        "text": "崩塌延伸到水體下游、湖底高程（1004 m）以下，符合堵塞型態"
-       },
-       {
-        "kind": "history",
-        "status": "context",
-        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.6 km）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
-       },
-       {
-        "kind": "context",
-        "status": "context",
-        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
-       }
-      ],
-      "gaps": [
-       {
-        "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
-       },
-       {
-        "kind": "exposure",
-        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
-       },
-       {
-        "kind": "field",
-        "text": "人工查證：尚未進行"
-       }
-      ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
-      "cautions": [],
-      "tasks": [
-       {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
-       },
-       {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
-       }
-      ],
-      "rulesFired": [
-       "persistence.lost",
-       "spatial.on_river",
-       "spatial.landslide",
-       "spatial.blockage",
-       "history.nearby",
-       "gap.optical",
-       "gap.exposure",
-       "priority.high.lost"
-      ],
-      "hindsight": [],
-      "optical": [
-       {
-        "time": "2026-10-26T10:41+08:00",
-        "sensor": "Sentinel-2C",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       },
        {
         "time": "2026-10-21T10:41+08:00",
         "sensor": "Sentinel-2B",
@@ -37629,6 +41647,11 @@ window.EVENT_SCENARIOS = [
         "text": "10/14 18:00 SAR 新增水體 0.77 公頃（證據強度 B 級）"
        },
        {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
         "kind": "river",
         "status": "support",
         "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
@@ -37656,7 +41679,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "context",
         "status": "context",
-        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
@@ -37666,7 +41689,7 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -37699,6 +41722,7 @@ window.EVENT_SCENARIOS = [
       ],
       "rulesFired": [
        "persistence.pending",
+       "optical_auto.no_water",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
@@ -37707,15 +41731,27 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
-       {
-        "time": "2026-10-26T10:41+08:00",
-        "sensor": "Sentinel-2C",
-        "verdict": "cloud",
-        "clearPct": 2,
-        "waterPct": null
-       },
        {
         "time": "2026-10-21T10:41+08:00",
         "sensor": "Sentinel-2B",
@@ -37805,6 +41841,682 @@ window.EVENT_SCENARIOS = [
         "text": "10/14 18:00 SAR 新增水體 0.61 公頃（證據強度 B 級）"
        },
        {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 4.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（896 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.9 km）、2024 花蓮萬里溪（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/26）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-22T21:51:00+00:00",
+    "label": "10/23 05:51",
+    "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
+    "since": "距觸發約 12 天",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 3,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E2",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.30266,
+       23.695073
+      ],
+      "distanceFromReferenceM": 806,
+      "areaHectare": 0.77,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 861.0,
+      "polygonLonLat": [
+       [
+        121.30148910828406,
+        23.695850396033148
+       ],
+       [
+        121.30202809745454,
+        23.695131743805852
+       ],
+       [
+        121.30355523343754,
+        23.69423342852173
+       ],
+       [
+        121.3032857388523,
+        23.695131743805852
+       ],
+       [
+        121.30148910828406,
+        23.695850396033148
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "areaHectare": 0.77,
+        "recheck": "pending",
+        "recheckTime": "10/26 18:00",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.77 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.08 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（861 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR 與光學衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 需要人工確認：單期 SAR 出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.77 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（861 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.6 km）、2024 花蓮萬里溪（9.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR 看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/26）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 2,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 92,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/17 05:51",
+      "lastSeenAt": "2026-10-16T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.302438,
+       23.700484
+      ],
+      "distanceFromReferenceM": 501,
+      "areaHectare": 0.72,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1004.0,
+      "polygonLonLat": [
+       [
+        121.30238742356818,
+        23.701240287737864
+       ],
+       [
+        121.30220776051135,
+        23.700970793152628
+       ],
+       [
+        121.30148910828406,
+        23.70106062468104
+       ],
+       [
+        121.30157893981247,
+        23.701330119266277
+       ],
+       [
+        121.30238742356818,
+        23.701240287737864
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "areaHectare": 0.65,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.42,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.65 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.32 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.42，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "areaHectare": 0.72,
+        "recheck": "persistent",
+        "recheckTime": "10/23 05:51",
+        "iou": 0.56,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.72 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.40 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.56，持續蓄水"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR 與光學衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E1 需要人工確認：SAR 多期看到疑似水體，但光學 10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/17 05:51 SAR 新增水體 0.72 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/23 複核同位置仍有水體（IoU 0.56），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.4 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1004 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR 看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/21、10/16 晴空都判為沒有水"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/29）",
+        "reason": "光學確認是水再升高優先"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "SAR 與光學結果衝突，先以影像確認，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 0.72 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
+     },
+     {
+      "id": "E3",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.296941,
+       23.698486
+      ],
+      "distanceFromReferenceM": 242,
+      "areaHectare": 0.61,
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 896.0,
+      "polygonLonLat": [
+       [
+        121.29681786880664,
+        23.6992639941128
+       ],
+       [
+        121.29699753186347,
+        23.69863517341392
+       ],
+       [
+        121.29618904810775,
+        23.698365678828683
+       ],
+       [
+        121.29681786880664,
+        23.6992639941128
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "areaHectare": 0.61,
+        "recheck": "pending",
+        "recheckTime": "10/26 18:00",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.61 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 4.11 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（896 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期 SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E3 需要人工確認：單期 SAR 出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.61 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
         "kind": "river",
         "status": "support",
         "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
@@ -37842,7 +42554,7 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -37875,6 +42587,7 @@ window.EVENT_SCENARIOS = [
       ],
       "rulesFired": [
        "persistence.pending",
+       "optical_auto.no_water",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
@@ -37883,6 +42596,31 @@ window.EVENT_SCENARIOS = [
        "gap.exposure",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
        {
@@ -37925,8 +42663,8 @@ window.EVENT_SCENARIOS = [
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
     "counts": {
-     "high": 3,
-     "medium": 0,
+     "high": 0,
+     "medium": 3,
      "low": 0
     },
     "newCount": 0,
@@ -37983,18 +42721,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 與光學衝突：光學 10/31、10/21、10/16 晴空都判為沒有水"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E2 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E2 需要人工確認：SAR 多期看到疑似水體，但光學 10/31、10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -38003,8 +42741,13 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
+        "status": "support",
+        "text": "10/26 複核同位置仍有水體（IoU 0.55），共 1 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "光學自動判讀 10/31、10/21、10/16 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -38040,7 +42783,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/31、10/21、10/16），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -38052,33 +42795,67 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "光學 10/31、10/21、10/16 晴空都判為沒有水：SAR 看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/31、10/21、10/16 晴空都判為沒有水"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "label": "持續 SAR 監測（下一期 11/7）",
+        "reason": "光學確認是水再升高優先"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "暫不派遣 UAV",
+        "reason": "SAR 與光學結果衝突，先以影像確認，避免浪費現地人力"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
+       "optical_auto.no_water",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
       ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "11/7",
+      "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
        {
@@ -38191,18 +42968,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 與光學衝突：光學 10/31、10/21、10/16 晴空都判為沒有水"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 需要人工確認：SAR 多期看到疑似水體，但光學 10/31、10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -38211,8 +42988,13 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
+        "status": "support",
+        "text": "10/23 複核同位置仍有水體（IoU 0.56），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "光學自動判讀 10/31、10/21、10/16 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -38248,7 +43030,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/31、10/21、10/16），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -38260,33 +43042,73 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "光學 10/31、10/21、10/16 晴空都判為沒有水：SAR 看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/31、10/21、10/16 晴空都判為沒有水"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "label": "持續 SAR 監測（下一期 11/4）",
+        "reason": "光學確認是水再升高優先"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "暫不派遣 UAV",
+        "reason": "SAR 與光學結果衝突，先以影像確認，避免浪費現地人力"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
+       "optical_auto.no_water",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
       ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "text": "偵測到 0.72 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "11/4",
+      "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
        {
@@ -38395,18 +43217,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 與光學衝突：光學 10/31、10/16 晴空都判為沒有水"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E3 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E3 需要人工確認：SAR 多期看到疑似水體，但光學 10/31、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
       "evidence": [
        {
         "kind": "sar",
@@ -38415,8 +43237,13 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
+        "status": "support",
+        "text": "10/26 複核同位置仍有水體（IoU 0.40），共 1 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "光學自動判讀 10/31、10/16 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -38452,7 +43279,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+        "text": "光學影像：系統已自動判讀（10/31、10/16），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -38464,33 +43291,67 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "光學 10/31、10/16 晴空都判為沒有水：SAR 看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
       ],
       "cautions": [],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/31、10/16 晴空都判為沒有水"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "label": "持續 SAR 監測（下一期 11/7）",
+        "reason": "光學確認是水再升高優先"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "暫不派遣 UAV",
+        "reason": "SAR 與光學結果衝突，先以影像確認，避免浪費現地人力"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
+       "optical_auto.no_water",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
        "gap.optical",
        "gap.exposure",
-       "priority.high.lost"
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
       ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "11/7",
+      "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
        {
@@ -40107,6 +44968,17 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.13 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -40266,6 +45138,17 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.88 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/29",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -40571,6 +45454,17 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.corroborated"
       ],
+      "radar": [
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 5.66 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/4",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -40752,6 +45646,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.13 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/4",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -40909,6 +45820,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.88 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/4",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -41227,6 +46155,23 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 5.66 公頃"
+       },
+       {
+        "time": "2025-08-03T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/10",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -41408,6 +46353,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.13 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/10",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -41565,6 +46527,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.88 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/10",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -42053,6 +47032,29 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 5.66 公頃"
+       },
+       {
+        "time": "2025-08-03T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 25.62 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -42220,6 +47222,17 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -42401,6 +47414,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.13 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -42558,6 +47594,29 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.88 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/28",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -42939,6 +47998,35 @@ window.EVENT_SCENARIOS = [
        "exposure.known",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 5.66 公頃"
+       },
+       {
+        "time": "2025-08-03T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 25.62 公頃"
+       },
+       {
+        "time": "2025-08-27T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 22.48 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -43120,6 +48208,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 2.13 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-27T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -43277,6 +48394,35 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-07-22T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.88 公頃"
+       },
+       {
+        "time": "2025-07-28T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       },
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2025-08-27T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      },
@@ -43442,6 +48588,23 @@ window.EVENT_SCENARIOS = [
        "conflict.spatial_vs_persistence",
        "priority.low.failed"
       ],
+      "radar": [
+       {
+        "time": "2025-08-21T21:51:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.70 公頃"
+       },
+       {
+        "time": "2025-08-27T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "複核：同位置沒有水"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/3",
+      "nextRecheckOrbit": null,
       "hindsight": [],
       "optical": []
      }
@@ -44393,6 +49556,17 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.medium.pending"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/13",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -44671,6 +49845,23 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/19",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -44856,15 +50047,16 @@ window.EVENT_SCENARIOS = [
       "priority": "high",
       "priorityText": "高優先",
       "action": "建議立即查證",
-      "confidence": "低",
+      "confidence": "中",
       "confidenceReasons": [
-       "前後期結果不一致，需人工判斷"
+       "SAR 2 期一致",
+       "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
       "evidence": [
        {
         "kind": "sar",
@@ -44873,8 +50065,8 @@ window.EVENT_SCENARIOS = [
        },
        {
         "kind": "persistence",
-        "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "status": "support",
+        "text": "7/19 複核同位置仍有水體（IoU 0.45），共 2 期偵測到"
        },
        {
         "kind": "river",
@@ -44916,28 +50108,30 @@ window.EVENT_SCENARIOS = [
         "text": "人工查證：尚未進行"
        }
       ],
-      "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
-      ],
+      "conflicts": [],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
       ],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"
        },
        {
         "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
        },
        {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 7/25）",
+        "reason": "追蹤湖面變化"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.confirmed",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
@@ -44945,8 +50139,31 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "gap.exposure",
        "caution.old_landslide",
-       "priority.high.lost"
+       "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/25",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -45061,8 +50278,8 @@ window.EVENT_SCENARIOS = [
      }
     ],
     "counts": {
-     "high": 1,
-     "medium": 0,
+     "high": 0,
+     "medium": 1,
      "low": 0
     },
     "newCount": 0,
@@ -45129,18 +50346,18 @@ window.EVENT_SCENARIOS = [
         ]
        }
       ],
-      "priority": "high",
-      "priorityText": "高優先",
-      "action": "建議立即查證",
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
       "confidence": "低",
       "confidenceReasons": [
        "前後期結果不一致，需人工判斷"
       ],
-      "persistence": "lost",
-      "persistenceText": "持續性中斷",
+      "persistence": "missing",
+      "persistenceText": "最新一期未見",
       "grade": "A",
       "scale": "小",
-      "summary": "E1 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。",
+      "summary": "E1 需要人工確認：前期已確認蓄水，最新一期未見，只漏一期；建議調閱光學影像，下一期 7/31 再看不到才判持續性中斷。",
       "evidence": [
        {
         "kind": "sar",
@@ -45150,7 +50367,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，最新一期同位置未見；只漏一期，等下一期確認"
        },
        {
         "kind": "river",
@@ -45193,27 +50410,23 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。"
       ],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
       ],
       "tasks": [
        {
-        "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "label": "打開最新光學影像確認湖面是否仍在",
+        "reason": "排除 SAR 陰影或遮罩造成的漏看"
        },
        {
-        "label": "調閱最新光學影像",
-        "reason": "確認湖面是否仍在，排除 SAR 遮罩造成的漏偵"
-       },
-       {
-        "label": "通報主管機關（農村水保署）",
-        "reason": "下游保全對象尚未串接，需由主管機關評估"
+        "label": "排下一期 SAR 複核（7/31）",
+        "reason": "同軌道再看不到才判持續性中斷"
        }
       ],
       "rulesFired": [
-       "persistence.lost",
+       "persistence.missing",
        "spatial.on_river",
        "spatial.landslide",
        "spatial.blockage",
@@ -45221,8 +50434,37 @@ window.EVENT_SCENARIOS = [
        "gap.optical",
        "gap.exposure",
        "caution.old_landslide",
-       "priority.high.lost"
+       "priority.medium.missing"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "7/31",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -45419,7 +50661,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 2 期同位置未見"
        },
        {
         "kind": "river",
@@ -45462,7 +50704,7 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
@@ -45470,7 +50712,7 @@ window.EVENT_SCENARIOS = [
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -45492,6 +50734,41 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-07-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/6",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -45688,7 +50965,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 3 期同位置未見"
        },
        {
         "kind": "river",
@@ -45731,7 +51008,7 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
@@ -45739,7 +51016,7 @@ window.EVENT_SCENARIOS = [
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -45761,6 +51038,47 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-07-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-11T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/18",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -45957,7 +51275,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 4 期同位置未見"
        },
        {
         "kind": "river",
@@ -46000,7 +51318,7 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
@@ -46008,7 +51326,7 @@ window.EVENT_SCENARIOS = [
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -46030,6 +51348,53 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-07-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-11T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-23T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "8/30",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -46226,7 +51591,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 5 期同位置未見"
        },
        {
         "kind": "river",
@@ -46269,7 +51634,7 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
@@ -46277,7 +51642,7 @@ window.EVENT_SCENARIOS = [
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -46299,6 +51664,59 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-07-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-11T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-23T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-09-04T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/11",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -46495,7 +51913,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "persistence",
         "status": "against",
-        "text": "前期已確認蓄水，最新一期同位置未再偵測到或複核未持續"
+        "text": "前期已確認蓄水，連續 6 期同位置未見"
        },
        {
         "kind": "river",
@@ -46538,7 +51956,7 @@ window.EVENT_SCENARIOS = [
        }
       ],
       "conflicts": [
-       "前期多期一致，最新一期卻未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
+       "前期多期一致，同軌道連續兩期卻都未見：可能是潰決、排空，也可能是陰影遮罩擋掉湖面，需人工判斷。"
       ],
       "cautions": [
        "疑似水體有 80% 落在前一年新出現的崩塌範圍內，可能是崩塌堆積上的雷達陰影或平滑泥砂，不一定是水；建議以光學影像確認是否為水。"
@@ -46546,7 +51964,7 @@ window.EVENT_SCENARIOS = [
       "tasks": [
        {
         "label": "立即查證是否潰決或排空",
-        "reason": "前期已確認蓄水，最新一期未見；潰決會直接影響下游"
+        "reason": "前期已確認蓄水，同軌道連續兩期未見；潰決會直接影響下游"
        },
        {
         "label": "調閱最新光學影像",
@@ -46568,6 +51986,65 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.lost"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-07-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-11T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-23T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-09-04T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-09-16T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "9/23",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
@@ -46847,6 +52324,71 @@ window.EVENT_SCENARIOS = [
        "caution.old_landslide",
        "priority.high.confirmed"
       ],
+      "radar": [
+       {
+        "time": "2026-07-06T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "首次出現 · 偵測到 0.74 公頃"
+       },
+       {
+        "time": "2026-07-12T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.59 公頃"
+       },
+       {
+        "time": "2026-07-18T21:52:00+00:00",
+        "orbit": null,
+        "status": "wet",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-07-24T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-07-30T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-11T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-08-23T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-09-04T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-09-16T21:52:00+00:00",
+        "orbit": null,
+        "status": "miss",
+        "text": "同位置沒看到"
+       },
+       {
+        "time": "2026-09-28T21:52:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "text": "偵測到 0.69 公頃"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/5",
+      "nextRecheckOrbit": null,
       "hindsight": [
        {
         "lonLat": [
