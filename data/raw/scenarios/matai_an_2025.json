@@ -2,7 +2,7 @@
   "id": "matai_an_2025",
   "name": "馬太鞍溪 · 2025 薇帕颱風",
   "kind": "positive",
-  "description": "壩址周圍 4 km 窗格，Sentinel-1 降軌 105 逐期回放。湖於 2025-07-21 17:54 形成，2025-09-23 溢流潰決。",
+  "description": "壩址周圍 4 km 窗格，Sentinel-1 降軌 105 逐期回放。湖於 2025-07-21 17:54 形成，2025-09-23 溢流潰決。另有光學偵測：Sentinel-2／Landsat 晴空過半 6 景，規則見 detect/optical.py。",
   "center": [
     121.29752,
     23.70061
@@ -191,5 +191,218 @@
       "available": "2025-10-14T23:59:00+08:00",
       "source": "農業部林業及自然保育署航測及遙測分署 提供（航拍影像）"
     }
-  ]
+  ],
+  "opticalDetection": {
+    "preStart": "2025-05-15",
+    "preEnd": "2025-07-14",
+    "preImages": 26,
+    "scenes": [
+      {
+        "time": "2025-07-14T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 10.1,
+        "usable": false
+      },
+      {
+        "time": "2025-07-18T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-07-23T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.3,
+        "usable": false
+      },
+      {
+        "time": "2025-07-25T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 46.1,
+        "usable": false
+      },
+      {
+        "time": "2025-07-28T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.2,
+        "usable": false
+      },
+      {
+        "time": "2025-07-30T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-02T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-07T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-07T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-12T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 48.3,
+        "usable": false
+      },
+      {
+        "time": "2025-08-14T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 59.3,
+        "usable": true
+      },
+      {
+        "time": "2025-08-15T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 6.8,
+        "usable": false
+      },
+      {
+        "time": "2025-08-17T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 74.5,
+        "usable": true
+      },
+      {
+        "time": "2025-08-22T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 45.9,
+        "usable": false
+      },
+      {
+        "time": "2025-08-23T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 87.4,
+        "usable": true
+      },
+      {
+        "time": "2025-08-27T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-31T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-09-01T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-09-03T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 21.3,
+        "usable": false
+      },
+      {
+        "time": "2025-09-06T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-09-08T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-09-11T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 65.5,
+        "usable": true
+      },
+      {
+        "time": "2025-09-16T02:21+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 61.0,
+        "usable": true
+      },
+      {
+        "time": "2025-09-16T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 59.7,
+        "usable": true
+      }
+    ],
+    "passes": [
+      {
+        "file": "final_opt_matai_an_2025_20250814_S2A.json",
+        "time": "2025-08-14T02:41+00:00",
+        "recheckTime": "2025-08-17T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 59.3,
+        "orbitLabel": "光學 Sentinel-2A 20250814"
+      },
+      {
+        "file": "final_opt_matai_an_2025_20250817_S2B.json",
+        "time": "2025-08-17T02:41+00:00",
+        "recheckTime": "2025-08-23T02:20+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 74.5,
+        "orbitLabel": "光學 Sentinel-2B 20250817"
+      },
+      {
+        "file": "final_opt_matai_an_2025_20250823_L8.json",
+        "time": "2025-08-23T02:20+00:00",
+        "recheckTime": "2025-09-11T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 87.4,
+        "orbitLabel": "光學 Landsat 8 20250823"
+      },
+      {
+        "file": "final_opt_matai_an_2025_20250911_S2C.json",
+        "time": "2025-09-11T02:41+00:00",
+        "recheckTime": "2025-09-16T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 65.5,
+        "orbitLabel": "光學 Sentinel-2C 20250911"
+      },
+      {
+        "file": "final_opt_matai_an_2025_20250916_L9.json",
+        "time": "2025-09-16T02:21+00:00",
+        "recheckTime": "2025-09-16T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 9",
+        "clearPct": 61.0,
+        "orbitLabel": "光學 Landsat 9 20250916"
+      },
+      {
+        "file": "final_opt_matai_an_2025_20250916_S2B.json",
+        "time": "2025-09-16T02:41+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 59.7,
+        "orbitLabel": "光學 Sentinel-2B 20250916"
+      }
+    ]
+  }
 }

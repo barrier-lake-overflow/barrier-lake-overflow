@@ -2,7 +2,7 @@
   "id": "inv_bl063",
   "name": "花蓮豐坪溪上游 · 2021",
   "kind": "replay",
-  "description": "全清冊回放：清冊登載 2021-11-06 形成，清冊蓄水量 7.5 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "description": "全清冊回放：清冊登載 2021-11-06 形成，清冊蓄水量 7.5 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。另有光學偵測：Sentinel-2／Landsat 晴空過半 6 景，規則見 detect/optical.py。",
   "center": [
     121.25644,
     23.4965
@@ -135,5 +135,188 @@
     "file": "data/basemaps/inv_bl063.jpg",
     "before": "2021-10-30",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2021-10-30 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "opticalDetection": {
+    "preStart": "2021-08-31",
+    "preEnd": "2021-10-30",
+    "preImages": 27,
+    "scenes": [
+      {
+        "time": "2021-10-31T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-11-01T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 31.0,
+        "usable": false
+      },
+      {
+        "time": "2021-11-06T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 76.6,
+        "usable": true
+      },
+      {
+        "time": "2021-11-11T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 13.4,
+        "usable": false
+      },
+      {
+        "time": "2021-11-16T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 58.8,
+        "usable": true
+      },
+      {
+        "time": "2021-11-16T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 70.2,
+        "usable": true
+      },
+      {
+        "time": "2021-11-21T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 7.4,
+        "usable": false
+      },
+      {
+        "time": "2021-11-26T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-12-01T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-12-02T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 36.1,
+        "usable": false
+      },
+      {
+        "time": "2021-12-06T02:40+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 25.1,
+        "usable": false
+      },
+      {
+        "time": "2021-12-10T02:21+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-12-11T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2021-12-16T02:40+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2021-12-18T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-12-21T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-12-26T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2021-12-31T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2022-01-03T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 99.6,
+        "usable": true
+      }
+    ],
+    "passes": [
+      {
+        "file": "final_opt_inv_bl063_20211106_S2B.json",
+        "time": "2021-11-06T02:41+00:00",
+        "recheckTime": "2021-11-16T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 76.6,
+        "orbitLabel": "光學 Sentinel-2B 20211106"
+      },
+      {
+        "file": "final_opt_inv_bl063_20211116_L8.json",
+        "time": "2021-11-16T02:21+00:00",
+        "recheckTime": "2021-11-16T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 58.8,
+        "orbitLabel": "光學 Landsat 8 20211116"
+      },
+      {
+        "file": "final_opt_inv_bl063_20211116_S2B.json",
+        "time": "2021-11-16T02:41+00:00",
+        "recheckTime": "2021-12-11T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 70.2,
+        "orbitLabel": "光學 Sentinel-2B 20211116"
+      },
+      {
+        "file": "final_opt_inv_bl063_20211211_S2A.json",
+        "time": "2021-12-11T02:41+00:00",
+        "recheckTime": "2021-12-16T02:40+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Sentinel-2A 20211211"
+      },
+      {
+        "file": "final_opt_inv_bl063_20211216_S2B.json",
+        "time": "2021-12-16T02:40+00:00",
+        "recheckTime": "2022-01-03T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Sentinel-2B 20211216"
+      },
+      {
+        "file": "final_opt_inv_bl063_20220103_L8.json",
+        "time": "2022-01-03T02:21+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 99.6,
+        "orbitLabel": "光學 Landsat 8 20220103"
+      }
+    ]
   }
 }

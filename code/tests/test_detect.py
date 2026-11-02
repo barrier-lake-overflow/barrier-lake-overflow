@@ -320,5 +320,13 @@ class TestLoadNdwiGeotiff(unittest.TestCase):
         self.assertEqual(data["ndwi"][0, 0], 0.5)
 
 
+
+def load_tests(loader, tests, ignore):
+    import doctest
+    from pipeline.detect import optical
+    tests.addTests(doctest.DocTestSuite(optical))
+    return tests
+
+
 if __name__ == "__main__":
     unittest.main()

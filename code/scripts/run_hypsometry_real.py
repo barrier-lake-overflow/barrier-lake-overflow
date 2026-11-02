@@ -11,8 +11,8 @@ DEM：data/raw/dem/DEM_matai_an.tif，NASADEM 30 m，EPSG:4326。GEE 匯出：
       region: aoi, scale: 30, crs: 'EPSG:4326', maxPixels: 1e9
     });
 
-水位不用新聞的壩高（120～200 m 都有人報），改用 NDWI 偵測到的湖面面積
-（real_water_bl071.json 的 newWaterLargestComponentAreaHectare）在曲線上反查。
+水位不用新聞的壩高（120～200 m 都有人報），改用量到的湖面面積（--area-ha，例如航照 8/18 的 90.6 公頃）
+在曲線上反查。原本用的 NDWI 面積（128 公頃）位於壩址下游、不是堰塞湖，已撤下（docs/validation.md 已知限制）。
 
 下游遮罩：DEM 是事件前地形，沒有崩塌堆積體，水位一高填洼就會從壩址灌進
 下游河道。第一次跑時 867 m 連通面積 0.8 公頃，868 m 直接跳到 137 公頃。
@@ -21,11 +21,12 @@ DEM：data/raw/dem/DEM_matai_an.tif，NASADEM 30 m，EPSG:4326。GEE 匯出：
 
 DEM 是經緯度網格，像元面積要依緯度換算成公尺，不能直接用度。
 
-    python scripts/run_hypsometry_real.py
+    python scripts/run_hypsometry_real.py --area-ha 90.6
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import os
@@ -42,7 +43,6 @@ from pipeline.assess.backtest import backtest_report
 from pipeline.assess.scale import classify_volume
 
 DEM_PATH = "../data/raw/dem/DEM_matai_an.tif"
-REAL_WATER_JSON = "../data/derived/real_water_bl071.json"
 DAM_LON, DAM_LAT = 121.29752, 23.70061
 # 崩塌源頭座標（taiwan-barrier-lakes.csv 第 71 列「崩塌X_TW/Y_TW」轉
 # WGS84），確認在壩址正北方（上游）——反過來說，壩址以南就是下游，
@@ -103,6 +103,9 @@ def mask_downstream(dem: np.ndarray, transform, pour_point: tuple,
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--area-ha", type=float, required=True, help="湖面面積（公頃），在面積曲線上反查水位")
+    args = ap.parse_args()
     dem, transform = load_dem(DEM_PATH)
 
     # 每個像元真實面積（公尺²）：經度、緯度方向分別換算再相乘，
@@ -128,9 +131,7 @@ def main() -> None:
         elevation_step=ELEVATION_STEP_M,
     )
 
-    with open(REAL_WATER_JSON, encoding="utf-8") as f:
-        real_water = json.load(f)
-    target_area_m2 = real_water["newWaterLargestComponentAreaHectare"] * 1e4
+    target_area_m2 = args.area_ha * 1e4
 
     max_area_on_curve = curve.points[-1][1]
     saturated = target_area_m2 >= max_area_on_curve

@@ -2,7 +2,7 @@
 """
 真實事件前後 Sentinel-1 → 新增水體／崩塌 → 疑似堰塞湖 A/B/C
 
-    python scripts/analyze_sar_change.py         --pre  ../data/raw/sentinel1/S1_VV_pre_matai_an.tif         --post ../data/raw/sentinel1/S1_VV_post_matai_an.tif         --post-later ../data/raw/sentinel1/S1_VV_post2_matai_an.tif         --dem  ../data/raw/sentinel1/NASADEM_matai_an.tif         --orbit ASCENDING         --lon 121.29752 --lat 23.70061 --lake-id bl071         --pre-label "2025-06-01~07-18 中位數" --post-label "2025-07-25~08-10 中位數"         --ndwi-json ../data/derived/real_water_bl071.json         --out ../data/derived/real_sar_bl071.json
+    python scripts/analyze_sar_change.py         --pre  ../data/raw/sentinel1/S1_VV_pre_matai_an.tif         --post ../data/raw/sentinel1/S1_VV_post_matai_an.tif         --post-later ../data/raw/sentinel1/S1_VV_post2_matai_an.tif         --dem  ../data/raw/sentinel1/NASADEM_matai_an.tif         --orbit ASCENDING         --lon 121.29752 --lat 23.70061 --lake-id bl071         --pre-label "2025-06-01~07-18 中位數" --post-label "2025-07-25~08-10 中位數"         --out ../data/derived/real_sar_bl071.json
 
 GEE 匯出（Code Editor 執行）。四張圖要同 region / scale / crs，否則過不了 check_aligned：
 
@@ -30,7 +30,7 @@ GEE 匯出（Code Editor 執行）。四張圖要同 region / scale / crs，否�
 --orbit 要和 orbitProperties_pass 一致，它決定視向，會影響陰影／疊置遮罩。
 
 流程：裁 4 km 視窗 → run_sar_chain → 每個候選輸出經緯度、和壩址距離、
-湖面多邊形；有 --ndwi-json 時和光學結果比對面積。
+湖面多邊形。
 """
 
 from __future__ import annotations
@@ -46,7 +46,7 @@ import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.dirname(__file__))
 
-from analyze_ndwi_change import crop_window, mask_to_lonlat_polygon, merge_into_dashboard_layer  # noqa: E402
+from pipeline.preprocess.raster import crop_window, mask_to_lonlat_polygon, merge_into_dashboard_layer  # noqa: E402
 from pipeline.detect.barrier_lake import EIGHT, run_sar_chain  # noqa: E402
 from pipeline.detect.water import SAR_VH_WATER_DB, SAR_VV_MARGINAL_DB, SAR_WATER_DB_DEFAULT  # noqa: E402
 from scipy import ndimage  # noqa: E402
@@ -102,7 +102,6 @@ def main() -> None:
                          "每個候選輸出 oldLandslidePct（落在裡面的面積比例），供事件研判加註提醒")
     ap.add_argument("--pre-label", default="事件前")
     ap.add_argument("--post-label", default="事件後")
-    ap.add_argument("--ndwi-json", default=None, help="analyze_ndwi_change.py 的輸出，交叉驗證用")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -223,17 +222,6 @@ def main() -> None:
         result["oldLandslide"] = {
             "note": "一年前基準 → 事件前基準之間的崩塌（既有崩塌堆積區），只供提醒，不影響分級",
             "areaHectare": round(float(out["old_landslides"].mask.sum()) * area_px, 2),
-        }
-
-    if args.ndwi_json and os.path.exists(args.ndwi_json):
-        with open(args.ndwi_json, encoding="utf-8") as fh:
-            ndwi = json.load(fh)
-        optical = ndwi.get("newWaterLargestComponentAreaHectare")
-        top = candidates[0]["areaHectare"] if candidates else None
-        result["crossCheckNdwi"] = {
-            "opticalLargestNewWaterHectare": optical,
-            "sarTopCandidateHectare": top,
-            "ratioSarToOptical": round(top / optical, 3) if optical and top else None,
         }
 
     if args.debug_components:

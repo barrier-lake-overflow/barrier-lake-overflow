@@ -804,6 +804,7 @@ body.mm-open{overflow:hidden}
 .q-tag.is-optical{border-style:dashed;border-color:var(--jade-dim);color:var(--moss)}
 .q-tag.is-optical.v-water{color:var(--jade)}
 .q-tag.is-optical.v-partial{color:var(--ochre)}
+.q-tag.is-source{border-color:var(--moss);color:var(--moss)}
 .optical-note{font-family:var(--mono);font-size:calc(13px*var(--fs));color:var(--moss);padding:10px clamp(14px,1.8vw,22px) 0;line-height:1.7}
 .optical-note b{color:var(--fog);font-weight:500}
 .optical-note .op-est{color:var(--moss)}
@@ -846,6 +847,7 @@ body.mm-open{overflow:hidden}
 .k-sar.is-hit .tl-mark::after{background:var(--jade)}
 .k-opt .tl-mark::after{border-radius:2px;border:2px solid var(--ochre);background:var(--abyss)}
 .k-opt.is-clear .tl-mark::after,.k-opt.is-pass .tl-mark::after{background:var(--ochre)}
+.k-opt.is-hit .tl-mark::after{background:var(--jade)}
 .is-future .tl-mark::after{border-style:dashed}
 .tl-sat{color:var(--snow);overflow-wrap:anywhere}
 .tl-st{color:var(--moss);font-size:calc(12.5px*var(--fs))}

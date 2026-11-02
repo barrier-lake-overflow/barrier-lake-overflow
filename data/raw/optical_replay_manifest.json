@@ -1,0 +1,3935 @@
+{
+ "rules": "見 code/scripts/gee_fetch_optical.py（網頁版匯出，split_optical_exports.py 拆檔）",
+ "lakes": {
+  "inv_bl051": {
+   "lakeId": "bl051",
+   "scenarioId": "inv_bl051",
+   "name": "烏來堰塞湖",
+   "formed": "2015-08-14",
+   "breach": null,
+   "preStart": "2015-06-08",
+   "preEnd": "2015-08-07",
+   "postStart": "2015-08-07",
+   "postEnd": "2015-10-13",
+   "preImages": 4,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20150812",
+     "timeUTC": "2015-08-12T02:20+00:00",
+     "clearPct": 65.4,
+     "usable": true,
+     "file": "OPT_inv_bl051_20150812_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20150913",
+     "timeUTC": "2015-09-13T02:20+00:00",
+     "clearPct": 75.8,
+     "usable": true,
+     "file": "OPT_inv_bl051_20150913_L8.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl052": {
+   "lakeId": "bl052",
+   "scenarioId": "inv_bl052",
+   "name": "塔次基里溪",
+   "formed": "2015-08-12",
+   "breach": null,
+   "preStart": "2015-06-06",
+   "preEnd": "2015-08-05",
+   "postStart": "2015-08-05",
+   "postEnd": "2015-10-11",
+   "preImages": 4,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20150812",
+     "timeUTC": "2015-08-12T02:20+00:00",
+     "clearPct": 99.1,
+     "usable": true,
+     "file": "OPT_inv_bl052_20150812_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20150913",
+     "timeUTC": "2015-09-13T02:20+00:00",
+     "clearPct": 87.8,
+     "usable": true,
+     "file": "OPT_inv_bl052_20150913_L8.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl053": {
+   "lakeId": "bl053",
+   "scenarioId": "inv_bl053",
+   "name": "立霧溪錐麓",
+   "formed": "2016-01-27",
+   "breach": null,
+   "preStart": "2015-11-21",
+   "preEnd": "2016-01-20",
+   "postStart": "2016-01-20",
+   "postEnd": "2016-03-27",
+   "preImages": 3,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160220",
+     "timeUTC": "2016-02-20T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160307",
+     "timeUTC": "2016-03-07T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl054": {
+   "lakeId": "bl054",
+   "scenarioId": "inv_bl054",
+   "name": "桃園霞雲溪",
+   "formed": "2016-08-19",
+   "breach": null,
+   "preStart": "2016-06-13",
+   "preEnd": "2016-08-12",
+   "postStart": "2016-08-12",
+   "postEnd": "2016-10-18",
+   "preImages": 3,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160814",
+     "timeUTC": "2016-08-14T02:20+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl054_20160814_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160830",
+     "timeUTC": "2016-08-30T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20161001",
+     "timeUTC": "2016-10-01T02:21+00:00",
+     "clearPct": 38.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20161017",
+     "timeUTC": "2016-10-17T02:21+00:00",
+     "clearPct": 38.6,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl056": {
+   "lakeId": "bl056",
+   "scenarioId": "inv_bl056",
+   "name": "泰源南溪",
+   "formed": "2016-07-09",
+   "breach": null,
+   "preStart": "2016-05-03",
+   "preEnd": "2016-07-02",
+   "postStart": "2016-07-02",
+   "postEnd": "2016-09-07",
+   "preImages": 3,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160713",
+     "timeUTC": "2016-07-13T02:21+00:00",
+     "clearPct": 41.3,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160729",
+     "timeUTC": "2016-07-29T02:21+00:00",
+     "clearPct": 83.6,
+     "usable": true,
+     "file": "OPT_inv_bl056_20160729_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160814",
+     "timeUTC": "2016-08-14T02:21+00:00",
+     "clearPct": 99.4,
+     "usable": true,
+     "file": "OPT_inv_bl056_20160814_L8.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl057": {
+   "lakeId": "bl057",
+   "scenarioId": "inv_bl057",
+   "name": "萬里溪",
+   "formed": "2016-03-07",
+   "breach": null,
+   "preStart": "2015-12-31",
+   "preEnd": "2016-02-29",
+   "postStart": "2016-02-29",
+   "postEnd": "2016-05-06",
+   "preImages": 5,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160307",
+     "timeUTC": "2016-03-07T02:20+00:00",
+     "clearPct": 1.3,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160323",
+     "timeUTC": "2016-03-23T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160408",
+     "timeUTC": "2016-04-08T02:20+00:00",
+     "clearPct": 46.4,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20160424",
+     "timeUTC": "2016-04-24T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl058": {
+   "lakeId": "bl058",
+   "scenarioId": "inv_bl058",
+   "name": "東埔蚋溪小半天",
+   "formed": "2017-06-03",
+   "breach": null,
+   "preStart": "2017-03-28",
+   "preEnd": "2017-05-27",
+   "postStart": "2017-05-27",
+   "postEnd": "2017-08-02",
+   "preImages": 10,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170529",
+     "timeUTC": "2017-05-29T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170605",
+     "timeUTC": "2017-06-05T02:27+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170614",
+     "timeUTC": "2017-06-14T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170621",
+     "timeUTC": "2017-06-21T02:26+00:00",
+     "clearPct": 94.1,
+     "usable": true,
+     "file": "OPT_inv_bl058_20170621_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170630",
+     "timeUTC": "2017-06-30T02:20+00:00",
+     "clearPct": 73.4,
+     "usable": true,
+     "file": "OPT_inv_bl058_20170630_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170707",
+     "timeUTC": "2017-07-07T02:26+00:00",
+     "clearPct": 92.9,
+     "usable": true,
+     "file": "OPT_inv_bl058_20170707_L8.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170716",
+     "timeUTC": "2017-07-16T02:21+00:00",
+     "clearPct": 31.5,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170723",
+     "timeUTC": "2017-07-23T02:26+00:00",
+     "clearPct": 1.6,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20170801",
+     "timeUTC": "2017-08-01T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl060": {
+   "lakeId": "bl060",
+   "scenarioId": "inv_bl060",
+   "name": "烏牛欄溪",
+   "formed": "2019-08-21",
+   "breach": null,
+   "preStart": "2019-06-15",
+   "preEnd": "2019-08-14",
+   "postStart": "2019-08-14",
+   "postEnd": "2019-10-20",
+   "preImages": 31,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20190814",
+     "timeUTC": "2019-08-14T02:27+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20190814",
+     "timeUTC": "2019-08-14T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20190819",
+     "timeUTC": "2019-08-19T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20190823",
+     "timeUTC": "2019-08-23T02:20+00:00",
+     "clearPct": 37.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20190824",
+     "timeUTC": "2019-08-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20190829",
+     "timeUTC": "2019-08-29T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20190830",
+     "timeUTC": "2019-08-30T02:27+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20190903",
+     "timeUTC": "2019-09-03T02:41+00:00",
+     "clearPct": 20.3,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20190908",
+     "timeUTC": "2019-09-08T02:21+00:00",
+     "clearPct": 47.4,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20190908",
+     "timeUTC": "2019-09-08T02:41+00:00",
+     "clearPct": 45.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20190913",
+     "timeUTC": "2019-09-13T02:41+00:00",
+     "clearPct": 15.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20190915",
+     "timeUTC": "2019-09-15T02:27+00:00",
+     "clearPct": 29.2,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20190918",
+     "timeUTC": "2019-09-18T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl060_20190918_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20190923",
+     "timeUTC": "2019-09-23T02:41+00:00",
+     "clearPct": 36.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20190924",
+     "timeUTC": "2019-09-24T02:21+00:00",
+     "clearPct": 54.3,
+     "usable": true,
+     "file": "OPT_inv_bl060_20190924_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20190928",
+     "timeUTC": "2019-09-28T02:41+00:00",
+     "clearPct": 8.4,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20191001",
+     "timeUTC": "2019-10-01T02:27+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20191003",
+     "timeUTC": "2019-10-03T02:41+00:00",
+     "clearPct": 89.7,
+     "usable": true,
+     "file": "OPT_inv_bl060_20191003_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20191008",
+     "timeUTC": "2019-10-08T02:41+00:00",
+     "clearPct": 49.6,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20191010",
+     "timeUTC": "2019-10-10T02:21+00:00",
+     "clearPct": 32.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20191013",
+     "timeUTC": "2019-10-13T02:41+00:00",
+     "clearPct": 25.9,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20191017",
+     "timeUTC": "2019-10-17T02:27+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl060_20191017_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20191018",
+     "timeUTC": "2019-10-18T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl060_20191018_S2B.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl061": {
+   "lakeId": "bl061",
+   "scenarioId": "inv_bl061",
+   "name": "臺東大南溪",
+   "formed": "2021-02-05",
+   "breach": null,
+   "preStart": "2020-11-30",
+   "preEnd": "2021-01-29",
+   "postStart": "2021-01-29",
+   "postEnd": "2021-04-06",
+   "preImages": 26,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210130",
+     "timeUTC": "2021-01-30T02:41+00:00",
+     "clearPct": 43.7,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210201",
+     "timeUTC": "2021-02-01T02:21+00:00",
+     "clearPct": 84.5,
+     "usable": true,
+     "file": "OPT_inv_bl061_20210201_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210204",
+     "timeUTC": "2021-02-04T02:41+00:00",
+     "clearPct": 81.5,
+     "usable": true,
+     "file": "OPT_inv_bl061_20210204_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210209",
+     "timeUTC": "2021-02-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210214",
+     "timeUTC": "2021-02-14T02:41+00:00",
+     "clearPct": 1.8,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210217",
+     "timeUTC": "2021-02-17T02:21+00:00",
+     "clearPct": 4.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210219",
+     "timeUTC": "2021-02-19T02:41+00:00",
+     "clearPct": 19.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210224",
+     "timeUTC": "2021-02-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210301",
+     "timeUTC": "2021-03-01T02:41+00:00",
+     "clearPct": 65.8,
+     "usable": true,
+     "file": "OPT_inv_bl061_20210301_S2B.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210305",
+     "timeUTC": "2021-03-05T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210306",
+     "timeUTC": "2021-03-06T02:41+00:00",
+     "clearPct": 37.4,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210311",
+     "timeUTC": "2021-03-11T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210316",
+     "timeUTC": "2021-03-16T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210321",
+     "timeUTC": "2021-03-21T02:21+00:00",
+     "clearPct": 46.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210321",
+     "timeUTC": "2021-03-21T02:41+00:00",
+     "clearPct": 17.6,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210326",
+     "timeUTC": "2021-03-26T02:41+00:00",
+     "clearPct": 96.6,
+     "usable": true,
+     "file": "OPT_inv_bl061_20210326_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210331",
+     "timeUTC": "2021-03-31T02:41+00:00",
+     "clearPct": 0.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210405",
+     "timeUTC": "2021-04-05T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl062": {
+   "lakeId": "bl062",
+   "scenarioId": "inv_bl062",
+   "name": "桃園大曼溪",
+   "formed": "2021-06-19",
+   "breach": null,
+   "preStart": "2021-04-13",
+   "preEnd": "2021-06-12",
+   "postStart": "2021-06-12",
+   "postEnd": "2021-08-18",
+   "preImages": 16,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210614",
+     "timeUTC": "2021-06-14T02:40+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210614_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210619",
+     "timeUTC": "2021-06-19T02:40+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210619_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210624",
+     "timeUTC": "2021-06-24T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210625",
+     "timeUTC": "2021-06-25T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210629",
+     "timeUTC": "2021-06-29T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210704",
+     "timeUTC": "2021-07-04T02:40+00:00",
+     "clearPct": 88.7,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210704_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210709",
+     "timeUTC": "2021-07-09T02:40+00:00",
+     "clearPct": 99.3,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210709_S2B.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210711",
+     "timeUTC": "2021-07-11T02:20+00:00",
+     "clearPct": 61.8,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210711_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210714",
+     "timeUTC": "2021-07-14T02:40+00:00",
+     "clearPct": 74.5,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210714_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210719",
+     "timeUTC": "2021-07-19T02:40+00:00",
+     "clearPct": 64.9,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210719_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210724",
+     "timeUTC": "2021-07-24T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210727",
+     "timeUTC": "2021-07-27T02:20+00:00",
+     "clearPct": 29.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210729",
+     "timeUTC": "2021-07-29T02:40+00:00",
+     "clearPct": 91.1,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210729_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210803",
+     "timeUTC": "2021-08-03T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20210808",
+     "timeUTC": "2021-08-08T02:40+00:00",
+     "clearPct": 2.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20210812",
+     "timeUTC": "2021-08-12T02:20+00:00",
+     "clearPct": 73.3,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210812_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20210813",
+     "timeUTC": "2021-08-13T02:40+00:00",
+     "clearPct": 65.3,
+     "usable": true,
+     "file": "OPT_inv_bl062_20210813_S2A.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl063": {
+   "lakeId": "bl063",
+   "scenarioId": "inv_bl063",
+   "name": "花蓮豐坪溪上游",
+   "formed": "2021-11-06",
+   "breach": null,
+   "preStart": "2021-08-31",
+   "preEnd": "2021-10-30",
+   "postStart": "2021-10-30",
+   "postEnd": "2022-01-05",
+   "preImages": 27,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20211031",
+     "timeUTC": "2021-10-31T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211101",
+     "timeUTC": "2021-11-01T02:41+00:00",
+     "clearPct": 31.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20211106",
+     "timeUTC": "2021-11-06T02:41+00:00",
+     "clearPct": 76.6,
+     "usable": true,
+     "file": "OPT_inv_bl063_20211106_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211111",
+     "timeUTC": "2021-11-11T02:41+00:00",
+     "clearPct": 13.4,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20211116",
+     "timeUTC": "2021-11-16T02:21+00:00",
+     "clearPct": 58.8,
+     "usable": true,
+     "file": "OPT_inv_bl063_20211116_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20211116",
+     "timeUTC": "2021-11-16T02:41+00:00",
+     "clearPct": 70.2,
+     "usable": true,
+     "file": "OPT_inv_bl063_20211116_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211121",
+     "timeUTC": "2021-11-21T02:41+00:00",
+     "clearPct": 7.4,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20211126",
+     "timeUTC": "2021-11-26T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211201",
+     "timeUTC": "2021-12-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20211202",
+     "timeUTC": "2021-12-02T02:21+00:00",
+     "clearPct": 36.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20211206",
+     "timeUTC": "2021-12-06T02:40+00:00",
+     "clearPct": 25.1,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20211210",
+     "timeUTC": "2021-12-10T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211211",
+     "timeUTC": "2021-12-11T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl063_20211211_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20211216",
+     "timeUTC": "2021-12-16T02:40+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl063_20211216_S2B.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20211218",
+     "timeUTC": "2021-12-18T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211221",
+     "timeUTC": "2021-12-21T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20211226",
+     "timeUTC": "2021-12-26T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20211231",
+     "timeUTC": "2021-12-31T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20220103",
+     "timeUTC": "2022-01-03T02:21+00:00",
+     "clearPct": 99.6,
+     "usable": true,
+     "file": "OPT_inv_bl063_20220103_L8.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl064": {
+   "lakeId": "bl064",
+   "scenarioId": "inv_bl064",
+   "name": "臺東新武呂溪",
+   "formed": "2022-11-20",
+   "breach": null,
+   "preStart": "2022-09-14",
+   "preEnd": "2022-11-13",
+   "postStart": "2022-11-13",
+   "postEnd": "2023-01-19",
+   "preImages": 32,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20221116",
+     "timeUTC": "2022-11-16T02:41+00:00",
+     "clearPct": 88.6,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221116_S2A.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20221119",
+     "timeUTC": "2022-11-19T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221119_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20221121",
+     "timeUTC": "2022-11-21T02:41+00:00",
+     "clearPct": 15.5,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20221126",
+     "timeUTC": "2022-11-26T02:41+00:00",
+     "clearPct": 43.3,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20221127",
+     "timeUTC": "2022-11-27T02:21+00:00",
+     "clearPct": 15.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20221201",
+     "timeUTC": "2022-12-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20221205",
+     "timeUTC": "2022-12-05T02:21+00:00",
+     "clearPct": 96.7,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221205_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20221206",
+     "timeUTC": "2022-12-06T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20221211",
+     "timeUTC": "2022-12-11T02:41+00:00",
+     "clearPct": 64.6,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221211_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20221213",
+     "timeUTC": "2022-12-13T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20221216",
+     "timeUTC": "2022-12-16T02:41+00:00",
+     "clearPct": 63.5,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221216_S2A.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20221221",
+     "timeUTC": "2022-12-21T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221221_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20221221",
+     "timeUTC": "2022-12-21T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221221_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20221226",
+     "timeUTC": "2022-12-26T02:41+00:00",
+     "clearPct": 83.0,
+     "usable": true,
+     "file": "OPT_inv_bl064_20221226_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20221231",
+     "timeUTC": "2022-12-31T02:41+00:00",
+     "clearPct": 2.6,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20230105",
+     "timeUTC": "2023-01-05T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20230106",
+     "timeUTC": "2023-01-06T02:21+00:00",
+     "clearPct": 92.4,
+     "usable": true,
+     "file": "OPT_inv_bl064_20230106_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20230110",
+     "timeUTC": "2023-01-10T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20230114",
+     "timeUTC": "2023-01-14T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl064_20230114_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20230115",
+     "timeUTC": "2023-01-15T02:41+00:00",
+     "clearPct": 50.7,
+     "usable": true,
+     "file": "OPT_inv_bl064_20230115_S2A.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl065": {
+   "lakeId": "bl065",
+   "scenarioId": "inv_bl065",
+   "name": "花蓮萬里溪",
+   "formed": "2024-03-13",
+   "breach": null,
+   "preStart": "2024-01-06",
+   "preEnd": "2024-03-06",
+   "postStart": "2024-03-06",
+   "postEnd": "2024-05-12",
+   "preImages": 26,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240310",
+     "timeUTC": "2024-03-10T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240313",
+     "timeUTC": "2024-03-13T02:20+00:00",
+     "clearPct": 28.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240315",
+     "timeUTC": "2024-03-15T02:41+00:00",
+     "clearPct": 20.8,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240320",
+     "timeUTC": "2024-03-20T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240321",
+     "timeUTC": "2024-03-21T02:20+00:00",
+     "clearPct": 61.9,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240321_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240325",
+     "timeUTC": "2024-03-25T02:41+00:00",
+     "clearPct": 99.0,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240325_S2B.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240329",
+     "timeUTC": "2024-03-29T02:20+00:00",
+     "clearPct": 29.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240330",
+     "timeUTC": "2024-03-30T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240404",
+     "timeUTC": "2024-04-04T02:41+00:00",
+     "clearPct": 49.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240406",
+     "timeUTC": "2024-04-06T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240409",
+     "timeUTC": "2024-04-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240414",
+     "timeUTC": "2024-04-14T02:20+00:00",
+     "clearPct": 99.8,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240414_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240414",
+     "timeUTC": "2024-04-14T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240414_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240419",
+     "timeUTC": "2024-04-19T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240422",
+     "timeUTC": "2024-04-22T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240424",
+     "timeUTC": "2024-04-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240429",
+     "timeUTC": "2024-04-29T02:41+00:00",
+     "clearPct": 83.0,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240429_S2A.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240430",
+     "timeUTC": "2024-04-30T02:20+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240430_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240504",
+     "timeUTC": "2024-05-04T02:41+00:00",
+     "clearPct": 56.8,
+     "usable": true,
+     "file": "OPT_inv_bl065_20240504_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240508",
+     "timeUTC": "2024-05-08T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240509",
+     "timeUTC": "2024-05-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl066": {
+   "lakeId": "bl066",
+   "scenarioId": "inv_bl066",
+   "name": "花蓮木瓜溪",
+   "formed": "2024-04-14",
+   "breach": null,
+   "preStart": "2024-02-07",
+   "preEnd": "2024-04-07",
+   "postStart": "2024-04-07",
+   "postEnd": "2024-06-13",
+   "preImages": 27,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240409",
+     "timeUTC": "2024-04-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240414",
+     "timeUTC": "2024-04-14T02:20+00:00",
+     "clearPct": 98.8,
+     "usable": true,
+     "file": "OPT_inv_bl066_20240414_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240414",
+     "timeUTC": "2024-04-14T02:41+00:00",
+     "clearPct": 98.6,
+     "usable": true,
+     "file": "OPT_inv_bl066_20240414_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240419",
+     "timeUTC": "2024-04-19T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240422",
+     "timeUTC": "2024-04-22T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240424",
+     "timeUTC": "2024-04-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240429",
+     "timeUTC": "2024-04-29T02:41+00:00",
+     "clearPct": 98.6,
+     "usable": true,
+     "file": "OPT_inv_bl066_20240429_S2A.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240430",
+     "timeUTC": "2024-04-30T02:20+00:00",
+     "clearPct": 99.5,
+     "usable": true,
+     "file": "OPT_inv_bl066_20240430_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240504",
+     "timeUTC": "2024-05-04T02:41+00:00",
+     "clearPct": 60.3,
+     "usable": true,
+     "file": "OPT_inv_bl066_20240504_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240508",
+     "timeUTC": "2024-05-08T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240509",
+     "timeUTC": "2024-05-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240514",
+     "timeUTC": "2024-05-14T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240516",
+     "timeUTC": "2024-05-16T02:19+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240519",
+     "timeUTC": "2024-05-19T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240524",
+     "timeUTC": "2024-05-24T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240524",
+     "timeUTC": "2024-05-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240529",
+     "timeUTC": "2024-05-29T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20240601",
+     "timeUTC": "2024-06-01T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20240603",
+     "timeUTC": "2024-06-03T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20240608",
+     "timeUTC": "2024-06-08T02:41+00:00",
+     "clearPct": 0.2,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240609",
+     "timeUTC": "2024-06-09T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl067": {
+   "lakeId": "bl067",
+   "scenarioId": "inv_bl067",
+   "name": "屏東率芒溪",
+   "formed": "2024-10-05",
+   "breach": null,
+   "preStart": "2024-07-30",
+   "preEnd": "2024-09-28",
+   "postStart": "2024-09-28",
+   "postEnd": "2024-12-04",
+   "preImages": 38,
+   "scenes": [
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20240929",
+     "timeUTC": "2024-09-29T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241001",
+     "timeUTC": "2024-10-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241006",
+     "timeUTC": "2024-10-06T02:41+00:00",
+     "clearPct": 0.7,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20241007",
+     "timeUTC": "2024-10-07T02:21+00:00",
+     "clearPct": 32.5,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241011",
+     "timeUTC": "2024-10-11T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20241015",
+     "timeUTC": "2024-10-15T02:21+00:00",
+     "clearPct": 79.9,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241015_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241016",
+     "timeUTC": "2024-10-16T02:41+00:00",
+     "clearPct": 53.4,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241016_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241021",
+     "timeUTC": "2024-10-21T02:41+00:00",
+     "clearPct": 12.8,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20241023",
+     "timeUTC": "2024-10-23T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241026",
+     "timeUTC": "2024-10-26T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241031",
+     "timeUTC": "2024-10-31T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241105",
+     "timeUTC": "2024-11-05T02:41+00:00",
+     "clearPct": 82.5,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241105_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241110",
+     "timeUTC": "2024-11-10T02:41+00:00",
+     "clearPct": 19.8,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241115",
+     "timeUTC": "2024-11-15T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241120",
+     "timeUTC": "2024-11-20T02:41+00:00",
+     "clearPct": 14.5,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20241124",
+     "timeUTC": "2024-11-24T02:21+00:00",
+     "clearPct": 99.9,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241124_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241125",
+     "timeUTC": "2024-11-25T02:41+00:00",
+     "clearPct": 59.3,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241125_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241130",
+     "timeUTC": "2024-11-30T02:41+00:00",
+     "clearPct": 72.1,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241130_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20241202",
+     "timeUTC": "2024-12-02T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl067_20241202_L9.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl068": {
+   "lakeId": "bl068",
+   "scenarioId": "inv_bl068",
+   "name": "新竹泰崗溪",
+   "formed": "2024-11-02",
+   "breach": null,
+   "preStart": "2024-08-27",
+   "preEnd": "2024-10-26",
+   "postStart": "2024-10-26",
+   "postEnd": "2025-01-01",
+   "preImages": 19,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241026",
+     "timeUTC": "2024-10-26T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241031",
+     "timeUTC": "2024-10-31T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241105",
+     "timeUTC": "2024-11-05T02:40+00:00",
+     "clearPct": 15.8,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241110",
+     "timeUTC": "2024-11-10T02:40+00:00",
+     "clearPct": 92.8,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241110_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241115",
+     "timeUTC": "2024-11-15T02:40+00:00",
+     "clearPct": 73.5,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241115_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241120",
+     "timeUTC": "2024-11-20T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20241124",
+     "timeUTC": "2024-11-24T02:20+00:00",
+     "clearPct": 22.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241125",
+     "timeUTC": "2024-11-25T02:40+00:00",
+     "clearPct": 51.4,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241125_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241130",
+     "timeUTC": "2024-11-30T02:40+00:00",
+     "clearPct": 75.0,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241130_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20241202",
+     "timeUTC": "2024-12-02T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241202_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241205",
+     "timeUTC": "2024-12-05T02:40+00:00",
+     "clearPct": 57.8,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241205_S2A.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20241210",
+     "timeUTC": "2024-12-10T02:20+00:00",
+     "clearPct": 61.1,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241210_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241210",
+     "timeUTC": "2024-12-10T02:40+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241210_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241215",
+     "timeUTC": "2024-12-15T02:40+00:00",
+     "clearPct": 98.4,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241215_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20241215",
+     "timeUTC": "2024-12-15T02:41+00:00",
+     "clearPct": 98.1,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241215_S2C.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20241218",
+     "timeUTC": "2024-12-18T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241220",
+     "timeUTC": "2024-12-20T02:40+00:00",
+     "clearPct": 99.9,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241220_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20241225",
+     "timeUTC": "2024-12-25T02:40+00:00",
+     "clearPct": 9.1,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20241226",
+     "timeUTC": "2024-12-26T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20241230",
+     "timeUTC": "2024-12-30T02:40+00:00",
+     "clearPct": 99.8,
+     "usable": true,
+     "file": "OPT_inv_bl068_20241230_S2B.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl069": {
+   "lakeId": "bl069",
+   "scenarioId": "inv_bl069",
+   "name": "花蓮樂樂溪",
+   "formed": "2025-01-25",
+   "breach": "2025-06-17",
+   "preStart": "2024-11-19",
+   "preEnd": "2025-01-18",
+   "postStart": "2025-01-18",
+   "postEnd": "2025-03-26",
+   "preImages": 31,
+   "scenes": [
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250119",
+     "timeUTC": "2025-01-19T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250119",
+     "timeUTC": "2025-01-19T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250124",
+     "timeUTC": "2025-01-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250129",
+     "timeUTC": "2025-01-29T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250203",
+     "timeUTC": "2025-02-03T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250204",
+     "timeUTC": "2025-02-04T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250208",
+     "timeUTC": "2025-02-08T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250213",
+     "timeUTC": "2025-02-13T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250218",
+     "timeUTC": "2025-02-18T02:41+00:00",
+     "clearPct": 15.4,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250220",
+     "timeUTC": "2025-02-20T02:21+00:00",
+     "clearPct": 46.2,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250223",
+     "timeUTC": "2025-02-23T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250228",
+     "timeUTC": "2025-02-28T02:21+00:00",
+     "clearPct": 92.6,
+     "usable": true,
+     "file": "OPT_inv_bl069_20250228_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250228",
+     "timeUTC": "2025-02-28T02:41+00:00",
+     "clearPct": 99.2,
+     "usable": true,
+     "file": "OPT_inv_bl069_20250228_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250305",
+     "timeUTC": "2025-03-05T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250308",
+     "timeUTC": "2025-03-08T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250310",
+     "timeUTC": "2025-03-10T02:41+00:00",
+     "clearPct": 3.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250315",
+     "timeUTC": "2025-03-15T02:41+00:00",
+     "clearPct": 77.5,
+     "usable": true,
+     "file": "OPT_inv_bl069_20250315_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250320",
+     "timeUTC": "2025-03-20T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250324",
+     "timeUTC": "2025-03-24T02:21+00:00",
+     "clearPct": 95.5,
+     "usable": true,
+     "file": "OPT_inv_bl069_20250324_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250325",
+     "timeUTC": "2025-03-25T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl069_20250325_S2C.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl070": {
+   "lakeId": "bl070",
+   "scenarioId": "inv_bl070",
+   "name": "雲林清水溪(草嶺)",
+   "formed": "2025-07-08",
+   "breach": "2025-07-10",
+   "preStart": "2025-05-02",
+   "preEnd": "2025-07-01",
+   "postStart": "2025-07-01",
+   "postEnd": "2025-09-06",
+   "preImages": 46,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250703",
+     "timeUTC": "2025-07-03T02:41+00:00",
+     "clearPct": 0.6,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250705",
+     "timeUTC": "2025-07-05T02:26+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250705",
+     "timeUTC": "2025-07-05T02:41+00:00",
+     "clearPct": 1.2,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250708",
+     "timeUTC": "2025-07-08T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250713",
+     "timeUTC": "2025-07-13T02:26+00:00",
+     "clearPct": 18.5,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250713",
+     "timeUTC": "2025-07-13T02:41+00:00",
+     "clearPct": 44.4,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250714",
+     "timeUTC": "2025-07-14T02:20+00:00",
+     "clearPct": 72.3,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250714_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250718",
+     "timeUTC": "2025-07-18T02:41+00:00",
+     "clearPct": 14.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250723",
+     "timeUTC": "2025-07-23T02:41+00:00",
+     "clearPct": 97.2,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250723_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250725",
+     "timeUTC": "2025-07-25T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250728",
+     "timeUTC": "2025-07-28T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250729",
+     "timeUTC": "2025-07-29T02:26+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250802",
+     "timeUTC": "2025-08-02T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250806",
+     "timeUTC": "2025-08-06T02:26+00:00",
+     "clearPct": 25.5,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250807",
+     "timeUTC": "2025-08-07T02:21+00:00",
+     "clearPct": 82.1,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250807_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250807",
+     "timeUTC": "2025-08-07T02:41+00:00",
+     "clearPct": 75.1,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250807_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250812",
+     "timeUTC": "2025-08-12T02:41+00:00",
+     "clearPct": 66.0,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250812_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250814",
+     "timeUTC": "2025-08-14T02:27+00:00",
+     "clearPct": 84.2,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250814_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250814",
+     "timeUTC": "2025-08-14T02:41+00:00",
+     "clearPct": 99.2,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250814_S2A.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250815",
+     "timeUTC": "2025-08-15T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250815_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250817",
+     "timeUTC": "2025-08-17T02:41+00:00",
+     "clearPct": 95.0,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250817_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250822",
+     "timeUTC": "2025-08-22T02:27+00:00",
+     "clearPct": 87.3,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250822_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250822",
+     "timeUTC": "2025-08-22T02:41+00:00",
+     "clearPct": 86.8,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250822_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250823",
+     "timeUTC": "2025-08-23T02:21+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250823_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250827",
+     "timeUTC": "2025-08-27T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250830",
+     "timeUTC": "2025-08-30T02:27+00:00",
+     "clearPct": 82.8,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250830_L8.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250831",
+     "timeUTC": "2025-08-31T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250901",
+     "timeUTC": "2025-09-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250903",
+     "timeUTC": "2025-09-03T02:41+00:00",
+     "clearPct": 94.0,
+     "usable": true,
+     "file": "OPT_inv_bl070_20250903_S2A.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "matai_an_2025": {
+   "lakeId": "bl071",
+   "scenarioId": "matai_an_2025",
+   "name": "花蓮馬太鞍溪",
+   "formed": "2025-07-21",
+   "breach": "2025-09-23",
+   "preStart": "2025-05-15",
+   "preEnd": "2025-07-14",
+   "postStart": "2025-07-14",
+   "postEnd": "2025-09-19",
+   "preImages": 26,
+   "scenes": [
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250714",
+     "timeUTC": "2025-07-14T02:20+00:00",
+     "clearPct": 10.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250718",
+     "timeUTC": "2025-07-18T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250723",
+     "timeUTC": "2025-07-23T02:41+00:00",
+     "clearPct": 0.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250725",
+     "timeUTC": "2025-07-25T02:41+00:00",
+     "clearPct": 46.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250728",
+     "timeUTC": "2025-07-28T02:41+00:00",
+     "clearPct": 0.2,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250730",
+     "timeUTC": "2025-07-30T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250802",
+     "timeUTC": "2025-08-02T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250807",
+     "timeUTC": "2025-08-07T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250807",
+     "timeUTC": "2025-08-07T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250812",
+     "timeUTC": "2025-08-12T02:41+00:00",
+     "clearPct": 48.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250814",
+     "timeUTC": "2025-08-14T02:41+00:00",
+     "clearPct": 59.3,
+     "usable": true,
+     "file": "OPT_matai_an_2025_20250814_S2A.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250815",
+     "timeUTC": "2025-08-15T02:20+00:00",
+     "clearPct": 6.8,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250817",
+     "timeUTC": "2025-08-17T02:41+00:00",
+     "clearPct": 74.5,
+     "usable": true,
+     "file": "OPT_matai_an_2025_20250817_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250822",
+     "timeUTC": "2025-08-22T02:41+00:00",
+     "clearPct": 45.9,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250823",
+     "timeUTC": "2025-08-23T02:20+00:00",
+     "clearPct": 87.4,
+     "usable": true,
+     "file": "OPT_matai_an_2025_20250823_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250827",
+     "timeUTC": "2025-08-27T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250831",
+     "timeUTC": "2025-08-31T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250901",
+     "timeUTC": "2025-09-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20250903",
+     "timeUTC": "2025-09-03T02:41+00:00",
+     "clearPct": 21.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250906",
+     "timeUTC": "2025-09-06T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20250908",
+     "timeUTC": "2025-09-08T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20250911",
+     "timeUTC": "2025-09-11T02:41+00:00",
+     "clearPct": 65.5,
+     "usable": true,
+     "file": "OPT_matai_an_2025_20250911_S2C.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20250916",
+     "timeUTC": "2025-09-16T02:21+00:00",
+     "clearPct": 61.0,
+     "usable": true,
+     "file": "OPT_matai_an_2025_20250916_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20250916",
+     "timeUTC": "2025-09-16T02:41+00:00",
+     "clearPct": 59.7,
+     "usable": true,
+     "file": "OPT_matai_an_2025_20250916_S2B.tif"
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl072": {
+   "lakeId": "bl072",
+   "scenarioId": "inv_bl072",
+   "name": "花蓮立霧溪(燕子口)",
+   "formed": "2025-10-17",
+   "breach": "2025-10-26",
+   "preStart": "2025-08-11",
+   "preEnd": "2025-10-10",
+   "postStart": "2025-10-10",
+   "postEnd": "2025-12-16",
+   "preImages": 22,
+   "scenes": [
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20251010",
+     "timeUTC": "2025-10-10T02:21+00:00",
+     "clearPct": 88.7,
+     "usable": true,
+     "file": "OPT_inv_bl072_20251010_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251011",
+     "timeUTC": "2025-10-11T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl072_20251011_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20251013",
+     "timeUTC": "2025-10-13T02:41+00:00",
+     "clearPct": 42.8,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251016",
+     "timeUTC": "2025-10-16T02:41+00:00",
+     "clearPct": 99.9,
+     "usable": true,
+     "file": "OPT_inv_bl072_20251016_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251021",
+     "timeUTC": "2025-10-21T02:41+00:00",
+     "clearPct": 13.4,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20251026",
+     "timeUTC": "2025-10-26T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251026",
+     "timeUTC": "2025-10-26T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251031",
+     "timeUTC": "2025-10-31T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20251102",
+     "timeUTC": "2025-11-02T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251105",
+     "timeUTC": "2025-11-05T02:41+00:00",
+     "clearPct": 5.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251110",
+     "timeUTC": "2025-11-10T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251115",
+     "timeUTC": "2025-11-15T02:41+00:00",
+     "clearPct": 1.2,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251120",
+     "timeUTC": "2025-11-20T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20251122",
+     "timeUTC": "2025-11-22T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251125",
+     "timeUTC": "2025-11-25T02:40+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20251127",
+     "timeUTC": "2025-11-27T02:21+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251130",
+     "timeUTC": "2025-11-30T02:41+00:00",
+     "clearPct": 83.3,
+     "usable": true,
+     "file": "OPT_inv_bl072_20251130_S2C.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20251205",
+     "timeUTC": "2025-12-05T02:21+00:00",
+     "clearPct": 11.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251205",
+     "timeUTC": "2025-12-05T02:41+00:00",
+     "clearPct": 4.2,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20251210",
+     "timeUTC": "2025-12-10T02:41+00:00",
+     "clearPct": 87.5,
+     "usable": true,
+     "file": "OPT_inv_bl072_20251210_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20251212",
+     "timeUTC": "2025-12-12T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20251213",
+     "timeUTC": "2025-12-13T02:21+00:00",
+     "clearPct": 88.4,
+     "usable": true,
+     "file": "OPT_inv_bl072_20251213_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20251215",
+     "timeUTC": "2025-12-15T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl073": {
+   "lakeId": "bl073",
+   "scenarioId": "inv_bl073",
+   "name": "南投合歡溪",
+   "formed": "2026-04-07",
+   "breach": null,
+   "preStart": "2026-01-30",
+   "preEnd": "2026-03-31",
+   "postStart": "2026-03-31",
+   "postEnd": "2026-06-06",
+   "preImages": 18,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260401",
+     "timeUTC": "2026-04-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260404",
+     "timeUTC": "2026-04-04T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260409",
+     "timeUTC": "2026-04-09T02:41+00:00",
+     "clearPct": 39.4,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260412",
+     "timeUTC": "2026-04-12T02:20+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260412_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260414",
+     "timeUTC": "2026-04-14T02:41+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260414_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260419",
+     "timeUTC": "2026-04-19T02:41+00:00",
+     "clearPct": 66.6,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260419_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260420",
+     "timeUTC": "2026-04-20T02:20+00:00",
+     "clearPct": 100.0,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260420_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260421",
+     "timeUTC": "2026-04-21T02:41+00:00",
+     "clearPct": 98.6,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260421_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260424",
+     "timeUTC": "2026-04-24T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260428",
+     "timeUTC": "2026-04-28T02:20+00:00",
+     "clearPct": 11.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260429",
+     "timeUTC": "2026-04-29T02:41+00:00",
+     "clearPct": 1.4,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260504",
+     "timeUTC": "2026-05-04T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260506",
+     "timeUTC": "2026-05-06T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260509",
+     "timeUTC": "2026-05-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260511",
+     "timeUTC": "2026-05-11T02:41+00:00",
+     "clearPct": 10.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260514",
+     "timeUTC": "2026-05-14T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260519",
+     "timeUTC": "2026-05-19T02:41+00:00",
+     "clearPct": 95.1,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260519_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260522",
+     "timeUTC": "2026-05-22T02:19+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260524",
+     "timeUTC": "2026-05-24T02:41+00:00",
+     "clearPct": 69.2,
+     "usable": true,
+     "file": "OPT_inv_bl073_20260524_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260529",
+     "timeUTC": "2026-05-29T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260530",
+     "timeUTC": "2026-05-30T02:20+00:00",
+     "clearPct": 2.4,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260531",
+     "timeUTC": "2026-05-31T02:41+00:00",
+     "clearPct": 13.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260603",
+     "timeUTC": "2026-06-03T02:41+00:00",
+     "clearPct": 24.6,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl074": {
+   "lakeId": "bl074",
+   "scenarioId": "inv_bl074",
+   "name": "加走寮溪",
+   "formed": "2026-06-13",
+   "breach": "2026-07-12",
+   "preStart": "2026-04-07",
+   "preEnd": "2026-06-06",
+   "postStart": "2026-06-06",
+   "postEnd": "2026-08-12",
+   "preImages": 49,
+   "scenes": [
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260606",
+     "timeUTC": "2026-06-06T02:26+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260607",
+     "timeUTC": "2026-06-07T02:20+00:00",
+     "clearPct": 43.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260608",
+     "timeUTC": "2026-06-08T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260613",
+     "timeUTC": "2026-06-13T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260618",
+     "timeUTC": "2026-06-18T02:41+00:00",
+     "clearPct": 28.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260620",
+     "timeUTC": "2026-06-20T02:41+00:00",
+     "clearPct": 19.3,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260622",
+     "timeUTC": "2026-06-22T02:26+00:00",
+     "clearPct": 20.4,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260623",
+     "timeUTC": "2026-06-23T02:20+00:00",
+     "clearPct": 83.0,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260623_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260623",
+     "timeUTC": "2026-06-23T02:41+00:00",
+     "clearPct": 71.1,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260623_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260628",
+     "timeUTC": "2026-06-28T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260630",
+     "timeUTC": "2026-06-30T02:26+00:00",
+     "clearPct": 27.2,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260701",
+     "timeUTC": "2026-07-01T02:20+00:00",
+     "clearPct": 10.6,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260703",
+     "timeUTC": "2026-07-03T02:41+00:00",
+     "clearPct": 81.1,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260703_S2B.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260708",
+     "timeUTC": "2026-07-08T02:26+00:00",
+     "clearPct": 37.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260708",
+     "timeUTC": "2026-07-08T02:41+00:00",
+     "clearPct": 39.5,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260709",
+     "timeUTC": "2026-07-09T02:20+00:00",
+     "clearPct": 32.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260710",
+     "timeUTC": "2026-07-10T02:41+00:00",
+     "clearPct": 51.8,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260710_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260713",
+     "timeUTC": "2026-07-13T02:41+00:00",
+     "clearPct": 0.2,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260716",
+     "timeUTC": "2026-07-16T02:26+00:00",
+     "clearPct": 54.3,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260716_L8.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260717",
+     "timeUTC": "2026-07-17T02:20+00:00",
+     "clearPct": 80.8,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260717_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260718",
+     "timeUTC": "2026-07-18T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260720",
+     "timeUTC": "2026-07-20T02:41+00:00",
+     "clearPct": 11.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260723",
+     "timeUTC": "2026-07-23T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260724",
+     "timeUTC": "2026-07-24T02:26+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260725",
+     "timeUTC": "2026-07-25T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260728",
+     "timeUTC": "2026-07-28T02:41+00:00",
+     "clearPct": 81.7,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260728_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260801",
+     "timeUTC": "2026-08-01T02:26+00:00",
+     "clearPct": 0.1,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260802",
+     "timeUTC": "2026-08-02T02:21+00:00",
+     "clearPct": 0.8,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260802",
+     "timeUTC": "2026-08-02T02:41+00:00",
+     "clearPct": 59.6,
+     "usable": true,
+     "file": "OPT_inv_bl074_20260802_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260807",
+     "timeUTC": "2026-08-07T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260809",
+     "timeUTC": "2026-08-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260810",
+     "timeUTC": "2026-08-10T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "inv_bl075": {
+   "lakeId": "bl075",
+   "scenarioId": "inv_bl075",
+   "name": "花蓮萬里溪",
+   "formed": "2026-06-20",
+   "breach": null,
+   "preStart": "2026-04-14",
+   "preEnd": "2026-06-13",
+   "postStart": "2026-06-13",
+   "postEnd": "2026-08-19",
+   "preImages": 29,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260613",
+     "timeUTC": "2026-06-13T02:41+00:00",
+     "clearPct": 21.3,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260618",
+     "timeUTC": "2026-06-18T02:41+00:00",
+     "clearPct": 65.4,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260618_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260620",
+     "timeUTC": "2026-06-20T02:41+00:00",
+     "clearPct": 99.8,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260620_S2A.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260623",
+     "timeUTC": "2026-06-23T02:20+00:00",
+     "clearPct": 79.9,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260623_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260623",
+     "timeUTC": "2026-06-23T02:41+00:00",
+     "clearPct": 99.8,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260623_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260628",
+     "timeUTC": "2026-06-28T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260701",
+     "timeUTC": "2026-07-01T02:20+00:00",
+     "clearPct": 96.4,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260701_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260703",
+     "timeUTC": "2026-07-03T02:41+00:00",
+     "clearPct": 96.2,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260703_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260708",
+     "timeUTC": "2026-07-08T02:41+00:00",
+     "clearPct": 95.2,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260708_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260709",
+     "timeUTC": "2026-07-09T02:20+00:00",
+     "clearPct": 97.9,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260709_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260710",
+     "timeUTC": "2026-07-10T02:41+00:00",
+     "clearPct": 46.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260713",
+     "timeUTC": "2026-07-13T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260717",
+     "timeUTC": "2026-07-17T02:20+00:00",
+     "clearPct": 73.8,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260717_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260718",
+     "timeUTC": "2026-07-18T02:41+00:00",
+     "clearPct": 40.2,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260720",
+     "timeUTC": "2026-07-20T02:41+00:00",
+     "clearPct": 59.7,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260720_S2A.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260723",
+     "timeUTC": "2026-07-23T02:41+00:00",
+     "clearPct": 77.5,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260723_S2B.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260725",
+     "timeUTC": "2026-07-25T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260728",
+     "timeUTC": "2026-07-28T02:41+00:00",
+     "clearPct": 71.2,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260728_S2C.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260802",
+     "timeUTC": "2026-08-02T02:20+00:00",
+     "clearPct": 87.1,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260802_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260802",
+     "timeUTC": "2026-08-02T02:41+00:00",
+     "clearPct": 77.4,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260802_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260807",
+     "timeUTC": "2026-08-07T02:41+00:00",
+     "clearPct": 90.5,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260807_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260809",
+     "timeUTC": "2026-08-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260810",
+     "timeUTC": "2026-08-10T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260812",
+     "timeUTC": "2026-08-12T02:41+00:00",
+     "clearPct": 38.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260817",
+     "timeUTC": "2026-08-17T02:41+00:00",
+     "clearPct": 79.2,
+     "usable": true,
+     "file": "OPT_inv_bl075_20260817_S2C.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260818",
+     "timeUTC": "2026-08-18T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    }
+   ],
+   "status": "ok"
+  },
+  "neg2026_matai_an": {
+   "lakeId": null,
+   "scenarioId": "neg2026_matai_an",
+   "name": "馬太鞍溪 · 2026 汛期（負案例）",
+   "formed": "2026-06-04",
+   "breach": null,
+   "preStart": "2026-03-29",
+   "preEnd": "2026-05-28",
+   "postStart": "2026-05-28",
+   "postEnd": "2026-09-30",
+   "preImages": 27,
+   "scenes": [
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260529",
+     "timeUTC": "2026-05-29T02:41+00:00",
+     "clearPct": 0.1,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260530",
+     "timeUTC": "2026-05-30T02:20+00:00",
+     "clearPct": 10.5,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260531",
+     "timeUTC": "2026-05-31T02:41+00:00",
+     "clearPct": 5.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260603",
+     "timeUTC": "2026-06-03T02:41+00:00",
+     "clearPct": 78.2,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260603_S2B.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260607",
+     "timeUTC": "2026-06-07T02:19+00:00",
+     "clearPct": 3.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260608",
+     "timeUTC": "2026-06-08T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260613",
+     "timeUTC": "2026-06-13T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260618",
+     "timeUTC": "2026-06-18T02:41+00:00",
+     "clearPct": 71.3,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260618_S2C.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260620",
+     "timeUTC": "2026-06-20T02:41+00:00",
+     "clearPct": 34.8,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260623",
+     "timeUTC": "2026-06-23T02:20+00:00",
+     "clearPct": 58.6,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260623_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260623",
+     "timeUTC": "2026-06-23T02:41+00:00",
+     "clearPct": 79.2,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260623_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260628",
+     "timeUTC": "2026-06-28T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260701",
+     "timeUTC": "2026-07-01T02:20+00:00",
+     "clearPct": 72.2,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260701_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260703",
+     "timeUTC": "2026-07-03T02:41+00:00",
+     "clearPct": 50.6,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260703_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260708",
+     "timeUTC": "2026-07-08T02:41+00:00",
+     "clearPct": 77.0,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260708_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260709",
+     "timeUTC": "2026-07-09T02:20+00:00",
+     "clearPct": 69.8,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260709_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260710",
+     "timeUTC": "2026-07-10T02:41+00:00",
+     "clearPct": 18.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260713",
+     "timeUTC": "2026-07-13T02:41+00:00",
+     "clearPct": 17.2,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260717",
+     "timeUTC": "2026-07-17T02:20+00:00",
+     "clearPct": 29.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260718",
+     "timeUTC": "2026-07-18T02:41+00:00",
+     "clearPct": 27.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260720",
+     "timeUTC": "2026-07-20T02:41+00:00",
+     "clearPct": 1.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260723",
+     "timeUTC": "2026-07-23T02:41+00:00",
+     "clearPct": 48.7,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260725",
+     "timeUTC": "2026-07-25T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260728",
+     "timeUTC": "2026-07-28T02:41+00:00",
+     "clearPct": 10.3,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260802",
+     "timeUTC": "2026-08-02T02:20+00:00",
+     "clearPct": 76.7,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260802_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260802",
+     "timeUTC": "2026-08-02T02:41+00:00",
+     "clearPct": 73.3,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260802_S2B.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260807",
+     "timeUTC": "2026-08-07T02:41+00:00",
+     "clearPct": 28.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260809",
+     "timeUTC": "2026-08-09T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260810",
+     "timeUTC": "2026-08-10T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260812",
+     "timeUTC": "2026-08-12T02:41+00:00",
+     "clearPct": 42.7,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260817",
+     "timeUTC": "2026-08-17T02:41+00:00",
+     "clearPct": 72.9,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260817_S2C.tif"
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260818",
+     "timeUTC": "2026-08-18T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260822",
+     "timeUTC": "2026-08-22T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260826",
+     "timeUTC": "2026-08-26T02:20+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260827",
+     "timeUTC": "2026-08-27T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260829",
+     "timeUTC": "2026-08-29T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260901",
+     "timeUTC": "2026-09-01T02:41+00:00",
+     "clearPct": 0.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260906",
+     "timeUTC": "2026-09-06T02:41+00:00",
+     "clearPct": 9.3,
+     "usable": false
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260911",
+     "timeUTC": "2026-09-11T02:20+00:00",
+     "clearPct": 89.9,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260911_L8.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260911",
+     "timeUTC": "2026-09-11T02:41+00:00",
+     "clearPct": 1.0,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260916",
+     "timeUTC": "2026-09-16T02:41+00:00",
+     "clearPct": 4.1,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2A",
+     "day": "20260918",
+     "timeUTC": "2026-09-18T02:41+00:00",
+     "clearPct": 13.7,
+     "usable": false
+    },
+    {
+     "key": "l9",
+     "sensor": "LANDSAT_9",
+     "day": "20260919",
+     "timeUTC": "2026-09-19T02:20+00:00",
+     "clearPct": 92.9,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260919_L9.tif"
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2B",
+     "day": "20260921",
+     "timeUTC": "2026-09-21T02:41+00:00",
+     "clearPct": 9.9,
+     "usable": false
+    },
+    {
+     "key": "s2",
+     "sensor": "Sentinel-2C",
+     "day": "20260926",
+     "timeUTC": "2026-09-26T02:41+00:00",
+     "clearPct": 99.2,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260926_S2C.tif"
+    },
+    {
+     "key": "l8",
+     "sensor": "LANDSAT_8",
+     "day": "20260927",
+     "timeUTC": "2026-09-27T02:20+00:00",
+     "clearPct": 96.8,
+     "usable": true,
+     "file": "OPT_neg2026_matai_an_20260927_L8.tif"
+    }
+   ],
+   "status": "ok"
+  }
+ }
+}

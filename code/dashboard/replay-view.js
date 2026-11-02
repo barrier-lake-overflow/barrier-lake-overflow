@@ -21,6 +21,7 @@ const ReplayView = (() => {
     no_data: { text: '尚無資料', cls: 'o-none' },
   };
   const PRIORITY = { high: '高', medium: '中', low: '低' };
+  const SOURCE = { sar: '雷達', optical: '光學' };
   const days = d => d == null ? '—' : `${d} 天`;
   const vol = v => v ? `${v.toLocaleString()} 萬` : '<span class="dim">未登載</span>';
 
@@ -45,12 +46,14 @@ const ReplayView = (() => {
   function row(r) {
     const o = OUTCOME[r.outcome];
     const result = r.outcome === 'detected'
-      ? `${esc(r.eventId)} · ${esc(r.detectedAt)}（形成後 ${days(r.detectLagDays)}）`
+      ? `${esc(r.eventId)} · ${esc(r.detectedAt)}（形成後 ${days(r.detectLagDays)}）` +
+        `<span class="dim">${SOURCE[r.detectedBy] || ''}先偵測到</span>`
       : `<span class="dim">${esc(r.reason)}</span>`;
     const pri = r.maxPriority
       ? `<span class="rp p-${r.maxPriority}">${PRIORITY[r.maxPriority]}</span> <span class="dim">信心${esc(r.confidence)}</span>` : '—';
-    const other = r.passCount ? `${r.otherEvents}${r.otherHighEvents ? `（高 ${r.otherHighEvents}）` : ''}` : '—';
-    const clickable = r.passCount && r.outcome !== 'no_data';
+    const anyPass = r.passCount || r.opticalPassCount;
+    const other = anyPass ? `${r.otherEvents}${r.otherHighEvents ? `（高 ${r.otherHighEvents}）` : ''}` : '—';
+    const clickable = anyPass && r.outcome !== 'no_data';
     return `
       <tr class="${clickable ? 'is-link' : ''}" ${clickable ? `tabindex="0" data-scen="${esc(r.scenarioId)}"
           data-snap="${esc(r.detectedAt || '')}" data-ev="${esc(r.eventId || '')}"` : ''}>
@@ -58,7 +61,7 @@ const ReplayView = (() => {
         <td class="num">${esc(r.formed)}${r.breach ? `<span class="dim">潰決 ${esc(r.breach)}</span>` : ''}</td>
         <td class="num">${vol(r.volume)}</td>
         <td class="num">${esc(r.orbit || '—')}<span class="dim">${r.passCount ? `${r.passCount} 期` : ''}${
-          r.preCount != null ? ` · 基準 ${r.preCount} 張` : ''}</span>${
+          r.preCount != null ? ` · 基準 ${r.preCount} 張` : ''}</span><span class="dim">光學晴空 ${r.opticalPassCount || 0} 期</span>${
           r.preCount != null && r.preCount < 3 ? '<span class="dim warn">基準張數不足，假疑似水體偏多</span>' : ''}</td>
         <td class="num">${days(r.firstPassLagDays)}</td>
         <td><span class="ro ${o.cls}">${o.text}</span></td>
@@ -82,13 +85,14 @@ const ReplayView = (() => {
     $('#replayDesc').innerHTML =
       `清冊中 ${ru.start.slice(0, 4)} 年以後、形成日期完整到日的堰塞湖，每一筆都用<b>同一套流程、同一組參數</b>逐期回放，` +
       `不逐湖調整。窗格以清冊壩址為中心 4 km；逐期影像取形成前 ${ru.postBeforeDays} 天到形成後 ${ru.postAfterDays} 天，` +
-      `軌道取形成後最早有影像的一軌。形成後（含前 1 天）到潰決為止，壩址 ${ru.matchRadiusM / 1000} km 內出現事件即算偵測到。`;
+      `雷達取形成後最早有影像的一軌，光學取同期間窗格晴空過半的每一景（Sentinel-2、Landsat 8/9）。` +
+      `形成後（含前 1 天）到潰決為止，壩址 ${ru.matchRadiusM / 1000} km 內出現事件即算偵測到。`;
     $('#replayTotals').innerHTML = totals(t);
     $('#replaySummary').textContent = `逐湖明細（${DATA.rows.length} 筆，點一列開該湖的回放）`;
     $('#replaySize').innerHTML = `<span class="label">依清冊蓄水量（看到結果後才分組，僅供描述）</span>${bySize(DATA.bySize)}`;
     $('#replayTable').innerHTML = `
       <thead><tr>
-        <th>堰塞湖</th><th>清冊形成日</th><th>蓄水量（m³）</th><th>軌道 · 期數</th><th>形成後首張</th>
+        <th>堰塞湖</th><th>清冊形成日</th><th>蓄水量（m³）</th><th>雷達軌道 · 期數／光學</th><th>形成後首張雷達</th>
         <th>結果</th><th>首次偵測／原因</th><th>最高優先</th><th>距壩址</th><th>同窗格其他事件</th>
         <th title="壩址換成窗格內任一位置，1 km 內剛好有事件的機率">碰巧命中機率</th>
       </tr></thead>

@@ -2,7 +2,7 @@
   "id": "inv_bl073",
   "name": "南投合歡溪 · 2026",
   "kind": "replay",
-  "description": "全清冊回放：清冊登載 2026-04-07 形成，清冊蓄水量 4 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 降軌 105 共 15 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "description": "全清冊回放：清冊登載 2026-04-07 形成，清冊蓄水量 4 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 降軌 105 共 15 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。另有光學偵測：Sentinel-2／Landsat 晴空過半 7 景，規則見 detect/optical.py。",
   "center": [
     121.24971,
     24.16209
@@ -190,5 +190,222 @@
     "file": "data/basemaps/inv_bl073.jpg",
     "before": "2026-03-31",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-03-31 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "opticalDetection": {
+    "preStart": "2026-01-30",
+    "preEnd": "2026-03-31",
+    "preImages": 18,
+    "scenes": [
+      {
+        "time": "2026-04-01T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-04-04T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-04-09T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 39.4,
+        "usable": false
+      },
+      {
+        "time": "2026-04-12T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2026-04-14T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2026-04-19T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 66.6,
+        "usable": true
+      },
+      {
+        "time": "2026-04-20T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2026-04-21T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 98.6,
+        "usable": true
+      },
+      {
+        "time": "2026-04-24T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-04-28T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 11.0,
+        "usable": false
+      },
+      {
+        "time": "2026-04-29T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 1.4,
+        "usable": false
+      },
+      {
+        "time": "2026-05-04T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-06T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-09T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-11T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 10.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-14T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-19T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 95.1,
+        "usable": true
+      },
+      {
+        "time": "2026-05-22T02:19+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-24T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 69.2,
+        "usable": true
+      },
+      {
+        "time": "2026-05-29T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2026-05-30T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 2.4,
+        "usable": false
+      },
+      {
+        "time": "2026-05-31T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 13.9,
+        "usable": false
+      },
+      {
+        "time": "2026-06-03T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 24.6,
+        "usable": false
+      }
+    ],
+    "passes": [
+      {
+        "file": "final_opt_inv_bl073_20260412_L9.json",
+        "time": "2026-04-12T02:20+00:00",
+        "recheckTime": "2026-04-14T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 9",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Landsat 9 20260412"
+      },
+      {
+        "file": "final_opt_inv_bl073_20260414_S2B.json",
+        "time": "2026-04-14T02:41+00:00",
+        "recheckTime": "2026-04-19T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Sentinel-2B 20260414"
+      },
+      {
+        "file": "final_opt_inv_bl073_20260419_S2C.json",
+        "time": "2026-04-19T02:41+00:00",
+        "recheckTime": "2026-04-20T02:20+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 66.6,
+        "orbitLabel": "光學 Sentinel-2C 20260419"
+      },
+      {
+        "file": "final_opt_inv_bl073_20260420_L8.json",
+        "time": "2026-04-20T02:20+00:00",
+        "recheckTime": "2026-04-21T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Landsat 8 20260420"
+      },
+      {
+        "file": "final_opt_inv_bl073_20260421_S2A.json",
+        "time": "2026-04-21T02:41+00:00",
+        "recheckTime": "2026-05-19T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 98.6,
+        "orbitLabel": "光學 Sentinel-2A 20260421"
+      },
+      {
+        "file": "final_opt_inv_bl073_20260519_S2C.json",
+        "time": "2026-05-19T02:41+00:00",
+        "recheckTime": "2026-05-24T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 95.1,
+        "orbitLabel": "光學 Sentinel-2C 20260519"
+      },
+      {
+        "file": "final_opt_inv_bl073_20260524_S2B.json",
+        "time": "2026-05-24T02:41+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 69.2,
+        "orbitLabel": "光學 Sentinel-2B 20260524"
+      }
+    ]
   }
 }

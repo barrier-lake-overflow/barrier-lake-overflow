@@ -98,5 +98,23 @@ python -m pipeline.events.build                                 # 回放＋統�
 `scripts/gee_export_prior.js`（一年前基準）貼到 Code Editor 執行，從 Google Drive 下載後用
 `split_inventory_exports.py`、`split_prior_exports.py` 拆檔，期別照 `replay_manifest.json`，結果與原本相同。
 
-光學 NDWI（`scripts/analyze_ndwi_change.py`）與 DEM 蓄水量（`scripts/run_hypsometry_real.py`）的腳本保留，
+## 光學偵測來源（全清冊回放與負案例）
+
+結果檔 `data/derived/final_opt_*.json` 與情境檔的 `opticalDetection` 欄位有進版控，只想重產儀表板直接跑 `python -m pipeline.events.build`。
+從頭重跑時，影像（約 80 MB）二擇一取得：
+
+```bash
+python scripts/gee_fetch_optical.py --project <GCP 專案 ID>    # 本機能登入 Earth Engine
+```
+
+或本機無法登入時用網頁版：`python scripts/gee_codeeditor_optical.py` 產生 `scripts/gee_export_optical.js`，貼到 Code Editor
+按 Run，在 Tasks 分頁逐一 RUN（每湖一張影像加一個 `optical_scenes.csv`），把 Drive 的 `replay_optical/` 下載到
+`data/raw/optical/exports/`，再跑 `python scripts/split_optical_exports.py`。接著：
+
+```bash
+python scripts/optical_replay.py      # 逐湖逐期光學偵測、寫情境檔、三種做法比較 → docs/results/optical_replay.{json,md}
+python -m pipeline.events.build       # 重產儀表板
+```
+
+DEM 蓄水量（`scripts/run_hypsometry_real.py --area-ha <湖面公頃>`）的腳本保留，
 但馬太鞍溪的結果因面積依據有誤已撤下。

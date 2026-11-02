@@ -8,7 +8,6 @@
 同樣是網格雨量、四個時間窗都是實際值。沒給 --project（或 GEE 失敗）時用訓練平均值佔位，
 RISK_MODEL_META.mode 會標明。每日排程（pipeline.daily.run）會自動帶入 GSMaP。
 
-data/raw/risk/ 底下的舊檔已不再讀取。
 
     python -m pipeline.ingest.risk --project <GCP 專案 ID> [--lakes ...] [--out ...]
     python -m pipeline.ingest.risk            # 不連網，訓練平均值佔位

@@ -22,7 +22,7 @@ GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overfl
 | sentinel | Sentinel-1 GRD（Google Earth Engine） | 各窗格新過境的偵測結果、情境檔 `data/raw/scenarios/live_*.json` |
 | passrain | GSMaP | 每一期過境前 24／72 小時雨量，寫進情境檔 `passes[].rain` |
 | basemap | Sentinel-2、Landsat 8/9 | 各情境小地圖的事件前光學底圖（缺的才做） |
-| optical | Sentinel-2 L2A、Landsat 8/9 L2（Google Earth Engine） | 監看窗格最近 45 天光學影像雲量、下一次預計過境、各事件位置光學判水，寫進情境檔 `optical`（只供參考，見下節） |
+| optical | Sentinel-2 L2A、Landsat 8/9 L2（Google Earth Engine） | ① 光學偵測：各窗格晴空景的新增水體，與 SAR 並列的偵測來源，結果 `final_opt_live_*.json`、情境檔 `opticalDetection`；② 光學判讀：最近 45 天雲量、下一次預計過境、各事件位置看不看得到水，情境檔 `optical`（見下節） |
 | news | Google 新聞 RSS | 外部證據候選 `data/live/news.json` |
 | build | 以上 | `events.js`、`replay.js`、`daily.js` |
 
@@ -64,18 +64,32 @@ GitHub Pages 偵測到 push 後自動更新網站：<https://barrier-lake-overfl
 
 ## 光學影像（Sentinel-2、Landsat）
 
-`pipeline/daily/optical.py`，只做監看中的窗格，每個窗格兩次 GEE 呼叫（影像清單、統計），不下載影像。
+`pipeline/daily/optical.py`，只做監看中的窗格，每個窗格做兩件事。
+
+**① 光學偵測（與 SAR 並列的第二個偵測來源）**：GEE 端在 `pipeline/daily/optical_detect.py`，偵測規則在 `pipeline/detect/optical.py`
+（規則與全清冊回放驗證見 [`validation.md`](validation.md)「光學偵測來源」）。
+
+- 時間窗與 SAR 相同：事件前基準為窗格啟用前 7～67 天（每個像元只用晴空觀測取中位數），逐期從啟用前 7 天起，只留最近 90 天。
+- 每次列出期間內所有景、算 4 km 窗格晴空比例（一次 GEE 呼叫），晴空過半的景才算一期。
+- 只下載需要跑的期別：沒有結果檔、或當時沒有複核期而現在有下一期的（與 SAR 相同）。每景三個整數波段（約 1 MB），
+  事件前基準與 DEM 每次重新下載。結果 `data/derived/final_opt_live_*.json` 進版控，所以 CI 每次在乾淨環境也能接續。
+- 偵測結果寫進情境檔 `opticalDetection.passes`，與 SAR 的 `passes` 分開存（sentinel 步驟重寫情境檔時會保留），
+  build 時兩者合在一起追蹤事件、研判（[`events.md`](events.md)「偵測來源」）。
+- 偵測失敗不擋判讀；那個窗格記為失敗，上一次的偵測結果留著。
+
+**② 光學判讀**：每個窗格兩次 GEE 呼叫（影像清單、統計），不下載影像。
 
 - **影像**：Sentinel-2 L2A（`COPERNICUS/S2_SR_HARMONIZED`）用 Cloud Score+ cs_cdf ≥ 0.65 當晴空（與底圖、負案例查證相同，
   不用 SCL）；Landsat 8/9 Collection 2 L2 用 `QA_PIXEL` 排除雲、膨脹雲、卷雲、雲影。同一天同一顆衛星的相鄰圖幅併成一景。
   Cloud Score+ 偶爾比影像晚上架，那一景先記「雲量資料未到」，下次更新再判讀。
 - **判水**：`detect/water.py` 的 Sentinel-2 規則（MNDWI > 0 且 B8 < 500）；Landsat 換算成同一反射率尺度後套同一規則（未另外驗證）。
-  範圍是 SAR 最近一次偵測的水體多邊形，只看事件首次偵測以後的影像。晴空像元未過半＝雲遮；晴空像元中判為水 ≥ 30%＝看得到水、
+  範圍是最近一次偵測（SAR 或光學）的水體多邊形，只看事件首次偵測以後的影像。晴空像元未過半＝雲遮；晴空像元中判為水 ≥ 30%＝看得到水、
   < 10%＝看不到水、其間＝少量水。**門檻自訂、未校準**。
 - **下一次過境**：Sentinel-2 每顆衛星每個軌道 10 天、Landsat 每顆衛星每個 WRS 圖幅 16 天，從最近 45 天實際取得的影像往後推 16 天內的日期。
   只是估計（衛星排程、影像上架延遲都可能不同）。
-- **不進研判**：結果附在事件卡與事件清單上供值班參考，不改變優先等級與研判信心（SAR 以外的獨立證據仍要人工查證確認）。
-  回看前幾期時，事件卡只列下一期 SAR 過境前拍到的影像。
+- **只會壓低、不會提高**：結果附在事件卡與事件清單上；晴空至少兩次判為沒有水時優先最高到「中」，
+  SAR 沒看到但光學仍看得到水時不說潰決（[`events.md`](events.md)）。自動判讀不算獨立證據，要人工查證確認。
+  回看前幾期時，事件卡只列下一期過境前拍到的影像。
 
 ## 雨量
 
@@ -154,6 +168,7 @@ repo 根目錄的 `netlify.toml` 已設定好，在 Netlify 上「Add new site �
 | `data/live/state.json` | 是 | 監看窗格（啟用日、軌道、已處理影像），排程與 CI 共用 |
 | `data/live/news.json` | 是 | 新聞候選與確認紀錄 |
 | `data/live/status.json`、`code/dashboard/data/daily.js` | 是 | 最近一次執行狀態 |
-| `data/derived/final_live_*.json`、`data/raw/scenarios/live_*.json` | 是 | 監看窗格的偵測結果與情境 |
-| `data/raw/sentinel1/live/*.tif` | 否 | 影像暫存（約 5 MB／張），CI 每次重新下載需要的那幾張 |
+| `data/derived/final_live_*.json`、`data/derived/final_opt_live_*.json`、`data/raw/scenarios/live_*.json` | 是 | 監看窗格的偵測結果（SAR、光學）與情境 |
+| `data/raw/sentinel1/live/*.tif` | 否 | SAR 影像暫存（約 5 MB／張），CI 每次重新下載需要的那幾張 |
+| `data/raw/optical/live/*.tif` | 否 | 光學影像暫存（約 1 MB／張），同上 |
 | `data/live/logs/` | 否 | 本機日誌 |

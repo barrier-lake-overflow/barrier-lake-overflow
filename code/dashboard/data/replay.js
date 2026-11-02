@@ -1,7 +1,7 @@
 /* 由 pipeline/events/build.py（replay.py）產生，請勿手動編輯。
    全清冊回放：每筆堰塞湖用同一套流程、同一組參數逐期回放的結果。 */
 window.REPLAY_SUMMARY = {
- "generated": "2026-11-02T23:42+08:00",
+ "generated": "2026-11-03T03:02+08:00",
  "rules": {
   "start": "2015-01-01",
   "preGapDays": 7,
@@ -11,33 +11,33 @@ window.REPLAY_SUMMARY = {
   "matchRadiusM": 1000.0
  },
  "totals": {
-  "detected": 7,
-  "missed": 16,
+  "detected": 10,
+  "missed": 13,
   "no_pass": 0,
   "no_data": 0,
   "targets": 23,
   "observable": 23,
-  "highAmongDetected": 5,
-  "expectedChanceHits": 3.1
+  "highAmongDetected": 6,
+  "expectedChanceHits": 4.3
  },
  "bySize": [
   {
    "group": "≥ 20 萬 m³",
    "observable": 7,
    "detected": 5,
-   "expectedChance": 1.7
+   "expectedChance": 2.0
   },
   {
    "group": "< 20 萬 m³",
    "observable": 11,
-   "detected": 1,
-   "expectedChance": 1.1
+   "detected": 4,
+   "expectedChance": 1.9
   },
   {
    "group": "未登載",
    "observable": 5,
    "detected": 1,
-   "expectedChance": 0.3
+   "expectedChance": 0.4
   }
  ],
  "rows": [
@@ -58,6 +58,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -67,7 +68,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 2
   },
   {
    "lakeId": "bl052",
@@ -80,12 +82,13 @@ window.REPLAY_SUMMARY = {
    "cause": "颱風",
    "orbit": "升軌 69",
    "passCount": 5,
-   "firstPassLagDays": 6.8,
+   "firstPassLagDays": 0.4,
    "outcome": "missed",
    "reason": "有影像，但壩址 1 km 內沒有候選",
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -95,7 +98,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 4
+   "preCount": 4,
+   "opticalPassCount": 2
   },
   {
    "lakeId": "bl053",
@@ -114,6 +118,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -123,7 +128,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "未登載",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 0
   },
   {
    "lakeId": "bl054",
@@ -142,16 +148,18 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
    "distanceM": null,
    "areaHectare": null,
    "otherHighEvents": 2,
-   "otherEvents": 4,
+   "otherEvents": 6,
    "chanceHitProb": 0.34,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 1
+   "preCount": 1,
+   "opticalPassCount": 1
   },
   {
    "lakeId": "bl056",
@@ -170,6 +178,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -179,7 +188,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "未登載",
-   "preCount": 4
+   "preCount": 4,
+   "opticalPassCount": 2
   },
   {
    "lakeId": "bl057",
@@ -198,6 +208,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -207,7 +218,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 0
   },
   {
    "lakeId": "bl058",
@@ -226,6 +238,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -235,7 +248,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "未登載",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 3
   },
   {
    "lakeId": "bl060",
@@ -254,6 +268,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -263,7 +278,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "未登載",
-   "preCount": 10
+   "preCount": 10,
+   "opticalPassCount": 5
   },
   {
    "lakeId": "bl061",
@@ -279,19 +295,21 @@ window.REPLAY_SUMMARY = {
    "firstPassLagDays": 6.8,
    "outcome": "detected",
    "reason": "",
-   "detectedAt": "3/19 18:00",
-   "detectLagDays": 42.8,
-   "eventId": "E1",
+   "detectedAt": "3/1 10:41",
+   "detectLagDays": 24.4,
+   "eventId": "E3",
+   "detectedBy": "optical",
    "priority": "medium",
    "maxPriority": "high",
    "confidence": "低",
-   "distanceM": 191,
-   "areaHectare": 0.58,
+   "distanceM": 457,
+   "areaHectare": 3.17,
    "otherHighEvents": 0,
-   "otherEvents": 0,
-   "chanceHitProb": 0.19,
+   "otherEvents": 1,
+   "chanceHitProb": 0.36,
    "sizeGroup": "≥ 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 4
   },
   {
    "lakeId": "bl062",
@@ -304,12 +322,13 @@ window.REPLAY_SUMMARY = {
    "cause": "降雨",
    "orbit": "降軌 105",
    "passCount": 11,
-   "firstPassLagDays": 1.2,
+   "firstPassLagDays": 0.4,
    "outcome": "missed",
    "reason": "有影像，但壩址 1 km 內沒有候選",
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -319,7 +338,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 10
+   "preCount": 10,
+   "opticalPassCount": 10
   },
   {
    "lakeId": "bl063",
@@ -332,12 +352,13 @@ window.REPLAY_SUMMARY = {
    "cause": "",
    "orbit": "升軌 69",
    "passCount": 10,
-   "firstPassLagDays": 2.8,
+   "firstPassLagDays": 0.4,
    "outcome": "missed",
    "reason": "有影像，但壩址 1 km 內沒有候選",
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -347,7 +368,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 9
+   "preCount": 9,
+   "opticalPassCount": 6
   },
   {
    "lakeId": "bl064",
@@ -361,21 +383,23 @@ window.REPLAY_SUMMARY = {
    "orbit": "升軌 69",
    "passCount": 5,
    "firstPassLagDays": 1.8,
-   "outcome": "missed",
-   "reason": "有影像，但壩址 1 km 內沒有候選",
-   "detectedAt": null,
-   "detectLagDays": null,
-   "eventId": null,
-   "priority": null,
-   "maxPriority": null,
-   "confidence": null,
-   "distanceM": null,
-   "areaHectare": null,
+   "outcome": "detected",
+   "reason": "",
+   "detectedAt": "12/11 10:41",
+   "detectLagDays": 21.4,
+   "eventId": "E1",
+   "detectedBy": "optical",
+   "priority": "low",
+   "maxPriority": "low",
+   "confidence": "低",
+   "distanceM": 6,
+   "areaHectare": 0.55,
    "otherHighEvents": 0,
-   "otherEvents": 0,
-   "chanceHitProb": 0.0,
+   "otherEvents": 2,
+   "chanceHitProb": 0.46,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 4
+   "preCount": 4,
+   "opticalPassCount": 11
   },
   {
    "lakeId": "bl065",
@@ -394,6 +418,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -403,7 +428,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "≥ 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 7
   },
   {
    "lakeId": "bl066",
@@ -416,22 +442,24 @@ window.REPLAY_SUMMARY = {
    "cause": "地震",
    "orbit": "升軌 69",
    "passCount": 5,
-   "firstPassLagDays": 6.8,
+   "firstPassLagDays": 0.4,
    "outcome": "detected",
    "reason": "",
-   "detectedAt": "5/26 18:01",
-   "detectLagDays": 42.8,
+   "detectedAt": "4/30 10:20",
+   "detectLagDays": 16.4,
    "eventId": "E1",
+   "detectedBy": "optical",
    "priority": "medium",
-   "maxPriority": "medium",
+   "maxPriority": "high",
    "confidence": "低",
-   "distanceM": 291,
-   "areaHectare": 0.6,
+   "distanceM": 275,
+   "areaHectare": 1.72,
    "otherHighEvents": 0,
    "otherEvents": 0,
    "chanceHitProb": 0.19,
    "sizeGroup": "≥ 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 5
   },
   {
    "lakeId": "bl067",
@@ -450,6 +478,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -459,7 +488,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 7
   },
   {
    "lakeId": "bl068",
@@ -472,22 +502,24 @@ window.REPLAY_SUMMARY = {
    "cause": "颱風",
    "orbit": "升軌 69",
    "passCount": 6,
-   "firstPassLagDays": 8.8,
+   "firstPassLagDays": 8.4,
    "outcome": "detected",
    "reason": "",
-   "detectedAt": "12/16 18:01",
-   "detectLagDays": 44.8,
-   "eventId": "E2",
+   "detectedAt": "11/10 10:40",
+   "detectLagDays": 8.4,
+   "eventId": "E1",
+   "detectedBy": "optical",
    "priority": "medium",
    "maxPriority": "high",
    "confidence": "低",
-   "distanceM": 395,
-   "areaHectare": 0.85,
+   "distanceM": 140,
+   "areaHectare": 3.75,
    "otherHighEvents": 2,
    "otherEvents": 3,
-   "chanceHitProb": 0.49,
+   "chanceHitProb": 0.5,
    "sizeGroup": "≥ 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 12
   },
   {
    "lakeId": "bl069",
@@ -501,21 +533,23 @@ window.REPLAY_SUMMARY = {
    "orbit": "升軌 69",
    "passCount": 6,
    "firstPassLagDays": 8.8,
-   "outcome": "missed",
-   "reason": "有影像，但壩址 1 km 內沒有候選",
-   "detectedAt": null,
-   "detectLagDays": null,
-   "eventId": null,
-   "priority": null,
-   "maxPriority": null,
-   "confidence": null,
-   "distanceM": null,
-   "areaHectare": null,
+   "outcome": "detected",
+   "reason": "",
+   "detectedAt": "2/28 10:21",
+   "detectLagDays": 34.4,
+   "eventId": "E2",
+   "detectedBy": "optical",
+   "priority": "low",
+   "maxPriority": "medium",
+   "confidence": "低",
+   "distanceM": 161,
+   "areaHectare": 0.8,
    "otherHighEvents": 1,
    "otherEvents": 1,
-   "chanceHitProb": 0.2,
+   "chanceHitProb": 0.34,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 10
+   "preCount": 10,
+   "opticalPassCount": 5
   },
   {
    "lakeId": "bl070",
@@ -534,6 +568,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": null,
    "detectLagDays": null,
    "eventId": null,
+   "detectedBy": null,
    "priority": null,
    "maxPriority": null,
    "confidence": null,
@@ -543,7 +578,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 0,
    "chanceHitProb": 0.0,
    "sizeGroup": "≥ 20 萬 m³",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 14
   },
   {
    "lakeId": "bl071",
@@ -562,15 +598,17 @@ window.REPLAY_SUMMARY = {
    "detectedAt": "7/29 05:51",
    "detectLagDays": 8.2,
    "eventId": "E3",
+   "detectedBy": "sar",
    "priority": "high",
    "maxPriority": "high",
    "confidence": "高",
    "distanceM": 497,
    "areaHectare": 5.66,
    "otherHighEvents": 0,
-   "otherEvents": 3,
-   "chanceHitProb": 0.54,
-   "sizeGroup": "≥ 20 萬 m³"
+   "otherEvents": 4,
+   "chanceHitProb": 0.67,
+   "sizeGroup": "≥ 20 萬 m³",
+   "opticalPassCount": 6
   },
   {
    "lakeId": "bl072",
@@ -589,6 +627,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": "10/18 18:00",
    "detectLagDays": 1.8,
    "eventId": "E2",
+   "detectedBy": "sar",
    "priority": "medium",
    "maxPriority": "high",
    "confidence": "低",
@@ -598,7 +637,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 2,
    "chanceHitProb": 0.3,
    "sizeGroup": "≥ 20 萬 m³",
-   "preCount": 7
+   "preCount": 7,
+   "opticalPassCount": 6
   },
   {
    "lakeId": "bl073",
@@ -617,6 +657,7 @@ window.REPLAY_SUMMARY = {
    "detectedAt": "4/20 05:51",
    "detectLagDays": 13.2,
    "eventId": "E4",
+   "detectedBy": "sar",
    "priority": "medium",
    "maxPriority": "medium",
    "confidence": "低",
@@ -626,7 +667,8 @@ window.REPLAY_SUMMARY = {
    "otherEvents": 3,
    "chanceHitProb": 0.56,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 10
+   "preCount": 10,
+   "opticalPassCount": 7
   },
   {
    "lakeId": "bl074",
@@ -640,21 +682,23 @@ window.REPLAY_SUMMARY = {
    "orbit": "降軌 105",
    "passCount": 12,
    "firstPassLagDays": 6.2,
-   "outcome": "missed",
-   "reason": "有影像，但壩址 1 km 內沒有候選",
-   "detectedAt": null,
-   "detectLagDays": null,
-   "eventId": null,
-   "priority": null,
-   "maxPriority": null,
-   "confidence": null,
-   "distanceM": null,
-   "areaHectare": null,
+   "outcome": "detected",
+   "reason": "",
+   "detectedAt": "7/3 10:41",
+   "detectLagDays": 20.4,
+   "eventId": "E1",
+   "detectedBy": "optical",
+   "priority": "medium",
+   "maxPriority": "medium",
+   "confidence": "低",
+   "distanceM": 192,
+   "areaHectare": 0.51,
    "otherHighEvents": 0,
    "otherEvents": 0,
-   "chanceHitProb": 0.0,
+   "chanceHitProb": 0.19,
    "sizeGroup": "< 20 萬 m³",
-   "preCount": 13
+   "preCount": 13,
+   "opticalPassCount": 8
   },
   {
    "lakeId": "bl075",
@@ -667,22 +711,24 @@ window.REPLAY_SUMMARY = {
    "cause": "微地動 / 多起崩塌事件",
    "orbit": "升軌 69",
    "passCount": 7,
-   "firstPassLagDays": 1.8,
+   "firstPassLagDays": 0.4,
    "outcome": "detected",
    "reason": "",
-   "detectedAt": "7/10 18:00",
-   "detectLagDays": 20.8,
+   "detectedAt": "7/1 10:20",
+   "detectLagDays": 11.4,
    "eventId": "E2",
+   "detectedBy": "optical",
    "priority": "medium",
    "maxPriority": "high",
    "confidence": "低",
-   "distanceM": 308,
-   "areaHectare": 2.33,
+   "distanceM": 295,
+   "areaHectare": 2.59,
    "otherHighEvents": 1,
    "otherEvents": 1,
-   "chanceHitProb": 0.3,
+   "chanceHitProb": 0.38,
    "sizeGroup": "未登載",
-   "preCount": 5
+   "preCount": 5,
+   "opticalPassCount": 16
   }
  ],
  "skipped": [

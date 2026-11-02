@@ -1,5 +1,5 @@
 // 由 pipeline.assess.dashboard_export（合成示範）與
-// scripts/analyze_ndwi_change.py（光學 NDWI）、scripts/analyze_sar_change.py（Sentinel-1 SAR）共同維護，
+// scripts/analyze_sar_change.py（Sentinel-1 SAR）共同維護，
 // 每筆各自的 synthetic 欄位標明資料來源，請勿手動編輯
 window.INUNDATION_DEMO = {
   "bl071": {

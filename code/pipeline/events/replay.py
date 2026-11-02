@@ -215,7 +215,7 @@ def summarize_lake(target: dict, built: Optional[dict], scenario: Optional[dict]
         "volume": target.get("volume"), "cause": target.get("cause", ""),
         "orbit": None, "passCount": 0, "firstPassLagDays": None,
         "outcome": None, "reason": "", "detectedAt": None, "detectLagDays": None,
-        "eventId": None, "priority": None, "maxPriority": None, "confidence": None,
+        "eventId": None, "detectedBy": None, "priority": None, "maxPriority": None, "confidence": None,
         "distanceM": None, "areaHectare": None, "otherHighEvents": 0, "otherEvents": 0,
         "chanceHitProb": None, "sizeGroup": size_group(target.get("volume")),
     }
@@ -226,9 +226,11 @@ def summarize_lake(target: dict, built: Optional[dict], scenario: Optional[dict]
     elif scenario:
         row["orbit"] = scenario.get("orbitLabel")
 
-    passes = (scenario or {}).get("passes", [])
-    times = sorted(datetime.fromisoformat(p["time"]) for p in passes)
-    row["passCount"] = len(times)
+    sar_passes = (scenario or {}).get("passes", [])
+    opt_passes = ((scenario or {}).get("opticalDetection") or {}).get("passes", [])
+    times = sorted(datetime.fromisoformat(p["time"]) for p in sar_passes + opt_passes)
+    row["passCount"] = len(sar_passes)
+    row["opticalPassCount"] = len(opt_passes)
     after = [t for t in times if t >= formed]
     if after:
         row["firstPassLagDays"] = round((after[0] - formed).total_seconds() / 86400, 1)
@@ -257,6 +259,7 @@ def summarize_lake(target: dict, built: Optional[dict], scenario: Optional[dict]
             if near and seen >= start:
                 if row["detectedAt"] is None:
                     row.update(detectedAt=snap["label"], eventId=c["id"], priority=c["priority"],
+                           detectedBy=c.get("source", "sar"),
                                confidence=c["confidence"], distanceM=c["distanceFromReferenceM"],
                                areaHectare=c["areaHectare"],
                                detectLagDays=round((t - formed).total_seconds() / 86400, 1))

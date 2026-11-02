@@ -25,6 +25,8 @@
 | `gee_export_matai_an_s1.js` | GEE 網頁版 | 馬太鞍溪 2025：事件前、5 期、一年前基準、DEM |
 | `gee_export_series_s1.js` | GEE 網頁版 | 任一地點的逐期序列（預設 2026 負案例） |
 | `gee_fetch_inventory.py` | Python（需 `earthengine authenticate`） | 全清冊回放：選軌道、下載到 `data/raw/sentinel1/replay/`、寫 `replay_manifest.json` |
+| `gee_fetch_optical.py` | Python（需 `earthengine authenticate`） | 光學偵測來源的全清冊回放：Sentinel-2／Landsat 判水結果下載到 `data/raw/optical/replay/`、寫 `optical_replay_manifest.json` |
+| `gee_codeeditor_optical.py` → `gee_export_optical.js` → `split_optical_exports.py` | GEE 網頁版 | 本機無法登入 GEE 時的光學回放替代下載（每湖一個多波段檔＋一個 CSV，再拆成 `optical_replay.py` 要的檔案） |
 | `gee_codeeditor_inventory.py` → `gee_export_inventory.js` → `split_inventory_exports.py` | GEE 網頁版 | 本機無法登入 GEE 時的回放影像替代下載（每湖一個多波段檔，再拆成單張） |
 | `gee_codeeditor_prior.py` → `gee_export_prior.js` → `split_prior_exports.py` | GEE 網頁版 | 每個案例的一年前基準（崩塌堆積提醒用） |
 | `gee_check_s2_e1.js` | GEE 網頁版 | 2026 負案例 E1 的 Sentinel-2 查證影像 |
@@ -53,6 +55,7 @@
 | `tune_replay.py` | 調參與留一交叉驗證 → `docs/results/tuning.json` |
 | `hysteresis_replay.py` | 坡度雙門檻比較 → `docs/results/hysteresis.json` |
 | `run_experiment.py` | 實驗性修改：用正式參數重跑全部案例到 `data/experiments/<名稱>/`，與正式結果並排比較（B1 射線追蹤、B2 VH、崩塌堆積提醒都用它） |
+| `optical_replay.py` | 光學偵測來源的全清冊回放：逐湖逐期偵測、寫情境檔 `opticalDetection`，並比較只有 SAR／只有光學／SAR＋光學三種做法 → `docs/results/optical_replay.{json,md}` |
 | `old_landslide_threshold.py` | 崩塌堆積提醒的門檻分析 → `docs/results/old_landslide_threshold.json` |
 | `gee_codeeditor_vh.py` → `gee_export_vh.js` → `split_vh_exports.py` | B2（加入 VH，未採用）實驗用的 VH 影像 |
 
@@ -76,6 +79,5 @@
 
 | 程式 | 用途 |
 |---|---|
-| `analyze_ndwi_change.py` | 光學 NDWI 新增水體（馬太鞍溪結果已撤下）；其中 `crop_window` 等函式被 `analyze_sar_change.py` 使用 |
 | `run_hypsometry_real.py` | DEM 蓄水量（結果已撤下） |
 | `run_exposure_real.py` | 暴露人口 |

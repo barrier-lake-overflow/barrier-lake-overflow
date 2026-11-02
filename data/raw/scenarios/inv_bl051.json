@@ -2,7 +2,7 @@
   "id": "inv_bl051",
   "name": "烏來堰塞湖 · 2015",
   "kind": "replay",
-  "description": "全清冊回放：清冊登載 2015-08-14 形成，清冊蓄水量 0.6 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 4 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "description": "全清冊回放：清冊登載 2015-08-14 形成，清冊蓄水量 0.6 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 4 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。另有光學偵測：Sentinel-2／Landsat 晴空過半 2 景，規則見 detect/optical.py。",
   "center": [
     121.51907,
     24.81997
@@ -69,5 +69,46 @@
     "file": "data/basemaps/inv_bl051.jpg",
     "before": "2015-08-07",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2015-08-07 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "opticalDetection": {
+    "preStart": "2015-06-08",
+    "preEnd": "2015-08-07",
+    "preImages": 4,
+    "scenes": [
+      {
+        "time": "2015-08-12T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 65.4,
+        "usable": true
+      },
+      {
+        "time": "2015-09-13T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 75.8,
+        "usable": true
+      }
+    ],
+    "passes": [
+      {
+        "file": "final_opt_inv_bl051_20150812_L8.json",
+        "time": "2015-08-12T02:20+00:00",
+        "recheckTime": "2015-09-13T02:20+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 65.4,
+        "orbitLabel": "光學 Landsat 8 20150812"
+      },
+      {
+        "file": "final_opt_inv_bl051_20150913_L8.json",
+        "time": "2015-09-13T02:20+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 75.8,
+        "orbitLabel": "光學 Landsat 8 20150913"
+      }
+    ]
   }
 }

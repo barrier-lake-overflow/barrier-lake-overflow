@@ -2,22 +2,30 @@
 """
 事件研判：輸入一個事件在某時點的狀態，輸出優先等級、研判信心、證據、證據缺口與建議任務。
 
-SAR 只當證據來源之一，不直接下結論。規則全部寫死在這裡，每項判斷都記進
+衛星偵測只當證據來源之一，不直接下結論。規則全部寫死在這裡，每項判斷都記進
 rules_fired，跟 attribution 一樣可以對回是哪條規則產生的。
+
+偵測來源有兩種，走同一張決策表（Detection.source）：
+    SAR     Sentinel-1 雷達，不受雲影響（detect/barrier_lake.py）
+    光學    Sentinel-2／Landsat 晴空影像（detect/optical.py），雲散後才看得到
+兩者在同一位置都看到，不算「多源一致」：都是系統自動偵測，要人工確認或他單位成果才算獨立證據。
+只有光學看到（SAR 從沒看到、也沒有他單位成果）的事件，優先最高到「中」：新崩塌地上的濕泥、積水
+也會被光學判成持續的水，要人工打開影像確認（馬太鞍溪 E4、E5）。
 
 優先等級（決策表，依序比對）：
     持續性中斷   前期已確認蓄水、同軌道連續兩期都未見     → 高　建議立即查證（可能潰決或排空）
     最新一期未見 前期已確認蓄水、同軌道只漏看一期         → 中　建議人工確認（等下一期）
-    已確認持續   多期 SAR 一致且附近有崩塌（A 級）        → 高　建議立即查證
-    多源一致     單期 SAR（B 級）＋他單位獨立觀測          → 高　建議立即查證
-    待複核       單期 SAR，空間條件符合（B 級）            → 中　建議人工確認
-    待複核       單期 SAR，附近無崩塌訊號（C 級）          → 低　暫時觀察
+    已確認持續   多期偵測一致且附近有崩塌（A 級）         → 高　建議立即查證
+    多源一致     單期偵測（B 級）＋他單位獨立觀測          → 高　建議立即查證
+    待複核       單期偵測，空間條件符合（B 級）            → 中　建議人工確認
+    待複核       單期偵測，附近無崩塌訊號（C 級）          → 低　暫時觀察
     複核未持續   下一期同位置水體 IoU 未達門檻              → 低　暫時觀察
 同一等級內依面積由大到小排。
 
-「未見」只算跟最後一次看到它同一軌道的影像：升軌、降軌照射方向相反，同一片陡坡的陰影
+「未見」只算跟最後一次看到它同一軌道的 SAR 影像：升軌、降軌照射方向相反，同一片陡坡的陰影
 不一樣，湖在一軌看得到、另一軌看不到很常見，不能拿來判斷湖不見了。複核時同位置仍有水
-（IoU 達門檻）也算看到，即使那一期的水體太小、沒有成為候選。
+（IoU 達門檻）也算看到，即使那一期的水體太小、沒有成為候選。光學每一期各自算一個「軌道」：
+光學某一期沒看到可能只是局部雲遮，不拿來判斷湖不見了；SAR 也不拿來判斷只有光學看到的湖不見了。
 
 光學自動判讀（監看窗格，pipeline/daily/optical.py）只會壓低、不會拉高：
     事件出現後，晴空光學至少 OPTICAL_DRY_MIN 次判為沒有水、且沒有一次看得到水 → 最高到「中」
@@ -25,7 +33,7 @@ rules_fired，跟 attribution 一樣可以對回是哪條規則產生的。
 自動判讀沒有人工確認，所以不算獨立證據，不會讓優先或信心升高。
 
 研判信心（高／中／低）：
-    證據只有 SAR 時最高到「中」。要到「高」需要 SAR 以外的獨立證據：
+    證據只有衛星自動偵測（SAR、光學）時最高到「中」。要到「高」需要獨立證據：
     他單位已發布的光學、航拍、衛星判釋或現地勘查／目視通報（情境檔 externalEvidence，
     種類見 INDEPENDENT_KINDS），或值班人員在儀表板上記錄的人工查證。
 
@@ -71,7 +79,10 @@ PERSISTENCE_TEXT = {
     "missing": "最新一期未見",
     "lost": "持續性中斷",
 }
-SHORT_NAME = {"sar": "SAR 新增水體", "persistence": "跨期持續", "river": "貼河道",
+SOURCE_ORDER = ("sar", "optical")
+SOURCE_NAME = {"sar": "SAR", "optical": "光學"}
+OPTICAL_ORBIT_PREFIX = "光學"   # 與 detect/optical.py ORBIT_PREFIX 相同：光學每一期各自一個「軌道」
+SHORT_NAME = {"sar": "SAR 新增水體", "optical_det": "光學新增水體", "persistence": "跨期持續", "river": "貼河道",
               "landslide": "附近崩塌", "terrain": "堵塞型態", "trend": "面積擴大",
               "optical": "他單位光學影像", "aerial": "他單位航拍",
               "satellite": "他單位衛星判釋", "field": "現地勘查或通報",
@@ -98,12 +109,14 @@ def tw_date(t: datetime) -> str:
 
 @dataclass
 class Detection:
-    """某一期 SAR 偵測到的一個候選水體（final_*.json 的 candidates 一筆）。"""
+    """某一期偵測到的一個候選水體（final_*.json 的 candidates 一筆）。"""
     pass_time: datetime
     recheck_time: Optional[datetime]     # 該期排定的複核影像時間；沒有複核期為 None
     cand: dict
     evidence_image: Optional[str] = None
-    orbit: Optional[str] = None          # 軌道（例如「降軌 105」）；None＝不分軌道
+    orbit: Optional[str] = None          # 軌道（例如「降軌 105」、「光學 Sentinel-2B 20250814」）；None＝不分軌道
+    source: str = "sar"                  # sar／optical
+    sensor: Optional[str] = None         # 光學的衛星（例如 Sentinel-2B）
 
     @property
     def area_ha(self) -> float:
@@ -165,29 +178,66 @@ def _analyzed(ctx: Context) -> list:
     return ctx.analyzed or ([(ctx.latest_analyzed_pass, None)] if ctx.latest_analyzed_pass else [])
 
 
+def is_optical_orbit(orbit: Optional[str]) -> bool:
+    return bool(orbit) and orbit.startswith(OPTICAL_ORBIT_PREFIX)
+
+
 def same_orbit(orbit: Optional[str], dets: list) -> bool:
-    """這一期的軌道跟事件被看到過的軌道一樣（不分軌道的資料一律算一樣）。"""
-    seen_orbits = {d.orbit for d in dets}
-    return orbit is None or None in seen_orbits or orbit in seen_orbits
+    """
+    這一期的軌道跟事件被 SAR 看到過的軌道一樣（不分軌道的 SAR 資料一律算一樣）。
+    光學每一期各自一個軌道，只跟自己那一期相同；只有光學看到的事件，SAR 各期都不算同軌道。
+
+    >>> sar = Detection(datetime(2025, 7, 29), None, {}, orbit=None)
+    >>> opt = Detection(datetime(2025, 8, 14), None, {}, orbit="光學 Sentinel-2A 20250814", source="optical")
+    >>> same_orbit("降軌 105", [sar]), same_orbit("光學 Sentinel-2B 20250817", [sar, opt]), same_orbit("降軌 105", [opt])
+    (True, False, False)
+    """
+    seen = {d.orbit for d in dets}
+    if is_optical_orbit(orbit):
+        return orbit in seen
+    seen_sar = {o for o in seen if not is_optical_orbit(o)}
+    if not seen_sar and any(is_optical_orbit(o) for o in seen):
+        return False
+    return orbit is None or None in seen_sar or orbit in seen_sar
+
+
+def source_text(d: Detection) -> str:
+    """
+    >>> source_text(Detection(datetime(2025, 8, 14), None, {}, source="optical", sensor="Sentinel-2A"))
+    '光學（Sentinel-2A）'
+    """
+    return f"光學（{d.sensor}）" if d.source == "optical" and d.sensor else SOURCE_NAME[d.source]
+
+
+def sources_text(dets: list) -> str:
+    """
+    >>> sources_text([Detection(datetime(2025, 8, 14), None, {}, source="optical")])
+    '光學'
+    """
+    return "、".join(SOURCE_NAME[s] for s in SOURCE_ORDER if any(d.source == s for d in dets))
 
 
 def missed_passes(dets: list, ctx: Context) -> int:
-    """最後一次看到之後，同軌道已經分析過、卻沒再看到的期數。複核明確未持續也算一期。"""
+    """
+    最後一次看到之後，同軌道已經分析過、卻沒再看到的期數。SAR 複核明確未持續也算一期；
+    光學複核沒對上可能只是局部雲遮，不算。
+    """
     latest = dets[-1]
     seen = last_seen(dets, ctx.as_of)
     missed = {t for t, orbit in _analyzed(ctx) if seen < t <= ctx.as_of and same_orbit(orbit, dets)}
-    if latest.recheck_state(ctx.as_of) == "not_persistent":
+    if latest.recheck_state(ctx.as_of) == "not_persistent" and latest.source == "sar":
         missed.add(latest.recheck_time)
     return len(missed)
 
 
 def radar_history(dets: list, ctx: Context) -> list:
     """
-    事件首次出現以後，每一期雷達對這個事件的意義（跟持續性判定同一套規則），給事件卡時間軸照實顯示：
+    事件首次出現以後，每一期偵測對這個事件的意義（跟持續性判定同一套規則），給事件卡時間軸照實顯示：
         hit    偵測到
         wet    複核：同位置仍有水（水體太小，沒成為新的候選）
         miss   同軌道、沒看到（複核未持續也是）
         other  拍攝方向不同的軌道，陰影不同，不拿來比
+    光學各期只列偵測到、複核仍有水的（沒看到可能只是雲遮，見 same_orbit）；source 標 sar／optical。
     """
     by_pass = {d.pass_time: d for d in dets}
     rechecks = {d.recheck_time: d.recheck_state(ctx.as_of) for d in dets
@@ -201,19 +251,27 @@ def radar_history(dets: list, ctx: Context) -> list:
     for t, orbit in sorted(passes.items(), key=lambda x: x[0]):
         if t < dets[0].pass_time or t > ctx.as_of:
             continue
+        optical = is_optical_orbit(orbit)
         d = by_pass.get(t)
         if d:
             status, text = "hit", f"偵測到 {d.area_ha:.2f} 公頃"
         elif rechecks.get(t) == "persistent":
             status, text = "wet", "複核：同位置仍有水（水體較小，沒列為新目標）"
+        elif optical:
+            continue
         elif not same_orbit(orbit, dets):
-            status, text = "other", "拍攝方向不同，陰影不同，不拿來比對"
+            status, text = ("other", "只有光學看到，雷達這期不拿來比對" if not any(x.source == "sar" for x in dets)
+                            else "拍攝方向不同，陰影不同，不拿來比對")
         elif rechecks.get(t) == "not_persistent":
             status, text = "miss", "複核：同位置沒有水"
         else:
             status, text = "miss", "同位置沒看到"
-        out.append({"time": t.isoformat(), "orbit": orbit, "status": status,
-                    "text": ("首次出現 · " if t == dets[0].pass_time else "") + text})
+        entry = {"time": t.isoformat(), "orbit": None if optical else orbit, "status": status,
+                 "source": "optical" if optical else "sar",
+                 "text": ("首次出現 · " if t == dets[0].pass_time else "") + text}
+        if optical:
+            entry["sensor"] = d.sensor if d else orbit.split(" ")[1]
+        out.append(entry)
     return out
 
 
@@ -223,8 +281,9 @@ def persistence(dets: list, ctx: Context) -> str:
     確認過之後，同軌道漏看一期改判「最新一期未見」，連續 LOST_MISSES 期才判「持續性中斷」。
     """
     states = [d.recheck_state(ctx.as_of) for d in dets]
-    # 複核未持續之後又在同位置出現，不直接算確認，回到待複核
-    redetected = len({d.pass_time for d in dets}) >= 2 and "not_persistent" not in states
+    # SAR 複核未持續之後又在同位置出現，不直接算確認，回到待複核（光學複核沒對上可能只是雲遮，不算）
+    redetected = len({d.pass_time for d in dets}) >= 2 and not any(
+        s == "not_persistent" and d.source == "sar" for s, d in zip(states, dets))
     confirmed_ever = "persistent" in states or redetected
     if confirmed_ever:
         misses = missed_passes(dets, ctx)
@@ -337,12 +396,22 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
     rules.append(f"persistence.{pers}")
     trend = trend_of(dets)
     next_pass = tw_date(ctx.next_pass) if ctx.next_pass else "下一期"
+    optical_latest = latest.source == "optical"
+    src = source_text(latest)          # 最近一次偵測的來源，例如「SAR」「光學（Sentinel-2B）」
+    srcs = sources_text(dets)          # 偵測過這個事件的全部來源，例如「SAR、光學」
+    opt_dets = [d for d in dets if d.source == "optical"]
 
     # ── 證據（status：support 支持／against 不支持／context 背景）
+    # 最近一次偵測在前；另一種來源也看到過的話，列它最近的一次
     evidence = [{
-        "kind": "sar", "status": "support",
-        "text": f"{tw_label(latest.pass_time)} SAR 新增水體 {latest.area_ha:.2f} 公頃（證據強度 {grade} 級）",
+        "kind": "optical_det" if optical_latest else "sar", "status": "support",
+        "text": f"{tw_label(latest.pass_time)} {src} 新增水體 {latest.area_ha:.2f} 公頃（證據強度 {grade} 級）",
     }]
+    other = [d for d in dets if d.source != latest.source]
+    if other:
+        d = other[-1]
+        evidence.append({"kind": "optical_det" if d.source == "optical" else "sar", "status": "support",
+                         "text": f"{tw_label(d.pass_time)} {source_text(d)} 也在同位置偵測到 {d.area_ha:.2f} 公頃"})
 
     persistent_dets = [d for d in dets if d.recheck_state(ctx.as_of) == "persistent"]
     if pers == "confirmed":
@@ -384,8 +453,10 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
                          "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"})
     if c.get("landslideNearby"):
         rules.append("spatial.landslide")
+        ls_ha = float(c.get('landslideAreaHectare') or 0)
         evidence.append({"kind": "landslide", "status": "support",
-                         "text": f"500 m 內有 SAR 崩塌訊號 {float(c.get('landslideAreaHectare') or 0):.1f} 公頃"})
+                         "text": f"500 m 內有植生消失（光學判為崩塌）{ls_ha:.1f} 公頃" if optical_latest
+                         else f"500 m 內有 SAR 崩塌訊號 {ls_ha:.1f} 公頃"})
     if c.get("damDownstream"):
         rules.append("spatial.blockage")
         evidence.append({"kind": "terrain", "status": "support",
@@ -424,16 +495,19 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
     # ── 證據缺口
     gaps = []
     if pers == "pending" and not corroborated:
-        gaps.append({"kind": "persistence", "text": f"尚未複核：單期影像無法排除陰影或濕土誤判（下一期 {next_pass}）"})
+        gaps.append({"kind": "persistence", "text":
+                     f"尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 {next_pass}，或下一個晴空光學）"
+                     if optical_latest else f"尚未複核：單期影像無法排除陰影或濕土誤判（下一期 {next_pass}）"})
     if not ctx.rain_available:
         rules.append("gap.rain")
         gaps.append({"kind": "rain", "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"})
     if not corroborated:
         rules.append("gap.optical")
-        auto = sorted(wet + dry, key=lambda r: r["time"], reverse=True)
+        auto = sorted(wet + dry + [{"time": d.pass_time.isoformat()} for d in opt_dets],
+                      key=lambda r: r["time"], reverse=True)
         gaps.append({"kind": "optical", "text":
-                     f"光學影像：系統已自動判讀（{_optical_dates(auto)}），尚待人工打開影像確認" if auto
-                     else "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"})
+                     f"光學影像：系統已自動{'偵測' if opt_dets else '判讀'}（{_optical_dates(auto)}），尚待人工打開影像確認"
+                     if auto else "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"})
     if not ctx.exposure:
         rules.append("gap.exposure")
         gaps.append({"kind": "exposure", "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"})
@@ -444,8 +518,10 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
     spatial_ok = all(c.get(k) for k in ("onRiver", "landslideNearby", "damDownstream"))
     if pers == "failed" and spatial_ok:
         rules.append("conflict.spatial_vs_persistence")
-        conflicts.append("空間條件（河道、崩塌、堵塞型態）都符合，但下一期複核未持續。以持續性為準：單期疑似水體常見"
-                         "成因是崩塌後新陡崖的雷達陰影或濕土使背向散射暫時降低。")
+        conflicts.append("空間條件（河道、崩塌、堵塞型態）都符合，但下一期複核未持續。以持續性為準：" + (
+            "單期光學疑似水體常見成因是雲影、濕泥或豪雨後河道暫時變寬；下一景若局部有雲，也可能只是沒看到。"
+            if optical_latest else
+            "單期疑似水體常見成因是崩塌後新陡崖的雷達陰影或濕土使背向散射暫時降低。"))
     if optical_still_wet:
         rules.append("conflict.sar_missing_optical_wet")
         conflicts.append(f"SAR 最新一期未見，但光學 {tw_date(datetime.fromisoformat(wet[0]['time']))} 仍看得到水："
@@ -456,7 +532,7 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         conflicts.append("前期多期一致，最新一期未見：只漏一期，常見原因是陰影或水位小幅變化，先等下一期確認。")
     if optical_dry:
         rules.append("conflict.sar_vs_optical_dry")
-        conflicts.append(f"光學 {_optical_dates(dry)} 晴空都判為沒有水：SAR 看到的可能是崩塌堆積或陰影，"
+        conflicts.append(f"光學 {_optical_dates(dry)} 晴空都判為沒有水：{srcs}看到的可能是崩塌堆積或陰影，"
                          "不一定是湖。請打開光學影像確認。")
 
     # ── 提醒（不影響優先、信心、證據強度）
@@ -493,9 +569,11 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         optical_task = (
             {"label": "取得他單位既有光學判釋與航拍成果", "reason": "已有其他單位發布的成果，直接串接，不重做"}
             if corroborated else
+            {"label": "打開光學影像確認湖面", "reason": "光學偵測是系統自動判斷，需人工看過影像才算確認"}
+            if opt_dets else
             {"label": "調閱最新光學影像", "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"})
         tasks += [
-            {"label": "UAV／現地查證壩體與湖面", "reason": "SAR 只能看到水面，壩體高度、材料與溢流風險要現地確認"},
+            {"label": "UAV／現地查證壩體與湖面", "reason": "衛星只能看到水面，壩體高度、材料與溢流風險要現地確認"},
             optical_task,
             {"label": "通報主管機關（農村水保署）並評估下游保全對象",
              "reason": "下游已有聚落與橋梁" if ctx.exposure else "下游聚落、道路圖層尚未串接"},
@@ -506,12 +584,20 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
     elif pers == "pending" and grade == "B":
         priority = "medium"
         rules.append("priority.medium.pending")
-        tasks += [
-            {"label": "值班人員判讀 SAR 證據圖", "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"},
-            {"label": f"排下一期 SAR 複核（{next_pass}）", "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"},
-            {"label": "調閱光學影像（雲況許可時）", "reason": "SAR 以外的獨立證據"},
-            {"label": "暫不派遣 UAV", "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"},
-        ]
+        if optical_latest:
+            tasks += [
+                {"label": "值班人員打開光學影像確認", "reason": "確認疑似水體是否在河谷底、是否為雲影、濕泥或變寬的河道"},
+                {"label": f"等下一期複核（雷達 {next_pass}，或下一個晴空光學）",
+                 "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"},
+                {"label": "暫不派遣 UAV", "reason": f"目前只有單期{src}，先以複核過濾誤報，避免浪費現地人力"},
+            ]
+        else:
+            tasks += [
+                {"label": "值班人員判讀 SAR 證據圖", "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"},
+                {"label": f"排下一期 SAR 複核（{next_pass}）", "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"},
+                {"label": "調閱光學影像（雲況許可時）", "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"},
+                {"label": "暫不派遣 UAV", "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"},
+            ]
     else:
         priority = "low"
         rules.append("priority.low." + ("failed" if pers == "failed" else "no_landslide"))
@@ -530,7 +616,18 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         tasks = [
             {"label": "打開光學影像確認是否為水", "reason": f"光學 {_optical_dates(dry)} 晴空都判為沒有水"},
             {"label": f"持續 SAR 監測（下一期 {next_pass}）", "reason": "光學確認是水再升高優先"},
-            {"label": "暫不派遣 UAV", "reason": "SAR 與光學結果衝突，先以影像確認，避免浪費現地人力"},
+            {"label": "暫不派遣 UAV", "reason": f"{srcs}偵測與光學判讀結果衝突，先以影像確認，避免浪費現地人力"},
+        ]
+    # 只有光學看到（SAR 沒看到過、也沒有他單位成果）：新崩塌地上的濕泥、積水也會被判成持續的水，最高到「中」，
+    # 人工打開影像確認是湖再升高（docs/validation.md「光學偵測來源」：馬太鞍溪 E4、E5）
+    optical_only = not any(d.source == "sar" for d in dets)
+    if optical_only and priority == "high" and not corroborated:
+        priority = "medium"
+        rules.append("priority.capped.optical_only")
+        tasks = [
+            {"label": "打開光學影像確認湖面", "reason": "只有光學自動偵測；雲影、濕泥、新崩塌地上的積水都可能被判成水。確認是湖就記人工查證，由值班人員決定是否派遣"},
+            {"label": f"排下一期 SAR 複核（{next_pass}）", "reason": "雷達也看到（或有他單位成果）時，系統才會列高優先"},
+            {"label": "影像確認前暫不派遣 UAV", "reason": "先以影像確認，避免浪費現地人力"},
         ]
     if not ctx.rain_available and priority != "low":
         tasks.append({"label": "補查形成期間雨量", "reason": "確認觸發條件；目前觀測表此欄空白"})
@@ -540,26 +637,31 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         confidence = "高"
         sources = "、".join(sorted({x["source"].split("（")[0] for x in ctx.external
                                     if x["kind"] in INDEPENDENT_KINDS and x.get("source")}))
-        conf_reasons = ["SAR 與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）"] + ([f"外部來源：{sources}"] if sources else [])
+        conf_reasons = [f"{srcs}與他單位獨立觀測一致（光學、航拍、衛星判釋或現地勘查）"] + ([f"外部來源：{sources}"] if sources else [])
     elif pers == "confirmed":
         confidence = "中"
-        conf_reasons = [f"SAR {len(dets)} 期一致", "證據只有 SAR 一種來源，最高到「中」；需光學或現地證據才能到「高」"]
+        conf_reasons = [f"{srcs} {len(dets)} 期一致",
+                        "證據只有衛星自動偵測，最高到「中」；需人工看過影像、他單位成果或現地證據才能到「高」"]
     elif pers == "failed":
         confidence = "中"
-        conf_reasons = [f"複核結果明確（{_iou_text(latest)}）", "證據只有 SAR 一種來源，最高到「中」"]
+        conf_reasons = [f"複核結果明確（{_iou_text(latest)}）", "證據只有衛星自動偵測，最高到「中」"]
     else:
         confidence = "低"
-        conf_reasons = (["只有單期 SAR，尚未複核"] if pers == "pending"
+        conf_reasons = ([f"只有單期{src}，尚未複核"] if pers == "pending"
                         else ["前後期結果不一致，需人工判斷"])
     if optical_dry and not corroborated:
         confidence = "低"
-        conf_reasons = [f"SAR 與光學衝突：光學 {_optical_dates(dry)} 晴空都判為沒有水"]
+        conf_reasons = [f"{srcs}與光學判讀衝突：光學 {_optical_dates(dry)} 晴空都判為沒有水"]
 
     # ── 一句話摘要
     support = list(dict.fromkeys(SHORT_NAME[e["kind"]] for e in evidence if e["status"] == "support"))
     if optical_dry and "priority.capped.optical_dry" in rules:
-        summary = (f"{label} 需要人工確認：SAR 多期看到疑似水體，但光學 {_optical_dates(dry)} 晴空都判為沒有水，"
+        summary = (f"{label} 需要人工確認：{srcs}多期看到疑似水體，但光學 {_optical_dates(dry)} 晴空都判為沒有水，"
                    f"可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。")
+    elif "priority.capped.optical_only" in rules:
+        summary = (f"{label} 需要人工確認：只有光學看到疑似水體（{len(dets)} 期，{PERSISTENCE_TEXT[pers]}），"
+                   f"空間條件符合，但光學在新崩塌地上的濕泥、積水也會誤判；請先打開光學影像確認是湖，"
+                   f"影像確認前暫不派遣 UAV。")
     elif optical_still_wet:
         summary = (f"{label} 需要人工確認：SAR 最新一期未見，但光學 {tw_date(datetime.fromisoformat(wet[0]['time']))} "
                    f"仍看得到水，湖多半還在；請打開光學影像確認，下一期 {next_pass} 再複核。")
@@ -568,18 +670,20 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
                    f"建議調閱光學影像，下一期 {next_pass} 再看不到才判持續性中斷。")
     elif priority == "high" and corroborated:
         summary = (f"{label} 值得優先查證：{len(support)} 項證據一致（{'、'.join(support)}），"
-                   f"其中他單位的觀測與 SAR 互相獨立；"
+                   f"其中他單位的觀測與衛星自動偵測互相獨立；"
                    f"{'已有現地勘查或通報，' if any(x['kind'] == 'field' for x in ctx.external) else '目前缺少現地證據，'}"
                    f"建議下一步 UAV 現地查證並取得他單位既有判釋成果。")
     elif priority == "high" and pers == "confirmed":
-        missing = "光學自動判讀看得到水但還沒人工確認，也缺少現地證據" if wet else "目前缺少光學影像與現地證據"
+        missing = ("光學自動偵測看得到水但還沒人工確認，也缺少現地證據" if opt_dets
+                   else "光學自動判讀看得到水但還沒人工確認，也缺少現地證據" if wet else "目前缺少光學影像與現地證據")
         summary = (f"{label} 值得優先查證：{len(support)} 項證據一致（{'、'.join(support)}）；"
                    f"{missing}，建議下一步 UAV 現地查證並調閱光學影像。")
     elif priority == "high":
         summary = f"{label} 需要立即查證：前期已確認蓄水，最新一期未再出現，可能已潰決或排空。"
     elif priority == "medium":
-        summary = (f"{label} 需要人工確認：單期 SAR 出現約 {area_note}的疑似新增水體，空間條件符合，但尚未複核；"
-                   f"建議 {next_pass} 下一期過境複核，暫不派遣 UAV。")
+        summary = (f"{label} 需要人工確認：單期{src}出現約 {area_note}的疑似新增水體，空間條件符合，但尚未複核；"
+                   + ("建議先打開光學影像確認，等下一期雷達或下一個晴空光學複核，暫不派遣 UAV。" if optical_latest
+                      else f"建議 {next_pass} 下一期過境複核，暫不派遣 UAV。"))
     elif pers == "failed":
         summary = f"{label} 暫時觀察：空間條件符合，但下一期複核未持續（{_iou_text(latest)}），不建議派遣任務。"
     else:

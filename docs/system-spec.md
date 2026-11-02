@@ -63,7 +63,7 @@
 
 ### 2.1 要解決的問題
 
-豪雨與颱風期間，值班人員要從大量資料裡找出「哪一件最該先查」。光學衛星常被雲遮住；Sentinel-1 雷達能穿雲，但單期的低背向散射區可能是雷達陰影或濕土，不能直接當成結論。
+豪雨與颱風期間，值班人員要從大量資料裡找出「哪一件最該先查」。光學衛星常被雲遮住；Sentinel-1 雷達能穿雲，但單期的低背向散射區可能是雷達陰影或濕土，不能直接當成結論；陡坡陰影、窄谷裡的小湖，雷達也常看不到。所以雷達之外，雲散後也用 Sentinel-2、Landsat 光學影像偵測。
 
 ### 2.2 系統定位
 
@@ -71,8 +71,8 @@
 
 ### 2.3 設計原則
 
-1. **SAR 提供證據，不下結論。** 偵測端的 A/B/C 只代表「SAR 證據強度」，要經過複核、空間條件與人工查證才會排進高優先。
-2. **系統整理與排序，人員判斷。** 只有 SAR 證據時，研判信心最高到「中」；要有 SAR 以外的獨立證據（他單位光學／航拍、現地或人工查證）才會到「高」。
+1. **衛星偵測提供證據，不下結論。** 偵測端的 A/B/C 只代表「證據強度」，要經過複核、空間條件與人工查證才會排進高優先。SAR 與光學兩種偵測來源走同一套研判。
+2. **系統整理與排序，人員判斷。** 只有衛星自動偵測時（SAR、光學或兩者都有），研判信心最高到「中」；要有獨立證據（他單位光學／航拍、現地或人工查證）才會到「高」。
 3. **串接既有能力，不重做。** 他單位已發布的成果依時間與位置自動對到事件，當作獨立證據。
 4. **說明下一步。** 每張事件卡都附建議任務，例如「暫不派遣 UAV，先以下一期複核過濾誤報」。
 5. **每個判斷都能追溯。** 規則寫死在程式，每項判斷記入 `rulesFired`；敘述不用 LLM，以規則加模板產生。
@@ -127,32 +127,32 @@ barrier-lake-overflow-main/
 ├─ requirements.txt           完整開發環境
 ├─ requirements-daily.txt     每日自動更新（CI）精簡套件
 ├─ .github/workflows/
-│   ├─ daily.yml              每兩天自動更新
-│   └─ nlsc-probe.yml
+│   └─ daily.yml              每兩天自動更新
 ├─ code/
 │   ├─ pyproject.toml         套件 ossint-pipeline
 │   ├─ pipeline/
 │   │   ├─ build_all.py       一鍵重建儀表板資料
 │   │   ├─ ingest/            清冊、風險模型、人工觀測
-│   │   ├─ preprocess/        SAR 讀檔、Lee 濾波、幾何遮罩
-│   │   ├─ detect/            判水、崩塌、疑似堰塞湖分級
+│   │   ├─ preprocess/        SAR 讀檔、Lee 濾波、幾何遮罩、GeoTIFF 裁窗與向量化
+│   │   ├─ detect/            判水、崩塌、疑似堰塞湖分級（SAR、光學兩種偵測來源）
 │   │   ├─ events/            事件追蹤、研判、全清冊回放
-│   │   ├─ daily/             自動更新各步驟
+│   │   ├─ daily/             自動更新各步驟（含光學偵測的 GEE 端 optical_detect.py）
 │   │   ├─ attribution/       成因敘述、溢流預報
 │   │   └─ assess/            蓄水量、規模、淹沒、暴露、回測（後續擴充）
 │   ├─ scripts/               真實資料分析、GEE 下載、回放、證據圖、實驗（README.md 依用途分類）
-│   ├─ tests/                 單元測試（226 項）
+│   ├─ tests/                 單元測試（245 項，另有各模組 doctest）
 │   └─ dashboard/             儀表板（HTML/CSS/JS、data/、vendor/）
 ├─ data/
 │   ├─ raw/                   原始資料（清冊、情境、Sentinel-1/2、熱點、觀測）
-│   │   └─ sentinel1/replay/  全清冊回放影像（不進版控）
-│   ├─ derived/               偵測結果 final_*.json；satpasses/ 演練回放的衛星過境紀錄
+│   │   ├─ sentinel1/replay/  全清冊回放雷達影像（不進版控）
+│   │   └─ optical/           光學偵測影像：replay/ 回放、live/ 每日暫存、exports/ 網頁版匯出原檔（都不進版控）
+│   ├─ derived/               偵測結果 final_*.json（SAR）、final_opt_*.json（光學）；satpasses/ 演練回放的衛星過境紀錄
 │   ├─ live/                  自動更新狀態（state、news、status）
-│   └─ experiments/           實驗結果與修改前基準（不進版控）
+│   └─ experiments/           實驗重跑結果（run_experiment.py 產生時才有，不進版控）
 └─ docs/                      規格、規則、參數、驗證、自動更新、進度（目錄見 docs/README.md）
     ├─ evidence/              影像證據圖
     ├─ results/               分析程式產生的數字（敏感度、調參、門檻分析）
-    ├─ reference/             早期架構圖、開放資料清單
+    ├─ reference/             開放資料清單
     └─ notes/                 工作筆記
 ```
 
@@ -167,13 +167,15 @@ barrier-lake-overflow-main/
 | | `risk.py` | 邏輯迴歸風險模型 → `risk.js` |
 | `preprocess` | `sar.py` | 讀 GeoTIFF、Lee 濾波、網格對齊檢查 |
 | | `mask.py` | 雷達陰影／疊置／陡坡遮罩；射線追蹤陰影、前縮（實驗，預設關閉） |
+| | `raster.py` | GeoTIFF 以經緯度裁窗、遮罩轉 (lon, lat) 多邊形、寫入地圖圖層（SAR 腳本、光學偵測、證據圖共用） |
 | `detect` | `water.py` | SAR 判水（固定 −18 dB）、光學判水規則 `optical_water_rule()`、變化偵測；VH 補判（實驗，預設關閉） |
 | | `landslide.py` | 振幅比值法崩塌偵測 |
 | | `barrier_lake.py` | 河道、坡度雙門檻、候選分級、既有崩塌堆積比例、整條 SAR 流程 `run_sar_chain()` |
+| | `optical.py` | 光學偵測來源：晴空新增水體、植生消失（光學版崩塌）、逐期偵測 `run_series()`，候選分級沿用 `classify()` |
 | `events` | `build.py` | 跨期追蹤、回放時點、事件卡、輸出 `events.js` |
 | | `triage.py` | 持續性、優先等級、研判信心、證據、缺口、衝突、提醒、任務、摘要 |
 | | `replay.py` | 全清冊回放選湖、判定、隨機基準 → `replay.js` |
-| `daily` | `run.py` 等 | 自動更新的十個步驟（見 6.6） |
+| `daily` | `run.py` 等 | 自動更新的十個步驟（見 6.6）；`optical_detect.py` 是光學偵測的 GEE 端（列景、去雲判水、下載），回放也共用 |
 | `attribution` | `rules.py`、`compose.py`、`verbalize.py`、`annotate.py` | 成因敘述 |
 | | `forecast.py` | 溢流預報（後續擴充） |
 | `assess` | `hypsometry.py`、`scale.py`、`inundation.py`、`exposure.py`、`backtest.py`、`dashboard_export.py` | 蓄水量、規模、淹沒、暴露、回測（後續擴充） |
@@ -226,7 +228,7 @@ cd code && pip install -e .
 | 土石流潛勢溪流（1745 條）、大規模崩塌潛勢區（94 處） | data.gov.tw | `scripts/prepare_hotspots.py` → `data/raw/hotspots.json` | 警戒位置、雨量熱區 |
 | Sentinel-1 GRD σ⁰（VV） | ESA，經 GEE `COPERNICUS/S1_GRD` | GEE 匯出／下載 | SAR 偵測 |
 | NASADEM | NASA，經 GEE | GEE 匯出 | 遮罩、河網、壩體高程檢核 |
-| Sentinel-2（含 Cloud Score+）、Landsat 8/9 | ESA／USGS，經 GEE | GEE | 小地圖底圖、負案例查證、光學判讀、衛星時間軸（`daily/optical.py`、`daily/passes.py`） |
+| Sentinel-2（含 Cloud Score+）、Landsat 8/9 | ESA／USGS，經 GEE | GEE | 光學偵測來源、小地圖底圖、負案例查證、光學判讀、衛星時間軸（`daily/optical.py`、`daily/optical_detect.py`、`daily/passes.py`） |
 | GSMaP v8 雨量計校正版 | JAXA，經 GEE | GEE | 雨量熱區、過境前雨量、風險模型 |
 | 馬太鞍溪航照（2025 年 7 個日期，約 15 cm，RGB＋NIR） | 林業及自然保育署航測及遙測分署 提供 | 不進版控 | 湖面驗證、誤報地表檢查、小地圖航照圖層 |
 | 福衛八號多光譜（2026-03-31／04-15 拼接，2 m） | 國家太空中心（授權書 C0920-18） | 申請取得，原始檔在 `data/restricted/`，不進版控 | 候選查證、小地圖水面與裸露堆積範圍（`scripts/fs8_validate.py`、`fs8_dashboard.py`）；只公開不含影像的衍生產品 |
@@ -266,7 +268,7 @@ cd code && pip install -e .
 **6.3.1 判水（`water.py`）**
 
 - SAR：濾波後 σ⁰ < −18 dB 即為水（固定門檻，`method` 記為 `sar_fixed`）。Otsu 保留，傳 `water_threshold_db=None` 時才用；實測山區窗格每一期都會退回 −18 dB。
-- 光學判水規則集中在 `optical_water_rule()`：Sentinel-2 用 MNDWI > 0 且 B8 < 500，航照用 NDVI < −0.15 且 NDWI > 0.2。只用在查證與驗證，不參與偵測。三種資料的規則與依據見 `docs/parameters.md`「判水標準」。
+- 光學判水規則集中在 `optical_water_rule()`：Sentinel-2 用 MNDWI > 0 且 B8 < 500，航照用 NDVI < −0.15 且 NDWI > 0.2。Sentinel-2 規則用在光學偵測來源（`detect/optical.py`，GEE 端判好再下載）、每日光學判讀與查證；航照規則只用在驗證。三種資料的規則與依據見 `docs/parameters.md`「判水標準」。
 - 光學 NDWI 變化偵測（保留）：NDWI =（Green − NIR）/（Green + NIR），固定門檻或 Otsu。
 - 新增水體 = 事件後水體 ∧ ¬事件前水體。
 
@@ -325,7 +327,7 @@ cd code && pip install -e .
 
 **6.4.1 跨期追蹤**
 
-依過境時間排序各期候選；新候選的中心點與既有事件最新位置相距 ≤ 250 m 時視為同一事件，否則開新事件（E1、E2…依首次出現順序）。
+依過境時間排序各期候選（SAR 與光學混在一起）；新候選的中心點與既有事件最新位置相距 ≤ 250 m 時視為同一事件，否則開新事件（E1、E2…依首次出現順序）。光學每一景量到的湖面範圍不同，大湖可能被拆成好幾件（馬太鞍溪 E3、E6、E8）。
 
 **6.4.2 回放時點**
 
@@ -347,7 +349,7 @@ cd code && pip install -e .
 
 「看到」含複核期同位置仍有水；「未見」只算同軌道的影像（細節見 `docs/events.md`）。
 
-**6.4.4 SAR 證據強度**：崩塌＋（confirmed、missing 或 lost）為 A，只有崩塌為 B，其餘為 C。
+**6.4.4 證據強度**（SAR 與光學相同）：崩塌＋（confirmed、missing 或 lost）為 A，只有崩塌為 B，其餘為 C。
 
 **6.4.5 優先等級（依序比對）**
 
@@ -360,14 +362,14 @@ cd code && pip install -e .
 | 待複核＋B 級 | 中 | 建議人工確認 |
 | 其他（C 級、複核未持續） | 低 | 暫時觀察 |
 
-同一等級內依面積由大到小排序。光學自動判讀（即時監看）只會壓低：事件出現後晴空光學至少 2 次判為沒有水、且沒有一次看得到水，最高到「中」。
+同一等級內依面積由大到小排序。SAR 與光學偵測走同一張表；兩者都看到不算「外部獨立證據」；只有光學看到、也沒有外部獨立證據的事件，算出高優先時改列中優先（`priority.capped.optical_only`）。「未見」只算 SAR 同軌道，光學每一期各自一個軌道，光學沒看到不算消失（`triage.same_orbit`）。光學自動判讀（即時監看）只會壓低：事件出現後晴空光學至少 2 次判為沒有水、且沒有一次看得到水，最高到「中」。
 
 **6.4.6 研判信心**
 
 | 信心 | 條件 |
 |---|---|
 | 高 | 有外部獨立證據（`optical`、`aerial`、`satellite`、`field`）且狀態為 confirmed／pending；或儀表板人工查證「確認」 |
-| 中 | 已確認持續，或複核結果明確未持續（只有 SAR） |
+| 中 | 已確認持續，或複核結果明確未持續（只有衛星自動偵測） |
 | 低 | 單期待複核，或前後期不一致 |
 
 **6.4.7 證據、缺口、衝突、任務**
@@ -412,7 +414,7 @@ cd code && pip install -e .
 | sentinel | 各窗格新過境 → 下載 → 偵測；事件前基準 ≥ 3 張的軌道全部抓，各軌獨立複核，只保留最近 90 天 | `final_live_*.json`、`scenarios/live_*.json` |
 | passrain | 每期過境前 24／72 小時雨量（缺的才補） | 情境檔 `passes[].rain` |
 | basemap | 各情境事件前光學底圖（Sentinel-2 中位數，空白處用 Landsat 補） | `dashboard/data/basemaps/*.jpg` |
-| optical | 監看窗格最近 45 天 Sentinel-2／Landsat 8/9 雲量、下一次預計過境（依重訪週期推估）、各事件位置光學判水（只供參考，不進研判） | 情境檔 `optical` |
+| optical | ① 光學偵測：各窗格晴空景的新增水體（與 SAR 並列的偵測來源）；② 光學判讀：最近 45 天 Sentinel-2／Landsat 8/9 雲量、下一次預計過境（依重訪週期推估）、各事件位置光學判水（只會壓低研判） | `final_opt_live_*.json`、情境檔 `opticalDetection`、`optical` |
 | passes | 演練回放情境（kind ≠ live）中心點上實際的 Sentinel-1／2、Landsat 8/9 取像時間（Landsat 含 T2、只留白天），缺的才抓；build 時每一期只用該期以前的取像、依固定週期（12／10／16 天）推估之後的過境 | `data/derived/satpasses/<情境 id>.json` |
 | news | Google 新聞 RSS 關鍵字分類為外部證據**候選**，人工確認後才寫進情境 | `data/live/news.json` |
 | build | 事件佇列、全清冊回放、執行狀態 | `events.js`、`replay.js`、`daily.js` |
@@ -462,7 +464,7 @@ cd code && pip install -e .
 | 頂端橫幅 | `daily-view.js` | 發布中的警戒（紅，列類型、則數、地點與等級）；網頁開著時每 10 分鐘與切回分頁時檢查 `code/dashboard/data/daily.js`，有新的更新就提示重新整理 |
 | 值班 · 即時監看 | `duty.js` | 資料過舊提示（最新一期超過 12 天，或每日更新已記到更新的影像卻沒分析；一般畫面是琥珀色「即時監看資料暫停更新…不代表現況」，網管檢視是陶紅色並寫出處理方式）、待處理清單（各窗格最新一期的高／中優先事件，標題寫出依據的日期；附查證狀態與「尚未查證 · 已 X 天」，點列切過去；每日更新已在監看但還沒有分析結果的窗格另列一行）、監看窗格按鈕（最新一期高／中優先事件數、距今天數，過舊變紅）、衛星過境時點軸（標「最新」與距今天數；看舊一期時提示並可回到最新）、時點軸下方一行「接下來」：下一期雷達與最快的光學過境、依優先分組的佇列（高優先未查證標等待天數；下一期還有幾天或「應已過境 X 天，尚無資料」）、SVG 小地圖（事件多邊形、壩址、事件前底圖、可切換的航照圖層、福衛八號水面與裸露堆積圖層——收到日以前的時點標為事後資料、預設關；「放大檢視」展開成覆蓋全畫面的大圖，Esc 或「關閉」縮回）、新聞候選、事件卡 |
 | 值班 · 演練模式 | `duty.js`、`replay-view.js` | 橫幅與「回到即時監看」、歷史案例（正案例、負案例、更多歷史案例下拉選單）、系統歷史成績（全清冊回放總計、依蓄水量分組；逐湖明細表預設收起，點一列跳到該湖首次偵測的時點） |
-| 事件卡 | `duty.js` | 寬螢幕（≥ 1200 px）固定在右側。直接顯示：位置（經緯度＋TWD97 TM2，網頁端換算，與清冊 TWD97 誤差 ≤ 1 m；複製座標、Google 地圖連結，任務單同附）、優先／信心／規模／下一期複核（日期、軌道、還有幾天）、**衛星時間軸**（事件首次出現、最多往回 45 天，到未來約兩週；雷達標這期有沒有偵測到，光學在即時監看標自動判讀與晴空比例、在回放只標有過境；紅線為今天／本期，之後為虛線預估，第一個雷達標「下一期複核」；光學有「開啟影像」連到 Copernicus Browser，位置與日期帶好、不濾雲量；桌機橫向可拖曳／滾輪捲動，手機直排；光學超過 6 張時雲遮的先收起）、證據衝突、提醒（例如崩塌堆積）、建議任務（可複製任務單，附衛星時程）、人工查證表單、事後查證框（負案例；同結論多筆時佇列標籤只列一次）。點開才顯示：研判摘要、證據（✓ ✗ ·）與缺口、逐期偵測紀錄與證據圖、命中規則。優先與信心標籤滑鼠停留顯示圖例說明 |
+| 事件卡 | `duty.js` | 寬螢幕（≥ 1200 px）固定在右側。直接顯示：位置（經緯度＋TWD97 TM2，網頁端換算，與清冊 TWD97 誤差 ≤ 1 m；複製座標、Google 地圖連結，任務單同附）、優先／信心／規模／下一期複核（日期、軌道、還有幾天）、**衛星時間軸**（事件首次出現、最多往回 45 天，到未來約兩週；雷達標這期有沒有偵測到，光學偵測到的景標「光學偵測」，其餘光學在即時監看標自動判讀與晴空比例、在回放只標有過境；紅線為今天／本期，之後為虛線預估，第一個雷達標「下一期複核」；光學有「開啟影像」連到 Copernicus Browser，位置與日期帶好、不濾雲量；桌機橫向可拖曳／滾輪捲動，手機直排；光學超過 6 張時雲遮的先收起）、證據衝突、提醒（例如崩塌堆積）、建議任務（可複製任務單，附衛星時程）、人工查證表單、事後查證框（負案例；同結論多筆時佇列標籤只列一次）。點開才顯示：研判摘要、證據（✓ ✗ ·）與缺口、逐期偵測紀錄與證據圖、命中規則。優先與信心標籤滑鼠停留顯示圖例說明 |
 | 全台清冊 | `app.js`、`map3d.js` | KPI、three.js 立體地形圖（點位、高風險、SAR 範圍、名稱圖層）、湖泊詳情（結論、行動、證據、基本資料；有事件回放的湖可直接開演練模式）、篩選（存續狀態、風險、誘因、縣市、關鍵字）、年度分布 |
 
 網址：`#duty`（值班）、`#inventory`（全台清冊）、`#drill`（直接開演練模式，報告用）。
@@ -562,12 +564,13 @@ cd code && pip install -e .
 | `basemap`、`aerial` | 物件／陣列 | 小地圖底圖、航照圖層（依可取得時間顯示） |
 | `orbits`、`sarCheckedAt` | [{label, satellite, cycleDays, last}]、時間 | 監看窗格每一軌每顆還在拍的衛星（12 天重複）最近一次取得、最近一次成功查詢（`daily/sentinel.py` 產生），推算下一期用 |
 | `optical` | {checkedAt, scenes[{time, sensor, clearPct}], next[{date, sensor}], checks[{event, lonLat, results[{time, sensor, verdict, clearPct, waterPct}]}]} | 監看窗格的光學影像（`daily/optical.py` 產生）；`verdict` 為 `water`／`partial`／`no_water`／`cloud` |
-| `passes` | [{file, time, recheckTime, evidenceImage, rain{h24, h72, source}}] | 逐期影像與對應結果檔 |
+| `passes` | [{file, time, recheckTime, evidenceImage, rain{h24, h72, source}}] | 逐期 SAR 影像與對應結果檔 |
+| `opticalDetection` | {preStart, preEnd, preImages, checkedAt, scenes[{time, sensor, clearPct, usable}], passes[{file, time, recheckTime, source: "optical", sensor, clearPct, orbitLabel}]} | 光學偵測各期（`daily/optical.py` 或 `scripts/optical_replay.py` 產生），結果檔 `final_opt_*.json`；build 時與 `passes` 合併追蹤 |
 | `hidden`、`active` | 布林 | 停用的監看窗格不輸出 |
 
-人工整理欄位（`description`、`context`、`trigger`、`externalEvidence`、`exposure`、`hindsight`、`basemap`、`aerial`、`optical` 等）在重跑偵測時會保留，只重新產生 `passes`。
+人工整理欄位（`description`、`context`、`trigger`、`externalEvidence`、`exposure`、`hindsight`、`basemap`、`aerial`、`optical`、`opticalDetection` 等）在重跑 SAR 偵測時會保留，只重新產生 `passes`。
 
-目前共 27 個情境：正案例 1（`matai_an_2025`，4 期）、負案例 1（`neg2026_matai_an`，17 期）、回放 22（`inv_bl051`～`inv_bl075`）、即時監看 3（`live_*`）。
+目前共 30 個情境：正案例 1（`matai_an_2025`，SAR 4 期＋光學 6 期）、負案例 1（`neg2026_matai_an`，SAR 17 期＋光學 15 期）、回放 22（`inv_bl051`～`inv_bl075`，含光學偵測）、即時監看 6（`live_*`，光學偵測由每日排程產生）。
 
 ### 7.4 儀表板資料
 
@@ -582,7 +585,7 @@ cd code && pip install -e .
 | `inundation.js` | — | 地圖上的 SAR 偵測範圍（`synthetic: false` 才畫） |
 | `terrain.js` | — | 全台立體地形網格 |
 
-事件卡欄位：`id`、`firstSeen`、`lastSeen`、`lastSeenAt`、`isNew`、`lonLat`、`distanceFromReferenceM`、`areaHectare`、`areaNote`、`lakeFloorM`、`polygonLonLat`、`detections[]`、`priority`、`priorityText`、`action`、`confidence`、`confidenceReasons`、`persistence`、`persistenceText`、`grade`、`scale`、`summary`、`evidence`、`gaps`、`conflicts`、`cautions`、`tasks`、`rulesFired`、`hindsight`、`optical`（即時監看：各景光學判讀）。
+事件卡欄位：`id`、`firstSeen`、`lastSeen`、`lastSeenAt`、`isNew`、`lonLat`、`distanceFromReferenceM`、`areaHectare`、`source`（最近一次偵測：sar／optical）、`sourceLabel`、`sources`（偵測過的來源）、`areaNote`、`lakeFloorM`、`polygonLonLat`、`detections[]`、`priority`、`priorityText`、`action`、`confidence`、`confidenceReasons`、`persistence`、`persistenceText`、`grade`、`scale`、`summary`、`evidence`、`gaps`、`conflicts`、`cautions`、`tasks`、`rulesFired`、`hindsight`、`optical`（即時監看：各景光學判讀）。
 
 ### 7.5 人工觀測 `data/raw/observations.csv`
 
@@ -622,6 +625,7 @@ cd code && pip install -e .
 | 窗格保留／合併 | 30 天／2 km | 同上 | 自訂 |
 | 去雲 | Cloud Score+ cs_cdf ≥ 0.65 | `daily/basemap.py` 等 | 自訂 |
 | 光學判讀（參考用） | 晴空 ≥ 50% 才判讀；晴空像元判為水 ≥ 30% 看得到水、< 10% 看不到水 | `daily/optical.py` | 自訂、未校準 |
+| 光學偵測 | 窗格晴空 ≥ 50% 才算一期；植生消失 NDVI ≥ 0.5 → < 0.3；其餘與 SAR 相同 | `detect/optical.py` | 自訂、未校準（見 `docs/parameters.md`） |
 
 敏感度重點：**最小湖面積**與**判水最大坡度**左右結果；崩塌搜尋半徑、高程容許值、崩塌門檻、貼河道外擴在回放資料上沒有影響（條件 ② 形同虛設）；持續 IoU 只影響高優先。
 
@@ -706,7 +710,7 @@ GEE 網頁版腳本：`scripts/gee_export_matai_an_s1.js`（正案例）、`gee_
 | 8/21＋8/27 複核 | A 級 25.6 公頃，IoU 0.77 | 1 個 B 級，複核未持續 |
 | 8/27 單期 | B 級 22.5 公頃 | 無 |
 
-- 回放：7/29 E3 首次偵測，對上 7/24 光學與 7/27 航拍，多源一致直接列高優先、信心「高」。3 個誤報從頭到尾沒進高優先。
+- 回放：7/29 E3 首次偵測，對上 7/24 光學與 7/27 航拍，多源一致直接列高優先、信心「高」。SAR 的 3 個誤報從頭到尾沒進高優先；8/14 起光學偵測在同一片崩塌地多 2 個誤報（E4、E5），只有光學看到，最高到中優先；同一座湖另被拆成 E6、E8（見 `docs/validation.md`）。
 - 航照比對：生產者精度 21～38%（SAR 只抓到真實湖面的兩到四成），使用者精度 77～100%（位置正確）。
 
 ### 12.2 2026 汛期負案例（同窗格同參數，17 期）

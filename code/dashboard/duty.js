@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════
    值班佇列 · 事件研判
    資料由 data/events.js 提供（window.EVENT_SCENARIOS），
-   由 pipeline/events/build.py 產生：逐期回放 SAR 偵測結果，
+   由 pipeline/events/build.py 產生：逐期回放 SAR 與光學偵測結果，
    每個時點只用當時已取得的影像。
    兩種模式：即時監看（kind=live，預設）與演練模式（正／負案例、全清冊回放等歷史事件）。
    人工查證紀錄存在這台電腦的瀏覽器（localStorage），兩種模式分開存，可匯出 JSON。
@@ -21,15 +21,17 @@ const Duty = (() => {
   ];
   /* 標籤的滑鼠提示：與「使用說明」裡的圖例同一份文字（規則見 pipeline/events/triage.py） */
   const PRIORITY_TIP = {
-    high: '高優先＝建議立即查證：多期 SAR 一致且附近有崩塌、單期 SAR 有他單位獨立觀測佐證，或前期已確認、最新一期未見（可能潰決）',
-    medium: '中優先＝建議人工確認：只有一期 SAR、空間條件符合，待下一期複核',
+    high: '高優先＝建議立即查證：多期衛星偵測（雷達或光學）一致且附近有崩塌、單期偵測有他單位獨立觀測佐證，或前期已確認、雷達同軌道連續兩期未見（可能潰決）',
+    medium: '中優先＝建議人工確認：只有一期偵測、空間條件符合，待下一期複核；或只有光學看到（先打開影像確認是湖）',
     low: '低優先＝暫時觀察：下一期複核未持續，或附近沒有崩塌訊號',
   };
   const CONFIDENCE_TIP = {
-    高: '研判信心高：有 SAR 以外的獨立證據（他單位光學、航拍、判釋、現地勘查），或人工查證確認',
-    中: '研判信心中：只有 SAR，但跨期結果明確（已確認持續，或複核明確未持續）',
-    低: '研判信心低：只有單期 SAR 尚未複核，或前後期結果不一致',
+    高: '研判信心高：有衛星自動偵測以外的獨立證據（他單位光學、航拍、判釋、現地勘查），或人工查證確認',
+    中: '研判信心中：只有衛星自動偵測（雷達、光學），但跨期結果明確（已確認持續，或複核明確未持續）',
+    低: '研判信心低：只有單期偵測尚未複核，或前後期結果不一致',
   };
+  /* 偵測來源（events/build.py 的 source／sources） */
+  const SOURCE_TAG = { sar: '雷達', optical: '光學' };
   const VERDICTS = {
     confirm: { text: '確認為堰塞湖', tag: '人工確認' },
     watch: { text: '持續觀察', tag: '人工：持續觀察' },
@@ -211,6 +213,9 @@ const Duty = (() => {
   function queueItem(ev) {
     const tags = [];
     if (ev.isNew) tags.push('<span class="q-tag is-new">本期新增</span>');
+    // 偵測來源：預設是雷達，有光學偵測到時才標出來
+    if ((ev.sources || []).includes('optical')) tags.push(`<span class="q-tag is-source" title="這個事件由${
+      ev.sources.map(s => SOURCE_TAG[s]).join('與')}自動偵測到；光學只在晴空時看得到">${ev.sources.map(s => SOURCE_TAG[s]).join('＋')}偵測</span>`);
     if (ev.human) tags.push(`<span class="q-tag is-human">${VERDICTS[ev.human.verdict].tag}</span>`);
     // 高優先還沒人查證：標出已經等了多久
     if (ev.priority === 'high' && !ev.human) {
@@ -362,17 +367,26 @@ const Duty = (() => {
     const first = sc.snapshots.find(x => x.label === ev.firstSeen);
     const start = Math.max(first ? Date.parse(first.asOf) : Date.parse(ev.lastSeenAt), ref - TIMELINE_DAYS * DAY);
     const items = [];
-    // 雷達：已分析的各期對這個事件的意義，研判端（events/triage.py radar_history）算好，這裡照實顯示
+    // 偵測：已分析的各期對這個事件的意義，研判端（events/triage.py radar_history）算好，這裡照實顯示。
+    // 雷達各期都列；光學偵測只列看到的（沒看到可能只是雲遮），同一景的過境／自動判讀就不再重複列
+    const detected = new Set();
+    const dayKey = (ms, sensor) => `${twParts(ms).day}|${sensor}`;
     (ev.radar || []).forEach(r => {
       const ms = Date.parse(r.time);
       if (ms < start) return;
+      if (r.source === 'optical') {
+        detected.add(dayKey(ms, r.sensor));
+        items.push({ ms, k: sensorKind('optical', r.sensor), past: true, cls: RADAR_CLS[r.status], sensor: r.sensor,
+          status: `光學偵測 · ${r.text}` });
+        return;
+      }
       items.push({ ms, k: 'sar', past: true, cls: RADAR_CLS[r.status], sensor: 'Sentinel-1', orbit: r.orbit, status: r.text });
     });
     // 光學：已經拍到的
     if (live) {
       (ev.optical || []).forEach(o => {
         const ms = Date.parse(o.time);
-        if (ms < start || ms > ref) return;
+        if (ms < start || ms > ref || detected.has(dayKey(ms, o.sensor))) return;
         items.push({ ms, k: sensorKind('optical', o.sensor), past: true, sensor: o.sensor, cloudy: o.verdict === 'cloud',
           cls: o.verdict === 'cloud' ? 'is-cloud' : 'is-clear',
           status: `${OPT_VERDICT[o.verdict] || '—'}${o.clearPct != null ? ` · 晴空 ${o.clearPct}%` : ''}` });
@@ -380,7 +394,7 @@ const Duty = (() => {
     } else {
       (sc.opticalPasses || []).forEach(o => {
         const ms = Date.parse(o.time);
-        if (ms < start || ms > ref) return;
+        if (ms < start || ms > ref || detected.has(dayKey(ms, o.sensor))) return;
         items.push({ ms, k: sensorKind('optical', o.sensor), past: true, sensor: o.sensor, cls: 'is-pass', status: '有過境' });
       });
     }
@@ -439,7 +453,8 @@ const Duty = (() => {
         ${lead ? `<p class="tl-lead">${lead}。</p>` : ''}
         <div class="tl-wrap"><ol class="tl" tabindex="0" aria-label="衛星時間軸，可左右拖曳或用方向鍵捲動">${html}</ol></div>
         <p class="tl-note"><i class="tl-key sar"></i>雷達 <i class="tl-key opt"></i>光學 <i class="tl-key est"></i>虛線＝預估 · 可左右拖曳 ·
-          ${live ? '光學判讀由系統自動計算，只會壓低研判、不會提高，要當證據請打開影像確認' :'演練回放：光學只標有沒有過境，不含雲量；預估只用該期以前的取像'} ·
+          光學「偵測」與雷達走同一套研判，「判讀」只會壓低研判、不會提高；兩者都是自動結果，要當證據請打開影像確認 ·
+          ${live ? '' : '演練回放：沒偵測到的光學只標有沒有過境，不含雲量；預估只用該期以前的取像 ·'}
           影像：Copernicus Sentinel、USGS Landsat</p>
       </div>`;
   }
@@ -559,7 +574,7 @@ const Duty = (() => {
       el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectEvent(el.dataset.id); } });
     });
     const note = $('#minimapNote');
-    note.innerHTML = `${sc.windowKm} km 分析窗格 · 色塊為 SAR 新增水體（陡坡遮罩會擋掉部分湖面）· ±${half} km ${helpQ('minimap', '小地圖')}` +
+    note.innerHTML = `${sc.windowKm} km 分析窗格 · 色塊為最近一次偵測到的新增水體（雷達或光學，陡坡、陰影、雲遮處不計）· ±${half} km ${helpQ('minimap', '小地圖')}` +
       (sc.basemap ? `<br><label class="mm-toggle"><input type="checkbox" ${showBase ? 'checked' : ''}> 底圖</label>
         <span title="${esc(sc.basemap.source)}">事件前光學影像（${esc(sc.basemap.before)} 以前）· 回放當下可取得，不含事件後的畫面 · Copernicus Sentinel-2、USGS Landsat</span>` : '') +
       (air ? `<br><label class="mm-toggle"><input type="checkbox" data-layer="aerial" ${showAerial ? 'checked' : ''}> 航照</label>
@@ -647,6 +662,7 @@ const Duty = (() => {
     return [
       `【${scen().name}】${ev.id}｜${ev.action}｜${ev.priorityText}`,
       `研判時點：${s.label}（${s.what}）`,
+      `偵測來源：${(ev.sources || ['sar']).map(x => SOURCE_TAG[x]).join('＋')}（最近一次 ${ev.lastSeen} ${ev.sourceLabel || 'SAR'}）`,
       `位置：${coordText(ev.lonLat)}`,
       `地圖：${mapLink(ev.lonLat)}`,
       `摘要：${ev.summary}`,
@@ -683,7 +699,7 @@ const Duty = (() => {
       <div class="ev-optical">
         <span class="at">光學影像自動判讀 · 只會壓低上方研判，不會提高 ${helpQ('optical', '光學影像')}</span>
         <ul>${rows}</ul>
-        <p>範圍是 SAR 最近一次偵測到的水體。山區陰影、薄雲、濕泥都可能誤判；要當作證據，請調閱影像確認後記在人工查證。</p>
+        <p>範圍是最近一次偵測到的水體（雷達或光學）。山區陰影、薄雲、濕泥都可能誤判；要當作證據，請調閱影像確認後記在人工查證。</p>
       </div>`;
   }
 
@@ -702,7 +718,7 @@ const Duty = (() => {
     const badges = [
       `<span class="badge ev-pri p-${ev.priority} has-tip" title="${esc(PRIORITY_TIP[ev.priority])}">${ev.priorityText}</span>`,
       `<span class="badge badge-status">${ev.persistenceText}</span>`,
-      `<span class="badge badge-status">SAR 證據強度 ${ev.grade}</span>`,
+      `<span class="badge badge-status">${(ev.sources || ['sar']).map(s => SOURCE_TAG[s]).join('＋')}偵測 · 證據強度 ${ev.grade}</span>`,
       ev.isNew ? '<span class="badge badge-status">本期新增</span>' : '',
       ev.human ? `<span class="badge ev-human">${VERDICTS[ev.human.verdict].tag}</span>` : '',
     ].join('');
@@ -720,7 +736,7 @@ const Duty = (() => {
         ? (d.recheckTime ? `待複核（${d.recheckTime}）` : '無複核期')
         : `${d.recheck === 'persistent' ? '持續' : '未持續'}（IoU ${d.iou != null ? d.iou.toFixed(2) : '—'}）`;
       const img = d.evidenceImage ? `<a href="../../${d.evidenceImage}" target="_blank" rel="noopener">證據圖</a>` : '—';
-      return `<tr><td>${d.passTime}</td><td>${d.areaHectare}</td><td class="re-${d.recheck}">${re}</td><td>${img}</td></tr>`;
+      return `<tr><td>${d.passTime}</td><td>${esc(d.sourceLabel || 'SAR')}</td><td>${d.areaHectare}</td><td class="re-${d.recheck}">${re}</td><td>${img}</td></tr>`;
     }).join('');
 
     const support = ev.evidence.filter(e => e.status === 'support').length;
@@ -744,7 +760,7 @@ const Duty = (() => {
 
       <div class="decision-summary ev-readout">
         ${readCell('建議行動', ev.action, ev.priorityText, `t-${ev.priority}`, PRIORITY_TIP[ev.priority])}
-        ${readCell('規模（相對）', ev.scale, `SAR ${ev.areaHectare} 公頃，偏低，視為下限`)}
+        ${readCell('規模（相對）', ev.scale, `${esc(ev.sourceLabel || 'SAR')} ${ev.areaHectare} 公頃，偏低，視為下限`, '', ev.areaNote)}
         ${readCell('研判信心', ev.confidence, ev.confidenceReasons[0], '', CONFIDENCE_TIP[ev.confidence])}
         ${recheckCell(ev)}
       </div>
@@ -782,7 +798,7 @@ const Duty = (() => {
         <details class="ev-fold">
           <summary>逐期偵測紀錄（${ev.detections.length} 期）</summary>
           <table class="ev-dets">
-            <thead><tr><th>影像時間</th><th>面積（公頃）</th><th>複核</th><th></th></tr></thead>
+            <thead><tr><th>影像時間</th><th>來源</th><th>面積（公頃）</th><th>複核</th><th></th></tr></thead>
             <tbody>${dets}</tbody>
           </table>
           <div class="limitation-note">研判信心：${ev.confidenceReasons.map(esc).join('；')}</div>

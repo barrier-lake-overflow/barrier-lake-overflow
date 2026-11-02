@@ -1,7 +1,7 @@
 # data
 
 - `raw/`：原始資料，小檔進版控
-- `derived/`：中間產物，大多不進版控、可重新產生；`final_*.json`（SAR 偵測結果）例外，有進版控
+- `derived/`：中間產物，大多不進版控、可重新產生；`final_*.json`（SAR 與光學 `final_opt_*.json` 偵測結果）例外，有進版控
 - `restricted/`：有授權限制的圖資（福衛八號等），**整個資料夾不進版控**，原始檔不得上網際網路
 - `cache/`：WFS 等線上服務的下載快取，不進版控
 - `inventory.csv`：外部申請圖資的清冊（來源、日期、坐標系統、授權、收件狀態），只有中繼資料，有進版控
@@ -15,14 +15,16 @@
 | `sentinel2/*.tif`、`*.csv` | 自行從 GEE 匯出，**有進版控** | `S2_E1_check_2026.tif`（12 期光學，負案例 E1 查證，`scripts/gee_check_s2_e1.js` 匯出，給 `scripts/check_neg_e1.py`）與同名統計表 CSV |
 | `sentinel1/*.tif` | 自行從 GEE 匯出，**有進版控** | 馬太鞍溪 2025 正案例 9 張（`gee_export_matai_an_s1.js`）、2026 負案例 20 張（`gee_export_series_s1.js`），σ⁰ VV 與 DEM，給 `scripts/analyze_sar_change.py`；其中 `*prior*.tif` 是一年前基準（崩塌堆積提醒用）。clone 下來就能直接重跑，不需要 GEE 帳號 |
 | `sentinel1/replay/*.tif` | 自行從 GEE 下載（不進版控，約 1 GB） | 全清冊回放 22 座湖的事件前、逐期、一年前基準與 DEM（`gee_fetch_inventory.py`，或網頁版 `gee_export_inventory.js`、`gee_export_prior.js`） |
-| `sentinel1/vh_manifest.json` | `scripts/gee_codeeditor_vh.py` | B2（加入 VH，未採用）實驗的拆檔對照表 |
+| `optical/replay/*.tif` | 自行從 GEE 下載（不進版控，約 50 MB） | 光學偵測來源的全清冊回放：每湖事件前基準、晴空過半各景的判水結果（water、clear、ndvi）與 DEM（`gee_fetch_optical.py`，或網頁版 `gee_export_optical.js` → `split_optical_exports.py`） |
+| `optical/exports/` | GEE 網頁版匯出原檔（不進版控，約 80 MB） | `split_optical_exports.py` 的輸入；拆檔後可刪，要重拆時從 Google Drive 重新下載 |
+| `optical/live/*.tif` | 每日排程暫存（不進版控） | 監看窗格的光學影像，CI 每次重新下載需要的那幾景 |
+| `optical_replay_manifest.json` | `gee_fetch_optical.py` 或 `split_optical_exports.py` | 光學回放每湖各景的時間、衛星、窗格晴空比例、有沒有下載 |
 | `scenarios/*.json` | 程式產生＋人工整理 | 事件研判情境：影像期別、外部證據、事後查證（格式見 `docs/system-spec.md`） |
 | `replay_manifest.json` | `scripts/gee_fetch_inventory.py` | 全清冊回放每湖選用的軌道與期別 |
 | `aerial/` | 農業部林業及自然保育署航測及遙測分署 提供（不進版控） | 馬太鞍溪航照裁切成壩址 4 km 窗格、1 m 的逐日拼接圖，`code/scripts/prepare_aerial.py` 產生；原始航照每張約 4 GB，放在專案外 |
 | `dem/DEM_matai_an.tif` | 自行從 GEE 匯出 NASADEM（不進版控） | 事件前地形，給 `scripts/run_hypsometry_real.py` |
 | `boundaries/` | 內政部國土測繪中心村里界圖，data.gov.tw/dataset/7438（不進版控） | 全台 7,986 個村里，`VILLCODE` 欄位 |
 | `population/` | SEGIS（segis.moi.gov.tw），不用登入（不進版控） | 114 年 12 月花蓮縣村里人口。路徑：資料集查詢下載 → 人口 → 縣市 → 村里別。`V_ID` 格式是 `10015120-004`，去掉連字號才對得上 `VILLCODE`，轉換寫在 `run_exposure_real.py` 的 `load_population()` |
-| `risk/` | 舊版外部建模流程的輸出（已停用） | 係數現在寫在 `pipeline/ingest/risk.py`，這些檔案沒有程式讀取，只留著對照 |
 
 SAR 和 DEM 的 GEE 匯出腳本寫在 `analyze_sar_change.py`、`run_hypsometry_real.py` 開頭。
 
@@ -54,7 +56,6 @@ python -m pipeline.build_all --project <GCP 專案 ID>  # 風險改用 GSMaP 衛
 
 | 檔案 | 產生者 |
 |---|---|
-| `real_water_bl071.json` | `scripts/analyze_ndwi_change.py` |
 | `real_hypsometry_bl071.json`、`real_backtest_bl071.md` | `scripts/run_hypsometry_real.py` |
 | `real_exposure_bl071.json` | `scripts/run_exposure_real.py` |
 | `cap-bl071.xml` | 儀表板手動下載 |

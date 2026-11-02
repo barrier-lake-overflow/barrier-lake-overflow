@@ -274,11 +274,13 @@ class TestNegativeScenario(unittest.TestCase):
 
 
 class TestMataiAnReplay(unittest.TestCase):
-    """馬太鞍溪真實結果：湖在 7/29 出現、8/4 複核後升高優先；三個誤報複核後都降為低優先。"""
+    """馬太鞍溪真實結果（只看 SAR）：湖在 7/29 出現、8/4 複核後升高優先；三個誤報複核後都降為低優先。
+    加上光學偵測的結果見 TestMataiAnOptical。"""
 
     @classmethod
     def setUpClass(cls):
         scenario = json.loads((B.SCENARIOS / "matai_an_2025.json").read_text(encoding="utf-8"))
+        scenario.pop("opticalDetection", None)
         if not all((B.DERIVED / p["file"]).exists() for p in scenario["passes"]):
             raise unittest.SkipTest("data/derived/final_*.json 不在，先跑 scripts/run_sar_all.bat")
         cls.result = B.build_scenario(scenario, B.DERIVED, B.read_lakes(B.LAKES_JS),
@@ -344,6 +346,36 @@ class TestMataiAnReplay(unittest.TestCase):
             src = out.read_text(encoding="utf-8")
             data = json.loads(src[src.index("["):src.rindex("]") + 1])
             self.assertEqual(data[0]["id"], "matai_an_2025")
+
+
+class TestMataiAnOptical(unittest.TestCase):
+    """馬太鞍溪加上光學偵測（docs/validation.md「馬太鞍溪事件佇列回放」）：雲散前（8/14 以前）與只用 SAR 相同；
+    之後光學在崩塌地多出誤報 E4、E5，因為只有光學看到，最高只到中優先。"""
+
+    @classmethod
+    def setUpClass(cls):
+        scenario = json.loads((B.SCENARIOS / "matai_an_2025.json").read_text(encoding="utf-8"))
+        files = [p["file"] for p in B.scenario_passes(scenario)]
+        if not scenario.get("opticalDetection") or not all((B.DERIVED / f).exists() for f in files):
+            raise unittest.SkipTest("光學偵測結果不在，先跑 scripts/optical_replay.py")
+        result = B.build_scenario(scenario, B.DERIVED, B.read_lakes(B.LAKES_JS), B.load_observations_table())
+        cls.snaps = {s["label"]: s for s in result["snapshots"]}
+
+    def test_before_first_clear_scene_same_as_sar(self):
+        self.assertEqual(list(self.snaps)[:3], ["7/23 05:52", "7/29 05:51", "8/4 05:52"])
+        self.assertEqual(self.snaps["8/14 10:41"]["what"], "新一期光學（Sentinel-2A）晴空影像偵測")
+        self.assertEqual([e["id"] for e in self.snaps["8/4 05:52"]["events"] if e["priority"] == "high"], ["E3"])
+
+    def test_optical_only_false_alarms_capped_at_medium(self):
+        evs = {e["id"]: e for e in self.snaps["8/28 05:52"]["events"]}
+        self.assertEqual(sorted(k for k, e in evs.items() if e["priority"] == "high"), ["E3", "E6"])
+        e4 = evs["E4"]
+        self.assertGreater(e4["distanceFromReferenceM"], 1000)
+        self.assertEqual((e4["sources"], e4["priority"], e4["confidence"]), (["optical"], "medium", "中"))
+        self.assertIn("priority.capped.optical_only", e4["rulesFired"])
+        # E6 在壩址旁、對上他單位光學與航拍成果（獨立證據），不受上限
+        self.assertIn("external.aerial", evs["E6"]["rulesFired"])
+        self.assertNotIn("priority.capped.optical_only", evs["E6"]["rulesFired"])
 
 
 class TestNextSarPass(unittest.TestCase):
@@ -428,6 +460,86 @@ class TestOptical(unittest.TestCase):
                    "checks": [{"event": "E9", "lonLat": [121.31, 23.7], "results": [
                        {"time": T0.isoformat(), "sensor": "Sentinel-2B", "verdict": "water"}]}]}
         self.assertEqual(self.build(optical)["snapshots"][-1]["events"][0]["optical"], [])
+
+
+def odet(t, c, recheck=True, sensor="Sentinel-2B"):
+    """光學偵測：每一期各自一個軌道（detect/optical.py ORBIT_PREFIX）。"""
+    return T.Detection(pass_time=t, recheck_time=t + DAY6 if recheck else None, cand=c,
+                       orbit=f"光學 {sensor} {t:%Y%m%d}", source="optical", sensor=sensor)
+
+
+class TestOpticalSource(unittest.TestCase):
+    """光學偵測來源：同一張決策表，但光學沒看到不算消失，兩者都看到也不算獨立證據。"""
+
+    def test_optical_single_pass_is_medium_and_names_source(self):
+        a = T.assess("E1", [odet(T0, cand())], ctx(T0))
+        self.assertEqual((a.priority, a.persistence, a.confidence), ("medium", "pending", "低"))
+        self.assertEqual(a.evidence[0]["kind"], "optical_det")
+        self.assertIn("光學（Sentinel-2B）", a.summary)
+        self.assertIn("值班人員打開光學影像確認", [t["label"] for t in a.tasks])
+
+    def test_optical_only_confirmed_is_capped_at_medium(self):
+        dets = [odet(T0, cand()), odet(T0 + timedelta(days=3), cand())]
+        a = T.assess("E1", dets, ctx(T0 + timedelta(days=3)))
+        self.assertEqual((a.persistence, a.grade, a.priority), ("confirmed", "A", "medium"))
+        self.assertIn("priority.capped.optical_only", a.rules_fired)
+        self.assertEqual(a.tasks[0]["label"], "打開光學影像確認湖面")
+
+    def test_optical_only_with_external_evidence_can_be_high(self):
+        ext = [{"time": T0, "kind": "aerial", "text": "航拍可見湖面", "source": "航遙分署"}]
+        c = ctx(T0)
+        c.external = ext
+        a = T.assess("E1", [odet(T0, cand())], c)
+        self.assertEqual((a.priority, a.confidence), ("high", "高"))
+
+    def test_sar_and_optical_together_are_not_corroboration(self):
+        dets = [det(T0, cand()), odet(T0 + timedelta(days=2), cand())]
+        a = T.assess("E1", dets, ctx(T0 + timedelta(days=2)))
+        # 兩期偵測到算確認持續（A 級高優先），但信心仍是「中」：都是系統自動偵測
+        self.assertEqual((a.persistence, a.priority, a.confidence), ("confirmed", "high", "中"))
+        self.assertNotIn("priority.high.corroborated", a.rules_fired)
+        self.assertEqual(T.sources_text(dets), "SAR、光學")
+
+    def test_optical_pass_without_water_is_not_a_miss(self):
+        # SAR 兩期確認後，之後只有光學各期沒看到：不算未見（可能只是雲遮）
+        d1, d2 = det(T0, cand(), recheck=False), det(T0 + DAY6, cand(), recheck=False)
+        later = [(T0 + timedelta(days=d), f"光學 Sentinel-2B {(T0 + timedelta(days=d)):%Y%m%d}") for d in (8, 10, 13)]
+        c = ctx(T0 + timedelta(days=13), analyzed=[(T0, None), (T0 + DAY6, None)] + later)
+        self.assertEqual(T.persistence([d1, d2], c), "confirmed")
+
+    def test_sar_passes_do_not_lose_an_optical_only_lake(self):
+        d1, d2 = odet(T0, cand()), odet(T0 + timedelta(days=3), cand(), recheck=False)
+        sar = [(T0 + timedelta(days=d), "降軌 105") for d in (6, 12)]
+        c = ctx(T0 + timedelta(days=12), analyzed=[(d1.pass_time, d1.orbit), (d2.pass_time, d2.orbit)] + sar)
+        self.assertEqual(T.persistence([d1, d2], c), "confirmed")
+        radar = T.radar_history([d1, d2], c)
+        self.assertEqual([r["source"] for r in radar], ["optical", "optical", "sar", "sar"])
+        self.assertEqual({r["status"] for r in radar if r["source"] == "sar"}, {"other"})
+
+    def test_failed_optical_recheck_does_not_undo_confirmation(self):
+        # SAR 兩期都看到（確認），最新一筆光學的下一景複核沒對上：仍是確認持續，不退回、不算漏看
+        dets = [det(T0, cand(), recheck=False), det(T0 + DAY6, cand(), recheck=False),
+                odet(T0 + timedelta(days=8), cand(persistent=False))]
+        analyzed = [(d.pass_time, d.orbit) for d in dets] + [(T0 + timedelta(days=14), "光學 Sentinel-2B 20250805")]
+        a = T.assess("E1", dets, ctx(T0 + timedelta(days=14), analyzed=analyzed))
+        self.assertEqual(a.persistence, "confirmed")
+
+    def test_build_merges_optical_detection_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / "s.json").write_text(json.dumps({"candidates": [cand()]}), encoding="utf-8")
+            (d / "o.json").write_text(json.dumps({"candidates": [cand(lon=121.301)]}), encoding="utf-8")
+            sc = {"id": "t", "name": "t", "kind": "replay", "center": [121.3, 23.7], "orbitLabel": "降軌 105",
+                  "passes": [{"file": "s.json", "time": T0.isoformat(), "recheckTime": None}],
+                  "opticalDetection": {"passes": [{"file": "o.json", "time": (T0 + timedelta(days=3)).isoformat(),
+                                                   "recheckTime": None, "source": "optical", "sensor": "Sentinel-2B",
+                                                   "orbitLabel": "光學 Sentinel-2B 20250725"}]}}
+            out = B.build_scenario(sc, d)
+        last = out["snapshots"][-1]
+        self.assertIn("光學（Sentinel-2B）", last["what"])
+        ev = last["events"][0]
+        self.assertEqual((ev["source"], ev["sources"]), ("optical", ["sar", "optical"]))
+        self.assertEqual([x["source"] for x in ev["detections"]], ["sar", "optical"])
 
 
 if __name__ == "__main__":

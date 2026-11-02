@@ -1,0 +1,120 @@
+{
+ "source": "optical",
+ "sensor": "Sentinel-2A",
+ "clearPct": 63.5,
+ "note": "光學新增水體（pipeline/detect/optical.py）：只算晴空像元，雲遮處不計",
+ "laterScenes": 1,
+ "diagnostic": {
+  "preKnownPct": 100.0,
+  "postClearPct": 63.3,
+  "newWaterHectare": 4.91,
+  "landslideHectare": 1.37
+ },
+ "candidates": [
+  {
+   "id": "cand1",
+   "grade": "C",
+   "areaHectare": 2.813,
+   "centroidRowCol": [
+    256.1,
+    348.3
+   ],
+   "centroidXY": [
+    121.06601894835194,
+    23.156984817304775
+   ],
+   "onRiver": true,
+   "landslideNearby": true,
+   "damDownstream": false,
+   "persistent": false,
+   "laterScenesChecked": 1,
+   "landslideAreaHectare": 0.202,
+   "lakeFloorM": 517.0,
+   "waterLevelM": 582.0,
+   "reasons": [
+    "光學 Sentinel-2A（窗格晴空 63.5%）新增水體",
+    "新增水體 2.81 公頃，緊貼事件前河道",
+    "500 m 內偵測到崩塌 0.20 公頃（光學：植生消失）",
+    "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+    "後續 1 期影像同位置水體 IoU 最高 0.05，未確認持續"
+   ],
+   "centroidLonLat": [
+    121.066019,
+    23.156985
+   ],
+   "distanceFromDamM": 1330.9,
+   "polygonLonLat": [
+    [
+     121.06981359650963,
+     23.154795100407963
+    ],
+    [
+     121.07098140637898,
+     23.15461543735114
+    ],
+    [
+     121.06927460733915,
+     23.154076448180668
+    ],
+    [
+     121.06981359650963,
+     23.154795100407963
+    ]
+   ]
+  },
+  {
+   "id": "cand2",
+   "grade": "C",
+   "areaHectare": 1.664,
+   "centroidRowCol": [
+    81.1,
+    30.6
+   ],
+   "centroidXY": [
+    121.03748541318403,
+    23.17271152725828
+   ],
+   "onRiver": true,
+   "landslideNearby": false,
+   "damDownstream": false,
+   "persistent": false,
+   "laterScenesChecked": 1,
+   "landslideAreaHectare": 0.0,
+   "lakeFloorM": 656.0,
+   "waterLevelM": 691.0,
+   "reasons": [
+    "光學 Sentinel-2A（窗格晴空 63.5%）新增水體",
+    "新增水體 1.66 公頃，緊貼事件前河道",
+    "500 m 內未偵測到崩塌（光學看不到植生消失）",
+    "後續 1 期影像同位置水體 IoU 最高 0.07，未確認持續"
+   ],
+   "centroidLonLat": [
+    121.037485,
+    23.172712
+   ],
+   "distanceFromDamM": 2084.6,
+   "polygonLonLat": [
+    [
+     121.03864205615068,
+     23.173839384431297
+    ],
+    [
+     121.03792340392339,
+     23.172222416919883
+    ],
+    [
+     121.03612677335515,
+     23.171863090806234
+    ],
+    [
+     121.03783357239497,
+     23.17249191150512
+    ],
+    [
+     121.03864205615068,
+     23.173839384431297
+    ]
+   ]
+  }
+ ]
+}

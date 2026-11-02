@@ -1,0 +1,65 @@
+{
+ "source": "optical",
+ "sensor": "Sentinel-2A",
+ "clearPct": 50.7,
+ "note": "光學新增水體（pipeline/detect/optical.py）：只算晴空像元，雲遮處不計",
+ "laterScenes": 0,
+ "diagnostic": {
+  "preKnownPct": 100.0,
+  "postClearPct": 50.9,
+  "newWaterHectare": 2.34,
+  "landslideHectare": 5.59
+ },
+ "candidates": [
+  {
+   "id": "cand1",
+   "grade": "C",
+   "areaHectare": 1.811,
+   "centroidRowCol": [
+    230.1,
+    300.0
+   ],
+   "centroidXY": [
+    121.06168247519552,
+    23.159318368662188
+   ],
+   "onRiver": true,
+   "landslideNearby": false,
+   "damDownstream": false,
+   "persistent": false,
+   "laterScenesChecked": 0,
+   "landslideAreaHectare": 0.0,
+   "lakeFloorM": 526.0,
+   "waterLevelM": 585.0,
+   "reasons": [
+    "光學 Sentinel-2A（窗格晴空 50.7%）新增水體",
+    "新增水體 1.81 公頃，緊貼事件前河道",
+    "500 m 內未偵測到崩塌（光學看不到植生消失）",
+    "僅單期影像，尚未確認多時相持續性"
+   ],
+   "centroidLonLat": [
+    121.061682,
+    23.159318
+   ],
+   "distanceFromDamM": 819.9,
+   "polygonLonLat": [
+    [
+     121.06397454716284,
+     23.158568024601266
+    ],
+    [
+     121.0657711777311,
+     23.157759540845557
+    ],
+    [
+     121.06586100925949,
+     23.15740021473191
+    ],
+    [
+     121.06397454716284,
+     23.158568024601266
+    ]
+   ]
+  }
+ ]
+}

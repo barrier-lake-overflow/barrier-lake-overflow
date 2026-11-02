@@ -1,0 +1,14 @@
+{
+ "source": "optical",
+ "sensor": "Sentinel-2C",
+ "clearPct": 65.4,
+ "note": "光學新增水體（pipeline/detect/optical.py）：只算晴空像元，雲遮處不計",
+ "laterScenes": 1,
+ "diagnostic": {
+  "preKnownPct": 100.0,
+  "postClearPct": 65.3,
+  "newWaterHectare": 0.0,
+  "landslideHectare": 0.27
+ },
+ "candidates": []
+}

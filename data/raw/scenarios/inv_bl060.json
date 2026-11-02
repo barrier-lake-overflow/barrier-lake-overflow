@@ -2,7 +2,7 @@
   "id": "inv_bl060",
   "name": "烏牛欄溪 · 2019",
   "kind": "replay",
-  "description": "全清冊回放：清冊登載 2019-08-21 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "description": "全清冊回放：清冊登載 2019-08-21 形成。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 10 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。另有光學偵測：Sentinel-2／Landsat 晴空過半 5 景，規則見 detect/optical.py。",
   "center": [
     120.7682,
     24.21974
@@ -135,5 +135,202 @@
     "file": "data/basemaps/inv_bl060.jpg",
     "before": "2019-08-14",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2019-08-14 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "opticalDetection": {
+    "preStart": "2019-06-15",
+    "preEnd": "2019-08-14",
+    "preImages": 31,
+    "scenes": [
+      {
+        "time": "2019-08-14T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-08-14T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-08-19T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-08-23T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 37.3,
+        "usable": false
+      },
+      {
+        "time": "2019-08-24T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-08-29T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-08-30T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-09-03T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 20.3,
+        "usable": false
+      },
+      {
+        "time": "2019-09-08T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 47.4,
+        "usable": false
+      },
+      {
+        "time": "2019-09-08T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 45.1,
+        "usable": false
+      },
+      {
+        "time": "2019-09-13T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 15.0,
+        "usable": false
+      },
+      {
+        "time": "2019-09-15T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 29.2,
+        "usable": false
+      },
+      {
+        "time": "2019-09-18T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2019-09-23T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 36.0,
+        "usable": false
+      },
+      {
+        "time": "2019-09-24T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 54.3,
+        "usable": true
+      },
+      {
+        "time": "2019-09-28T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 8.4,
+        "usable": false
+      },
+      {
+        "time": "2019-10-01T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2019-10-03T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 89.7,
+        "usable": true
+      },
+      {
+        "time": "2019-10-08T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 49.6,
+        "usable": false
+      },
+      {
+        "time": "2019-10-10T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 32.3,
+        "usable": false
+      },
+      {
+        "time": "2019-10-13T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 25.9,
+        "usable": false
+      },
+      {
+        "time": "2019-10-17T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2019-10-18T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "usable": true
+      }
+    ],
+    "passes": [
+      {
+        "file": "final_opt_inv_bl060_20190918_S2B.json",
+        "time": "2019-09-18T02:41+00:00",
+        "recheckTime": "2019-09-24T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Sentinel-2B 20190918"
+      },
+      {
+        "file": "final_opt_inv_bl060_20190924_L8.json",
+        "time": "2019-09-24T02:21+00:00",
+        "recheckTime": "2019-10-03T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 54.3,
+        "orbitLabel": "光學 Landsat 8 20190924"
+      },
+      {
+        "file": "final_opt_inv_bl060_20191003_S2A.json",
+        "time": "2019-10-03T02:41+00:00",
+        "recheckTime": "2019-10-17T02:27+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 89.7,
+        "orbitLabel": "光學 Sentinel-2A 20191003"
+      },
+      {
+        "file": "final_opt_inv_bl060_20191017_L8.json",
+        "time": "2019-10-17T02:27+00:00",
+        "recheckTime": "2019-10-18T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Landsat 8 20191017"
+      },
+      {
+        "file": "final_opt_inv_bl060_20191018_S2B.json",
+        "time": "2019-10-18T02:41+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Sentinel-2B 20191018"
+      }
+    ]
   }
 }

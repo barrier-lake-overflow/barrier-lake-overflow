@@ -16,7 +16,7 @@
 
 | 想知道 | 看這份 |
 |---|---|
-| 所有驗證結果：馬太鞍溪正案例、2026 負案例、全清冊回放、已知限制 | [`validation.md`](validation.md) |
+| 所有驗證結果：馬太鞍溪正案例、2026 負案例、全清冊回放、光學偵測來源、已知限制 | [`validation.md`](validation.md) |
 | SAR 湖面跟航照比對的結果 | [`aerial-validation.md`](aerial-validation.md) |
 | 福衛八號查證候選、D8 河網與官方水系比對 | [`fs8-validation.md`](fs8-validation.md) |
 | 草嶺為什麼漏報 | [`bl070-diagnosis.md`](bl070-diagnosis.md) |
@@ -26,6 +26,6 @@
 | 資料夾 | 內容 |
 |---|---|
 | `evidence/` | 影像證據圖（SAR、航照、負案例查證、草嶺診斷）。部分圖用在簡報上，重產前先確認 |
-| `results/` | 分析程式產生的數字（敏感度、調參、雙門檻、草嶺診斷、崩塌堆積提醒門檻），由 `code/scripts/` 重產 |
-| `reference/` | 早期整理的架構圖與開放資料清單（HTML），資料來源與授權可查 `ossint-open-data-atlas.html` |
+| `results/` | 分析程式產生的數字（敏感度、調參、雙門檻、草嶺診斷、崩塌堆積提醒門檻、光學偵測回放比較），由 `code/scripts/` 重產 |
+| `reference/` | 開放資料清單（`ossint-open-data-atlas.html`），資料來源與授權可查 |
 | `notes/` | 開發過程紀錄與工作筆記：修改進度（[`progress.md`](notes/progress.md)）、決賽前交接與問答準備（[`handoff.md`](notes/handoff.md)）、問題處理紀錄、指導老師提問清單 |

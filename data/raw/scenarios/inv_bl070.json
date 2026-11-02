@@ -2,7 +2,7 @@
   "id": "inv_bl070",
   "name": "雲林清水溪(草嶺) · 2025",
   "kind": "replay",
-  "description": "全清冊回放：清冊登載 2025-07-08 形成，清冊蓄水量 1400 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 7 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。",
+  "description": "全清冊回放：清冊登載 2025-07-08 形成，清冊蓄水量 1400 萬 m³。以清冊壩址為中心 4 km 窗格，Sentinel-1 升軌 69 共 7 期（形成前 7 天到形成後 60 天），參數與馬太鞍溪相同，未逐湖調整。另有光學偵測：Sentinel-2／Landsat 晴空過半 14 景，規則見 detect/optical.py。",
   "center": [
     120.66859,
     23.57874
@@ -102,5 +102,328 @@
     "file": "data/basemaps/inv_bl070.jpg",
     "before": "2025-07-01",
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2025-07-01 以前；缺漏處以 Landsat 8/9 補"
+  },
+  "opticalDetection": {
+    "preStart": "2025-05-02",
+    "preEnd": "2025-07-01",
+    "preImages": 46,
+    "scenes": [
+      {
+        "time": "2025-07-03T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.6,
+        "usable": false
+      },
+      {
+        "time": "2025-07-05T02:26+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-07-05T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 1.2,
+        "usable": false
+      },
+      {
+        "time": "2025-07-08T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-07-13T02:26+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 18.5,
+        "usable": false
+      },
+      {
+        "time": "2025-07-13T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 44.4,
+        "usable": false
+      },
+      {
+        "time": "2025-07-14T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 72.3,
+        "usable": true
+      },
+      {
+        "time": "2025-07-18T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 14.7,
+        "usable": false
+      },
+      {
+        "time": "2025-07-23T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 97.2,
+        "usable": true
+      },
+      {
+        "time": "2025-07-25T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-07-28T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-07-29T02:26+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-02T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-06T02:26+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 25.5,
+        "usable": false
+      },
+      {
+        "time": "2025-08-07T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 82.1,
+        "usable": true
+      },
+      {
+        "time": "2025-08-07T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 75.1,
+        "usable": true
+      },
+      {
+        "time": "2025-08-12T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 66.0,
+        "usable": true
+      },
+      {
+        "time": "2025-08-14T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 84.2,
+        "usable": true
+      },
+      {
+        "time": "2025-08-14T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 99.2,
+        "usable": true
+      },
+      {
+        "time": "2025-08-15T02:21+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2025-08-17T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 95.0,
+        "usable": true
+      },
+      {
+        "time": "2025-08-22T02:27+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 87.3,
+        "usable": true
+      },
+      {
+        "time": "2025-08-22T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 86.8,
+        "usable": true
+      },
+      {
+        "time": "2025-08-23T02:21+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 100.0,
+        "usable": true
+      },
+      {
+        "time": "2025-08-27T02:41+00:00",
+        "sensor": "Sentinel-2B",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-08-30T02:27+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 82.8,
+        "usable": true
+      },
+      {
+        "time": "2025-08-31T02:21+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-09-01T02:41+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 0.0,
+        "usable": false
+      },
+      {
+        "time": "2025-09-03T02:41+00:00",
+        "sensor": "Sentinel-2A",
+        "clearPct": 94.0,
+        "usable": true
+      }
+    ],
+    "passes": [
+      {
+        "file": "final_opt_inv_bl070_20250714_L9.json",
+        "time": "2025-07-14T02:20+00:00",
+        "recheckTime": "2025-07-23T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 9",
+        "clearPct": 72.3,
+        "orbitLabel": "光學 Landsat 9 20250714"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250723_S2C.json",
+        "time": "2025-07-23T02:41+00:00",
+        "recheckTime": "2025-08-07T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 97.2,
+        "orbitLabel": "光學 Sentinel-2C 20250723"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250807_L8.json",
+        "time": "2025-08-07T02:21+00:00",
+        "recheckTime": "2025-08-07T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 82.1,
+        "orbitLabel": "光學 Landsat 8 20250807"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250807_S2B.json",
+        "time": "2025-08-07T02:41+00:00",
+        "recheckTime": "2025-08-12T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 75.1,
+        "orbitLabel": "光學 Sentinel-2B 20250807"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250812_S2C.json",
+        "time": "2025-08-12T02:41+00:00",
+        "recheckTime": "2025-08-14T02:27+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 66.0,
+        "orbitLabel": "光學 Sentinel-2C 20250812"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250814_L8.json",
+        "time": "2025-08-14T02:27+00:00",
+        "recheckTime": "2025-08-14T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 84.2,
+        "orbitLabel": "光學 Landsat 8 20250814"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250814_S2A.json",
+        "time": "2025-08-14T02:41+00:00",
+        "recheckTime": "2025-08-15T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 99.2,
+        "orbitLabel": "光學 Sentinel-2A 20250814"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250815_L9.json",
+        "time": "2025-08-15T02:21+00:00",
+        "recheckTime": "2025-08-17T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 9",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Landsat 9 20250815"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250817_S2B.json",
+        "time": "2025-08-17T02:41+00:00",
+        "recheckTime": "2025-08-22T02:27+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2B",
+        "clearPct": 95.0,
+        "orbitLabel": "光學 Sentinel-2B 20250817"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250822_L9.json",
+        "time": "2025-08-22T02:27+00:00",
+        "recheckTime": "2025-08-22T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 9",
+        "clearPct": 87.3,
+        "orbitLabel": "光學 Landsat 9 20250822"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250822_S2C.json",
+        "time": "2025-08-22T02:41+00:00",
+        "recheckTime": "2025-08-23T02:21+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 86.8,
+        "orbitLabel": "光學 Sentinel-2C 20250822"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250823_L8.json",
+        "time": "2025-08-23T02:21+00:00",
+        "recheckTime": "2025-08-30T02:27+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 100.0,
+        "orbitLabel": "光學 Landsat 8 20250823"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250830_L8.json",
+        "time": "2025-08-30T02:27+00:00",
+        "recheckTime": "2025-09-03T02:41+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 82.8,
+        "orbitLabel": "光學 Landsat 8 20250830"
+      },
+      {
+        "file": "final_opt_inv_bl070_20250903_S2A.json",
+        "time": "2025-09-03T02:41+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 94.0,
+        "orbitLabel": "光學 Sentinel-2A 20250903"
+      }
+    ]
   }
 }

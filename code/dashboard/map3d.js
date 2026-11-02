@@ -373,7 +373,7 @@ const Map3D = (() => {
      有多邊形資料就優先畫多邊形，沒有就退回圓形示意。這份資料檔可能來自
      兩種來源，各自標了 synthetic 欄位區分：
        · pipeline/assess/dashboard_export.py 產生的合成地形示範
-       · scripts/analyze_sar_change.py（Sentinel-1 SAR）或 analyze_ndwi_change.py
+       · scripts/analyze_sar_change.py（Sentinel-1 SAR）
          （光學 NDWI）對真實影像跑出的偵測結果（synthetic: false）。目前馬太鞍溪／
          bl071 是 SAR 8/21 A 級候選
      實際是哪一種、門檻/日期區間等細節，看資料裡的 note 欄位。 */

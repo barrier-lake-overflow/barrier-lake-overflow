@@ -1,0 +1,125 @@
+{
+ "source": "optical",
+ "sensor": "Landsat 9",
+ "clearPct": 87.1,
+ "note": "光學新增水體（pipeline/detect/optical.py）：只算晴空像元，雲遮處不計",
+ "laterScenes": 1,
+ "diagnostic": {
+  "preKnownPct": 100.0,
+  "postClearPct": 87.0,
+  "newWaterHectare": 2.19,
+  "landslideHectare": 20.57
+ },
+ "candidates": [
+  {
+   "id": "cand1",
+   "grade": "B",
+   "areaHectare": 0.75,
+   "centroidRowCol": [
+    172.6,
+    169.7
+   ],
+   "centroidXY": [
+    121.26521469890872,
+    23.794479936697254
+   ],
+   "onRiver": true,
+   "landslideNearby": true,
+   "damDownstream": true,
+   "persistent": false,
+   "laterScenesChecked": 1,
+   "landslideAreaHectare": 10.477,
+   "lakeFloorM": 1044.0,
+   "waterLevelM": 1088.0,
+   "reasons": [
+    "光學 Landsat 9（窗格晴空 87.1%）新增水體",
+    "新增水體 0.75 公頃，緊貼事件前河道",
+    "500 m 內偵測到崩塌 10.48 公頃（光學：植生消失）",
+    "崩塌延伸至湖底高程（1044 m）附近或以下，研判土石堵塞下游河道",
+    "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+   ],
+   "centroidLonLat": [
+    121.265215,
+    23.79448
+   ],
+   "distanceFromDamM": 520.2,
+   "polygonLonLat": [
+    [
+     121.2650175077488,
+     23.79439558270106
+    ],
+    [
+     121.2643886870499,
+     23.794665077286297
+    ],
+    [
+     121.2643886870499,
+     23.79520406645677
+    ],
+    [
+     121.2650175077488,
+     23.794934571871533
+    ],
+    [
+     121.2650175077488,
+     23.79439558270106
+    ]
+   ]
+  },
+  {
+   "id": "cand2",
+   "grade": "C",
+   "areaHectare": 0.787,
+   "centroidRowCol": [
+    187.2,
+    203.2
+   ],
+   "centroidXY": [
+    121.26822741806053,
+    23.793166144225005
+   ],
+   "onRiver": true,
+   "landslideNearby": true,
+   "damDownstream": false,
+   "persistent": false,
+   "laterScenesChecked": 1,
+   "landslideAreaHectare": 16.37,
+   "lakeFloorM": 1034.0,
+   "waterLevelM": 1089.0,
+   "reasons": [
+    "光學 Landsat 9（窗格晴空 87.1%）新增水體",
+    "新增水體 0.79 公頃，緊貼事件前河道",
+    "500 m 內偵測到崩塌 16.37 公頃（光學：植生消失）",
+    "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+    "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+   ],
+   "centroidLonLat": [
+    121.268227,
+    23.793166
+   ],
+   "distanceFromDamM": 185.5,
+   "polygonLonLat": [
+    [
+     121.26825144277161,
+     23.793676930473765
+    ],
+    [
+     121.26771245360115,
+     23.793587098945352
+    ],
+    [
+     121.26771245360115,
+     23.793048109774883
+    ],
+    [
+     121.26870060041368,
+     23.79250912060441
+    ],
+    [
+     121.26825144277161,
+     23.793676930473765
+    ]
+   ]
+  }
+ ]
+}

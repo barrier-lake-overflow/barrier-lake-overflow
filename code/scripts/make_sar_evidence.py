@@ -25,7 +25,7 @@ import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.dirname(__file__))
 
-from analyze_ndwi_change import crop_window  # noqa: E402
+from pipeline.preprocess.raster import crop_window  # noqa: E402
 from pipeline.preprocess.sar import load_s1_geotiff  # noqa: E402
 
 S1 = "../data/raw/sentinel1"

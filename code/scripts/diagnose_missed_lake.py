@@ -35,7 +35,7 @@ REPO = CODE.parent
 sys.path.insert(0, str(CODE))
 sys.path.insert(0, str(CODE / "scripts"))
 
-from analyze_ndwi_change import crop_window  # noqa: E402
+from pipeline.preprocess.raster import crop_window  # noqa: E402
 from pipeline.attribution.annotate import read_lakes  # noqa: E402
 from pipeline.detect.barrier_lake import (EIGHT, fill_depressions, river_mask,  # noqa: E402
                                           run_sar_chain, seed_filter)

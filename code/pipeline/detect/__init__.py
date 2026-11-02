@@ -5,5 +5,5 @@
 - landslide.py：SAR 振幅比值崩塌偵測
 - barrier_lake.py：疑似堰塞湖 A/B/C 分級；run_sar_chain() 串起整條 SAR 流程
 
-真實影像分析在 scripts/analyze_ndwi_change.py、scripts/analyze_sar_change.py。
+真實影像分析：SAR 在 scripts/analyze_sar_change.py（run_sar_chain），光學在 optical.py（run_series）。
 """

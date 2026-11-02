@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 """
-監看窗格的光學影像（Sentinel-2、Landsat 8/9）：最近幾景的雲量、下一次預計過境、每個 SAR 事件位置看不看得到水。
+監看窗格的光學影像（Sentinel-2、Landsat 8/9），做兩件事：
+
+1. 光學偵測來源（detect_window，規則在 pipeline/detect/optical.py）：晴空影像上找事件前沒有的新增水體，
+   與 SAR 並列，偵測結果走同一套事件追蹤與研判。寫進情境檔 opticalDetection 欄位。
+2. 光學自動判讀（scan_window）：最近幾景的雲量、下一次預計過境、每個事件位置看不看得到水。
+   寫進情境檔 optical 欄位，build 時附到事件卡，只會壓低優先、不會提高（events/triage.py）。
 
     python -m pipeline.daily.optical --project <GCP 專案 ID>
 
-- 只做監看中的自動監看窗格（kind=live）。結果寫進情境檔 optical 欄位，build 時附到事件卡。
-- 只供值班參考，不參與優先等級與研判信心：山區陰影、薄雲、濕泥仍可能誤判，門檻也還沒校準。
-  要列為 SAR 以外的獨立證據，仍要有人調閱影像確認後記在人工查證。
+- 只做監看中的自動監看窗格（kind=live）。
+- 兩者都是自動結果，不算獨立證據：山區陰影、薄雲、濕泥仍可能誤判，門檻也還沒校準。
+  要列為衛星以外的獨立證據，仍要有人調閱影像確認後記在人工查證。
 - 影像：Sentinel-2 L2A（COPERNICUS/S2_SR_HARMONIZED，Cloud Score+ cs_cdf ≥ CS_THRESHOLD 才算晴空，與底圖、
   負案例查證相同）；Landsat 8/9 Collection 2 L2（QA_PIXEL 的雲、膨脹雲、卷雲、雲影都排除）。
   同一天同一顆衛星的相鄰圖幅先 mosaic 成一景。
 - 判水：pipeline/detect/water.py optical_water_rule 的 Sentinel-2 規則（MNDWI > 0 且近紅外線 < 500，
   反射率 × 10000）。Landsat 換算成同一尺度後套同一規則（Landsat 未另外驗證；30 m 像元，小湖只有幾個像元）。
-- 每個事件取 SAR 最近一次偵測的範圍，每景算晴空比例、晴空像元中判為水的比例，再用 verdict() 分成
+- 每個事件取最近一次偵測（SAR 或光學）的範圍，每景算晴空比例、晴空像元中判為水的比例，再用 verdict() 分成
   看得到水／少量水／看不到水／雲遮。只看事件首次偵測以後的影像。
 - 下一次過境：Sentinel-2 每顆衛星每個軌道 10 天、Landsat 每顆衛星每個 WRS 圖幅 16 天重複，
   從最近實際取得的影像往後推（predict_next）。只是預估，衛星排程或影像上架延遲都可能讓實際日期不同。
@@ -33,7 +38,10 @@ from . import gee
 from .basemap import CS_THRESHOLD, SCENARIOS, window_box
 
 TW = timezone(timedelta(hours=8))
-LOOKBACK_DAYS = 45     # 最近幾天的影像（雲量清單、事件判讀、推算下一次過境都用這段）
+REPO = Path(__file__).resolve().parents[3]
+DERIVED = REPO / "data" / "derived"
+RAW_OPT = REPO / "data" / "raw" / "optical" / "live"   # 影像暫存，不進版控；結果 final_opt_*.json 進版控
+LOOKBACK_DAYS = 45    # 最近幾天的影像（雲量清單、事件判讀、推算下一次過境都用這段）
 NEXT_DAYS = 16         # 預估未來幾天內的過境
 CLEAR_FRAC = 0.5       # 事件範圍內晴空像元過半才判讀（與 scripts/check_neg_e1.py 相同）
 WATER_YES = 0.3        # 晴空像元中判為水的比例 ≥ 此值：看得到水（自訂，未校準）
@@ -214,8 +222,49 @@ def scan_window(ee, sc: dict, now: datetime) -> dict:
     return {"checkedAt": now.isoformat(timespec="minutes"), "scenes": window_scenes, "next": nxt, "checks": checks}
 
 
+def detect_window(ee, sc: dict, now: datetime) -> dict:
+    """
+    光學偵測來源（pipeline/detect/optical.py）：窗格啟用前 7～67 天的晴空基準，啟用前 7 天起（只留最近
+    KEEP_SCENE_DAYS 天）每個晴空過半的景逐期偵測，結果 data/derived/final_opt_*.json。與 SAR 的時間窗相同。
+    回傳情境檔的 opticalDetection。
+    """
+    from pipeline.detect import optical as OD
+    from pipeline.events import replay as R
+
+    from . import optical_detect as D
+    from .sentinel import KEEP_SCENE_DAYS
+    lon, lat = sc["center"]
+    region, window = D.regions(ee, lon, lat)
+    act = datetime.fromisoformat(sc["trigger"]["time"])
+    pre0 = (act - timedelta(days=R.PRE_GAP_DAYS + R.PRE_DAYS)).strftime("%Y-%m-%d")
+    pre1 = (act - timedelta(days=R.PRE_GAP_DAYS)).strftime("%Y-%m-%d")
+    post0 = max(act - timedelta(days=R.POST_BEFORE_DAYS), now - timedelta(days=KEEP_SCENE_DAYS))
+    scenes = D.list_scenes(ee, region, window, post0.astimezone(timezone.utc).strftime("%Y-%m-%d"),
+                           (now + timedelta(days=1)).astimezone(timezone.utc).strftime("%Y-%m-%d"))
+    periods = [{**s, "file": D.scene_file(sc["id"], s)} for s in scenes if s["usable"]]
+    old = sc.get("opticalDetection") or {}
+    out = {"preStart": pre0, "preEnd": pre1, "preImages": old.get("preImages"),
+           "checkedAt": now.isoformat(timespec="minutes"),
+           "scenes": [{"time": s["timeUTC"], "sensor": OD.sensor_label(s["sensor"]), "clearPct": s["clearPct"],
+                       "usable": s["usable"]} for s in scenes],
+           "passes": []}
+    todo = OD.series_plan(sc["id"], periods, DERIVED)
+    if todo:
+        out["preImages"] = D.download_baseline(ee, region, pre0, pre1, RAW_OPT / f"OPT_{sc['id']}_pre.tif",
+                                               RAW_OPT / f"NASADEM_{sc['id']}.tif")
+        if not out["preImages"]:
+            return {**out, "note": "事件前沒有光學影像，無法偵測"}
+        for i in sorted({i for i in todo} | {i + 1 for i in todo if i + 1 < len(periods)}):
+            D.download_scene(ee, region, periods[i], RAW_OPT / periods[i]["file"])
+    out["passes"] = OD.run_series(sc["id"], lon, lat, periods, RAW_OPT, DERIVED)
+    return out
+
+
 def main(ee=None, project=None, now=None) -> dict:
-    """所有監看中的窗格。單一窗格失敗不影響其他窗格，全部跑完後有失敗就拋出錯誤（與 sentinel 相同）。"""
+    """
+    所有監看中的窗格：先跑光學偵測（新增水體，與 SAR 並列的偵測來源），再判讀各事件位置看不看得到水。
+    單一窗格失敗不影響其他窗格，全部跑完後有失敗就拋出錯誤（與 sentinel 相同）。
+    """
     from .sentinel import failure_message
     now = now or datetime.now(TW)
     ee = ee or gee.init(project)
@@ -224,20 +273,32 @@ def main(ee=None, project=None, now=None) -> dict:
         sc = json.loads(path.read_text(encoding="utf-8"))
         if sc.get("kind") != "live" or not sc.get("active"):
             continue
+        det_error = None
+        try:
+            sc["opticalDetection"] = detect_window(ee, sc, now)
+        except Exception as e:   # 偵測失敗不擋判讀；上一次的偵測結果留著
+            det_error = gee.redact(str(e))
+            print(f"  {sc['id']} 光學偵測失敗：{det_error}")
         try:
             sc["optical"] = scan_window(ee, sc, now)
         except Exception as e:   # 單一窗格失敗不影響其他窗格；上一次的結果留著
             results.append({"id": sc["id"], "status": "error", "error": gee.redact(str(e))})
             print(f"  {sc['id']} 光學影像失敗：{gee.redact(str(e))}")
+            path.write_text(json.dumps(sc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             continue
         path.write_text(json.dumps(sc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         o = sc["optical"]
         latest = o["scenes"][0] if o["scenes"] else None
         nxt = "、".join(f"{p['sensor']} {p['date'][5:]}" for p in o["next"][:3]) or "—"
+        n_det = len((sc.get("opticalDetection") or {}).get("passes", []))
         print(f"  {sc['id']}：{len(o['scenes'])} 景" +
               (f"，最近 {latest['time'][5:10]} {latest['sensor']} 晴空 {latest['clearPct']}%" if latest else "") +
-              f"，事件 {len(o['checks'])} 件，下一次 {nxt}")
-        results.append({"id": sc["id"], "status": "ok", "scenes": len(o["scenes"]), "events": len(o["checks"])})
+              f"，光學偵測 {n_det} 期，事件 {len(o['checks'])} 件，下一次 {nxt}")
+        r = {"id": sc["id"], "status": "error" if det_error else "ok", "scenes": len(o["scenes"]),
+             "detectPasses": n_det, "events": len(o["checks"])}
+        if det_error:
+            r["error"] = f"光學偵測：{det_error}"
+        results.append(r)
     msg = failure_message(results)
     if msg:
         raise RuntimeError(msg)

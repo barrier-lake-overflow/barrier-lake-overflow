@@ -1,0 +1,133 @@
+{
+ "source": "optical",
+ "sensor": "Landsat 8",
+ "clearPct": 97.9,
+ "note": "光學新增水體（pipeline/detect/optical.py）：只算晴空像元，雲遮處不計",
+ "laterScenes": 1,
+ "diagnostic": {
+  "preKnownPct": 100.0,
+  "postClearPct": 97.8,
+  "newWaterHectare": 4.49,
+  "landslideHectare": 20.82
+ },
+ "candidates": [
+  {
+   "id": "cand1",
+   "grade": "A",
+   "areaHectare": 0.65,
+   "centroidRowCol": [
+    200.9,
+    231.5
+   ],
+   "centroidXY": [
+    121.27077115388194,
+    23.791931541833705
+   ],
+   "onRiver": true,
+   "landslideNearby": true,
+   "damDownstream": true,
+   "persistent": true,
+   "laterScenesChecked": 1,
+   "landslideAreaHectare": 19.563,
+   "lakeFloorM": 1066.0,
+   "waterLevelM": 1092.0,
+   "reasons": [
+    "光學 Landsat 8（窗格晴空 97.9%）新增水體",
+    "新增水體 0.65 公頃，緊貼事件前河道",
+    "500 m 內偵測到崩塌 19.56 公頃（光學：植生消失）",
+    "崩塌延伸至湖底高程（1066 m）附近或以下，研判土石堵塞下游河道",
+    "後續 1 期影像同位置水體 IoU 最高 0.57，持續蓄水"
+   ],
+   "centroidLonLat": [
+    121.270771,
+    23.791932
+   ],
+   "distanceFromDamM": 122.9,
+   "polygonLonLat": [
+    [
+     121.26977857875463,
+     23.791790468377116
+    ],
+    [
+     121.27094638862398,
+     23.792239626019175
+    ],
+    [
+     121.27094638862398,
+     23.791790468377116
+    ],
+    [
+     121.26977857875463,
+     23.791790468377116
+    ]
+   ]
+  },
+  {
+   "id": "cand2",
+   "grade": "C",
+   "areaHectare": 3.843,
+   "centroidRowCol": [
+    185.4,
+    191.1
+   ],
+   "centroidXY": [
+    121.2671379595885,
+    23.79332230982113
+   ],
+   "onRiver": true,
+   "landslideNearby": true,
+   "damDownstream": false,
+   "persistent": true,
+   "laterScenesChecked": 1,
+   "landslideAreaHectare": 16.974,
+   "lakeFloorM": 1032.0,
+   "waterLevelM": 1079.0,
+   "reasons": [
+    "光學 Landsat 8（窗格晴空 97.9%）新增水體",
+    "新增水體 3.84 公頃，緊貼事件前河道",
+    "500 m 內偵測到崩塌 16.97 公頃（光學：植生消失）",
+    "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+    "後續 1 期影像同位置水體 IoU 最高 0.80，持續蓄水"
+   ],
+   "centroidLonLat": [
+    121.267138,
+    23.793322
+   ],
+   "distanceFromDamM": 285.9,
+   "polygonLonLat": [
+    [
+     121.26914975805575,
+     23.79205996296235
+    ],
+    [
+     121.2673531274875,
+     23.79250912060441
+    ],
+    [
+     121.2650175077488,
+     23.79439558270106
+    ],
+    [
+     121.26618531761815,
+     23.79439558270106
+    ],
+    [
+     121.26681413831703,
+     23.793587098945352
+    ],
+    [
+     121.26852093735685,
+     23.79340743588853
+    ],
+    [
+     121.26914975805575,
+     23.792688783661234
+    ],
+    [
+     121.26914975805575,
+     23.79205996296235
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "source": "optical",
+ "sensor": "Landsat 8",
+ "clearPct": 65.4,
+ "note": "光學新增水體（pipeline/detect/optical.py）：只算晴空像元，雲遮處不計",
+ "laterScenes": 1,
+ "diagnostic": {
+  "preKnownPct": 85.8,
+  "postClearPct": 65.4,
+  "newWaterHectare": 0.0,
+  "landslideHectare": 2.14
+ },
+ "candidates": []
+}
