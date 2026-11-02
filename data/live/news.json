@@ -2854,7 +2854,65 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-11-01T09:27+08:00"
+  },
+  "a05aee2257": {
+   "title": "115年11月1日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBRZ2pCTElWZXludEhBbC1sYzVUNU91SUNpZmxBbUZQdUpuUEx6cmZiZlc2N1M1T2puQlF5T1BZWnZWbHNDLTFubEEzNHk5cEdtWUE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-02T09:50+08:00",
+   "summary": "115年11月1日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "a05aee2257",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-02T10:35+08:00"
+  },
+  "1880081506": {
+   "title": "115年11月2日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9jUFRhQUdmRjVjMVVtTU1wTlZGUkd6YjBIMUs5bjRYVTgwX3lrME9EOXEzSkNialBDUHpWcFlsZ2M1UjhHNXFldUN0aVNuVS1fdGc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-02T10:11+08:00",
+   "summary": "115年11月2日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "1880081506",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-02T10:35+08:00"
   }
  },
- "updatedAt": "2026-11-01T10:36+08:00"
+ "updatedAt": "2026-11-02T10:35+08:00"
 }

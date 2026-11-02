@@ -34585,7 +34585,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-01T10:36+08:00",
+   "checkedAt": "2026-11-02T10:34+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:41+08:00",
@@ -35886,7 +35886,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-01T10:36+08:00",
+   "checkedAt": "2026-11-02T10:34+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:41+08:00",
@@ -38560,7 +38560,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-01T10:36+08:00",
+   "checkedAt": "2026-11-02T10:34+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -38824,7 +38824,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-01T10:36+08:00",
+   "checkedAt": "2026-11-02T10:34+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -39125,7 +39125,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-01T10:36+08:00",
+   "checkedAt": "2026-11-02T10:34+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -39381,7 +39381,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-01T10:36+08:00",
+   "checkedAt": "2026-11-02T10:34+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",

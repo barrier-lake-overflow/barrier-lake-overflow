@@ -2,6 +2,78 @@
 window.SYSTEM_LOG = {
  "history": [
   {
+   "startedAt": "2026-11-02T10:34+08:00",
+   "finishedAt": "2026-11-02T10:35+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.0
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.4
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 3.9
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 8.4
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.4
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.1
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "optical",
+     "status": "ok",
+     "seconds": 38.4
+    },
+    {
+     "name": "passes",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.7
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.2
+    }
+   ]
+  },
+  {
    "startedAt": "2026-11-01T10:36+08:00",
    "finishedAt": "2026-11-01T10:36+08:00",
    "minutes": 0.0,
@@ -1247,8 +1319,8 @@ window.SYSTEM_LOG = {
   }
  ],
  "lastRun": {
-  "startedAt": "2026-11-01T10:36+08:00",
-  "totalLines": 320,
+  "startedAt": "2026-11-02T10:34+08:00",
+  "totalLines": 323,
   "lines": [
    "",
    "== inventory ==",
@@ -1278,7 +1350,7 @@ window.SYSTEM_LOG = {
    "== rain ==",
    "",
    "== risk ==",
-   "✓ 已寫入 /home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/dashboard/data/risk.js｜71 座湖｜判高 16｜GSMaP",
+   "✓ 已寫入 /home/runner/work/barrier-lake-overflow/barrier-lake-overflow/code/dashboard/data/risk.js｜71 座湖｜判高 0｜GSMaP",
    "",
    "== watchlist ==",
    "監看窗格：啟用 6 個（清冊 3、警戒 0、雨量 0 個觸發）",
@@ -1338,8 +1410,11 @@ window.SYSTEM_LOG = {
    "  live_E121521_N24530：17 景，最近 10-31 Sentinel-2B 晴空 0%，事件 0 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
    "  live_E121538_N24489：17 景，最近 10-31 Sentinel-2B 晴空 13%，事件 0 件，下一次 Sentinel-2C 11-05、Landsat 9 11-06、Sentinel-2A 11-07",
    "",
+   "== passes ==",
+   "回放衛星過境：更新 0 個情境",
+   "",
    "== news ==",
-   "新聞：新增 0 筆，對到地點的待確認候選 85 筆",
+   "新聞：新增 2 筆，對到地點的待確認候選 87 筆",
    "",
    "== build ==",
    "情境 inv_bl051（烏來堰塞湖 · 2015）",
