@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-實驗性修改（B1、B2）的執行與比較：用跟正式流程完全相同的參數，對全部案例（馬太鞍溪 2025、
+實驗性修改（射線追蹤陰影、VH 補判）的執行與比較：用跟正式流程完全相同的參數，對全部案例（馬太鞍溪 2025、
 2026 負案例、全清冊回放）各跑一次 analyze_sar_change.py，只多加實驗開關；結果寫到
 data/experiments/<name>/，**不覆蓋正式結果**。接著用同一套事件研判算出比較指標，與正式結果並排。
 
@@ -248,7 +248,7 @@ def main() -> None:
     ap.add_argument("--extra", default="", help="加給 analyze_sar_change.py 的實驗參數（例如 --extra=--ray-trace-shadow）")
     ap.add_argument("--with-vh", action="store_true", help="同時傳入 VH 影像（data/raw/sentinel1/vh/）")
     ap.add_argument("--with-prior", action="store_true",
-                    help="同時傳入一年前基準（S1_VV_*_prior.tif，與事件前基準同資料夾），A1 崩塌堆積提醒用")
+                    help="同時傳入一年前基準（S1_VV_*_prior.tif，與事件前基準同資料夾），崩塌堆積提醒用")
     ap.add_argument("--compare-only", action="store_true")
     ap.add_argument("--workers", type=int, default=4)
     args = ap.parse_args()

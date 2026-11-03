@@ -924,6 +924,7 @@ const Duty = (() => {
     });
     const clear = $('#verifyClear');
     if (clear) clear.addEventListener('click', () => {
+      if (!confirm('確定要清除這筆查證紀錄嗎？清除後無法復原。')) return;
       delete store()[storeKey(ev.id)];
       saveStore();
       render();

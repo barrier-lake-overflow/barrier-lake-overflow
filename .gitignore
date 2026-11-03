@@ -112,3 +112,6 @@ code/dashboard/docs/
 # GCP 服務帳號金鑰（等同密碼，絕不進版控；設定成 GitHub Secret 後就刪掉本機檔案）
 /ossint2026-*.json
 *service-account*.json
+
+# 講稿、簡報等內部資料（不進版控）
+DemoProject/

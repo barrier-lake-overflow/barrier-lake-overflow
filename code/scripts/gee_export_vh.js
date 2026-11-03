@@ -1,5 +1,5 @@
 // 由 scripts/gee_codeeditor_vh.py 產生，請勿手動編輯。
-// B2 實驗：匯出 VH 影像（期別與 VV 相同），每個案例一個多波段 GeoTIFF，存到 Google Drive 資料夾 vh_s1/。
+// VH 補判實驗：匯出 VH 影像（期別與 VV 相同），每個案例一個多波段 GeoTIFF，存到 Google Drive 資料夾 vh_s1/。
 // 用法：貼到 https://code.earthengine.google.com 按 Run → 右側 Tasks 分頁逐一按 RUN（共 24 個）。
 // 下載 Drive 上的 vh_s1/ 資料夾，放到 data/raw/sentinel1/vh_exports/，
 // 再到 code/ 底下跑 python scripts/split_vh_exports.py。

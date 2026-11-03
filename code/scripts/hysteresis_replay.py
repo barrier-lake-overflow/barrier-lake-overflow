@@ -32,7 +32,6 @@ sys.path.insert(0, str(CODE / "scripts"))
 import sensitivity_replay as S  # noqa: E402
 import tune_replay as TR  # noqa: E402
 from pipeline.detect.barrier_lake import classify  # noqa: E402
-from pipeline.events import build as B  # noqa: E402
 from pipeline.events import replay as R  # noqa: E402
 
 CACHE = S.REPO / "data" / "cache" / "hysteresis_results.pkl"

@@ -654,7 +654,9 @@ def assess(label: str, dets: list, ctx: Context) -> Assessment:
         conf_reasons = [f"{srcs}與光學判讀衝突：光學 {_optical_dates(dry)} 晴空都判為沒有水"]
 
     # ── 一句話摘要
-    support = list(dict.fromkeys(SHORT_NAME[e["kind"]] for e in evidence if e["status"] == "support"))
+    # 光學自動判讀只會壓低、不會提高，不算進「幾項證據一致」
+    support = list(dict.fromkeys(SHORT_NAME[e["kind"]] for e in evidence
+                                 if e["status"] == "support" and e["kind"] != "optical_auto"))
     if optical_dry and "priority.capped.optical_dry" in rules:
         summary = (f"{label} 需要人工確認：{srcs}多期看到疑似水體，但光學 {_optical_dates(dry)} 晴空都判為沒有水，"
                    f"可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。")

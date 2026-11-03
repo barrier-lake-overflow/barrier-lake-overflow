@@ -167,7 +167,7 @@ class TestSarFixedThreshold(unittest.TestCase):
 
 
 class TestVhAssist(unittest.TestCase):
-    """B2：VV 差一點（−18～−15 dB）且 VH 很低的像元，打開 VH 才判為水。"""
+    """VH 補判：VV 差一點（−18～−15 dB）且 VH 很低的像元，打開 VH 才判為水。"""
 
     def test_marginal_vv_with_low_vh(self):
         vv = np.array([-16.5, -16.5, -14.0, -20.0])
@@ -217,7 +217,7 @@ class TestVhAssist(unittest.TestCase):
 
 
 class TestOldLandslide(unittest.TestCase):
-    """A1：候選落在既有崩塌堆積區（前一年到事件前的崩塌）的比例，只記錄、不影響分級。"""
+    """崩塌堆積提醒：候選落在既有崩塌堆積區（前一年到事件前的崩塌）的比例，只記錄、不影響分級。"""
 
     def _classify(self, old):
         from pipeline.detect.barrier_lake import classify

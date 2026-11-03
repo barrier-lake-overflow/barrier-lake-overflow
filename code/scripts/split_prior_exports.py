@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-A1 崩塌堆積提醒：把 GEE 網頁版匯出的一年前基準（scripts/gee_export_prior.js）改名，放到
+崩塌堆積提醒：把 GEE 網頁版匯出的一年前基準（scripts/gee_export_prior.js）改名，放到
 與事件前基準相同的資料夾（馬太鞍溪、負案例在 data/raw/sentinel1/，全清冊回放在 replay/），
 檔名見 gee_codeeditor_prior.prior_file。
 整張都是 NODATA 的（一年前還沒有 Sentinel-1）不寫，之後視為沒有一年前資料。

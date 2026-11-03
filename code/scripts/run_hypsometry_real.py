@@ -36,7 +36,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import numpy as np
 import rasterio
-from scipy import ndimage
 
 from pipeline.assess.hypsometry import build_hypsometric_curve, volume_error_rate
 from pipeline.assess.backtest import backtest_report
@@ -194,7 +193,7 @@ def main() -> None:
               f"或人工畫出正確的水庫範圍遮罩）。")
     else:
         report = backtest_report(
-            lake_name="花蓮馬太鞍溪（真實 DEM + 真實 NDWI 面積反推，C1 因無單一確切偵測日期暫略）",
+            lake_name="花蓮馬太鞍溪（真實 DEM + 真實 NDWI 面積反推，偵測日期回測因無單一確切偵測日期暫略）",
             estimated_volume_wan_m3=est_volume_wan_m3,
             official_volume_wan_m3=OFFICIAL_VOLUME_WAN_M3,
         )

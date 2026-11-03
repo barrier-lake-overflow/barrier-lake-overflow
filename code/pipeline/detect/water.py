@@ -292,7 +292,7 @@ SAR_WATER_DB_DEFAULT = -18.0
 # Otsu 門檻若高於此值，代表它切到的是「陸地內部兩群」（例如草地 vs
 # 森林）而不是水陸分界——畫面內水體太少時常見，此時退回固定門檻。
 SAR_OTSU_MAX_DB = -14.0
-# B2 實驗（VH 輔助，預設關閉）：VV 介於 −18 與 −15 dB 之間「差一點」的像元，VH 也很低才補判為水。
+# VH 補判實驗（預設關閉）：VV 介於 −18 與 −15 dB 之間「差一點」的像元，VH 也很低才補判為水。
 # 湖面被風吹皺或混濁時 VV 會偏高，VH 對水面粗糙度的反應不同。VH 門檻在實驗前從文獻選定、不調：
 # Manjusree et al. 2012 對交叉極化（HV/VH）建議的水體範圍約 −15～−24 dB，取最嚴格的 −24 dB，
 # 只補判有把握的像元。VH 無法分辨水與雷達陰影（陰影兩種極化都低），陰影仍靠遮罩處理。
@@ -312,7 +312,7 @@ def sar_water_mask(vv_db: np.ndarray, threshold: Optional[float] = None,
       結果高於 SAR_OTSU_MAX_DB 時退回 SAR_WATER_DB_DEFAULT，
       method="sar_otsu_fallback"。
     - invalid_mask（陰影／疊置／陡坡）內的像元一律 False。
-    - vh_db（B2 實驗）：另外把「VV < vv_marginal_db 且 VH < vh_threshold」的像元判為水，
+    - vh_db（VH 補判實驗）：另外把「VV < vv_marginal_db 且 VH < vh_threshold」的像元判為水，
       method 加上 "+vh"。不給 vh_db 時規則與原本相同。
 
     >>> vv = np.array([-20.0, -16.0, -16.0, -12.0])
@@ -362,7 +362,7 @@ def extract_water_sar(vv_db: np.ndarray, cell_size_m: float,
     """
     SAR 版一站式萃取，輸出跟光學版同一個 WaterExtent，可直接送
     change_detection()。vv_db 建議先過 preprocess.sar.lee_filter。
-    vh_db（B2 實驗）見 sar_water_mask。
+    vh_db（VH 補判實驗）見 sar_water_mask。
 
     >>> vv = np.full((4, 4), -8.0)
     >>> vv[1:3, 1:3] = -23.0

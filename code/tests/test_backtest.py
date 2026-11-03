@@ -58,7 +58,7 @@ class TestBacktestReport(unittest.TestCase):
         self.assertIn("誤差率", md)
 
     def test_partial_data_only_includes_whats_available(self):
-        # B1/B2 資料還沒到位很常見的情況：只有形成時間，沒有溢流時間跟蓄水量
+        # 資料還沒到位很常見的情況：只有形成時間，沒有溢流時間跟蓄水量
         report = B.backtest_report(
             lake_name="測試湖",
             formed_detected=date(2025, 7, 19), formed_official=date(2025, 7, 21),

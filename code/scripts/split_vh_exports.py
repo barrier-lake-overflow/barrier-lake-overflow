@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-B2 實驗：把 GEE 網頁版匯出的 VH 多波段 GeoTIFF（scripts/gee_export_vh.js）拆成單張，
+VH 補判實驗：把 GEE 網頁版匯出的 VH 多波段 GeoTIFF（scripts/gee_export_vh.js）拆成單張，
 放到 data/raw/sentinel1/vh/（不進版控）。波段順序與檔名照 data/raw/sentinel1/vh_manifest.json
 （gee_codeeditor_vh.py 產生），波段數不符就停下來不寫。
 

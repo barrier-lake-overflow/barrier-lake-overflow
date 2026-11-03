@@ -91,9 +91,9 @@ def main() -> None:
                     help="雙門檻：每塊新增水體至少要有 --seed-min-area-m2 落在此坡度以下才保留（整塊保留）。不給則不啟用")
     ap.add_argument("--seed-min-area-m2", type=float, default=0.0)
     ap.add_argument("--ray-trace-shadow", action="store_true",
-                    help="B1 實驗：陰影遮罩加上沿視線的射線追蹤，並輸出射線追蹤陰影與前縮面積（預設關閉）")
+                    help="實驗：陰影遮罩加上沿視線的射線追蹤，並輸出射線追蹤陰影與前縮面積（預設關閉）")
     ap.add_argument("--use-vh", action="store_true",
-                    help="B2 實驗：用 VH 補判 VV 差一點的像元（需要 --pre-vh、--post-vh，有複核期時加 --post-later-vh）")
+                    help="實驗：用 VH 補判 VV 差一點的像元（需要 --pre-vh、--post-vh，有複核期時加 --post-later-vh）")
     ap.add_argument("--pre-vh", default=None, help="事件前 σ⁰ VH（dB），與 --pre 同網格")
     ap.add_argument("--post-vh", default=None, help="事件後 σ⁰ VH（dB）")
     ap.add_argument("--post-later-vh", nargs="*", default=[], help="各複核期 σ⁰ VH，順序同 --post-later")

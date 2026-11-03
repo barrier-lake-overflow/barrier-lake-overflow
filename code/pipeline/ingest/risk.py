@@ -21,7 +21,6 @@ import json
 import math
 import os
 import re
-import sys
 
 from typing import Optional
 

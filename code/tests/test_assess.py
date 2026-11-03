@@ -94,7 +94,7 @@ class TestHypsometricCurve(unittest.TestCase):
 
 
 class TestElevationAtArea(unittest.TestCase):
-    """反查：拿真實遙測偵測到的湖面面積回推水位（B2 用真實 NDWI 面積校準）。"""
+    """反查：拿真實遙測偵測到的湖面面積回推水位（用真實 NDWI 面積校準）。"""
 
     def test_interpolates_between_levels(self):
         curve = H.HypsometricCurve(points=[(640.0, 0.0, 0.0), (660.0, 900.0, 100.0)])

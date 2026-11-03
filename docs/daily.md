@@ -136,8 +136,7 @@ Start-ScheduledTask -TaskName BarrierLakeDailyUpdate     # 立即跑一次
 
 1. **建 GEE 服務帳號**：Google Cloud Console → 專案 `ossint2026` → IAM 與管理 → 服務帳戶 → 建立
    （例如 `daily-update`），角色給「Earth Engine Resource Writer」（`roles/earthengine.writer`）與「Service Usage Consumer」。
-   不能只給「Earth Engine Resource Viewer」：唯讀角色沒有 `earthengine.thumbnails.create`，雨量算得出來但影像下載不了
-   （見 `docs/notes/incident-live-monitoring.md`）。
+   不能只給「Earth Engine Resource Viewer」：唯讀角色沒有 `earthengine.thumbnails.create`，雨量算得出來但影像下載不了。
 2. 該服務帳戶 → 金鑰 → 新增金鑰 → JSON，下載。
 3. GitHub repo → Settings → Secrets and variables → Actions → New repository secret：
    - `GEE_SERVICE_ACCOUNT_KEY`：金鑰 JSON 全文

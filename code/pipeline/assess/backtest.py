@@ -58,7 +58,7 @@ class TimingBacktest:
 
 @dataclass
 class VolumeBacktest:
-    """C2：蓄水量誤差率。"""
+    """蓄水量誤差率。"""
     estimated_wan_m3: float
     official_wan_m3: float
 
@@ -74,7 +74,7 @@ class VolumeBacktest:
 
 @dataclass
 class BacktestReport:
-    """C1+C2 合併報告。"""
+    """偵測日期回測與蓄水量誤差率的合併報告。"""
     lake_name: str
     timings: list
     volume: Optional[VolumeBacktest] = None

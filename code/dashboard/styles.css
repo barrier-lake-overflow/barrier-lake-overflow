@@ -206,7 +206,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   display:flex;align-items:center;height:100%;
 }
 
-/* 圖層控制（任務六） */
+/* 圖層控制 */
 .layer-control{
   position:absolute;top:10px;left:10px;z-index:2;
   background:rgba(var(--base-rgb),.72);border:1px solid var(--line-strong);
@@ -228,7 +228,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   padding:5px 9px;backdrop-filter:blur(3px);
 }
 
-/* 地圖 hover 資訊卡（任務十一）：只放摘要 */
+/* 地圖 hover 資訊卡：只放摘要 */
 .map-hover-card{
   position:absolute;top:0;left:0;z-index:3;pointer-events:none;
   background:rgba(var(--base-rgb),.92);border:1px solid var(--line-strong);
@@ -359,7 +359,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .facts dd.muted{color:var(--moss)}
 
 /* ── 年度分布 ── */
-/* ── 年度分布：收合為輔助洞察（任務十），summary 的展開視覺沿用 narr-rules 邏輯 ── */
+/* ── 年度分布：收合為輔助洞察，summary 的展開視覺沿用 narr-rules 邏輯 ── */
 .timeline-sec summary{
   cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
   padding-bottom:16px;

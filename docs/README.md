@@ -11,6 +11,7 @@
 | 每兩天自動更新、部署 | [`daily.md`](daily.md) |
 | 安裝、常用指令、從頭重跑驗證 | [`reproduce.md`](reproduce.md) |
 | 給沒裝 Python 的人用 | [`portable-distribution.md`](portable-distribution.md) |
+| 開發過程使用生成式 AI 的工具與範圍 | [`genai-disclosure.md`](genai-disclosure.md) |
 
 ## 驗證結果
 
@@ -28,4 +29,3 @@
 | `evidence/` | 影像證據圖（SAR、航照、負案例查證、草嶺診斷）。部分圖用在簡報上，重產前先確認 |
 | `results/` | 分析程式產生的數字（敏感度、調參、雙門檻、草嶺診斷、崩塌堆積提醒門檻、光學偵測回放比較），由 `code/scripts/` 重產 |
 | `reference/` | 開放資料清單（`ossint-open-data-atlas.html`），資料來源與授權可查 |
-| `notes/` | 開發過程紀錄與工作筆記：修改進度（[`progress.md`](notes/progress.md)）、決賽前交接與問答準備（[`handoff.md`](notes/handoff.md)）、問題處理紀錄、指導老師提問清單 |

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-B2（加入 VH）實驗用：產生一段 GEE 網頁版（Code Editor）JavaScript，匯出馬太鞍溪 2025、
+VH 補判實驗用：產生一段 GEE 網頁版（Code Editor）JavaScript，匯出馬太鞍溪 2025、
 2026 負案例、全清冊回放 22 座湖的 **VH** 影像，期別與 VV 完全相同。下載後用
 scripts/split_vh_exports.py 拆檔，放到 data/raw/sentinel1/vh/（不進版控，不影響正式結果）。
 
@@ -72,7 +72,7 @@ def cases() -> list:
 
 HEADER = """\
 // 由 scripts/gee_codeeditor_vh.py 產生，請勿手動編輯。
-// B2 實驗：匯出 VH 影像（期別與 VV 相同），每個案例一個多波段 GeoTIFF，存到 Google Drive 資料夾 {folder}/。
+// VH 補判實驗：匯出 VH 影像（期別與 VV 相同），每個案例一個多波段 GeoTIFF，存到 Google Drive 資料夾 {folder}/。
 // 用法：貼到 https://code.earthengine.google.com 按 Run → 右側 Tasks 分頁逐一按 RUN（共 {n} 個）。
 // 下載 Drive 上的 {folder}/ 資料夾，放到 data/raw/sentinel1/vh_exports/，
 // 再到 code/ 底下跑 python scripts/split_vh_exports.py。

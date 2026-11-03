@@ -88,7 +88,7 @@ const Map3D = (() => {
   const IDLE_ROTATE_SPEED = 0.105; // 弧度/秒，約 60 秒繞一圈
   let clock = 0;
 
-  /* 圖層開關狀態（對應任務六的圖層控制 UI）。
+  /* 圖層開關狀態（對應地圖上的圖層控制按鈕）。
      points/highRisk 直接套用在既有標記上；area 是「選取湖泊時才畫出
      的 SAR 偵測範圍」，跟每個標記常駐的 highRisk 環是兩件事；
      labels 開啟時強制顯示全部點位名稱，off 時維持原本只在 hover/選取時顯示。 */
@@ -449,7 +449,7 @@ const Map3D = (() => {
     applyAreaVisibility();
   }
 
-  /* ── 圖層開關（任務六）────────────────────
+  /* ── 圖層開關────────────────────
      points/highRisk 套用到既有標記，labels 強制顯示全部點位名稱，
      area 控制上面的偵測範圍；全部立即套用一次，不需要重新 setLakes。 */
   function setLayers(partial) {

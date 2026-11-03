@@ -18,7 +18,7 @@ const DailyView = (() => {
 
   const STEP_TEXT = {
     inventory: '清冊', alerts: '警戒', 'gee-login': 'GEE 登入', rain: '雨量熱區', risk: '風險模型', watchlist: '監看名單',
-    sentinel: 'Sentinel-1', passrain: '過境前雨量', basemap: '底圖', optical: '光學影像', news: '新聞候選',
+    sentinel: 'Sentinel-1', passrain: '過境前雨量', basemap: '底圖', optical: '光學影像', passes: '衛星過境', news: '新聞候選',
     build: '儀表板資料', git: 'git',
   };
   const KIND_TEXT = { aerial: '航拍', satellite: '衛星', field: '現地／通報', official: '背景', optical: '光學' };
@@ -55,7 +55,7 @@ const DailyView = (() => {
         <b>${esc(w.name)}</b>
         <span class="dim">${w.sources.map(esc).join('；')}</span>
         <span class="dim mono">${w.orbits && w.orbits.length ? w.orbits.map(esc).join('＋') : '尚未選軌道'}
-          · 啟用 ${esc(w.activatedAt.slice(5, 10))} · 最新影像 ${day(w.lastScene)}</span>
+          · 啟用 ${esc(w.activatedAt.slice(5, 10))} · 最新雷達 ${day(w.lastScene)}${w.lastOptical ? ` · 最新光學 ${day(w.lastOptical)}` : ''}</span>
         ${w.lastError ? `<span class="dw-err" title="${esc(w.lastError.error)}">上次失敗（${esc(w.lastError.at.slice(5, 16).replace('T', ' ').replace('-', '/'))}）：${esc(errText(w.lastError.error))}</span>` : ''}
       </button></li>`).join('')}</ul>`;
   }

@@ -109,3 +109,5 @@ docs/            所有說明文件（目錄見 docs/README.md）
 ## 更多文件
 
 整套系統的規格見 [`docs/system-spec.md`](docs/system-spec.md)；其他文件依主題列在 [`docs/README.md`](docs/README.md)。
+
+開發過程使用生成式 AI 的工具與範圍，見 [生成式 AI 使用聲明](docs/genai-disclosure.md)。

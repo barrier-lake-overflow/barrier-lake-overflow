@@ -1,5 +1,5 @@
 // 由 scripts/gee_codeeditor_prior.py 產生，請勿手動編輯。
-// A1 崩塌堆積提醒：匯出每個案例「一年前」的 VV 基準（事件前基準期間往前推一年的中位數），
+// 崩塌堆積提醒：匯出每個案例「一年前」的 VV 基準（事件前基準期間往前推一年的中位數），
 // 存到 Google Drive 資料夾 prior_s1/。
 // 用法：貼到 https://code.earthengine.google.com 按 Run → 右側 Tasks 分頁逐一按 RUN（共 24 個）。
 // 下載 Drive 上的 prior_s1/ 資料夾，放到 data/raw/sentinel1/prior_exports/，

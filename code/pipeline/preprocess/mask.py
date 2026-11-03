@@ -10,7 +10,7 @@ SAR 幾何失真遮罩
     s_r < θ − 90°   → 陰影
 
 預設只看像元本身的坡面，被遠處山脊擋住的陰影抓不到。ray_traced_shadow() 沿視線往衛星方向
-追蹤，補上這一類（sar_invalid_masks(ray_trace=True)，B1 實驗用，預設關閉）。兩者都用事件前 DEM，
+追蹤，補上這一類（sar_invalid_masks(ray_trace=True)，實驗用，預設關閉）。兩者都用事件前 DEM，
 崩塌後新陡崖的陰影一樣抓不到。
 前縮（foreshortening_mask）：面向衛星、但還沒到疊置的陡坡，局部入射角很小，影像上被壓縮、偏亮，
 不會被誤判成水，只做統計。
@@ -186,7 +186,7 @@ def sar_invalid_masks(dem: np.ndarray, cell_size_m: Union[float, tuple],
     - "landslide"：崩塌偵測用 = 疊置 | 陰影 | DEM nodata（不排除陡坡）
     另附 "layover"、"shadow"、"slope_deg" 供輸出統計。
 
-    ray_trace=True（B1 實驗）：陰影改為「局部判定 ∪ 射線追蹤」，另附 "ray_shadow"（射線追蹤
+    ray_trace=True（射線追蹤實驗）：陰影改為「局部判定 ∪ 射線追蹤」，另附 "ray_shadow"（射線追蹤
     多抓到的部分）與 "foreshortening"（只統計，不進遮罩）。預設 False，行為與原本相同。
     """
     dem = np.asarray(dem, dtype="float64")

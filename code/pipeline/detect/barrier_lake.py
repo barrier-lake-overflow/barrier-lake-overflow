@@ -26,8 +26,8 @@ from typing import Optional, Sequence, Union
 import numpy as np
 from scipy import ndimage
 
-from pipeline.detect.landslide import LANDSLIDE_THRESHOLD_DB, LandslideResult, detect_landslides
-from pipeline.detect.water import SAR_WATER_DB_DEFAULT, WaterExtent, change_detection, extract_water_sar
+from pipeline.detect.landslide import LANDSLIDE_THRESHOLD_DB, detect_landslides
+from pipeline.detect.water import SAR_WATER_DB_DEFAULT, change_detection, extract_water_sar
 from pipeline.preprocess.mask import (S1_IW_MID_INCIDENCE_DEG, S1_LOOK_AZIMUTH_DEG,
                                       sar_invalid_masks)
 from pipeline.preprocess.sar import lee_filter
@@ -428,8 +428,8 @@ def run_sar_chain(pre_db: np.ndarray, post_db: np.ndarray,
     seed_slope_deg：給的話啟用雙門檻（見 seed_filter）。新增水體照 max_water_slope_deg
     判，但每塊至少要有 seed_min_area_m2（且至少 1 像元）落在坡度 ≤ seed_slope_deg
     才保留。需要 DEM；後續期別（持續性比對）不套，只看同位置是否還有水。
-    ray_trace_shadow：陰影遮罩加上沿視線的射線追蹤（B1 實驗，預設關閉，見 preprocess/mask.py）。
-    pre_vh_db / post_vh_db / later_post_vh_dbs：VH σ⁰（B2 實驗，預設不給）。給了就用 VH 補判
+    ray_trace_shadow：陰影遮罩加上沿視線的射線追蹤（實驗功能，預設關閉，見 preprocess/mask.py）。
+    pre_vh_db / post_vh_db / later_post_vh_dbs：VH σ⁰（VH 補判實驗，預設不給）。給了就用 VH 補判
     VV 差一點的像元（見 water.sar_water_mask）；要嘛三者都給、要嘛都不給，事件前後才可比。
     崩塌偵測仍只用 VV。
     prior_db：一年前基準 σ⁰（事件前基準期間往前推一年的中位數，同軌道同網格，未濾波）。給的話

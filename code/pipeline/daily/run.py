@@ -158,6 +158,15 @@ def load_lakes() -> list:
     return read_lakes(CODE / "dashboard" / "data" / "lakes.js")
 
 
+def last_optical(window_id: str):
+    """窗格最近一張光學偵測影像的日期（YYYYMMDD），從情境檔的 opticalDetection 取；沒有就回傳 None。"""
+    path = REPO / "data" / "raw" / "scenarios" / f"{window_id}.json"
+    if not path.exists():
+        return None
+    passes = (json.loads(path.read_text(encoding="utf-8")).get("opticalDetection") or {}).get("passes", [])
+    return max((p["time"][:10].replace("-", "") for p in passes), default=None)
+
+
 def write_status(runner: Runner, started: datetime, rain_as_of=None) -> dict:
     from . import news, watchlist
     state = watchlist.load_state()
@@ -167,6 +176,7 @@ def write_status(runner: Runner, started: datetime, rain_as_of=None) -> dict:
                            for o in (w.get("orbits") or {}).values()],
                 "lastScene": max((sc["day"] for o in (w.get("orbits") or {}).values() for sc in o.get("scenes", [])),
                                  default=None),
+                "lastOptical": last_optical(w["id"]),
                 "lastError": w.get("lastError")}
                for w in state.get("windows", {}).values() if w["active"]]
     cands = sorted((v for v in news.load()["items"].values() if v["status"] == "candidate"),

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-A1 崩塌堆積提醒（第二版）：產生 GEE 網頁版（Code Editor）JavaScript，匯出每個案例「一年前」的
+崩塌堆積提醒（第二版）：產生 GEE 網頁版（Code Editor）JavaScript，匯出每個案例「一年前」的
 VV 基準影像，用來找出前一年到這次事件前之間新出現的崩塌（既有崩塌堆積區）。
 
 一年前基準 = 同一軌道、事件前基準期間整段往前推一年的中位數（季節相同）。例如 2026 負案例的
@@ -42,7 +42,7 @@ def prior_file(name: str) -> str:
 
 HEADER = """\
 // 由 scripts/gee_codeeditor_prior.py 產生，請勿手動編輯。
-// A1 崩塌堆積提醒：匯出每個案例「一年前」的 VV 基準（事件前基準期間往前推一年的中位數），
+// 崩塌堆積提醒：匯出每個案例「一年前」的 VV 基準（事件前基準期間往前推一年的中位數），
 // 存到 Google Drive 資料夾 {folder}/。
 // 用法：貼到 https://code.earthengine.google.com 按 Run → 右側 Tasks 分頁逐一按 RUN（共 {n} 個）。
 // 下載 Drive 上的 {folder}/ 資料夾，放到 data/raw/sentinel1/prior_exports/，

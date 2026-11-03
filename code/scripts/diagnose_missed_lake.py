@@ -37,11 +37,11 @@ sys.path.insert(0, str(CODE / "scripts"))
 
 from pipeline.preprocess.raster import crop_window  # noqa: E402
 from pipeline.attribution.annotate import read_lakes  # noqa: E402
-from pipeline.detect.barrier_lake import (EIGHT, fill_depressions, river_mask,  # noqa: E402
+from pipeline.detect.barrier_lake import (EIGHT, fill_depressions,  # noqa: E402
                                           run_sar_chain, seed_filter)
 from pipeline.detect.water import SAR_WATER_DB_DEFAULT  # noqa: E402
 from pipeline.events import replay as R  # noqa: E402
-from pipeline.preprocess.mask import S1_IW_MID_INCIDENCE_DEG, S1_LOOK_AZIMUTH_DEG, sar_invalid_masks  # noqa: E402
+from pipeline.preprocess.mask import S1_LOOK_AZIMUTH_DEG  # noqa: E402
 from pipeline.preprocess.sar import cell_size_xy_m, lee_filter, load_s1_geotiff  # noqa: E402
 
 RAW = REPO / "data" / "raw" / "sentinel1" / "replay"

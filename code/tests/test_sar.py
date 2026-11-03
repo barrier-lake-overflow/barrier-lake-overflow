@@ -107,7 +107,7 @@ class TestGeometryMask(unittest.TestCase):
 
 
 class TestRayTracedShadow(unittest.TestCase):
-    """B1：被前方山脊擋住的平地，局部判定抓不到，射線追蹤要抓到。"""
+    """射線追蹤：被前方山脊擋住的平地，局部判定抓不到，射線追蹤要抓到。"""
 
     def setUp(self):
         # 西側一座 300 m 高的陡崖高台（第 0～9 欄），東邊是平地。影長 300 × tan 39° ≈ 243 m

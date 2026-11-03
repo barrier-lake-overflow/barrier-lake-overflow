@@ -243,7 +243,7 @@ T = 40% 才不會提醒到真湖，此時 E1 與 2025 的誤報都提醒不到�
 
 第一版的測試程式沒有留在專案裡，結果檔也不輸出 `landslideRingPct`。
 
-## 射線追蹤陰影（B1，測試過，未採用）
+## 射線追蹤陰影（測試過，未採用）
 
 **想法：** 原本的陰影只看像元本身的坡面，被前方山脊擋住的平地抓不到。改成沿視線往衛星方向追蹤（`preprocess/mask.py` 的 `ray_traced_shadow`），陰影 = 局部判定 ∪ 射線追蹤。前縮（局部入射角 < 10°）只統計面積，不進判水遮罩。兩者都用事件前 DEM，崩塌後新陡崖的陰影一樣抓不到，事先預期改善有限。
 
@@ -264,7 +264,7 @@ T = 40% 才不會提醒到真湖，此時 E1 與 2025 的誤報都提醒不到�
 
 程式保留、開關預設關閉，正式流程不受影響。
 
-## 加入 VH 極化（B2，測試過，未採用）
+## 加入 VH 極化（測試過，未採用）
 
 **想法：** SAR 只抓到真實湖面的兩到四成，有一部分湖面的 VV 沒有低到 −18 dB，可能是湖面被風吹皺或混濁。VH 對水面粗糙度的反應不同，可能補回一部分。VH 無法分辨水與雷達陰影（陰影兩種極化都低），所以只用來補判湖面。
 
@@ -296,7 +296,7 @@ T = 40% 才不會提醒到真湖，此時 E1 與 2025 的誤報都提醒不到�
 
 - Lee, J.-S. (1980). Digital image enhancement and noise filtering by use of local statistics. *IEEE TPAMI* 2(2).
 - Otsu, N. (1979). A threshold selection method from gray-level histograms. *IEEE TSMC* 9(1).（保留，未預設使用）
-- Manjusree, P., Kumar, L. P., Bhatt, C. M., Rao, G. S., Bhanumurthy, V. (2012). [Optimization of threshold ranges for rapid flood inundation mapping by evaluating backscatter profiles of high incidence angle SAR images](https://link.springer.com/article/10.1007/s13753-012-0011-5). *International Journal of Disaster Risk Science* 3(2).（B2 的 VH 門檻）
+- Manjusree, P., Kumar, L. P., Bhatt, C. M., Rao, G. S., Bhanumurthy, V. (2012). [Optimization of threshold ranges for rapid flood inundation mapping by evaluating backscatter profiles of high incidence angle SAR images](https://link.springer.com/article/10.1007/s13753-012-0011-5). *International Journal of Disaster Risk Science* 3(2).（VH 補判的門檻）
 - Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. *IJRS* 27(14).
 - Twele, A., Cao, W., Plank, S., Martinis, S. (2016). Sentinel-1-based flood mapping: a fully automated processing chain. *IJRS* 37(13).
 - Mondini, A. C. et al. (2019). [Sentinel-1 SAR amplitude imagery for rapid landslide detection](https://geomorphology.irpi.cnr.it/publications/repository/links/journals/2019/sentinel-1-sar-amplitude-imagery-for-rapid-landslide-detection-remote-sensing). *Remote Sensing* 11, 760.
