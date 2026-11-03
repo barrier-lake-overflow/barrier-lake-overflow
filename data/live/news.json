@@ -2912,7 +2912,94 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-11-02T10:35+08:00"
+  },
+  "164c5b191f": {
+   "title": "115年10月30日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE14QllnelppMUI4NmpxekhKTkQtLWFfcFNaU3ZzeXR6Wm5ZcFpULXdFOTQtLWFKX0VfMWhnZTA0cDVHelBVend6VFlHT1VMQnc?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-10-30T15:00+08:00",
+   "summary": "115年10月30日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "164c5b191f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-03T23:10+08:00"
+  },
+  "6432f54981": {
+   "title": "萬里溪堰塞湖11月1日現況 蓄水量約516.37萬立方公尺 河道維持紅色警戒 - 行銷人",
+   "url": "https://news.google.com/rss/articles/CBMihwNBVV95cUxOaXhiNHYyQnJTOVJQMmJFOXF4dEFEclpxTzBVc2ZDemJVLUZnVHJqMVlWUkR4cmRrbDFqUldSUGhTakhVTnc0QXB1NVJLbTFLUzNzS2xXNzZFMEM0aVFtVVFCQmhCcFdMbTRISDJCQVpESDlUeVNFZU54NlZxazUxNE5BekoyUExEUHF0V25zR0ZLaTNNTXE0eTZ6dEJSVmVuSUZFRFUyekV4X0I0ZFhxZzAyWm5oMHdHNzFreTlVb2lYZWpVNTZwdzhOelFERGlKVU93OUNYUDMxYndfUV9QX1Z3VGRwTzhORTNSLUwyRXQ3V2NNaWJHY2RPQnBEODIzMVJUTXFoX1IxSnc5bVIwcGZkNFdNVmxoLTRlZ0NudEF5ZGo0VGRuVXBGZENlbU5DaTg1eV9HV0FFWm55UU1BVTYyV0pNTWRVZU9tSVZsSDhreE9zRGE0cFg4UlFWWXk2cVVFdE9qbzFuZjEwVHd0a3JqcXlXM0FqWHFzZEFEVFZiS3lfNTNr?oc=5",
+   "source": "行銷人",
+   "time": "2026-11-02T17:22+08:00",
+   "summary": "萬里溪堰塞湖11月1日現況 蓄水量約516.37萬立方公尺 河道維持紅色警戒 行銷人",
+   "id": "6432f54981",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-03T23:10+08:00"
+  },
+  "e691253127": {
+   "title": "萬里溪堰塞湖11月1日現況 蓄水量約516.37萬立方公尺 河道維持紅色警戒 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5nR0lTUUsyOE1XMmprOU93UzVWVnE0ZndRMHlLZ0dLeG5YY3pUckNabVRjVUlzZWZ5Y3FqV1FReEM5TVNENGVnM0tjWGxQYUdDQkE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-02T17:18+08:00",
+   "summary": "萬里溪堰塞湖11月1日現況 蓄水量約516.37萬立方公尺 河道維持紅色警戒 蕃新聞",
+   "id": "e691253127",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-03T23:10+08:00"
   }
  },
- "updatedAt": "2026-11-02T10:35+08:00"
+ "updatedAt": "2026-11-03T23:10+08:00"
 }

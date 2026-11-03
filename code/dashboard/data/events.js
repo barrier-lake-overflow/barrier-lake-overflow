@@ -93619,7 +93619,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-02T10:34+08:00",
+   "checkedAt": "2026-11-03T23:06+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:41+08:00",
@@ -93700,11 +93700,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-19T10:20+08:00",
      "sensor": "Landsat 9",
      "clearPct": 100
-    },
-    {
-     "time": "2026-09-18T10:41+08:00",
-     "sensor": "Sentinel-2A",
-     "clearPct": 66
     }
    ],
    "next": [
@@ -93815,6 +93810,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2A",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-19",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
    }
   ],
   "opticalPasses": [],
@@ -94004,6 +94006,405 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-11T02:41:00+00:00",
+    "label": "10/11 10:41",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測",
+    "since": "觸發前約 5 小時",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.268387,
+       23.792626
+      ],
+      "distanceFromReferenceM": 137,
+      "areaHectare": 1.1,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1034.0,
+      "polygonLonLat": [
+       [
+        121.26941925264097,
+        23.792329457547588
+       ],
+       [
+        121.26914975805575,
+        23.79205996296235
+       ],
+       [
+        121.26852093735685,
+        23.792239626019175
+       ],
+       [
+        121.26905992652733,
+        23.792688783661234
+       ],
+       [
+        121.26941925264097,
+        23.792329457547588
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "pending",
+        "recheckTime": "10/17 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E1 需要人工確認：單期SAR出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 1.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/17）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-13T02:20:00+00:00",
+    "label": "10/13 10:20",
+    "what": "新一期光學（Landsat 8）晴空影像偵測＋複核 10/11 的候選",
+    "since": "距觸發約 43 小時",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.268387,
+       23.792626
+      ],
+      "distanceFromReferenceM": 137,
+      "areaHectare": 1.1,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1034.0,
+      "polygonLonLat": [
+       [
+        121.26941925264097,
+        23.792329457547588
+       ],
+       [
+        121.26914975805575,
+        23.79205996296235
+       ],
+       [
+        121.26852093735685,
+        23.792239626019175
+       ],
+       [
+        121.26905992652733,
+        23.792688783661234
+       ],
+       [
+        121.26941925264097,
+        23.792329457547588
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "pending",
+        "recheckTime": "10/17 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E1 需要人工確認：單期SAR出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 1.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/13、10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/17）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
         "time": "2026-10-13T10:20+08:00",
         "sensor": "Landsat 8",
         "verdict": "water",
@@ -94150,6 +94551,223 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "optical",
         "text": "光學影像：系統已自動判讀（10/13、10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/17）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-16T02:41:00+00:00",
+    "label": "10/16 10:41",
+    "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/13 的候選",
+    "since": "距觸發約 5 天",
+    "nextPass": "10/17",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.268387,
+       23.792626
+      ],
+      "distanceFromReferenceM": 137,
+      "areaHectare": 1.1,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1034.0,
+      "polygonLonLat": [
+       [
+        121.26941925264097,
+        23.792329457547588
+       ],
+       [
+        121.26914975805575,
+        23.79205996296235
+       ],
+       [
+        121.26852093735685,
+        23.792239626019175
+       ],
+       [
+        121.26905992652733,
+        23.792688783661234
+       ],
+       [
+        121.26941925264097,
+        23.792329457547588
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "pending",
+        "recheckTime": "10/17 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E1 需要人工確認：單期SAR出現約 1.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 1.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/16、10/13、10/11），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -94462,6 +95080,261 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-21T02:20:00+00:00",
+    "label": "10/21 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測＋複核 10/16 的候選",
+    "since": "距觸發約 10 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 1,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/17 05:51",
+      "lastSeenAt": "2026-10-16T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.267825,
+       23.79281
+      ],
+      "distanceFromReferenceM": 197,
+      "areaHectare": 1.81,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1032.0,
+      "polygonLonLat": [
+       [
+        121.26744295901591,
+        23.792419289075998
+       ],
+       [
+        121.26843110582844,
+        23.79259895213282
+       ],
+       [
+        121.26816161124322,
+        23.792239626019175
+       ],
+       [
+        121.26861076888527,
+        23.791880299905525
+       ],
+       [
+        121.26744295901591,
+        23.792419289075998
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.41,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.41，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.81,
+        "recheck": "pending",
+        "recheckTime": "10/23 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.81 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.57 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "high",
+      "priorityText": "高優先",
+      "action": "建議立即查證",
+      "confidence": "中",
+      "confidenceReasons": [
+       "SAR 2 期一致",
+       "證據只有衛星自動偵測，最高到「中」；需人工看過影像、他單位成果或現地證據才能到「高」"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "中",
+      "summary": "E1 值得優先查證：6 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌、面積擴大）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/17 05:51 SAR 新增水體 1.81 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/17 複核同位置仍有水體（IoU 0.41），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21、10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.6 公頃"
+       },
+       {
+        "kind": "trend",
+        "status": "support",
+        "text": "面積 1.1 → 1.8 公頃，擴大中"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16、10/13、10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "衛星只能看到水面，壩體高度、材料與溢流風險要現地確認"
+       },
+       {
+        "label": "調閱最新光學影像",
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
+       },
+       {
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/23）",
+        "reason": "追蹤湖面變化；目前面積擴大中"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "trend.growing",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.high.confirmed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 1.81 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
         "time": "2026-10-21T10:41+08:00",
         "sensor": "Sentinel-2B",
         "verdict": "partial",
@@ -94501,6 +95374,444 @@ window.EVENT_SCENARIOS = [
     ]
    },
    {
+    "asOf": "2026-10-21T02:41:00+00:00",
+    "label": "10/21 10:41",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 10 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 1,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 1,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/17 05:51",
+      "lastSeenAt": "2026-10-16T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.267825,
+       23.79281
+      ],
+      "distanceFromReferenceM": 197,
+      "areaHectare": 1.81,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1032.0,
+      "polygonLonLat": [
+       [
+        121.26744295901591,
+        23.792419289075998
+       ],
+       [
+        121.26843110582844,
+        23.79259895213282
+       ],
+       [
+        121.26816161124322,
+        23.792239626019175
+       ],
+       [
+        121.26861076888527,
+        23.791880299905525
+       ],
+       [
+        121.26744295901591,
+        23.792419289075998
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.41,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.41，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.81,
+        "recheck": "pending",
+        "recheckTime": "10/23 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.81 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.57 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "high",
+      "priorityText": "高優先",
+      "action": "建議立即查證",
+      "confidence": "中",
+      "confidenceReasons": [
+       "SAR 2 期一致",
+       "證據只有衛星自動偵測，最高到「中」；需人工看過影像、他單位成果或現地證據才能到「高」"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "中",
+      "summary": "E1 值得優先查證：6 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌、面積擴大）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/17 05:51 SAR 新增水體 1.81 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/17 複核同位置仍有水體（IoU 0.41），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21、10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.6 公頃"
+       },
+       {
+        "kind": "trend",
+        "status": "support",
+        "text": "面積 1.1 → 1.8 公頃，擴大中"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16、10/13、10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "衛星只能看到水面，壩體高度、材料與溢流風險要現地確認"
+       },
+       {
+        "label": "調閱最新光學影像",
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
+       },
+       {
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/23）",
+        "reason": "追蹤湖面變化；目前面積擴大中"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "trend.growing",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.high.confirmed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 1.81 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 19
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.265397,
+       23.794892
+      ],
+      "distanceFromReferenceM": 529,
+      "areaHectare": 0.76,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1070.0,
+      "polygonLonLat": [
+       [
+        121.26483784469197,
+        23.795293897985182
+       ],
+       [
+        121.26528700233402,
+        23.79439558270106
+       ],
+       [
+        121.26591582303291,
+        23.79439558270106
+       ],
+       [
+        121.26564632844767,
+        23.795293897985182
+       ],
+       [
+        121.26483784469197,
+        23.795293897985182
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 0.76,
+        "recheck": "pending",
+        "recheckTime": "10/26 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 99.9%）新增水體",
+         "新增水體 0.76 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.03 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 需要人工確認：單期光學（Sentinel-2B）出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議先打開光學影像確認，等下一期雷達或下一個晴空光學複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 0.76 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）3.0 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/23，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員打開光學影像確認",
+        "reason": "確認疑似水體是否在河谷底、是否為雲影、濕泥或變寬的河道"
+       },
+       {
+        "label": "等下一期複核（雷達 10/23，或下一個晴空光學）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期光學（Sentinel-2B），先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.76 公頃",
+        "sensor": "Sentinel-2B"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 99
+       }
+      ]
+     }
+    ]
+   },
+   {
     "asOf": "2026-10-22T21:51:00+00:00",
     "label": "10/23 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/17 的候選",
@@ -94509,7 +95820,7 @@ window.EVENT_SCENARIOS = [
     "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 1,
-     "medium": 0,
+     "medium": 1,
      "low": 0
     },
     "newCount": 0,
@@ -94788,6 +96099,676 @@ window.EVENT_SCENARIOS = [
         "waterPct": 100
        }
       ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.265397,
+       23.794892
+      ],
+      "distanceFromReferenceM": 529,
+      "areaHectare": 0.76,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1070.0,
+      "polygonLonLat": [
+       [
+        121.26483784469197,
+        23.795293897985182
+       ],
+       [
+        121.26528700233402,
+        23.79439558270106
+       ],
+       [
+        121.26591582303291,
+        23.79439558270106
+       ],
+       [
+        121.26564632844767,
+        23.795293897985182
+       ],
+       [
+        121.26483784469197,
+        23.795293897985182
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 0.76,
+        "recheck": "pending",
+        "recheckTime": "10/26 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 99.9%）新增水體",
+         "新增水體 0.76 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.03 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 需要人工確認：單期光學（Sentinel-2B）出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議先打開光學影像確認，等下一期雷達或下一個晴空光學複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 0.76 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）3.0 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/26，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員打開光學影像確認",
+        "reason": "確認疑似水體是否在河谷底、是否為雲影、濕泥或變寬的河道"
+       },
+       {
+        "label": "等下一期複核（雷達 10/26，或下一個晴空光學）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期光學（Sentinel-2B），先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.76 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 13
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 99
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-26T02:41:00+00:00",
+    "label": "10/26 10:41",
+    "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 15 天",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 1,
+     "medium": 0,
+     "low": 1
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/23 05:51",
+      "lastSeenAt": "2026-10-22T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.268033,
+       23.792696
+      ],
+      "distanceFromReferenceM": 173,
+      "areaHectare": 1.27,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1032.0,
+      "polygonLonLat": [
+       [
+        121.26753279054432,
+        23.792868446718057
+       ],
+       [
+        121.26843110582844,
+        23.79259895213282
+       ],
+       [
+        121.26816161124322,
+        23.792239626019175
+       ],
+       [
+        121.26852093735685,
+        23.79197013143394
+       ],
+       [
+        121.26762262207274,
+        23.792419289075998
+       ],
+       [
+        121.26753279054432,
+        23.792868446718057
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.41,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.41，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.81,
+        "recheck": "persistent",
+        "recheckTime": "10/23 05:51",
+        "iou": 0.7,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.81 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.57 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.70，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/23 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.27,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.27 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.55 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "high",
+      "priorityText": "高優先",
+      "action": "建議立即查證",
+      "confidence": "中",
+      "confidenceReasons": [
+       "SAR 3 期一致",
+       "證據只有衛星自動偵測，最高到「中」；需人工看過影像、他單位成果或現地證據才能到「高」"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "中",
+      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/23 05:51 SAR 新增水體 1.27 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/23 複核同位置仍有水體（IoU 0.70），共 3 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/26、10/21、10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.5 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/26、10/21、10/16、10/13、10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "衛星只能看到水面，壩體高度、材料與溢流風險要現地確認"
+       },
+       {
+        "label": "調閱最新光學影像",
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
+       },
+       {
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/29）",
+        "reason": "追蹤湖面變化"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.high.confirmed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 1.81 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 1.27 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 19
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.265397,
+       23.794892
+      ],
+      "distanceFromReferenceM": 529,
+      "areaHectare": 0.76,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1070.0,
+      "polygonLonLat": [
+       [
+        121.26483784469197,
+        23.795293897985182
+       ],
+       [
+        121.26528700233402,
+        23.79439558270106
+       ],
+       [
+        121.26591582303291,
+        23.79439558270106
+       ],
+       [
+        121.26564632844767,
+        23.795293897985182
+       ],
+       [
+        121.26483784469197,
+        23.795293897985182
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 0.76,
+        "recheck": "not_persistent",
+        "recheckTime": "10/26 10:41",
+        "iou": 0.07,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 99.9%）新增水體",
+         "新增水體 0.76 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.03 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.07，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.07）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.07），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 0.76 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/26 複核同位置水體 IoU 0.07，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/26、10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）3.0 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/26、10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.07，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.76 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 13
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 99
+       }
+      ]
      }
     ]
    },
@@ -94796,12 +96777,534 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測＋複核 10/14 的候選",
     "since": "距觸發約 15 天",
+    "nextPass": "10/29",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 1,
+     "medium": 0,
+     "low": 1
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/23 05:51",
+      "lastSeenAt": "2026-10-22T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.268033,
+       23.792696
+      ],
+      "distanceFromReferenceM": 173,
+      "areaHectare": 1.27,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1032.0,
+      "polygonLonLat": [
+       [
+        121.26753279054432,
+        23.792868446718057
+       ],
+       [
+        121.26843110582844,
+        23.79259895213282
+       ],
+       [
+        121.26816161124322,
+        23.792239626019175
+       ],
+       [
+        121.26852093735685,
+        23.79197013143394
+       ],
+       [
+        121.26762262207274,
+        23.792419289075998
+       ],
+       [
+        121.26753279054432,
+        23.792868446718057
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.1,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.41,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.10 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.23 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.41，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.81,
+        "recheck": "persistent",
+        "recheckTime": "10/23 05:51",
+        "iou": 0.7,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.81 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.57 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.70，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/23 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 1.27,
+        "recheck": "pending",
+        "recheckTime": null,
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 1.27 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 1.55 公頃（SAR 回波變化 ≥ 門檻）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "僅單期影像，尚未確認多時相持續性"
+        ]
+       }
+      ],
+      "priority": "high",
+      "priorityText": "高優先",
+      "action": "建議立即查證",
+      "confidence": "中",
+      "confidenceReasons": [
+       "SAR 3 期一致",
+       "證據只有衛星自動偵測，最高到「中」；需人工看過影像、他單位成果或現地證據才能到「高」"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "中",
+      "summary": "E1 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、光學自動判讀、貼河道、附近崩塌）；光學自動判讀看得到水但還沒人工確認，也缺少現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/23 05:51 SAR 新增水體 1.27 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/23 複核同位置仍有水體（IoU 0.70），共 3 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/26、10/21、10/16、10/13、10/11 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 1.5 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.0 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/26、10/21、10/16、10/13、10/11），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "衛星只能看到水面，壩體高度、材料與溢流風險要現地確認"
+       },
+       {
+        "label": "調閱最新光學影像",
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
+       },
+       {
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/29）",
+        "reason": "追蹤湖面變化"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.high.confirmed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 1.10 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 1.81 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 1.27 公頃"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 19
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 100
+       }
+      ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.265397,
+       23.794892
+      ],
+      "distanceFromReferenceM": 529,
+      "areaHectare": 0.76,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1070.0,
+      "polygonLonLat": [
+       [
+        121.26483784469197,
+        23.795293897985182
+       ],
+       [
+        121.26528700233402,
+        23.79439558270106
+       ],
+       [
+        121.26591582303291,
+        23.79439558270106
+       ],
+       [
+        121.26564632844767,
+        23.795293897985182
+       ],
+       [
+        121.26483784469197,
+        23.795293897985182
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 0.76,
+        "recheck": "not_persistent",
+        "recheckTime": "10/26 10:41",
+        "iou": 0.07,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 99.9%）新增水體",
+         "新增水體 0.76 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.03 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.07，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.07）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.07），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 0.76 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/26 複核同位置水體 IoU 0.07，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/26、10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）3.0 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/26、10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.07，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.76 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 1
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 13
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 99
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-31T02:41:00+00:00",
+    "label": "10/31 10:41",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/26 的候選",
+    "since": "距觸發約 20 天",
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 1,
      "medium": 0,
-     "low": 0
+     "low": 1
     },
     "newCount": 0,
     "events": [
@@ -95100,6 +97603,222 @@ window.EVENT_SCENARIOS = [
         "waterPct": 100
        }
       ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.265397,
+       23.794892
+      ],
+      "distanceFromReferenceM": 529,
+      "areaHectare": 0.76,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1070.0,
+      "polygonLonLat": [
+       [
+        121.26483784469197,
+        23.795293897985182
+       ],
+       [
+        121.26528700233402,
+        23.79439558270106
+       ],
+       [
+        121.26591582303291,
+        23.79439558270106
+       ],
+       [
+        121.26564632844767,
+        23.795293897985182
+       ],
+       [
+        121.26483784469197,
+        23.795293897985182
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 0.76,
+        "recheck": "not_persistent",
+        "recheckTime": "10/26 10:41",
+        "iou": 0.07,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 99.9%）新增水體",
+         "新增水體 0.76 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.03 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.07，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.07）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.07），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 0.76 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/26 複核同位置水體 IoU 0.07，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/26、10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/31 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）3.0 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2024 花蓮萬里溪（3.4 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/31、10/26、10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.07，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.76 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/4",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 1
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "partial",
+        "clearPct": 100,
+        "waterPct": 13
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 99
+       }
+      ]
      }
     ]
    }
@@ -95132,7 +97851,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-02T10:34+08:00",
+   "checkedAt": "2026-11-03T23:06+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:41+08:00",
@@ -95213,11 +97932,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-19T10:20+08:00",
      "sensor": "Landsat 9",
      "clearPct": 93
-    },
-    {
-     "time": "2026-09-18T10:41+08:00",
-     "sensor": "Sentinel-2A",
-     "clearPct": 14
     }
    ],
    "next": [
@@ -95328,6 +98042,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2A",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-19",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
    }
   ],
   "opticalPasses": [],
@@ -95357,6 +98078,209 @@ window.EVENT_SCENARIOS = [
       "lastSeen": "10/11 05:51",
       "lastSeenAt": "2026-10-10T21:51:00+00:00",
       "isNew": true,
+      "lonLat": [
+       121.301963,
+       23.700327
+      ],
+      "distanceFromReferenceM": 454,
+      "areaHectare": 0.65,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1004.0,
+      "polygonLonLat": [
+       [
+        121.30220776051135,
+        23.70115045620945
+       ],
+       [
+        121.30148910828406,
+        23.70106062468104
+       ],
+       [
+        121.30139927675565,
+        23.700431803982156
+       ],
+       [
+        121.30148910828406,
+        23.701240287737864
+       ],
+       [
+        121.30220776051135,
+        23.70115045620945
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.65,
+        "recheck": "pending",
+        "recheckTime": "10/17 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.65 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.32 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E1 需要人工確認：單期SAR出現約 0.7 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/17 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/11 05:51 SAR 新增水體 0.65 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 2.3 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1004 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（8.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/17）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：尚未調閱（颱風期間多雲，雲散後可調 Sentinel-2）"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/17）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/17",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-13T02:20:00+00:00",
+    "label": "10/13 10:20",
+    "what": "新一期光學（Landsat 8）晴空影像偵測",
+    "since": "距觸發約 43 小時",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 1,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/11 05:51",
+      "lastSeenAt": "2026-10-10T21:51:00+00:00",
+      "isNew": false,
       "lonLat": [
        121.301963,
        23.700327
@@ -96337,13 +99261,6 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
-        "time": "2026-10-21T10:41+08:00",
-        "sensor": "Sentinel-2B",
-        "verdict": "cloud",
-        "clearPct": 0,
-        "waterPct": null
-       },
-       {
         "time": "2026-10-21T10:20+08:00",
         "sensor": "Landsat 9",
         "verdict": "no_water",
@@ -96558,6 +99475,421 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E3",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.296941,
+       23.698486
+      ],
+      "distanceFromReferenceM": 242,
+      "areaHectare": 0.61,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 896.0,
+      "polygonLonLat": [
+       [
+        121.29681786880664,
+        23.6992639941128
+       ],
+       [
+        121.29699753186347,
+        23.69863517341392
+       ],
+       [
+        121.29618904810775,
+        23.698365678828683
+       ],
+       [
+        121.29681786880664,
+        23.6992639941128
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.61,
+        "recheck": "pending",
+        "recheckTime": "10/26 18:00",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.61 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 4.11 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（896 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E3 需要人工確認：單期SAR出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.61 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 4.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（896 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.9 km）、2024 花蓮萬里溪（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/26）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-21T02:20:00+00:00",
+    "label": "10/21 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測＋複核 10/13 的候選",
+    "since": "距觸發約 10 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 3,
+     "low": 1
+    },
+    "newCount": 1,
+    "events": [
+     {
+      "id": "E2",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.30266,
+       23.695073
+      ],
+      "distanceFromReferenceM": 806,
+      "areaHectare": 0.77,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 861.0,
+      "polygonLonLat": [
+       [
+        121.30148910828406,
+        23.695850396033148
+       ],
+       [
+        121.30202809745454,
+        23.695131743805852
+       ],
+       [
+        121.30355523343754,
+        23.69423342852173
+       ],
+       [
+        121.3032857388523,
+        23.695131743805852
+       ],
+       [
+        121.30148910828406,
+        23.695850396033148
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.77,
+        "recheck": "pending",
+        "recheckTime": "10/26 18:00",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.77 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.08 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（861 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR與光學判讀衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 需要人工確認：單期SAR出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.77 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（861 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.6 km）、2024 花蓮萬里溪（9.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/26）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
         "time": "2026-10-21T10:41+08:00",
         "sensor": "Sentinel-2B",
         "verdict": "no_water",
@@ -96577,6 +99909,251 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/17 05:51",
+      "lastSeenAt": "2026-10-16T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.302438,
+       23.700484
+      ],
+      "distanceFromReferenceM": 501,
+      "areaHectare": 0.72,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1004.0,
+      "polygonLonLat": [
+       [
+        121.30238742356818,
+        23.701240287737864
+       ],
+       [
+        121.30220776051135,
+        23.700970793152628
+       ],
+       [
+        121.30148910828406,
+        23.70106062468104
+       ],
+       [
+        121.30157893981247,
+        23.701330119266277
+       ],
+       [
+        121.30238742356818,
+        23.701240287737864
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.65,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.42,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.65 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.32 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.42，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.72,
+        "recheck": "pending",
+        "recheckTime": "10/23 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.72 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.40 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR與光學判讀衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E1 需要人工確認：SAR多期看到疑似水體，但光學 10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/17 05:51 SAR 新增水體 0.72 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/17 複核同位置仍有水體（IoU 0.42），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.4 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1004 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/21、10/16 晴空都判為沒有水"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/23）",
+        "reason": "光學確認是水再升高優先"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "SAR偵測與光學判讀結果衝突，先以影像確認，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 0.72 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        }
       ]
      },
@@ -96782,6 +100359,1422 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        }
       ]
+     },
+     {
+      "id": "E4",
+      "firstSeen": "10/21 10:20",
+      "lastSeen": "10/21 10:20",
+      "lastSeenAt": "2026-10-21T02:20:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.313026,
+       23.687854
+      ],
+      "distanceFromReferenceM": 2118,
+      "areaHectare": 0.55,
+      "source": "optical",
+      "sourceLabel": "光學（Landsat 9）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 697.0,
+      "polygonLonLat": [
+       [
+        121.31289771239237,
+        23.688214716118136
+       ],
+       [
+        121.31352653309125,
+        23.6879452215329
+       ],
+       [
+        121.31262821780713,
+        23.68713673777719
+       ],
+       [
+        121.31289771239237,
+        23.688214716118136
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:20",
+        "source": "optical",
+        "sourceLabel": "光學（Landsat 9）",
+        "areaHectare": 0.55,
+        "recheck": "pending",
+        "recheckTime": "10/21 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Landsat 9（窗格晴空 50.5%）新增水體",
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Landsat 9），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "C",
+      "scale": "小",
+      "summary": "E4 暫時觀察：附近沒有崩塌訊號，不符合堵塞成湖的型態。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:20 光學（Landsat 9） 新增水體 0.55 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2016 萬里溪（8.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/23，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "附近沒有崩塌訊號，不符合堵塞成湖的型態"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.no_landslide"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:20:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.55 公頃",
+        "sensor": "Landsat 9"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 99,
+        "waterPct": 80
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-21T02:41:00+00:00",
+    "label": "10/21 10:41",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 10 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 4,
+     "low": 2
+    },
+    "newCount": 2,
+    "events": [
+     {
+      "id": "E6",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.298611,
+       23.706576
+      ],
+      "distanceFromReferenceM": 669,
+      "areaHectare": 3.1,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 959.0,
+      "polygonLonLat": [
+       [
+        121.2980755102044,
+        23.70689967402782
+       ],
+       [
+        121.29879416243169,
+        23.70734883166988
+       ],
+       [
+        121.29915348854533,
+        23.707169168613056
+       ],
+       [
+        121.29942298313057,
+        23.705642032630053
+       ],
+       [
+        121.2980755102044,
+        23.705372538044816
+       ],
+       [
+        121.2980755102044,
+        23.70689967402782
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 3.1,
+        "recheck": "pending",
+        "recheckTime": "10/31 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 3.09 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 0.22 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E6 需要人工確認：單期光學（Sentinel-2B）出現約 3.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議先打開光學影像確認，等下一期雷達或下一個晴空光學複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 3.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）0.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（7.9 km）、2026 花蓮萬里溪（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/23，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員打開光學影像確認",
+        "reason": "確認疑似水體是否在河谷底、是否為雲影、濕泥或變寬的河道"
+       },
+       {
+        "label": "等下一期複核（雷達 10/23，或下一個晴空光學）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期光學（Sentinel-2B），先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 3.10 公頃",
+        "sensor": "Sentinel-2B"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 86
+       }
+      ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.30266,
+       23.695073
+      ],
+      "distanceFromReferenceM": 806,
+      "areaHectare": 0.77,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 861.0,
+      "polygonLonLat": [
+       [
+        121.30148910828406,
+        23.695850396033148
+       ],
+       [
+        121.30202809745454,
+        23.695131743805852
+       ],
+       [
+        121.30355523343754,
+        23.69423342852173
+       ],
+       [
+        121.3032857388523,
+        23.695131743805852
+       ],
+       [
+        121.30148910828406,
+        23.695850396033148
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.77,
+        "recheck": "pending",
+        "recheckTime": "10/26 18:00",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.77 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.08 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（861 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR與光學判讀衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E2 需要人工確認：單期SAR出現約 0.8 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.77 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（861 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.6 km）、2024 花蓮萬里溪（9.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/26）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 92,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/17 05:51",
+      "lastSeenAt": "2026-10-16T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.302438,
+       23.700484
+      ],
+      "distanceFromReferenceM": 501,
+      "areaHectare": 0.72,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1004.0,
+      "polygonLonLat": [
+       [
+        121.30238742356818,
+        23.701240287737864
+       ],
+       [
+        121.30220776051135,
+        23.700970793152628
+       ],
+       [
+        121.30148910828406,
+        23.70106062468104
+       ],
+       [
+        121.30157893981247,
+        23.701330119266277
+       ],
+       [
+        121.30238742356818,
+        23.701240287737864
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.65,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.42,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.65 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.32 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.42，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.72,
+        "recheck": "pending",
+        "recheckTime": "10/23 05:51",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.72 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.40 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR與光學判讀衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E1 需要人工確認：SAR多期看到疑似水體，但光學 10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/17 05:51 SAR 新增水體 0.72 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/17 複核同位置仍有水體（IoU 0.42），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.4 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1004 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/21、10/16 晴空都判為沒有水"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/23）",
+        "reason": "光學確認是水再升高優先"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "SAR偵測與光學判讀結果衝突，先以影像確認，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 0.72 公頃"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
+     },
+     {
+      "id": "E3",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.296941,
+       23.698486
+      ],
+      "distanceFromReferenceM": 242,
+      "areaHectare": 0.61,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 896.0,
+      "polygonLonLat": [
+       [
+        121.29681786880664,
+        23.6992639941128
+       ],
+       [
+        121.29699753186347,
+        23.69863517341392
+       ],
+       [
+        121.29618904810775,
+        23.698365678828683
+       ],
+       [
+        121.29681786880664,
+        23.6992639941128
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.61,
+        "recheck": "pending",
+        "recheckTime": "10/26 18:00",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.61 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 4.11 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（896 m）附近或以下，研判土石堵塞下游河道"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期SAR，尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "小",
+      "summary": "E3 需要人工確認：單期SAR出現約 0.6 公頃的疑似新增水體，空間條件符合，但尚未複核；建議 10/26 下一期過境複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.61 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 4.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（896 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.9 km）、2024 花蓮萬里溪（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期影像無法排除陰影或濕土誤判（下一期 10/26）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員判讀 SAR 證據圖",
+        "reason": "確認疑似水體是否在河谷底、是否為崩塌坡面陰影"
+       },
+       {
+        "label": "排下一期 SAR 複核（10/26）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "調閱光學影像（雲況許可時）",
+        "reason": "SAR 以外的另一種來源，人工看過才算獨立證據"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期 SAR，先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E5",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": true,
+      "lonLat": [
+       121.304101,
+       23.709764
+      ],
+      "distanceFromReferenceM": 1214,
+      "areaHectare": 8.41,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1163.0,
+      "polygonLonLat": [
+       [
+        121.30346540190911,
+        23.710762429749536
+       ],
+       [
+        121.30526203247734,
+        23.7104929351643
+       ],
+       [
+        121.30454338025005,
+        23.710043777522237
+       ],
+       [
+        121.30472304330688,
+        23.70968445140859
+       ],
+       [
+        121.30508236942052,
+        23.709953945993828
+       ],
+       [
+        121.30544169553417,
+        23.709953945993828
+       ],
+       [
+        121.30517220094893,
+        23.70968445140859
+       ],
+       [
+        121.30669933693194,
+        23.709235293766532
+       ],
+       [
+        121.30346540190911,
+        23.70770815778353
+       ],
+       [
+        121.30382472802276,
+        23.708965799181296
+       ],
+       [
+        121.30355523343752,
+        23.70869630459606
+       ],
+       [
+        121.30283658121023,
+        23.708606473067647
+       ],
+       [
+        121.30211792898292,
+        23.709325125294942
+       ],
+       [
+        121.30211792898292,
+        23.709774282937005
+       ],
+       [
+        121.30256708662499,
+        23.70968445140859
+       ],
+       [
+        121.30247725509658,
+        23.710043777522237
+       ],
+       [
+        121.30328573885228,
+        23.710043777522237
+       ],
+       [
+        121.30346540190911,
+        23.710762429749536
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 8.41,
+        "recheck": "pending",
+        "recheckTime": "10/31 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 8.41 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "C",
+      "scale": "中",
+      "summary": "E5 暫時觀察：附近沒有崩塌訊號，不符合堵塞成湖的型態。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 8.41 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（7.7 km）、2024 花蓮萬里溪（7.6 km）、2026 花蓮萬里溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/23，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "附近沒有崩塌訊號，不符合堵塞成湖的型態"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.no_landslide"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 8.41 公頃",
+        "sensor": "Sentinel-2B"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 87
+       }
+      ]
+     },
+     {
+      "id": "E4",
+      "firstSeen": "10/21 10:20",
+      "lastSeen": "10/21 10:20",
+      "lastSeenAt": "2026-10-21T02:20:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.313026,
+       23.687854
+      ],
+      "distanceFromReferenceM": 2118,
+      "areaHectare": 0.55,
+      "source": "optical",
+      "sourceLabel": "光學（Landsat 9）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 697.0,
+      "polygonLonLat": [
+       [
+        121.31289771239237,
+        23.688214716118136
+       ],
+       [
+        121.31352653309125,
+        23.6879452215329
+       ],
+       [
+        121.31262821780713,
+        23.68713673777719
+       ],
+       [
+        121.31289771239237,
+        23.688214716118136
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:20",
+        "source": "optical",
+        "sourceLabel": "光學（Landsat 9）",
+        "areaHectare": 0.55,
+        "recheck": "not_persistent",
+        "recheckTime": "10/21 10:41",
+        "iou": 0.0,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Landsat 9（窗格晴空 50.5%）新增水體",
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）",
+         "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.00）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "C",
+      "scale": "小",
+      "summary": "E4 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.00），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:20 光學（Landsat 9） 新增水體 0.55 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/21 複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2016 萬里溪（8.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 0 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:20:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.55 公頃",
+        "sensor": "Landsat 9"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/23",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 99,
+        "waterPct": 80
+       }
+      ]
      }
     ]
    },
@@ -96794,11 +101787,205 @@ window.EVENT_SCENARIOS = [
     "nextPassOrbit": "升軌 69",
     "counts": {
      "high": 0,
-     "medium": 3,
-     "low": 0
+     "medium": 4,
+     "low": 2
     },
     "newCount": 0,
     "events": [
+     {
+      "id": "E6",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.298611,
+       23.706576
+      ],
+      "distanceFromReferenceM": 669,
+      "areaHectare": 3.1,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 959.0,
+      "polygonLonLat": [
+       [
+        121.2980755102044,
+        23.70689967402782
+       ],
+       [
+        121.29879416243169,
+        23.70734883166988
+       ],
+       [
+        121.29915348854533,
+        23.707169168613056
+       ],
+       [
+        121.29942298313057,
+        23.705642032630053
+       ],
+       [
+        121.2980755102044,
+        23.705372538044816
+       ],
+       [
+        121.2980755102044,
+        23.70689967402782
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 3.1,
+        "recheck": "pending",
+        "recheckTime": "10/31 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 3.09 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 0.22 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E6 需要人工確認：單期光學（Sentinel-2B）出現約 3.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議先打開光學影像確認，等下一期雷達或下一個晴空光學複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 3.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）0.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（7.9 km）、2026 花蓮萬里溪（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/26，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員打開光學影像確認",
+        "reason": "確認疑似水體是否在河谷底、是否為雲影、濕泥或變寬的河道"
+       },
+       {
+        "label": "等下一期複核（雷達 10/26，或下一個晴空光學）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期光學（Sentinel-2B），先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 3.10 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 86
+       }
+      ]
+     },
      {
       "id": "E2",
       "firstSeen": "10/14 18:00",
@@ -97499,6 +102686,428 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        }
       ]
+     },
+     {
+      "id": "E5",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.304101,
+       23.709764
+      ],
+      "distanceFromReferenceM": 1214,
+      "areaHectare": 8.41,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1163.0,
+      "polygonLonLat": [
+       [
+        121.30346540190911,
+        23.710762429749536
+       ],
+       [
+        121.30526203247734,
+        23.7104929351643
+       ],
+       [
+        121.30454338025005,
+        23.710043777522237
+       ],
+       [
+        121.30472304330688,
+        23.70968445140859
+       ],
+       [
+        121.30508236942052,
+        23.709953945993828
+       ],
+       [
+        121.30544169553417,
+        23.709953945993828
+       ],
+       [
+        121.30517220094893,
+        23.70968445140859
+       ],
+       [
+        121.30669933693194,
+        23.709235293766532
+       ],
+       [
+        121.30346540190911,
+        23.70770815778353
+       ],
+       [
+        121.30382472802276,
+        23.708965799181296
+       ],
+       [
+        121.30355523343752,
+        23.70869630459606
+       ],
+       [
+        121.30283658121023,
+        23.708606473067647
+       ],
+       [
+        121.30211792898292,
+        23.709325125294942
+       ],
+       [
+        121.30211792898292,
+        23.709774282937005
+       ],
+       [
+        121.30256708662499,
+        23.70968445140859
+       ],
+       [
+        121.30247725509658,
+        23.710043777522237
+       ],
+       [
+        121.30328573885228,
+        23.710043777522237
+       ],
+       [
+        121.30346540190911,
+        23.710762429749536
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 8.41,
+        "recheck": "pending",
+        "recheckTime": "10/31 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 8.41 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "C",
+      "scale": "中",
+      "summary": "E5 暫時觀察：附近沒有崩塌訊號，不符合堵塞成湖的型態。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 8.41 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（7.7 km）、2024 花蓮萬里溪（7.6 km）、2026 花蓮萬里溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/26，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "附近沒有崩塌訊號，不符合堵塞成湖的型態"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.no_landslide"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 8.41 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 87
+       }
+      ]
+     },
+     {
+      "id": "E4",
+      "firstSeen": "10/21 10:20",
+      "lastSeen": "10/21 10:20",
+      "lastSeenAt": "2026-10-21T02:20:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.313026,
+       23.687854
+      ],
+      "distanceFromReferenceM": 2118,
+      "areaHectare": 0.55,
+      "source": "optical",
+      "sourceLabel": "光學（Landsat 9）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 697.0,
+      "polygonLonLat": [
+       [
+        121.31289771239237,
+        23.688214716118136
+       ],
+       [
+        121.31352653309125,
+        23.6879452215329
+       ],
+       [
+        121.31262821780713,
+        23.68713673777719
+       ],
+       [
+        121.31289771239237,
+        23.688214716118136
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:20",
+        "source": "optical",
+        "sourceLabel": "光學（Landsat 9）",
+        "areaHectare": 0.55,
+        "recheck": "not_persistent",
+        "recheckTime": "10/21 10:41",
+        "iou": 0.0,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Landsat 9（窗格晴空 50.5%）新增水體",
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）",
+         "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.00）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "C",
+      "scale": "小",
+      "summary": "E4 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.00），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:20 光學（Landsat 9） 新增水體 0.55 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/21 複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2016 萬里溪（8.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 94 mm、24 小時 86 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:20:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.55 公頃",
+        "sensor": "Landsat 9"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/26",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 99,
+        "waterPct": 80
+       }
+      ]
      }
     ]
    },
@@ -97507,12 +103116,1473 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測＋複核 10/14 的候選",
     "since": "距觸發約 15 天",
+    "nextPass": "10/29",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 1,
+     "medium": 3,
+     "low": 2
+    },
+    "newCount": 0,
+    "events": [
+     {
+      "id": "E3",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.296941,
+       23.698486
+      ],
+      "distanceFromReferenceM": 242,
+      "areaHectare": 0.61,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 896.0,
+      "polygonLonLat": [
+       [
+        121.29681786880664,
+        23.6992639941128
+       ],
+       [
+        121.29699753186347,
+        23.69863517341392
+       ],
+       [
+        121.29618904810775,
+        23.698365678828683
+       ],
+       [
+        121.29681786880664,
+        23.6992639941128
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.61,
+        "recheck": "persistent",
+        "recheckTime": "10/26 18:00",
+        "iou": 0.4,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.61 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 4.11 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（896 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.40，持續蓄水"
+        ]
+       }
+      ],
+      "priority": "high",
+      "priorityText": "高優先",
+      "action": "建議立即查證",
+      "confidence": "中",
+      "confidenceReasons": [
+       "SAR 1 期一致",
+       "證據只有衛星自動偵測，最高到「中」；需人工看過影像、他單位成果或現地證據才能到「高」"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E3 值得優先查證：5 項證據一致（SAR 新增水體、跨期持續、貼河道、附近崩塌、堵塞型態）；目前缺少光學影像與現地證據，建議下一步 UAV 現地查證並調閱光學影像。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.61 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/26 複核同位置仍有水體（IoU 0.40），共 1 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 4.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（896 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.9 km）、2024 花蓮萬里溪（8.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "UAV／現地查證壩體與湖面",
+        "reason": "衛星只能看到水面，壩體高度、材料與溢流風險要現地確認"
+       },
+       {
+        "label": "調閱最新光學影像",
+        "reason": "SAR 陡坡遮罩會擋掉約四成湖面，面積偏低，需光學影像確認範圍"
+       },
+       {
+        "label": "通報主管機關（農村水保署）並評估下游保全對象",
+        "reason": "下游聚落、道路圖層尚未串接"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 11/7）",
+        "reason": "追蹤湖面變化"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.high.confirmed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.61 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "wet",
+        "source": "sar",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "11/7",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E6",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.298611,
+       23.706576
+      ],
+      "distanceFromReferenceM": 669,
+      "areaHectare": 3.1,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 959.0,
+      "polygonLonLat": [
+       [
+        121.2980755102044,
+        23.70689967402782
+       ],
+       [
+        121.29879416243169,
+        23.70734883166988
+       ],
+       [
+        121.29915348854533,
+        23.707169168613056
+       ],
+       [
+        121.29942298313057,
+        23.705642032630053
+       ],
+       [
+        121.2980755102044,
+        23.705372538044816
+       ],
+       [
+        121.2980755102044,
+        23.70689967402782
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 3.1,
+        "recheck": "pending",
+        "recheckTime": "10/31 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 3.09 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 0.22 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E6 需要人工確認：單期光學（Sentinel-2B）出現約 3.1 公頃的疑似新增水體，空間條件符合，但尚未複核；建議先打開光學影像確認，等下一期雷達或下一個晴空光學複核，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 3.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）0.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（7.9 km）、2026 花蓮萬里溪（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/29，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "值班人員打開光學影像確認",
+        "reason": "確認疑似水體是否在河谷底、是否為雲影、濕泥或變寬的河道"
+       },
+       {
+        "label": "等下一期複核（雷達 10/29，或下一個晴空光學）",
+        "reason": "A 級需要兩期一致；單期出現的疑似水體多數會在複核時消失"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "目前只有單期光學（Sentinel-2B），先以複核過濾誤報，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.medium.pending"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 3.10 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 86
+       }
+      ]
+     },
+     {
+      "id": "E2",
+      "firstSeen": "10/14 18:00",
+      "lastSeen": "10/14 18:00",
+      "lastSeenAt": "2026-10-14T10:00:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.30266,
+       23.695073
+      ],
+      "distanceFromReferenceM": 806,
+      "areaHectare": 0.77,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 861.0,
+      "polygonLonLat": [
+       [
+        121.30148910828406,
+        23.695850396033148
+       ],
+       [
+        121.30202809745454,
+        23.695131743805852
+       ],
+       [
+        121.30355523343754,
+        23.69423342852173
+       ],
+       [
+        121.3032857388523,
+        23.695131743805852
+       ],
+       [
+        121.30148910828406,
+        23.695850396033148
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/14 18:00",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.77,
+        "recheck": "persistent",
+        "recheckTime": "10/26 18:00",
+        "iou": 0.55,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.77 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.08 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（861 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.55，持續蓄水"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR與光學判讀衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E2 需要人工確認：SAR多期看到疑似水體，但光學 10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/14 18:00 SAR 新增水體 0.77 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/26 複核同位置仍有水體（IoU 0.55），共 1 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.1 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（861 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.6 km）、2024 花蓮萬里溪（9.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/21、10/16 晴空都判為沒有水"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 11/7）",
+        "reason": "光學確認是水再升高優先"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "SAR偵測與光學判讀結果衝突，先以影像確認，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.77 公頃"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "wet",
+        "source": "sar",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       }
+      ],
+      "recheckOrbits": [
+       "升軌 69"
+      ],
+      "nextRecheck": "11/7",
+      "nextRecheckOrbit": "升軌 69",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 2,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 92,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 90,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       }
+      ]
+     },
+     {
+      "id": "E1",
+      "firstSeen": "10/11 05:51",
+      "lastSeen": "10/17 05:51",
+      "lastSeenAt": "2026-10-16T21:51:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.302438,
+       23.700484
+      ],
+      "distanceFromReferenceM": 501,
+      "areaHectare": 0.72,
+      "source": "sar",
+      "sourceLabel": "SAR",
+      "sources": [
+       "sar"
+      ],
+      "areaNote": "SAR 陡坡與陰影遮罩會擋掉部分湖面，面積偏低，視為下限",
+      "lakeFloorM": 1004.0,
+      "polygonLonLat": [
+       [
+        121.30238742356818,
+        23.701240287737864
+       ],
+       [
+        121.30220776051135,
+        23.700970793152628
+       ],
+       [
+        121.30148910828406,
+        23.70106062468104
+       ],
+       [
+        121.30157893981247,
+        23.701330119266277
+       ],
+       [
+        121.30238742356818,
+        23.701240287737864
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/11 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.65,
+        "recheck": "persistent",
+        "recheckTime": "10/17 05:51",
+        "iou": 0.42,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.65 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 2.32 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.42，持續蓄水"
+        ]
+       },
+       {
+        "passTime": "10/17 05:51",
+        "source": "sar",
+        "sourceLabel": "SAR",
+        "areaHectare": 0.72,
+        "recheck": "persistent",
+        "recheckTime": "10/23 05:51",
+        "iou": 0.56,
+        "evidenceImage": null,
+        "reasons": [
+         "新增水體 0.72 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 3.40 公頃（SAR 回波變化 ≥ 門檻）",
+         "崩塌延伸至湖底高程（1004 m）附近或以下，研判土石堵塞下游河道",
+         "後續 1 期影像同位置水體 IoU 最高 0.56，持續蓄水"
+        ]
+       }
+      ],
+      "priority": "medium",
+      "priorityText": "中優先",
+      "action": "建議人工確認",
+      "confidence": "低",
+      "confidenceReasons": [
+       "SAR與光學判讀衝突：光學 10/21、10/16 晴空都判為沒有水"
+      ],
+      "persistence": "confirmed",
+      "persistenceText": "已確認持續",
+      "grade": "A",
+      "scale": "小",
+      "summary": "E1 需要人工確認：SAR多期看到疑似水體，但光學 10/21、10/16 晴空都判為沒有水，可能是崩塌堆積或陰影；請先打開光學影像確認，暫不派遣 UAV。",
+      "evidence": [
+       {
+        "kind": "sar",
+        "status": "support",
+        "text": "10/17 05:51 SAR 新增水體 0.72 公頃（證據強度 A 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "support",
+        "text": "10/23 複核同位置仍有水體（IoU 0.56），共 2 期偵測到"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21、10/16 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有 SAR 崩塌訊號 3.4 公頃"
+       },
+       {
+        "kind": "terrain",
+        "status": "support",
+        "text": "崩塌延伸到水體下游、湖底高程（1004 m）以下，符合堵塞型態"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 2 筆堰塞湖：2016 萬里溪（8.3 km）、2024 花蓮萬里溪（8.6 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動判讀（10/21、10/16），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [
+       "光學 10/21、10/16 晴空都判為沒有水：SAR看到的可能是崩塌堆積或陰影，不一定是湖。請打開光學影像確認。"
+      ],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "打開光學影像確認是否為水",
+        "reason": "光學 10/21、10/16 晴空都判為沒有水"
+       },
+       {
+        "label": "持續 SAR 監測（下一期 10/29）",
+        "reason": "光學確認是水再升高優先"
+       },
+       {
+        "label": "暫不派遣 UAV",
+        "reason": "SAR偵測與光學判讀結果衝突，先以影像確認，避免浪費現地人力"
+       }
+      ],
+      "rulesFired": [
+       "persistence.confirmed",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "spatial.blockage",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "conflict.sar_vs_optical_dry",
+       "priority.high.confirmed",
+       "priority.capped.optical_dry"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-10T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "首次出現 · 偵測到 0.65 公頃"
+       },
+       {
+        "time": "2026-10-14T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       },
+       {
+        "time": "2026-10-16T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "hit",
+        "source": "sar",
+        "text": "偵測到 0.72 公頃"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "wet",
+        "source": "sar",
+        "text": "複核：同位置仍有水（水體較小，沒列為新目標）"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "拍攝方向不同，陰影不同，不拿來比對"
+       }
+      ],
+      "recheckOrbits": [
+       "降軌 105"
+      ],
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-16T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-13T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-11T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       }
+      ]
+     },
+     {
+      "id": "E5",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.304101,
+       23.709764
+      ],
+      "distanceFromReferenceM": 1214,
+      "areaHectare": 8.41,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1163.0,
+      "polygonLonLat": [
+       [
+        121.30346540190911,
+        23.710762429749536
+       ],
+       [
+        121.30526203247734,
+        23.7104929351643
+       ],
+       [
+        121.30454338025005,
+        23.710043777522237
+       ],
+       [
+        121.30472304330688,
+        23.70968445140859
+       ],
+       [
+        121.30508236942052,
+        23.709953945993828
+       ],
+       [
+        121.30544169553417,
+        23.709953945993828
+       ],
+       [
+        121.30517220094893,
+        23.70968445140859
+       ],
+       [
+        121.30669933693194,
+        23.709235293766532
+       ],
+       [
+        121.30346540190911,
+        23.70770815778353
+       ],
+       [
+        121.30382472802276,
+        23.708965799181296
+       ],
+       [
+        121.30355523343752,
+        23.70869630459606
+       ],
+       [
+        121.30283658121023,
+        23.708606473067647
+       ],
+       [
+        121.30211792898292,
+        23.709325125294942
+       ],
+       [
+        121.30211792898292,
+        23.709774282937005
+       ],
+       [
+        121.30256708662499,
+        23.70968445140859
+       ],
+       [
+        121.30247725509658,
+        23.710043777522237
+       ],
+       [
+        121.30328573885228,
+        23.710043777522237
+       ],
+       [
+        121.30346540190911,
+        23.710762429749536
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 8.41,
+        "recheck": "pending",
+        "recheckTime": "10/31 10:41",
+        "iou": null,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 8.41 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "低",
+      "confidenceReasons": [
+       "只有單期光學（Sentinel-2B），尚未複核"
+      ],
+      "persistence": "pending",
+      "persistenceText": "待複核",
+      "grade": "C",
+      "scale": "中",
+      "summary": "E5 暫時觀察：附近沒有崩塌訊號，不符合堵塞成湖的型態。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 8.41 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（7.7 km）、2024 花蓮萬里溪（7.6 km）、2026 花蓮萬里溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "persistence",
+        "text": "尚未複核：單期光學無法排除雲影、濕泥或河道變寬誤判（下一期雷達 10/29，或下一個晴空光學）"
+       },
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "附近沒有崩塌訊號，不符合堵塞成湖的型態"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.pending",
+       "optical_auto.water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.no_landslide"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 8.41 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 87
+       }
+      ]
+     },
+     {
+      "id": "E4",
+      "firstSeen": "10/21 10:20",
+      "lastSeen": "10/21 10:20",
+      "lastSeenAt": "2026-10-21T02:20:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.313026,
+       23.687854
+      ],
+      "distanceFromReferenceM": 2118,
+      "areaHectare": 0.55,
+      "source": "optical",
+      "sourceLabel": "光學（Landsat 9）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 697.0,
+      "polygonLonLat": [
+       [
+        121.31289771239237,
+        23.688214716118136
+       ],
+       [
+        121.31352653309125,
+        23.6879452215329
+       ],
+       [
+        121.31262821780713,
+        23.68713673777719
+       ],
+       [
+        121.31289771239237,
+        23.688214716118136
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:20",
+        "source": "optical",
+        "sourceLabel": "光學（Landsat 9）",
+        "areaHectare": 0.55,
+        "recheck": "not_persistent",
+        "recheckTime": "10/21 10:41",
+        "iou": 0.0,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Landsat 9（窗格晴空 50.5%）新增水體",
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）",
+         "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.00）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "C",
+      "scale": "小",
+      "summary": "E4 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.00），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:20 光學（Landsat 9） 新增水體 0.55 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/21 複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/21 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2016 萬里溪（8.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:20:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.55 公頃",
+        "sensor": "Landsat 9"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "10/29",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 99,
+        "waterPct": 80
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "asOf": "2026-10-31T02:41:00+00:00",
+    "label": "10/31 10:41",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 20 天",
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
     "counts": {
      "high": 0,
      "medium": 3,
-     "low": 0
+     "low": 3
     },
     "newCount": 0,
     "events": [
@@ -98280,6 +105350,699 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        }
       ]
+     },
+     {
+      "id": "E5",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.304101,
+       23.709764
+      ],
+      "distanceFromReferenceM": 1214,
+      "areaHectare": 8.41,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 1163.0,
+      "polygonLonLat": [
+       [
+        121.30346540190911,
+        23.710762429749536
+       ],
+       [
+        121.30526203247734,
+        23.7104929351643
+       ],
+       [
+        121.30454338025005,
+        23.710043777522237
+       ],
+       [
+        121.30472304330688,
+        23.70968445140859
+       ],
+       [
+        121.30508236942052,
+        23.709953945993828
+       ],
+       [
+        121.30544169553417,
+        23.709953945993828
+       ],
+       [
+        121.30517220094893,
+        23.70968445140859
+       ],
+       [
+        121.30669933693194,
+        23.709235293766532
+       ],
+       [
+        121.30346540190911,
+        23.70770815778353
+       ],
+       [
+        121.30382472802276,
+        23.708965799181296
+       ],
+       [
+        121.30355523343752,
+        23.70869630459606
+       ],
+       [
+        121.30283658121023,
+        23.708606473067647
+       ],
+       [
+        121.30211792898292,
+        23.709325125294942
+       ],
+       [
+        121.30211792898292,
+        23.709774282937005
+       ],
+       [
+        121.30256708662499,
+        23.70968445140859
+       ],
+       [
+        121.30247725509658,
+        23.710043777522237
+       ],
+       [
+        121.30328573885228,
+        23.710043777522237
+       ],
+       [
+        121.30346540190911,
+        23.710762429749536
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 8.41,
+        "recheck": "not_persistent",
+        "recheckTime": "10/31 10:41",
+        "iou": 0.0,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 8.41 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）",
+         "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.00）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "C",
+      "scale": "中",
+      "summary": "E5 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.00），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 8.41 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/31 複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/31 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（7.7 km）、2024 花蓮萬里溪（7.6 km）、2026 花蓮萬里溪（9.8 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/31、10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 8.41 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/4",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 87
+       }
+      ]
+     },
+     {
+      "id": "E6",
+      "firstSeen": "10/21 10:41",
+      "lastSeen": "10/21 10:41",
+      "lastSeenAt": "2026-10-21T02:41:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.298611,
+       23.706576
+      ],
+      "distanceFromReferenceM": 669,
+      "areaHectare": 3.1,
+      "source": "optical",
+      "sourceLabel": "光學（Sentinel-2B）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 959.0,
+      "polygonLonLat": [
+       [
+        121.2980755102044,
+        23.70689967402782
+       ],
+       [
+        121.29879416243169,
+        23.70734883166988
+       ],
+       [
+        121.29915348854533,
+        23.707169168613056
+       ],
+       [
+        121.29942298313057,
+        23.705642032630053
+       ],
+       [
+        121.2980755102044,
+        23.705372538044816
+       ],
+       [
+        121.2980755102044,
+        23.70689967402782
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:41",
+        "source": "optical",
+        "sourceLabel": "光學（Sentinel-2B）",
+        "areaHectare": 3.1,
+        "recheck": "not_persistent",
+        "recheckTime": "10/31 10:41",
+        "iou": 0.0,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Sentinel-2B（窗格晴空 52.9%）新增水體",
+         "新增水體 3.09 公頃，緊貼事件前河道",
+         "500 m 內偵測到崩塌 0.22 公頃（光學：植生消失）",
+         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+         "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.00）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "B",
+      "scale": "中",
+      "summary": "E6 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.00），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:41 光學（Sentinel-2B） 新增水體 3.10 公頃（證據強度 B 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/31 複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/31 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "landslide",
+        "status": "support",
+        "text": "500 m 內有植生消失（光學判為崩塌）0.2 公頃"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 3 筆堰塞湖：2016 萬里溪（8.4 km）、2024 花蓮萬里溪（7.9 km）、2026 花蓮萬里溪（9.9 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/31、10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "spatial.landslide",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:41:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 3.10 公頃",
+        "sensor": "Sentinel-2B"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/4",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "water",
+        "clearPct": 100,
+        "waterPct": 86
+       }
+      ]
+     },
+     {
+      "id": "E4",
+      "firstSeen": "10/21 10:20",
+      "lastSeen": "10/21 10:20",
+      "lastSeenAt": "2026-10-21T02:20:00+00:00",
+      "isNew": false,
+      "lonLat": [
+       121.313026,
+       23.687854
+      ],
+      "distanceFromReferenceM": 2118,
+      "areaHectare": 0.55,
+      "source": "optical",
+      "sourceLabel": "光學（Landsat 9）",
+      "sources": [
+       "optical"
+      ],
+      "areaNote": "光學只算晴空像元，雲遮與陡坡處不計，面積可能偏低，視為下限",
+      "lakeFloorM": 697.0,
+      "polygonLonLat": [
+       [
+        121.31289771239237,
+        23.688214716118136
+       ],
+       [
+        121.31352653309125,
+        23.6879452215329
+       ],
+       [
+        121.31262821780713,
+        23.68713673777719
+       ],
+       [
+        121.31289771239237,
+        23.688214716118136
+       ]
+      ],
+      "detections": [
+       {
+        "passTime": "10/21 10:20",
+        "source": "optical",
+        "sourceLabel": "光學（Landsat 9）",
+        "areaHectare": 0.55,
+        "recheck": "not_persistent",
+        "recheckTime": "10/21 10:41",
+        "iou": 0.0,
+        "evidenceImage": null,
+        "reasons": [
+         "光學 Landsat 9（窗格晴空 50.5%）新增水體",
+         "新增水體 0.55 公頃，緊貼事件前河道",
+         "500 m 內未偵測到崩塌（光學看不到植生消失）",
+         "後續 1 期影像同位置水體 IoU 最高 0.00，未確認持續"
+        ]
+       }
+      ],
+      "priority": "low",
+      "priorityText": "低優先",
+      "action": "暫時觀察",
+      "confidence": "中",
+      "confidenceReasons": [
+       "複核結果明確（IoU 0.00）",
+       "證據只有衛星自動偵測，最高到「中」"
+      ],
+      "persistence": "failed",
+      "persistenceText": "複核未持續",
+      "grade": "C",
+      "scale": "小",
+      "summary": "E4 暫時觀察：空間條件符合，但下一期複核未持續（IoU 0.00），不建議派遣任務。",
+      "evidence": [
+       {
+        "kind": "optical_det",
+        "status": "support",
+        "text": "10/21 10:20 光學（Landsat 9） 新增水體 0.55 公頃（證據強度 C 級）"
+       },
+       {
+        "kind": "persistence",
+        "status": "against",
+        "text": "10/21 複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "support",
+        "text": "光學自動判讀 10/21 看得到水（未經人工確認，只會壓低、不會提高研判）"
+       },
+       {
+        "kind": "optical_auto",
+        "status": "against",
+        "text": "光學自動判讀 10/31、10/21 晴空、判為沒有水"
+       },
+       {
+        "kind": "river",
+        "status": "support",
+        "text": "緊貼事件前河道（DEM 填窪後 D8 河網）"
+       },
+       {
+        "kind": "history",
+        "status": "context",
+        "text": "10 km 內清冊另有 1 筆堰塞湖：2016 萬里溪（8.2 km）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 91 mm、24 小時 4 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
+       }
+      ],
+      "gaps": [
+       {
+        "kind": "optical",
+        "text": "光學影像：系統已自動偵測（10/31、10/21），尚待人工打開影像確認"
+       },
+       {
+        "kind": "exposure",
+        "text": "下游保全對象：尚未串接（可接 BigGIS、內政部道路與聚落圖層）"
+       },
+       {
+        "kind": "field",
+        "text": "人工查證：尚未進行"
+       }
+      ],
+      "conflicts": [],
+      "cautions": [],
+      "tasks": [
+       {
+        "label": "暫時觀察，不派遣任務",
+        "reason": "下一期複核同位置水體 IoU 0.00，未持續"
+       },
+       {
+        "label": "若同位置再次出現，重新列入待複核",
+        "reason": "跨期追蹤以 250 m 內為同一事件"
+       }
+      ],
+      "rulesFired": [
+       "persistence.failed",
+       "optical_auto.water",
+       "optical_auto.no_water",
+       "spatial.on_river",
+       "history.nearby",
+       "gap.optical",
+       "gap.exposure",
+       "priority.low.failed"
+      ],
+      "radar": [
+       {
+        "time": "2026-10-21T02:20:00+00:00",
+        "orbit": null,
+        "status": "hit",
+        "source": "optical",
+        "text": "首次出現 · 偵測到 0.55 公頃",
+        "sensor": "Landsat 9"
+       },
+       {
+        "time": "2026-10-22T21:51:00+00:00",
+        "orbit": "降軌 105",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       },
+       {
+        "time": "2026-10-26T10:00:00+00:00",
+        "orbit": "升軌 69",
+        "status": "other",
+        "source": "sar",
+        "text": "只有光學看到，雷達這期不拿來比對"
+       }
+      ],
+      "recheckOrbits": null,
+      "nextRecheck": "11/4",
+      "nextRecheckOrbit": "降軌 105",
+      "hindsight": [],
+      "optical": [
+       {
+        "time": "2026-10-31T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-28T10:41+08:00",
+        "sensor": "Sentinel-2A",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-26T10:41+08:00",
+        "sensor": "Sentinel-2C",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
+        "time": "2026-10-21T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
+       },
+       {
+        "time": "2026-10-21T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "water",
+        "clearPct": 99,
+        "waterPct": 80
+       }
+      ]
      }
     ]
    }
@@ -98304,7 +106067,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-02T10:34+08:00",
+   "checkedAt": "2026-11-03T23:06+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -98385,11 +106148,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-19T10:20+08:00",
      "sensor": "Landsat 9",
      "clearPct": 100
-    },
-    {
-     "time": "2026-09-18T10:41+08:00",
-     "sensor": "Sentinel-2A",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -98500,6 +106258,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2A",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-19",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
    }
   ],
   "opticalPasses": [],
@@ -98509,6 +106274,36 @@ window.EVENT_SCENARIOS = [
    "source": "自動監看"
   },
   "snapshots": [
+   {
+    "asOf": "2026-10-21T02:20:00+00:00",
+    "label": "10/21 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測",
+    "since": "觸發前約 5 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-21T02:40:00+00:00",
+    "label": "10/21 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/21 的候選",
+    "since": "觸發前約 5 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
    {
     "asOf": "2026-10-22T21:51:00+00:00",
     "label": "10/23 05:51",
@@ -98529,6 +106324,36 @@ window.EVENT_SCENARIOS = [
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測",
     "since": "距觸發約 9 小時",
+    "nextPass": "10/29",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-28T02:40:00+00:00",
+    "label": "10/28 10:40",
+    "what": "新一期光學（Sentinel-2A）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 49 小時",
+    "nextPass": "10/29",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-31T02:40:00+00:00",
+    "label": "10/31 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/28 的候選",
+    "since": "距觸發約 5 天",
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
     "counts": {
@@ -98568,7 +106393,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-02T10:34+08:00",
+   "checkedAt": "2026-11-03T23:06+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -98649,11 +106474,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-19T10:20+08:00",
      "sensor": "Landsat 9",
      "clearPct": 100
-    },
-    {
-     "time": "2026-09-18T10:41+08:00",
-     "sensor": "Sentinel-2A",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -98764,6 +106584,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2A",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-19",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
    }
   ],
   "opticalPasses": [],
@@ -98774,10 +106601,70 @@ window.EVENT_SCENARIOS = [
   },
   "snapshots": [
    {
+    "asOf": "2026-10-05T02:20:00+00:00",
+    "label": "10/5 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測",
+    "since": "觸發前約 6 天",
+    "nextPass": "10/11",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-08T02:41:00+00:00",
+    "label": "10/8 10:41",
+    "what": "新一期光學（Sentinel-2A）晴空影像偵測＋複核 10/5 的候選",
+    "since": "觸發前約 3 天",
+    "nextPass": "10/11",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
     "asOf": "2026-10-10T21:51:00+00:00",
     "label": "10/11 05:51",
     "what": "新一期 SAR 全幅偵測",
     "since": "觸發前約 10 小時",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-11T02:40:00+00:00",
+    "label": "10/11 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/8 的候選",
+    "since": "觸發前約 5 小時",
+    "nextPass": "10/14",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-13T02:20:00+00:00",
+    "label": "10/13 10:20",
+    "what": "新一期光學（Landsat 8）晴空影像偵測＋複核 10/11 的候選",
+    "since": "距觸發約 43 小時",
     "nextPass": "10/14",
     "nextPassOrbit": "升軌 69",
     "counts": {
@@ -98804,10 +106691,55 @@ window.EVENT_SCENARIOS = [
     "events": []
    },
    {
+    "asOf": "2026-10-16T02:40:00+00:00",
+    "label": "10/16 10:40",
+    "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/13 的候選",
+    "since": "距觸發約 5 天",
+    "nextPass": "10/17",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
     "asOf": "2026-10-16T21:51:00+00:00",
     "label": "10/17 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/11 的候選",
     "since": "距觸發約 6 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-21T02:20:00+00:00",
+    "label": "10/21 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測＋複核 10/16 的候選",
+    "since": "距觸發約 10 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-21T02:40:00+00:00",
+    "label": "10/21 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 10 天",
     "nextPass": "10/23",
     "nextPassOrbit": "降軌 105",
     "counts": {
@@ -98834,10 +106766,55 @@ window.EVENT_SCENARIOS = [
     "events": []
    },
    {
+    "asOf": "2026-10-26T02:40:00+00:00",
+    "label": "10/26 10:40",
+    "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 15 天",
+    "nextPass": "10/26",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
     "asOf": "2026-10-26T10:00:00+00:00",
     "label": "10/26 18:00",
     "what": "新一期 SAR 全幅偵測＋複核 10/14 的候選",
     "since": "距觸發約 15 天",
+    "nextPass": "10/29",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-28T02:40:00+00:00",
+    "label": "10/28 10:40",
+    "what": "新一期光學（Sentinel-2A）晴空影像偵測＋複核 10/26 的候選",
+    "since": "距觸發約 17 天",
+    "nextPass": "10/29",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-31T02:40:00+00:00",
+    "label": "10/31 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/28 的候選",
+    "since": "距觸發約 20 天",
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
     "counts": {
@@ -98869,7 +106846,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-02T10:34+08:00",
+   "checkedAt": "2026-11-03T23:06+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -98950,11 +106927,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-19T10:20+08:00",
      "sensor": "Landsat 9",
      "clearPct": 100
-    },
-    {
-     "time": "2026-09-18T10:41+08:00",
-     "sensor": "Sentinel-2A",
-     "clearPct": 40
     }
    ],
    "next": [
@@ -99065,6 +107037,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2A",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-19",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
    }
   ],
   "opticalPasses": [],
@@ -99074,6 +107053,21 @@ window.EVENT_SCENARIOS = [
    "source": "自動監看"
   },
   "snapshots": [
+   {
+    "asOf": "2026-10-21T02:20:00+00:00",
+    "label": "10/21 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測",
+    "since": "觸發前約 5 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
    {
     "asOf": "2026-10-22T21:51:00+00:00",
     "label": "10/23 05:51",
@@ -99125,7 +107119,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-02T10:34+08:00",
+   "checkedAt": "2026-11-03T23:06+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -99206,11 +107200,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-19T10:20+08:00",
      "sensor": "Landsat 9",
      "clearPct": 100
-    },
-    {
-     "time": "2026-09-18T10:41+08:00",
-     "sensor": "Sentinel-2A",
-     "clearPct": 90
     }
    ],
    "next": [
@@ -99321,6 +107310,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2A",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-19",
+    "time": "18:00",
+    "sensor": "Sentinel-1D",
+    "kind": "sar",
+    "orbit": "升軌 69"
    }
   ],
   "opticalPasses": [],
@@ -99330,6 +107326,36 @@ window.EVENT_SCENARIOS = [
    "source": "自動監看"
   },
   "snapshots": [
+   {
+    "asOf": "2026-10-21T02:20:00+00:00",
+    "label": "10/21 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測",
+    "since": "觸發前約 5 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-10-21T02:40:00+00:00",
+    "label": "10/21 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/21 的候選",
+    "since": "觸發前約 5 天",
+    "nextPass": "10/23",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
    {
     "asOf": "2026-10-22T21:51:00+00:00",
     "label": "10/23 05:51",
