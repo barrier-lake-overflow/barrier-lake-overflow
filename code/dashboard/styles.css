@@ -633,24 +633,50 @@ footer .wrap{
 .lg-key.c-low{border-color:var(--line-strong);color:var(--moss)}
 
 /* 回放時點 */
-.snap-rail{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:16px;
+/* 回放時點：一週一排的週曆，每一期是當天的小籤（duty.js renderRail） */
+.snap-rail{border:1px solid var(--line);background:var(--stone);margin-bottom:16px}
+.wk-head{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--line);min-width:0}
+.wk-nav{
+  font-size:calc(16px*var(--fs));line-height:1;width:28px;height:26px;color:var(--fog);
+  border:1px solid var(--line-strong);background:var(--abyss);
 }
+.wk-nav:hover:not(:disabled){color:var(--snow);border-color:var(--jade-dim)}
+.wk-nav:disabled{opacity:.35;cursor:default}
+.wk-range{font-family:var(--mono);font-size:calc(13px*var(--fs));color:var(--snow);min-width:7.5em;text-align:center}
+.wk-sel{
+  flex:1;min-width:0;margin-left:8px;font-size:calc(13px*var(--fs));color:var(--fog);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.wk-sel b{color:var(--snow);font-family:var(--mono);font-weight:500;margin-right:6px}
+.wk-off{color:var(--ochre)}
+.wk-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;background:var(--line)}
+.wk-day{background:var(--stone);padding:5px 6px 6px;display:flex;flex-direction:column;gap:4px;min-width:0;min-height:62px}
+.wk-day.is-empty{background:var(--abyss)}
+.wk-day.is-today{box-shadow:inset 0 2px 0 var(--jade-dim)}
+.wk-date{font-family:var(--mono);font-size:calc(12px*var(--fs));color:var(--moss)}
+.wk-date i{font-style:normal;margin-left:4px}
+.wk-date b{font-weight:500;color:var(--jade);margin-left:4px}
 .snap{
-  background:var(--stone);padding:10px 14px;text-align:left;
-  display:grid;gap:2px;transition:background .16s ease;
+  background:var(--abyss);padding:3px 6px;text-align:left;border:1px solid var(--line-strong);
+  display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px;transition:background .16s ease;min-width:0;
 }
+.snap.k-optical{border-style:dashed}
 .snap:hover{background:var(--raised)}
-.snap.is-on{background:var(--raised);box-shadow:inset 0 -2px 0 var(--jade)}
+.snap.is-on{background:var(--raised);border-color:var(--jade);box-shadow:inset 0 -2px 0 var(--jade)}
 .snap:focus-visible{outline:1px solid var(--jade);outline-offset:-1px}
-.snap-time{font-family:var(--wide);font-variation-settings:'wdth' 110,'wght' 700;font-size:calc(16px*var(--fs));color:var(--snow)}
-.snap-what{font-size:calc(13px*var(--fs));color:var(--fog);line-height:1.5}
-.snap-since{font-family:var(--mono);font-size:calc(12px*var(--fs));color:var(--moss)}
-.snap-counts{display:flex;gap:4px;margin-top:4px}
+.snap-time{font-family:var(--mono);font-weight:500;font-size:calc(12.5px*var(--fs));color:var(--snow)}
+.snap-src{font-size:calc(12px*var(--fs));color:var(--fog)}
+.snap-src .snap-latest{margin-left:4px}
+.snap-counts{display:flex;gap:2px}
 .snap-counts i{
-  font-style:normal;font-family:var(--mono);font-size:calc(12px*var(--fs));min-width:22px;text-align:center;
-  padding:0 5px;border:1px solid var(--line-strong);color:var(--moss);
+  font-style:normal;font-family:var(--mono);font-size:calc(11px*var(--fs));min-width:16px;text-align:center;
+  padding:0 3px;border:1px solid var(--line-strong);color:var(--moss);
+}
+@media (max-width:720px){
+  .wk-head{flex-wrap:wrap}
+  .wk-sel{flex-basis:100%;margin-left:0;white-space:normal}
+  .wk-day{padding:4px 3px}
+  .snap-src{display:none}
 }
 .snap-counts .c-high{border-color:var(--clay);color:var(--clay)}
 .snap-counts .c-medium{border-color:var(--ochre);color:var(--ochre)}
@@ -1135,7 +1161,7 @@ body.mm-open{overflow:hidden}
 .drill-banner .btn{margin-left:auto;border-color:var(--iris);color:var(--snow)}
 .drill-banner .btn:hover{background:rgba(var(--iris-rgb),.18)}
 .duty.is-drill .duty-title .label{color:var(--iris)}
-.duty.is-drill .snap.is-on{box-shadow:inset 0 -2px 0 var(--iris)}
+.duty.is-drill .snap.is-on{border-color:var(--iris);box-shadow:inset 0 -2px 0 var(--iris)}
 .scen-label{margin-right:2px}
 .scen-age{font-family:var(--mono);font-size:calc(12px*var(--fs));color:var(--moss);margin-left:8px}
 /* 資料過舊：一般畫面用琥珀色、語氣平和；網管檢視用陶紅色並寫出處理方式 */

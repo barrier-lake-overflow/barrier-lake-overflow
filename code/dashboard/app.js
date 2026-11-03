@@ -720,14 +720,15 @@ function fmtDateOnly(dateStr) {
 
 /* ── 8. 互動 ───────────────────────────── */
 
-function select(id) {
+/* scroll：手動點選時捲回頂端看詳情；篩選造成的自動改選不捲（不然一按篩選整頁就跳走） */
+function select(id, { scroll = true } = {}) {
   state.selected = id;
   syncMarkers();
   $$('#lakeList .lake').forEach(b => b.classList.toggle('is-active', b.dataset.id === id));
   renderDetail();
   const panel = $('.detail-panel');
   if (panel) panel.scrollTop = 0;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function setPreview(id) {
@@ -766,7 +767,7 @@ function refresh() {
   /* 若目前選取的紀錄被篩掉，改選第一筆可見紀錄 */
   const visible = visibleLakes();
   if (visible.length && !visible.some(l => l.id === state.selected)) {
-    select(visible[0].id);
+    select(visible[0].id, { scroll: false });
   }
 }
 

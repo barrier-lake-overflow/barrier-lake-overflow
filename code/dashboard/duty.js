@@ -39,7 +39,7 @@ const Duty = (() => {
   };
   const EVIDENCE_MARK = { support: '✓', against: '✗', context: '·' };
 
-  const st = { scenario: 0, snap: 0, eventId: null, lastLive: -1 };
+  const st = { scenario: 0, snap: 0, eventId: null, lastLive: -1, railView: null };
   let showBase = true;   // 小地圖是否顯示事件前光學底圖
   let showAerial = true; // 小地圖是否疊上該時點已可取得的最新航照
   let showFs8 = true;    // 福衛八號水面與堆積範圍：該時點已收到時預設開
@@ -163,20 +163,69 @@ const Duty = (() => {
 
   /* ── 回放時點 ── */
 
+  /* 週曆：一次看一週（週一到週日，台灣日期），每一期是當天的一個小籤；
+     籤上只寫時間、雷達／光學與高中低件數，完整說明放滑鼠提示，選中那一期的說明寫在週曆上方 */
+  const TW = 8 * 3600000;
+  const twDay = iso => Math.floor((new Date(iso).getTime() + TW) / DAY);   // 台灣日期的日序
+  const weekOf = day => day - (new Date(day * DAY).getUTCDay() + 6) % 7;    // 該週週一的日序
+  const dayText = day => { const d = new Date(day * DAY); return `${d.getUTCMonth() + 1}/${d.getUTCDate()}`; };
+  const WEEKDAYS = ['一', '二', '三', '四', '五', '六', '日'];
+  const snapKind = s => /光學/.test(s.what) ? 'optical' : 'sar';
+
   function renderRail() {
     const rail = $('#snapRail');
+    const snaps = scen().snapshots;
     const latest = !isDrill() ? lastSnap() : -1;
-    rail.innerHTML = scen().snapshots.map((s, i) => `
-      <button class="snap ${i === st.snap ? 'is-on' : ''}" type="button" role="tab"
-              aria-selected="${i === st.snap}" data-i="${i}">
-        <span class="snap-time">${esc(s.label)}${i === latest ? '<span class="snap-latest">最新</span>' : ''}</span>
-        <span class="snap-what">${esc(s.what)}</span>
-        <span class="snap-since">${esc(s.since)}${latest >= 0 ? ` · ${agoText(Date.now() - new Date(s.asOf))}` : ''}</span>
-        <span class="snap-counts" aria-label="高 ${s.counts.high}、中 ${s.counts.medium}、低 ${s.counts.low}">
-          <i class="c-high">${s.counts.high}</i><i class="c-medium">${s.counts.medium}</i><i class="c-low">${s.counts.low}</i>
-        </span>
-      </button>`).join('');
+    // 看哪一週：跟著選中的那一期，按左右箭頭時才另外翻週
+    if (!st.railView || st.railView.scen !== scen().id || st.railView.snap !== st.snap) {
+      st.railView = { scen: scen().id, snap: st.snap, week: weekOf(twDay(snap().asOf)) };
+    }
+    const week = st.railView.week;
+    const today = !isDrill() ? twDay(new Date().toISOString()) : null;
+    // 即時監看可以翻到本週（還沒有新一期也看得到今天在哪）
+    const firstWeek = weekOf(twDay(snaps[0].asOf));
+    const lastWeek = Math.max(weekOf(twDay(snaps[snaps.length - 1].asOf)), today != null ? weekOf(today) : -Infinity);
+
+    const chip = (s, i) => {
+      const k = snapKind(s);
+      const ago = latest >= 0 ? ` · ${agoText(Date.now() - new Date(s.asOf))}` : '';
+      return `
+        <button class="snap k-${k} ${i === st.snap ? 'is-on' : ''}" type="button" role="tab"
+                aria-selected="${i === st.snap}" data-i="${i}"
+                title="${esc(`${s.label} ${s.what}${s.since ? ` · ${s.since}` : ''}${ago}`)}">
+          <span class="snap-time">${esc(s.label.split(' ')[1] || s.label)}</span>
+          <span class="snap-src">${k === 'sar' ? '雷達' : '光學'}${i === latest ? '<span class="snap-latest">最新</span>' : ''}</span>
+          <span class="snap-counts" aria-label="高 ${s.counts.high}、中 ${s.counts.medium}、低 ${s.counts.low}">
+            <i class="c-high">${s.counts.high}</i><i class="c-medium">${s.counts.medium}</i><i class="c-low">${s.counts.low}</i>
+          </span>
+        </button>`;
+    };
+    const days = WEEKDAYS.map((w, d) => {
+      const day = week + d;
+      const items = snaps.map((s, i) => [s, i]).filter(([s]) => twDay(s.asOf) === day);
+      return `
+        <div class="wk-day ${day === today ? 'is-today' : ''} ${items.length ? '' : 'is-empty'}">
+          <span class="wk-date">${dayText(day)}<i>${w}</i>${day === today ? '<b>今天</b>' : ''}</span>
+          ${items.map(([s, i]) => chip(s, i)).join('')}
+        </div>`;
+    }).join('');
+
+    const s = snap();
+    const inWeek = weekOf(twDay(s.asOf)) === week;
+    rail.innerHTML = `
+      <div class="wk-head">
+        <button class="wk-nav" type="button" data-step="-1" aria-label="上一週" ${week <= firstWeek ? 'disabled' : ''}>‹</button>
+        <span class="wk-range">${dayText(week)}–${dayText(week + 6)}</span>
+        <button class="wk-nav" type="button" data-step="1" aria-label="下一週" ${week >= lastWeek ? 'disabled' : ''}>›</button>
+        <span class="wk-sel">${inWeek ? '' : '<span class="wk-off">選中的一期不在這週：</span>'}<b>${esc(s.label)}</b>
+          ${esc(s.what)}${s.since ? ` · ${esc(s.since)}` : ''}${latest >= 0 ? ` · ${agoText(Date.now() - new Date(s.asOf))}` : ''}</span>
+      </div>
+      <div class="wk-days">${days}</div>`;
     $$('.snap', rail).forEach(b => b.addEventListener('click', () => setSnap(+b.dataset.i)));
+    $$('.wk-nav', rail).forEach(b => b.addEventListener('click', () => {
+      st.railView.week = Math.max(firstWeek, Math.min(lastWeek, week + 7 * +b.dataset.step));
+      renderRail();
+    }));
 
     // 即時監看時看的不是最新一期：提醒，避免把舊結果當成現況
     const old = $('#oldSnap');
@@ -697,7 +746,7 @@ const Duty = (() => {
         <span>晴空 ${r.clearPct}%${r.waterPct != null ? `，其中 ${r.waterPct}% 判為水` : ''}</span></li>`).join('');
     return `
       <div class="ev-optical">
-        <span class="at">光學影像自動判讀 · 只會壓低上方研判，不會提高 ${helpQ('optical', '光學影像')}</span>
+        <span class="at">光學影像自動判讀（僅供參考） ${helpQ('optical', '光學影像')}</span>
         <ul>${rows}</ul>
         <p>範圍是最近一次偵測到的水體（雷達或光學）。山區陰影、薄雲、濕泥都可能誤判；要當作證據，請調閱影像確認後記在人工查證。</p>
       </div>`;
