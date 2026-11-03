@@ -1241,6 +1241,8 @@ body.mm-open{overflow:hidden}
 .ev-rules{list-style:none;margin-top:10px;display:grid;gap:4px}
 .ev-rules li{font-family:var(--mono);font-size:calc(13px*var(--fs));color:var(--moss);padding-left:14px;position:relative}
 .ev-rules li::before{content:"·";position:absolute;left:2px;color:var(--jade-dim)}
+/* 與清冊的命中規則同一種排法：類別＋說明是主角，代號縮小放後面 */
+.ev-rules.narr-rule-list li{font-family:inherit;color:var(--fog);line-height:1.7}
 .ev-folds .ev-inv{margin-top:14px}
 
 /* 新聞候選（值班佇列旁） */

@@ -38,6 +38,45 @@ const Duty = (() => {
     exclude: { text: '排除（非堰塞湖）', tag: '人工排除' },
   };
   const EVIDENCE_MARK = { support: '✓', against: '✗', context: '·' };
+  /* 命中規則：代號 → [類別, 白話說明]，比照清冊的「成因敘述與命中規則」；代號由 pipeline/events/triage.py 產生 */
+  const RULE_TEXT = {
+    'persistence.confirmed': ['持續性', '多期在同位置偵測到，或複核仍有水體'],
+    'persistence.pending': ['持續性', '只有一期偵測，待下一期複核'],
+    'persistence.failed': ['持續性', '下一期複核同位置沒有水體'],
+    'persistence.missing': ['持續性', '前期已確認，最新一期未見（只漏一期）'],
+    'persistence.lost': ['持續性', '前期已確認，同軌道連續兩期未見'],
+    'optical_auto.water': ['光學判讀', '事件出現後的晴空光學自動判讀看得到水'],
+    'optical_auto.no_water': ['光學判讀', '事件出現後的晴空光學自動判讀沒有水'],
+    'spatial.on_river': ['空間條件', '緊貼事件前河道'],
+    'spatial.landslide': ['空間條件', '500 m 內有崩塌訊號'],
+    'spatial.blockage': ['空間條件', '崩塌延伸到水體下游，符合堵塞型態'],
+    'trend.growing': ['面積變化', '面積擴大中'],
+    'trend.shrinking': ['面積變化', '面積縮小中'],
+    'history.nearby': ['歷史', '附近清冊另有堰塞湖紀錄'],
+    'external.optical': ['他單位成果', '他單位光學判釋（獨立證據）'],
+    'external.aerial': ['他單位成果', '他單位航拍（獨立證據）'],
+    'external.satellite': ['他單位成果', '他單位衛星判釋（獨立證據）'],
+    'external.field': ['他單位成果', '現地勘查（獨立證據）'],
+    'external.official': ['他單位成果', '官方發布資訊（列為背景）'],
+    'exposure.known': ['保全對象', '已有下游保全對象資料'],
+    'gap.rain': ['證據缺口', '形成期間雨量尚未取得'],
+    'gap.optical': ['證據缺口', '光學影像尚未經人工確認，也沒有他單位獨立證據'],
+    'gap.exposure': ['證據缺口', '下游保全對象尚未串接'],
+    'conflict.spatial_vs_persistence': ['證據衝突', '空間條件都符合，但複核未持續（以持續性為準）'],
+    'conflict.sar_missing_optical_wet': ['證據衝突', '雷達最新一期未見，但光學仍看得到水'],
+    'conflict.sar_vs_optical_dry': ['證據衝突', '光學多次晴空都判為沒有水'],
+    'caution.old_landslide': ['提醒', '疑似水體大半落在前一年的崩塌範圍內'],
+    'priority.high.confirmed': ['優先判定', '已確認持續且證據強度 A 級 → 高優先'],
+    'priority.high.corroborated': ['優先判定', '單期 B 級但有他單位獨立證據 → 高優先'],
+    'priority.high.lost': ['優先判定', '前期已確認、連續兩期未見，可能潰決 → 高優先'],
+    'priority.medium.pending': ['優先判定', '單期 B 級、待複核 → 中優先'],
+    'priority.medium.missing': ['優先判定', '最新一期未見，等下一期確認 → 中優先'],
+    'priority.medium.optical_wet': ['優先判定', '雷達未見但光學仍有水 → 中優先'],
+    'priority.low.failed': ['優先判定', '複核未持續 → 低優先'],
+    'priority.low.no_landslide': ['優先判定', '附近沒有崩塌訊號 → 低優先'],
+    'priority.capped.optical_dry': ['優先判定', '光學多次判為沒有水，最高只到中優先'],
+    'priority.capped.optical_only': ['優先判定', '只有光學看到，最高只到中優先'],
+  };
 
   const st = { scenario: 0, snap: 0, eventId: null, lastLive: -1, railView: null };
   let showBase = true;   // 小地圖是否顯示事件前光學底圖
@@ -854,7 +893,12 @@ const Duty = (() => {
         </details>
         <details class="ev-fold">
           <summary>命中規則（${ev.rulesFired.length} 條）</summary>
-          <ul class="ev-rules">${ev.rulesFired.map(r => `<li>${r}</li>`).join('')}</ul>
+          <span class="label" style="display:block;margin:10px 0 4px">系統排序時實際套用的規則（固定規則，不用 AI 判斷）</span>
+          <ul class="ev-rules narr-rule-list">${ev.rulesFired.map(r => {
+            const [section, text] = RULE_TEXT[r] || ['', ''];
+            return `<li>${section ? `<b>${section}</b>` : ''}${text ? `<span>${text}</span>` : ''}
+              <code title="規則代號，對應 code/pipeline/events/triage.py">${esc(r)}</code></li>`;
+          }).join('')}</ul>
         </details>
         ${sc.reference ? `<button class="btn ghost ev-inv" type="button" id="toInventory">對照清冊：${esc(sc.reference.name)}${isDrill() ? '（事後登載）' : ''}</button>` : ''}
       </div>`;
