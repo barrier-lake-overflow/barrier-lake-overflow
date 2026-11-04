@@ -93619,7 +93619,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-03T23:06+08:00",
+   "checkedAt": "2026-11-04T11:02+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:41+08:00",
@@ -93695,11 +93695,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-21T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 11
-    },
-    {
-     "time": "2026-09-19T10:20+08:00",
-     "sensor": "Landsat 9",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -93730,6 +93725,10 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-17",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-20",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -93817,6 +93816,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1D",
     "kind": "sar",
     "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-20",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -97851,7 +97857,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-03T23:06+08:00",
+   "checkedAt": "2026-11-04T11:02+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:41+08:00",
@@ -97927,11 +97933,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-21T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 10
-    },
-    {
-     "time": "2026-09-19T10:20+08:00",
-     "sensor": "Landsat 9",
-     "clearPct": 93
     }
    ],
    "next": [
@@ -97962,6 +97963,10 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-17",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-20",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -98049,6 +98054,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1D",
     "kind": "sar",
     "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-20",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -106067,7 +106079,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-03T23:06+08:00",
+   "checkedAt": "2026-11-04T11:02+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -106143,11 +106155,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-21T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 59
-    },
-    {
-     "time": "2026-09-19T10:20+08:00",
-     "sensor": "Landsat 9",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -106178,6 +106185,10 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-17",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-20",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -106265,6 +106276,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1D",
     "kind": "sar",
     "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-20",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -106393,7 +106411,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-03T23:06+08:00",
+   "checkedAt": "2026-11-04T11:02+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -106469,11 +106487,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-21T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 80
-    },
-    {
-     "time": "2026-09-19T10:20+08:00",
-     "sensor": "Landsat 9",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -106504,6 +106517,10 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-17",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-20",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -106591,6 +106608,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1D",
     "kind": "sar",
     "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-20",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -106846,7 +106870,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-03T23:06+08:00",
+   "checkedAt": "2026-11-04T11:02+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -106922,11 +106946,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-21T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 53
-    },
-    {
-     "time": "2026-09-19T10:20+08:00",
-     "sensor": "Landsat 9",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -106957,6 +106976,10 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-17",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-20",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -107044,6 +107067,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1D",
     "kind": "sar",
     "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-20",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -107119,7 +107149,7 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-03T23:06+08:00",
+   "checkedAt": "2026-11-04T11:02+08:00",
    "scenes": [
     {
      "time": "2026-10-31T10:40+08:00",
@@ -107195,11 +107225,6 @@ window.EVENT_SCENARIOS = [
      "time": "2026-09-21T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 0
-    },
-    {
-     "time": "2026-09-19T10:20+08:00",
-     "sensor": "Landsat 9",
-     "clearPct": 100
     }
    ],
    "next": [
@@ -107230,6 +107255,10 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-17",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-20",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -107317,6 +107346,13 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1D",
     "kind": "sar",
     "orbit": "升軌 69"
+   },
+   {
+    "date": "2026-11-20",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],

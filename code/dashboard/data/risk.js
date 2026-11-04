@@ -8,7 +8,7 @@
 
 window.LAKE_RISK = {
  "加走寮溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -21,7 +21,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "南投合歡溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 3.1,
   "rain_3d": 10.7,
   "rain_7d": 13.1,
@@ -34,7 +34,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "花蓮萬里溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.2,
   "rain_3d": 6.2,
   "rain_7d": 6.2,
@@ -47,7 +47,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "花蓮馬太鞍溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.2,
   "rain_3d": 6.2,
   "rain_7d": 6.2,
@@ -60,7 +60,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "雲林清水溪(草嶺)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.7,
   "rain_3d": 1.5,
   "rain_7d": 1.5,
@@ -73,7 +73,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "花蓮立霧溪(燕子口)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.4,
   "rain_3d": 2.8,
   "rain_7d": 6.2,
@@ -86,7 +86,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "花蓮樂樂溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.6,
   "rain_3d": 3.6,
   "rain_7d": 5.1,
@@ -99,7 +99,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "花蓮木瓜溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 3.3,
   "rain_3d": 9.2,
   "rain_7d": 11.1,
@@ -112,7 +112,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "新竹泰崗溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.8,
   "rain_3d": 3.4,
   "rain_7d": 5.5,
@@ -125,7 +125,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "屏東率芒溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.6,
   "rain_3d": 0.6,
   "rain_7d": 0.6,
@@ -138,7 +138,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "臺東新武呂溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 3.5,
   "rain_3d": 5.7,
   "rain_7d": 6.9,
@@ -151,7 +151,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "臺東大南溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.5,
   "rain_3d": 2.5,
   "rain_7d": 3.3,
@@ -164,7 +164,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "花蓮豐坪溪上游": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.6,
   "rain_3d": 2.4,
   "rain_7d": 3.6,
@@ -177,7 +177,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "桃園大曼溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 2.2,
@@ -190,7 +190,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "烏牛欄溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -203,7 +203,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "宜蘭石頭溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.7,
   "rain_3d": 2.3,
   "rain_7d": 4.8,
@@ -216,7 +216,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "東埔蚋溪小半天": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -229,7 +229,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "桃園霞雲溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 1.4,
@@ -242,7 +242,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "萬里溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 1.3,
   "rain_7d": 1.3,
@@ -255,7 +255,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "立霧溪錐麓": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.4,
   "rain_3d": 2.8,
   "rain_7d": 6.2,
@@ -268,7 +268,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "鹿野溪上游支流(松風溪)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.8,
   "rain_3d": 3.4,
   "rain_7d": 4.2,
@@ -281,7 +281,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "泰源南溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 1.7,
@@ -294,7 +294,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "塔次基里溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.2,
   "rain_3d": 5.7,
   "rain_7d": 8.8,
@@ -307,7 +307,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "烏來堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 2.4,
@@ -320,7 +320,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "郡大溪(丹大溪)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.4,
   "rain_3d": 4.2,
   "rain_7d": 4.2,
@@ -333,7 +333,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "哈伊拉羅溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.6,
   "rain_3d": 7.4,
   "rain_7d": 7.4,
@@ -346,7 +346,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "瓦黑爾溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.2,
   "rain_3d": 5.7,
   "rain_7d": 8.8,
@@ -359,7 +359,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "鹿野溪桃林": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.8,
   "rain_3d": 3.4,
   "rain_7d": 4.2,
@@ -372,7 +372,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "南清水溝溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -385,7 +385,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "鹿谷": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -398,7 +398,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "和社溪(頭坑野溪流出)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.2,
   "rain_3d": 3.2,
   "rain_7d": 3.2,
@@ -411,7 +411,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "布唐布那斯溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 2.2,
   "rain_3d": 4.0,
   "rain_7d": 4.0,
@@ -424,7 +424,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "眉溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.2,
   "rain_3d": 2.3,
   "rain_7d": 3.7,
@@ -437,7 +437,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "旗山溪一溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.3,
   "rain_3d": 2.1,
   "rain_7d": 2.1,
@@ -450,7 +450,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "新竹五峰": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.8,
   "rain_3d": 4.6,
   "rain_7d": 6.0,
@@ -463,7 +463,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "旗山溪小林村堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -476,7 +476,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "太麻里溪(包盛社)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.2,
   "rain_3d": 2.2,
   "rain_7d": 2.2,
@@ -489,7 +489,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "旗山溪上游堰塞湖(那瑪夏鄉)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -502,7 +502,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "士文溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.6,
   "rain_3d": 0.6,
   "rain_7d": 0.6,
@@ -515,7 +515,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "拉克斯溪(梅蘭村)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.6,
   "rain_3d": 3.5,
   "rain_7d": 3.5,
@@ -528,7 +528,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "陶賽溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 3.3,
   "rain_3d": 8.3,
   "rain_7d": 11.7,
@@ -541,7 +541,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "木瓜溪銅門": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.6,
   "rain_3d": 3.3,
   "rain_7d": 4.8,
@@ -554,7 +554,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "口社溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -567,7 +567,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "汝仍溪(牡丹村)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -580,7 +580,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "和社溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.8,
   "rain_3d": 2.1,
   "rain_7d": 2.1,
@@ -593,7 +593,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "油車寮": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.9,
   "rain_3d": 3.3,
   "rain_7d": 3.3,
@@ -606,7 +606,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "荖濃溪(梅山口)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.6,
   "rain_3d": 3.5,
   "rain_7d": 3.5,
@@ -619,7 +619,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "建山(高市DF064)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -632,7 +632,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "荖濃溪上游主流堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0.8,
   "rain_7d": 1.0,
@@ -645,7 +645,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "荖濃溪支流堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.6,
   "rain_3d": 3.5,
   "rain_7d": 3.5,
@@ -658,7 +658,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "荖濃溪支流濁口溪堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -671,7 +671,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "荖濃溪支流寶來溪上游堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 4.4,
   "rain_3d": 8.8,
   "rain_7d": 8.8,
@@ -684,7 +684,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "荖濃溪復興部落堰塞湖": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.6,
   "rain_3d": 3.5,
   "rain_7d": 3.5,
@@ -697,7 +697,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "後堀溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -710,7 +710,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "合流坪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -723,7 +723,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "塔羅灣溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.2,
   "rain_3d": 2.3,
   "rain_7d": 3.7,
@@ -736,7 +736,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "龍泉溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.7,
   "rain_3d": 0.7,
   "rain_7d": 2.2,
@@ -749,7 +749,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "大崙溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 3.5,
   "rain_3d": 5.7,
   "rain_7d": 6.9,
@@ -762,7 +762,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "知本溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.9,
   "rain_3d": 0.9,
   "rain_7d": 1.6,
@@ -775,7 +775,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "新武呂溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 3.5,
   "rain_3d": 5.7,
   "rain_7d": 6.9,
@@ -788,7 +788,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "草嶺": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0.7,
   "rain_3d": 1.5,
   "rain_7d": 1.5,
@@ -801,7 +801,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "九份二山(澀仔坑溪)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -814,7 +814,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "九份二山(韭菜湖溪)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -827,7 +827,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "石鼓盤溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 1.9,
   "rain_3d": 3.3,
   "rain_7d": 3.3,
@@ -840,7 +840,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "雪山坑溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 2.6,
   "rain_7d": 2.6,
@@ -853,7 +853,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "大安溪內灣段(斷層)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0.8,
   "rain_7d": 0.8,
@@ -866,7 +866,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "石盤溪(線浸)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -879,7 +879,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "旱溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -892,7 +892,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "沙漣河(斷層)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0.8,
   "rain_7d": 0.8,
@@ -905,7 +905,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "頭汴坑溪龍寶橋(斷層)": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0,
   "rain_7d": 0,
@@ -918,7 +918,7 @@ window.LAKE_RISK = {
   "alert": "STABLE"
  },
  "丹大溪": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "rain_1d": 0,
   "rain_3d": 0.1,
   "rain_7d": 0.1,
@@ -935,7 +935,7 @@ window.LAKE_RISK = {
 window.RISK_MODEL_META = {
  "model": "Logistic (package: make_risk_snapshot.py)",
  "mode": "GSMaP v8 雨量計校正（衛星估計，至 2026-11-02T16:00+00:00）",
- "updated": "2026-11-03T15:06:32.439296",
+ "updated": "2026-11-04T03:02:46.507345",
  "nPositives": 12,
  "rocAuc": null,
  "coefficients": {

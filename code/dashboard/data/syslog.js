@@ -2,6 +2,78 @@
 window.SYSTEM_LOG = {
  "history": [
   {
+   "startedAt": "2026-11-04T11:02+08:00",
+   "finishedAt": "2026-11-04T11:03+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 3.6
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 0.9
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 1.4
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 4.0
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 11.0
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 1.7
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.1
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "optical",
+     "status": "ok",
+     "seconds": 27.7
+    },
+    {
+     "name": "passes",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 0.8
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 0.4
+    }
+   ]
+  },
+  {
    "startedAt": "2026-11-03T23:06+08:00",
    "finishedAt": "2026-11-03T23:10+08:00",
    "minutes": 4.0,
@@ -1391,8 +1463,8 @@ window.SYSTEM_LOG = {
   }
  ],
  "lastRun": {
-  "startedAt": "2026-11-03T23:06+08:00",
-  "totalLines": 507,
+  "startedAt": "2026-11-04T11:02+08:00",
+  "totalLines": 505,
   "lines": [
    "  8/18 18:00  高 0／中 0／低 0  新一期 SAR 全幅偵測＋複核 8/6 的候選",
    "  8/30 18:00  高 0／中 0／低 0  新一期 SAR 全幅偵測＋複核 8/18 的候選",

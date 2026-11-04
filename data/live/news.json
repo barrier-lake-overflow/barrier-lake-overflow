@@ -2999,7 +2999,83 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-11-03T23:10+08:00"
+  },
+  "fcf345abf4": {
+   "title": "115年11月4日萬里溪堰塞湖現況資訊 - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA1NUJuUFhZWkRfSEpoQ0xfaW1nU3hfRGlwSi1iY2hUdlA0Ymhpb3JiVFFfQmkyUThHeUplT29fZUhVcjhpUUo5VnNpaXhiMjN0TVRXOGZB?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-11-04T10:46+08:00",
+   "summary": "115年11月4日萬里溪堰塞湖現況資訊 中央社 CNA",
+   "id": "fcf345abf4",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-04T11:03+08:00"
+  },
+  "6014acb7d0": {
+   "title": "老家逃過堰塞湖洪災 吳阿民捐贈1966年亞運金牌文物 - 信吉衛視+",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBKUzNBNE82VFVaVXlVSHNhM2hlU2p6cnZyUWdBaW1ETzV6NDJyVGNvNEFzVzM0cHlwNEF6TERJVktVN2J6NFhNMnRzbDdyWWFtc1M3NlJqX1FqSGs?oc=5",
+   "source": "信吉衛視+",
+   "time": "2026-10-28T12:56+08:00",
+   "summary": "老家逃過堰塞湖洪災 吳阿民捐贈1966年亞運金牌文物 信吉衛視+",
+   "id": "6014acb7d0",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-11-04T11:03+08:00"
+  },
+  "acb550d981": {
+   "title": "討論牆 | 強颱巴威近逼！萬里溪堰塞湖蓄水破6成 馬太鞍溪也有風險 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5xSFZiQkcxR28zbWJfcTFBZHhEbHFidHA5TUN5X1ZVdV9uMFlSRzNYZWQ1cXk5UmZpcDVXclpnN3Q2TXhPdG5tdmhzWmZnVjFicG9jeHJhb3lydmlUV3FNbURQck0?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-04T03:22+08:00",
+   "summary": "討論牆 | 強颱巴威近逼！萬里溪堰塞湖蓄水破6成 馬太鞍溪也有風險 LINE TODAY",
+   "id": "acb550d981",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    },
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-04T11:03+08:00"
   }
  },
- "updatedAt": "2026-11-03T23:10+08:00"
+ "updatedAt": "2026-11-04T11:03+08:00"
 }

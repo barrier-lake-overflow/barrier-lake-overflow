@@ -1,12 +1,12 @@
 /* 由 pipeline/daily/run.py 產生，請勿手動編輯。每日自動更新的執行狀態、監看窗格、待確認的新聞候選。 */
 window.DAILY_STATUS = {
- "startedAt": "2026-11-03T23:06+08:00",
- "finishedAt": "2026-11-03T23:10+08:00",
+ "startedAt": "2026-11-04T11:02+08:00",
+ "finishedAt": "2026-11-04T11:03+08:00",
  "steps": [
   {
    "name": "inventory",
    "status": "ok",
-   "seconds": 3.3,
+   "seconds": 3.6,
    "summary": {
     "rows": 75,
     "changed": false
@@ -15,7 +15,7 @@ window.DAILY_STATUS = {
   {
    "name": "alerts",
    "status": "ok",
-   "seconds": 2.9,
+   "seconds": 0.9,
    "summary": {
     "count": 0
    }
@@ -23,13 +23,13 @@ window.DAILY_STATUS = {
   {
    "name": "gee-login",
    "status": "ok",
-   "seconds": 1.1,
+   "seconds": 1.4,
    "summary": null
   },
   {
    "name": "rain",
    "status": "ok",
-   "seconds": 9.5,
+   "seconds": 4.0,
    "summary": {
     "苗縣LL002": {
      "h24": 0,
@@ -506,7 +506,7 @@ window.DAILY_STATUS = {
   {
    "name": "risk",
    "status": "ok",
-   "seconds": 12.1,
+   "seconds": 11.0,
    "summary": {
     "lakes": 71,
     "asOf": "2026-11-02T16:00+00:00"
@@ -524,7 +524,7 @@ window.DAILY_STATUS = {
   {
    "name": "sentinel",
    "status": "ok",
-   "seconds": 1.8,
+   "seconds": 1.7,
    "summary": {
     "windows": {
      "count": 6
@@ -534,7 +534,7 @@ window.DAILY_STATUS = {
   {
    "name": "passrain",
    "status": "ok",
-   "seconds": 9.1,
+   "seconds": 3.1,
    "summary": {}
   },
   {
@@ -549,7 +549,7 @@ window.DAILY_STATUS = {
   {
    "name": "optical",
    "status": "ok",
-   "seconds": 233.2,
+   "seconds": 27.7,
    "summary": {
     "windows": 6
    }
@@ -569,13 +569,13 @@ window.DAILY_STATUS = {
    "seconds": 0.8,
    "summary": {
     "new": 3,
-    "candidates": 90
+    "candidates": 92
    }
   },
   {
    "name": "build",
    "status": "ok",
-   "seconds": 0.2,
+   "seconds": 0.4,
    "summary": {
     "scenarios": 30
    }
@@ -599,6 +599,7 @@ window.DAILY_STATUS = {
     "升軌 69"
    ],
    "lastScene": "20261026",
+   "lastOptical": "20261031",
    "lastError": null
   },
   {
@@ -617,6 +618,7 @@ window.DAILY_STATUS = {
     "升軌 69"
    ],
    "lastScene": "20261026",
+   "lastOptical": "20261031",
    "lastError": null
   },
   {
@@ -635,6 +637,7 @@ window.DAILY_STATUS = {
     "升軌 69"
    ],
    "lastScene": "20261026",
+   "lastOptical": "20261031",
    "lastError": null
   },
   {
@@ -653,6 +656,7 @@ window.DAILY_STATUS = {
     "升軌 69"
    ],
    "lastScene": "20261026",
+   "lastOptical": "20261031",
    "lastError": null
   },
   {
@@ -672,6 +676,7 @@ window.DAILY_STATUS = {
     "升軌 69"
    ],
    "lastScene": "20261026",
+   "lastOptical": "20261021",
    "lastError": null
   },
   {
@@ -690,10 +695,66 @@ window.DAILY_STATUS = {
     "升軌 69"
    ],
    "lastScene": "20261026",
+   "lastOptical": "20261021",
    "lastError": null
   }
  ],
  "newsCandidates": [
+  {
+   "id": "fcf345abf4",
+   "time": "2026-11-04T10:46+08:00",
+   "title": "115年11月4日萬里溪堰塞湖現況資訊 - 中央社 CNA",
+   "source": "中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA1NUJuUFhZWkRfSEpoQ0xfaW1nU3hfRGlwSi1iY2hUdlA0Ymhpb3JiVFFfQmkyUThHeUplT29fZUhVcjhpUUo5VnNpaXhiMjN0TVRXOGZB?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "acb550d981",
+   "time": "2026-11-04T03:22+08:00",
+   "title": "討論牆 | 強颱巴威近逼！萬里溪堰塞湖蓄水破6成 馬太鞍溪也有風險 - LINE TODAY",
+   "source": "LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5xSFZiQkcxR28zbWJfcTFBZHhEbHFidHA5TUN5X1ZVdV9uMFlSRzNYZWQ1cXk5UmZpcDVXclpnN3Q2TXhPdG5tdmhzWmZnVjFicG9jeHJhb3lydmlUV3FNbURQck0?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    },
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
   {
    "id": "6432f54981",
    "time": "2026-11-02T17:22+08:00",
@@ -1378,58 +1439,8 @@ window.DAILY_STATUS = {
      "name": "萬里溪（2016）"
     }
    ]
-  },
-  {
-   "id": "a83fa29a05",
-   "time": "2026-10-23T13:15+08:00",
-   "title": "萬里溪堰塞湖警戒 預警撤離15戶 - Yahoo",
-   "source": "Yahoo",
-   "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxORGlHWF9xeG9JQVZkSWNlTl9VWXFVUjlPa3luVF9jSTZWdlVJMHNnMmVyVjYtanNPOGIxNmc3SkhaVHNjNm5kNkZsaHNucENTYm96SGRXclZPeFJ4dGZqaENjd0gwREw3VG1rbmF5WElhQ2hWR1Rkd1lzdGtfa1FsTjctLUpLM3VyTW9wUUVaSWxkSHNVODRGV0EzT1ZaU0Z4MU15d2tsTjcxQzZHUzZocjRwUlpfejFjeVZBc2czWmFCel9EQ20tb3RMRm0yZE8yV210RnQtR0VXUklZVGJBVUxDNmRUNnNfeXZOcjBUSjg?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "7de1b04554",
-   "time": "2026-10-23T13:15+08:00",
-   "title": "萬里溪堰塞湖警戒 預警撤離15戶 - Yahoo新聞",
-   "source": "Yahoo新聞",
-   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQZlVRSFpzSkwyd1A1Ny1tY2xINXJpMFJkZG1pOVp5M0Q1Q0xtQ0p2elZoZEV5Qnh4NWI2QUhCSlg3NjlSY3o4ZUpudXBqck9EQXQ2YjlHbzljTWc4SW5Ed2R3eUJpSmFkOHhLbGl0TFJPNFdCdlU1WGd4NUllTk10WHp2Z19nMldnTUxUdDlDNUt5OUdSMDAwcDdKZW5iZ2Y2eHlsX2JNOEEtMkozT3ZtWEZwTFlyUzN3cG1XNHd3UUpqdjZ2MEVQcTMxaFJLcmpyMkx6bXdIX2lJLWdjVGh6alMwbjZGcmN6ZFhXdUhkMTJJVm8?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
   }
  ],
- "newsCandidateCount": 90,
+ "newsCandidateCount": 92,
  "rainAsOf": "2026-11-02T16:00+00:00"
 };
