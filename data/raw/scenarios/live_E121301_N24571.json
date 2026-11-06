@@ -10,14 +10,14 @@
     24.57083
   ],
   "windowKm": 4.0,
-  "revisitDays": 4,
+  "revisitDays": 8,
   "orbitLabel": "降軌 105＋升軌 69",
   "orbits": [
     {
       "label": "降軌 105",
       "satellite": "S1C",
       "cycleDays": 12,
-      "last": "2026-10-23T05:51+08:00"
+      "last": "2026-11-04T05:51+08:00"
     },
     {
       "label": "降軌 105",
@@ -32,7 +32,7 @@
       "last": "2026-10-26T18:00+08:00"
     }
   ],
-  "sarCheckedAt": "2026-11-04T11:02+08:00",
+  "sarCheckedAt": "2026-11-06T11:28+08:00",
   "trigger": {
     "label": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
     "time": "2026-10-26T09:19+08:00",
@@ -48,7 +48,7 @@
     {
       "file": "final_live_E121301_N24571_D105_20261022.json",
       "time": "2026-10-22T21:51:00+00:00",
-      "recheckTime": null,
+      "recheckTime": "2026-11-03T21:51:00+00:00",
       "evidenceImage": null,
       "orbitLabel": "降軌 105",
       "rain": {
@@ -68,6 +68,18 @@
         "h72": 151.3,
         "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
       }
+    },
+    {
+      "file": "final_live_E121301_N24571_D105_20261103.json",
+      "time": "2026-11-03T21:51:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "降軌 105",
+      "rain": {
+        "h24": 0.1,
+        "h72": 0.8,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     }
   ],
   "basemap": {
@@ -76,8 +88,13 @@
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "optical": {
-    "checkedAt": "2026-11-04T11:02+08:00",
+    "checkedAt": "2026-11-06T11:30+08:00",
     "scenes": [
+      {
+        "time": "2026-11-05T10:40+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 100
+      },
       {
         "time": "2026-10-31T10:40+08:00",
         "sensor": "Sentinel-2B",
@@ -147,18 +164,9 @@
         "time": "2026-09-26T10:40+08:00",
         "sensor": "Sentinel-2C",
         "clearPct": 100
-      },
-      {
-        "time": "2026-09-21T10:40+08:00",
-        "sensor": "Sentinel-2B",
-        "clearPct": 59
       }
     ],
     "next": [
-      {
-        "date": "2026-11-05",
-        "sensor": "Sentinel-2C"
-      },
       {
         "date": "2026-11-06",
         "sensor": "Landsat 9"
@@ -186,6 +194,10 @@
       {
         "date": "2026-11-20",
         "sensor": "Sentinel-2B"
+      },
+      {
+        "date": "2026-11-22",
+        "sensor": "Landsat 9"
       }
     ],
     "checks": []
@@ -194,7 +206,7 @@
     "preStart": "2026-08-20",
     "preEnd": "2026-10-19",
     "preImages": 21,
-    "checkedAt": "2026-11-04T11:02+08:00",
+    "checkedAt": "2026-11-06T11:30+08:00",
     "scenes": [
       {
         "time": "2026-10-21T02:20+00:00",
@@ -223,6 +235,12 @@
       {
         "time": "2026-10-31T02:40+00:00",
         "sensor": "Sentinel-2B",
+        "clearPct": 100,
+        "usable": true
+      },
+      {
+        "time": "2026-11-05T02:40+00:00",
+        "sensor": "Sentinel-2C",
         "clearPct": 100,
         "usable": true
       }
@@ -261,12 +279,22 @@
       {
         "file": "final_opt_live_E121301_N24571_20261031_S2B.json",
         "time": "2026-10-31T02:40+00:00",
-        "recheckTime": null,
+        "recheckTime": "2026-11-05T02:40+00:00",
         "evidenceImage": null,
         "source": "optical",
         "sensor": "Sentinel-2B",
         "clearPct": 100,
         "orbitLabel": "光學 Sentinel-2B 20261031"
+      },
+      {
+        "file": "final_opt_live_E121301_N24571_20261105_S2C.json",
+        "time": "2026-11-05T02:40+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2C",
+        "clearPct": 100,
+        "orbitLabel": "光學 Sentinel-2C 20261105"
       }
     ]
   }

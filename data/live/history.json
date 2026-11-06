@@ -1,5 +1,77 @@
 [
  {
+  "startedAt": "2026-11-06T11:28+08:00",
+  "finishedAt": "2026-11-06T11:32+08:00",
+  "minutes": 4.0,
+  "steps": [
+   {
+    "name": "inventory",
+    "status": "ok",
+    "seconds": 6.0
+   },
+   {
+    "name": "alerts",
+    "status": "ok",
+    "seconds": 1.2
+   },
+   {
+    "name": "gee-login",
+    "status": "ok",
+    "seconds": 1.0
+   },
+   {
+    "name": "rain",
+    "status": "ok",
+    "seconds": 4.1
+   },
+   {
+    "name": "risk",
+    "status": "ok",
+    "seconds": 6.4
+   },
+   {
+    "name": "watchlist",
+    "status": "ok",
+    "seconds": 0.0
+   },
+   {
+    "name": "sentinel",
+    "status": "ok",
+    "seconds": 95.5
+   },
+   {
+    "name": "passrain",
+    "status": "ok",
+    "seconds": 6.3
+   },
+   {
+    "name": "basemap",
+    "status": "ok",
+    "seconds": 0.0
+   },
+   {
+    "name": "optical",
+    "status": "ok",
+    "seconds": 138.4
+   },
+   {
+    "name": "passes",
+    "status": "ok",
+    "seconds": 0.0
+   },
+   {
+    "name": "news",
+    "status": "ok",
+    "seconds": 0.7
+   },
+   {
+    "name": "build",
+    "status": "ok",
+    "seconds": 0.4
+   }
+  ]
+ },
+ {
   "startedAt": "2026-11-04T11:02+08:00",
   "finishedAt": "2026-11-04T11:03+08:00",
   "minutes": 1.0,
