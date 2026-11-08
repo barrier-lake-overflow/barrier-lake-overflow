@@ -29,10 +29,10 @@
       "label": "升軌 69",
       "satellite": "S1D",
       "cycleDays": 12,
-      "last": "2026-10-26T18:00+08:00"
+      "last": "2026-11-07T18:00+08:00"
     }
   ],
-  "sarCheckedAt": "2026-11-06T11:28+08:00",
+  "sarCheckedAt": "2026-11-08T10:31+08:00",
   "trigger": {
     "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
     "time": "2026-10-11T15:42+08:00",
@@ -96,7 +96,7 @@
     {
       "file": "final_live_E121298_N23701_A69_20261026.json",
       "time": "2026-10-26T10:00:00+00:00",
-      "recheckTime": null,
+      "recheckTime": "2026-11-07T10:00:00+00:00",
       "evidenceImage": null,
       "orbitLabel": "升軌 69",
       "rain": {
@@ -116,6 +116,18 @@
         "h72": 1.0,
         "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
       }
+    },
+    {
+      "file": "final_live_E121298_N23701_A69_20261107.json",
+      "time": "2026-11-07T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "升軌 69",
+      "rain": {
+        "h24": 0,
+        "h72": 0,
+        "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
+      }
     }
   ],
   "basemap": {
@@ -124,7 +136,7 @@
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "optical": {
-    "checkedAt": "2026-11-06T11:30+08:00",
+    "checkedAt": "2026-11-08T10:33+08:00",
     "scenes": [
       {
         "time": "2026-11-05T10:40+08:00",
@@ -203,14 +215,6 @@
       }
     ],
     "next": [
-      {
-        "date": "2026-11-06",
-        "sensor": "Landsat 9"
-      },
-      {
-        "date": "2026-11-07",
-        "sensor": "Sentinel-2A"
-      },
       {
         "date": "2026-11-10",
         "sensor": "Sentinel-2B"
@@ -570,7 +574,7 @@
     "preStart": "2026-08-05",
     "preEnd": "2026-10-04",
     "preImages": 27,
-    "checkedAt": "2026-11-06T11:30+08:00",
+    "checkedAt": "2026-11-08T10:33+08:00",
     "scenes": [
       {
         "time": "2026-10-05T02:20+00:00",

@@ -13,11 +13,11 @@
     "bl075": {
      "source": "inventory",
      "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
-     "lastTriggeredAt": "2026-11-06T11:28+08:00"
+     "lastTriggeredAt": "2026-11-08T10:31+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-11-06T11:28+08:00",
+   "lastTriggeredAt": "2026-11-08T10:31+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -61,17 +61,21 @@
       {
        "day": "20261026",
        "timeUTC": "10:00"
+      },
+      {
+       "day": "20261107",
+       "timeUTC": "10:00"
       }
      ],
      "preStart": "2026-08-05",
      "preEnd": "2026-10-04",
      "revisitDays": 12,
      "satellites": {
-      "D": "2026-10-26T18:00+08:00"
+      "D": "2026-11-07T18:00+08:00"
      }
     }
    },
-   "sarCheckedAt": "2026-11-06T11:28+08:00"
+   "sarCheckedAt": "2026-11-08T10:31+08:00"
   },
   "live_E121298_N23701": {
    "id": "live_E121298_N23701",
@@ -86,11 +90,11 @@
     "bl071": {
      "source": "inventory",
      "label": "清冊監測中：花蓮馬太鞍溪（2025/7/21）",
-     "lastTriggeredAt": "2026-11-06T11:28+08:00"
+     "lastTriggeredAt": "2026-11-08T10:31+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-11-06T11:28+08:00",
+   "lastTriggeredAt": "2026-11-08T10:31+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -134,17 +138,21 @@
       {
        "day": "20261026",
        "timeUTC": "10:00"
+      },
+      {
+       "day": "20261107",
+       "timeUTC": "10:00"
       }
      ],
      "preStart": "2026-08-05",
      "preEnd": "2026-10-04",
      "revisitDays": 12,
      "satellites": {
-      "D": "2026-10-26T18:00+08:00"
+      "D": "2026-11-07T18:00+08:00"
      }
     }
    },
-   "sarCheckedAt": "2026-11-06T11:28+08:00"
+   "sarCheckedAt": "2026-11-08T10:31+08:00"
   },
   "live_E121345_N24564": {
    "id": "live_E121345_N24564",
@@ -159,11 +167,11 @@
     "bl068": {
      "source": "inventory",
      "label": "清冊監測中：新竹泰崗溪（2024/11/2）",
-     "lastTriggeredAt": "2026-11-06T11:28+08:00"
+     "lastTriggeredAt": "2026-11-08T10:31+08:00"
     }
    },
    "active": true,
-   "lastTriggeredAt": "2026-11-06T11:28+08:00",
+   "lastTriggeredAt": "2026-11-08T10:31+08:00",
    "orbits": {
     "D105": {
      "pass": "DESCENDING",
@@ -207,17 +215,21 @@
       {
        "day": "20261026",
        "timeUTC": "10:00"
+      },
+      {
+       "day": "20261107",
+       "timeUTC": "10:00"
       }
      ],
      "preStart": "2026-08-05",
      "preEnd": "2026-10-04",
      "revisitDays": 12,
      "satellites": {
-      "D": "2026-10-26T18:00+08:00"
+      "D": "2026-11-07T18:00+08:00"
      }
     }
    },
-   "sarCheckedAt": "2026-11-06T11:28+08:00"
+   "sarCheckedAt": "2026-11-08T10:31+08:00"
   },
   "live_E121301_N24571": {
    "id": "live_E121301_N24571",
@@ -267,17 +279,22 @@
       {
        "day": "20261026",
        "timeUTC": "10:00"
+      },
+      {
+       "day": "20261107",
+       "timeUTC": "10:00"
       }
      ],
      "preStart": "2026-08-20",
      "preEnd": "2026-10-19",
      "satellites": {
-      "D": "2026-10-26T18:00+08:00"
-     }
+      "D": "2026-11-07T18:00+08:00"
+     },
+     "revisitDays": 12
     }
    },
    "lastTriggeredAt": "2026-10-26T09:19+08:00",
-   "sarCheckedAt": "2026-11-06T11:28+08:00"
+   "sarCheckedAt": "2026-11-08T10:31+08:00"
   },
   "live_E121521_N24530": {
    "id": "live_E121521_N24530",
@@ -332,17 +349,22 @@
       {
        "day": "20261026",
        "timeUTC": "10:00"
+      },
+      {
+       "day": "20261107",
+       "timeUTC": "10:00"
       }
      ],
      "preStart": "2026-08-20",
      "preEnd": "2026-10-19",
      "satellites": {
-      "D": "2026-10-26T18:00+08:00"
-     }
+      "D": "2026-11-07T18:00+08:00"
+     },
+     "revisitDays": 12
     }
    },
    "lastTriggeredAt": "2026-10-26T09:19+08:00",
-   "sarCheckedAt": "2026-11-06T11:28+08:00"
+   "sarCheckedAt": "2026-11-08T10:31+08:00"
   },
   "live_E121538_N24489": {
    "id": "live_E121538_N24489",
@@ -392,19 +414,24 @@
       {
        "day": "20261026",
        "timeUTC": "10:00"
+      },
+      {
+       "day": "20261107",
+       "timeUTC": "10:00"
       }
      ],
      "preStart": "2026-08-20",
      "preEnd": "2026-10-19",
      "satellites": {
-      "D": "2026-10-26T18:00+08:00"
-     }
+      "D": "2026-11-07T18:00+08:00"
+     },
+     "revisitDays": 12
     }
    },
    "lastTriggeredAt": "2026-10-26T09:19+08:00",
-   "sarCheckedAt": "2026-11-06T11:28+08:00"
+   "sarCheckedAt": "2026-11-08T10:31+08:00"
   }
  },
- "updatedAt": "2026-11-06T11:28+08:00",
+ "updatedAt": "2026-11-08T10:31+08:00",
  "alerts": []
 }
