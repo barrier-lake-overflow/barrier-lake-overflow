@@ -3757,7 +3757,558 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-11-08T10:33+08:00"
+  },
+  "61a72499c3": {
+   "title": "115年11月7日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBtckVrSG15TmF1MFVLekJNb2k1T1E0bjJqSTllaUZZbElKUUdpN3NrcXI0S3lGNGpPb3YxNFVSbGtRYmZ2MWRNcWZoUVJKRGc?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-11-07T16:00+08:00",
+   "summary": "115年11月7日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "61a72499c3",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "74ea22a57a": {
+   "title": "無人船探測 花蓮堰塞湖少65萬噸 - 人間福報電子報",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5xTzU2Mk9fRHVOXzI3YkxDWGh4QkhsZVZkakJ4X1VpcUpoZm9fcUEta1dJT254SzRYVzJnQ09nQWQxZlctaG1jcHF0WnppZjJYMk84S1Jyd2JiZUp1SzRyRXQ5X3JSMU0?oc=5",
+   "source": "人間福報電子報",
+   "time": "2026-11-09T23:42+08:00",
+   "summary": "無人船探測 花蓮堰塞湖少65萬噸 人間福報電子報",
+   "id": "74ea22a57a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "b9425c4517": {
+   "title": "聲納無人船首度深入萬里溪堰塞湖 蓄水量少了65萬噸 - UDN",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9tN3FzX0NLRkNWMjBiYkF5NmgyV0VFQldGVHdVSkdZLWtnaVhuTzRjSU9yZlZza2d3WFFZQTRuMnJOU1JwbTFCdXNWT2ViS29MRENQVTUwbF9XcHNkNGRGRUk3ZUdnN2E0ZHUtS0pQWHhUZ9IBVkFVX3lxTFBKQ1lVaVh3WS1sYUlZakgxcFJ5TlpmelFnYkFlYlF4d0dvNnk3NUhiVkt1NWtrU3lmUHpZeVFqNVAxb0EwcE53OXVNOTkwZFJETjBSS1Jn?oc=5",
+   "source": "UDN",
+   "time": "2026-11-08T12:30+08:00",
+   "summary": "聲納無人船首度深入萬里溪堰塞湖 蓄水量少了65萬噸 UDN",
+   "id": "b9425c4517",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "f40d782a6a": {
+   "title": "無人船聲納測萬里溪堰塞湖地形 蓄水量下修至452萬噸 - Yahoo新聞",
+   "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxQeG9oZHJEY2E0Q2xSR3B5NHprcm1MVGhQaVloeTJid0J5UWxPd0NBZ2UxOWxIcXI0MlFQYWZERkxfc0FCWFNHU0l4RE1DenRodjJyT2JFZG1VWWtXOElBNkd3TnhPZDUxQVJwYjVIdjZWbVpiQlpWY011OTRaLXN4WElSNlhUUHJJaDhUaHZVbi1tenlrT2h1SjJmZnBrVG5QS1p1UjdEVjA3aFhneS1TTVJqd0dWbzlYRTJYYXJJMEpXN3lSOVJDN2xWcDUwY09PMldvZFE1VVh2ZUtMaTJLTjg3ZlF1ZENOMEVuREVMUTVZNWFKR2VRY09JUldaRng1bG9aMzhSaGM3cmhxSkNOaUp2RG8yM1BfNy1GT3JKNnVYdFNwamNCZnVQOFZ6NWlQQ0tELVI1SlJ3RlJ6bEhzbXhERktfdUlPU3NnX3Y4OXhfM3hIUlgwSlFVbVRCMHdX?oc=5",
+   "source": "Yahoo新聞",
+   "time": "2026-11-09T17:32+08:00",
+   "summary": "無人船聲納測萬里溪堰塞湖地形 蓄水量下修至452萬噸 Yahoo新聞",
+   "id": "f40d782a6a",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "545512f69c": {
+   "title": "萬里溪堰塞湖監測再升級 無人船聲納揭水下盲區 | 自由電子報 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5rZGxwRlpHSnhSXzdaQTk5ZURpR2ZOcWF0RlQyQk83UlNaOGZIeXRGbnNQQWc5bXpkdDB3azQ2dGg0R190M1F3aXdBSFduWms4RnozRkln?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-09T05:30+08:00",
+   "summary": "萬里溪堰塞湖監測再升級 無人船聲納揭水下盲區 | 自由電子報 LINE TODAY",
+   "id": "545512f69c",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "9155e0a8d0": {
+   "title": "萬里溪堰塞湖監測再升級！ 無人船聲納首度揭開水下盲區- 生活 - 自由時報",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5wNnRHV1pjbWl5WlVlYXM1SkU2X3lGVDk3T19EdzNISlZYbHREcW9MeElDeG1KaGRtU0lvUjFNN1FDUEJWdFNBYW81R1ktTjJEVkViT3I3T0xTSU8tLVUyVzVoOV8?oc=5",
+   "source": "自由時報",
+   "time": "2026-11-08T12:21+08:00",
+   "summary": "萬里溪堰塞湖監測再升級！ 無人船聲納首度揭開水下盲區- 生活 自由時報",
+   "id": "9155e0a8d0",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "0b11d6dd07": {
+   "title": "特搜\"搏命吊掛\"挺進堰塞湖! 擋土牆\"砸爆民宅\"瀰漫瓦斯!│中視新聞 20261108 - 中視全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMikgNBVV95cUxPQlB0OUJHeG9GYXl4MTYwZlFwNXR0emtFSEt3aXZPNjZpejVyT3JPSG11QTJIUy1YcDlmOTdGd1pZZHBOczRhVUNadlhTQzE5bFA3SFMyNjhjWDBvZE5hdHZtRGxHQ05CS1ZSRXpzWFhsaV9IanA5Yy1FXzFIc0wwUmRBXzhzZkhLdS13eG5ZaWFzdllKU19OV1JCNjNyUThERW5fYmdYeEFjODZITUh5TTRuZlNTSWxRaVJrMjVNTGlvOVRYTjk0X0oyS2VfMVRjS0hrWEx4dGVKMXhZa0dXQmJKejhsaG9kdjh3c1RzZXZlckhOd2N2VFdGdTdzUVR4RTJFdGVKRHlNRm9aSW5IUVVSZC1ydVlWaVByOGNJNEdIT3NXMFA4NC1HSmMwalJ2cHdJa2pQM0xqNDdBMk5RTDA2M3pMZlVrcmktVzNxY2xucnhqWXEycnZydy13bU4tVFZ0UmFDZTdjT0tZTWxwZUtwNHZyVUk4a2VpU2hzbFo3WkdNT1lFSmRHbDgyQ2gzNWc?oc=5",
+   "source": "中視全球資訊網",
+   "time": "2026-11-08T21:04+08:00",
+   "summary": "特搜\"搏命吊掛\"挺進堰塞湖! 擋土牆\"砸爆民宅\"瀰漫瓦斯!│中視新聞 20261108 中視全球資訊網",
+   "id": "0b11d6dd07",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "1549fdb765": {
+   "title": "全台首次！無人船探萬里溪堰塞湖 聲波探測水下地形防洪 - 中時新聞網",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA0SDZjZ3dQYUJfejBrSjh1dFRZemlQVHpUbFVfdTJRaVZTUWV4eUp1UW12dzh3eDV3TnVqSWNSLUxhWFhIdVpjUUFXamRJcUh2WEhFTms5Qmw5S0F2aGx1QmRNVnFDQTBTNXRzYnF3?oc=5",
+   "source": "中時新聞網",
+   "time": "2026-11-08T11:01+08:00",
+   "summary": "全台首次！無人船探萬里溪堰塞湖 聲波探測水下地形防洪 中時新聞網",
+   "id": "1549fdb765",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "b15c66864f": {
+   "title": "115年11月9日萬里溪堰塞湖現況資訊 - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1mSDRERWRJODhtRC1jV09oNEQyZEdyekt0ek13Nlp1NlF0dkdFSUpxcDVVb1BWZXY5VjlHSGswVTY0VUYyWFlYRklIdGtOVjE5cGNCN25B?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-11-09T10:42+08:00",
+   "summary": "115年11月9日萬里溪堰塞湖現況資訊 中央社 CNA",
+   "id": "b15c66864f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "ec6eb9b3d8": {
+   "title": "無人船聲納測萬里溪堰塞湖地形 蓄水量下修至452萬噸 - 公視新聞",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE45TF9HbnFha0oxRDRRZXBTYnNic3AzZEZGZTlUOXluTVA0ZFdUdER4dEROSGhYS2VhU2xBODltUEJfbThVbmJ0bi1PdXdFb00?oc=5",
+   "source": "公視新聞",
+   "time": "2026-11-09T12:35+08:00",
+   "summary": "無人船聲納測萬里溪堰塞湖地形 蓄水量下修至452萬噸 公視新聞",
+   "id": "ec6eb9b3d8",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "301e802ccc": {
+   "title": "萬里溪堰塞湖監測再升級 無人船聲納揭水下盲區 - 自由時報",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4tQ0FkSkRYRFM2cHp4a3JxRGMxcmVCckVsQ2VjaG90clNCYUtCYjFUOEN5NVRvQktzRk9SdDhBRUh5bXhNMmhEWTk0U2lsRWhfcTV6akoybEc0UGvSAWBBVV95cUxNcUxmUVdQZ18yX0hsWWhHRHJ1NU0zR1VOTVJTcWJqb1hPTTlEVE9RR1V3cFF3bXc3Sy02S2FjVm03X3VEZnV4aklRX3plLUlPN0JrYUZRYkZKbnU4aUhxTno?oc=5",
+   "source": "自由時報",
+   "time": "2026-11-09T05:30+08:00",
+   "summary": "萬里溪堰塞湖監測再升級 無人船聲納揭水下盲區 自由時報",
+   "id": "301e802ccc",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "db8e5610e2": {
+   "title": "萬里溪堰塞湖監測再升級！全台首次無人船聲納 揭水下盲區 - Yahoo新聞",
+   "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxQUXh5X1VrMW5HdHBVcWtwZnpVU3E0Wjh5V2ZPXzR2SWRZeWdIY0Y2SzVacDhKTzhwTVA3U3hqb3RtdzUzZWxVdUJrRzRhaTdST0JLWEFyWi1ESVY2ZV92Y0UzdzUtWVRvdUpZOEpvTzNvT1BObks2VWtSWTFSdDMyQUxPdmlvc0JOd2o3Sl9YbmhyZTB0WEZNR3c3Q09UNC1KR3BBdFFWWWt4cWR4X2dtU2V4bHRlNnJnaUwxa1NXb1NjTFZPT0Z5SnI5eWVZaWxwVjNrY01ZbU1fTEFxRFI3T0k3V21NYmRYVi1Pb2N1cXRhNEJjbUo0QWlkeDJUWnJwZ0RjbU5INkhWcTZPc0NiQnJ6ZzVVeERreXRhc1F0SmE2SE96OW0yOFN4a1c1bUZRSk9BMnlURE5YcmRMcVMzMGFfUi1ZT3N5ZVJBV2JYX0lLVFp4SHhnSDNzVm5md0E5R2o1QzdQdWZMRWZyYXEwQm84OGl0ZGRncl96aXdIbGlEdw?oc=5",
+   "source": "Yahoo新聞",
+   "time": "2026-11-08T14:42+08:00",
+   "summary": "萬里溪堰塞湖監測再升級！全台首次無人船聲納 揭水下盲區 Yahoo新聞",
+   "id": "db8e5610e2",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "eb6ce57e65": {
+   "title": "無人船聲納首度探測水下地形萬里溪堰塞湖蓄水量下修| 地方 - 中央社 CNA",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9UaS16ZW1NUF90MndHWTE3X2JzemVSN3FVcDM5Wi1uY09aMzZqclNFc2ZNamZjYXV6elVlZ1ozS013Zk5hT05ndDZqX19LZk9TWG5EV29IMU9Camlubkhj?oc=5",
+   "source": "中央社 CNA",
+   "time": "2026-11-08T11:54+08:00",
+   "summary": "無人船聲納首度探測水下地形萬里溪堰塞湖蓄水量下修| 地方 中央社 CNA",
+   "id": "eb6ce57e65",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "3009e82bb7": {
+   "title": "115年11月6日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwVXZZSnBUX0VnYnJxeXVqWjdsQXptMU1JV053amRHXy1UNERxb1RNOF9LeDQxVDdEWXpWZUl5SkV0UHZzVjA3THdXTy0tVG4temc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-06T11:25+08:00",
+   "summary": "115年11月6日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "3009e82bb7",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "cdc3702ac6": {
+   "title": "115年11月7日 萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1NaTdUTHJodHNlT0xoTUYwYlpOQkhRRmJqUU1CZDZrTlJJaUNjclBXdl8wRHFYY1I3REYwQzFiWnhrX2xmbVFOUGFYYzNXNFlQclE?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-07T09:34+08:00",
+   "summary": "115年11月7日 萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "cdc3702ac6",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "5d14bf7b3d": {
+   "title": "115年11月9日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1la0poVWFoYVRVVzA0al9uWmNXMWZ1dy1jaEdCWjU2dk9EdndqT0E2Nzl1Z3pDcVBhTXlUVDVveW1Ua2thWDRrai1CUk5mOVNVQ2c?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-09T10:42+08:00",
+   "summary": "115年11月9日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "5d14bf7b3d",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "0ffd47b949": {
+   "title": "萬里溪堰塞湖 空降無人船摸底 - 中國時報- 翻爆",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNUczLVotVHZONFN5MW5oeloyUkJKc213UDJjLVRTTVQzekxZWTRSWURuOTRDV1JEUzVSQk5zVzlIeDRiNG5lOVdCZE1uck8zZkZabjNnTkVKQnoxZzdHTjhGTVF1SG9OVUZ6dnl5cHk1NXItZFZGYWZNc1pfUl9QRlR5Zm1HNE5U?oc=5",
+   "source": "中國時報- 翻爆",
+   "time": "2026-11-10T07:27+08:00",
+   "summary": "萬里溪堰塞湖 空降無人船摸底 中國時報- 翻爆",
+   "id": "0ffd47b949",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "9e6148ed6b": {
+   "title": "《社會》全台首次！無人船探萬里溪堰塞湖 聲波探測水下地形防洪 - 富聯網",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOajR3anBnM3FwTkhTNDJvSGhGc19TTEVOVjlsZ2pOa0RtY0syYjR4OXlJMXo3bjNuME1LNm9jN1NUN1RmSnRoQ04wQjdISE1Dczg1YUNhVnNyanFzbkVrY0d0ZW9fRGlzY29yZkNOeFZCSS1YcGtvZ01jTmk3S2JlMnNmNWQ0T1hm?oc=5",
+   "source": "富聯網",
+   "time": "2026-11-08T11:10+08:00",
+   "summary": "《社會》全台首次！無人船探萬里溪堰塞湖 聲波探測水下地形防洪 富聯網",
+   "id": "9e6148ed6b",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "6fcc2f7bc5": {
+   "title": "萬里溪堰塞湖監測再升級 無人船聲納首揭水下盲區 蓄水量精準修正452萬噸 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8tR2FrTWVkdlpjbkY2UV92SzY0QnRZMDhIeWI0dmVTQ29Bb1BLR1NXczA5Q3duVXJoSXIwdTNRMDdDT1l1dXp2X2kyenNMcVhkQmc?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-09T11:45+08:00",
+   "summary": "萬里溪堰塞湖監測再升級 無人船聲納首揭水下盲區 蓄水量精準修正452萬噸 蕃新聞",
+   "id": "6fcc2f7bc5",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "c3d9c219a5": {
+   "title": "獨家／特搜垂降投放300萬元水位計 他救逾230人「八掌溪案件」埋救人種子 - TVBS新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1keVVpU1JGQmJVUmVXelIzaGd4bkdfaGlJOXNjUDVva1h6UHdfQnFyQjVrQmNleWFaZDdDendPeHRXOEhxS1hfdjNxNDlka1U?oc=5",
+   "source": "TVBS新聞網",
+   "time": "2026-11-08T18:00+08:00",
+   "summary": "獨家／特搜垂降投放300萬元水位計 他救逾230人「八掌溪案件」埋救人種子 TVBS新聞網",
+   "id": "c3d9c219a5",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-11-10T12:42+08:00"
+  },
+  "ea66a0eadf": {
+   "title": "獨家／馬太鞍溪暴漲沖走人車！空拍機夜搜「突現紅點」 消防員首還原 - TVBS新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5XY1VhVkFnb2I5d1RRalB0OU5ldXl3WHcteDA4UlRhS1p0TzVsUFVmQUcxMWQ3M1ZuYnFlS3ZJUnNvNXNRMmVtYkt2SUxBbzQ?oc=5",
+   "source": "TVBS新聞網",
+   "time": "2026-11-08T18:01+08:00",
+   "summary": "獨家／馬太鞍溪暴漲沖走人車！空拍機夜搜「突現紅點」 消防員首還原 TVBS新聞網",
+   "id": "ea66a0eadf",
+   "kind": "aerial",
+   "keyword": "空拍",
+   "matches": [
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-10T12:42+08:00"
   }
  },
- "updatedAt": "2026-11-08T10:33+08:00"
+ "updatedAt": "2026-11-10T12:42+08:00"
 }

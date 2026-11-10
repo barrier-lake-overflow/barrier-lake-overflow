@@ -52,7 +52,7 @@
     "maskedHectare": 5.73,
     "maskedPct": 56.7
   },
-  "laterScenes": 0,
+  "laterScenes": 1,
   "candidates": [
     {
       "id": "cand1",
@@ -70,7 +70,7 @@
       "landslideNearby": true,
       "damDownstream": false,
       "persistent": false,
-      "laterScenesChecked": 0,
+      "laterScenesChecked": 1,
       "landslideAreaHectare": 1.299,
       "lakeFloorM": 1032.0,
       "waterLevelM": 1074.0,
@@ -78,7 +78,7 @@
         "新增水體 1.39 公頃，緊貼事件前河道",
         "500 m 內偵測到崩塌 1.30 公頃（SAR 回波變化 ≥ 門檻）",
         "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
-        "僅單期影像，尚未確認多時相持續性"
+        "後續 1 期影像同位置水體 IoU 最高 0.26，未確認持續"
       ],
       "centroidLonLat": [
         121.268022,
