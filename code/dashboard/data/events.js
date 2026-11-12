@@ -93619,8 +93619,13 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-10T12:41+08:00",
+   "checkedAt": "2026-11-12T11:52+08:00",
    "scenes": [
+    {
+     "time": "2026-11-10T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 7
+    },
     {
      "time": "2026-11-05T10:40+08:00",
      "sensor": "Sentinel-2C",
@@ -93685,23 +93690,9 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-01T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 88
-    },
-    {
-     "time": "2026-09-27T10:20+08:00",
-     "sensor": "Landsat 8",
-     "clearPct": 99
-    },
-    {
-     "time": "2026-09-26T10:41+08:00",
-     "sensor": "Sentinel-2C",
-     "clearPct": 100
     }
    ],
    "next": [
-    {
-     "date": "2026-11-10",
-     "sensor": "Sentinel-2B"
-    },
     {
      "date": "2026-11-14",
      "sensor": "Landsat 8"
@@ -93725,24 +93716,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-25",
      "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-27",
+     "sensor": "Sentinel-2A"
     }
    ]
   },
   "upcoming": [
-   {
-    "date": "2026-11-10",
-    "time": "05:51",
-    "sensor": "Sentinel-1D",
-    "kind": "sar",
-    "orbit": "降軌 105"
-   },
-   {
-    "date": "2026-11-10",
-    "time": null,
-    "sensor": "Sentinel-2B",
-    "kind": "optical",
-    "orbit": null
-   },
    {
     "date": "2026-11-14",
     "time": null,
@@ -93805,6 +93786,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2C",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-27",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-28",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
    }
   ],
   "opticalPasses": [],
@@ -99673,13 +99668,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動判讀（11/5、10/31、10/26、10/21、10/16、10/13、10/11），尚待人工打開影像確認"
@@ -99705,10 +99701,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "排下一期 SAR 複核（11/16）",
         "reason": "同軌道再看不到才判持續性中斷"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -99717,7 +99709,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.sar_missing_optical_wet",
@@ -99788,6 +99779,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -99966,13 +99964,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮萬里溪（2026/06/20）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動偵測（11/5、10/31、10/26、10/21），尚待人工打開影像確認"
@@ -100005,7 +100004,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -100060,6 +100058,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -100128,8 +100133,13 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-10T12:41+08:00",
+   "checkedAt": "2026-11-12T11:52+08:00",
    "scenes": [
+    {
+     "time": "2026-11-10T10:41+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 5
+    },
     {
      "time": "2026-11-05T10:40+08:00",
      "sensor": "Sentinel-2C",
@@ -100194,23 +100204,9 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-01T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 70
-    },
-    {
-     "time": "2026-09-27T10:20+08:00",
-     "sensor": "Landsat 8",
-     "clearPct": 97
-    },
-    {
-     "time": "2026-09-26T10:41+08:00",
-     "sensor": "Sentinel-2C",
-     "clearPct": 99
     }
    ],
    "next": [
-    {
-     "date": "2026-11-10",
-     "sensor": "Sentinel-2B"
-    },
     {
      "date": "2026-11-14",
      "sensor": "Landsat 8"
@@ -100234,24 +100230,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-25",
      "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-27",
+     "sensor": "Sentinel-2A"
     }
    ]
   },
   "upcoming": [
-   {
-    "date": "2026-11-10",
-    "time": "05:51",
-    "sensor": "Sentinel-1D",
-    "kind": "sar",
-    "orbit": "降軌 105"
-   },
-   {
-    "date": "2026-11-10",
-    "time": null,
-    "sensor": "Sentinel-2B",
-    "kind": "optical",
-    "orbit": null
-   },
    {
     "date": "2026-11-14",
     "time": null,
@@ -100314,6 +100300,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2C",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-27",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-28",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
    }
   ],
   "opticalPasses": [],
@@ -113132,13 +113132,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動判讀（11/5、10/31、10/21、10/16），尚待人工打開影像確認"
@@ -113165,10 +113166,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "排下一期 SAR 複核（11/19）",
         "reason": "同軌道再看不到才判持續性中斷"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -113178,7 +113175,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.sar_vs_optical_dry",
@@ -113242,6 +113238,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -113420,13 +113423,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動判讀（11/5、10/31、10/21、10/16），尚待人工打開影像確認"
@@ -113457,10 +113461,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "暫不派遣 UAV",
         "reason": "SAR偵測與光學判讀結果衝突，先以影像確認，避免浪費現地人力"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -113470,7 +113470,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.sar_vs_optical_dry",
@@ -113542,6 +113541,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -113714,13 +113720,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動判讀（11/5、10/31、10/16），尚待人工打開影像確認"
@@ -113747,10 +113754,6 @@ window.EVENT_SCENARIOS = [
        {
         "label": "排下一期 SAR 複核（11/19）",
         "reason": "同軌道再看不到才判持續性中斷"
-       },
-       {
-        "label": "補查形成期間雨量",
-        "reason": "確認觸發條件；目前觀測表此欄空白"
        }
       ],
       "rulesFired": [
@@ -113760,7 +113763,6 @@ window.EVENT_SCENARIOS = [
        "spatial.landslide",
        "spatial.blockage",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "conflict.sar_vs_optical_dry",
@@ -113824,6 +113826,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "升軌 69",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -114034,13 +114043,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動偵測（11/5、10/31、10/21），尚待人工打開影像確認"
@@ -114072,7 +114082,6 @@ window.EVENT_SCENARIOS = [
        "optical_auto.no_water",
        "spatial.on_river",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -114127,6 +114136,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -114281,13 +114297,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動偵測（11/5、10/31、10/21），尚待人工打開影像確認"
@@ -114320,7 +114337,6 @@ window.EVENT_SCENARIOS = [
        "spatial.on_river",
        "spatial.landslide",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -114375,6 +114391,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -114515,13 +114538,14 @@ window.EVENT_SCENARIOS = [
         "kind": "context",
         "status": "context",
         "text": "清冊監測中：花蓮馬太鞍溪（2025/7/21）"
+       },
+       {
+        "kind": "context",
+        "status": "context",
+        "text": "過境前雨量 72 小時 2 mm、24 小時 0 mm（GSMaP v8 雨量計校正（衛星估計，非測站））"
        }
       ],
       "gaps": [
-       {
-        "kind": "rain",
-        "text": "形成期間雨量：尚未取得（測站值未填、衛星雨量尚未涵蓋此期）"
-       },
        {
         "kind": "optical",
         "text": "光學影像：系統已自動偵測（11/5、10/31、10/21），尚待人工打開影像確認"
@@ -114553,7 +114577,6 @@ window.EVENT_SCENARIOS = [
        "optical_auto.no_water",
        "spatial.on_river",
        "history.nearby",
-       "gap.rain",
        "gap.optical",
        "gap.exposure",
        "priority.low.failed"
@@ -114608,6 +114631,13 @@ window.EVENT_SCENARIOS = [
       "nextRecheckOrbit": "降軌 105",
       "hindsight": [],
       "optical": [
+       {
+        "time": "2026-11-10T10:41+08:00",
+        "sensor": "Sentinel-2B",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
        {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
@@ -114675,8 +114705,13 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-10T12:41+08:00",
+   "checkedAt": "2026-11-12T11:52+08:00",
    "scenes": [
+    {
+     "time": "2026-11-10T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 30
+    },
     {
      "time": "2026-11-05T10:40+08:00",
      "sensor": "Sentinel-2C",
@@ -114741,23 +114776,9 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-01T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 95
-    },
-    {
-     "time": "2026-09-27T10:20+08:00",
-     "sensor": "Landsat 8",
-     "clearPct": 100
-    },
-    {
-     "time": "2026-09-26T10:40+08:00",
-     "sensor": "Sentinel-2C",
-     "clearPct": 100
     }
    ],
    "next": [
-    {
-     "date": "2026-11-10",
-     "sensor": "Sentinel-2B"
-    },
     {
      "date": "2026-11-14",
      "sensor": "Landsat 8"
@@ -114781,24 +114802,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-25",
      "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-27",
+     "sensor": "Sentinel-2A"
     }
    ]
   },
   "upcoming": [
-   {
-    "date": "2026-11-10",
-    "time": "05:51",
-    "sensor": "Sentinel-1D",
-    "kind": "sar",
-    "orbit": "降軌 105"
-   },
-   {
-    "date": "2026-11-10",
-    "time": null,
-    "sensor": "Sentinel-2B",
-    "kind": "optical",
-    "orbit": null
-   },
    {
     "date": "2026-11-14",
     "time": null,
@@ -114861,6 +114872,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2C",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-27",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-28",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
    }
   ],
   "opticalPasses": [],
@@ -115049,8 +115074,13 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-10T12:41+08:00",
+   "checkedAt": "2026-11-12T11:52+08:00",
    "scenes": [
+    {
+     "time": "2026-11-10T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 94
+    },
     {
      "time": "2026-11-05T10:40+08:00",
      "sensor": "Sentinel-2C",
@@ -115115,23 +115145,9 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-01T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 99
-    },
-    {
-     "time": "2026-09-27T10:20+08:00",
-     "sensor": "Landsat 8",
-     "clearPct": 100
-    },
-    {
-     "time": "2026-09-26T10:40+08:00",
-     "sensor": "Sentinel-2C",
-     "clearPct": 100
     }
    ],
    "next": [
-    {
-     "date": "2026-11-10",
-     "sensor": "Sentinel-2B"
-    },
     {
      "date": "2026-11-14",
      "sensor": "Landsat 8"
@@ -115155,24 +115171,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-25",
      "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-27",
+     "sensor": "Sentinel-2A"
     }
    ]
   },
   "upcoming": [
-   {
-    "date": "2026-11-10",
-    "time": "05:51",
-    "sensor": "Sentinel-1D",
-    "kind": "sar",
-    "orbit": "降軌 105"
-   },
-   {
-    "date": "2026-11-10",
-    "time": null,
-    "sensor": "Sentinel-2B",
-    "kind": "optical",
-    "orbit": null
-   },
    {
     "date": "2026-11-14",
     "time": null,
@@ -115235,6 +115241,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2C",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-27",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-28",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
    }
   ],
   "opticalPasses": [],
@@ -115528,6 +115548,21 @@ window.EVENT_SCENARIOS = [
     },
     "newCount": 0,
     "events": []
+   },
+   {
+    "asOf": "2026-11-10T02:40:00+00:00",
+    "label": "11/10 10:40",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 11/5 的候選",
+    "since": "距觸發約 30 天",
+    "nextPass": "11/16",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
    }
   ]
  },
@@ -115550,8 +115585,13 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-10T12:41+08:00",
+   "checkedAt": "2026-11-12T11:52+08:00",
    "scenes": [
+    {
+     "time": "2026-11-10T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 0
+    },
     {
      "time": "2026-11-05T10:40+08:00",
      "sensor": "Sentinel-2C",
@@ -115616,23 +115656,9 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-01T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 31
-    },
-    {
-     "time": "2026-09-27T10:20+08:00",
-     "sensor": "Landsat 8",
-     "clearPct": 100
-    },
-    {
-     "time": "2026-09-26T10:40+08:00",
-     "sensor": "Sentinel-2C",
-     "clearPct": 100
     }
    ],
    "next": [
-    {
-     "date": "2026-11-10",
-     "sensor": "Sentinel-2B"
-    },
     {
      "date": "2026-11-14",
      "sensor": "Landsat 8"
@@ -115656,24 +115682,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-25",
      "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-27",
+     "sensor": "Sentinel-2A"
     }
    ]
   },
   "upcoming": [
-   {
-    "date": "2026-11-10",
-    "time": "05:51",
-    "sensor": "Sentinel-1D",
-    "kind": "sar",
-    "orbit": "降軌 105"
-   },
-   {
-    "date": "2026-11-10",
-    "time": null,
-    "sensor": "Sentinel-2B",
-    "kind": "optical",
-    "orbit": null
-   },
    {
     "date": "2026-11-14",
     "time": null,
@@ -115736,6 +115752,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2C",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-27",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-28",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
    }
   ],
   "opticalPasses": [],
@@ -115871,8 +115901,13 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-10T12:41+08:00",
+   "checkedAt": "2026-11-12T11:52+08:00",
    "scenes": [
+    {
+     "time": "2026-11-10T10:40+08:00",
+     "sensor": "Sentinel-2B",
+     "clearPct": 25
+    },
     {
      "time": "2026-11-05T10:40+08:00",
      "sensor": "Sentinel-2C",
@@ -115937,23 +115972,9 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-01T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 60
-    },
-    {
-     "time": "2026-09-27T10:20+08:00",
-     "sensor": "Landsat 8",
-     "clearPct": 100
-    },
-    {
-     "time": "2026-09-26T10:40+08:00",
-     "sensor": "Sentinel-2C",
-     "clearPct": 100
     }
    ],
    "next": [
-    {
-     "date": "2026-11-10",
-     "sensor": "Sentinel-2B"
-    },
     {
      "date": "2026-11-14",
      "sensor": "Landsat 8"
@@ -115977,24 +115998,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-25",
      "sensor": "Sentinel-2C"
+    },
+    {
+     "date": "2026-11-27",
+     "sensor": "Sentinel-2A"
     }
    ]
   },
   "upcoming": [
-   {
-    "date": "2026-11-10",
-    "time": "05:51",
-    "sensor": "Sentinel-1D",
-    "kind": "sar",
-    "orbit": "降軌 105"
-   },
-   {
-    "date": "2026-11-10",
-    "time": null,
-    "sensor": "Sentinel-2B",
-    "kind": "optical",
-    "orbit": null
-   },
    {
     "date": "2026-11-14",
     "time": null,
@@ -116057,6 +116068,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-2C",
     "kind": "optical",
     "orbit": null
+   },
+   {
+    "date": "2026-11-27",
+    "time": null,
+    "sensor": "Sentinel-2A",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-28",
+    "time": "05:51",
+    "sensor": "Sentinel-1C",
+    "kind": "sar",
+    "orbit": "降軌 105"
    }
   ],
   "opticalPasses": [],

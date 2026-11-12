@@ -2,6 +2,78 @@
 window.SYSTEM_LOG = {
  "history": [
   {
+   "startedAt": "2026-11-12T11:52+08:00",
+   "finishedAt": "2026-11-12T11:53+08:00",
+   "minutes": 1.0,
+   "steps": [
+    {
+     "name": "inventory",
+     "status": "ok",
+     "seconds": 5.7
+    },
+    {
+     "name": "alerts",
+     "status": "ok",
+     "seconds": 1.5
+    },
+    {
+     "name": "gee-login",
+     "status": "ok",
+     "seconds": 3.6
+    },
+    {
+     "name": "rain",
+     "status": "ok",
+     "seconds": 4.1
+    },
+    {
+     "name": "risk",
+     "status": "ok",
+     "seconds": 7.4
+    },
+    {
+     "name": "watchlist",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "sentinel",
+     "status": "ok",
+     "seconds": 2.2
+    },
+    {
+     "name": "passrain",
+     "status": "ok",
+     "seconds": 3.4
+    },
+    {
+     "name": "basemap",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "optical",
+     "status": "ok",
+     "seconds": 69.2
+    },
+    {
+     "name": "passes",
+     "status": "ok",
+     "seconds": 0.0
+    },
+    {
+     "name": "news",
+     "status": "ok",
+     "seconds": 1.0
+    },
+    {
+     "name": "build",
+     "status": "ok",
+     "seconds": 1.7
+    }
+   ]
+  },
+  {
    "startedAt": "2026-11-10T12:39+08:00",
    "finishedAt": "2026-11-10T12:42+08:00",
    "minutes": 3.0,
@@ -1679,10 +1751,9 @@ window.SYSTEM_LOG = {
   }
  ],
  "lastRun": {
-  "startedAt": "2026-11-10T12:39+08:00",
-  "totalLines": 547,
+  "startedAt": "2026-11-12T11:52+08:00",
+  "totalLines": 548,
   "lines": [
-   "  8/14 10:21  高 0／中 0／低 0  新一期光學（Landsat 8）晴空影像偵測＋複核 7/29 的候選",
    "  8/24 18:00  高 0／中 0／低 0  新一期 SAR 全幅偵測＋複核 8/12 的候選",
    "  9/5 18:00  高 0／中 0／低 0  新一期 SAR 全幅偵測＋複核 8/24 的候選",
    "情境 inv_bl057（萬里溪 · 2016）",
@@ -2018,6 +2089,7 @@ window.SYSTEM_LOG = {
    "  11/5 10:40  高 0／中 0／低 0  新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/31 的候選",
    "  11/7 18:00  高 0／中 0／低 0  新一期 SAR 全幅偵測＋複核 10/26 的候選",
    "  11/10 05:51  高 0／中 0／低 0  新一期 SAR 全幅偵測＋複核 11/4 的候選",
+   "  11/10 10:40  高 0／中 0／低 0  新一期光學（Sentinel-2B）晴空影像偵測＋複核 11/5 的候選",
    "情境 live_E121521_N24530（大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm）",
    "  10/21 10:20  高 0／中 0／低 0  新一期光學（Landsat 9）晴空影像偵測",
    "  10/23 05:51  高 0／中 0／低 0  新一期 SAR 全幅偵測",
