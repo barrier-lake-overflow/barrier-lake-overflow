@@ -93619,12 +93619,17 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-12T11:52+08:00",
+   "checkedAt": "2026-11-14T11:21+08:00",
    "scenes": [
     {
      "time": "2026-11-10T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 7
+    },
+    {
+     "time": "2026-11-06T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 0
     },
     {
      "time": "2026-11-05T10:40+08:00",
@@ -93635,6 +93640,11 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-31T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 100
+    },
+    {
+     "time": "2026-10-29T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 35
     },
     {
      "time": "2026-10-28T10:41+08:00",
@@ -93720,6 +93730,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-27",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -93800,6 +93818,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1C",
     "kind": "sar",
     "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -97012,6 +97044,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 100
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 13,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -97248,6 +97287,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 1
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -97533,6 +97579,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 100
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 13,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -97675,7 +97728,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "optical_auto",
         "status": "against",
-        "text": "光學自動判讀 10/31 晴空、判為沒有水"
+        "text": "光學自動判讀 10/31、10/29 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -97706,7 +97759,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：系統已自動偵測（10/31、10/26、10/21），尚待人工打開影像確認"
+        "text": "光學影像：系統已自動偵測（10/31、10/29、10/26、10/21），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -97775,6 +97828,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 1
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -98082,6 +98142,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 100
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 13,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -98224,7 +98291,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "optical_auto",
         "status": "against",
-        "text": "光學自動判讀 10/31 晴空、判為沒有水"
+        "text": "光學自動判讀 10/31、10/29 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -98255,7 +98322,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：系統已自動偵測（10/31、10/26、10/21），尚待人工打開影像確認"
+        "text": "光學影像：系統已自動偵測（10/31、10/29、10/26、10/21），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -98338,6 +98405,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 1
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -98631,6 +98705,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "water",
@@ -98643,6 +98724,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "water",
         "clearPct": 100,
         "waterPct": 100
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 13,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -98787,7 +98875,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "optical_auto",
         "status": "against",
-        "text": "光學自動判讀 11/5、10/31 晴空、判為沒有水"
+        "text": "光學自動判讀 11/5、10/31、10/29 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -98818,7 +98906,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：系統已自動偵測（11/5、10/31、10/26、10/21），尚待人工打開影像確認"
+        "text": "光學影像：系統已自動偵測（11/5、10/31、10/29、10/26、10/21），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -98889,6 +98977,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -98901,6 +98996,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 1
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -99201,6 +99303,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "water",
@@ -99213,6 +99322,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "water",
         "clearPct": 100,
         "waterPct": 100
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 13,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -99357,7 +99473,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "optical_auto",
         "status": "against",
-        "text": "光學自動判讀 11/5、10/31 晴空、判為沒有水"
+        "text": "光學自動判讀 11/5、10/31、10/29 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -99388,7 +99504,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：系統已自動偵測（11/5、10/31、10/26、10/21），尚待人工打開影像確認"
+        "text": "光學影像：系統已自動偵測（11/5、10/31、10/29、10/26、10/21），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -99466,6 +99582,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -99478,6 +99601,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 1
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -99787,6 +99917,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "water",
@@ -99799,6 +99936,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "water",
         "clearPct": 100,
         "waterPct": 100
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 13,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -99943,7 +100087,7 @@ window.EVENT_SCENARIOS = [
        {
         "kind": "optical_auto",
         "status": "against",
-        "text": "光學自動判讀 11/5、10/31 晴空、判為沒有水"
+        "text": "光學自動判讀 11/5、10/31、10/29 晴空、判為沒有水"
        },
        {
         "kind": "river",
@@ -99974,7 +100118,7 @@ window.EVENT_SCENARIOS = [
       "gaps": [
        {
         "kind": "optical",
-        "text": "光學影像：系統已自動偵測（11/5、10/31、10/26、10/21），尚待人工打開影像確認"
+        "text": "光學影像：系統已自動偵測（11/5、10/31、10/29、10/26、10/21），尚待人工打開影像確認"
        },
        {
         "kind": "exposure",
@@ -100066,6 +100210,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -100078,6 +100229,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 1
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "no_water",
+        "clearPct": 100,
+        "waterPct": 0
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -100133,12 +100291,17 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-12T11:52+08:00",
+   "checkedAt": "2026-11-14T11:21+08:00",
    "scenes": [
     {
      "time": "2026-11-10T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 5
+    },
+    {
+     "time": "2026-11-06T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 0
     },
     {
      "time": "2026-11-05T10:40+08:00",
@@ -100149,6 +100312,11 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-31T10:41+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 90
+    },
+    {
+     "time": "2026-10-29T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 0
     },
     {
      "time": "2026-10-28T10:41+08:00",
@@ -100234,6 +100402,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-27",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -100314,6 +100490,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1C",
     "kind": "sar",
     "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -105595,6 +105785,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -105822,6 +106019,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -106052,6 +106256,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -106319,6 +106530,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -106601,6 +106819,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -106804,6 +107029,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -107057,6 +107289,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -107326,6 +107565,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -107578,6 +107824,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -107855,6 +108108,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -108075,6 +108335,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -108278,6 +108545,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -108547,6 +108821,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -108824,6 +109105,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -109092,6 +109380,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -109381,6 +109676,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -109615,6 +109917,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": 0
        },
        {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-10-28T10:41+08:00",
         "sensor": "Sentinel-2A",
         "verdict": "cloud",
@@ -109832,6 +110141,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -110087,6 +110403,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -110099,6 +110422,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -110364,6 +110694,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -110376,6 +110713,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -110632,6 +110976,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -110644,6 +110995,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -110921,6 +111279,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -110933,6 +111298,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -111155,6 +111527,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -111167,6 +111546,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -111374,6 +111760,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -111386,6 +111779,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -111644,6 +112044,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -111656,6 +112063,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -111928,6 +112342,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -111940,6 +112361,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -112199,6 +112627,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -112211,6 +112646,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -112495,6 +112937,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -112507,6 +112956,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -112736,6 +113192,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -112748,6 +113211,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -112962,6 +113432,13 @@ window.EVENT_SCENARIOS = [
       "hindsight": [],
       "optical": [
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -112974,6 +113451,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -113246,6 +113730,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -113258,6 +113749,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -113549,6 +114047,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -113561,6 +114066,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -113834,6 +114346,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -113846,6 +114365,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -114144,6 +114670,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -114156,6 +114689,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -114399,6 +114939,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -114411,6 +114958,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -114639,6 +115193,13 @@ window.EVENT_SCENARIOS = [
         "waterPct": null
        },
        {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
+       },
+       {
         "time": "2026-11-05T10:40+08:00",
         "sensor": "Sentinel-2C",
         "verdict": "no_water",
@@ -114651,6 +115212,13 @@ window.EVENT_SCENARIOS = [
         "verdict": "no_water",
         "clearPct": 100,
         "waterPct": 0
+       },
+       {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "verdict": "cloud",
+        "clearPct": 0,
+        "waterPct": null
        },
        {
         "time": "2026-10-28T10:41+08:00",
@@ -114705,12 +115273,17 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-12T11:52+08:00",
+   "checkedAt": "2026-11-14T11:21+08:00",
    "scenes": [
     {
      "time": "2026-11-10T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 30
+    },
+    {
+     "time": "2026-11-06T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 64
     },
     {
      "time": "2026-11-05T10:40+08:00",
@@ -114721,6 +115294,11 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-31T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 100
+    },
+    {
+     "time": "2026-10-29T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 95
     },
     {
      "time": "2026-10-28T10:40+08:00",
@@ -114806,6 +115384,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-27",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -114886,6 +115472,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1C",
     "kind": "sar",
     "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -114971,9 +115571,24 @@ window.EVENT_SCENARIOS = [
     "events": []
    },
    {
+    "asOf": "2026-10-29T02:20:00+00:00",
+    "label": "10/29 10:20",
+    "what": "新一期光學（Landsat 8）晴空影像偵測＋複核 10/28 的候選",
+    "since": "距觸發約 3 天",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
     "asOf": "2026-10-31T02:40:00+00:00",
     "label": "10/31 10:40",
-    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/28 的候選",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/29 的候選",
     "since": "距觸發約 5 天",
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
@@ -115005,6 +115620,21 @@ window.EVENT_SCENARIOS = [
     "label": "11/5 10:40",
     "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/31 的候選",
     "since": "距觸發約 10 天",
+    "nextPass": "11/7",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-11-06T02:20:00+00:00",
+    "label": "11/6 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測＋複核 11/5 的候選",
+    "since": "距觸發約 11 天",
     "nextPass": "11/7",
     "nextPassOrbit": "升軌 69",
     "counts": {
@@ -115074,12 +115704,17 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-12T11:52+08:00",
+   "checkedAt": "2026-11-14T11:21+08:00",
    "scenes": [
     {
      "time": "2026-11-10T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 94
+    },
+    {
+     "time": "2026-11-06T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 85
     },
     {
      "time": "2026-11-05T10:40+08:00",
@@ -115090,6 +115725,11 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-31T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 97
+    },
+    {
+     "time": "2026-10-29T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 98
     },
     {
      "time": "2026-10-28T10:40+08:00",
@@ -115175,6 +115815,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-27",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -115255,6 +115903,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1C",
     "kind": "sar",
     "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -115475,9 +116137,24 @@ window.EVENT_SCENARIOS = [
     "events": []
    },
    {
+    "asOf": "2026-10-29T02:20:00+00:00",
+    "label": "10/29 10:20",
+    "what": "新一期光學（Landsat 8）晴空影像偵測＋複核 10/28 的候選",
+    "since": "距觸發約 18 天",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
     "asOf": "2026-10-31T02:40:00+00:00",
     "label": "10/31 10:40",
-    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/28 的候選",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 10/29 的候選",
     "since": "距觸發約 20 天",
     "nextPass": "11/4",
     "nextPassOrbit": "降軌 105",
@@ -115509,6 +116186,21 @@ window.EVENT_SCENARIOS = [
     "label": "11/5 10:40",
     "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/31 的候選",
     "since": "距觸發約 25 天",
+    "nextPass": "11/7",
+    "nextPassOrbit": "升軌 69",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
+    "asOf": "2026-11-06T02:20:00+00:00",
+    "label": "11/6 10:20",
+    "what": "新一期光學（Landsat 9）晴空影像偵測＋複核 11/5 的候選",
+    "since": "距觸發約 26 天",
     "nextPass": "11/7",
     "nextPassOrbit": "升軌 69",
     "counts": {
@@ -115552,7 +116244,7 @@ window.EVENT_SCENARIOS = [
    {
     "asOf": "2026-11-10T02:40:00+00:00",
     "label": "11/10 10:40",
-    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 11/5 的候選",
+    "what": "新一期光學（Sentinel-2B）晴空影像偵測＋複核 11/6 的候選",
     "since": "距觸發約 30 天",
     "nextPass": "11/16",
     "nextPassOrbit": "降軌 105",
@@ -115585,11 +116277,16 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-12T11:52+08:00",
+   "checkedAt": "2026-11-14T11:21+08:00",
    "scenes": [
     {
      "time": "2026-11-10T10:40+08:00",
      "sensor": "Sentinel-2B",
+     "clearPct": 0
+    },
+    {
+     "time": "2026-11-06T10:20+08:00",
+     "sensor": "Landsat 9",
      "clearPct": 0
     },
     {
@@ -115601,6 +116298,11 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-31T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 0
+    },
+    {
+     "time": "2026-10-29T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 90
     },
     {
      "time": "2026-10-28T10:40+08:00",
@@ -115686,6 +116388,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-27",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -115766,6 +116476,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1C",
     "kind": "sar",
     "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],
@@ -115821,6 +116545,21 @@ window.EVENT_SCENARIOS = [
     "events": []
    },
    {
+    "asOf": "2026-10-29T02:20:00+00:00",
+    "label": "10/29 10:20",
+    "what": "新一期光學（Landsat 8）晴空影像偵測＋複核 10/21 的候選",
+    "since": "距觸發約 3 天",
+    "nextPass": "11/4",
+    "nextPassOrbit": "降軌 105",
+    "counts": {
+     "high": 0,
+     "medium": 0,
+     "low": 0
+    },
+    "newCount": 0,
+    "events": []
+   },
+   {
     "asOf": "2026-11-03T21:51:00+00:00",
     "label": "11/4 05:51",
     "what": "新一期 SAR 全幅偵測＋複核 10/23 的候選",
@@ -115838,7 +116577,7 @@ window.EVENT_SCENARIOS = [
    {
     "asOf": "2026-11-05T02:40:00+00:00",
     "label": "11/5 10:40",
-    "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/21 的候選",
+    "what": "新一期光學（Sentinel-2C）晴空影像偵測＋複核 10/29 的候選",
     "since": "距觸發約 10 天",
     "nextPass": "11/7",
     "nextPassOrbit": "升軌 69",
@@ -115901,12 +116640,17 @@ window.EVENT_SCENARIOS = [
   },
   "aerial": [],
   "optical": {
-   "checkedAt": "2026-11-12T11:52+08:00",
+   "checkedAt": "2026-11-14T11:21+08:00",
    "scenes": [
     {
      "time": "2026-11-10T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 25
+    },
+    {
+     "time": "2026-11-06T10:20+08:00",
+     "sensor": "Landsat 9",
+     "clearPct": 0
     },
     {
      "time": "2026-11-05T10:40+08:00",
@@ -115917,6 +116661,11 @@ window.EVENT_SCENARIOS = [
      "time": "2026-10-31T10:40+08:00",
      "sensor": "Sentinel-2B",
      "clearPct": 13
+    },
+    {
+     "time": "2026-10-29T10:20+08:00",
+     "sensor": "Landsat 8",
+     "clearPct": 44
     },
     {
      "time": "2026-10-28T10:40+08:00",
@@ -116002,6 +116751,14 @@ window.EVENT_SCENARIOS = [
     {
      "date": "2026-11-27",
      "sensor": "Sentinel-2A"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Landsat 8"
+    },
+    {
+     "date": "2026-11-30",
+     "sensor": "Sentinel-2B"
     }
    ]
   },
@@ -116082,6 +116839,20 @@ window.EVENT_SCENARIOS = [
     "sensor": "Sentinel-1C",
     "kind": "sar",
     "orbit": "降軌 105"
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Landsat 8",
+    "kind": "optical",
+    "orbit": null
+   },
+   {
+    "date": "2026-11-30",
+    "time": null,
+    "sensor": "Sentinel-2B",
+    "kind": "optical",
+    "orbit": null
    }
   ],
   "opticalPasses": [],

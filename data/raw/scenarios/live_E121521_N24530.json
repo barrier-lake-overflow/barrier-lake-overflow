@@ -32,7 +32,7 @@
       "last": "2026-11-07T18:00+08:00"
     }
   ],
-  "sarCheckedAt": "2026-11-12T11:52+08:00",
+  "sarCheckedAt": "2026-11-14T11:21+08:00",
   "trigger": {
     "label": "大規模崩塌潛勢區 宜縣LL001（宜蘭縣-大同鄉-T002）72 小時雨量 216 mm",
     "time": "2026-10-26T09:19+08:00",
@@ -113,11 +113,16 @@
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "optical": {
-    "checkedAt": "2026-11-12T11:52+08:00",
+    "checkedAt": "2026-11-14T11:21+08:00",
     "scenes": [
       {
         "time": "2026-11-10T10:40+08:00",
         "sensor": "Sentinel-2B",
+        "clearPct": 0
+      },
+      {
+        "time": "2026-11-06T10:20+08:00",
+        "sensor": "Landsat 9",
         "clearPct": 0
       },
       {
@@ -129,6 +134,11 @@
         "time": "2026-10-31T10:40+08:00",
         "sensor": "Sentinel-2B",
         "clearPct": 0
+      },
+      {
+        "time": "2026-10-29T10:20+08:00",
+        "sensor": "Landsat 8",
+        "clearPct": 90
       },
       {
         "time": "2026-10-28T10:40+08:00",
@@ -214,6 +224,14 @@
       {
         "date": "2026-11-27",
         "sensor": "Sentinel-2A"
+      },
+      {
+        "date": "2026-11-30",
+        "sensor": "Landsat 8"
+      },
+      {
+        "date": "2026-11-30",
+        "sensor": "Sentinel-2B"
       }
     ],
     "checks": []
@@ -222,7 +240,7 @@
     "preStart": "2026-08-20",
     "preEnd": "2026-10-19",
     "preImages": 21,
-    "checkedAt": "2026-11-12T11:52+08:00",
+    "checkedAt": "2026-11-14T11:21+08:00",
     "scenes": [
       {
         "time": "2026-10-21T02:20+00:00",
@@ -249,6 +267,12 @@
         "usable": false
       },
       {
+        "time": "2026-10-29T02:20+00:00",
+        "sensor": "Landsat 8",
+        "clearPct": 89.7,
+        "usable": true
+      },
+      {
         "time": "2026-10-31T02:40+00:00",
         "sensor": "Sentinel-2B",
         "clearPct": 0.2,
@@ -261,6 +285,12 @@
         "usable": true
       },
       {
+        "time": "2026-11-06T02:20+00:00",
+        "sensor": "Landsat 9",
+        "clearPct": 0,
+        "usable": false
+      },
+      {
         "time": "2026-11-10T02:40+00:00",
         "sensor": "Sentinel-2B",
         "clearPct": 0,
@@ -271,12 +301,22 @@
       {
         "file": "final_opt_live_E121521_N24530_20261021_L9.json",
         "time": "2026-10-21T02:20+00:00",
-        "recheckTime": "2026-11-05T02:40+00:00",
+        "recheckTime": "2026-10-29T02:20+00:00",
         "evidenceImage": null,
         "source": "optical",
         "sensor": "Landsat 9",
         "clearPct": 58.3,
         "orbitLabel": "光學 Landsat 9 20261021"
+      },
+      {
+        "file": "final_opt_live_E121521_N24530_20261029_L8.json",
+        "time": "2026-10-29T02:20+00:00",
+        "recheckTime": "2026-11-05T02:40+00:00",
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Landsat 8",
+        "clearPct": 89.7,
+        "orbitLabel": "光學 Landsat 8 20261029"
       },
       {
         "file": "final_opt_live_E121521_N24530_20261105_S2C.json",
