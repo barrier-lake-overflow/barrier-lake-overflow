@@ -2397,14 +2397,14 @@
    "keyword": "",
    "matches": [
     {
-     "scenarioId": "live_E121298_N23701",
-     "lakeId": "bl071",
-     "name": "花蓮馬太鞍溪"
-    },
-    {
      "scenarioId": "live_E121270_N23792",
      "lakeId": "bl075",
      "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
     },
     {
      "scenarioId": "inv_bl065",
@@ -3053,14 +3053,14 @@
    "keyword": "",
    "matches": [
     {
-     "scenarioId": "live_E121298_N23701",
-     "lakeId": "bl071",
-     "name": "花蓮馬太鞍溪"
-    },
-    {
      "scenarioId": "live_E121270_N23792",
      "lakeId": "bl075",
      "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
     },
     {
      "scenarioId": "inv_bl065",
@@ -3519,14 +3519,14 @@
    "keyword": "",
    "matches": [
     {
-     "scenarioId": "live_E121298_N23701",
-     "lakeId": "bl071",
-     "name": "花蓮馬太鞍溪"
-    },
-    {
      "scenarioId": "live_E121270_N23792",
      "lakeId": "bl075",
      "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
     },
     {
      "scenarioId": "inv_bl065",
@@ -4449,14 +4449,14 @@
    "keyword": "",
    "matches": [
     {
-     "scenarioId": "live_E121298_N23701",
-     "lakeId": "bl071",
-     "name": "花蓮馬太鞍溪"
-    },
-    {
      "scenarioId": "live_E121270_N23792",
      "lakeId": "bl075",
      "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "live_E121298_N23701",
+     "lakeId": "bl071",
+     "name": "花蓮馬太鞍溪"
     },
     {
      "scenarioId": "inv_bl065",
@@ -4832,7 +4832,281 @@
    ],
    "status": "candidate",
    "fetchedAt": "2026-11-14T11:23+08:00"
+  },
+  "8bb25c4685": {
+   "title": "115年11月13日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBJc2x5SWxjNWY4Y0xqSzFSRXZQTW53OWtyUU1IWndNSDE2UDZoMm02LUZXU0pHb3ROYWlYT3pmcEtGUHhKakJwZ0R6X1ZjZUk?oc=5",
+   "source": "林業保育署全球資訊網",
+   "time": "2026-11-13T10:31+08:00",
+   "summary": "115年11月13日 萬里溪堰塞湖現況資訊 林業保育署全球資訊網",
+   "id": "8bb25c4685",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "a90acca2d6": {
+   "title": "11月15日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9tS0lNSE9VT3pzRlhzdUZGXzMtQVVUM01kd0hFU0JMRHk4YVB0eE85ZjJ2YTVZZ0RXY3hOa0JIc0VnLXUwTmtKRXdR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-11-15T16:27+08:00",
+   "summary": "11月15日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "a90acca2d6",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "a24a885aa3": {
+   "title": "11月14日萬里溪堰塞湖現況資訊 - 更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAySEFzZEpfdWtRSGlRemlnR2dlR0lxQmRLSUZjaVYzS2ltLUdXUWpXWEpBWWdBdHpKc3hKY2Yzb0dnTHpMcUN3ZGFR?oc=5",
+   "source": "更生新聞網",
+   "time": "2026-11-14T17:41+08:00",
+   "summary": "11月14日萬里溪堰塞湖現況資訊 更生新聞網",
+   "id": "a24a885aa3",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "17bdb2366f": {
+   "title": "討論牆 | 花蓮萬里溪堰塞湖距溢流口僅1.79米 最快明中午後溢流、萬榮鄉111人撤離 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9DX3ZraXpaNnFUZ2JBTGlkb05tY2lJWU1SbEltSXNKLWhNcGZfQW0wcVNJWHBwY1ZLUjRmQjd3MW5YZk52STRFWk9qdGlxSVRlR0hlcVpLZC0xQk5HMFBoMUE4MXE?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-11T21:35+08:00",
+   "summary": "討論牆 | 花蓮萬里溪堰塞湖距溢流口僅1.79米 最快明中午後溢流、萬榮鄉111人撤離 LINE TODAY",
+   "id": "17bdb2366f",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "a39991ff57": {
+   "title": "討論牆 | 花蓮萬里溪堰塞湖估15：00發布紅色警戒 明下午溢流 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4xZkRRNjl0ZHQwdnM5TWdRdjVsTnFIOXRyWTJuV0JmdDBzSTdiTy1vcUxGNlJvNkJSWUlNQnFkeTFDMUlhVWw2VmxzcUk4TlBRUmpDazFVWXl4TnZPcFVUTHVGVjA?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-14T06:32+08:00",
+   "summary": "討論牆 | 花蓮萬里溪堰塞湖估15：00發布紅色警戒 明下午溢流 LINE TODAY",
+   "id": "a39991ff57",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "d930b28e9c": {
+   "title": "討論牆 | 花蓮堰塞湖將溢流！台鐵15時起部分列車停駛 車次一次看 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB5c3RyZnR2bm11Y00wQ2RubXZsUFA4LXBlWFZfbzZnRjVuSC1oVkQwbmZCWF9PelhLQzRLTVVqbUtTdm5JLWhibW9oa3BsZXJxMmcwY0N1dGZEUGM4MWJ0Z3g1bkE?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-15T19:51+08:00",
+   "summary": "討論牆 | 花蓮堰塞湖將溢流！台鐵15時起部分列車停駛 車次一次看 LINE TODAY",
+   "id": "d930b28e9c",
+   "kind": "official",
+   "keyword": "",
+   "matches": [],
+   "status": "unmatched",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "f817d77583": {
+   "title": "討論牆 | 萬里溪堰塞湖蓄水6成 防災就緒 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5Ibm9aTHE0UXVlUm1PS1RDRThQZW5qX0pCYWpweUVFaWNQTGwzZWprNlo4SXBKY0ZtcGlzZmFQZVlJWjRxNURqeXE5SUE4Q1Y5NGp4ZUZIMFJwVzZqcGMzRDBlOXQ?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-15T16:22+08:00",
+   "summary": "討論牆 | 萬里溪堰塞湖蓄水6成 防災就緒 LINE TODAY",
+   "id": "f817d77583",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "094195862d": {
+   "title": "討論牆 | 花蓮萬里溪堰塞湖水位達98% 強制撤離保全戶 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBoOWppZFF6R1JKVzhMR1hMOEF5aE4xNWEyMmtpUWxRRWhIck9WVkJqRXI1YjFhZGpQcGtEQS1MdnM5Y2FpdVpXOWtVSU9FTUhRQUFaRmtzX3NZdmFrY3hYWUVWc2k?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-14T07:21+08:00",
+   "summary": "討論牆 | 花蓮萬里溪堰塞湖水位達98% 強制撤離保全戶 LINE TODAY",
+   "id": "094195862d",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "3d0784d78b": {
+   "title": "討論牆 | 萬里溪堰塞湖已蓄滿9成 鳳林.萬榮警戒 - LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAyTmk3OXFfYnhzTGxfSGRNYTB3eVBvaTVrZklzSTRMUjN6QjBtVzExYWJySWpxVGtYTnNJRWxRbC1rS2MtLTZxOWJqWElvQTEyWjBZbUgyQkhzRXpQWDgwdG1OLVM?oc=5",
+   "source": "LINE TODAY",
+   "time": "2026-11-13T12:55+08:00",
+   "summary": "討論牆 | 萬里溪堰塞湖已蓄滿9成 鳳林.萬榮警戒 LINE TODAY",
+   "id": "3d0784d78b",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
+  },
+  "10f1fd5e55": {
+   "title": "115年11月15日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9sZmFOckZNUzl4eXdVMkZZcDk2eUZLQ1otdFk5b0NSTkhyU0p2RzJPWVVmalpSMEpMSGxHTjlfbVl2VlJSQWRGc043MEh2OEp1d3c?oc=5",
+   "source": "蕃新聞",
+   "time": "2026-11-16T10:36+08:00",
+   "summary": "115年11月15日萬里溪堰塞湖現況資訊 蕃新聞",
+   "id": "10f1fd5e55",
+   "kind": "official",
+   "keyword": "",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ],
+   "status": "candidate",
+   "fetchedAt": "2026-11-16T10:50+08:00"
   }
  },
- "updatedAt": "2026-11-14T11:23+08:00"
+ "updatedAt": "2026-11-16T10:50+08:00"
 }

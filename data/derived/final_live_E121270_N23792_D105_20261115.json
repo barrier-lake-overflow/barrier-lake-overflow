@@ -1,0 +1,112 @@
+{
+  "lakeId": "live_E121270_N23792_D105",
+  "synthetic": false,
+  "source": "Sentinel-1 GRD σ⁰ VV（Google Earth Engine 匯出），非合成資料",
+  "orbit": "DESCENDING",
+  "analysisWindowKm": 4.0,
+  "cellSizeM": [
+    9.15,
+    10.0
+  ],
+  "pre": {
+    "date": "事件前中位數",
+    "method": "sar_fixed",
+    "threshold": -18.0,
+    "pixel_count": 838,
+    "area_m2": 76679.0,
+    "area_hectare": 7.668
+  },
+  "post": {
+    "date": "post 2026-11-15 21:51 UTC",
+    "method": "sar_fixed",
+    "threshold": -18.0,
+    "pixel_count": 1295,
+    "area_m2": 118495.6,
+    "area_hectare": 11.85
+  },
+  "newWaterTotalAreaHectare": 2.809,
+  "landslide": {
+    "date": "post 2026-11-15 21:51 UTC",
+    "method": "sar_log_ratio",
+    "threshold_db": 3.0,
+    "pixel_count": 1959,
+    "increase_pixels": 219,
+    "decrease_pixels": 1740,
+    "components": 95,
+    "area_m2": 179253.2,
+    "area_hectare": 17.925
+  },
+  "geometryMask": {
+    "layoverHectare": 177.48,
+    "shadowHectare": 3.41,
+    "excludedForWaterPct": 55.0,
+    "slopeOnlyExcludedHectare": 699.6,
+    "maxWaterSlopeDeg": 35.0,
+    "seedSlopeDeg": 20.0,
+    "seedMinAreaM2": 0.0
+  },
+  "darkNewPixelsDiagnostic": {
+    "note": "事件後背向散射低於門檻、事件前沒有的像元（遮罩前）；maskedPct 高代表湖面被遮罩擋掉",
+    "thresholdDb": -18.0,
+    "darkNewHectareBeforeMask": 13.27,
+    "maskedHectare": 7.56,
+    "maskedPct": 57.0
+  },
+  "laterScenes": 0,
+  "candidates": [
+    {
+      "id": "cand1",
+      "grade": "C",
+      "areaHectare": 1.409,
+      "centroidRowCol": [
+        190.3,
+        195.5
+      ],
+      "centroidXY": [
+        121.26753454050916,
+        23.79288944629613
+      ],
+      "onRiver": true,
+      "landslideNearby": true,
+      "damDownstream": false,
+      "persistent": false,
+      "laterScenesChecked": 0,
+      "landslideAreaHectare": 0.677,
+      "lakeFloorM": 1032.0,
+      "waterLevelM": 1079.0,
+      "reasons": [
+        "新增水體 1.41 公頃，緊貼事件前河道",
+        "500 m 內偵測到崩塌 0.68 公頃（SAR 回波變化 ≥ 門檻）",
+        "但鄰近崩塌全在湖面以上坡面，未到達河床，不視為壩體",
+        "僅單期影像，尚未確認多時相持續性"
+      ],
+      "centroidLonLat": [
+        121.267535,
+        23.792889
+      ],
+      "distanceFromDamM": 227.9,
+      "polygonLonLat": [
+        [
+          121.26771245360115,
+          23.79214979449076
+        ],
+        [
+          121.26717346443068,
+          23.793137941303293
+        ],
+        [
+          121.26843110582844,
+          23.79259895213282
+        ],
+        [
+          121.26843110582844,
+          23.79205996296235
+        ],
+        [
+          121.26771245360115,
+          23.79214979449076
+        ]
+      ]
+    }
+  ]
+}

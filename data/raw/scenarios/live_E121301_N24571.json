@@ -17,7 +17,7 @@
       "label": "降軌 105",
       "satellite": "S1C",
       "cycleDays": 12,
-      "last": "2026-11-04T05:51+08:00"
+      "last": "2026-11-16T05:51+08:00"
     },
     {
       "label": "降軌 105",
@@ -32,7 +32,7 @@
       "last": "2026-11-07T18:00+08:00"
     }
   ],
-  "sarCheckedAt": "2026-11-14T11:21+08:00",
+  "sarCheckedAt": "2026-11-16T10:47+08:00",
   "trigger": {
     "label": "大規模崩塌潛勢區 竹縣LL002（新竹縣-尖石鄉-D097）72 小時雨量 204 mm",
     "time": "2026-10-26T09:19+08:00",
@@ -96,7 +96,7 @@
     {
       "file": "final_live_E121301_N24571_D105_20261109.json",
       "time": "2026-11-09T21:51:00+00:00",
-      "recheckTime": null,
+      "recheckTime": "2026-11-15T21:51:00+00:00",
       "evidenceImage": null,
       "orbitLabel": "降軌 105",
       "rain": {
@@ -104,6 +104,13 @@
         "h72": 2.5,
         "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
       }
+    },
+    {
+      "file": "final_live_E121301_N24571_D105_20261115.json",
+      "time": "2026-11-15T21:51:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "降軌 105"
     }
   ],
   "basemap": {
@@ -112,8 +119,13 @@
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-26 以前；缺漏處以 Landsat 8/9 補"
   },
   "optical": {
-    "checkedAt": "2026-11-14T11:21+08:00",
+    "checkedAt": "2026-11-16T10:49+08:00",
     "scenes": [
+      {
+        "time": "2026-11-15T10:40+08:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 19
+      },
       {
         "time": "2026-11-10T10:40+08:00",
         "sensor": "Sentinel-2B",
@@ -188,22 +200,9 @@
         "time": "2026-10-05T10:20+08:00",
         "sensor": "Landsat 9",
         "clearPct": 86
-      },
-      {
-        "time": "2026-10-01T10:40+08:00",
-        "sensor": "Sentinel-2B",
-        "clearPct": 95
       }
     ],
     "next": [
-      {
-        "date": "2026-11-14",
-        "sensor": "Landsat 8"
-      },
-      {
-        "date": "2026-11-15",
-        "sensor": "Sentinel-2C"
-      },
       {
         "date": "2026-11-17",
         "sensor": "Sentinel-2A"
@@ -239,7 +238,7 @@
     "preStart": "2026-08-20",
     "preEnd": "2026-10-19",
     "preImages": 21,
-    "checkedAt": "2026-11-14T11:21+08:00",
+    "checkedAt": "2026-11-16T10:49+08:00",
     "scenes": [
       {
         "time": "2026-10-21T02:20+00:00",
@@ -293,6 +292,12 @@
         "time": "2026-11-10T02:40+00:00",
         "sensor": "Sentinel-2B",
         "clearPct": 29.8,
+        "usable": false
+      },
+      {
+        "time": "2026-11-15T02:40+00:00",
+        "sensor": "Sentinel-2C",
+        "clearPct": 19.1,
         "usable": false
       }
     ],
