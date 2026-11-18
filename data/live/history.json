@@ -1,5 +1,77 @@
 [
  {
+  "startedAt": "2026-11-18T12:27+08:00",
+  "finishedAt": "2026-11-18T12:28+08:00",
+  "minutes": 1.0,
+  "steps": [
+   {
+    "name": "inventory",
+    "status": "ok",
+    "seconds": 4.6
+   },
+   {
+    "name": "alerts",
+    "status": "ok",
+    "seconds": 0.9
+   },
+   {
+    "name": "gee-login",
+    "status": "ok",
+    "seconds": 1.2
+   },
+   {
+    "name": "rain",
+    "status": "ok",
+    "seconds": 3.8
+   },
+   {
+    "name": "risk",
+    "status": "ok",
+    "seconds": 8.5
+   },
+   {
+    "name": "watchlist",
+    "status": "ok",
+    "seconds": 0.0
+   },
+   {
+    "name": "sentinel",
+    "status": "ok",
+    "seconds": 1.4
+   },
+   {
+    "name": "passrain",
+    "status": "ok",
+    "seconds": 4.9
+   },
+   {
+    "name": "basemap",
+    "status": "ok",
+    "seconds": 0.0
+   },
+   {
+    "name": "optical",
+    "status": "ok",
+    "seconds": 25.8
+   },
+   {
+    "name": "passes",
+    "status": "ok",
+    "seconds": 0.0
+   },
+   {
+    "name": "news",
+    "status": "ok",
+    "seconds": 1.1
+   },
+   {
+    "name": "build",
+    "status": "ok",
+    "seconds": 0.3
+   }
+  ]
+ },
+ {
   "startedAt": "2026-11-16T10:47+08:00",
   "finishedAt": "2026-11-16T10:50+08:00",
   "minutes": 3.0,
@@ -1826,63 +1898,6 @@
     "name": "news",
     "status": "ok",
     "seconds": 0.6
-   },
-   {
-    "name": "build",
-    "status": "ok",
-    "seconds": 0.2
-   }
-  ]
- },
- {
-  "startedAt": "2026-10-11T15:53+08:00",
-  "finishedAt": "2026-10-11T15:53+08:00",
-  "minutes": 0.0,
-  "steps": [
-   {
-    "name": "inventory",
-    "status": "ok",
-    "seconds": 2.4
-   },
-   {
-    "name": "alerts",
-    "status": "ok",
-    "seconds": 1.7
-   },
-   {
-    "name": "gee-login",
-    "status": "ok",
-    "seconds": 3.4
-   },
-   {
-    "name": "rain",
-    "status": "ok",
-    "seconds": 5.3
-   },
-   {
-    "name": "risk",
-    "status": "ok",
-    "seconds": 11.0
-   },
-   {
-    "name": "watchlist",
-    "status": "ok",
-    "seconds": 0.0
-   },
-   {
-    "name": "sentinel",
-    "status": "ok",
-    "seconds": 0.9
-   },
-   {
-    "name": "passrain",
-    "status": "ok",
-    "seconds": 4.1
-   },
-   {
-    "name": "news",
-    "status": "ok",
-    "seconds": 1.0
    },
    {
     "name": "build",
