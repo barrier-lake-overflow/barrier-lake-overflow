@@ -29,10 +29,10 @@
       "label": "升軌 69",
       "satellite": "S1D",
       "cycleDays": 12,
-      "last": "2026-11-07T18:00+08:00"
+      "last": "2026-11-19T18:00+08:00"
     }
   ],
-  "sarCheckedAt": "2026-11-18T12:28+08:00",
+  "sarCheckedAt": "2026-11-20T12:01+08:00",
   "trigger": {
     "label": "清冊監測中：花蓮萬里溪（2026/06/20）",
     "time": "2026-10-11T15:42+08:00",
@@ -120,7 +120,7 @@
     {
       "file": "final_live_E121270_N23792_A69_20261107.json",
       "time": "2026-11-07T10:00:00+00:00",
-      "recheckTime": null,
+      "recheckTime": "2026-11-19T10:00:00+00:00",
       "evidenceImage": null,
       "orbitLabel": "升軌 69",
       "rain": {
@@ -152,6 +152,13 @@
         "h72": 28.9,
         "source": "GSMaP v8 雨量計校正（衛星估計，非測站）"
       }
+    },
+    {
+      "file": "final_live_E121270_N23792_A69_20261119.json",
+      "time": "2026-11-19T10:00:00+00:00",
+      "recheckTime": null,
+      "evidenceImage": null,
+      "orbitLabel": "升軌 69"
     }
   ],
   "basemap": {
@@ -160,12 +167,12 @@
     "source": "Sentinel-2（Cloud Score+ 去雲）事件前合成，2026-10-11 以前；缺漏處以 Landsat 8/9 補"
   },
   "optical": {
-    "checkedAt": "2026-11-18T12:28+08:00",
+    "checkedAt": "2026-11-20T12:02+08:00",
     "scenes": [
       {
         "time": "2026-11-17T10:41+08:00",
         "sensor": "Sentinel-2A",
-        "clearPct": null
+        "clearPct": 100
       },
       {
         "time": "2026-11-15T10:41+08:00",
@@ -241,11 +248,6 @@
         "time": "2026-10-06T10:41+08:00",
         "sensor": "Sentinel-2C",
         "clearPct": 0
-      },
-      {
-        "time": "2026-10-05T10:20+08:00",
-        "sensor": "Landsat 9",
-        "clearPct": 24
       }
     ],
     "next": [
@@ -272,6 +274,10 @@
       {
         "date": "2026-11-30",
         "sensor": "Sentinel-2B"
+      },
+      {
+        "date": "2026-12-05",
+        "sensor": "Sentinel-2C"
       }
     ],
     "checks": [
@@ -282,6 +288,13 @@
           23.792419
         ],
         "results": [
+          {
+            "time": "2026-11-17T10:41+08:00",
+            "sensor": "Sentinel-2A",
+            "verdict": "water",
+            "clearPct": 100,
+            "waterPct": 98
+          },
           {
             "time": "2026-11-15T10:41+08:00",
             "sensor": "Sentinel-2C",
@@ -383,6 +396,13 @@
         ],
         "results": [
           {
+            "time": "2026-11-17T10:41+08:00",
+            "sensor": "Sentinel-2A",
+            "verdict": "no_water",
+            "clearPct": 100,
+            "waterPct": 1
+          },
+          {
             "time": "2026-11-15T10:41+08:00",
             "sensor": "Sentinel-2C",
             "verdict": "no_water",
@@ -453,7 +473,7 @@
     "preStart": "2026-08-05",
     "preEnd": "2026-10-04",
     "preImages": 27,
-    "checkedAt": "2026-11-18T12:28+08:00",
+    "checkedAt": "2026-11-20T12:02+08:00",
     "scenes": [
       {
         "time": "2026-10-05T02:20+00:00",
@@ -554,8 +574,8 @@
       {
         "time": "2026-11-17T02:41+00:00",
         "sensor": "Sentinel-2A",
-        "clearPct": 0,
-        "usable": false
+        "clearPct": 99.8,
+        "usable": true
       }
     ],
     "passes": [
@@ -632,12 +652,22 @@
       {
         "file": "final_opt_live_E121270_N23792_20261105_S2C.json",
         "time": "2026-11-05T02:40+00:00",
-        "recheckTime": null,
+        "recheckTime": "2026-11-17T02:41+00:00",
         "evidenceImage": null,
         "source": "optical",
         "sensor": "Sentinel-2C",
         "clearPct": 100,
         "orbitLabel": "光學 Sentinel-2C 20261105"
+      },
+      {
+        "file": "final_opt_live_E121270_N23792_20261117_S2A.json",
+        "time": "2026-11-17T02:41+00:00",
+        "recheckTime": null,
+        "evidenceImage": null,
+        "source": "optical",
+        "sensor": "Sentinel-2A",
+        "clearPct": 99.8,
+        "orbitLabel": "光學 Sentinel-2A 20261117"
       }
     ]
   }

@@ -1,12 +1,12 @@
 /* 由 pipeline/daily/run.py 產生，請勿手動編輯。每日自動更新的執行狀態、監看窗格、待確認的新聞候選。 */
 window.DAILY_STATUS = {
- "startedAt": "2026-11-18T12:27+08:00",
- "finishedAt": "2026-11-18T12:28+08:00",
+ "startedAt": "2026-11-20T12:00+08:00",
+ "finishedAt": "2026-11-20T12:04+08:00",
  "steps": [
   {
    "name": "inventory",
    "status": "ok",
-   "seconds": 4.6,
+   "seconds": 6.8,
    "summary": {
     "rows": 75,
     "changed": false
@@ -15,7 +15,7 @@ window.DAILY_STATUS = {
   {
    "name": "alerts",
    "status": "ok",
-   "seconds": 0.9,
+   "seconds": 1.3,
    "summary": {
     "count": 0
    }
@@ -23,493 +23,493 @@ window.DAILY_STATUS = {
   {
    "name": "gee-login",
    "status": "ok",
-   "seconds": 1.2,
+   "seconds": 2.3,
    "summary": null
   },
   {
    "name": "rain",
    "status": "ok",
-   "seconds": 3.8,
+   "seconds": 6.5,
    "summary": {
     "苗縣LL002": {
-     "h24": 1.5,
-     "h72": 2.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.6,
+     "h72": 5.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL004": {
-     "h24": 0.6,
-     "h72": 1.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 1.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL003": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL003": {
-     "h24": 0.2,
-     "h72": 0.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 0.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL003": {
      "h24": 0.3,
-     "h72": 0.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 1.9,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL003": {
-     "h24": 0.7,
-     "h72": 0.7,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 6.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL001": {
-     "h24": 0.4,
-     "h72": 0.4,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 5.8,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL007": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL006": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL001": {
-     "h24": 1.5,
-     "h72": 1.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.5,
+     "h72": 5.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL002": {
-     "h24": 1.5,
-     "h72": 1.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.5,
+     "h72": 5.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "屏縣LL004": {
      "h24": 0.3,
      "h72": 0.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL004": {
-     "h24": 0.6,
-     "h72": 0.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.3,
+     "h72": 1.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL004": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL002": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL001": {
-     "h24": 1.5,
-     "h72": 2.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.6,
+     "h72": 5.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL005": {
-     "h24": 0.8,
-     "h72": 1.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 8.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL001": {
-     "h24": 0.9,
-     "h72": 1.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 7.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL001": {
-     "h24": 0.8,
-     "h72": 1.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 1.2,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL004": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "新北LL001": {
      "h24": 0,
-     "h72": 0.8,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 16.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "桃市LL001": {
      "h24": 0,
-     "h72": 1.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 8.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "桃市LL003": {
-     "h24": 0.9,
-     "h72": 2.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 9.5,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL003": {
-     "h24": 0.8,
-     "h72": 1.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 8.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL002": {
-     "h24": 2.3,
-     "h72": 3.4,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.8,
+     "h72": 11.9,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "宜縣LL001": {
-     "h24": 0.5,
-     "h72": 1.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL007": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL002": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL001": {
-     "h24": 0.9,
-     "h72": 0.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.4,
+     "h72": 9.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL008": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL005": {
-     "h24": 0.2,
-     "h72": 0.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 0.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL006": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL001": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL005": {
-     "h24": 2.0,
-     "h72": 4.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 1.1,
+     "h72": 3.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "屏縣LL001": {
-     "h24": 1.4,
-     "h72": 3.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 1.1,
+     "h72": 2.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "屏縣LL002": {
-     "h24": 1.4,
-     "h72": 3.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 1.1,
+     "h72": 2.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL010": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 2.8,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL008": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.8,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL002": {
-     "h24": 0.9,
-     "h72": 0.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.2,
+     "h72": 7.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL004": {
-     "h24": 0.7,
-     "h72": 0.7,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 5.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "桃市LL004": {
-     "h24": 0.9,
-     "h72": 2.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 9.5,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL004": {
-     "h24": 0.8,
-     "h72": 1.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 8.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "新北LL002": {
      "h24": 0,
-     "h72": 2.4,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 16.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "桃市LL002": {
      "h24": 0,
-     "h72": 1.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 8.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "苗縣LL001": {
-     "h24": 0.8,
-     "h72": 1.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.5,
+     "h72": 4.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL005": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL006": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL003": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL003": {
-     "h24": 0.6,
-     "h72": 1.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 1.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL007": {
-     "h24": 0.3,
+     "h24": 0,
      "h72": 0.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL002": {
-     "h24": 1.1,
-     "h72": 2.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 2.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL002": {
-     "h24": 1.1,
+     "h24": 0.5,
      "h72": 2.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "屏縣LL003": {
-     "h24": 1.4,
-     "h72": 3.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 1.1,
+     "h72": 2.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL009": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 2.8,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL004": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL005": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL006": {
-     "h24": 1.8,
-     "h72": 3.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 11.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL005": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 11.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "宜縣LL003": {
-     "h24": 3.7,
-     "h72": 5.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.9,
+     "h72": 20.7,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "宜縣LL002": {
-     "h24": 0.5,
-     "h72": 1.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL007": {
-     "h24": 0.9,
-     "h72": 0.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.2,
+     "h72": 7.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL008": {
-     "h24": 0.2,
-     "h72": 0.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 0.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL006": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL007": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL009": {
-     "h24": 1.1,
-     "h72": 2.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 2.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL006": {
-     "h24": 0.9,
-     "h72": 1.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 7.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "苗縣LL003": {
-     "h24": 0.8,
-     "h72": 1.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.5,
+     "h72": 4.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "苗縣LL004": {
-     "h24": 0.8,
-     "h72": 1.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.5,
+     "h72": 4.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL008": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL009": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL006": {
-     "h24": 0.6,
-     "h72": 1.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 1.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL005": {
      "h24": 0,
      "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL009": {
-     "h24": 0.2,
-     "h72": 0.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 0.6,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL011": {
      "h24": 0.2,
-     "h72": 0.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 3.5,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL010": {
-     "h24": 2.8,
-     "h72": 2.8,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 8.7,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL008": {
-     "h24": 3.4,
-     "h72": 3.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.7,
+     "h72": 15.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL009": {
-     "h24": 1.1,
-     "h72": 1.9,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 12.2,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL007": {
-     "h24": 0.6,
-     "h72": 1.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 9.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL010": {
-     "h24": 2.0,
-     "h72": 4.0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 1.1,
+     "h72": 3.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "新北LL003": {
      "h24": 0,
-     "h72": 0.8,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 16.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "桃市LL005": {
      "h24": 0,
-     "h72": 1.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 8.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "苗縣LL005": {
      "h24": 0,
-     "h72": 0,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 1.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL010": {
-     "h24": 1.5,
-     "h72": 2.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.6,
+     "h72": 5.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL011": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL012": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "中市LL013": {
-     "h24": 4.5,
-     "h72": 9.1,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0.1,
+     "h72": 16.1,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "高市LL011": {
-     "h24": 0.2,
-     "h72": 0.2,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 0.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "屏縣LL005": {
      "h24": 0,
-     "h72": 0.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 0.4,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL012": {
-     "h24": 0.5,
-     "h72": 0.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 5.3,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "花縣LL011": {
      "h24": 0,
-     "h72": 0.8,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 10.8,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "投縣LL008": {
-     "h24": 0.2,
-     "h72": 1.6,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 1.5,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "竹縣LL007": {
-     "h24": 1.3,
-     "h72": 1.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 7.0,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "嘉縣LL010": {
-     "h24": 0.8,
-     "h72": 1.5,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h24": 0,
+     "h72": 1.2,
+     "asOf": "2026-11-18T06:00+00:00"
     },
     "東縣LL013": {
      "h24": 0.3,
-     "h72": 0.3,
-     "asOf": "2026-11-17T15:00+00:00"
+     "h72": 1.9,
+     "asOf": "2026-11-18T06:00+00:00"
     }
    }
   },
   {
    "name": "risk",
    "status": "ok",
-   "seconds": 8.5,
+   "seconds": 6.9,
    "summary": {
     "lakes": 71,
-    "asOf": "2026-11-17T15:00+00:00"
+    "asOf": "2026-11-18T06:00+00:00"
    }
   },
   {
@@ -524,7 +524,7 @@ window.DAILY_STATUS = {
   {
    "name": "sentinel",
    "status": "ok",
-   "seconds": 1.4,
+   "seconds": 102.2,
    "summary": {
     "windows": {
      "count": 6
@@ -534,15 +534,8 @@ window.DAILY_STATUS = {
   {
    "name": "passrain",
    "status": "ok",
-   "seconds": 4.9,
-   "summary": {
-    "live_E121270_N23792": 1,
-    "live_E121298_N23701": 1,
-    "live_E121301_N24571": 1,
-    "live_E121345_N24564": 1,
-    "live_E121521_N24530": 1,
-    "live_E121538_N24489": 1
-   }
+   "seconds": 4.4,
+   "summary": {}
   },
   {
    "name": "basemap",
@@ -556,7 +549,7 @@ window.DAILY_STATUS = {
   {
    "name": "optical",
    "status": "ok",
-   "seconds": 25.8,
+   "seconds": 124.1,
    "summary": {
     "windows": 6
    }
@@ -573,16 +566,16 @@ window.DAILY_STATUS = {
   {
    "name": "news",
    "status": "ok",
-   "seconds": 1.1,
+   "seconds": 0.8,
    "summary": {
-    "new": 11,
-    "candidates": 167
+    "new": 10,
+    "candidates": 175
    }
   },
   {
    "name": "build",
    "status": "ok",
-   "seconds": 0.3,
+   "seconds": 0.4,
    "summary": {
     "scenarios": 30
    }
@@ -605,8 +598,8 @@ window.DAILY_STATUS = {
     "降軌 105",
     "升軌 69"
    ],
-   "lastScene": "20261115",
-   "lastOptical": "20261105",
+   "lastScene": "20261119",
+   "lastOptical": "20261117",
    "lastError": null
   },
   {
@@ -624,8 +617,8 @@ window.DAILY_STATUS = {
     "降軌 105",
     "升軌 69"
    ],
-   "lastScene": "20261115",
-   "lastOptical": "20261105",
+   "lastScene": "20261119",
+   "lastOptical": "20261117",
    "lastError": null
   },
   {
@@ -643,8 +636,8 @@ window.DAILY_STATUS = {
     "降軌 105",
     "升軌 69"
    ],
-   "lastScene": "20261115",
-   "lastOptical": "20261110",
+   "lastScene": "20261119",
+   "lastOptical": "20261117",
    "lastError": null
   },
   {
@@ -662,8 +655,8 @@ window.DAILY_STATUS = {
     "降軌 105",
     "升軌 69"
    ],
-   "lastScene": "20261115",
-   "lastOptical": "20261106",
+   "lastScene": "20261119",
+   "lastOptical": "20261117",
    "lastError": null
   },
   {
@@ -682,8 +675,8 @@ window.DAILY_STATUS = {
     "降軌 105",
     "升軌 69"
    ],
-   "lastScene": "20261115",
-   "lastOptical": "20261105",
+   "lastScene": "20261119",
+   "lastOptical": "20261117",
    "lastError": null
   },
   {
@@ -701,18 +694,168 @@ window.DAILY_STATUS = {
     "降軌 105",
     "升軌 69"
    ],
-   "lastScene": "20261115",
+   "lastScene": "20261119",
    "lastOptical": "20261105",
    "lastError": null
   }
  ],
  "newsCandidates": [
   {
+   "id": "7cbde8a7db",
+   "time": "2026-11-20T04:03+08:00",
+   "title": "討論牆 | 特搜空降邊坡 萬里溪堰塞湖衛星監測設備升級 - LINE TODAY",
+   "source": "LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YMWlnQUQ5RUlyejBpRlFiSWJYOVhWYS1xNUtIaGxucFVITkJWc25FdGZaYUc3YVJQM0JFb2x5aVJVVGJhVHBHU0ZIVEUxX2tSYWJ2VkpWMm4zdktzTlVHcmVuWVg?oc=5",
+   "kind": "satellite",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "5b056d28ba",
+   "time": "2026-11-20T01:35+08:00",
+   "title": "11月18日萬里溪堰塞湖現況 水位1,086.12公尺維持紅色警戒 - 蕃新聞",
+   "source": "蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB4ZzRRSnBUR0NQWUZ3c25kWWhaSE56dUNtcXlZVHpXdTJVX293LXJMRGVfQXF5bVdBWE5TS3BHeFhDTnBGS1k2VGNPdU9DQzQzaGc?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "05f137cb37",
+   "time": "2026-11-19T10:27+08:00",
+   "title": "115年11月19日萬里溪堰塞湖現況資訊 - 蕃新聞",
+   "source": "蕃新聞",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE84LTZTaC1HLTViZG5KVjhhOEpFb0E3MHF1V1RVbU93Ujc1THNDRENQU2l3QS0zeDhKbzhEXzQwcXhEM1RlN0doZ1RJV29HV2hwNnc?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "92ae43fe58",
+   "time": "2026-11-18T17:25+08:00",
+   "title": "十一月十八日萬里溪堰塞湖資訊 - 更生新聞網",
+   "source": "更生新聞網",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE02VFpzVTN1Zjc0XzQ3Z3dJbWdxenlVQ3I2SnpvelJueGFXLW01YWZJQ01wUUxlVHlnNEF5eGtaYlo2SUVOMk44UHNR?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "b81cf4e2a4",
+   "time": "2026-11-18T14:45+08:00",
+   "title": "討論牆 | 萬里溪堰塞湖紅色警戒 台鐵列車今天全線正常行駛 - LINE TODAY",
+   "source": "LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1GVFRKT19BV1hYeVB1bmhGcHliUGtJbW9HTTQ5NzRUQW1ZcTRVYVJlTGo5TElTUzAzUTlNajFBSXNQTjkzOXFmVVl3WEdRNjBFR3ZDMXVvS3JjNHg3UnJuRFhidGw?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
    "id": "00741b0b49",
    "time": "2026-11-18T09:57+08:00",
    "title": "115年11月18日萬里溪堰塞湖現況資訊 - 蕃新聞",
    "source": "蕃新聞",
    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9zSXJFcFdDZDFBYW4tVmQwYi1RdWtTZ004ZHVvUFN2NUFPcUF0Tzl5WFFFelQ4VmZHSmZSUEI5NDJoS0E4V1E4T1g1b2E2MGFxV1E?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "765c7627ac",
+   "time": "2026-11-17T17:52+08:00",
+   "title": "115年11月17日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
+   "source": "林業保育署全球資訊網",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5kVVZIQlNrNVQ3SF9yOTI3d2RNaVUtUzk3Vmk3SlRKVnMxUXJrcUJaajFOd1AxRkVXdGlyWGxScnFmN19mV3ViTDBfTkxmMTQ?oc=5",
    "kind": "official",
    "matches": [
     {
@@ -908,6 +1051,31 @@ window.DAILY_STATUS = {
    ]
   },
   {
+   "id": "7a365f33b6",
+   "time": "2026-11-14T18:18+08:00",
+   "title": "討論牆 | 萬里溪堰塞湖紅色警戒將溢流 花蓮2鄉鎮警戒區7/17停班停課 - LINE TODAY",
+   "source": "LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5jeTY2MU5RZHRkM0xTTkoxOUR6a25sYTBZTXIxemdUYy1UZ1N6NkxCN3BzQ0NkLTNoYlB3SFJDRDRLTDNwVk9WMDZWRTJ5VUx1TEZMSFpPb0hpTW5LNUZwRlNxOVc?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
    "id": "a24a885aa3",
    "time": "2026-11-14T17:41+08:00",
    "title": "11月14日萬里溪堰塞湖現況資訊 - 更生新聞網",
@@ -963,6 +1131,31 @@ window.DAILY_STATUS = {
    "title": "討論牆 | 堰塞湖警戒！台鐵新萬里溪橋封橋、部分停駛 - LINE TODAY",
    "source": "LINE TODAY",
    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1iUFJlWHI1cWhmaVJETXcwbmxHSWVpeVhLUTdyZDUyYWxCVUFhOHlNSjJydDlwdzRYLV93QVFfNlhBTFhYdFRBcXFLb1ZENkR4YnpkUV9WWVMtM21ndnFZZjNZSXE?oc=5",
+   "kind": "official",
+   "matches": [
+    {
+     "scenarioId": "live_E121270_N23792",
+     "lakeId": "bl075",
+     "name": "花蓮萬里溪"
+    },
+    {
+     "scenarioId": "inv_bl065",
+     "lakeId": "bl065",
+     "name": "花蓮萬里溪（2024）"
+    },
+    {
+     "scenarioId": "inv_bl057",
+     "lakeId": "bl057",
+     "name": "萬里溪（2016）"
+    }
+   ]
+  },
+  {
+   "id": "6fbc7b9033",
+   "time": "2026-11-14T07:59+08:00",
+   "title": "討論牆 | 隨時可能潰決！萬里溪堰塞湖滿水位紅色警戒 花蓮6行政區明停班課 - LINE TODAY",
+   "source": "LINE TODAY",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBYN1IyOThVbHpnaVFscVpaZUFzdUZzc0RyT2NnMm5ZSW1sZTdVLThVZHlLSUp3RkUzWlhPeUZRTE02dUdyYkFmZnJwMU95NkxEXzBYbHFQcXNUT0h5X2sxUHVnRDI?oc=5",
    "kind": "official",
    "matches": [
     {
@@ -1256,208 +1449,8 @@ window.DAILY_STATUS = {
      "name": "萬里溪（2016）"
     }
    ]
-  },
-  {
-   "id": "272f09e00a",
-   "time": "2026-11-11T20:58+08:00",
-   "title": "萬里溪堰塞湖11月11日壩體完整穩定溢流 河道維持紅色警戒 - 蕃新聞",
-   "source": "蕃新聞",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE91ZF9MZ0ZqQ1l5QkUyeFRRcmR1S3RFR0U0aWFfa0cxLS10dmpPQmwtQ3N1dHd3ZnB5dkFpSENIdTZ0SHp2U3JldG10YW85ZFBKSkE?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "d2ac62c83a",
-   "time": "2026-11-11T16:50+08:00",
-   "title": "11月11日萬里溪堰塞湖現況資訊 - 更生新聞網",
-   "source": "更生新聞網",
-   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBpU0tZaTE1UnpEWVlkYXd1cnc2VkttSGxaWkxqanhvYlN2djU3ZzR5MFlZd1hFUUViRGxJOE5zS1VKc3V4bWVMbkNR?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "d63d425f4c",
-   "time": "2026-11-11T10:26+08:00",
-   "title": "萬里溪堰塞湖11月9日現況 蓄水量約452.90萬立方公尺 - 蕃新聞",
-   "source": "蕃新聞",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBVN1lFTEdqVmttRXJxSy03ZWlPbmVheDlLZTI2SG9rQ2ZLVk9PclQxbWFWWkxoNi1Va2pSM01pMUYzZ1plaXQtajJBclZWWW40cEE?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "6aec2df56c",
-   "time": "2026-11-11T10:26+08:00",
-   "title": "萬里溪堰塞湖首度無人船聲納測量 蓄水量修正為約452萬立方公尺 - 蕃新聞",
-   "source": "蕃新聞",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1JVWxFZUhSZWZCaVNkY2VqOFhiaUI3Z2hlVkZ4VkkwNGJxX19JSWNEME5iRmdxMUtUelVTSEhLYTM2Vm1PTGdqU0RXYlV4ZzhxVnc?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "97b88ae0fd",
-   "time": "2026-11-11T10:08+08:00",
-   "title": "115年11月11日 萬里溪堰塞湖現況資訊 - 林業保育署全球資訊網",
-   "source": "林業保育署全球資訊網",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5FSDY4dk10V25oLXJJeHRPaDVKZm1VMkV5N3VvRHlwRjJ1eUlod3BjU01rNHJoQk1qZkRSZ0lXS0VzNVl6V0EtUkZVU0tfTTA?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "0ffd47b949",
-   "time": "2026-11-10T07:27+08:00",
-   "title": "萬里溪堰塞湖 空降無人船摸底 - 中國時報- 翻爆",
-   "source": "中國時報- 翻爆",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNUczLVotVHZONFN5MW5oeloyUkJKc213UDJjLVRTTVQzekxZWTRSWURuOTRDV1JEUzVSQk5zVzlIeDRiNG5lOVdCZE1uck8zZkZabjNnTkVKQnoxZzdHTjhGTVF1SG9OVUZ6dnl5cHk1NXItZFZGYWZNc1pfUl9QRlR5Zm1HNE5U?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "f40d782a6a",
-   "time": "2026-11-09T17:32+08:00",
-   "title": "無人船聲納測萬里溪堰塞湖地形 蓄水量下修至452萬噸 - Yahoo新聞",
-   "source": "Yahoo新聞",
-   "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxQeG9oZHJEY2E0Q2xSR3B5NHprcm1MVGhQaVloeTJid0J5UWxPd0NBZ2UxOWxIcXI0MlFQYWZERkxfc0FCWFNHU0l4RE1DenRodjJyT2JFZG1VWWtXOElBNkd3TnhPZDUxQVJwYjVIdjZWbVpiQlpWY011OTRaLXN4WElSNlhUUHJJaDhUaHZVbi1tenlrT2h1SjJmZnBrVG5QS1p1UjdEVjA3aFhneS1TTVJqd0dWbzlYRTJYYXJJMEpXN3lSOVJDN2xWcDUwY09PMldvZFE1VVh2ZUtMaTJLTjg3ZlF1ZENOMEVuREVMUTVZNWFKR2VRY09JUldaRng1bG9aMzhSaGM3cmhxSkNOaUp2RG8yM1BfNy1GT3JKNnVYdFNwamNCZnVQOFZ6NWlQQ0tELVI1SlJ3RlJ6bEhzbXhERktfdUlPU3NnX3Y4OXhfM3hIUlgwSlFVbVRCMHdX?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
-  },
-  {
-   "id": "ec6eb9b3d8",
-   "time": "2026-11-09T12:35+08:00",
-   "title": "無人船聲納測萬里溪堰塞湖地形 蓄水量下修至452萬噸 - 公視新聞",
-   "source": "公視新聞",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE45TF9HbnFha0oxRDRRZXBTYnNic3AzZEZGZTlUOXluTVA0ZFdUdER4dEROSGhYS2VhU2xBODltUEJfbThVbmJ0bi1PdXdFb00?oc=5",
-   "kind": "official",
-   "matches": [
-    {
-     "scenarioId": "live_E121270_N23792",
-     "lakeId": "bl075",
-     "name": "花蓮萬里溪"
-    },
-    {
-     "scenarioId": "inv_bl065",
-     "lakeId": "bl065",
-     "name": "花蓮萬里溪（2024）"
-    },
-    {
-     "scenarioId": "inv_bl057",
-     "lakeId": "bl057",
-     "name": "萬里溪（2016）"
-    }
-   ]
   }
  ],
- "newsCandidateCount": 167,
- "rainAsOf": "2026-11-17T15:00+00:00"
+ "newsCandidateCount": 175,
+ "rainAsOf": "2026-11-18T06:00+00:00"
 };
